@@ -6,8 +6,8 @@ import inquirer from 'inquirer';
 import yargs from 'yargs';
 
 const localServerUrl = 'http://localhost:3123';
-const developmentEnvPath = './env/.env.development';
-const localEnvPath = './env/.env.local';
+const developmentEnvPath = '.env.development';
+const localEnvFilePath = '.env.local';
 
 const fileExists = (path) =>
   stat(path).then(
@@ -16,7 +16,7 @@ const fileExists = (path) =>
   );
 const args = yargs(hideBin(process.argv)).argv;
 
-const localEnvFileExists = await fileExists(localEnvPath);
+const localEnvFileExists = await fileExists(localEnvFilePath);
 if (args.check && localEnvFileExists) process.exit(0);
 
 const base = {
@@ -33,13 +33,28 @@ const { environment } = {
         name: 'environment',
         type: 'list',
         choices: [
-          { name: 'Standalone', value: 'standalone' },
           { name: 'Local', value: 'local' },
-          { name: 'Documentation', value: 'documentation' },
-          { name: 'courthive', value: 'courthive' }
+          { name: 'Development', value: 'development' },
+          { name: 'Production', value: 'production' }
         ],
         default: 'local',
         describe: 'Environment',
+        demandOption: true
+      }
+    ].filter((v) => !args[v.name])
+  ))
+};
+
+const { baseurl } = {
+  ...args,
+  ...(await inquirer.prompt(
+    [
+      {
+        message: 'Base URL',
+        name: 'baseurl',
+        type: 'input',
+        default: '',
+        describe: 'URL',
         demandOption: true
       }
     ].filter((v) => !args[v.name])
@@ -64,9 +79,10 @@ const { server } =
 const data = {
   ...base,
   ...(environment.toLowerCase() !== 'standalone' && {
-    SERVER: server
+    BASE_URL: baseurl ?? '',
+    VITE_SERVER: server
   }),
   ENVIRONMENT: environment
 };
 
-await writeFile(localEnvPath, stringify(data));
+await writeFile(`.env.${environment}`, stringify(data));
