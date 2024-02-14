@@ -25,6 +25,11 @@
     "start": "pnpm run config --check && vite --open",
     "test": "TZ=UTC vitest"
   },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix",
+    "*": "prettier --ignore-unknown --write",
+    "**/*.ts": "tsc --noEmit"
+  },
   "devDependencies": {
     "@commitlint/cli": "18.6.1",
     "@commitlint/config-conventional": "18.6.2",
