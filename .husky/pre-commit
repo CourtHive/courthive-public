@@ -1,6 +1,6 @@
-if [ $(git rev-parse --abbrev-ref HEAD) == 'main' ]; then
+if [ $(git rev-parse --abbrev-ref HEAD) == 'master' ]; then
   # pnpm test
   pnpm lint:staged
 else
-  echo 'Skipping pre-push hook for non-main branch'
+  echo 'Skipping pre-push hook for non-master branch'
 fi
