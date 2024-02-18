@@ -9,7 +9,7 @@ export function router() {
   const useHash = true;
   const router = new Navigo(useHash ? '/' : `/${routerRoot}`, { hash: useHash });
   router.on(`/default`, () => renderDefaultPage());
-  router.on(`/calendar/:providerAbbr`, ({ data }) => {
+  router.on(`/tournaments/:providerAbbr`, ({ data }) => {
     const providerAbbr = data.providerAbbr.toUpperCase();
     createTournamentsTable({ providerAbbr });
   });
