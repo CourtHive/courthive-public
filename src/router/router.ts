@@ -11,7 +11,7 @@ export function router() {
 
   const useHash = true;
   const router = new Navigo(useHash ? '/' : `/${routerRoot}`, { hash: useHash });
-  router.on(`/default`, () => {
+  router.on(`/`, () => {
     setDisplay(SPLASH);
     renderDefaultPage();
   });
@@ -28,7 +28,7 @@ export function router() {
   });
 
   router.notFound(() => {
-    router.navigate('/default');
+    router.navigate('/');
   });
   router.resolve();
 
