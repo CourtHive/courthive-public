@@ -1,4 +1,4 @@
-import { getTournamentInfo, getEventData, getServerFactoryVersion } from './api/tournamentsApi';
+import { getTournamentInfo, getEventData, getServerFactoryVersion, getProviderCalendar } from './api/tournamentsApi';
 import { baseApi } from './api/baseApi';
 
 export function setDev() {
@@ -10,7 +10,20 @@ export function setDev() {
     return;
   }
 
-  addDev({ getTournamentInfo, getEventData, getServerFactoryVersion, baseApi });
+  const logData = (fx) => (params) =>
+    fx(params).then(
+      (r) => console.log(r.data),
+      (e) => console.log(e)
+    );
+
+  const fx = {
+    getServerFactoryVersion: (params) => logData(getServerFactoryVersion)(params),
+    getProviderCalendar: (params) => logData(getProviderCalendar)(params),
+    getTournamentInfo: (params) => logData(getTournamentInfo)(params),
+    getEventData: (params) => logData(getEventData(params))
+  };
+
+  addDev({ ...fx, baseApi });
 }
 
 function addDev(variable) {
