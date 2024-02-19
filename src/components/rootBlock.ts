@@ -20,6 +20,7 @@ export function rootBlock() {
   tournaments.appendChild(tTable);
 
   const tournament = document.createElement('div');
+  tournament.style.backgroundColor = 'white';
   tournament.style.display = 'none';
   tournament.id = TOURNAMENT;
   tournament.appendChild(tournamentFramework());
