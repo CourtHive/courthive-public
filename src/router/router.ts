@@ -1,4 +1,5 @@
 import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsTable';
+import { renderTournament } from 'src/pages/tournament/renderTournament';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
@@ -23,8 +24,7 @@ export function router() {
   router.on(`/tournament/:tournamentId`, ({ data }) => {
     const tournamentId = data.tournamentId;
     setDisplay(TOURNAMENT);
-    console.log('tid', data);
-    getTournamentInfo({ tournamentId }).then((x) => console.log(x.data.tournamentInfo));
+    getTournamentInfo({ tournamentId }).then(renderTournament);
   });
 
   router.notFound(() => {

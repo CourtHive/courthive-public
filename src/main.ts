@@ -1,4 +1,4 @@
-import { rootBlock } from './components/framework/rootBlock';
+import { rootBlock } from './components/rootBlock';
 import { setInitialState } from 'src/config/initialState';
 import { router } from 'src/router/router';
 import { context } from './common/context';
