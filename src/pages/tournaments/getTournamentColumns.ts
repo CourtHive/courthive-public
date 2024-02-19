@@ -2,7 +2,7 @@ import { tournamentFormatter } from './tournamentsFormatter';
 import { context } from 'src/common/context';
 
 import { TOURNAMENT } from 'src/common/constants/routerConstants';
-import { CENTER } from 'src/common/constants/tableConstants';
+import { CENTER } from 'src/common/constants/baseConstants';
 
 export function getTournamentColumns() {
   const openTournament = (_, cell) => {
