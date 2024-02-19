@@ -10,9 +10,9 @@ export async function renderTournament(result) {
   const tournamentInfo = result?.data?.tournamentInfo;
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
-  if (tournamentImage.identifier) {
+  if (tournamentImage?.identifier) {
     const el = document.getElementById(TOURNAMENT_LOGO);
-    el.innerHTML = `<img src="${tournamentImage?.identifier}" alt="${tournamentInfo.name}" style="max-height: 20em" />`;
+    el.innerHTML = `<img src="${tournamentImage.identifier}" alt="${tournamentInfo.name}" style="max-height: 20em" />`;
   }
 
   if (tournamentInfo.tournamentName) {
