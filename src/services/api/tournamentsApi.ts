@@ -10,7 +10,7 @@ export async function getProviderCalendar({ providerAbbr }: { providerAbbr: stri
   return await baseApi.post('/provider/calendar', { providerAbbr });
 }
 
-export async function getEventData(params?: { string; tournamentId: string; eventId: string }) {
+export async function getEventData(params?: { tournamentId: string; eventId: string }) {
   if (!params?.tournamentId) throw new Error('missing tournamentId');
   if (!params?.eventId) throw new Error('missing eventId');
   return await baseApi.post('/factory/eventData', params);

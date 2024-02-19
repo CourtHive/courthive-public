@@ -1,4 +1,5 @@
 import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsTable';
+import { renderTournament } from 'src/pages/tournament/renderTournament';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
@@ -8,27 +9,31 @@ import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerCons
 
 export function router() {
   const routerRoot = window.location.host.startsWith('localhost') ? '/' : process.env.PUBLIC_URL ?? '/';
+  const back = document.getElementById('back');
 
   const useHash = true;
   const router = new Navigo(useHash ? '/' : `/${routerRoot}`, { hash: useHash });
-  router.on(`/default`, () => {
+  router.on(`/`, () => {
+    back.style.display = 'none';
     setDisplay(SPLASH);
     renderDefaultPage();
   });
   router.on(`/tournaments/:providerAbbr`, ({ data }) => {
+    back.style.display = 'none';
     const providerAbbr = data.providerAbbr.toUpperCase();
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
   });
+
   router.on(`/tournament/:tournamentId`, ({ data }) => {
+    back.style.display = 'block';
     const tournamentId = data.tournamentId;
     setDisplay(TOURNAMENT);
-    console.log('tid', data);
-    getTournamentInfo({ tournamentId }).then((x) => console.log(x.data.tournamentInfo));
+    getTournamentInfo({ tournamentId }).then(renderTournament);
   });
 
   router.notFound(() => {
-    router.navigate('/default');
+    router.navigate('/');
   });
   router.resolve();
 

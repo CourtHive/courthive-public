@@ -3,6 +3,7 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { getTournamentColumns } from './getTournamentColumns';
 
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
+import { tournamentsControls } from './tournamentsControlBar';
 
 export function createTournamentsTable({ providerAbbr }) {
   const handleError = (error) => console.log('Network error', { error });
@@ -36,12 +37,9 @@ export function createTournamentsTable({ providerAbbr }) {
       columns
     });
 
-    /*
     table.on('tableBuilt', () => {
-      calendarControls(table);
-      ready = true;
+      tournamentsControls(table);
     });
-    */
   };
 
   const renderCalendarTable = (calendar) => {
