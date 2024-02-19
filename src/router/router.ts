@@ -14,6 +14,7 @@ export function router() {
   const useHash = true;
   const router = new Navigo(useHash ? '/' : `/${routerRoot}`, { hash: useHash });
   router.on(`/`, () => {
+    back.style.display = 'none';
     setDisplay(SPLASH);
     renderDefaultPage();
   });

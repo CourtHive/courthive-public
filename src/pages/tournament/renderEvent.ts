@@ -1,7 +1,7 @@
 import { compositions, renderContainer, renderStructure } from 'courthive-components';
-import { dropDownButton } from 'src/components/dropDownButton';
+import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { getEventData } from 'src/services/api/tournamentsApi';
-import { LEFT } from 'src/common/constants/tableConstants';
+import { LEFT } from 'src/common/constants/baseConstants';
 
 export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
   const composition = compositions['National'];
@@ -63,23 +63,21 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
       renderSelectedStructure(0);
     };
 
-    if (flightsData?.length > 1) {
-      const flightOptions = flightsData.map(({ drawName }, i) => ({
-        onClick: () => renderFlight(i),
-        label: drawName,
-        close: true
-      }));
-      const flightButton = {
-        label: flightsData[0].drawName,
-        options: flightOptions,
-        id: 'flightButton',
-        modifyLabel: true,
-        selection: true,
-        location: LEFT
-      };
-      const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
-      header.appendChild(elem);
-    }
+    const flightOptions = flightsData.map(({ drawName }, i) => ({
+      onClick: () => renderFlight(i),
+      label: drawName,
+      close: true
+    }));
+    const flightButton = {
+      label: flightsData[0].drawName,
+      options: flightOptions,
+      id: 'flightButton',
+      modifyLabel: true,
+      selection: true,
+      location: LEFT
+    };
+    const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
+    header.appendChild(elem);
 
     renderFlight(0);
   });

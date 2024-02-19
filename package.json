@@ -66,6 +66,7 @@
     "bulma": "^0.9.4",
     "courthive-components": "^0.7.16",
     "navigo": "8.11.1",
-    "tabulator-tables": "^5.6.1"
+    "tabulator-tables": "^5.6.1",
+    "tippy.js": "^6.3.7"
   }
 }
