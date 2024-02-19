@@ -16,6 +16,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
     const flightsData = eventData?.data?.drawsData.filter(flightHasMatchUps);
     const renderFlight = (index) => {
       const flight = flightsData[index];
+      if (!flight) return;
       const drawId = flight.drawId;
 
       const renderSelectedStructure = (index) => {
@@ -69,7 +70,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
       close: true
     }));
     const flightButton = {
-      label: flightsData[0].drawName,
+      label: flightsData?.[0]?.drawName,
       options: flightOptions,
       id: 'flightButton',
       modifyLabel: true,
