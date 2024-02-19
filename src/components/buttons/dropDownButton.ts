@@ -1,4 +1,4 @@
-import { RIGHT } from 'src/common/constants/tableConstants';
+import { RIGHT } from 'src/common/constants/baseConstants';
 import { isFunction } from 'src/functions/typeof';
 
 const FONT_MEDIUM = 'font-medium';

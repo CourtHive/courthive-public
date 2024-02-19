@@ -1,5 +1,5 @@
+import { TOURNAMENTS_CONTROL, TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
-import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 
 export function rootBlock() {
@@ -27,6 +27,11 @@ export function rootBlock() {
   const tournaments = document.createElement('div');
   tournaments.style.display = 'none';
   tournaments.id = TOURNAMENTS;
+
+  const tControl = document.createElement('div');
+  tControl.className = 'controlBar flexcol flexgrow flexcenter';
+  tControl.id = TOURNAMENTS_CONTROL;
+  tournaments.appendChild(tControl);
 
   const tTable = document.createElement('div');
   tTable.className = 'flexcol flexgrow flexcenter box';
