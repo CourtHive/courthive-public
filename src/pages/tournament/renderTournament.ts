@@ -4,11 +4,10 @@ import { dropDownButton } from 'src/components/dropDownButton';
 import { LEFT } from 'src/common/constants/tableConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
-import { renderEvent } from './renderEvent';
+import { removeAllChildNodes, renderEvent } from './renderEvent';
 
 export async function renderTournament(result) {
   const tournamentInfo = result?.data?.tournamentInfo;
-  console.log(tournamentInfo);
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
   if (tournamentImage.identifier) {
@@ -33,6 +32,8 @@ export async function renderTournament(result) {
   if (tournamentInfo.eventInfo?.length) {
     const tournamentId: string = tournamentInfo.tournamentId;
     const el = document.getElementById(getTabContentId('Events'));
+    removeAllChildNodes(el);
+
     const header = document.createElement('div');
     const flightDisplay = document.createElement('div');
 
@@ -49,8 +50,11 @@ export async function renderTournament(result) {
       selection: true,
       location: LEFT
     };
-    const removeFlightButton = () => document.getElementById('flightButton')?.remove();
-    const elem = dropDownButton({ button: eventButton, stateChange: removeFlightButton });
+    const removeFlightButtons = () => {
+      document.getElementById('structureButton')?.remove();
+      document.getElementById('flightButton')?.remove();
+    };
+    const elem = dropDownButton({ button: eventButton, stateChange: removeFlightButtons });
     const eventId: string = tournamentInfo.eventInfo[0].eventId;
     header.className = 'block';
     header.appendChild(elem);
