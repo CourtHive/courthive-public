@@ -1,10 +1,10 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { displayTab, displayTabContent } from './helpers/tabDisplay';
+import { removeAllChildNodes, renderEvent } from './renderEvent';
 import { dropDownButton } from 'src/components/dropDownButton';
 import { LEFT } from 'src/common/constants/tableConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
-import { removeAllChildNodes, renderEvent } from './renderEvent';
 
 export async function renderTournament(result) {
   const tournamentInfo = result?.data?.tournamentInfo;
@@ -31,6 +31,7 @@ export async function renderTournament(result) {
 
   if (tournamentInfo.eventInfo?.length) {
     const tournamentId: string = tournamentInfo.tournamentId;
+
     const el = document.getElementById(getTabContentId('Events'));
     removeAllChildNodes(el);
 

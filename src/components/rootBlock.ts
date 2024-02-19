@@ -6,6 +6,20 @@ export function rootBlock() {
   const main = document.createElement('div');
   main.className = 'main noselect';
 
+  const nav = document.createElement('nav');
+  nav.className = 'navbar';
+  const navBrand = document.createElement('div');
+  navBrand.className = 'navbar-brand';
+  const navItem = document.createElement('div');
+  navItem.onclick = () => window.history.back();
+  navItem.className = 'navbar-item';
+  navItem.innerHTML = '<<';
+  navItem.id = 'back';
+
+  navBrand.appendChild(navItem);
+  nav.appendChild(navBrand);
+  main.appendChild(nav);
+
   const splash = document.createElement('div');
   splash.style.display = 'none';
   splash.id = SPLASH;
