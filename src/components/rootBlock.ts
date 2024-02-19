@@ -1,5 +1,6 @@
+import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { SPLASH, TOURNAMENTS } from 'src/common/constants/routerConstants';
+import { tournamentFramework } from 'src/pages/tournament/framework';
 
 export function rootBlock() {
   const main = document.createElement('div');
@@ -18,7 +19,13 @@ export function rootBlock() {
   tTable.id = TOURNAMENTS_TABLE;
   tournaments.appendChild(tTable);
 
+  const tournament = document.createElement('div');
+  tournament.style.display = 'none';
+  tournament.id = TOURNAMENT;
+  tournament.appendChild(tournamentFramework());
+
   main.appendChild(tournaments);
+  main.appendChild(tournament);
   main.appendChild(splash);
 
   return main;
