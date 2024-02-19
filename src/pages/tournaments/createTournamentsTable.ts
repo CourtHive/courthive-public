@@ -36,7 +36,7 @@ export function createTournamentsTable({ providerAbbr }) {
       columns
     });
 
-    /*
+    /**
     table.on('tableBuilt', () => {
       calendarControls(table);
       ready = true;
