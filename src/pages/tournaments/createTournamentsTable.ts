@@ -1,9 +1,9 @@
 import { getProviderCalendar } from 'src/services/api/tournamentsApi';
+import { tournamentsControls } from './tournamentsControlBar';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { getTournamentColumns } from './getTournamentColumns';
 
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { tournamentsControls } from './tournamentsControlBar';
 
 export function createTournamentsTable({ providerAbbr }) {
   const handleError = (error) => console.log('Network error', { error });

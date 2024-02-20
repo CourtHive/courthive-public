@@ -31,7 +31,8 @@ export function getTournamentColumns() {
       resizable: true,
       minWidth: 250,
       widthGrow: 3
-    },
+    }
+    /*
     {
       formatter: () => `<div class="button font-medium">Open</div>`,
       cellClick: openTournament,
@@ -39,5 +40,6 @@ export function getTournamentColumns() {
       title: 'Open',
       width: 90
     }
+    */
   ];
 }
