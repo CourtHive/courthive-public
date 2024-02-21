@@ -9,6 +9,9 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
 
   getEventData({ tournamentId, eventId }).then((eventData) => {
+    if (window?.['dev']) {
+      window['dev']['eventData'] = eventData.data.drawsData;
+    }
     const structureMatchUps = (structure) => Object.values(structure.roundMatchUps || {}).flat();
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
