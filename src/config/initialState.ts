@@ -20,10 +20,7 @@ export function setInitialState() {
     const value = shifted ? handler.key.split(handler.splitKey)[1] : handler.key;
     if (value === '/') keysPressed.splice(0, keysPressed.length);
     keysPressed.push(value);
-    if (keysPressed.join('') === 'esc13') {
-      console.log('boo');
-      setDev();
-    }
+    if (keysPressed.join('') === 'esc13') setDev();
   });
   setDisplay(SPLASH);
   setWindow();

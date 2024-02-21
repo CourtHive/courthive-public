@@ -26,6 +26,9 @@ dependencies:
   tippy.js:
     specifier: ^6.3.7
     version: 6.3.7
+  tods-competition-factory:
+    specifier: ^2.0.29
+    version: 2.0.29
 
 devDependencies:
   '@commitlint/cli':
