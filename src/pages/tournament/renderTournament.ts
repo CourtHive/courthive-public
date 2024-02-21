@@ -5,6 +5,7 @@ import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
+import { context } from 'src/common/context';
 
 export async function renderTournament(result) {
   const tournamentInfo = result?.data?.tournamentInfo;
@@ -64,5 +65,6 @@ export async function renderTournament(result) {
     renderEvent({ tournamentId, eventId, header, flightDisplay });
 
     displayTab('Events');
+    if (!context.tab) displayTabContent('Events');
   }
 }
