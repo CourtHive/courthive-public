@@ -1,4 +1,5 @@
 import { getTournamentInfo, getEventData, getServerFactoryVersion, getProviderCalendar } from './api/tournamentsApi';
+import { context } from 'src/common/context';
 import { baseApi } from './api/baseApi';
 
 export function setDev() {
@@ -23,7 +24,7 @@ export function setDev() {
     getEventData: (params) => logData(getEventData(params))
   };
 
-  addDev({ ...fx, baseApi });
+  addDev({ ...fx, baseApi, context });
 }
 
 function addDev(variable) {
