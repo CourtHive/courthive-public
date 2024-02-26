@@ -2,6 +2,7 @@ import { compositions, renderContainer, renderStructure } from 'courthive-compon
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { LEFT } from 'src/common/constants/baseConstants';
+import { getRoundDisplayOptions } from './renderRoundOptions';
 
 export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
   const composition = compositions['National'];
@@ -24,6 +25,10 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
 
       const renderSelectedStructure = (index) => {
         const structure = flight.structures?.[index];
+        const roundView = getRoundDisplayOptions({ structure });
+        const elem = dropDownButton({ button: roundView });
+        header.appendChild(elem);
+
         const structureId = structure.structureId;
         const filteredMatchUps = Object.values(structure.roundMatchUps || {}).flat();
         flightDisplay.innerHTML = flight.drawName;
@@ -75,8 +80,8 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
     const flightButton = {
       label: flightsData?.[0]?.drawName,
       options: flightOptions,
-      id: 'flightButton',
       modifyLabel: true,
+      id: 'flightButton',
       selection: true,
       location: LEFT
     };
