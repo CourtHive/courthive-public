@@ -28,7 +28,7 @@ dependencies:
     version: 6.3.7
   tods-competition-factory:
     specifier: ^2.0.29
-    version: 2.0.31
+    version: 2.0.29
 
 devDependencies:
   '@commitlint/cli':
@@ -3332,7 +3332,7 @@ packages:
       classnames: 2.5.1
       dayjs: 1.11.10
       husky: 8.0.3
-      tods-competition-factory: 2.0.31
+      tods-competition-factory: 2.0.29
     dev: false
 
   /cross-spawn@7.0.3:
@@ -6063,8 +6063,8 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /tods-competition-factory@2.0.31:
-    resolution: {integrity: sha512-m4E5egq7Q7Zov656rTMJ7uCseRT61v6UzP3OawCCR8aug+wTK4T/nqJXUpAqZSG2oD6oWv4K2eshrumOQZhdaQ==}
+  /tods-competition-factory@2.0.29:
+    resolution: {integrity: sha512-a6ZrlHBglNiyS1bzbKCNNAYyiCGKFzFzO+dmbj8lV6DEoIVC7+HwiXA3+eQzYPd5gDf/dn3XW0WuioM3N+1KSw==}
     engines: {node: '>=18.17.1 < 21'}
     dev: false
 
