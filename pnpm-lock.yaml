@@ -13,7 +13,7 @@ dependencies:
     version: 0.9.4
   courthive-components:
     specifier: ^0.7.16
-    version: 0.7.16
+    version: 0.7.17
   hotkeys-js:
     specifier: ^3.13.7
     version: 3.13.7
@@ -3322,8 +3322,8 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /courthive-components@0.7.16:
-    resolution: {integrity: sha512-rtOwgZWdxbw1yvo5Uthf0oHqEpeQUJ+n/GwPMytF4VvWhKBavWgkNSX5CXOWXWyrcoIRDBhHDZ55gYYcvXjGNw==}
+  /courthive-components@0.7.17:
+    resolution: {integrity: sha512-RYN40BaQKxOsqYoJXbjVh2WR2gEdTEd7J5kQdsPhBShAVWUMMBAOqXZxbMOy4/RvxNtDsG2/Dy0IBDXk8bceNQ==}
     engines: {node: '>=16.16.0 < 21'}
     dependencies:
       '@stitches/core': 1.2.8
@@ -3331,8 +3331,8 @@ packages:
       class-variance-authority: 0.7.0
       classnames: 2.5.1
       dayjs: 1.11.10
-      husky: 8.0.3
-      tods-competition-factory: 2.0.29
+      husky: 9.0.11
+      tods-competition-factory: 2.0.28
     dev: false
 
   /cross-spawn@7.0.3:
@@ -4377,17 +4377,10 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dev: false
-
   /husky@9.0.11:
     resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
     engines: {node: '>=18'}
     hasBin: true
-    dev: true
 
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -6062,6 +6055,11 @@ packages:
     dependencies:
       is-number: 7.0.0
     dev: true
+
+  /tods-competition-factory@2.0.28:
+    resolution: {integrity: sha512-/YcPJq16+yBMzp3/Ywx7Sjwp5+s9aTaRc0RQPUXmsEncW+W8K7Kn3Rce6IXVPIgPw/3umfOoYBay+vZpjLqtiw==}
+    engines: {node: '>=18.17.1 < 21'}
+    dev: false
 
   /tods-competition-factory@2.0.29:
     resolution: {integrity: sha512-a6ZrlHBglNiyS1bzbKCNNAYyiCGKFzFzO+dmbj8lV6DEoIVC7+HwiXA3+eQzYPd5gDf/dn3XW0WuioM3N+1KSw==}
