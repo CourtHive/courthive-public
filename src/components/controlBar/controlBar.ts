@@ -1,4 +1,4 @@
-import { removeAllChildNodes } from 'src/pages/tournament/renderEvent';
+import { removeAllChildNodes } from 'src/pages/tournament/tabs/eventTab/renderEvent';
 import { isFunction, isObject } from 'src/functions/typeof';
 import { dropDownButton } from '../buttons/dropDownButton';
 import { validator } from '../renderers/renderValidator';

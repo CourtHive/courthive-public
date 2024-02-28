@@ -1,6 +1,6 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { displayTab, displayTabContent } from './helpers/tabDisplay';
-import { removeAllChildNodes, renderEvent } from './renderEvent';
+import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
