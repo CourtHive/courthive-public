@@ -2,6 +2,7 @@ import { getProviderCalendar } from 'src/services/api/tournamentsApi';
 import { tournamentsControls } from './tournamentsControlBar';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { getTournamentColumns } from './getTournamentColumns';
+import { destroyTable } from 'src/components/destroyTable';
 
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 
@@ -21,7 +22,7 @@ export function createTournamentsTable({ providerAbbr }) {
   const columns = getTournamentColumns();
 
   const renderTable = (tableData) => {
-    // destroyTable({ anchorId: TOURNAMENTS_TABLE });
+    destroyTable({ anchorId: TOURNAMENTS_TABLE });
     const calendarAnchor = document.getElementById(TOURNAMENTS_TABLE);
 
     table = new Tabulator(calendarAnchor, {
