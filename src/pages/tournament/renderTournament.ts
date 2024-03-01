@@ -1,7 +1,7 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
-import { displayTab, displayTabContent } from './helpers/tabDisplay';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { displayTab, displayTabContent } from './helpers/tabDisplay';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
@@ -38,9 +38,10 @@ export async function renderTournament(result) {
 
     const header = document.createElement('div');
     const flightDisplay = document.createElement('div');
+    flightDisplay.id = 'flightDisplay';
 
     const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }) => ({
-      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay }),
+      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'draw' }),
       label: eventName,
       close: true
     }));
@@ -62,7 +63,7 @@ export async function renderTournament(result) {
     header.appendChild(elem);
     el.appendChild(header);
     el.appendChild(flightDisplay);
-    renderEvent({ tournamentId, eventId, header, flightDisplay });
+    renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'draw' });
 
     displayTab('Events');
     if (!context.tab) displayTabContent('Events');
