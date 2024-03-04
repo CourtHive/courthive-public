@@ -20,3 +20,4 @@ export const BUTTON_BAR = 'buttonBar';
 export const ROUNDS_COLUMNS = 'roundsColumns';
 export const ROUNDS_STATS = 'roundsStats';
 export const ROUNDS_TABLE = 'roundsTable';
+export const DRAWS_VIEW = 'drawsView';

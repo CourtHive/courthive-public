@@ -32,14 +32,5 @@ export function getTournamentColumns() {
       minWidth: 250,
       widthGrow: 3
     }
-    /*
-    {
-      formatter: () => `<div class="button font-medium">Open</div>`,
-      cellClick: openTournament,
-      vertAlign: 'middle',
-      title: 'Open',
-      width: 90
-    }
-    */
   ];
 }
