@@ -20,6 +20,9 @@ dependencies:
   navigo:
     specifier: 8.11.1
     version: 8.11.1
+  normalize-text:
+    specifier: ^2.5.0
+    version: 2.5.0
   tabulator-tables:
     specifier: ^5.6.1
     version: 5.6.1
@@ -59,8 +62,8 @@ devDependencies:
     specifier: 9.1.0
     version: 9.1.0
   cz-git:
-    specifier: 1.8.0
-    version: 1.8.0
+    specifier: 1.9.0
+    version: 1.9.0
   dotenv:
     specifier: 16.4.5
     version: 16.4.5
@@ -1596,6 +1599,10 @@ packages:
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
+
+  /@bitty/pipe@0.3.0:
+    resolution: {integrity: sha512-Ft4tmMM8vfuQOD3jpmvCYPEXoLhWLXWh/Mkeql09d3+9FFMaQBdFdo8GBmhQ01z+D6P3NkqNq02rbb4oBkhjLw==}
+    dev: false
 
   /@commitlint/cli@19.0.3(@types/node@20.11.24)(typescript@5.3.3):
     resolution: {integrity: sha512-mGhh/aYPib4Vy4h+AGRloMY+CqkmtdeKPV9poMcZeImF5e3knQ5VYaSeAM0mEzps1dbKsHvABwaDpafLUuM96g==}
@@ -3352,8 +3359,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /cz-git@1.8.0:
-    resolution: {integrity: sha512-XL5nXiqbW10YswQqWODrbwyWhydw3mLhP8OBrXyl8u4sIjTf/6mhGsizd6FA2VgPc4tZaNGguFoUyDj7vIBouw==}
+  /cz-git@1.9.0:
+    resolution: {integrity: sha512-xxqJwVS4MseVXLOlIK6w97WSHlo14BaOmhO3H6qB0H2Q5Kf3URMwJuYbInq1GxAVT14XLUZBhMy/3Di+lux/Cg==}
     engines: {node: '>=v12.20.0'}
     dev: true
 
@@ -5169,6 +5176,12 @@ packages:
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
+
+  /normalize-text@2.5.0:
+    resolution: {integrity: sha512-Pl3DEd6cu6ftiOFNPH2v9mSYVGRDV/d+cl2Xc8LdkJpNiK7YGlt4mE0uJ5q+dlutQCvgIGiBIwlbxlPM51QF/A==}
+    dependencies:
+      '@bitty/pipe': 0.3.0
+    dev: false
 
   /npm-run-path@5.1.0:
     resolution: {integrity: sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==}

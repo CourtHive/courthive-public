@@ -1,23 +1,27 @@
+import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { compositions, renderContainer, renderStructure } from 'courthive-components';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { getEventData } from 'src/services/api/tournamentsApi';
-import { LEFT } from 'src/common/constants/baseConstants';
 import { getRoundDisplayOptions } from './renderRoundOptions';
 
-export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
+// constants
+import { LEFT } from 'src/common/constants/baseConstants';
+
+export function renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat }) {
   const composition = compositions['National'];
 
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
 
-  getEventData({ tournamentId, eventId }).then((eventData) => {
+  getEventData({ tournamentId, eventId }).then((data) => {
+    const eventData = data?.data;
     if (window?.['dev']) {
-      window['dev']['eventData'] = eventData.data.drawsData;
+      window['dev']['eventData'] = eventData.drawsData;
     }
     const structureMatchUps = (structure) => Object.values(structure.roundMatchUps || {}).flat();
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
-    const flightsData = eventData?.data?.drawsData.filter(flightHasMatchUps);
+    const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
     const renderFlight = (index) => {
       const flight = flightsData[index];
       if (!flight) return;
@@ -32,20 +36,25 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay }) {
         const structureId = structure.structureId;
         const filteredMatchUps = Object.values(structure.roundMatchUps || {}).flat();
         flightDisplay.innerHTML = flight.drawName;
-        const content = renderContainer({
-          content: renderStructure({
-            context: { drawId, structureId },
-            // searchActive: participantFilter,
-            matchUps: filteredMatchUps,
-            // initialRoundNumber: 3,
-            // eventHandlers,
-            composition,
-            structure
-          }),
-          theme: composition.theme
-        });
         removeAllChildNodes(flightDisplay);
-        flightDisplay.appendChild(content);
+
+        if (displayFormat === 'draw') {
+          const content = renderContainer({
+            content: renderStructure({
+              context: { drawId, structureId },
+              // searchActive: participantFilter,
+              matchUps: filteredMatchUps,
+              // initialRoundNumber: 3,
+              // eventHandlers,
+              composition,
+              structure
+            }),
+            theme: composition.theme
+          });
+          flightDisplay.appendChild(content);
+        } else {
+          createRoundsTable({ eventId, drawId, structureId, eventData });
+        }
       };
 
       if (flight.structures?.length > 1) {
