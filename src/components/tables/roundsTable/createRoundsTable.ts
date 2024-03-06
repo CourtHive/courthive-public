@@ -57,8 +57,6 @@ export async function createRoundsTable(params) {
     destroyTable({ anchorId: 'flightDisplay' });
     const element = document.getElementById('flightDisplay');
 
-    console.log({ element, data });
-
     table = new Tabulator(element, {
       groupHeader: [roundGroupingHeader, (value) => value],
       headerSortElement: headerSortElement(['complete', 'duration', 'score']),
@@ -85,7 +83,6 @@ export async function createRoundsTable(params) {
     });
   };
 
-  console.log({ data });
   render(data);
 
   /**

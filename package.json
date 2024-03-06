@@ -70,6 +70,6 @@
     "normalize-text": "^2.5.0",
     "tabulator-tables": "^5.6.1",
     "tippy.js": "^6.3.7",
-    "tods-competition-factory": "^2.0.32"
+    "tods-competition-factory": "^2.0.43"
   }
 }
