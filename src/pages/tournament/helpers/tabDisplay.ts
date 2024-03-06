@@ -1,3 +1,4 @@
+import { NONE } from 'src/common/constants/baseConstants';
 import { getTabContentId, getTabId } from './tabIds';
 import { context } from 'src/common/context';
 
@@ -14,4 +15,9 @@ export function displayTabContent(tabName) {
 export function displayTab(tabName) {
   const tab = document.getElementById(getTabId(tabName));
   tab.style.display = 'block';
+}
+
+export function hideTab(tabName) {
+  const tab = document.getElementById(getTabId(tabName));
+  tab.style.display = NONE;
 }

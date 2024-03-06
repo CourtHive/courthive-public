@@ -1,19 +1,24 @@
-import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
+import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
-import { displayTab, displayTabContent } from './helpers/tabDisplay';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
 
 export async function renderTournament(result) {
+  const te = document.getElementById(TOURNAMENT_EVENTS);
+  removeAllChildNodes(te);
+
   const tournamentInfo = result?.data?.tournamentInfo;
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
+  const tl = document.getElementById(TOURNAMENT_LOGO);
   if (tournamentImage?.identifier) {
-    const el = document.getElementById(TOURNAMENT_LOGO);
-    el.innerHTML = `<img src="${tournamentImage.identifier}" alt="${tournamentInfo.name}" style="max-height: 20em" />`;
+    tl.innerHTML = `<img src="${tournamentImage.identifier}" alt="${tournamentInfo.name}" style="max-height: 20em" />`;
+  } else {
+    removeAllChildNodes(tl);
   }
 
   if (tournamentInfo.tournamentName) {
@@ -23,25 +28,28 @@ export async function renderTournament(result) {
     el.innerHTML = `${tournamentName}${dates}`;
   }
 
+  const notes = document.getElementById(getTabContentId('Info'));
   if (tournamentInfo.notes) {
-    const el = document.getElementById(getTabContentId('Info'));
-    el.innerHTML = tournamentInfo.notes;
+    notes.innerHTML = tournamentInfo.notes;
     displayTabContent('Info');
     displayTab('Info');
+  } else {
+    removeAllChildNodes(notes);
+    hideTab('Info');
   }
 
   if (tournamentInfo.eventInfo?.length) {
     const tournamentId: string = tournamentInfo.tournamentId;
 
-    const el = document.getElementById(getTabContentId('Events'));
-    removeAllChildNodes(el);
+    const et = document.getElementById(getTabContentId('Events'));
+    removeAllChildNodes(et);
 
     const header = document.createElement('div');
     const flightDisplay = document.createElement('div');
     flightDisplay.id = 'flightDisplay';
 
     const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }) => ({
-      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'draw' }),
+      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' }),
       label: eventName,
       close: true
     }));
@@ -61,11 +69,13 @@ export async function renderTournament(result) {
     const eventId: string = tournamentInfo.eventInfo[0].eventId;
     header.className = 'block';
     header.appendChild(elem);
-    el.appendChild(header);
-    el.appendChild(flightDisplay);
-    renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'draw' });
+    et.appendChild(header);
+    et.appendChild(flightDisplay);
+    renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
 
     displayTab('Events');
     if (!context.tab) displayTabContent('Events');
+  } else {
+    hideTab('Events');
   }
 }
