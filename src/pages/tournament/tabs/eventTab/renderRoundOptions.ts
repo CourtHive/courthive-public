@@ -41,6 +41,7 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
 
   return {
     label: 'Display', // also toggle between finishing positions and matches
+    id: 'roundDisplayButton',
     options: actionOptions,
     selection: false,
     location: RIGHT,
