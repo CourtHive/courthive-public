@@ -29,7 +29,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
       if (!flight) return;
       const drawId = flight.drawId;
       const updateView = ({ view }) => {
-        displayFormat = view;
+        if (view) displayFormat = view;
         renderFlight(index);
       };
 
