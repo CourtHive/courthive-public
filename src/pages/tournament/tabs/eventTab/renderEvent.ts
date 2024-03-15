@@ -1,9 +1,11 @@
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { compositions, renderContainer, renderStructure } from 'courthive-components';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { matchUpScheduleSort } from 'src/functions/matchUpScheduleSort';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
+import { drawsGovernor } from 'tods-competition-factory';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -16,7 +18,12 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const eventData = data?.data?.eventData || data?.data;
     const participants = data?.data?.participants || [];
     if (window?.['dev']) window['dev']['eventData'] = eventData.drawsData;
-    const structureMatchUps = (structure) => Object.values(structure.roundMatchUps || {}).flat();
+    const structureMatchUps = (structure) => {
+      const isAdHoc = drawsGovernor.isAdHoc({ structure });
+      const matchUps = Object.values(structure.roundMatchUps || {}).flat();
+      if (isAdHoc) matchUps.sort(matchUpScheduleSort);
+      return matchUps;
+    };
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
