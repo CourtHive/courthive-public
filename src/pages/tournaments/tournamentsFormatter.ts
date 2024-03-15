@@ -6,9 +6,11 @@ export function tournamentFormatter(cell) {
 
   const imageSize = '4em';
   const rowTabletr = document.createElement('tr');
-  const img = values.tournamentImageURL
-    ? `<img src='${values.tournamentImageURL}' style='width: ${imageSize}' alt=''>`
-    : '';
+  const tournamentImageURL =
+    values.tournamentImageURL ||
+    values.onlineResources?.find(({ name, resourceType }) => name === 'tournamentImage' && resourceType === 'URL')
+      ?.identifier;
+  const img = tournamentImageURL ? `<img src='${tournamentImageURL}' style='width: ${imageSize}' alt=''>` : '';
   const cellContents =
     `<td style='min-width: ${imageSize}'>${img}</td>` +
     `<td>` +
