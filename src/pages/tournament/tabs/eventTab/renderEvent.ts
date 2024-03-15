@@ -19,10 +19,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const participants = data?.data?.participants || [];
     if (window?.['dev']) window['dev']['eventData'] = eventData.drawsData;
     const structureMatchUps = (structure) => {
-      const isAdHoc = drawsGovernor.isAdHoc({ structure });
-      const matchUps = Object.values(structure.roundMatchUps || {}).flat();
-      if (isAdHoc) matchUps.sort(matchUpScheduleSort);
-      return matchUps;
+      return Object.values(structure.roundMatchUps || {}).flat();
     };
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
@@ -30,6 +27,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
     const compositionName = eventData.eventInfo?.display?.compositionName;
     const composition = compositions[compositionName ?? 'National'];
+    composition.configuration.genderColor = true;
 
     const renderFlight = (index) => {
       const flight = flightsData[index];
@@ -48,7 +46,9 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         header.appendChild(elem);
 
         const structureId = structure.structureId;
-        const filteredMatchUps = Object.values(structure.roundMatchUps || {}).flat();
+        const matchUps = Object.values(structure.roundMatchUps || {}).flat();
+        const isAdHoc = drawsGovernor.isAdHoc({ structure });
+        if (isAdHoc) matchUps.sort(matchUpScheduleSort);
         flightDisplay.innerHTML = flight.drawName;
         removeAllChildNodes(flightDisplay);
 
@@ -57,7 +57,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
             content: renderStructure({
               context: { drawId, structureId },
               // searchActive: participantFilter,
-              matchUps: filteredMatchUps,
+              matchUps,
               // initialRoundNumber: 3,
               // eventHandlers,
               composition,
