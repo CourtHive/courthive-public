@@ -2,10 +2,15 @@ import { headerSortElement } from 'src/common/sorters/headerSortElement';
 import { mapParticipantResults } from './mapParticipantResults';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { destroyTable } from 'src/components/destroyTable';
+import { drawsGovernor } from 'tods-competition-factory';
 import { getStatsColumns } from './getStatsColumns';
 
 export async function createStatsTable({ drawId, structureId, eventData, participants = [] }) {
-  let table, structure, participantFilter, participantMap;
+  let table, participantFilter, participantMap;
+  const drawData = eventData?.drawsData?.find((data) => data.drawId === drawId);
+  let structure = drawData?.structures?.find((s) => s.structureId === structureId);
+  const isAdHoc = drawsGovernor.isAdHoc({ structure });
+
   const getParticipantMap = (participants) =>
     (participants ?? []).reduce((map, participant) => {
       map[participant.participantId] = participant;
@@ -38,8 +43,11 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
   };
 
   const participantResults = getParticipantResults();
-  const getTableData = () =>
-    participantResults?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }));
+  const getTableData = () => {
+    return participantResults
+      ?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }))
+      .sort((a, b) => (isAdHoc ? (a.pressureOrder || 0) - (b.pressureOrder || 0) : (a.order || 0) - (b.order || 0)));
+  };
 
   const updateTableData = () =>
     getParticipantResults()?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }));
@@ -49,7 +57,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
   };
 
   const data = getTableData();
-  const columns = getStatsColumns();
+  const columns = getStatsColumns({ isAdHoc });
 
   const render = (data) => {
     destroyTable({ anchorId: 'flightDisplay' });
@@ -69,13 +77,15 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
         'result',
         'order'
       ]),
-      responsiveLayoutCollapseStartOpen: false,
+      // responsiveLayoutCollapseStartOpen: false,
       height: window.innerHeight * 0.85,
       groupHeader: [(value) => value],
       placeholder: 'No participants',
-      responsiveLayout: 'collapse',
-      layout: 'fitColumns',
-      reactiveData: true,
+      renderHorizontal: 'virtual',
+      // responsiveLayout: 'collapse',
+      // layout: 'fitColumns',
+      // layout: 'fitData',
+      // reactiveData: true,
       index: 'matchUpId',
       groupBy,
       columns,
