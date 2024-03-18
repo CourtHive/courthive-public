@@ -1,6 +1,7 @@
 import { headerSortElement } from 'src/common/sorters/headerSortElement';
 import { mapParticipantResults } from './mapParticipantResults';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
+import { orderSorter } from 'src/common/sorters/orderSorter';
 import { destroyTable } from 'src/components/destroyTable';
 import { drawsGovernor } from 'tods-competition-factory';
 import { getStatsColumns } from './getStatsColumns';
@@ -46,7 +47,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
   const getTableData = () => {
     return participantResults
       ?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }))
-      .sort((a, b) => (isAdHoc ? (a.pressureOrder || 0) - (b.pressureOrder || 0) : (a.order || 0) - (b.order || 0)));
+      .sort((a, b) => (isAdHoc ? orderSorter(a.pressureOrder, b.pressureOrder) : orderSorter(a.order, b.order)));
   };
 
   const updateTableData = () =>
