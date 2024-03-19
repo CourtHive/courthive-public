@@ -1,11 +1,10 @@
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { compositions, renderContainer, renderStructure } from 'courthive-components';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
-import { matchUpScheduleSort } from 'src/functions/matchUpScheduleSort';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
-import { drawsGovernor } from 'tods-competition-factory';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -48,7 +47,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         const structureId = structure.structureId;
         const matchUps = Object.values(structure.roundMatchUps || {}).flat();
         const isAdHoc = drawsGovernor.isAdHoc({ structure });
-        if (isAdHoc) matchUps.sort(matchUpScheduleSort);
+        if (isAdHoc) matchUps.sort(tools.matchUpScheduleSort);
         flightDisplay.innerHTML = flight.drawName;
         removeAllChildNodes(flightDisplay);
 
