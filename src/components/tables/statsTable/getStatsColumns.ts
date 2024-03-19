@@ -4,24 +4,10 @@ import { participantSorter } from 'src/common/sorters/participantSorter';
 import { percentSorter } from 'src/common/sorters/percentSorter';
 import { orderSorter } from 'src/common/sorters/orderSorter';
 
-import { CENTER, LEFT } from 'src/common/constants/baseConstants';
+import { CENTER } from 'src/common/constants/baseConstants';
 
-export function getStatsColumns() {
+export function getStatsColumns({ isAdHoc }) {
   return [
-    {
-      field: 'drawPosition',
-      headerSort: false,
-      hozAlign: LEFT,
-      width: 55
-    },
-    {
-      formatter: 'responsiveCollapse',
-      responsive: false,
-      headerSort: false,
-      resizable: false,
-      hozAlign: CENTER,
-      width: 50
-    },
     {
       formatter: formatParticipant(({ event, cell, ...params }) =>
         console.log('cell clicked', { event, cell, undefined, params })
@@ -32,8 +18,9 @@ export function getStatsColumns() {
       resizable: false,
       maxWidth: 400,
       minWidth: 200,
+      title: 'Name',
       widthGrow: 2,
-      title: 'Name'
+      frozen: true
     },
     {
       headerHozAlign: CENTER,
@@ -106,7 +93,17 @@ export function getStatsColumns() {
     },
     {
       headerHozAlign: CENTER,
+      field: 'pressureOrder',
       sorter: orderSorter,
+      hozAlign: CENTER,
+      visible: isAdHoc,
+      title: 'Order',
+      maxWidth: 80
+    },
+    {
+      headerHozAlign: CENTER,
+      sorter: orderSorter,
+      visible: !isAdHoc,
       hozAlign: CENTER,
       title: 'Order',
       field: 'order',

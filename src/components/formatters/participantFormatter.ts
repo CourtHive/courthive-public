@@ -30,6 +30,7 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
   const hasWinner = data.winningSide;
   const value = cell.getValue();
   const participant = data.participant || value.participant || (data.person && data);
+
   if (participant) {
     const scaleAttributes = scales[activeScale];
 
@@ -75,6 +76,7 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
       ? renderPairParticipant(participant)
       : rendered(participant);
   }
+
   if (hasWinner) {
     const winningSide = def.field === data.winningSide;
     elem.style.color = winningSide ? 'green' : 'red';
