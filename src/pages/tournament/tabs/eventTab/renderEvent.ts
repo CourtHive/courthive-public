@@ -1,9 +1,11 @@
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { compositions, renderContainer, renderStructure } from 'courthive-components';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { matchUpScheduleSort } from 'src/functions/matchUpScheduleSort';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
+import { drawsGovernor } from 'tods-competition-factory';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -16,13 +18,16 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const eventData = data?.data?.eventData || data?.data;
     const participants = data?.data?.participants || [];
     if (window?.['dev']) window['dev']['eventData'] = eventData.drawsData;
-    const structureMatchUps = (structure) => Object.values(structure.roundMatchUps || {}).flat();
+    const structureMatchUps = (structure) => {
+      return Object.values(structure.roundMatchUps || {}).flat();
+    };
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
     const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
     const compositionName = eventData.eventInfo?.display?.compositionName;
     const composition = compositions[compositionName ?? 'National'];
+    composition.configuration.genderColor = true;
 
     const renderFlight = (index) => {
       const flight = flightsData[index];
@@ -41,7 +46,9 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         header.appendChild(elem);
 
         const structureId = structure.structureId;
-        const filteredMatchUps = Object.values(structure.roundMatchUps || {}).flat();
+        const matchUps = Object.values(structure.roundMatchUps || {}).flat();
+        const isAdHoc = drawsGovernor.isAdHoc({ structure });
+        if (isAdHoc) matchUps.sort(matchUpScheduleSort);
         flightDisplay.innerHTML = flight.drawName;
         removeAllChildNodes(flightDisplay);
 
@@ -50,7 +57,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
             content: renderStructure({
               context: { drawId, structureId },
               // searchActive: participantFilter,
-              matchUps: filteredMatchUps,
+              matchUps,
               // initialRoundNumber: 3,
               // eventHandlers,
               composition,
