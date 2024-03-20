@@ -5,6 +5,7 @@ export function mapParticipantResults(params) {
   const { participantResult, drawPosition, participantId, participantMap } = params;
   const averageVariation = participantResult?.ratingVariation?.length ? avg(participantResult.ratingVariation) : 0;
   const averagePressure = participantResult?.pressureScores?.length ? avg(participantResult.pressureScores) : 0;
+  const pointsResult = `${participantResult?.pointsWon || 0}/${participantResult?.pointsLost || 0}`;
   const gamesResult = `${participantResult?.gamesWon || 0}/${participantResult?.gamesLost || 0}`;
   const setsResult = `${participantResult?.setsWon || 0}/${participantResult?.setsLost || 0}`;
   const order = participantResult?.groupOrder || participantResult?.provisionalOrder;
@@ -17,6 +18,7 @@ export function mapParticipantResults(params) {
     averageVariation,
     averagePressure,
     participantId,
+    pointsResult,
     drawPosition,
     participant,
     gamesResult,
