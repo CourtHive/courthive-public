@@ -16,6 +16,11 @@ export async function getEventData(params?: { tournamentId: string; eventId: str
   return await baseApi.post('/factory/eventData', params);
 }
 
+export async function getScheduledMatchUps(params?: { tournamentId: string; scheduledDate: string }) {
+  if (!params?.tournamentId) throw new Error('missing tournamentId');
+  return await baseApi.post('/factory/scheduledMatchUps', params);
+}
+
 export async function getServerFactoryVersion() {
   return await baseApi.get('/factory/version');
 }
