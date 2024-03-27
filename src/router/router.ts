@@ -6,6 +6,7 @@ import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
+import { context } from 'src/common/context';
 
 export function router() {
   const routerRoot = window.location.host.startsWith('localhost') ? '/' : process.env.PUBLIC_URL ?? '/';
@@ -28,6 +29,7 @@ export function router() {
   router.on(`/tournament/:tournamentId`, ({ data }) => {
     back.style.display = 'block';
     const tournamentId = data.tournamentId;
+    context.tournamentId = tournamentId;
     setDisplay(TOURNAMENT);
     getTournamentInfo({ tournamentId }).then(renderTournament);
   });

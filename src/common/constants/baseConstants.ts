@@ -20,7 +20,7 @@ export const CONTROL_BAR = 'controlBar';
 export const BUTTON_BAR = 'buttonBar';
 
 // DISPLAY
-export const TOURNAMENT_SCHEDULE = 'tournamentSchedule';
+export const TOURNAMENT_SCHEDULE = 'Schedule';
 export const ROUNDS_COLUMNS = 'roundsColumns';
 export const MINIMUM_SCHEDULE_COLUMNS = 10;
 export const ROUNDS_STATS = 'roundsStats';

@@ -6,6 +6,7 @@ import hotkeys from 'hotkeys-js';
 
 import { SPLASH } from 'src/common/constants/routerConstants';
 
+import 'src/styles/tournamentSchedule.css';
 import 'node_modules/bulma/css/bulma.css';
 import 'src/styles/tabulator.css';
 import 'src/styles/default.css';
