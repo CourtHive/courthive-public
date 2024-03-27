@@ -34,15 +34,9 @@ export function scheduleCell(cell) {
   content.className = 'schedule-cell dragdrop';
   content.ondragover = (e) => e.preventDefault();
 
-  // ENABLE drag... cells without a matchUp are not draggable
   if (matchUpId) {
     content.draggable = true;
     content.id = matchUpId;
-
-    // content.addEventListener('mouseover', () => console.log('mouseOver', { matchUpId }));
-    // content.addEventListener('mouseout', () => console.log('mouseOut', { matchUpId }));
-    // content.addEventListener('mouseenter', () => console.log('mouseEnter', { matchUpId }));
-    // content.addEventListener('mouseleave', () => console.log('mouseLeave', { matchUpId }));
 
     if (winningSide) {
       content.classList.add('matchup-complete');

@@ -1,10 +1,22 @@
-import { NONE } from 'src/common/constants/baseConstants';
+import { createScheduleTable } from 'src/components/tables/scheduleTable/createScheduleTable';
+import { getScheduledMatchUps } from 'src/services/api/tournamentsApi';
 import { getTabContentId, getTabId } from './tabIds';
 import { context } from 'src/common/context';
+
+// constants
+import { NONE } from 'src/common/constants/baseConstants';
 
 export const tabNames = ['Info', 'Events', 'Schedule', 'Matches', 'Players', 'Stats'];
 
 export function displayTabContent(tabName) {
+  // TODO: determine if content needs to be fetched or is already present
+
+  if (tabName === 'Schedule') {
+    getScheduledMatchUps({ tournamentId: context.tournamentId }).then((result) => {
+      const data = result?.data;
+      createScheduleTable({ data });
+    });
+  }
   context.tab = tabName;
   tabNames.forEach((name) => {
     const section = document.getElementById(getTabContentId(name));
