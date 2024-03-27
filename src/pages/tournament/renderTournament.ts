@@ -11,7 +11,7 @@ export async function renderTournament(result) {
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
 
-  const tournamentInfo = result?.data?.tournamentInfo;
+  const tournamentInfo = result?.data?.tournamentInfo ?? {};
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
   const tl = document.getElementById(TOURNAMENT_LOGO);
@@ -77,5 +77,17 @@ export async function renderTournament(result) {
     if (!context.tab) displayTabContent('Events');
   } else {
     hideTab('Events');
+  }
+
+  if (tournamentInfo.publishState?.orderOfPlay?.published) {
+    const schedule = document.getElementById(getTabContentId('Schedule'));
+    const header = document.createElement('div');
+    const scheduleDisplay = document.createElement('div');
+    scheduleDisplay.id = 'tournamentSchedule';
+    schedule.appendChild(header);
+    schedule.appendChild(scheduleDisplay);
+    displayTab('Schedule');
+  } else {
+    hideTab('Schedule');
   }
 }

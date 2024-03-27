@@ -1,27 +1,17 @@
-import { competitionEngine, tools } from 'tods-competition-factory';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { destroyTable } from 'src/components/destroyTable';
 import { getScheduleColumns } from './getScheduleColumns';
-
-// constants
-import { TOURNAMENT_SCHEDULE } from 'src/common/constants/baseConstants';
+import { tools } from 'tods-competition-factory';
 
 export function createScheduleTable(params) {
-  const { scheduledDate } = params ?? {};
+  const { scheduledDate, data } = params ?? {};
   let existingCourtIds = [];
   let table: any = undefined;
   let ready;
 
-  const getTableData = ({ scheduledDate }) => {
-    const matchUpFilters = { localPerspective: true, scheduledDate };
-    const result = competitionEngine.competitionScheduleMatchUps({
-      courtCompletedMatchUps: true,
-      withCourtGridRows: true,
-      minCourtGridRows: 10,
-      nextMatchUps: true,
-      matchUpFilters
-    });
-    const { dateMatchUps = [], completedMatchUps = [], courtsData, courtPrefix = 'C|', rows, groupInfo } = result;
+  const getTableData = (params) => {
+    !!params;
+    const { dateMatchUps = [], completedMatchUps = [], courtsData, courtPrefix = 'C|', rows, groupInfo } = data;
     const matchUps = dateMatchUps.concat(...completedMatchUps);
 
     const columns: any = getScheduleColumns({ courtsData, courtPrefix });
@@ -51,8 +41,8 @@ export function createScheduleTable(params) {
     setTimeout(refresh, ready ? 0 : 1000);
   };
 
-  destroyTable({ anchorId: TOURNAMENT_SCHEDULE });
-  const element = document.getElementById(TOURNAMENT_SCHEDULE);
+  destroyTable({ anchorId: 'tournamentSchedule' });
+  const element = document.getElementById('tournamentSchedule');
 
   const { rows = [], columns = [], courtsCount } = getTableData({ scheduledDate });
   existingCourtIds = columns.map((col) => col?.courtId).filter(Boolean);
