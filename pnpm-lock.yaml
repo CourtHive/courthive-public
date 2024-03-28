@@ -14,6 +14,9 @@ dependencies:
   courthive-components:
     specifier: ^0.7.16
     version: 0.7.17
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   hotkeys-js:
     specifier: ^3.13.7
     version: 3.13.7
