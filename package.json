@@ -1,7 +1,7 @@
 {
   "name": "ch-project-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.2.1",
   "type": "module",
   "engines": {
     "node": "20",
@@ -11,6 +11,8 @@
   "scripts": {
     "analyze": "source-map-explorer 'dist/**/*.js'",
     "build": "tsc && vite build",
+    "build:prod": "rimraf dist && tsc && vite build --mode production && npm version $(semver $npm_package_version -i patch) && pnpm prepublishOnly",
+    "docs:publish": "pnpm build:prod && git checkout docs && cp -r dist/* docs && git add docs && git commit -m 'docs: update' && git push && git checkout master",
     "check-types": "tsc --noEmit",
     "commit": "git-cz",
     "commitlint": "commitlint --edit",
@@ -21,7 +23,7 @@
     "pre-commit": "lint-staged",
     "prepare": "rimraf dist && husky",
     "preview": "vite preview",
-    "postbuild": "./addVersion $npm_package_version",
+    "prepublishOnly": "./addVersion $npm_package_version",
     "start": "pnpm run config --check && vite --open",
     "test": "TZ=UTC vitest"
   },
@@ -46,7 +48,7 @@
     "eslint": "8.57.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-sonarjs": "0.24.0",
+    "eslint-plugin-sonarjs": "0.25.0",
     "husky": "9.0.11",
     "inquirer": "9.2.16",
     "lint-staged": "15.2.2",
@@ -65,9 +67,11 @@
     "axios": "1.6.8",
     "bulma": "^0.9.4",
     "courthive-components": "^0.7.16",
+    "dayjs": "^1.11.10",
     "hotkeys-js": "^3.13.7",
     "navigo": "8.11.1",
     "normalize-text": "^2.5.0",
+    "semver": "^7.6.0",
     "tabulator-tables": "^6.0.0",
     "tippy.js": "^6.3.7",
     "tods-competition-factory": "^2.1.0"

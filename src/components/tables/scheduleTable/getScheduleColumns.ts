@@ -8,7 +8,7 @@ export function getScheduleColumns({ courtsData, courtPrefix }) {
   const columnsCalc = MINIMUM_SCHEDULE_COLUMNS - courtsData?.length || 0;
   const emptyColumnsCount = columnsCalc <= 0 ? 1 : columnsCalc;
 
-  const emptyColumns = generateEmptyColumns({ courtsData, count: emptyColumnsCount });
+  const emptyColumns = generateEmptyColumns({ count: emptyColumnsCount });
   const controlColumn = getControlColumn();
 
   const generateColumn = (courtInfo, index) => ({

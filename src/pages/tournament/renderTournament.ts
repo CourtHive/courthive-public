@@ -81,10 +81,15 @@ export async function renderTournament(result) {
 
   if (tournamentInfo.publishState?.orderOfPlay?.published) {
     const schedule = document.getElementById(getTabContentId('Schedule'));
-    const header = document.createElement('div');
+
+    const scheduleHeader = document.createElement('div');
+    scheduleHeader.style.width = '100%';
+    scheduleHeader.className = 'block';
+    scheduleHeader.id = 'scheduleHeader';
+    schedule.appendChild(scheduleHeader);
+
     const scheduleDisplay = document.createElement('div');
     scheduleDisplay.id = 'tournamentSchedule';
-    schedule.appendChild(header);
     schedule.appendChild(scheduleDisplay);
     displayTab('Schedule');
   } else {
