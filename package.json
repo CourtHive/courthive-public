@@ -65,6 +65,7 @@
     "axios": "1.6.8",
     "bulma": "^0.9.4",
     "courthive-components": "^0.7.16",
+    "dayjs": "^1.11.10",
     "hotkeys-js": "^3.13.7",
     "navigo": "8.11.1",
     "normalize-text": "^2.5.0",
