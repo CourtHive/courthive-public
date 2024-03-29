@@ -26,10 +26,8 @@ export function createTournamentsTable({ providerAbbr }) {
     const calendarAnchor = document.getElementById(TOURNAMENTS_TABLE);
 
     table = new Tabulator(calendarAnchor, {
-      responsiveLayoutCollapseStartOpen: false,
       height: window.innerHeight * 0.9,
       placeholder: 'No tournaments',
-      responsiveLayout: 'collapse',
       index: 'tournament.tournamentId',
       headerVisible: false,
       layout: 'fitColumns',
