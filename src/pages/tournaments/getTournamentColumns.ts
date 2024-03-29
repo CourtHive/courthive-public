@@ -2,7 +2,6 @@ import { tournamentFormatter } from './tournamentsFormatter';
 import { context } from 'src/common/context';
 
 import { TOURNAMENT } from 'src/common/constants/routerConstants';
-import { CENTER } from 'src/common/constants/baseConstants';
 
 export function getTournamentColumns() {
   const openTournament = (_, cell) => {
@@ -15,14 +14,6 @@ export function getTournamentColumns() {
   };
 
   return [
-    {
-      formatter: 'responsiveCollapse',
-      headerSort: false,
-      resizable: false,
-      hozAlign: CENTER,
-      minWidth: 50,
-      width: 50
-    },
     {
       formatter: tournamentFormatter,
       cellClick: openTournament,
