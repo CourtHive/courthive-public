@@ -31,7 +31,7 @@ dependencies:
     version: 7.6.0
   tabulator-tables:
     specifier: ^6.0.0
-    version: 6.1.0
+    version: 6.2.0
   tippy.js:
     specifier: ^6.3.7
     version: 6.3.7
@@ -6107,8 +6107,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tabulator-tables@6.1.0:
-    resolution: {integrity: sha512-J+FgWNTxrOoafOeNTUmFDFgKAqctFKtQmV6RwLuDcJJe2qsxKaeQ2OQ6OdaIDIPZ0mykpdKXYqjioOdUagvTZg==}
+  /tabulator-tables@6.2.0:
+    resolution: {integrity: sha512-x7K2m3sizHJZdjBCn1xH6oewtlkqkXFfKNw2wli7Px7DFSG7dOqrUrRey0LINeuJ0Oyfn17yUWjLZvqRw8V3eA==}
     dev: false
 
   /temp@0.9.4:
