@@ -37,7 +37,7 @@ dependencies:
     version: 6.3.7
   tods-competition-factory:
     specifier: ^2.1.0
-    version: 2.1.2
+    version: 2.1.4
 
 devDependencies:
   '@commitlint/cli':
@@ -3212,7 +3212,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       slice-ansi: 5.0.0
-      string-width: 7.0.0
+      string-width: 7.1.0
     dev: true
 
   /cli-width@4.1.0:
@@ -5957,8 +5957,8 @@ packages:
       strip-ansi: 7.1.0
     dev: true
 
-  /string-width@7.0.0:
-    resolution: {integrity: sha512-GPQHj7row82Hjo9hKZieKcHIhaAIKOJvFSIZXuCU9OASVZrMNUaZuz++SPVrBjnLsnk4k+z9f2EIypgxf2vNFw==}
+  /string-width@7.1.0:
+    resolution: {integrity: sha512-SEIJCWiX7Kg4c129n48aDRwLbFb2LJmXXFrWBG4NGaRtMQ3myKPKbwrD1BKqQn74oCoNMBVrfDEr5M9YxCsrkw==}
     engines: {node: '>=18'}
     dependencies:
       emoji-regex: 10.3.0
@@ -6143,8 +6143,8 @@ packages:
     engines: {node: '>=18.17.1 < 21'}
     dev: false
 
-  /tods-competition-factory@2.1.2:
-    resolution: {integrity: sha512-jyY+JuR3ZzMxSskneit5SsAolQZxl5ejvg3bhsY2XAHv5UfECqtz2oht1owz2wZg+avNnLvNzCkwGKREXCntPA==}
+  /tods-competition-factory@2.1.4:
+    resolution: {integrity: sha512-4Cwwe1nAV1GeKs0utq36kR9QlZah480U/egE9kj5QPAJJe55VUpJyp/dO5+qv1Uzq5Zdm4NhhQ+90fw2NpxTEw==}
     engines: {node: '>=18.17.1 < 21'}
     dev: false
 
@@ -6618,7 +6618,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       ansi-styles: 6.2.1
-      string-width: 7.0.0
+      string-width: 7.1.0
       strip-ansi: 7.1.0
     dev: true
 
