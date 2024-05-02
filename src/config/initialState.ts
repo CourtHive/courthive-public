@@ -6,8 +6,9 @@ import hotkeys from 'hotkeys-js';
 
 import { SPLASH } from 'src/common/constants/routerConstants';
 
+import 'bulma/css/versions/bulma-no-dark-mode.min.css';
 import 'src/styles/tournamentSchedule.css';
-import 'node_modules/bulma/css/bulma.css';
+// import 'node_modules/bulma/css/bulma.css'; // version 1.0 dark mode issues
 import 'src/styles/tabulator.css';
 import 'src/styles/default.css';
 
