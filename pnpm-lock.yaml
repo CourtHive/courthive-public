@@ -40,7 +40,7 @@ importers:
         version: 6.3.7
       tods-competition-factory:
         specifier: ^2.1.0
-        version: 2.1.19
+        version: 2.1.20
     devDependencies:
       '@commitlint/cli':
         specifier: 19.2.1
@@ -1964,9 +1964,6 @@ packages:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
     engines: {node: '>=12'}
 
-  dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
-
   dayjs@1.11.11:
     resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
@@ -3619,8 +3616,8 @@ packages:
     resolution: {integrity: sha512-5h1b7PufCi6Ch2T8RjLg/2IRD9idegfDuVHjwvvBceLrkJs745OGtj2UK5oCdPcSIpKcn/7VNJlzDDknUmic5g==}
     engines: {node: '>=18.17.1'}
 
-  tods-competition-factory@2.1.19:
-    resolution: {integrity: sha512-qNczQIzU3q23FzwqlXKxbGNsGXeemDDOW90A1jGl076fK8m3tYFzXw5Etc8R5BPiXo+mvGMAUcRqNqPd+BeFUw==}
+  tods-competition-factory@2.1.20:
+    resolution: {integrity: sha512-3v/9OKsoYg+hciXbokhqI54J142CbYagT8O9iOA0uIzRnSFKe5qREDs3mK3weDjL14ghOhL5JEdKM9uT/oEefg==}
     engines: {node: '>=20'}
 
   totalist@3.0.1:
@@ -6123,8 +6120,6 @@ snapshots:
 
   dargs@8.1.0: {}
 
-  dayjs@1.11.10: {}
-
   dayjs@1.11.11: {}
 
   debug@3.2.7:
@@ -7949,7 +7944,7 @@ snapshots:
 
   tods-competition-factory@2.1.18: {}
 
-  tods-competition-factory@2.1.19: {}
+  tods-competition-factory@2.1.20: {}
 
   totalist@3.0.1: {}
 
