@@ -24,9 +24,6 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
     const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
-    const compositionName = eventData.eventInfo?.display?.compositionName;
-    const composition = compositions[compositionName ?? 'National'];
-    composition.configuration.genderColor = true;
 
     const renderFlight = (index) => {
       const flight = flightsData[index];
@@ -51,14 +48,20 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         flightDisplay.innerHTML = flight.drawName;
         removeAllChildNodes(flightDisplay);
 
+        const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
+        const compositionName = display?.compositionName;
+        const configuration = display?.configuration;
+        const composition = compositions[compositionName ?? 'National'];
+        Object.assign(composition.configuration, configuration);
+        composition.configuration.genderColor = true;
+        console.log({ display, composition, configuration });
+
         if (displayFormat === 'roundsColumns') {
           const content = renderContainer({
             content: renderStructure({
               context: { drawId, structureId },
               // searchActive: participantFilter,
               matchUps,
-              // initialRoundNumber: 3,
-              // eventHandlers,
               composition,
               structure
             }),
