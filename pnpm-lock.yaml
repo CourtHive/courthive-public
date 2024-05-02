@@ -34,7 +34,7 @@ importers:
         version: 7.6.0
       tabulator-tables:
         specifier: ^6.0.0
-        version: 6.2.0
+        version: 6.2.1
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -3280,8 +3280,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tabulator-tables@6.2.0:
-    resolution: {integrity: sha512-x7K2m3sizHJZdjBCn1xH6oewtlkqkXFfKNw2wli7Px7DFSG7dOqrUrRey0LINeuJ0Oyfn17yUWjLZvqRw8V3eA==}
+  tabulator-tables@6.2.1:
+    resolution: {integrity: sha512-iCyLUzE9xEesEWqHDzNgShr6fpIIsRXnvTSDxiEti3sVbVYwlRt5HTBnXsl8bxY+4p64Rxxdlk9jT3voNLcIZQ==}
 
   temp@0.9.4:
     resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
@@ -7201,7 +7201,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tabulator-tables@6.2.0: {}
+  tabulator-tables@6.2.1: {}
 
   temp@0.9.4:
     dependencies:
