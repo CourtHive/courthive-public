@@ -19,7 +19,7 @@ importers:
         version: 0.7.17
       dayjs:
         specifier: ^1.11.10
-        version: 1.11.10
+        version: 1.11.11
       hotkeys-js:
         specifier: ^3.13.7
         version: 3.13.7
@@ -1828,6 +1828,9 @@ packages:
 
   dayjs@1.11.10:
     resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+
+  dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -5595,6 +5598,8 @@ snapshots:
   dargs@8.1.0: {}
 
   dayjs@1.11.10: {}
+
+  dayjs@1.11.11: {}
 
   debug@3.2.7:
     dependencies:
