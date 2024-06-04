@@ -53,7 +53,7 @@
     "inquirer": "9.2.23",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.7",
     "source-map-explorer": "2.5.3",
     "typescript": "5.4.5",
     "vite": "5.2.11",
