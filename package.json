@@ -66,7 +66,7 @@
   "dependencies": {
     "axios": "1.6.8",
     "bulma": "^1.0.0",
-    "courthive-components": "^0.7.16",
+    "courthive-components": "^0.7.21",
     "dayjs": "^1.11.10",
     "hotkeys-js": "^3.13.7",
     "navigo": "8.11.1",
@@ -74,6 +74,6 @@
     "semver": "^7.6.0",
     "tabulator-tables": "^6.0.0",
     "tippy.js": "^6.3.7",
-    "tods-competition-factory": "^2.1.0"
+    "tods-competition-factory": "^2.1.29"
   }
 }
