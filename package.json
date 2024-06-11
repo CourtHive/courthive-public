@@ -52,7 +52,7 @@
     "husky": "9.0.11",
     "inquirer": "9.2.23",
     "lint-staged": "15.2.5",
-    "prettier": "3.2.5",
+    "prettier": "3.3.2",
     "rimraf": "5.0.7",
     "source-map-explorer": "2.5.3",
     "typescript": "5.4.5",
