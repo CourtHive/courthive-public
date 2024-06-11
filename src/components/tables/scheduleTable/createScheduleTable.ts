@@ -7,7 +7,7 @@ import { getScheduleColumns } from './getScheduleColumns';
 import dayjs from 'dayjs';
 
 export function createScheduleTable(params) {
-  const { dateMatchUps = [], completedMatchUps = [], groupInfo } = params?.data ?? {};
+  const { dateMatchUps = [], completedMatchUps = [], groupInfo, mappedParticipants } = params?.data ?? {};
   const matchUps = dateMatchUps.concat(...completedMatchUps);
   const scheduleDates = matchUps.reduce((dates, matchUp) => {
     const scheduledDate = matchUp?.schedule?.scheduledDate;
@@ -18,9 +18,22 @@ export function createScheduleTable(params) {
   const scheduledDate = scheduleDates[0];
   let table: any = undefined;
 
+  const hydrateSideParticipants = (matchUp) => {
+    for (const side of matchUp.sides || []) {
+      if (side.participantId) {
+        side.participant = mappedParticipants[side.participantId];
+        if (side.participant?.individualParticipantIds) {
+          side.participant.individualParticipants = side.participant.individualParticipantIds.map(
+            (id) => mappedParticipants[id]
+          );
+        }
+      }
+    }
+  };
   const getTableData = ({ scheduledDate }) => {
     const courtsData = params?.data?.courtsData.map((court) => {
       const { matchUps, ...details } = court;
+      matchUps.forEach(hydrateSideParticipants);
       return { ...details, matchUps: matchUps.filter((matchUp) => matchUp.schedule?.scheduledDate === scheduledDate) };
     });
 

@@ -12,9 +12,9 @@ export function displayTabContent(tabName) {
   // TODO: determine if content needs to be fetched or is already present
 
   if (tabName === 'Schedule') {
-    getScheduledMatchUps({ tournamentId: context.tournamentId }).then((result) => {
-      const data = result?.data;
-      createScheduleTable({ data });
+    const hydrateParticipants = false;
+    getScheduledMatchUps({ tournamentId: context.tournamentId, hydrateParticipants }).then((result) => {
+      createScheduleTable({ data: result?.data });
     });
   }
   context.tab = tabName;
