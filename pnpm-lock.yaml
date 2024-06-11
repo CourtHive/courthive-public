@@ -31,7 +31,7 @@ importers:
         version: 2.5.0
       semver:
         specifier: ^7.6.0
-        version: 7.6.1
+        version: 7.6.2
       tabulator-tables:
         specifier: ^6.0.0
         version: 6.2.1
@@ -2348,8 +2348,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  semver@7.6.1:
-    resolution: {integrity: sha512-f/vbBsu+fOiYt+lmwZV0rVwJScl46HppnOA1ZvIuBWKOTlllpyJ3bfVax76/OrhCH38dyxoDIA8K7uB963IYgA==}
+  semver@7.6.2:
+    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2937,7 +2937,7 @@ snapshots:
   '@commitlint/is-ignored@19.2.2':
     dependencies:
       '@commitlint/types': 19.0.3
-      semver: 7.6.1
+      semver: 7.6.2
 
   '@commitlint/lint@19.2.2':
     dependencies:
@@ -3428,7 +3428,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
-      semver: 7.6.1
+      semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
       typescript: 5.4.5
@@ -4897,7 +4897,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.6.1
+      semver: 7.6.2
 
   map-or-similar@1.5.0: {}
 
@@ -5294,7 +5294,7 @@ snapshots:
       immutable: 4.3.5
       source-map-js: 1.2.0
 
-  semver@7.6.1: {}
+  semver@7.6.2: {}
 
   set-function-length@1.2.2:
     dependencies:
