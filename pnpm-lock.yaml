@@ -67,8 +67,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       cz-git:
-        specifier: 1.9.2
-        version: 1.9.2
+        specifier: 1.9.3
+        version: 1.9.3
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -1088,8 +1088,8 @@ packages:
   css.escape@1.5.1:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
 
-  cz-git@1.9.2:
-    resolution: {integrity: sha512-HqwSIZBl/Vtlq56wsHuQHhQ0CF7rABEvhvbSAaGViLeM5YucLu5o+U2XLow1Y2bwIAfAIKZHfgg9fxP7P3XU3Q==}
+  cz-git@1.9.3:
+    resolution: {integrity: sha512-v7+vYOparImLLo6J5tAsi/cz+EAK7FI/TDnemi11xgEax4k+ZVqxsmkiEc68n+MJLp1l5THhB2KTDhjpW+ellg==}
     engines: {node: '>=v12.20.0'}
 
   damerau-levenshtein@1.0.8:
@@ -3909,7 +3909,7 @@ snapshots:
 
   css.escape@1.5.1: {}
 
-  cz-git@1.9.2: {}
+  cz-git@1.9.3: {}
 
   damerau-levenshtein@1.0.8: {}
 
