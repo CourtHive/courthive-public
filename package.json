@@ -62,7 +62,7 @@
     "yargs": "17.7.2"
   },
   "dependencies": {
-    "axios": "1.6.8",
+    "axios": "1.7.2",
     "bulma": "^1.0.0",
     "courthive-components": "^0.7.21",
     "dayjs": "^1.11.10",
