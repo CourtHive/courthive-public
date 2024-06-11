@@ -13,7 +13,7 @@ importers:
         version: 1.6.8
       bulma:
         specifier: ^1.0.0
-        version: 1.0.0
+        version: 1.0.1
       courthive-components:
         specifier: ^0.7.21
         version: 0.7.21(vitest@1.6.0(@types/node@20.12.9)(@vitest/ui@1.6.0)(sass@1.76.0))
@@ -920,9 +920,6 @@ packages:
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
-  bulma@1.0.0:
-    resolution: {integrity: sha512-7n49v/gdHXaHcU9fVobqGXO2OguiCoMh6CLbeX7jq00XrZ5vOSE4LNS0S/0Q6rlBbckY6kk6W7LwqxS0nu4bug==}
-
   bulma@1.0.1:
     resolution: {integrity: sha512-+xv/BIAEQakHkR0QVz+s+RjNqfC53Mx9ZYexyaFNFo9wx5i76HXArNdwW7bccyJxa5mgV/T5DcVGqsAB19nBJQ==}
 
@@ -1554,8 +1551,8 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
 
-  immutable@4.3.5:
-    resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
+  immutable@4.3.6:
+    resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -3584,6 +3581,7 @@ snapshots:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    optional: true
 
   argparse@2.0.1: {}
 
@@ -3677,7 +3675,8 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  binary-extensions@2.3.0: {}
+  binary-extensions@2.3.0:
+    optional: true
 
   bl@4.1.0:
     dependencies:
@@ -3708,10 +3707,6 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
-
-  bulma@1.0.0:
-    dependencies:
-      sass: 1.76.0
 
   bulma@1.0.1: {}
 
@@ -3778,7 +3773,7 @@ snapshots:
   chokidar@3.6.0:
     dependencies:
       anymatch: 3.1.3
-      braces: 3.0.2
+      braces: 3.0.3
       glob-parent: 5.1.2
       is-binary-path: 2.1.0
       is-glob: 4.0.3
@@ -3786,6 +3781,7 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   class-variance-authority@0.7.0:
     dependencies:
@@ -4499,7 +4495,8 @@ snapshots:
 
   ignore@5.3.1: {}
 
-  immutable@4.3.5: {}
+  immutable@4.3.6:
+    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -4580,6 +4577,7 @@ snapshots:
   is-binary-path@2.1.0:
     dependencies:
       binary-extensions: 2.3.0
+    optional: true
 
   is-boolean-object@1.1.2:
     dependencies:
@@ -4974,7 +4972,8 @@ snapshots:
 
   navigo@8.11.1: {}
 
-  normalize-path@3.0.0: {}
+  normalize-path@3.0.0:
+    optional: true
 
   normalize-text@2.5.0:
     dependencies:
@@ -5176,6 +5175,7 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+    optional: true
 
   redent@3.0.0:
     dependencies:
@@ -5291,8 +5291,9 @@ snapshots:
   sass@1.76.0:
     dependencies:
       chokidar: 3.6.0
-      immutable: 4.3.5
+      immutable: 4.3.6
       source-map-js: 1.2.0
+    optional: true
 
   semver@7.6.1: {}
 
