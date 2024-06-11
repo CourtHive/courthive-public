@@ -20,6 +20,8 @@ export async function createRoundsTable(params) {
     isRoundRobin = structure?.structureType === CONTAINER;
 
     const matchUps: any = structure?.roundMatchUps ? Object.values(structure?.roundMatchUps || {}).flat() : [];
+    const tieMatchUps = matchUps.flatMap((matchUp) => matchUp.tieMatchUps || []);
+    if (tieMatchUps.length) matchUps.push(...tieMatchUps);
 
     return matchUps
       .filter(({ matchUpStatus }) => matchUpStatus !== 'BYE')

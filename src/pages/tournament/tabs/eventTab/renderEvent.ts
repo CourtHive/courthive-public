@@ -13,10 +13,11 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
   const removeRoundDisplayButton = () => document.getElementById('roundDisplayButton')?.remove();
 
-  getEventData({ tournamentId, eventId }).then((data) => {
+  const hydrateParticipants = false;
+  getEventData({ tournamentId, eventId, hydrateParticipants }).then((data) => {
     const eventData = data?.data?.eventData || data?.data;
     const participants = data?.data?.participants || [];
-    if (window?.['dev']) window['dev']['eventData'] = eventData.drawsData;
+    if (window?.['dev']) window['dev']['eventData'] = eventData;
     const structureMatchUps = (structure) => {
       return Object.values(structure.roundMatchUps || {}).flat();
     };
@@ -24,6 +25,33 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
     const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
+
+    if (!hydrateParticipants) {
+      const mappedParticipants = new Map(participants.map((p) => [p.participantId, p]));
+      const hydrateSideParticipants = (matchUp) => {
+        for (const side of matchUp.sides || []) {
+          if (side.participantId) {
+            side.participant = mappedParticipants.get(side.participantId);
+            if (side.participant?.individualParticipantIds) {
+              side.participant.individualParticipants = side.participant.individualParticipantIds.map((id) =>
+                mappedParticipants.get(id)
+              );
+            }
+          }
+        }
+      };
+
+      for (const flight of flightsData) {
+        for (const structure of flight.structures) {
+          Object.values(structure.roundMatchUps || {})
+            .flat()
+            .forEach((matchUp: any) => {
+              hydrateSideParticipants(matchUp);
+              matchUp.tieMatchUps?.forEach(hydrateSideParticipants);
+            });
+        }
+      }
+    }
 
     const renderFlight = (index) => {
       const flight = flightsData[index];
@@ -54,7 +82,6 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         const composition = compositions[compositionName ?? 'National'];
         Object.assign(composition.configuration, configuration);
         composition.configuration.genderColor = true;
-        console.log({ display, composition, configuration });
 
         if (displayFormat === 'roundsColumns') {
           const content = renderContainer({
