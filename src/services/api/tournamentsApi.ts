@@ -12,13 +12,17 @@ export async function getProviderCalendar({ providerAbbr }: { providerAbbr: stri
   return await baseApi.post('/provider/calendar', { providerAbbr });
 }
 
-export async function getEventData(params?: { tournamentId: string; eventId: string }) {
+export async function getEventData(params?: { tournamentId: string; eventId: string; hydrateParticipants?: boolean }) {
   if (!params?.tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
   if (!params?.eventId) throw new Error('missing eventId');
   return await baseApi.post('/factory/eventdata', params);
 }
 
-export async function getScheduledMatchUps(params?: { tournamentId: string; scheduledDate?: string }) {
+export async function getScheduledMatchUps(params?: {
+  hydrateParticipants?: boolean;
+  scheduledDate?: string;
+  tournamentId: string;
+}) {
   if (!params?.tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
   Object.assign(params, {
     courtCompletedMatchUps: true,
