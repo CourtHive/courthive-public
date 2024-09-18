@@ -19,7 +19,7 @@ importers:
         version: 0.7.21(vitest@2.1.1(@types/node@20.14.11)(@vitest/ui@2.1.1)(sass@1.76.0))
       dayjs:
         specifier: ^1.11.10
-        version: 1.11.11
+        version: 1.11.12
       hotkeys-js:
         specifier: ^3.13.7
         version: 3.13.7
@@ -1195,6 +1195,9 @@ packages:
 
   dayjs@1.11.11:
     resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
+
+  dayjs@1.11.12:
+    resolution: {integrity: sha512-Rt2g+nTbLlDWZTwwrIXjy9MeiZmSDI375FvZs72ngxx8PDC6YXOeR3q5LAuPzjZQxhiWdRKac7RKV+YyQYfYIg==}
 
   debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -4156,6 +4159,8 @@ snapshots:
       is-data-view: 1.0.1
 
   dayjs@1.11.11: {}
+
+  dayjs@1.11.12: {}
 
   debug@4.3.4:
     dependencies:
