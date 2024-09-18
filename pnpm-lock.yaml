@@ -13,7 +13,7 @@ importers:
         version: 1.7.2
       bulma:
         specifier: ^1.0.0
-        version: 1.0.1
+        version: 1.0.2
       courthive-components:
         specifier: ^0.7.21
         version: 0.7.21(vitest@2.1.1(@types/node@20.14.11)(@vitest/ui@2.1.1)(sass@1.76.0))
@@ -1000,6 +1000,9 @@ packages:
   bulma@1.0.1:
     resolution: {integrity: sha512-+xv/BIAEQakHkR0QVz+s+RjNqfC53Mx9ZYexyaFNFo9wx5i76HXArNdwW7bccyJxa5mgV/T5DcVGqsAB19nBJQ==}
 
+  bulma@1.0.2:
+    resolution: {integrity: sha512-D7GnDuF6seb6HkcnRMM9E739QpEY9chDzzeFrHMyEns/EXyDJuQ0XA0KxbBl/B2NTsKSoDomW61jFGFaAxhK5A==}
+
   c8@10.1.2:
     resolution: {integrity: sha512-Qr6rj76eSshu5CgRYvktW0uM0CFY0yi4Fd5D0duDXO6sYinyopmftUiJVuzBQxQcwQLor7JWDVRP+dUfCmzgJw==}
     engines: {node: '>=18'}
@@ -1686,8 +1689,8 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
 
-  immutable@4.3.6:
-    resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
+  immutable@4.3.7:
+    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -3931,6 +3934,8 @@ snapshots:
 
   bulma@1.0.1: {}
 
+  bulma@1.0.2: {}
+
   c8@10.1.2:
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
@@ -4806,7 +4811,7 @@ snapshots:
 
   ignore@5.3.1: {}
 
-  immutable@4.3.6:
+  immutable@4.3.7:
     optional: true
 
   import-fresh@3.3.0:
@@ -5524,7 +5529,7 @@ snapshots:
   sass@1.76.0:
     dependencies:
       chokidar: 3.6.0
-      immutable: 4.3.6
+      immutable: 4.3.7
       source-map-js: 1.2.1
     optional: true
 
