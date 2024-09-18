@@ -59,9 +59,10 @@ export function dropDownButton(params: DropDownButton) {
   if (isFunction(button.onClick)) icon.onclick = button.onClick;
   icon.innerHTML = `
       <span class="icon is-small font-medium">
-        <i class="fas fa-angle-down font-medium" aria-hidden="true"></i>
+        ⌄
       </span>
   `;
+  icon.style.height = '2em';
   ddButton.appendChild(icon);
   trigger.appendChild(ddButton);
   elem.appendChild(trigger);
