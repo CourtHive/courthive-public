@@ -34,7 +34,7 @@ importers:
         version: 7.6.2
       tabulator-tables:
         specifier: ^6.0.0
-        version: 6.2.2
+        version: 6.2.3
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -2575,8 +2575,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  tabulator-tables@6.2.2:
-    resolution: {integrity: sha512-BH2hTdAnPE2RfCFUaGjJ3n/T0lW+lAxz1kL01D1UwbvMt8K9yyBoucWZyirwREJJT9Vl9LHL7Ev3UTa/nrkrmg==}
+  tabulator-tables@6.2.3:
+    resolution: {integrity: sha512-EkFgCaHzvQiYVHqA4mTKApE06i663u2FDpopyaOrTTQG23xyn7/b+21z0b1t8gvg8PYADK5UWfDsIS6ItLCgkg==}
 
   telejson@7.2.0:
     resolution: {integrity: sha512-1QTEcJkJEhc8OnStBx/ILRu5J2p0GjvWsBx56bmZRqnrkdBMUe+nX92jxV+p3dB4CP6PZCdJMQJwCggkNBMzkQ==}
@@ -5699,7 +5699,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  tabulator-tables@6.2.2: {}
+  tabulator-tables@6.2.3: {}
 
   telejson@7.2.0:
     dependencies:
