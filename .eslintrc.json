@@ -8,13 +8,14 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": ["*.mjs", "vite.config.ts"],
-  "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended", "plugin:sonarjs/recommended"],
-  "plugins": ["sonarjs"],
+  "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended"],
+  "plugins": ["@typescript-eslint", "sonarjs"],
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
   "rules": {
     "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
     "sonarjs/cognitive-complexity": "off",
     "sonarjs/no-all-duplicated-branches": "warn",
     "sonarjs/no-collapsible-if": "warn",
