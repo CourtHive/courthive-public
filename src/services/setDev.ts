@@ -32,7 +32,7 @@ function addDev(variable) {
 
   try {
     Object.keys(variable).forEach((key) => (window['dev'][key] = variable[key]));
-  } catch (err) {
+  } catch (err) { // eslint-disable-line @typescript-eslint/no-unused-vars
     // eslint-disable-next-line no-console
     console.log('production environment');
   }
