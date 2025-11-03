@@ -58,7 +58,7 @@
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "2.1.1",
     "vitest-github-actions-reporter": "0.11.1",
-    "vitest-sonar-reporter": "2.0.0",
+    "vitest-sonar-reporter": "2.0.4",
     "yargs": "17.7.2"
   },
   "dependencies": {
