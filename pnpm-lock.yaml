@@ -31,7 +31,7 @@ importers:
         version: 2.6.0
       semver:
         specifier: ^7.6.0
-        version: 7.6.3
+        version: 7.7.3
       tabulator-tables:
         specifier: ^6.0.0
         version: 6.2.5
@@ -2686,11 +2686,6 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  semver@7.6.3:
-    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
@@ -3305,7 +3300,7 @@ snapshots:
   '@commitlint/is-ignored@19.8.1':
     dependencies:
       '@commitlint/types': 19.8.1
-      semver: 7.6.3
+      semver: 7.7.3
 
   '@commitlint/lint@19.8.1':
     dependencies:
@@ -5897,8 +5892,6 @@ snapshots:
       immutable: 4.3.7
       source-map-js: 1.2.1
     optional: true
-
-  semver@7.6.3: {}
 
   semver@7.7.3: {}
 
