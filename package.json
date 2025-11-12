@@ -48,7 +48,7 @@
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-sonarjs": "1.0.4",
     "husky": "9.1.7",
-    "inquirer": "10.2.2",
+    "inquirer": "12.11.1",
     "lint-staged": "15.5.2",
     "prettier": "3.6.2",
     "rimraf": "6.1.0",
