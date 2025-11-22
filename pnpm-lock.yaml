@@ -34,7 +34,7 @@ importers:
         version: 7.6.3
       tabulator-tables:
         specifier: ^6.0.0
-        version: 6.2.5
+        version: 6.3.1
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -850,6 +850,9 @@ packages:
 
   '@types/node@20.19.24':
     resolution: {integrity: sha512-FE5u0ezmi6y9OZEzlJfg37mqqf6ZDSF2V/NLjUyGrR9uTZ7Sb9F7bLNZ03S4XVUNRWGA7Ck4c1kK+YnuWjl+DA==}
+
+  '@types/node@20.19.25':
+    resolution: {integrity: sha512-ZsJzA5thDQMSQO788d7IocwwQbI8B5OPzmqNvpf3NY/+MHDAS759Wo0gd2WQeXYt5AAAQjzcrTVC6SKCuYgoCQ==}
 
   '@types/node@22.19.0':
     resolution: {integrity: sha512-xpr/lmLPQEj+TUnHmR+Ab91/glhJvsqcjB+yY0Ix9GO70H6Lb4FHH5GeqdOE5btAx7eIMwuHkp4H2MSkLcqWbA==}
@@ -2856,8 +2859,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  tabulator-tables@6.2.5:
-    resolution: {integrity: sha512-f/TI78hV+GNoBefdqQ4q5RXbP+vJkvwSwt7sqeCTriAchNXax3ekcT1GG3i2J+8mhz6dHg0PFKyCYfmMW45HEg==}
+  tabulator-tables@6.3.1:
+    resolution: {integrity: sha512-qFW7kfadtcaISQIibKAIy0f3eeIXUVi8242Vly1iJfMD79kfEGzfczNuPBN/80hDxHzQJXYbmJ8VipI40hQtfA==}
 
   temp@0.9.4:
     resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
@@ -3840,11 +3843,11 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
@@ -3854,7 +3857,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.7':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -3880,6 +3883,10 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
+  '@types/node@20.19.25':
+    dependencies:
+      undici-types: 6.21.0
+
   '@types/node@22.19.0':
     dependencies:
       undici-types: 6.21.0
@@ -3891,16 +3898,16 @@ snapshots:
   '@types/send@0.17.6':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
 
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 20.19.24
+      '@types/node': 20.19.25
       '@types/send': 0.17.6
 
   '@types/wrap-ansi@3.0.0': {}
@@ -6114,7 +6121,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  tabulator-tables@6.2.5: {}
+  tabulator-tables@6.3.1: {}
 
   temp@0.9.4:
     dependencies:
