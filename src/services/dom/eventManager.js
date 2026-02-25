@@ -6,7 +6,7 @@ export const eventManager = (function () {
     touched: undefined,
     holdTime: 800,
     holdAction: undefined,
-    holdActions: {}
+    holdActions: {},
   };
   const keys = {};
   let registeredFunctions = {};
@@ -18,7 +18,7 @@ export const eventManager = (function () {
   };
 
   em.register = (cls, evnt, fx, delay) => {
-    if (typeof fx == 'function') {
+    if (typeof fx === 'function') {
       if (!registeredFunctions[evnt]) {
         registeredFunctions[evnt] = {};
         keys[evnt] = [];
@@ -59,7 +59,7 @@ export const eventManager = (function () {
       x: evt.clientX,
       y: evt.clientY,
       pageX: evt.pageX,
-      pageY: evt.pageY
+      pageY: evt.pageY,
     };
     let classList = Array.from(evt.target.classList);
     let matchedClasses = classList.length && keys[evnt] ? intersection(classList, keys[evnt]) : [];
@@ -89,27 +89,27 @@ export const eventManager = (function () {
         }, em.holdTime);
       }
     },
-    false
+    false,
   );
   document.addEventListener(
     'touchend',
     function () {
       touchleave();
     },
-    false
+    false,
   );
   document.addEventListener(
     'touchmove',
     function (pointerEvent) {
       if (em.touched !== pointerEvent.target) touchleave();
     },
-    false
+    false,
   );
   function touchleave() {
     clearTimeout(touchTimer);
   }
   function holdAction() {
-    if (typeof em.holdAction == 'function') {
+    if (typeof em.holdAction === 'function') {
       em.held = em.touched;
       em.holdAction(em.held, em.coords);
     }

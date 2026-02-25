@@ -51,7 +51,7 @@ export async function renderTournament(result) {
     const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }) => ({
       onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' }),
       label: eventName,
-      close: true
+      close: true,
     }));
     const eventButton = {
       label: tournamentInfo.eventInfo[0].eventName,
@@ -59,7 +59,7 @@ export async function renderTournament(result) {
       id: 'eventButton',
       modifyLabel: true,
       selection: true,
-      location: LEFT
+      location: LEFT,
     };
     const removeFlightButtons = () => {
       document.getElementById('structureButton')?.remove();

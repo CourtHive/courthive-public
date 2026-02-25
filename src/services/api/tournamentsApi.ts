@@ -29,7 +29,7 @@ export async function getScheduledMatchUps(params?: {
     withCourtGridRows: true,
     usePublishState: true,
     minCourtGridRows: 10,
-    nextMatchUps: true
+    nextMatchUps: true,
   });
   return await baseApi.post('/factory/scheduledmatchUps', { params });
 }

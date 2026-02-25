@@ -16,7 +16,7 @@ axiosInstance.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 axiosInstance.interceptors.response.use(
@@ -32,7 +32,7 @@ axiosInstance.interceptors.response.use(
       const message = error.response.data.message || error.response.data.error || error.response.data;
       console.log({ message });
     }
-  }
+  },
 );
 
 const addAuthorization = () => {
@@ -47,5 +47,5 @@ const removeAuthorization = () => {
 export const baseApi: any = {
   ...axiosInstance,
   addAuthorization,
-  removeAuthorization
+  removeAuthorization,
 };

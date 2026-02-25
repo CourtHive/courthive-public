@@ -13,7 +13,7 @@ export function dateString({ startDate, endDate }) {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
   const sameDay = start.getDate() === end.getDate();
   const sameYear = start.getFullYear() === end.getFullYear();

@@ -6,7 +6,7 @@ export function setWindow() {
     (e) => {
       e.preventDefault();
     },
-    false
+    false,
   );
   window.onunhandledrejection = (windowEvent) => {
     windowEvent.preventDefault();

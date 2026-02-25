@@ -33,7 +33,7 @@ export function createTournamentsTable({ providerAbbr }) {
       layout: 'fitColumns',
       reactiveData: true,
       data: tableData,
-      columns
+      columns,
     });
 
     table.on('tableBuilt', () => {
@@ -43,7 +43,7 @@ export function createTournamentsTable({ providerAbbr }) {
 
   const renderCalendarTable = (calendar) => {
     calendar.tournaments.sort(
-      (a, b) => new Date(b.tournament.startDate).getTime() - new Date(a.tournament.startDate).getTime()
+      (a, b) => new Date(b.tournament.startDate).getTime() - new Date(a.tournament.startDate).getTime(),
     );
     renderTable(calendar.tournaments);
   };

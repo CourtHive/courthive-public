@@ -23,23 +23,23 @@ export const mapRound = (matchUp) => {
   const getPotentialName = (participant) => participant.person?.standardFamilyName || participant.participantName;
   const potentials =
     potentialParticipants?.map((potentials) => ({
-      participantName: potentials.map(getPotentialName).filter(Boolean).join(' or ')
+      participantName: potentials.map(getPotentialName).filter(Boolean).join(' or '),
     })) || [];
   const side1Participant = sides?.[0]?.participant || potentials.shift();
   const side2Participant = sides?.[1]?.participant || potentials.shift();
   const side1 = {
     participantName: side1Participant?.participantName,
     sex: side1Participant?.person?.sex,
-    participant: side1Participant
+    participant: side1Participant,
   };
   const side2 = {
     participantName: side2Participant?.participantName,
     sex: side2Participant?.person?.sex,
-    participant: side2Participant
+    participant: side2Participant,
   };
   const individualParticipantIds = sides
     .flatMap(({ participant }) =>
-      participant?.individualParticipantIds?.length ? participant.individualParticipantIds : participant?.participantId
+      participant?.individualParticipantIds?.length ? participant.individualParticipantIds : participant?.participantId,
     )
     .filter(Boolean);
 
@@ -55,14 +55,14 @@ export const mapRound = (matchUp) => {
       if (person) return [person.standardGivenName, person.standardFamilyName];
       return side.participant?.individualParticipants?.map(({ person }) => [
         person.standardGivenName,
-        person.standardFamilyName
+        person.standardFamilyName,
       ]);
     })
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
   const searchText = normalizeDiacritics(
-    [firstLast, side1Participant?.participantName, side2Participant?.participantName].filter(Boolean).join(' ')
+    [firstLast, side1Participant?.participantName, side2Participant?.participantName].filter(Boolean).join(' '),
   ).toLowerCase();
 
   const eventType = matchUp.collectionId ? TEAM : matchUpType;
@@ -97,6 +97,6 @@ export const mapRound = (matchUp) => {
     drawId,
     side1,
     side2,
-    score
+    score,
   };
 };

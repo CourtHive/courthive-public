@@ -32,5 +32,5 @@ export const timeModifierDisplay = {
   [FOLLOWED_BY]: 'Followed by',
   [TO_BE_ANNOUNCED]: 'TBA',
   [NEXT_AVAILABLE]: 'Next available',
-  [NOT_BEFORE]: 'NB'
+  [NOT_BEFORE]: 'NB',
 };

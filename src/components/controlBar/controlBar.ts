@@ -14,7 +14,7 @@ import {
   OVERLAY,
   RIGHT,
   BUTTON_BAR,
-  TOP
+  TOP,
 } from 'src/common/constants/baseConstants';
 
 /* controlBar can generate a search field, buttons an dropDownButtons
@@ -64,7 +64,7 @@ export function controlBar(params: ControlParams) {
         removeAllChildNodes(elem);
         return { [location]: elem };
       })
-      .filter(Boolean)
+      .filter(Boolean),
   );
 
   const stateChange = toggleOverlay({ target });
@@ -254,7 +254,7 @@ function createControlElement() {
     optionsOverlay: document.createElement('div'),
     optionsLeft: document.createElement('div'),
     optionsCenter: document.createElement('div'),
-    optionsRight: document.createElement('div')
+    optionsRight: document.createElement('div'),
   };
   elements.optionsOverlay.className = 'options_overlay';
   elements.optionsCenter.className = 'options_center';

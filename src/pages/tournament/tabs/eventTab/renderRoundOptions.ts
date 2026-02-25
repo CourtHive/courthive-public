@@ -22,21 +22,21 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_COLUMNS),
       label: isAdHoc ? 'Columns' : 'Draw',
-      close: true
+      close: true,
     });
 
   existingView !== ROUNDS_TABLE &&
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_TABLE),
       label: 'Table view',
-      close: true
+      close: true,
     });
 
   if ((isAdHoc || isRoundRobin) && existingView !== ROUNDS_STATS)
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_STATS),
       label: 'Statistics',
-      close: true
+      close: true,
     });
 
   return {
@@ -45,6 +45,6 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
     options: actionOptions,
     selection: false,
     location: RIGHT,
-    align: RIGHT
+    align: RIGHT,
   };
 }

@@ -29,8 +29,8 @@ export async function createRoundsTable(params) {
         ({ sides }) =>
           !participantFilter ||
           sides.find((side) =>
-            side.participant?.participantName?.toLowerCase().includes(participantFilter?.toLowerCase())
-          )
+            side.participant?.participantName?.toLowerCase().includes(participantFilter?.toLowerCase()),
+          ),
       );
   };
 
@@ -81,7 +81,7 @@ export async function createRoundsTable(params) {
       index: 'matchUpId',
       groupBy,
       columns,
-      data
+      data,
     });
   };
 

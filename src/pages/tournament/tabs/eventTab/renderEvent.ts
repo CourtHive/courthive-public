@@ -34,7 +34,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
             side.participant = mappedParticipants.get(side.participantId);
             if (side.participant?.individualParticipantIds) {
               side.participant.individualParticipants = side.participant.individualParticipantIds.map((id) =>
-                mappedParticipants.get(id)
+                mappedParticipants.get(id),
               );
             }
           }
@@ -70,7 +70,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         header.appendChild(elem);
 
         const structureId = structure.structureId;
-        const matchUps = Object.values(structure.roundMatchUps || {}).flat();
+        const matchUps = Object.values(structure.roundMatchUps || {}).flat() as any[];
         const isAdHoc = drawsGovernor.isAdHoc({ structure });
         if (isAdHoc) matchUps.sort(tools.matchUpScheduleSort);
         flightDisplay.innerHTML = flight.drawName;
@@ -90,9 +90,9 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
               // searchActive: participantFilter,
               matchUps,
               composition,
-              structure
+              structureId,
             }),
-            theme: composition.theme
+            theme: composition.theme,
           });
           flightDisplay.appendChild(content);
         } else if (displayFormat === 'roundsStats') {
@@ -106,7 +106,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         const structureOptions = flight.structures.map(({ structureName }, i) => ({
           onClick: () => renderSelectedStructure(i),
           label: structureName,
-          close: true
+          close: true,
         }));
         const structureButton = {
           label: flight.structures[0].structureName,
@@ -114,7 +114,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
           id: 'structureButton',
           modifyLabel: true,
           selection: true,
-          location: LEFT
+          location: LEFT,
         };
         const elem = dropDownButton({ button: structureButton });
         header.appendChild(elem);
@@ -129,7 +129,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const flightOptions = flightsData.map(({ drawName }, i) => ({
       onClick: () => renderFlight(i),
       label: drawName,
-      close: true
+      close: true,
     }));
     const flightButton = {
       label: flightsData?.[0]?.drawName,
@@ -137,7 +137,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
       modifyLabel: true,
       id: 'flightButton',
       selection: true,
-      location: LEFT
+      location: LEFT,
     };
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);

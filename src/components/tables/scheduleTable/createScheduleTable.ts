@@ -24,7 +24,7 @@ export function createScheduleTable(params) {
         side.participant = mappedParticipants[side.participantId];
         if (side.participant?.individualParticipantIds) {
           side.participant.individualParticipants = side.participant.individualParticipantIds.map(
-            (id) => mappedParticipants[id]
+            (id) => mappedParticipants[id],
           );
         }
       }
@@ -38,7 +38,7 @@ export function createScheduleTable(params) {
     });
 
     const courtPrefix = 'C|';
-    const rows = scheduleGovernor.courtGridRows({ courtsData, courtPrefix, minRowsCount: 10 }).rows;
+    const rows = scheduleGovernor.courtGridRows({ courtsData, courtPrefix, minRowsCount: 10, scheduledDate }).rows;
     const columns: any = getScheduleColumns({ courtsData, courtPrefix });
 
     rows?.forEach((row, i) => {
@@ -60,14 +60,14 @@ export function createScheduleTable(params) {
     onClick: () => replaceTableData({ scheduledDate: dateString }),
     label: formatDate(dateString),
     value: dateString,
-    close: true
+    close: true,
   }));
   const dateSelector = {
     label: formatDate(scheduledDate),
     options: dateOptions,
     id: 'dateSelector',
     modifyLabel: true,
-    selection: true
+    selection: true,
   };
   const scheduleHeader = document.getElementById('scheduleHeader');
   removeAllChildNodes(scheduleHeader);
@@ -85,7 +85,7 @@ export function createScheduleTable(params) {
     placeholder: 'No courts',
     index: 'rowId',
     data: rows,
-    columns
+    columns,
   });
 
   return { table, courtsCount };
