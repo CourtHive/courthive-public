@@ -9,7 +9,7 @@ export function profileFormatter(cell) {
   const colorMap = {
     COMPETITIVE: 'green',
     DECISIVE: 'magenta',
-    ROUTINE: 'blue'
+    ROUTINE: 'blue',
   };
 
   if (score) {

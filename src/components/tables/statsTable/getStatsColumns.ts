@@ -10,7 +10,7 @@ export function getStatsColumns({ isAdHoc }) {
   return [
     {
       formatter: formatParticipant(({ event, cell, ...params }) =>
-        console.log('cell clicked', { event, cell, undefined, params })
+        console.log('cell clicked', { event, cell, undefined, params }),
       ),
       sorter: participantSorter,
       field: 'participantName',
@@ -20,7 +20,7 @@ export function getStatsColumns({ isAdHoc }) {
       minWidth: 200,
       title: 'Name',
       widthGrow: 2,
-      frozen: true
+      frozen: true,
     },
     {
       headerHozAlign: CENTER,
@@ -28,7 +28,7 @@ export function getStatsColumns({ isAdHoc }) {
       title: 'Match W/L',
       hozAlign: CENTER,
       maxWidth: 80,
-      field: 'result'
+      field: 'result',
     },
     {
       formatter: percentFormatter,
@@ -37,7 +37,7 @@ export function getStatsColumns({ isAdHoc }) {
       field: 'matchUpsPct',
       title: 'Match Win%',
       hozAlign: CENTER,
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       headerHozAlign: CENTER,
@@ -45,7 +45,7 @@ export function getStatsColumns({ isAdHoc }) {
       field: 'setsResult',
       title: 'Sets W/L',
       hozAlign: CENTER,
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       formatter: percentFormatter,
@@ -54,7 +54,7 @@ export function getStatsColumns({ isAdHoc }) {
       title: 'Set Win%',
       hozAlign: CENTER,
       field: 'setsPct',
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       headerHozAlign: CENTER,
@@ -62,7 +62,7 @@ export function getStatsColumns({ isAdHoc }) {
       field: 'gamesResult',
       title: 'Games W/L',
       hozAlign: CENTER,
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       formatter: percentFormatter,
@@ -71,7 +71,7 @@ export function getStatsColumns({ isAdHoc }) {
       title: 'Game Win%',
       hozAlign: CENTER,
       field: 'gamesPct',
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       headerHozAlign: CENTER,
@@ -79,7 +79,7 @@ export function getStatsColumns({ isAdHoc }) {
       field: 'pointsResult',
       title: 'Points W/L',
       hozAlign: CENTER,
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       formatter: percentFormatter,
@@ -88,7 +88,7 @@ export function getStatsColumns({ isAdHoc }) {
       title: 'Points Win%',
       field: 'pointsPct',
       hozAlign: CENTER,
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       formatter: percentFormatter,
@@ -97,7 +97,7 @@ export function getStatsColumns({ isAdHoc }) {
       sorter: percentSorter,
       hozAlign: CENTER,
       maxWidth: 70,
-      title: 'PS'
+      title: 'PS',
     },
     {
       formatter: percentFormatter,
@@ -106,7 +106,7 @@ export function getStatsColumns({ isAdHoc }) {
       sorter: percentSorter,
       hozAlign: CENTER,
       maxWidth: 70,
-      title: 'RV'
+      title: 'RV',
     },
     {
       headerHozAlign: CENTER,
@@ -115,7 +115,7 @@ export function getStatsColumns({ isAdHoc }) {
       hozAlign: CENTER,
       visible: isAdHoc,
       title: 'Order',
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       headerHozAlign: CENTER,
@@ -124,12 +124,12 @@ export function getStatsColumns({ isAdHoc }) {
       hozAlign: CENTER,
       title: 'Order',
       field: 'order',
-      maxWidth: 80
+      maxWidth: 80,
     },
     {
       field: 'groupName',
       visible: false,
-      title: 'Group'
-    }
+      title: 'Group',
+    },
   ];
 }

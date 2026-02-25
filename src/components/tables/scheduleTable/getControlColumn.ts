@@ -15,6 +15,6 @@ export function getControlColumn() {
     resizable: false,
     hozAlign: CENTER,
     frozen: true,
-    width: 55
+    width: 55,
   };
 }

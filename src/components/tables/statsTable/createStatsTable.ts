@@ -76,7 +76,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
         'gamesPct',
         'setsPct',
         'result',
-        'order'
+        'order',
       ]),
       // responsiveLayoutCollapseStartOpen: false,
       height: window.innerHeight * 0.85,
@@ -90,7 +90,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
       index: 'matchUpId',
       groupBy,
       columns,
-      data
+      data,
     });
   };
 

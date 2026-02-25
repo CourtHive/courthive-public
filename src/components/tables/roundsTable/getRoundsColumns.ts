@@ -28,38 +28,38 @@ export function getRoundsColumns({ data }) {
       resizable: false,
       hozAlign: CENTER,
       minWidth: 50,
-      width: 50
+      width: 50,
     },
     {
       formatter: 'rownum',
       headerSort: false,
       hozAlign: LEFT,
-      width: 55
+      width: 55,
     },
     {
       title: 'Flight',
       visible: false,
       minWidth: 150,
       field: 'flight',
-      widthGrow: 1
+      widthGrow: 1,
     },
     {
       field: 'scheduledDate',
       title: 'Date',
-      width: 110
+      width: 110,
     },
     {
       visible: !!showCourts,
       field: 'courtName',
       title: 'Court',
-      width: 100
+      width: 100,
     },
     {
       field: 'scheduleTime',
       headerSort: false,
       visible: false,
       title: 'Time',
-      width: 70
+      width: 70,
     },
     {
       formatter: matchUpParticipantFormatter,
@@ -68,7 +68,7 @@ export function getRoundsColumns({ data }) {
       title: 'Side 1',
       minWidth: 180,
       field: 'side1',
-      widthGrow: 1
+      widthGrow: 1,
     },
     {
       formatter: matchUpParticipantFormatter,
@@ -77,7 +77,7 @@ export function getRoundsColumns({ data }) {
       title: 'Side 2',
       minWidth: 180,
       field: 'side2',
-      widthGrow: 1
+      widthGrow: 1,
     },
     {
       formatter: scoreFormatter,
@@ -85,7 +85,7 @@ export function getRoundsColumns({ data }) {
       field: 'scoreDetail',
       responsive: false,
       title: 'Score',
-      width: 140
+      width: 140,
     },
     {
       sorter: competitiveProfileSorter,
@@ -94,7 +94,7 @@ export function getRoundsColumns({ data }) {
       responsive: false,
       title: 'Profile',
       visible: false,
-      width: 140
+      width: 140,
     },
     {
       title: `<div class='fa-solid fa-check' style='color: green' />`,
@@ -102,19 +102,19 @@ export function getRoundsColumns({ data }) {
       field: 'complete',
       hozAlign: LEFT,
       tooltip: false,
-      width: 40
+      width: 40,
     },
     {
       field: 'matchUp.matchUpStatus',
       title: 'Status',
-      width: 150
+      width: 150,
     },
     {
       title: `<div class='fa-solid fa-clock' style='color: blue' />`,
       headerSort: false,
       field: 'duration',
       visible: false,
-      width: 70
-    }
+      width: 70,
+    },
   ];
 }

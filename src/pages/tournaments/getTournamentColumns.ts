@@ -21,7 +21,7 @@ export function getTournamentColumns() {
       headerSort: false,
       resizable: true,
       minWidth: 250,
-      widthGrow: 3
-    }
+      widthGrow: 3,
+    },
   ];
 }

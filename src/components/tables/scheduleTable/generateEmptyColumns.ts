@@ -11,7 +11,7 @@ export function generateEmptyColumns({ count }) {
         formatter: scheduleCell,
         headerSort: false,
         resizable: false,
-        minWidth: 150
+        minWidth: 150,
       }))
     : [];
 }

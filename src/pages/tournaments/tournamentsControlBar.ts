@@ -15,8 +15,8 @@ export function tournamentsControls(table) {
       clearSearch: () => setSearchFilter(''),
       placeholder: 'Search tournaments',
       location: LEFT,
-      search: true
-    }
+      search: true,
+    },
   ];
 
   const target = document.getElementById(TOURNAMENTS_CONTROL);

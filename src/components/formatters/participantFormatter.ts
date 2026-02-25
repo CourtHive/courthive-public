@@ -11,15 +11,15 @@ const scales = {
     scaleType: 'RATING',
     scaleColor: 'blue',
     scaleName: 'UTR',
-    fallback: true
+    fallback: true,
   },
   wtn: {
     accessor: 'wtnRating',
     scaleType: 'RATING',
     scaleColor: 'red',
     scaleName: 'WTN',
-    fallback: true
-  }
+    fallback: true,
+  },
 };
 
 export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
@@ -39,7 +39,7 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
         eventHandlers: {
           participantClick: (params) => {
             return isFunction(onClick) && onClick({ ...params, event: params.pointerEvent, cell });
-          }
+          },
         },
         composition: {
           configuration: {
@@ -47,13 +47,14 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
             winnerColor: true,
             genderColor: true,
             scaleAttributes,
-            flag: false
-          }
+            flag: false,
+          },
+          theme: '',
         },
         matchUp: data.matchUp,
         participant,
         placeholder,
-        sideNumber
+        sideNumber,
       });
     };
 

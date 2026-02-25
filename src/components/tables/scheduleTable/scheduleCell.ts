@@ -23,7 +23,7 @@ export function scheduleCell(cell) {
     schedule = {},
     winningSide,
     matchUpId,
-    sides
+    sides,
   } = value || {};
 
   const { courtOrder = '', scheduledTime = '', courtId = '', timeModifiers, venueId = '' } = schedule;
@@ -54,7 +54,7 @@ export function scheduleCell(cell) {
   const potentials = potentialParticipants?.map((potential) =>
     potential
       ?.map((participant) => `<span class='potential nowrap'>${getPotentialName(participant)}</span>`)
-      .join('<span style="font-weight: bold">&nbsp;or&nbsp;</span>')
+      .join('<span style="font-weight: bold">&nbsp;or&nbsp;</span>'),
   );
   const getParticiapntName = (sideNumber) => {
     const participantName = sides?.find((side) => sideNumber === side.sideNumber)?.participant?.participantName;

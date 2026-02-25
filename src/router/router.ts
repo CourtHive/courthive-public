@@ -9,26 +9,29 @@ import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerCons
 import { context } from 'src/common/context';
 
 export function router() {
-  const routerRoot = window.location.host.startsWith('localhost') ? '/' : process.env.PUBLIC_URL ?? '/';
+  const useHash = true;
+  const router = new Navigo('/', { hash: useHash });
+
+  // make accessible
+  context.router = router;
+
   const back = document.getElementById('back');
 
-  const useHash = true;
-  const router = new Navigo(useHash ? '/' : `/${routerRoot}`, { hash: useHash });
-  router.on(`/`, () => {
+  router.on('/', () => {
     back.style.display = 'none';
     setDisplay(SPLASH);
     renderDefaultPage();
   });
-  router.on(`/tournaments/:providerAbbr`, ({ data }) => {
+  router.on('/tournaments/:providerAbbr', (match) => {
     back.style.display = 'none';
-    const providerAbbr = data.providerAbbr.toUpperCase();
+    const providerAbbr = match?.data?.providerAbbr?.toUpperCase();
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
   });
 
-  router.on(`/tournament/:tournamentId`, ({ data }) => {
+  router.on('/tournament/:tournamentId', (match) => {
     back.style.display = 'block';
-    const tournamentId = data.tournamentId;
+    const tournamentId = match?.data?.tournamentId;
     context.tournamentId = tournamentId;
     setDisplay(TOURNAMENT);
     getTournamentInfo({ tournamentId }).then(renderTournament);

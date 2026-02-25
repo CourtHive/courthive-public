@@ -19,8 +19,8 @@ export function getScheduleColumns({ courtsData, courtPrefix }) {
     headerSort: false,
     resizable: false,
     hozAlign: CENTER,
-    minWidth: 150
+    minWidth: 150,
   });
 
-  return [controlColumn].concat(courtsData?.map(generateColumn), emptyColumns);
+  return ([] as any[]).concat([controlColumn], courtsData?.map(generateColumn), emptyColumns);
 }

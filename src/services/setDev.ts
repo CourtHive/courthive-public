@@ -4,7 +4,6 @@ import { baseApi } from './api/baseApi';
 
 export function setDev() {
   if (!window['dev']) {
-    // eslint-disable-next-line no-console
     console.log('%c dev initialized', 'color: yellow');
     window['dev'] = {};
   } else {
@@ -14,14 +13,14 @@ export function setDev() {
   const logData = (fx) => (params) =>
     fx(params).then(
       (r) => console.log(r.data),
-      (e) => console.log(e)
+      (e) => console.log(e),
     );
 
   const fx = {
     getServerFactoryVersion: (params) => logData(getServerFactoryVersion)(params),
     getProviderCalendar: (params) => logData(getProviderCalendar)(params),
     getTournamentInfo: (params) => logData(getTournamentInfo)(params),
-    getEventData: (params) => logData(getEventData(params))
+    getEventData: (params) => logData(getEventData(params)),
   };
 
   addDev({ ...fx, baseApi, context });
@@ -32,8 +31,7 @@ function addDev(variable) {
 
   try {
     Object.keys(variable).forEach((key) => (window['dev'][key] = variable[key]));
-  } catch (err) { // eslint-disable-line @typescript-eslint/no-unused-vars
-    // eslint-disable-next-line no-console
+  } catch {
     console.log('production environment');
   }
 }

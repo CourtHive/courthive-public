@@ -23,6 +23,6 @@ export function mapParticipantResults(params) {
     participant,
     gamesResult,
     setsResult,
-    order
+    order,
   };
 }
