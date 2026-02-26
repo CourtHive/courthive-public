@@ -24,8 +24,8 @@ importers:
         specifier: 1.11.19
         version: 1.11.19
       hotkeys-js:
-        specifier: 4.0.1
-        version: 4.0.1
+        specifier: 4.0.2
+        version: 4.0.2
       navigo:
         specifier: 8.11.1
         version: 8.11.1
@@ -1666,8 +1666,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hotkeys-js@4.0.1:
-    resolution: {integrity: sha512-zjh2YxGhTMbddFUxyMOc35Iq0v86N7JnsB62m4hm34fG/CVX1ard7Gp3AJN4PK9lSLFexK14zPMNVwSYgz3tRg==}
+  hotkeys-js@4.0.2:
+    resolution: {integrity: sha512-fJNEO88zWwoXEGJuvjSbunKSexaT1VbC1S9wIzMA2BfOZ5KPiQj2wTqxDeXd110/4akiAuQIsE3TSbNvGgCyQg==}
 
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
@@ -4077,7 +4077,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hotkeys-js@4.0.1: {}
+  hotkeys-js@4.0.2: {}
 
   html-escaper@2.0.2: {}
 
