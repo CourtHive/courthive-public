@@ -8,8 +8,25 @@ import { getRoundDisplayOptions } from './renderRoundOptions';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
+import { updateRouteUrl } from 'src/router/router';
 
-export function renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat }) {
+export function renderEvent({
+  tournamentId,
+  eventId,
+  header,
+  flightDisplay,
+  displayFormat,
+  drawId: targetDrawId,
+  structureId: targetStructureId,
+}: {
+  tournamentId: string;
+  eventId: string;
+  header: HTMLElement;
+  flightDisplay: HTMLElement;
+  displayFormat: string;
+  drawId?: string;
+  structureId?: string;
+}) {
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
   const removeRoundDisplayButton = () => document.getElementById('roundDisplayButton')?.remove();
 
@@ -102,14 +119,27 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         }
       };
 
+      const initialStructureIndex = targetStructureId
+        ? Math.max(
+            flight.structures?.findIndex((s) => s.structureId === targetStructureId) ?? -1,
+            0,
+          )
+        : 0;
+      // consume after use so subsequent renders default to first
+      targetStructureId = undefined;
+
       if (flight.structures?.length > 1) {
-        const structureOptions = flight.structures.map(({ structureName }, i) => ({
-          onClick: () => renderSelectedStructure(i),
+        const structureOptions = flight.structures.map(({ structureName, structureId }, i) => ({
+          onClick: () => {
+            updateRouteUrl({ tournamentId, eventId, drawId, structureId });
+            renderSelectedStructure(i);
+          },
+          isActive: i === initialStructureIndex,
           label: structureName,
           close: true,
         }));
         const structureButton = {
-          label: flight.structures[0].structureName,
+          label: flight.structures[initialStructureIndex].structureName,
           options: structureOptions,
           id: 'structureButton',
           modifyLabel: true,
@@ -120,19 +150,32 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
         header.appendChild(elem);
       }
 
-      const structure = flight.structures?.[0];
+      const structure = flight.structures?.[initialStructureIndex];
       if (!structure) return;
 
-      renderSelectedStructure(0);
+      renderSelectedStructure(initialStructureIndex);
     };
 
-    const flightOptions = flightsData.map(({ drawName }, i) => ({
-      onClick: () => renderFlight(i),
+    const initialFlightIndex = targetDrawId
+      ? Math.max(
+          flightsData.findIndex((f) => f.drawId === targetDrawId),
+          0,
+        )
+      : 0;
+    // consume after use so subsequent renders default to first
+    targetDrawId = undefined;
+
+    const flightOptions = flightsData.map(({ drawName, drawId }, i) => ({
+      onClick: () => {
+        updateRouteUrl({ tournamentId, eventId, drawId });
+        renderFlight(i);
+      },
+      isActive: i === initialFlightIndex,
       label: drawName,
       close: true,
     }));
     const flightButton = {
-      label: flightsData?.[0]?.drawName,
+      label: flightsData?.[initialFlightIndex]?.drawName,
       options: flightOptions,
       modifyLabel: true,
       id: 'flightButton',
@@ -142,7 +185,7 @@ export function renderEvent({ tournamentId, eventId, header, flightDisplay, disp
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);
 
-    renderFlight(0);
+    renderFlight(initialFlightIndex);
   });
 }
 

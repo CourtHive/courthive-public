@@ -11,6 +11,7 @@ import hotkeys from 'hotkeys-js';
 import { SPLASH } from 'src/common/constants/routerConstants';
 
 import 'courthive-components/dist/courthive-components.css';
+import 'src/styles/components/layout.css';
 import 'src/styles/tabulator.css';
 import 'src/styles/tournamentSchedule.css';
 import 'src/styles/default.css';

@@ -2,12 +2,16 @@ import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { updateRouteUrl } from 'src/router/router';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
 
-export async function renderTournament(result) {
+export async function renderTournament(
+  result,
+  deepLink?: { eventId?: string; drawId?: string; structureId?: string },
+) {
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
 
@@ -48,13 +52,26 @@ export async function renderTournament(result) {
     const flightDisplay = document.createElement('div');
     flightDisplay.id = 'flightDisplay';
 
-    const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }) => ({
-      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' }),
+    const targetEventId = deepLink?.eventId;
+
+    const initialIndex = targetEventId
+      ? Math.max(
+          tournamentInfo.eventInfo.findIndex((e) => e.eventId === targetEventId),
+          0,
+        )
+      : 0;
+
+    const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }, i) => ({
+      onClick: () => {
+        updateRouteUrl({ tournamentId, eventId });
+        renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
+      },
+      isActive: i === initialIndex,
       label: eventName,
       close: true,
     }));
     const eventButton = {
-      label: tournamentInfo.eventInfo[0].eventName,
+      label: tournamentInfo.eventInfo[initialIndex].eventName,
       options: eventOptions,
       id: 'eventButton',
       modifyLabel: true,
@@ -66,15 +83,23 @@ export async function renderTournament(result) {
       document.getElementById('flightButton')?.remove();
     };
     const elem = dropDownButton({ button: eventButton, stateChange: removeFlightButtons });
-    const eventId: string = tournamentInfo.eventInfo[0].eventId;
+    const eventId: string = tournamentInfo.eventInfo[initialIndex].eventId;
     header.className = 'block';
     header.appendChild(elem);
     et.appendChild(header);
     et.appendChild(flightDisplay);
-    renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
+    renderEvent({
+      tournamentId,
+      eventId,
+      header,
+      flightDisplay,
+      displayFormat: 'roundsColumns',
+      drawId: deepLink?.drawId,
+      structureId: deepLink?.structureId,
+    });
 
     displayTab('Events');
-    if (!context.tab) displayTabContent('Events');
+    if (!context.tab || deepLink?.eventId) displayTabContent('Events');
   } else {
     hideTab('Events');
   }
