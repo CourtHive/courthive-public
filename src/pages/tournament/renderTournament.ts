@@ -6,11 +6,10 @@ import { updateRouteUrl } from 'src/router/router';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
-import { context } from 'src/common/context';
 
 export async function renderTournament(
   result,
-  deepLink?: { eventId?: string; drawId?: string; structureId?: string },
+  deepLink?: { eventId?: string; drawId?: string; structureId?: string; tab?: string },
 ) {
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
@@ -33,16 +32,17 @@ export async function renderTournament(
   }
 
   const notes = document.getElementById(getTabContentId('Info'));
-  if (tournamentInfo.notes) {
+  const hasNotes = !!tournamentInfo.notes;
+  if (hasNotes) {
     notes.innerHTML = tournamentInfo.notes;
-    displayTabContent('Info');
     displayTab('Info');
   } else {
     removeAllChildNodes(notes);
     hideTab('Info');
   }
 
-  if (tournamentInfo.eventInfo?.length) {
+  const hasEvents = !!tournamentInfo.eventInfo?.length;
+  if (hasEvents) {
     const tournamentId: string = tournamentInfo.tournamentId;
 
     const et = document.getElementById(getTabContentId('Events'));
@@ -99,12 +99,12 @@ export async function renderTournament(
     });
 
     displayTab('Events');
-    if (!context.tab || deepLink?.eventId) displayTabContent('Events');
   } else {
     hideTab('Events');
   }
 
-  if (tournamentInfo.publishState?.orderOfPlay?.published) {
+  const hasSchedule = !!tournamentInfo.publishState?.orderOfPlay?.published;
+  if (hasSchedule) {
     const schedule = document.getElementById(getTabContentId('Schedule'));
 
     const scheduleHeader = document.createElement('div');
@@ -119,5 +119,23 @@ export async function renderTournament(
     displayTab('Schedule');
   } else {
     hideTab('Schedule');
+  }
+
+  // Determine target tab — priority: deep-link tab > deep-link event > info default > events fallback
+  let targetTab: string;
+  if (deepLink?.tab === 'Schedule' && hasSchedule) {
+    targetTab = 'Schedule';
+  } else if (deepLink?.tab === 'Events' && hasEvents) {
+    targetTab = 'Events';
+  } else if (deepLink?.eventId && hasEvents) {
+    targetTab = 'Events';
+  } else if (hasNotes) {
+    targetTab = 'Info';
+  } else if (hasEvents) {
+    targetTab = 'Events';
+  }
+
+  if (targetTab) {
+    displayTabContent(targetTab);
   }
 }

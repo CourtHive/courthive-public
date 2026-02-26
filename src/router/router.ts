@@ -13,11 +13,13 @@ function navigateToTournament({
   eventId,
   drawId,
   structureId,
+  tab,
 }: {
   tournamentId: string;
   eventId?: string;
   drawId?: string;
   structureId?: string;
+  tab?: string;
 }) {
   const back = document.getElementById('back');
   back.style.display = 'block';
@@ -27,7 +29,7 @@ function navigateToTournament({
 
   setDisplay(TOURNAMENT);
   getTournamentInfo({ tournamentId }).then((result) =>
-    renderTournament(result, { eventId, drawId, structureId }),
+    renderTournament(result, { eventId, drawId, structureId, tab }),
   );
 }
 
@@ -36,17 +38,26 @@ export function updateRouteUrl({
   eventId,
   drawId,
   structureId,
+  tab,
 }: {
   tournamentId: string;
   eventId?: string;
   drawId?: string;
   structureId?: string;
+  tab?: string;
 }) {
   let path = `/tournament/${tournamentId}`;
-  if (eventId) path += `/event/${eventId}`;
-  if (drawId) path += `/draw/${drawId}`;
-  if (structureId) path += `/structure/${structureId}`;
-  context.router?.navigate(path, { callHandler: false });
+  if (tab === 'Schedule') {
+    path += `/schedule`;
+  } else if (tab === 'Events') {
+    path += `/events`;
+  } else {
+    if (eventId) path += `/event/${eventId}`;
+    if (drawId) path += `/draw/${drawId}`;
+    if (structureId) path += `/structure/${structureId}`;
+  }
+  // Use pushState directly to update URL without triggering any router handlers.
+  history.pushState(null, '', `#${path}`);
 }
 
 export function router() {
@@ -97,8 +108,21 @@ export function router() {
     });
   });
 
+  router.on('/tournament/:tournamentId/events', (match) => {
+    navigateToTournament({
+      tournamentId: match?.data?.tournamentId,
+      tab: 'Events',
+    });
+  });
+
+  router.on('/tournament/:tournamentId/schedule', (match) => {
+    navigateToTournament({
+      tournamentId: match?.data?.tournamentId,
+      tab: 'Schedule',
+    });
+  });
+
   router.on('/tournament/:tournamentId', (match) => {
-    console.log('[router] matched: /tournament/:tournamentId', match?.data);
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
     });
