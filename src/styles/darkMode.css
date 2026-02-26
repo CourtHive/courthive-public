@@ -1,0 +1,104 @@
+[data-theme='dark'] .springboard {
+  background-color: var(--chc-bg-secondary);
+}
+
+[data-theme='dark'] .main,
+[data-theme='dark'] #tc-draws {
+  background-color: var(--chc-bg-primary);
+}
+
+[data-theme='dark'] .controlBar,
+[data-theme='dark'] .foreground {
+  background-color: var(--chc-bg-primary);
+}
+
+[data-theme='dark'] .panelHeader {
+  background-color: var(--chc-panel-header-bg);
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom-color: var(--chc-border-primary);
+  background-color: var(--chc-bg-primary);
+}
+
+[data-theme='dark'] .tableClass {
+  background-color: var(--chc-bg-primary);
+}
+
+[data-theme='dark'] .subTable {
+  background-color: var(--chc-bg-secondary);
+}
+
+[data-theme='dark'] body {
+  background-color: var(--chc-bg-primary);
+  color: var(--chc-text-primary);
+}
+
+/* Tabulator dark overrides */
+[data-theme='dark'] .tabulator .tabulator-header .tabulator-col {
+  background: var(--chc-bg-secondary);
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator-row .tabulator-cell {
+  background-color: var(--chc-bg-primary);
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator .tabulator-tableholder .tabulator-table {
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator .tabulator-header {
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator .tabulator-footer {
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator-row.tabulator-selectable:hover {
+  background-color: var(--chc-hover-bg);
+}
+
+[data-theme='dark'] .tabulator-row.tabulator-group {
+  color: var(--chc-text-primary);
+}
+
+[data-theme='dark'] .tabulator-row.tabulator-group.tabulator-group-level-0 {
+  background-color: var(--chc-bg-elevated);
+}
+
+[data-theme='dark'] .tabulator-row.tabulator-group.tabulator-group-level-1 {
+  background-color: var(--chc-bg-secondary);
+}
+
+[data-theme='dark'] .tabulator-popup-container {
+  background: var(--chc-bg-elevated);
+}
+
+/* Schedule dark overrides */
+[data-theme='dark'] {
+  --sch-neutral: var(--chc-bg-primary);
+  --sch-complete: #1a3a5c;
+  --sch-inprogress: #1a3c1a;
+  --sch-warning: #3c3c1a;
+  --sch-conflict: #5c1a1a;
+  --sch-issue: #5c3a1a;
+  --sch-abandoned: #5c3a00;
+}
+
+[data-theme='dark'] .court_header {
+  background: var(--chc-bg-primary);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  line-height: 1;
+  color: var(--chc-text-primary, #363636);
+}

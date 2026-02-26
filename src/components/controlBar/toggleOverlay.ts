@@ -3,7 +3,7 @@ import { CENTER, EMPTY_STRING, FLEX, LEFT, NONE, OVERLAY, RIGHT } from 'src/comm
 export const toggleOverlay =
   ({ target }) =>
   (rows = []) => {
-    target.style.backgroundColor = rows?.length ? 'lightgray' : EMPTY_STRING;
+    target.style.backgroundColor = rows?.length ? 'var(--chc-active-bg)' : EMPTY_STRING;
     const toggleOption = (option, hasRows, noRows) => {
       const element = target.getElementsByClassName(`options_${option}`)[0];
       element && (element.style.display = rows?.length ? hasRows : noRows);

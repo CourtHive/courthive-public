@@ -18,11 +18,13 @@ export function router() {
   const back = document.getElementById('back');
 
   router.on('/', () => {
+    console.log('[router] matched: / (splash)');
     back.style.display = 'none';
     setDisplay(SPLASH);
     renderDefaultPage();
   });
   router.on('/tournaments/:providerAbbr', (match) => {
+    console.log('[router] matched: /tournaments/:providerAbbr', match?.data);
     back.style.display = 'none';
     const providerAbbr = match?.data?.providerAbbr?.toUpperCase();
     setDisplay(TOURNAMENTS);
@@ -30,6 +32,7 @@ export function router() {
   });
 
   router.on('/tournament/:tournamentId', (match) => {
+    console.log('[router] matched: /tournament/:tournamentId', match?.data);
     back.style.display = 'block';
     const tournamentId = match?.data?.tournamentId;
     context.tournamentId = tournamentId;
@@ -37,7 +40,8 @@ export function router() {
     getTournamentInfo({ tournamentId }).then(renderTournament);
   });
 
-  router.notFound(() => {
+  router.notFound((match) => {
+    console.log('[router] notFound — url:', match?.url, 'hashString:', match?.hashString, 'data:', match?.data);
     router.navigate('/');
   });
   router.resolve();

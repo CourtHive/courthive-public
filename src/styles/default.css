@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: black;
-  background-color: rgb(248, 247, 251);
+  color: var(--chc-text-primary, black);
+  background-color: var(--chc-bg-secondary, rgb(248, 247, 251));
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--chc-bg-primary, white);
 }
 
 .main {
@@ -72,15 +71,3 @@ h1:hover {
   filter: drop-shadow(0 0 2em #3178c6aa);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
