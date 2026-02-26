@@ -1,6 +1,7 @@
 import { TOURNAMENTS_CONTROL, TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
 import { tournamentFramework } from 'src/pages/tournament/framework';
+import { toggleTheme } from 'src/services/themeService';
 
 export function rootBlock() {
   const main = document.createElement('div');
@@ -11,13 +12,30 @@ export function rootBlock() {
   const navBrand = document.createElement('div');
   navBrand.className = 'navbar-brand';
   const navItem = document.createElement('div');
-  navItem.onclick = () => window.history.back();
+  navItem.onclick = () => globalThis.history.back();
   navItem.className = 'navbar-item';
   navItem.innerHTML = '<<';
   navItem.id = 'back';
 
+  const navEnd = document.createElement('div');
+  navEnd.className = 'navbar-end';
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'navbar-item theme-toggle';
+  themeToggle.title = 'Toggle dark mode';
+  const updateIcon = () => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    themeToggle.textContent = isDark ? '\u2600' : '\u263E';
+  };
+  updateIcon();
+  themeToggle.onclick = () => {
+    toggleTheme();
+    updateIcon();
+  };
+  navEnd.appendChild(themeToggle);
+
   navBrand.appendChild(navItem);
   nav.appendChild(navBrand);
+  nav.appendChild(navEnd);
   main.appendChild(nav);
 
   const splash = document.createElement('div');
@@ -39,7 +57,6 @@ export function rootBlock() {
   tournaments.appendChild(tTable);
 
   const tournament = document.createElement('div');
-  tournament.style.backgroundColor = 'white';
   tournament.style.display = 'none';
   tournament.id = TOURNAMENT;
   tournament.appendChild(tournamentFramework());

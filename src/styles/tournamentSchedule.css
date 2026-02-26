@@ -149,6 +149,6 @@ body {
 }
 .court_header {
   height: 2em;
-  background: #fff;
+  background: var(--chc-bg-primary, #fff);
   width: 14em;
 }

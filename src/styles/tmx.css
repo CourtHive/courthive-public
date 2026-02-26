@@ -1,7 +1,6 @@
 html,
 body {
   font-family: 'Poppins', sans-serif;
-  /* font-size: 62.5%; */
   font-weight: 500;
 }
 
@@ -13,7 +12,7 @@ body {
 }
 
 .springboard {
-  background-color: #edecf0;
+  background-color: var(--chc-bg-secondary, #edecf0);
   width: 100%;
 }
 
@@ -23,7 +22,7 @@ body {
 
 .subTable {
   padding-bottom: 1em;
-  background-color: #e7e6e7;
+  background-color: var(--chc-bg-secondary, #e7e6e7);
 }
 
 .activeScoreCell {
@@ -53,7 +52,7 @@ body {
 }
 
 .navbar {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--chc-border-primary, #d9d9d9);
   font-size: 60%;
   position: fixed;
   top: 0;
@@ -64,7 +63,7 @@ body {
 }
 
 .tableClass {
-  background-color: white;
+  background-color: var(--chc-bg-primary, white);
 }
 
 /* prevent scrollbar on hover in Tabulator tables */
@@ -96,7 +95,7 @@ body {
 
 .main,
 #tc-draws {
-  background-color: white;
+  background-color: var(--chc-bg-primary, white);
 }
 
 #unscheduledVisibility {
@@ -109,7 +108,7 @@ body {
 
 .controlBar,
 .foreground {
-  background-color: white;
+  background-color: var(--chc-bg-primary, white);
 }
 
 .mfcButton {
@@ -125,7 +124,7 @@ body {
 }
 
 .panelHeader {
-  background-color: rgb(192 193 211);
+  background-color: var(--chc-panel-header-bg, rgb(192 193 211));
   -webkit-align-items: center;
   -webkit-flex-direction: row;
   flex-direction: row;
