@@ -1,5 +1,6 @@
 import { createScheduleTable } from 'src/components/tables/scheduleTable/createScheduleTable';
 import { getScheduledMatchUps } from 'src/services/api/tournamentsApi';
+import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId, getTabId } from './tabIds';
 import { context } from 'src/common/context';
 
@@ -8,8 +9,17 @@ import { NONE } from 'src/common/constants/baseConstants';
 
 export const tabNames = ['Info', 'Events', 'Schedule', 'Matches', 'Players', 'Stats'];
 
-export function displayTabContent(tabName) {
-  // TODO: determine if content needs to be fetched or is already present
+// Guard against phantom clicks caused by layout shift when sections show/hide
+let _tabSwitching = false;
+
+export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
+  if (options?.updateUrl) {
+    if (_tabSwitching) return;
+    _tabSwitching = true;
+    requestAnimationFrame(() => {
+      _tabSwitching = false;
+    });
+  }
 
   if (tabName === 'Schedule') {
     const hydrateParticipants = false;
@@ -22,6 +32,17 @@ export function displayTabContent(tabName) {
     const section = document.getElementById(getTabContentId(name));
     section.style.display = name === tabName ? 'block' : 'none';
   });
+
+  if (options?.updateUrl) {
+    const tournamentId = context.tournamentId;
+    if (tabName === 'Schedule') {
+      updateRouteUrl({ tournamentId, tab: 'Schedule' });
+    } else if (tabName === 'Events') {
+      updateRouteUrl({ tournamentId, tab: 'Events' });
+    } else {
+      updateRouteUrl({ tournamentId });
+    }
+  }
 }
 
 export function displayTab(tabName) {

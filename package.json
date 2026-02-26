@@ -35,8 +35,8 @@
   "devDependencies": {
     "@commitlint/cli": "20.4.2",
     "@commitlint/config-conventional": "20.4.2",
-    "@types/node": "24.10.14",
     "@eslint/js": "^10.0.1",
+    "@types/node": "24.10.15",
     "@typescript-eslint/eslint-plugin": "8.56.1",
     "@typescript-eslint/parser": "8.56.1",
     "@vitest/coverage-v8": "4.0.18",
@@ -64,8 +64,7 @@
   },
   "dependencies": {
     "axios": "1.13.5",
-    "bulma": "1.0.4",
-    "courthive-components": "0.9.28-beta.2",
+    "courthive-components": "0.9.28-beta.4",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.19",
     "hotkeys-js": "4.0.2",
@@ -74,6 +73,6 @@
     "semver": "7.7.4",
     "tabulator-tables": "6.3.1",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "2.4.6-beta.1"
+    "tods-competition-factory": "2.4.6-beta.2"
   }
 }

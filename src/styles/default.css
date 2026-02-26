@@ -15,6 +15,15 @@
   box-sizing: border-box;
 }
 
+/* Form elements don't inherit font-family by default (browser UA styles override).
+   Bulma set this globally; replicate it here. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

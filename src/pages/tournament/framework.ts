@@ -52,7 +52,7 @@ export const tournamentFramework = () => {
     tab.className = 'menu';
     const tabLink = document.createElement('a');
     tabLink.textContent = tabName;
-    tabLink.onclick = () => displayTabContent(tabName);
+    tabLink.onclick = () => displayTabContent(tabName, { updateUrl: true });
     tab.appendChild(tabLink);
     ul.appendChild(tab);
   });

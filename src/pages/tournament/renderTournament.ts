@@ -2,12 +2,15 @@ import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { updateRouteUrl } from 'src/router/router';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
-import { context } from 'src/common/context';
 
-export async function renderTournament(result) {
+export async function renderTournament(
+  result,
+  deepLink?: { eventId?: string; drawId?: string; structureId?: string; tab?: string },
+) {
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
 
@@ -29,16 +32,17 @@ export async function renderTournament(result) {
   }
 
   const notes = document.getElementById(getTabContentId('Info'));
-  if (tournamentInfo.notes) {
+  const hasNotes = !!tournamentInfo.notes;
+  if (hasNotes) {
     notes.innerHTML = tournamentInfo.notes;
-    displayTabContent('Info');
     displayTab('Info');
   } else {
     removeAllChildNodes(notes);
     hideTab('Info');
   }
 
-  if (tournamentInfo.eventInfo?.length) {
+  const hasEvents = !!tournamentInfo.eventInfo?.length;
+  if (hasEvents) {
     const tournamentId: string = tournamentInfo.tournamentId;
 
     const et = document.getElementById(getTabContentId('Events'));
@@ -48,13 +52,26 @@ export async function renderTournament(result) {
     const flightDisplay = document.createElement('div');
     flightDisplay.id = 'flightDisplay';
 
-    const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }) => ({
-      onClick: () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' }),
+    const targetEventId = deepLink?.eventId;
+
+    const initialIndex = targetEventId
+      ? Math.max(
+          tournamentInfo.eventInfo.findIndex((e) => e.eventId === targetEventId),
+          0,
+        )
+      : 0;
+
+    const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }, i) => ({
+      onClick: () => {
+        updateRouteUrl({ tournamentId, eventId });
+        renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
+      },
+      isActive: i === initialIndex,
       label: eventName,
       close: true,
     }));
     const eventButton = {
-      label: tournamentInfo.eventInfo[0].eventName,
+      label: tournamentInfo.eventInfo[initialIndex].eventName,
       options: eventOptions,
       id: 'eventButton',
       modifyLabel: true,
@@ -66,20 +83,28 @@ export async function renderTournament(result) {
       document.getElementById('flightButton')?.remove();
     };
     const elem = dropDownButton({ button: eventButton, stateChange: removeFlightButtons });
-    const eventId: string = tournamentInfo.eventInfo[0].eventId;
+    const eventId: string = tournamentInfo.eventInfo[initialIndex].eventId;
     header.className = 'block';
     header.appendChild(elem);
     et.appendChild(header);
     et.appendChild(flightDisplay);
-    renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
+    renderEvent({
+      tournamentId,
+      eventId,
+      header,
+      flightDisplay,
+      displayFormat: 'roundsColumns',
+      drawId: deepLink?.drawId,
+      structureId: deepLink?.structureId,
+    });
 
     displayTab('Events');
-    if (!context.tab) displayTabContent('Events');
   } else {
     hideTab('Events');
   }
 
-  if (tournamentInfo.publishState?.orderOfPlay?.published) {
+  const hasSchedule = !!tournamentInfo.publishState?.orderOfPlay?.published;
+  if (hasSchedule) {
     const schedule = document.getElementById(getTabContentId('Schedule'));
 
     const scheduleHeader = document.createElement('div');
@@ -94,5 +119,23 @@ export async function renderTournament(result) {
     displayTab('Schedule');
   } else {
     hideTab('Schedule');
+  }
+
+  // Determine target tab — priority: deep-link tab > deep-link event > info default > events fallback
+  let targetTab: string;
+  if (deepLink?.tab === 'Schedule' && hasSchedule) {
+    targetTab = 'Schedule';
+  } else if (deepLink?.tab === 'Events' && hasEvents) {
+    targetTab = 'Events';
+  } else if (deepLink?.eventId && hasEvents) {
+    targetTab = 'Events';
+  } else if (hasNotes) {
+    targetTab = 'Info';
+  } else if (hasEvents) {
+    targetTab = 'Events';
+  }
+
+  if (targetTab) {
+    displayTabContent(targetTab);
   }
 }
