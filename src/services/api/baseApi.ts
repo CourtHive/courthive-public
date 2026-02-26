@@ -2,9 +2,9 @@ import { getJwtTokenStorageKey } from 'src/config/localStorage';
 import axios from 'axios';
 
 const JWT_TOKEN_STORAGE_NAME = getJwtTokenStorageKey();
-const local = window.location.host.includes('localhost') || window.location.hostname === '127.0.0.1';
+const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
 const baseURL =
-  window['dev']?.baseURL || import.meta.env.VITE_SERVER || (local ? 'http://localhost:8383' : 'https://courthive.net');
+  window['dev']?.baseURL || (local ? 'http://localhost:8383' : 'https://courthive.net') || import.meta.env.VITE_SERVER;
 const axiosInstance = axios.create({ baseURL });
 
 axiosInstance.interceptors.request.use(
