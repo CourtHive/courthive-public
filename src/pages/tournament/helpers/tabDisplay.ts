@@ -1,5 +1,6 @@
+import { createPlayersTable } from 'src/components/tables/playersTable/createPlayersTable';
 import { createScheduleTable } from 'src/components/tables/scheduleTable/createScheduleTable';
-import { getScheduledMatchUps } from 'src/services/api/tournamentsApi';
+import { getScheduledMatchUps, getParticipants } from 'src/services/api/tournamentsApi';
 import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId, getTabId } from './tabIds';
 import { context } from 'src/common/context';
@@ -26,6 +27,10 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
     getScheduledMatchUps({ tournamentId: context.tournamentId, hydrateParticipants }).then((result) => {
       createScheduleTable({ data: result?.data });
     });
+  } else if (tabName === 'Players') {
+    getParticipants({ tournamentId: context.tournamentId }).then((result) => {
+      createPlayersTable({ participants: result?.data?.participants || [] });
+    });
   }
   context.tab = tabName;
   tabNames.forEach((name) => {
@@ -39,6 +44,8 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
       updateRouteUrl({ tournamentId, tab: 'Schedule' });
     } else if (tabName === 'Events') {
       updateRouteUrl({ tournamentId, tab: 'Events' });
+    } else if (tabName === 'Players') {
+      updateRouteUrl({ tournamentId, tab: 'Players' });
     } else {
       updateRouteUrl({ tournamentId });
     }

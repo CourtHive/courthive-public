@@ -121,9 +121,30 @@ export async function renderTournament(
     hideTab('Schedule');
   }
 
+  const hasParticipants = !!tournamentInfo.publishState?.participants?.published;
+  if (hasParticipants) {
+    const players = document.getElementById(getTabContentId('Players'));
+    removeAllChildNodes(players);
+
+    const playersHeader = document.createElement('div');
+    playersHeader.style.width = '100%';
+    playersHeader.className = 'block';
+    players.appendChild(playersHeader);
+
+    const playersDisplay = document.createElement('div');
+    playersDisplay.id = 'playersTable';
+    players.appendChild(playersDisplay);
+
+    displayTab('Players');
+  } else {
+    hideTab('Players');
+  }
+
   // Determine target tab — priority: deep-link tab > deep-link event > info default > events fallback
   let targetTab: string;
-  if (deepLink?.tab === 'Schedule' && hasSchedule) {
+  if (deepLink?.tab === 'Players' && hasParticipants) {
+    targetTab = 'Players';
+  } else if (deepLink?.tab === 'Schedule' && hasSchedule) {
     targetTab = 'Schedule';
   } else if (deepLink?.tab === 'Events' && hasEvents) {
     targetTab = 'Events';
