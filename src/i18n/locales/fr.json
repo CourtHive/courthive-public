@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "info": "Info",
+    "events": "Épreuves",
+    "schedule": "Programme",
+    "matches": "Matchs",
+    "players": "Joueurs",
+    "stats": "Stats"
+  },
+  "players": {
+    "name": "Nom",
+    "country": "Pays",
+    "events": "Épreuves",
+    "rank": "Classement",
+    "noParticipants": "Aucun participant"
+  },
+  "schedule": {
+    "court": "Court",
+    "time": "Heure",
+    "event": "Épreuve",
+    "round": "Tour",
+    "matchUp": "Match"
+  },
+  "theme": {
+    "toggleDark": "Basculer le mode sombre"
+  },
+  "language": {
+    "select": "Choisir la langue"
+  }
+}

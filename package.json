@@ -68,6 +68,7 @@
     "d3-selection": "3.0.0",
     "dayjs": "1.11.19",
     "hotkeys-js": "4.0.2",
+    "i18next": "^25.8.13",
     "navigo": "8.11.1",
     "normalize-text": "2.6.0",
     "semver": "7.7.4",

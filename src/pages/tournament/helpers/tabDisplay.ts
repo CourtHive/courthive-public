@@ -29,7 +29,10 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
     });
   } else if (tabName === 'Players') {
     getParticipants({ tournamentId: context.tournamentId }).then((result) => {
-      createPlayersTable({ participants: result?.data?.participants || [] });
+      createPlayersTable({
+        participants: result?.data?.participants || [],
+        columnConfig: context.participantsPublishConfig?.columns,
+      });
     });
   }
   context.tab = tabName;

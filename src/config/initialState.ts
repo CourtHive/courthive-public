@@ -7,6 +7,9 @@ import { setWindow } from './setWindow';
 import { version } from './version';
 import hotkeys from 'hotkeys-js';
 
+// Initialize i18n (side-effect import triggers i18next.init)
+import 'src/i18n/i18n';
+
 // constants
 import { SPLASH } from 'src/common/constants/routerConstants';
 

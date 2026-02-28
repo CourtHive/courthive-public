@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "info": "معلومات",
+    "events": "الأحداث",
+    "schedule": "الجدول",
+    "matches": "المباريات",
+    "players": "اللاعبون",
+    "stats": "الإحصائيات"
+  },
+  "players": {
+    "name": "الاسم",
+    "country": "البلد",
+    "events": "الأحداث",
+    "rank": "الترتيب",
+    "noParticipants": "لا يوجد مشاركون"
+  },
+  "schedule": {
+    "court": "الملعب",
+    "time": "الوقت",
+    "event": "حدث",
+    "round": "جولة",
+    "matchUp": "مباراة"
+  },
+  "theme": {
+    "toggleDark": "تبديل الوضع الداكن"
+  },
+  "language": {
+    "select": "اختر اللغة"
+  }
+}

@@ -2,8 +2,10 @@ import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import i18next, { hasStoredLanguage } from 'src/i18n/i18n';
 import { updateRouteUrl } from 'src/router/router';
 import { LEFT } from 'src/common/constants/baseConstants';
+import { context } from 'src/common/context';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
 
@@ -15,6 +17,15 @@ export async function renderTournament(
   removeAllChildNodes(te);
 
   const tournamentInfo = result?.data?.tournamentInfo ?? {};
+
+  // Apply tournament default language if user hasn't explicitly chosen one
+  const publishLanguage = tournamentInfo.publishState?.language;
+  if (publishLanguage && !hasStoredLanguage()) {
+    i18next.changeLanguage(publishLanguage);
+  }
+
+  // Store participants publish config on context for use in createPlayersTable
+  context.participantsPublishConfig = tournamentInfo.publishState?.participants;
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
   const tl = document.getElementById(TOURNAMENT_LOGO);

@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "info": "Info",
+    "events": "Events",
+    "schedule": "Schedule",
+    "matches": "Matches",
+    "players": "Players",
+    "stats": "Stats"
+  },
+  "players": {
+    "name": "Name",
+    "country": "Country",
+    "events": "Events",
+    "rank": "Rank",
+    "noParticipants": "No participants"
+  },
+  "schedule": {
+    "court": "Court",
+    "time": "Time",
+    "event": "Event",
+    "round": "Round",
+    "matchUp": "Match"
+  },
+  "theme": {
+    "toggleDark": "Toggle dark mode"
+  },
+  "language": {
+    "select": "Select language"
+  }
+}

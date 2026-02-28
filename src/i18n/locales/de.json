@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "info": "Info",
+    "events": "Bewerbe",
+    "schedule": "Spielplan",
+    "matches": "Spiele",
+    "players": "Spieler",
+    "stats": "Stats"
+  },
+  "players": {
+    "name": "Name",
+    "country": "Land",
+    "events": "Bewerbe",
+    "rank": "Rang",
+    "noParticipants": "Keine Teilnehmer"
+  },
+  "schedule": {
+    "court": "Platz",
+    "time": "Zeit",
+    "event": "Bewerb",
+    "round": "Runde",
+    "matchUp": "Spiel"
+  },
+  "theme": {
+    "toggleDark": "Dunkelmodus umschalten"
+  },
+  "language": {
+    "select": "Sprache wählen"
+  }
+}

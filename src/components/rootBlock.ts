@@ -1,7 +1,9 @@
 import { TOURNAMENTS_CONTROL, TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
+import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { toggleTheme } from 'src/services/themeService';
+import { t } from 'src/i18n/i18n';
 
 export function rootBlock() {
   const main = document.createElement('div');
@@ -19,9 +21,17 @@ export function rootBlock() {
 
   const navEnd = document.createElement('div');
   navEnd.className = 'navbar-end';
+
+  const langButton = document.createElement('button');
+  langButton.className = 'navbar-item language-toggle';
+  langButton.title = t('language.select');
+  langButton.textContent = '\uD83C\uDF10';
+  langButton.onclick = () => toggleLanguageDropdown(langButton);
+  navEnd.appendChild(langButton);
+
   const themeToggle = document.createElement('button');
   themeToggle.className = 'navbar-item theme-toggle';
-  themeToggle.title = 'Toggle dark mode';
+  themeToggle.title = t('theme.toggleDark');
   const updateIcon = () => {
     const isDark = document.documentElement.dataset.theme === 'dark';
     themeToggle.textContent = isDark ? '\u2600' : '\u263E';
