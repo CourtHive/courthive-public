@@ -51,6 +51,8 @@ export function updateRouteUrl({
     path += `/schedule`;
   } else if (tab === 'Events') {
     path += `/events`;
+  } else if (tab === 'Players') {
+    path += `/participants`;
   } else {
     if (eventId) path += `/event/${eventId}`;
     if (drawId) path += `/draw/${drawId}`;
@@ -119,6 +121,13 @@ export function router() {
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
       tab: 'Schedule',
+    });
+  });
+
+  router.on('/tournament/:tournamentId/participants', (match) => {
+    navigateToTournament({
+      tournamentId: match?.data?.tournamentId,
+      tab: 'Players',
     });
   });
 
