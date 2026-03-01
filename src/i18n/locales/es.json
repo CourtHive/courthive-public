@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "info": "Info",
+    "events": "Eventos",
+    "schedule": "Horario",
+    "matches": "Partidos",
+    "players": "Jugadores",
+    "stats": "Stats"
+  },
+  "players": {
+    "name": "Nombre",
+    "country": "País",
+    "events": "Eventos",
+    "rank": "Ranking",
+    "noParticipants": "Sin participantes"
+  },
+  "schedule": {
+    "court": "Cancha",
+    "time": "Hora",
+    "event": "Evento",
+    "round": "Ronda",
+    "matchUp": "Partido"
+  },
+  "theme": {
+    "toggleDark": "Alternar modo oscuro"
+  },
+  "language": {
+    "select": "Seleccionar idioma"
+  }
+}

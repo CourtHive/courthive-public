@@ -2,13 +2,27 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { eventConstants, fixtures } from 'tods-competition-factory';
 import { participantSorter } from 'src/common/sorters/participantSorter';
 import { destroyTable } from 'src/components/destroyTable';
+import { t } from 'src/i18n/i18n';
 
 const { ratingsParameters } = fixtures;
 const { SINGLES } = eventConstants;
 
 const ANCHOR_ID = 'playersTable';
 
-export function createPlayersTable({ participants = [] }) {
+interface ColumnConfig {
+  country?: boolean;
+  events?: boolean;
+  ratings?: string[];
+  rankings?: string[];
+}
+
+export function createPlayersTable({
+  participants = [],
+  columnConfig,
+}: {
+  participants?: any[];
+  columnConfig?: ColumnConfig;
+}) {
   destroyTable({ anchorId: ANCHOR_ID });
 
   const element = document.getElementById(ANCHOR_ID);
@@ -52,13 +66,21 @@ export function createPlayersTable({ participants = [] }) {
     if (row.ranking !== null && row.ranking !== undefined) hasRanking = true;
   }
 
-  const ratingColumns: any[] = [];
+  // Filter ratings by columnConfig
+  let filteredRatingColumns: any[] = [];
   for (const key of presentRatings) {
     const upperKey = key.toUpperCase();
     const params = ratingsParameters[upperKey];
     if (!params) continue;
+
+    // If columnConfig.ratings is specified, only include those
+    if (columnConfig && Array.isArray(columnConfig.ratings)) {
+      const allowedRatings = new Set(columnConfig.ratings.map((r) => r.toUpperCase()));
+      if (!allowedRatings.has(upperKey)) continue;
+    }
+
     const accessor = params.accessor || `${key}Rating`;
-    ratingColumns.push({
+    filteredRatingColumns.push({
       title: upperKey,
       field: `ratings.${key}.${accessor}`,
       sorter: 'number',
@@ -67,18 +89,33 @@ export function createPlayersTable({ participants = [] }) {
       width: 80,
     });
   }
-  ratingColumns.sort((a, b) => a.title.localeCompare(b.title));
+  filteredRatingColumns.sort((a, b) => a.title.localeCompare(b.title));
 
+  // Filter ranking by columnConfig
+  if (columnConfig && Array.isArray(columnConfig.rankings) && columnConfig.rankings.length === 0) {
+    hasRanking = false;
+  }
+
+  // Name column is always shown
   const columns: any[] = [
-    { title: 'Name', field: 'name', sorter: 'string', headerSort: true },
-    { title: 'Country', field: 'country', sorter: 'string', headerSort: true, width: 100 },
+    { title: t('players.name'), field: 'name', sorter: 'string', headerSort: true },
   ];
 
-  const additionalColumns = [];
+  // Country column (filtered by columnConfig)
+  const showCountry = !columnConfig || columnConfig.country !== false;
+  if (showCountry) {
+    columns.push({
+      title: t('players.country'),
+      field: 'country',
+      sorter: 'string',
+      headerSort: true,
+      width: 100,
+    });
+  }
 
   if (hasRanking) {
-    additionalColumns.push({
-      title: 'Rank',
+    columns.push({
+      title: t('players.rank'),
       field: 'ranking',
       sorter: 'number',
       sorterParams: { alignEmptyValues: 'bottom' },
@@ -87,14 +124,17 @@ export function createPlayersTable({ participants = [] }) {
     });
   }
 
-  additionalColumns.push(...ratingColumns);
-  additionalColumns.push({ title: 'Events', field: 'events', sorter: 'string', headerSort: true });
+  columns.push(...filteredRatingColumns);
 
-  columns.push(...additionalColumns);
+  // Events column (filtered by columnConfig)
+  const showEvents = !columnConfig || columnConfig.events !== false;
+  if (showEvents) {
+    columns.push({ title: t('players.events'), field: 'events', sorter: 'string', headerSort: true });
+  }
 
   new Tabulator(element, {
     height: window.innerHeight * 0.84,
-    placeholder: 'No participants',
+    placeholder: t('players.noParticipants'),
     data: rows,
     columns,
   });
