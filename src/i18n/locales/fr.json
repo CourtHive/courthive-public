@@ -21,6 +21,13 @@
     "round": "Tour",
     "matchUp": "Match"
   },
+  "display": {
+    "label": "Affichage",
+    "columns": "Colonnes",
+    "draw": "Tableau",
+    "tableView": "Vue tableau",
+    "statistics": "Statistiques"
+  },
   "theme": {
     "toggleDark": "Basculer le mode sombre"
   },
