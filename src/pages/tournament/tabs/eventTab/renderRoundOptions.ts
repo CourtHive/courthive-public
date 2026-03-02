@@ -1,5 +1,6 @@
 import { tournamentEngine, drawDefinitionConstants } from 'tods-competition-factory';
 import { isFunction } from 'src/functions/typeof';
+import { t } from 'src/i18n/i18n';
 
 import { RIGHT, ROUNDS_COLUMNS, ROUNDS_STATS, ROUNDS_TABLE } from 'src/common/constants/baseConstants';
 const { CONTAINER } = drawDefinitionConstants;
@@ -21,26 +22,26 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
   existingView !== ROUNDS_COLUMNS &&
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_COLUMNS),
-      label: isAdHoc ? 'Columns' : 'Draw',
+      label: isAdHoc ? t('display.columns') : t('display.draw'),
       close: true,
     });
 
   existingView !== ROUNDS_TABLE &&
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_TABLE),
-      label: 'Table view',
+      label: t('display.tableView'),
       close: true,
     });
 
   if ((isAdHoc || isRoundRobin) && existingView !== ROUNDS_STATS)
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_STATS),
-      label: 'Statistics',
+      label: t('display.statistics'),
       close: true,
     });
 
   return {
-    label: 'Display', // also toggle between finishing positions and matches
+    label: t('display.label'),
     id: 'roundDisplayButton',
     options: actionOptions,
     selection: false,
