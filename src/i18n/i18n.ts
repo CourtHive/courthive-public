@@ -5,6 +5,7 @@ import es from './locales/es.json';
 import ptBR from './locales/pt-BR.json';
 import de from './locales/de.json';
 import ar from './locales/ar.json';
+import zhCN from './locales/zh-CN.json';
 
 const LANGUAGE_STORAGE_KEY = 'chp_language';
 
@@ -31,6 +32,7 @@ i18next.init({
     'pt-BR': { translation: ptBR },
     de: { translation: de },
     ar: { translation: ar },
+    'zh-CN': { translation: zhCN },
   },
 });
 

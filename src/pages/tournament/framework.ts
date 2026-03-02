@@ -1,6 +1,7 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { displayTabContent, tabNames } from './helpers/tabDisplay';
 import { getTabContentId, getTabId } from './helpers/tabIds';
+import { t } from 'src/i18n/i18n';
 
 export const tournamentFramework = () => {
   const container = document.createElement('div');
@@ -51,7 +52,7 @@ export const tournamentFramework = () => {
     tab.style.display = 'none';
     tab.className = 'menu';
     const tabLink = document.createElement('a');
-    tabLink.textContent = tabName;
+    tabLink.textContent = t(`tabs.${tabName.toLowerCase()}`);
     tabLink.onclick = () => displayTabContent(tabName, { updateUrl: true });
     tab.appendChild(tabLink);
     ul.appendChild(tab);

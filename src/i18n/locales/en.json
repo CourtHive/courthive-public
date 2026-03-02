@@ -21,6 +21,13 @@
     "round": "Round",
     "matchUp": "Match"
   },
+  "display": {
+    "label": "Display",
+    "columns": "Columns",
+    "draw": "Draw",
+    "tableView": "Table view",
+    "statistics": "Statistics"
+  },
   "theme": {
     "toggleDark": "Toggle dark mode"
   },

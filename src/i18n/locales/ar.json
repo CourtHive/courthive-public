@@ -21,6 +21,13 @@
     "round": "جولة",
     "matchUp": "مباراة"
   },
+  "display": {
+    "label": "العرض",
+    "columns": "أعمدة",
+    "draw": "القرعة",
+    "tableView": "عرض الجدول",
+    "statistics": "الإحصائيات"
+  },
   "theme": {
     "toggleDark": "تبديل الوضع الداكن"
   },

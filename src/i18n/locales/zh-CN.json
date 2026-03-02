@@ -1,0 +1,37 @@
+{
+  "tabs": {
+    "info": "信息",
+    "events": "赛事",
+    "schedule": "赛程",
+    "matches": "比赛",
+    "players": "选手",
+    "stats": "统计"
+  },
+  "players": {
+    "name": "姓名",
+    "country": "国家",
+    "events": "赛事",
+    "rank": "排名",
+    "noParticipants": "暂无参赛选手"
+  },
+  "schedule": {
+    "court": "球场",
+    "time": "时间",
+    "event": "赛事",
+    "round": "轮次",
+    "matchUp": "比赛"
+  },
+  "display": {
+    "label": "显示",
+    "columns": "列",
+    "draw": "签表",
+    "tableView": "表格视图",
+    "statistics": "统计数据"
+  },
+  "theme": {
+    "toggleDark": "切换深色模式"
+  },
+  "language": {
+    "select": "选择语言"
+  }
+}

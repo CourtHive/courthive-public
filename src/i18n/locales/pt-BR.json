@@ -21,6 +21,13 @@
     "round": "Rodada",
     "matchUp": "Partida"
   },
+  "display": {
+    "label": "Exibição",
+    "columns": "Colunas",
+    "draw": "Chave",
+    "tableView": "Vista de tabela",
+    "statistics": "Estatísticas"
+  },
   "theme": {
     "toggleDark": "Alternar modo escuro"
   },
