@@ -7,6 +7,7 @@ export const SUPPORTED_LANGUAGES = [
   { code: 'pt-BR', label: 'Português' },
   { code: 'de', label: 'Deutsch' },
   { code: 'ar', label: 'العربية' },
+  { code: 'zh-CN', label: '简体中文' },
 ];
 
 let activeDropdown: HTMLElement | null = null;
