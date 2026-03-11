@@ -1,5 +1,5 @@
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
-import { compositions, renderContainer, renderStructure } from 'courthive-components';
+import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { drawsGovernor, tools } from 'tods-competition-factory';
@@ -94,10 +94,7 @@ export function renderEvent({
         removeAllChildNodes(flightDisplay);
 
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
-        const compositionName = display?.compositionName;
-        const configuration = display?.configuration;
-        const composition = compositions[compositionName ?? 'National'];
-        Object.assign(composition.configuration, configuration);
+        const composition = resolvePublishedComposition(display);
         composition.configuration.genderColor = true;
 
         if (displayFormat === 'roundsColumns') {
