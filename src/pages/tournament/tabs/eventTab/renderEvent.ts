@@ -1,10 +1,11 @@
+import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
-import { compositions, renderContainer, renderStructure } from 'courthive-components';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
+import { context } from 'src/common/context';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -29,6 +30,11 @@ export function renderEvent({
 }) {
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
   const removeRoundDisplayButton = () => document.getElementById('roundDisplayButton')?.remove();
+
+  // Store a refresh callback so live updates can re-fetch the current draw view.
+  // Uses the params as passed — targetDrawId/targetStructureId are consumed on first render,
+  // so subsequent refreshes will re-render the default (first) flight/structure.
+  context.refreshEventView = () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat });
 
   const hydrateParticipants = false;
   getEventData({ tournamentId, eventId, hydrateParticipants }).then((data) => {
@@ -94,10 +100,7 @@ export function renderEvent({
         removeAllChildNodes(flightDisplay);
 
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
-        const compositionName = display?.compositionName;
-        const configuration = display?.configuration;
-        const composition = compositions[compositionName ?? 'National'];
-        Object.assign(composition.configuration, configuration);
+        const composition = resolvePublishedComposition(display);
         composition.configuration.genderColor = true;
 
         if (displayFormat === 'roundsColumns') {
@@ -120,10 +123,7 @@ export function renderEvent({
       };
 
       const initialStructureIndex = targetStructureId
-        ? Math.max(
-            flight.structures?.findIndex((s) => s.structureId === targetStructureId) ?? -1,
-            0,
-          )
+        ? Math.max(flight.structures?.findIndex((s) => s.structureId === targetStructureId) ?? -1, 0)
         : 0;
       // consume after use so subsequent renders default to first
       targetStructureId = undefined;
@@ -193,6 +193,6 @@ export function removeAllChildNodes(parent) {
   if (!parent) return;
 
   while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+    parent.firstChild.remove();
   }
 }

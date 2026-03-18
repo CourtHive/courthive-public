@@ -1,10 +1,12 @@
 import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsTable';
 import { renderTournament } from 'src/pages/tournament/renderTournament';
+import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
+// constants
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
@@ -28,9 +30,8 @@ function navigateToTournament({
   delete context.tab;
 
   setDisplay(TOURNAMENT);
-  getTournamentInfo({ tournamentId }).then((result) =>
-    renderTournament(result, { eventId, drawId, structureId, tab }),
-  );
+  connectAndJoinRoom(tournamentId);
+  getTournamentInfo({ tournamentId }).then((result) => renderTournament(result, { eventId, drawId, structureId, tab }));
 }
 
 export function updateRouteUrl({
@@ -74,12 +75,14 @@ export function router() {
   router.on('/', () => {
     console.log('[router] matched: / (splash)');
     back.style.display = 'none';
+    leaveRoom();
     setDisplay(SPLASH);
     renderDefaultPage();
   });
   router.on('/tournaments/:providerAbbr', (match) => {
     console.log('[router] matched: /tournaments/:providerAbbr', match?.data);
     back.style.display = 'none';
+    leaveRoom();
     const providerAbbr = match?.data?.providerAbbr?.toUpperCase();
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
@@ -145,7 +148,7 @@ export function router() {
 
   // Navigo listens for popstate (back/forward) but not hashchange;
   // re-resolve when the user edits the URL hash directly in the address bar
-  window.addEventListener('hashchange', () => router.resolve());
+  globalThis.addEventListener('hashchange', () => router.resolve());
 
   return router;
 }

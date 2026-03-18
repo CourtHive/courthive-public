@@ -1,8 +1,8 @@
 import { createScheduleTable } from 'src/components/tables/scheduleTable/createScheduleTable';
 import { createPlayersTable } from 'src/components/tables/playersTable/createPlayersTable';
 import { getScheduledMatchUps, getParticipants } from 'src/services/api/tournamentsApi';
-import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId, getTabId } from './tabIds';
+import { updateRouteUrl } from 'src/router/router';
 import { context } from 'src/common/context';
 
 // constants
@@ -12,6 +12,37 @@ export const tabNames = ['Info', 'Events', 'Schedule', 'Matches', 'Players', 'St
 
 // Guard against phantom clicks caused by layout shift when sections show/hide
 let _tabSwitching = false;
+
+function refreshSchedule() {
+  const hydrateParticipants = false;
+  getScheduledMatchUps({ tournamentId: context.tournamentId, hydrateParticipants }).then((result) => {
+    createScheduleTable({ data: result?.data });
+  });
+}
+
+function refreshPlayers() {
+  getParticipants({ tournamentId: context.tournamentId }).then((result) => {
+    createPlayersTable({
+      participants: result?.data?.participants || [],
+      columnConfig: context.participantsPublishConfig?.columns,
+    });
+  });
+}
+
+/** Re-fetch data for the currently active tab. Called by liveUpdates on remote mutation. */
+export function refreshActiveTab() {
+  const tabName = context.tab;
+  if (tabName === 'Schedule') {
+    refreshSchedule();
+  } else if (tabName === 'Players') {
+    refreshPlayers();
+  } else if (tabName === 'Events') {
+    // Events tab renders draw views — re-invoke the stored refresh if available
+    if (context.refreshEventView) {
+      context.refreshEventView();
+    }
+  }
+}
 
 export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
   if (options?.updateUrl) {
@@ -23,17 +54,9 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
   }
 
   if (tabName === 'Schedule') {
-    const hydrateParticipants = false;
-    getScheduledMatchUps({ tournamentId: context.tournamentId, hydrateParticipants }).then((result) => {
-      createScheduleTable({ data: result?.data });
-    });
+    refreshSchedule();
   } else if (tabName === 'Players') {
-    getParticipants({ tournamentId: context.tournamentId }).then((result) => {
-      createPlayersTable({
-        participants: result?.data?.participants || [],
-        columnConfig: context.participantsPublishConfig?.columns,
-      });
-    });
+    refreshPlayers();
   }
   context.tab = tabName;
   tabNames.forEach((name) => {
