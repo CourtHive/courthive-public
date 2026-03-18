@@ -36,11 +36,8 @@ export function refreshActiveTab() {
     refreshSchedule();
   } else if (tabName === 'Players') {
     refreshPlayers();
-  } else if (tabName === 'Events') {
-    // Events tab renders draw views — re-invoke the stored refresh if available
-    if (context.refreshEventView) {
-      context.refreshEventView();
-    }
+  } else if (tabName === 'Events' && context.refreshEventView) {
+    context.refreshEventView();
   }
 }
 
