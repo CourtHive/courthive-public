@@ -3,11 +3,12 @@ import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import i18next, { hasStoredLanguage } from 'src/i18n/i18n';
-import { updateRouteUrl } from 'src/router/router';
 import { LEFT } from 'src/common/constants/baseConstants';
-import { context } from 'src/common/context';
+import { updateRouteUrl } from 'src/router/router';
+import { tennisCourt } from 'courthive-components';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
+import { context } from 'src/common/context';
 
 export async function renderTournament(
   result,
@@ -28,12 +29,20 @@ export async function renderTournament(
   context.participantsPublishConfig = tournamentInfo.publishState?.participants;
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
+  const imageUrl = tournamentImage?.identifier;
+  const isValidUrl =
+    imageUrl && (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('data:'));
   const tl = document.getElementById(TOURNAMENT_LOGO);
-  if (tournamentImage?.identifier && tournamentImage.identifier !== 'undefined') {
+  if (isValidUrl) {
     const alt = tournamentInfo.tournamentName || '';
-    tl.innerHTML = `<img src="${tournamentImage.identifier}" alt="${alt}" style="max-height: 20em" />`;
+    tl.innerHTML = `<img src="${imageUrl}" alt="${alt}" style="max-height: 20em" />`;
   } else {
     removeAllChildNodes(tl);
+    const courtSvg = tennisCourt('court-fallback');
+    courtSvg.style.maxHeight = '16em';
+    courtSvg.style.padding = '1em';
+    courtSvg.style.opacity = '0.6';
+    tl.appendChild(courtSvg);
   }
 
   if (tournamentInfo.tournamentName) {
