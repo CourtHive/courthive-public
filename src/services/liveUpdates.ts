@@ -29,6 +29,7 @@ export function connectAndJoinRoom(tournamentId: string): void {
 
   if (!socket) {
     const serverUrl = getServerUrl();
+    console.log('[liveUpdates] connecting to', `${serverUrl}/tmx`);
     socket = io(`${serverUrl}/tmx`, {
       reconnectionDelay: 1000,
       reconnectionAttempts: Infinity,
@@ -36,22 +37,39 @@ export function connectAndJoinRoom(tournamentId: string): void {
     });
 
     socket.on('connect', () => {
+      console.log('[liveUpdates] connected — id:', socket?.id);
       // Re-join room after reconnect
       if (currentRoom) {
+        console.log('[liveUpdates] joining room:', currentRoom);
         socket.emit('joinTournament', { tournamentId: currentRoom });
       }
     });
 
-    socket.on('tournamentMutation', () => {
+    socket.on('disconnect', (reason) => {
+      console.log('[liveUpdates] disconnected — reason:', reason);
+    });
+
+    socket.on('connect_error', (err) => {
+      console.warn('[liveUpdates] connect_error:', err.message);
+    });
+
+    socket.on('exception', (data) => {
+      console.warn('[liveUpdates] server exception:', data);
+    });
+
+    socket.on('tournamentMutation', (data) => {
+      console.log('[liveUpdates] received tournamentMutation — methods:', data?.methods?.length);
       refreshActiveTab();
     });
   }
 
   currentRoom = tournamentId;
   if (socket.connected) {
+    console.log('[liveUpdates] already connected, joining room:', tournamentId);
     socket.emit('joinTournament', { tournamentId });
+  } else {
+    console.log('[liveUpdates] not yet connected, will join room on connect');
   }
-  // If not yet connected, the 'connect' handler above will join once connected
 }
 
 export function leaveRoom(): void {

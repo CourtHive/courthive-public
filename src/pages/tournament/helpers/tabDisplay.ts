@@ -32,12 +32,15 @@ function refreshPlayers() {
 /** Re-fetch data for the currently active tab. Called by liveUpdates on remote mutation. */
 export function refreshActiveTab() {
   const tabName = context.tab;
+  console.log('[liveUpdates] refreshActiveTab — tab:', tabName);
   if (tabName === 'Schedule') {
     refreshSchedule();
   } else if (tabName === 'Players') {
     refreshPlayers();
   } else if (tabName === 'Events' && context.refreshEventView) {
     context.refreshEventView();
+  } else {
+    console.log('[liveUpdates] no refresh handler for tab:', tabName);
   }
 }
 
