@@ -29,8 +29,9 @@ export async function renderTournament(
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
   const tl = document.getElementById(TOURNAMENT_LOGO);
-  if (tournamentImage?.identifier) {
-    tl.innerHTML = `<img src="${tournamentImage.identifier}" alt="${tournamentInfo.name}" style="max-height: 20em" />`;
+  if (tournamentImage?.identifier && tournamentImage.identifier !== 'undefined') {
+    const alt = tournamentInfo.tournamentName || '';
+    tl.innerHTML = `<img src="${tournamentImage.identifier}" alt="${alt}" style="max-height: 20em" />`;
   } else {
     removeAllChildNodes(tl);
   }

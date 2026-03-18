@@ -16,28 +16,61 @@ body {
   padding: 0.1em;
 }
 #tournamentSchedule .tabulator-cell {
-  border-right: 1px solid #dbdbdb;
+  border-right: 1px solid var(--chc-border-primary, #dbdbdb);
   padding: 0.1em;
 }
 
 .matchup-error {
   background: var(--sch-error) !important;
+  border: 2px dotted white !important;
+  color: white !important;
+}
+.matchup-error * {
+  color: white !important;
 }
 .matchup-complete {
   background: var(--sch-complete);
+  color: var(--chc-text-primary);
 }
 .matchup-conflict {
   background: var(--sch-conflict) !important;
+  color: var(--chc-text-primary);
 }
 .matchup-warning {
   background: var(--sch-warning) !important;
+  color: var(--chc-text-primary);
 }
 .matchup-issue {
   background: var(--sch-issue) !important;
+  color: var(--chc-text-primary);
 }
 .matchup-inprogress {
   background: var(--sch-inprogress);
+  color: var(--chc-text-primary);
 }
+.matchup-abandoned {
+  background: var(--chc-bg-secondary);
+  border: 2px dotted var(--chc-text-primary) !important;
+  color: var(--chc-text-primary);
+}
+.matchup-cancelled {
+  background: var(--chc-bg-secondary);
+  border: 2px dotted var(--sch-error) !important;
+  color: var(--chc-text-primary);
+}
+.matchup-double-walkover-default {
+  background: var(--chc-bg-secondary);
+  border: 2px dotted var(--chc-status-info, #3273dc) !important;
+  color: var(--chc-text-primary);
+}
+.matchup-double-booking {
+  border: 2px dotted var(--sch-error) !important;
+  color: var(--sch-error) !important;
+}
+.matchup-double-booking * {
+  color: var(--sch-error) !important;
+}
+
 .schedule-cell .complete,
 .schedule-cell .match_status {
   font-weight: 700;
@@ -104,7 +137,7 @@ body {
   align-items: center;
 }
 .schedule-cell .match_umpire {
-  color: red;
+  color: var(--sch-error);
 }
 .schedule-cell .match_score,
 .schedule-cell .match_umpire,
@@ -122,7 +155,7 @@ body {
 
 .schedule-cell .potential {
   white-space: nowrap;
-  color: gray;
+  color: var(--chc-text-secondary, gray);
   font-style: italic;
 }
 
@@ -151,4 +184,70 @@ body {
   height: 2em;
   background: var(--chc-bg-primary, #fff);
   width: 14em;
+}
+
+/* Grid Booking Styles - Blocked Court Cells */
+.blocked-cell {
+  background-color: var(--chc-bg-secondary);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(128, 128, 128, 0.1) 10px,
+    rgba(128, 128, 128, 0.1) 20px
+  );
+  border: 2px dashed var(--chc-border-primary, #dbdbdb) !important;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.block-label {
+  padding: 10px;
+  text-align: center;
+  color: var(--chc-text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.block-type {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: var(--chc-text-primary);
+  margin-bottom: 4px;
+}
+
+.block-rows {
+  font-size: 0.8em;
+  color: var(--chc-text-secondary);
+  margin-bottom: 4px;
+}
+
+.block-notes {
+  font-size: 0.75em;
+  font-style: italic;
+  color: var(--chc-text-secondary);
+  margin-top: 4px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Different colors for different booking types */
+.blocked-cell[data-booking-type='PRACTICE'] {
+  background-color: rgba(50, 115, 220, 0.1);
+  border-color: var(--chc-status-info, #3273dc) !important;
+}
+
+.blocked-cell[data-booking-type='MAINTENANCE'] {
+  background-color: rgba(255, 165, 0, 0.1);
+  border-color: orange !important;
+}
+
+.blocked-cell[data-booking-type='BLOCKED'] {
+  background-color: rgba(255, 56, 96, 0.1);
+  border-color: var(--sch-error) !important;
 }
