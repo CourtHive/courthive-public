@@ -18,8 +18,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       dayjs:
-        specifier: 1.11.19
-        version: 1.11.19
+        specifier: 1.11.20
+        version: 1.11.20
       hotkeys-js:
         specifier: 4.0.2
         version: 4.0.2
