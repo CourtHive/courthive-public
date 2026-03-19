@@ -1,11 +1,11 @@
 /**
  * Live tournament updates via Socket.IO.
  *
- * Connects to the server's /tmx namespace, joins the active tournament room,
- * and re-fetches the current tab's data when a mutation is broadcast.
+ * Connects to the server's /public namespace, joins the active tournament room,
+ * and re-fetches the current tab's data when a publicUpdate is broadcast.
  * This is a read-only listener — the public viewer never sends mutations.
  */
-import { refreshActiveTab } from 'src/pages/tournament/helpers/tabDisplay';
+import { refreshActiveTab, patchMatchUps } from 'src/pages/tournament/helpers/tabDisplay';
 import { io, Socket } from 'socket.io-client';
 
 let socket: Socket | undefined;
@@ -29,8 +29,8 @@ export function connectAndJoinRoom(tournamentId: string): void {
 
   if (!socket) {
     const serverUrl = getServerUrl();
-    console.log('[liveUpdates] connecting to', `${serverUrl}/tmx`);
-    socket = io(`${serverUrl}/tmx`, {
+    console.log('[liveUpdates] connecting to', `${serverUrl}/public`);
+    socket = io(`${serverUrl}/public`, {
       reconnectionDelay: 1000,
       reconnectionAttempts: Infinity,
       timeout: 20000,
@@ -57,9 +57,14 @@ export function connectAndJoinRoom(tournamentId: string): void {
       console.warn('[liveUpdates] server exception:', data);
     });
 
-    socket.on('tournamentMutation', (data) => {
-      console.log('[liveUpdates] received tournamentMutation — methods:', data?.methods?.length);
-      refreshActiveTab();
+    socket.on('publicUpdate', (data) => {
+      console.log('[liveUpdates] received publicUpdate:', JSON.stringify(data, null, 2));
+      if (data?.type === 'matchUpUpdate' && data.matchUps?.length) {
+        patchMatchUps(data.matchUps, data.positionAssignments);
+      } else {
+        // publishChange or unknown — full re-fetch
+        refreshActiveTab();
+      }
     });
   }
 
