@@ -12,8 +12,8 @@ importers:
         specifier: 1.13.6
         version: 1.13.6
       courthive-components:
-        specifier: 0.9.28-beta.24
-        version: 0.9.28-beta.24
+        specifier: 0.9.28-beta.25
+        version: 0.9.28-beta.25
       d3-selection:
         specifier: 3.0.0
         version: 3.0.0
@@ -45,8 +45,8 @@ importers:
         specifier: 6.3.7
         version: 6.3.7
       tods-competition-factory:
-        specifier: 2.4.6-beta.31
-        version: 2.4.6-beta.31
+        specifier: 2.4.6-beta.32
+        version: 2.4.6-beta.32
     devDependencies:
       '@commitlint/cli':
         specifier: 20.5.0
@@ -1131,8 +1131,8 @@ packages:
       typescript:
         optional: true
 
-  courthive-components@0.9.28-beta.24:
-    resolution: {integrity: sha512-JB7M9DLBZgwE2mUlKk8Uu3W102xVgL2PdgNNxdUu971/hEUJgNW41kZWfsGRy6ONUHNCq2XG4TNqv05PdHd6Rw==}
+  courthive-components@0.9.28-beta.25:
+    resolution: {integrity: sha512-HHXwJd1XrCFtaT975Shf0aV4xUVsV4XxJRRoGsmCsxLpXXqdcQ7QNwcmCQWyzwT8Tx9GrSgGKKe8/j2qrf0WzQ==}
     engines: {node: '>=20.19.0 < 25'}
 
   cross-spawn@7.0.6:
@@ -2297,8 +2297,8 @@ packages:
     resolution: {integrity: sha512-uh/mvlLiXarDsNOtfchK4CA03JV4DGTmCi96Cd9gsYwNmEzFjOBxSlt9JBG3JTpIDK1WqwGJkj5HZzlKGOL/hA==}
     engines: {node: '>=20'}
 
-  tods-competition-factory@2.4.6-beta.31:
-    resolution: {integrity: sha512-HCpYdQNkpaCv5SoahSHQqcpBY/zftjlts7ba4uq71AuXLIhXib4VhTFm4Bowh6lN1rp54kd7k1y+kSBgBqafXg==}
+  tods-competition-factory@2.4.6-beta.32:
+    resolution: {integrity: sha512-KZQpJ6rxQcVlqkWS9vkZkxGm4UKkHHeKU52fWLzSBPoW5FA3pDs7gtYm+jhkYSAeMmLbX3alf4ArBdnQ0edIcQ==}
     engines: {node: '>=20'}
 
   totalist@3.0.1:
@@ -3467,7 +3467,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  courthive-components@0.9.28-beta.24:
+  courthive-components@0.9.28-beta.25:
     dependencies:
       awesomplete: 1.1.7
       class-variance-authority: 0.7.1
@@ -4630,7 +4630,7 @@ snapshots:
 
   tods-competition-factory@2.4.6-beta.30: {}
 
-  tods-competition-factory@2.4.6-beta.31: {}
+  tods-competition-factory@2.4.6-beta.32: {}
 
   totalist@3.0.1: {}
 
