@@ -1,6 +1,7 @@
 import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
@@ -112,10 +113,31 @@ export function renderEvent({
         composition.configuration.genderColor = true;
 
         if (displayFormat === 'roundsColumns') {
+          const matchUpsMap = Object.fromEntries(matchUps.map((m: any) => [m.matchUpId, m]));
+          const getMatchUp = (props: any) => {
+            let el = props.pointerEvent?.target as HTMLElement;
+            while (el && !el.classList?.contains('tmx-m')) el = el.parentElement as HTMLElement;
+            return matchUpsMap[el?.getAttribute('id')];
+          };
+          const eventHandlers = {
+            scoreClick: (props: any) => {
+              const mu = getMatchUp(props);
+              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
+                openScorecard({ matchUp: mu, display });
+              }
+            },
+            matchUpClick: (props: any) => {
+              const mu = getMatchUp(props);
+              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
+                openScorecard({ matchUp: mu, display });
+              }
+            },
+          };
+
           const content = renderContainer({
             content: renderStructure({
               context: { drawId, structureId },
-              // searchActive: participantFilter,
+              eventHandlers,
               matchUps,
               composition,
               structureId,
