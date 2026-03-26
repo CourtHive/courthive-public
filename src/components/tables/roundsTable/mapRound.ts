@@ -18,7 +18,7 @@ export const mapRound = (matchUp) => {
     ...rest
   } = matchUp;
 
-  const { scheduledDate, scheduleTime, courtName } = schedule || {};
+  const { scheduledDate, scheduledTime, courtName } = schedule || {};
 
   const getPotentialName = (participant) => participant.person?.standardFamilyName || participant.participantName;
   const potentials =
@@ -81,7 +81,7 @@ export const mapRound = (matchUp) => {
     structureName,
     scheduledDate,
     readyToScore,
-    scheduleTime,
+    scheduledTime,
     matchUpType,
     scoreDetail,
     winningSide,

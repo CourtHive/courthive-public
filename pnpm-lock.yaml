@@ -12,8 +12,8 @@ importers:
         specifier: 1.13.6
         version: 1.13.6
       courthive-components:
-        specifier: 0.9.28-beta.26
-        version: 0.9.28-beta.26
+        specifier: 0.9.28-beta.29
+        version: 0.9.28-beta.29
       d3-selection:
         specifier: 3.0.0
         version: 3.0.0
@@ -45,8 +45,8 @@ importers:
         specifier: 6.3.7
         version: 6.3.7
       tods-competition-factory:
-        specifier: 2.4.6-beta.33
-        version: 2.4.6-beta.33
+        specifier: 2.4.6-beta.34
+        version: 2.4.6-beta.34
     devDependencies:
       '@commitlint/cli':
         specifier: 20.5.0
@@ -1131,8 +1131,8 @@ packages:
       typescript:
         optional: true
 
-  courthive-components@0.9.28-beta.26:
-    resolution: {integrity: sha512-j1SmboMYAWU55KbgEEerGoQXfDshejzArgWNsHLbJrzWKfUD5pAHjMEzS2EzpDi+1beOtxFjDptT+i3OVK+eyw==}
+  courthive-components@0.9.28-beta.29:
+    resolution: {integrity: sha512-4W6m5By/d9RZvj4d3SohLortsnouJW8FtnbAzERzBe4dW5M+yYKsaLu6zHmab8dGBo5X87WIpqKTjyVNs1ZxlA==}
     engines: {node: '>=20.19.0 < 25'}
 
   cross-spawn@7.0.6:
@@ -2293,12 +2293,8 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  tods-competition-factory@2.4.6-beta.30:
-    resolution: {integrity: sha512-uh/mvlLiXarDsNOtfchK4CA03JV4DGTmCi96Cd9gsYwNmEzFjOBxSlt9JBG3JTpIDK1WqwGJkj5HZzlKGOL/hA==}
-    engines: {node: '>=20'}
-
-  tods-competition-factory@2.4.6-beta.33:
-    resolution: {integrity: sha512-cgemU8lTJXVW+/f8Uswpn9kcNVs+3jtpffMFrgadyKBnmQDf7giNvk2wPKnqFo3RQTI4dTWz870imOcnEQmRcA==}
+  tods-competition-factory@2.4.6-beta.34:
+    resolution: {integrity: sha512-W5KVmB+LasiK3+XW/BS1aomNxpxG02PxdnJ6yAEcN/P5y/yT1bdzwHZe48G4WRyQODYBMg/lUNfpalaFciNLlA==}
     engines: {node: '>=20'}
 
   totalist@3.0.1:
@@ -3467,7 +3463,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  courthive-components@0.9.28-beta.26:
+  courthive-components@0.9.28-beta.29:
     dependencies:
       awesomplete: 1.1.7
       class-variance-authority: 0.7.1
@@ -3477,7 +3473,7 @@ snapshots:
       focus-trap: 8.0.0
       timepicker-ui: 4.1.6
       tippy.js: 6.3.7
-      tods-competition-factory: 2.4.6-beta.30
+      tods-competition-factory: 2.4.6-beta.34
       vanillajs-datepicker: 1.3.4
 
   cross-spawn@7.0.6:
@@ -4628,9 +4624,7 @@ snapshots:
       is-number: 7.0.0
     optional: true
 
-  tods-competition-factory@2.4.6-beta.30: {}
-
-  tods-competition-factory@2.4.6-beta.33: {}
+  tods-competition-factory@2.4.6-beta.34: {}
 
   totalist@3.0.1: {}
 
