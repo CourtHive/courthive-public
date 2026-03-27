@@ -1,6 +1,7 @@
 import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
@@ -49,8 +50,10 @@ export function renderEvent({
 
     const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
 
+    // Participant lookup — used for initial hydration and live update patching
+    const mappedParticipants = new Map(participants.map((p) => [p.participantId, p]));
+
     if (!hydrateParticipants) {
-      const mappedParticipants = new Map(participants.map((p) => [p.participantId, p]));
       const hydrateSideParticipants = (matchUp) => {
         for (const side of matchUp.sides || []) {
           if (side.participantId) {
@@ -76,7 +79,12 @@ export function renderEvent({
       }
     }
 
+    // Track current flight/structure indices for re-render after patch
+    let currentFlightIndex = 0;
+    let currentStructureIndex = 0;
+
     const renderFlight = (index) => {
+      currentFlightIndex = index;
       const flight = flightsData[index];
       if (!flight) return;
       const drawId = flight.drawId;
@@ -86,6 +94,7 @@ export function renderEvent({
       };
 
       const renderSelectedStructure = (index) => {
+        currentStructureIndex = index;
         const structure = flight.structures?.[index];
         removeRoundDisplayButton();
         const roundView = getRoundDisplayOptions({ callback: updateView, structure });
@@ -104,10 +113,31 @@ export function renderEvent({
         composition.configuration.genderColor = true;
 
         if (displayFormat === 'roundsColumns') {
+          const matchUpsMap = Object.fromEntries(matchUps.map((m: any) => [m.matchUpId, m]));
+          const getMatchUp = (props: any) => {
+            let el = props.pointerEvent?.target as HTMLElement;
+            while (el && !el.classList?.contains('tmx-m')) el = el.parentElement as HTMLElement;
+            return matchUpsMap[el?.getAttribute('id')];
+          };
+          const eventHandlers = {
+            scoreClick: (props: any) => {
+              const mu = getMatchUp(props);
+              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
+                openScorecard({ matchUp: mu, display });
+              }
+            },
+            matchUpClick: (props: any) => {
+              const mu = getMatchUp(props);
+              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
+                openScorecard({ matchUp: mu, display });
+              }
+            },
+          };
+
           const content = renderContainer({
             content: renderStructure({
               context: { drawId, structureId },
-              // searchActive: participantFilter,
+              eventHandlers,
               matchUps,
               composition,
               structureId,
@@ -124,8 +154,8 @@ export function renderEvent({
 
       const initialStructureIndex = targetStructureId
         ? Math.max(flight.structures?.findIndex((s) => s.structureId === targetStructureId) ?? -1, 0)
-        : 0;
-      // consume after use so subsequent renders default to first
+        : currentStructureIndex;
+      // consume after use so subsequent renders use currentStructureIndex
       targetStructureId = undefined;
 
       if (flight.structures?.length > 1) {
@@ -184,6 +214,124 @@ export function renderEvent({
     };
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);
+
+    // Build drawPosition → participant map per structure from existing hydrated matchUps.
+    // Within a structure, drawPosition→participant is fixed at draw generation time.
+    const dpParticipantMaps = new Map<string, Map<number, any>>(); // structureId → (drawPosition → participant)
+    for (const flight of flightsData) {
+      for (const structure of flight.structures || []) {
+        const dpMap = new Map<number, any>();
+        for (const roundMatchUps of Object.values(structure.roundMatchUps || {})) {
+          for (const matchUp of roundMatchUps as any[]) {
+            for (const side of matchUp.sides || []) {
+              if (side.drawPosition && side.participant) {
+                dpMap.set(side.drawPosition, side.participant);
+              }
+            }
+          }
+        }
+        dpParticipantMaps.set(structure.structureId, dpMap);
+      }
+    }
+
+    // Expose a callback that patches matchUps in-memory and re-renders the current structure.
+    // This avoids re-fetching from the server (which may serve stale cached data).
+    context.patchEventMatchUps = (updatedMatchUps: any[], positionAssignments?: any[]) => {
+      const updatedById = new Map(updatedMatchUps.map((m) => [m.matchUpId, m]));
+
+      // Update position assignment maps for cross-structure advancement (e.g. consolation)
+      if (positionAssignments?.length) {
+        for (const pa of positionAssignments) {
+          if (!pa.structureId || !pa.assignments) continue;
+          const dpMap = dpParticipantMaps.get(pa.structureId) || new Map();
+          for (const assignment of pa.assignments) {
+            if (assignment.drawPosition && assignment.participantId) {
+              // Look up participant from our master map
+              const participant = mappedParticipants.get(assignment.participantId);
+              if (participant) {
+                dpMap.set(assignment.drawPosition, participant);
+              }
+            }
+          }
+          dpParticipantMaps.set(pa.structureId, dpMap);
+        }
+      }
+
+      let patched = 0;
+      for (const flight of flightsData) {
+        for (const structure of flight.structures || []) {
+          const dpMap = dpParticipantMaps.get(structure.structureId);
+          for (const roundMatchUps of Object.values(structure.roundMatchUps || {})) {
+            for (const matchUp of roundMatchUps as any[]) {
+              const update = updatedById.get(matchUp.matchUpId);
+              if (update) {
+                if (update.score !== undefined) matchUp.score = update.score;
+                if (update.matchUpStatus !== undefined) matchUp.matchUpStatus = update.matchUpStatus;
+                if (update.winningSide !== undefined) matchUp.winningSide = update.winningSide;
+                // Re-hydrate sides from drawPositions using the position→participant map
+                if (update.drawPositions && dpMap) {
+                  matchUp.drawPositions = update.drawPositions;
+                  // Ensure sides array exists with correct length
+                  if (!matchUp.sides) matchUp.sides = [];
+                  for (let i = 0; i < update.drawPositions.length; i++) {
+                    const dp = update.drawPositions[i];
+                    if (!dp) continue;
+                    const sideNumber = i + 1;
+                    let side = matchUp.sides.find((s) => s.sideNumber === sideNumber);
+                    if (!side) {
+                      side = { sideNumber };
+                      matchUp.sides.push(side);
+                    }
+                    side.drawPosition = dp;
+                    const participant = dpMap.get(dp);
+                    if (participant) {
+                      side.participantId = participant.participantId;
+                      side.participant = participant;
+                    }
+                  }
+                }
+                patched++;
+              }
+              // Also check tieMatchUps
+              for (const tie of matchUp.tieMatchUps || []) {
+                const tieUpdate = updatedById.get(tie.matchUpId);
+                if (tieUpdate) {
+                  if (tieUpdate.score !== undefined) tie.score = tieUpdate.score;
+                  if (tieUpdate.matchUpStatus !== undefined) tie.matchUpStatus = tieUpdate.matchUpStatus;
+                  if (tieUpdate.winningSide !== undefined) tie.winningSide = tieUpdate.winningSide;
+                  patched++;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      console.log(`[renderEvent] patched ${patched} matchUp(s) in-memory, re-rendering structure`);
+
+      // Save scroll positions for all scrollable ancestors + window
+      const scrollPositions: { el: Element; top: number; left: number }[] = [];
+      let el: Element | null = flightDisplay;
+      while (el) {
+        if (el.scrollTop || el.scrollLeft) {
+          scrollPositions.push({ el, top: el.scrollTop, left: el.scrollLeft });
+        }
+        el = el.parentElement;
+      }
+      const winScrollX = window.scrollX;
+      const winScrollY = window.scrollY;
+
+      renderFlight(currentFlightIndex);
+
+      // Restore after DOM is updated
+      requestAnimationFrame(() => {
+        for (const { el, top, left } of scrollPositions) {
+          el.scrollTop = top;
+          el.scrollLeft = left;
+        }
+        window.scrollTo(winScrollX, winScrollY);
+      });
+    };
 
     renderFlight(initialFlightIndex);
   });

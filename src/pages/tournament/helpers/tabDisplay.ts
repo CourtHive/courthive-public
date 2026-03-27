@@ -29,18 +29,32 @@ function refreshPlayers() {
   });
 }
 
-/** Re-fetch data for the currently active tab. Called by liveUpdates on remote mutation. */
+/** Re-fetch data for the currently active tab. Called by liveUpdates on publishChange. */
 export function refreshActiveTab() {
   const tabName = context.tab;
+  console.log('[liveUpdates] refreshActiveTab — tab:', tabName);
   if (tabName === 'Schedule') {
     refreshSchedule();
   } else if (tabName === 'Players') {
     refreshPlayers();
-  } else if (tabName === 'Events') {
-    // Events tab renders draw views — re-invoke the stored refresh if available
-    if (context.refreshEventView) {
-      context.refreshEventView();
-    }
+  } else if (tabName === 'Events' && context.refreshEventView) {
+    context.refreshEventView();
+  } else {
+    console.log('[liveUpdates] no refresh handler for tab:', tabName);
+  }
+}
+
+/** Patch matchUp data in-memory and re-render. Called by liveUpdates on matchUpUpdate. */
+export function patchMatchUps(matchUps: any[], positionAssignments?: any[]) {
+  const tabName = context.tab;
+  console.log('[liveUpdates] patchMatchUps — tab:', tabName, 'matchUps:', matchUps.length, 'positionAssignments:', positionAssignments?.length ?? 0);
+  if (tabName === 'Events' && context.patchEventMatchUps) {
+    context.patchEventMatchUps(matchUps, positionAssignments);
+  } else if (tabName === 'Schedule') {
+    // Schedule tab doesn't have in-memory patching yet — fall back to re-fetch
+    refreshSchedule();
+  } else {
+    console.log('[liveUpdates] no patch handler for tab:', tabName);
   }
 }
 

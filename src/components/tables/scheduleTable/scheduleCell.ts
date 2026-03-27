@@ -10,6 +10,7 @@ export function timeFormat(time, militaryTime?) {
   return time ? tools.dateTime.convertTime(time, militaryTime) : '';
 }
 
+
 export function scheduleCell(cell) {
   const content = document.createElement('span');
 
@@ -75,27 +76,34 @@ export function scheduleCell(cell) {
   if (matchUpId) {
     content.id = matchUpId;
 
+    let statusClass = '';
     if (matchUpStatus === ABANDONED) {
-      content.classList.add('matchup-abandoned');
+      statusClass = 'matchup-abandoned';
     } else if (matchUpStatus === CANCELLED) {
-      content.classList.add('matchup-cancelled');
+      statusClass = 'matchup-cancelled';
     } else if (matchUpStatus === DOUBLE_WALKOVER || matchUpStatus === DOUBLE_DEFAULT) {
-      content.classList.add('matchup-double-walkover-default');
+      statusClass = 'matchup-double-walkover-default';
     } else if (winningSide) {
-      content.classList.add('matchup-complete');
+      statusClass = 'matchup-complete';
     } else {
       const scheduleState = schedule[SCHEDULE_STATE];
       if (matchUpStatus === IN_PROGRESS) {
-        content.classList.add('matchup-inprogress');
+        statusClass = 'matchup-inprogress';
       } else if (scheduleState === SCHEDULE_CONFLICT) {
-        content.classList.add('matchup-conflict');
+        statusClass = 'matchup-conflict';
       } else if (scheduleState === SCHEDULE_ISSUE) {
-        content.classList.add('matchup-issue');
+        statusClass = 'matchup-issue';
       } else if (scheduleState === SCHEDULE_WARNING) {
-        content.classList.add('matchup-warning');
+        statusClass = 'matchup-warning';
       } else if (scheduleState === SCHEDULE_ERROR) {
-        content.classList.add('matchup-error');
+        statusClass = 'matchup-error';
       }
+    }
+
+    if (statusClass) {
+      content.classList.add(statusClass);
+      // Also add to the Tabulator cell div so the background beats the hardcoded white
+      cell.getElement()?.classList.add(statusClass);
     }
   }
 

@@ -45,6 +45,7 @@
   color: var(--chc-text-primary);
 }
 
+
 [data-theme='dark'] .tabulator .tabulator-tableholder .tabulator-table {
   color: var(--chc-text-primary);
 }
@@ -77,8 +78,8 @@
   background: var(--chc-bg-elevated);
 }
 
-/* Schedule dark overrides */
-[data-theme='dark'] {
+/* Schedule dark overrides — must target body since light values are on body */
+[data-theme='dark'] body {
   --sch-neutral: var(--chc-bg-primary);
   --sch-complete: #1a3a5c;
   --sch-inprogress: #1a3c1a;
@@ -86,6 +87,17 @@
   --sch-conflict: #5c1a1a;
   --sch-issue: #5c3a1a;
   --sch-abandoned: #5c3a00;
+}
+
+[data-theme='dark'] .matchup-complete,
+[data-theme='dark'] .matchup-inprogress,
+[data-theme='dark'] .matchup-conflict,
+[data-theme='dark'] .matchup-warning,
+[data-theme='dark'] .matchup-issue,
+[data-theme='dark'] .matchup-abandoned,
+[data-theme='dark'] .matchup-cancelled,
+[data-theme='dark'] .matchup-double-walkover-default {
+  color: #e0e0e0 !important;
 }
 
 [data-theme='dark'] .court_header {

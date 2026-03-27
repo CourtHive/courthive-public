@@ -55,7 +55,7 @@ export function getRoundsColumns({ data }) {
       width: 100,
     },
     {
-      field: 'scheduleTime',
+      field: 'scheduledTime',
       headerSort: false,
       visible: false,
       title: 'Time',
