@@ -24,8 +24,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       i18next:
-        specifier: ^25.8.13
-        version: 25.10.10(typescript@5.9.3)
+        specifier: ^26.0.0
+        version: 26.0.2(typescript@5.9.3)
       navigo:
         specifier: 8.11.1
         version: 8.11.1
@@ -1627,8 +1627,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  i18next@25.10.10:
-    resolution: {integrity: sha512-cqUW2Z3EkRx7NqSyywjkgCLK7KLCL6IFVFcONG7nVYIJ3ekZ1/N5jUsihHV6Bq37NfhgtczxJcxduELtjTwkuQ==}
+  i18next@26.0.2:
+    resolution: {integrity: sha512-WsK0SdP+7tGzsxpT+Us1s2nvOyx657DatBodaNZe4KcPTPYzkVfRKUygN69mB+sCbbnifRuKz+Ya5JRzd8DNHw==}
     peerDependencies:
       typescript: ^5 || ^6
     peerDependenciesMeta:
@@ -4027,7 +4027,7 @@ snapshots:
 
   husky@9.1.7: {}
 
-  i18next@25.10.10(typescript@5.9.3):
+  i18next@26.0.2(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.2
     optionalDependencies:
