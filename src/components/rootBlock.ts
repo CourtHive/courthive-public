@@ -1,8 +1,9 @@
-import { TOURNAMENTS_CONTROL, TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
+import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { toggleTheme } from 'src/services/themeService';
+import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
 export function rootBlock() {
@@ -14,20 +15,16 @@ export function rootBlock() {
   const navBrand = document.createElement('div');
   navBrand.className = 'navbar-brand';
   const navItem = document.createElement('div');
-  navItem.onclick = () => globalThis.history.back();
-  navItem.className = 'navbar-item';
-  navItem.innerHTML = '<<';
+  navItem.onclick = () => {
+    if (context.providerAbbr) {
+      context.router.navigate(`/tournaments/${context.providerAbbr}`);
+    }
+  };
+  navItem.className = 'navbar-item provider-back';
   navItem.id = 'back';
 
   const navEnd = document.createElement('div');
   navEnd.className = 'navbar-end';
-
-  const langButton = document.createElement('button');
-  langButton.className = 'navbar-item language-toggle';
-  langButton.title = t('language.select');
-  langButton.textContent = '\uD83C\uDF10';
-  langButton.onclick = () => toggleLanguageDropdown(langButton);
-  navEnd.appendChild(langButton);
 
   const themeToggle = document.createElement('button');
   themeToggle.className = 'navbar-item theme-toggle';
@@ -43,6 +40,21 @@ export function rootBlock() {
   };
   navEnd.appendChild(themeToggle);
 
+  const langButton = document.createElement('button');
+  langButton.className = 'navbar-item language-toggle';
+  langButton.title = t('language.select');
+  langButton.textContent = '\uD83C\uDF10';
+  langButton.onclick = () => toggleLanguageDropdown(langButton);
+  navEnd.appendChild(langButton);
+
+  const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(globalThis.location.hostname);
+  const userButton = document.createElement('button');
+  userButton.className = 'navbar-item user-login';
+  userButton.title = t('Login');
+  userButton.innerHTML = '<i class="fa-solid fa-user"></i>';
+  userButton.style.display = isLocal ? '' : 'none';
+  navEnd.appendChild(userButton);
+
   navBrand.appendChild(navItem);
   nav.appendChild(navBrand);
   nav.appendChild(navEnd);
@@ -56,13 +68,7 @@ export function rootBlock() {
   tournaments.style.display = 'none';
   tournaments.id = TOURNAMENTS;
 
-  const tControl = document.createElement('div');
-  tControl.className = 'controlBar flexcol flexgrow flexcenter';
-  tControl.id = TOURNAMENTS_CONTROL;
-  tournaments.appendChild(tControl);
-
   const tTable = document.createElement('div');
-  tTable.className = 'flexcol flexgrow flexcenter box';
   tTable.id = TOURNAMENTS_TABLE;
   tournaments.appendChild(tTable);
 

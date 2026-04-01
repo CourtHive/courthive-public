@@ -24,7 +24,12 @@ function navigateToTournament({
   tab?: string;
 }) {
   const back = document.getElementById('back');
-  back.style.display = 'block';
+  if (context.providerAbbr) {
+    back.textContent = context.providerAbbr;
+    back.style.display = 'block';
+  } else {
+    back.style.display = 'none';
+  }
 
   context.tournamentId = tournamentId;
   delete context.tab;
@@ -75,6 +80,7 @@ export function router() {
   router.on('/', () => {
     console.log('[router] matched: / (splash)');
     back.style.display = 'none';
+    delete context.providerAbbr;
     leaveRoom();
     setDisplay(SPLASH);
     renderDefaultPage();
@@ -84,6 +90,7 @@ export function router() {
     back.style.display = 'none';
     leaveRoom();
     const providerAbbr = match?.data?.providerAbbr?.toUpperCase();
+    context.providerAbbr = providerAbbr;
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
   });
