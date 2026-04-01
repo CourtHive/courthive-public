@@ -51,7 +51,7 @@ export function rootBlock() {
   const userButton = document.createElement('button');
   userButton.className = 'navbar-item user-login';
   userButton.title = t('Login');
-  userButton.innerHTML = '<i class="fa-solid fa-user"></i>';
+  userButton.textContent = '\uD83D\uDC64';
   userButton.style.display = isLocal ? '' : 'none';
   navEnd.appendChild(userButton);
 
