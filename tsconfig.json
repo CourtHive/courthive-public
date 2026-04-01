@@ -38,6 +38,6 @@
     "rootDir": "./",
     "sourceMap": false
   },
-  "include": ["src", "src/**.d.ts"],
+  "include": ["src", "src/**.d.ts", "src/**/*.svelte.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }
