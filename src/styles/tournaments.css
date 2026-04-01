@@ -114,6 +114,10 @@
   border-radius: 4px;
 }
 
+.tournament-card__fallback--hidden {
+  display: none;
+}
+
 .tournament-card__info {
   flex: 1;
   min-width: 0;

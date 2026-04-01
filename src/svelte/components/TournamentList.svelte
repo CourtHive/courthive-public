@@ -81,7 +81,17 @@
     >
       <div class="tournament-card__row">
         {#if img}
-          <img class="tournament-card__image" src={img} alt="" />
+          <img
+            class="tournament-card__image"
+            src={img}
+            alt=""
+            onerror={(e) => {
+              const el = e.currentTarget as HTMLImageElement;
+              el.style.display = 'none';
+              el.nextElementSibling?.classList.remove('tournament-card__fallback--hidden');
+            }}
+          />
+          <div class="tournament-card__image tournament-card__placeholder tournament-card__fallback--hidden"></div>
         {:else}
           <div class="tournament-card__image tournament-card__placeholder"></div>
         {/if}
