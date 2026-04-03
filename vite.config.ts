@@ -1,5 +1,4 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig, loadEnv } from 'vite';
 import path from 'path';
 
@@ -20,9 +19,10 @@ export default ({ mode }) => {
         },
       },
     },
-    plugins: [svelte(), tsconfigPaths()],
+    plugins: [svelte()],
     base: BASE_URL,
     resolve: {
+      tsconfigPaths: true,
       alias: {
         'tods-competition-factory': path.resolve(__dirname, 'node_modules/tods-competition-factory'),
       },
