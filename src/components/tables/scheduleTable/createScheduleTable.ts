@@ -31,11 +31,16 @@ export function createScheduleTable(params) {
     }
   };
   const getTableData = ({ scheduledDate }) => {
-    const courtsData = params?.data?.courtsData.map((court) => {
-      const { matchUps, ...details } = court;
-      matchUps.forEach(hydrateSideParticipants);
-      return { ...details, matchUps: matchUps.filter((matchUp) => matchUp.schedule?.scheduledDate === scheduledDate) };
-    });
+    const courtsData = params?.data?.courtsData
+      .map((court) => {
+        const { matchUps, ...details } = court;
+        matchUps.forEach(hydrateSideParticipants);
+        return {
+          ...details,
+          matchUps: matchUps.filter((matchUp) => matchUp.schedule?.scheduledDate === scheduledDate),
+        };
+      })
+      .filter((court) => court.matchUps.length > 0);
 
     const courtPrefix = 'C|';
     const rows = scheduleGovernor.courtGridRows({ courtsData, courtPrefix, minRowsCount: 10, scheduledDate }).rows;
