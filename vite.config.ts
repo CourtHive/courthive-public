@@ -1,8 +1,8 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig, loadEnv } from 'vite';
-import path from 'path';
+import path from 'node:path';
 
-export default ({ mode }) => {
+export default function viteConfig({ mode }: { mode: string }) {
   // Load app-level env vars to node-level env vars.
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') };
 
