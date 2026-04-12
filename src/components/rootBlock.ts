@@ -1,5 +1,6 @@
+import 'src/pages/track/track-page.css';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
+import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { toggleTheme } from 'src/services/themeService';
@@ -77,8 +78,13 @@ export function rootBlock() {
   tournament.id = TOURNAMENT;
   tournament.appendChild(tournamentFramework());
 
+  const track = document.createElement('div');
+  track.style.display = 'none';
+  track.id = TRACK;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
+  main.appendChild(track);
   main.appendChild(splash);
 
   return main;

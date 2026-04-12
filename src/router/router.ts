@@ -1,5 +1,6 @@
 import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsTable';
 import { renderTournament } from 'src/pages/tournament/renderTournament';
+import { destroyCurrentShell, renderTrackPage } from 'src/pages/track/renderTrackPage';
 import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderDefaultPage } from 'src/pages/courthive/default';
@@ -7,7 +8,7 @@ import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { SPLASH, TOURNAMENT, TOURNAMENTS } from 'src/common/constants/routerConstants';
+import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -23,6 +24,9 @@ function navigateToTournament({
   structureId?: string;
   tab?: string;
 }) {
+  // Clean up any active track page shell before switching views
+  destroyCurrentShell();
+
   const back = document.getElementById('back');
   if (context.providerAbbr) {
     back.textContent = context.providerAbbr;
@@ -81,6 +85,7 @@ export function router() {
     console.log('[router] matched: / (splash)');
     back.style.display = 'none';
     delete context.providerAbbr;
+    destroyCurrentShell();
     leaveRoom();
     setDisplay(SPLASH);
     renderDefaultPage();
@@ -145,6 +150,25 @@ export function router() {
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
     });
+  });
+
+  // Phase 2 — interactive tracking sandbox. Local-only, no server writes.
+  router.on('/track/:tournamentId/:matchUpId', (match) => {
+    const tournamentId = match?.data?.tournamentId;
+    const matchUpId = match?.data?.matchUpId;
+    if (!tournamentId || !matchUpId) {
+      router.navigate('/');
+      return;
+    }
+    console.log('[router] matched: /track/:tournamentId/:matchUpId', match?.data);
+    back.style.display = 'block';
+    back.textContent = 'Back';
+    leaveRoom();
+    setDisplay(TRACK);
+    const container = document.getElementById(TRACK);
+    if (container) {
+      void renderTrackPage({ container, tournamentId, matchUpId });
+    }
   });
 
   router.notFound((match) => {
