@@ -27,6 +27,11 @@
   color: var(--chc-text-primary, #363636);
   cursor: pointer;
 }
+.provider-back {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
 .navbar-end {
   display: flex;
   align-items: center;

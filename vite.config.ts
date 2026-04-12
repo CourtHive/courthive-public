@@ -1,7 +1,8 @@
-import tsconfigPaths from 'vite-tsconfig-paths';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig, loadEnv } from 'vite';
+import path from 'node:path';
 
-export default ({ mode }) => {
+export default function viteConfig({ mode }: { mode: string }) {
   // Load app-level env vars to node-level env vars.
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') };
 
@@ -18,8 +19,14 @@ export default ({ mode }) => {
         },
       },
     },
-    plugins: [tsconfigPaths()],
+    plugins: [svelte()],
     base: BASE_URL,
+    resolve: {
+      tsconfigPaths: true,
+      alias: {
+        'tods-competition-factory': path.resolve(__dirname, 'node_modules/tods-competition-factory'),
+      },
+    },
     optimizeDeps: {
       include: ['hotkeys-js'],
     },

@@ -3,9 +3,15 @@
  *
  * Connects to the server's /public namespace, joins the active tournament room,
  * and re-fetches the current tab's data when a publicUpdate is broadcast.
+ * Also handles `liveScore` events (compact PublicLivePayload broadcasts
+ * derived from the bolt-history pipeline) by routing them into the
+ * in-memory live bolt scores store.
+ *
  * This is a read-only listener — the public viewer never sends mutations.
  */
 import { refreshActiveTab, patchMatchUps } from 'src/pages/tournament/helpers/tabDisplay';
+import { applyLiveScorePayload } from 'src/services/liveBoltScores';
+import type { PublicLivePayload } from 'src/services/publicLiveTypes';
 import { io, Socket } from 'socket.io-client';
 
 let socket: Socket | undefined;
@@ -65,6 +71,18 @@ export function connectAndJoinRoom(tournamentId: string): void {
         // publishChange or unknown — full re-fetch
         refreshActiveTab();
       }
+    });
+
+    // liveScore: compact PublicLivePayload from competition-factory-server's
+    // public-live projector, dispatched on every bolt-history upsert. Phase 1
+    // routes the payload into the in-memory store; future visualizations
+    // subscribe via the `liveBoltScoreUpdated` window event.
+    socket.on('liveScore', (data: PublicLivePayload) => {
+      if (!data?.matchUpId) {
+        console.warn('[liveUpdates] liveScore missing matchUpId — skipping');
+        return;
+      }
+      applyLiveScorePayload(data);
     });
   }
 
