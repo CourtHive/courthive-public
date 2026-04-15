@@ -38,8 +38,8 @@
     "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@types/node": "24.12.2",
-    "@typescript-eslint/eslint-plugin": "8.58.1",
-    "@typescript-eslint/parser": "8.58.1",
+    "@typescript-eslint/eslint-plugin": "8.58.2",
+    "@typescript-eslint/parser": "8.58.2",
     "@vitest/coverage-v8": "4.1.4",
     "@vitest/ui": "4.1.4",
     "c8": "11.0.0",
@@ -78,5 +78,11 @@
     "tabulator-tables": "6.4.0",
     "tippy.js": "6.3.7",
     "tods-competition-factory": "^2.4.6-beta.43"
+  },
+  "pnpm": {
+    "overrides": {
+      "tods-competition-factory": "link:../factory",
+      "courthive-components": "link:../courthive-components"
+    }
   }
 }
