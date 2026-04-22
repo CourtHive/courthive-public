@@ -1,1 +1,2 @@
-export const version = '@PUBLIC_VERSION@';
+import pkg from '../../package.json';
+export const version = pkg.version;

@@ -11,7 +11,7 @@
   "scripts": {
     "analyze": "source-map-explorer 'dist/**/*.js'",
     "build": "tsc && vite build",
-    "build:prod": "rimraf dist && tsc && vite build --mode production && npm version $(semver $npm_package_version -i patch) && pnpm prepublishOnly",
+    "build:prod": "rimraf dist && tsc && vite build --mode production && npm version $(semver $npm_package_version -i patch)",
     "docs:publish": "pnpm build:prod && git checkout docs && cp -r dist/* docs && git add docs && git commit -m 'docs: update' && git push && git checkout master",
     "check-types": "tsc --noEmit",
     "commit": "git-cz",
@@ -23,7 +23,6 @@
     "pre-commit": "lint-staged",
     "prepare": "rimraf dist && husky",
     "preview": "vite preview",
-    "prepublishOnly": "./addVersion $npm_package_version",
     "start": "pnpm run config --check && vite --open",
     "test": "TZ=UTC vitest"
   },
