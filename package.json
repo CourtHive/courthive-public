@@ -63,7 +63,7 @@
     "yargs": "18.0.0"
   },
   "dependencies": {
-    "axios": "1.15.1",
+    "axios": "1.15.2",
     "courthive-components": "^1.0.1",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.20",
