@@ -42,7 +42,7 @@
     "@vitest/coverage-v8": "4.1.5",
     "@vitest/ui": "4.1.5",
     "c8": "11.0.0",
-    "cz-git": "1.12.0",
+    "cz-git": "1.13.0",
     "dotenv": "17.4.2",
     "envfile": "7.1.0",
     "eslint": "10.2.1",
