@@ -40,7 +40,7 @@ export default [
       'no-nested-ternary': 'warn',
       'sonarjs/cognitive-complexity': 'off',
       'sonarjs/no-commented-code': 'off',
-      'sonarjs/no-nested-functions': 'off',
+      'sonarjs/no-nested-functions': ['error', { threshold: 4 }],
       'sonarjs/no-hardcoded-passwords': 'off',
       'sonarjs/regex-complexity': 'off',
       'sonarjs/todo-tag': 'off',

@@ -12,6 +12,77 @@ import { context } from 'src/common/context';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
 
+function getMatchUpFromPointer(matchUpsMap: Record<string, any>, props: any) {
+  let el = props.pointerEvent?.target as HTMLElement;
+  while (el && !el.classList?.contains('tmx-m')) el = el.parentElement as HTMLElement;
+  return matchUpsMap[el?.getAttribute('id')];
+}
+
+function maybeOpenTeamScorecard(mu: any, display: any) {
+  if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) openScorecard({ matchUp: mu, display });
+}
+
+function renderRoundsColumns({
+  flightDisplay,
+  matchUps,
+  composition,
+  drawId,
+  structureId,
+  display,
+}: {
+  flightDisplay: HTMLElement;
+  matchUps: any[];
+  composition: any;
+  drawId: string;
+  structureId: string;
+  display: any;
+}) {
+  const matchUpsMap = Object.fromEntries(matchUps.map(toMatchUpEntry));
+  const eventHandlers = {
+    scoreClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
+    matchUpClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
+  };
+  const content = renderContainer({
+    content: renderStructure({
+      context: { drawId, structureId },
+      eventHandlers,
+      matchUps,
+      composition,
+      structureId,
+    }),
+    theme: composition.theme,
+  });
+  flightDisplay.appendChild(content);
+}
+
+function toMatchUpEntry(m: any) {
+  return [m.matchUpId, m];
+}
+
+function buildStructureOption({
+  tournamentId,
+  eventId,
+  drawId,
+  initialStructureIndex,
+  renderSelectedStructure,
+}: {
+  tournamentId: string;
+  eventId: string;
+  drawId: string;
+  initialStructureIndex: number;
+  renderSelectedStructure: (i: number) => void;
+}) {
+  return ({ structureName, structureId }: any, i: number) => ({
+    onClick: () => {
+      updateRouteUrl({ tournamentId, eventId, drawId, structureId });
+      renderSelectedStructure(i);
+    },
+    isActive: i === initialStructureIndex,
+    label: structureName,
+    close: true,
+  });
+}
+
 export function renderEvent({
   tournamentId,
   eventId,
@@ -113,38 +184,7 @@ export function renderEvent({
         composition.configuration.genderColor = true;
 
         if (displayFormat === 'roundsColumns') {
-          const matchUpsMap = Object.fromEntries(matchUps.map((m: any) => [m.matchUpId, m]));
-          const getMatchUp = (props: any) => {
-            let el = props.pointerEvent?.target as HTMLElement;
-            while (el && !el.classList?.contains('tmx-m')) el = el.parentElement as HTMLElement;
-            return matchUpsMap[el?.getAttribute('id')];
-          };
-          const eventHandlers = {
-            scoreClick: (props: any) => {
-              const mu = getMatchUp(props);
-              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
-                openScorecard({ matchUp: mu, display });
-              }
-            },
-            matchUpClick: (props: any) => {
-              const mu = getMatchUp(props);
-              if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) {
-                openScorecard({ matchUp: mu, display });
-              }
-            },
-          };
-
-          const content = renderContainer({
-            content: renderStructure({
-              context: { drawId, structureId },
-              eventHandlers,
-              matchUps,
-              composition,
-              structureId,
-            }),
-            theme: composition.theme,
-          });
-          flightDisplay.appendChild(content);
+          renderRoundsColumns({ flightDisplay, matchUps, composition, drawId, structureId, display });
         } else if (displayFormat === 'roundsStats') {
           createStatsTable({ drawId, structureId, eventData, participants });
         } else {
@@ -159,15 +199,9 @@ export function renderEvent({
       targetStructureId = undefined;
 
       if (flight.structures?.length > 1) {
-        const structureOptions = flight.structures.map(({ structureName, structureId }, i) => ({
-          onClick: () => {
-            updateRouteUrl({ tournamentId, eventId, drawId, structureId });
-            renderSelectedStructure(i);
-          },
-          isActive: i === initialStructureIndex,
-          label: structureName,
-          close: true,
-        }));
+        const structureOptions = flight.structures.map(
+          buildStructureOption({ tournamentId, eventId, drawId, initialStructureIndex, renderSelectedStructure }),
+        );
         const structureButton = {
           label: flight.structures[initialStructureIndex].structureName,
           options: structureOptions,
