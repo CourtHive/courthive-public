@@ -47,7 +47,7 @@
     "envfile": "7.1.0",
     "eslint": "10.2.1",
     "eslint-plugin-sonarjs": "4.0.3",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "husky": "9.1.7",
     "inquirer": "13.4.2",
     "lint-staged": "16.4.0",
