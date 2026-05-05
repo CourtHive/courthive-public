@@ -1,11 +1,11 @@
 import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
+import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import i18next, { hasStoredLanguage } from 'src/i18n/i18n';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
-import { tennisCourt } from 'courthive-components';
 import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
@@ -32,13 +32,15 @@ export async function renderTournament(
   const imageUrl = tournamentImage?.identifier;
   const isValidUrl =
     imageUrl && (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('data:'));
+  const isCourtSvgResource = tournamentImage?.resourceSubType === COURT_SVG_RESOURCE_SUB_TYPE;
   const tl = document.getElementById(TOURNAMENT_LOGO);
   if (isValidUrl) {
     const alt = tournamentInfo.tournamentName || '';
     tl.innerHTML = `<img src="${imageUrl}" alt="${alt}" style="max-height: 20em" />`;
   } else {
     removeAllChildNodes(tl);
-    const courtSvg = tennisCourt('court-fallback');
+    const publishedCourtSvg = isCourtSvgResource ? createCourtSvg(tournamentImage?.identifier, 'court-fallback') : undefined;
+    const courtSvg = publishedCourtSvg ?? tennisCourt('court-fallback');
     courtSvg.style.maxHeight = '16em';
     courtSvg.style.padding = '1em';
     courtSvg.style.opacity = '0.6';
