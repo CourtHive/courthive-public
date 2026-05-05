@@ -7,6 +7,7 @@ import {
   markReadyMatchUpsInProgress,
   withInlineScoringConfig,
 } from 'src/services/inlineCrowdScoring';
+import { installMobileBracketLayout } from 'src/services/mobileBracketLayout';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
 import { openScorecard } from 'src/components/scorecard/openScorecard';
@@ -77,6 +78,16 @@ function renderRoundsColumns({
     theme: composition.theme,
   });
   flightDisplay.appendChild(content);
+
+  // Below 768px: per-round column snap (or RR vertical stack) + chip nav.
+  // Tear down any prior install before rebuilding so observers don't leak
+  // across flight/structure switches.
+  context.teardownMobileBracket?.();
+  context.teardownMobileBracket = installMobileBracketLayout({
+    flightDisplay,
+    structureContent,
+    matchUps,
+  });
 }
 
 function toMatchUpEntry(m: any) {

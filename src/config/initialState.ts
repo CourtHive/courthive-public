@@ -17,6 +17,7 @@ import 'courthive-components/dist/courthive-components.css';
 import 'src/styles/components/layout.css';
 import 'src/styles/tabulator.css';
 import 'src/styles/tournamentSchedule.css';
+import 'src/styles/mobileBracket.css';
 import 'src/styles/default.css';
 import 'src/styles/darkMode.css';
 import 'src/styles/tournaments.css';

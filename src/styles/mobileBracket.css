@@ -1,0 +1,104 @@
+/*
+ * Mobile bracket layout — applied below 768px.
+ *
+ * Two modes, picked by the consumer based on whether the structure is
+ * round-robin:
+ *
+ *  .chp-mobile-bracket--snap   — non-RR: per-round column snap, horizontal
+ *  .chp-mobile-bracket--stack  — RR: full-width card stack, vertical
+ *
+ * Both modes hide the in-bracket round headers since the chip nav above
+ * the structure carries the round label.
+ */
+
+@media (max-width: 768px) {
+  /* ── Snap mode (non-RR) ──────────────────────────────────────────── */
+
+  .chp-mobile-bracket--snap .chc-structure {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .chp-mobile-bracket--snap .chc-structure > .chc-round-container {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* ── Stack mode (round-robin) ────────────────────────────────────── */
+
+  .chp-mobile-bracket--stack .chc-structure {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .chp-mobile-bracket--stack .chc-structure > .chc-round-container {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Shared: hide in-bracket round header (chip nav replaces it) ─── */
+
+  .chp-mobile-bracket--snap .chc-round-header,
+  .chp-mobile-bracket--stack .chc-round-header,
+  .chp-mobile-bracket--snap .tmx-rh,
+  .chp-mobile-bracket--stack .tmx-rh {
+    display: none;
+  }
+
+  /* ── Round nav chip bar ──────────────────────────────────────────── */
+
+  .chp-round-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: var(--chc-bg-elevated, #fff);
+    border-bottom: 1px solid var(--chc-border-secondary, #ddd);
+    position: sticky;
+    top: 0;
+    z-index: 4;
+  }
+
+  .chp-round-nav__chip {
+    flex: 0 0 auto;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--chc-border-primary, #dbdbdb);
+    background: var(--chc-bg-primary, #fff);
+    color: var(--chc-text-primary, #363636);
+    font-size: 0.85rem;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .chp-round-nav__chip[aria-current='true'] {
+    background: var(--chc-status-info, #3273dc);
+    border-color: var(--chc-status-info, #3273dc);
+    color: var(--chc-text-inverse, #fff);
+    font-weight: 600;
+  }
+
+  .chp-round-nav__chip:hover:not([aria-current='true']) {
+    background: var(--chc-hover-bg, #f5f5f5);
+  }
+}
+
+/* Above the breakpoint, the nav row is hidden — the regular bracket layout
+   covers everything. */
+@media (min-width: 769px) {
+  .chp-round-nav {
+    display: none;
+  }
+}
