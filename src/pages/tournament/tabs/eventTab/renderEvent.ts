@@ -1,4 +1,12 @@
 import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
+import type { InlineScoringManager } from 'courthive-components';
+import {
+  applyInlineScoringWrappers,
+  buildInlineCrowdManager,
+  loadSavedSessionsForTournament,
+  markReadyMatchUpsInProgress,
+  withInlineScoringConfig,
+} from 'src/services/inlineCrowdScoring';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
 import { openScorecard } from 'src/components/scorecard/openScorecard';
@@ -29,6 +37,7 @@ function renderRoundsColumns({
   drawId,
   structureId,
   display,
+  inlineManager,
 }: {
   flightDisplay: HTMLElement;
   matchUps: any[];
@@ -36,20 +45,35 @@ function renderRoundsColumns({
   drawId: string;
   structureId: string;
   display: any;
+  inlineManager?: InlineScoringManager;
 }) {
   const matchUpsMap = Object.fromEntries(matchUps.map(toMatchUpEntry));
   const eventHandlers = {
     scoreClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
     matchUpClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
   };
-  const content = renderContainer({
-    content: renderStructure({
-      context: { drawId, structureId },
-      eventHandlers,
+
+  if (inlineManager) markReadyMatchUpsInProgress(matchUps);
+
+  const structureContent = renderStructure({
+    context: { drawId, structureId },
+    eventHandlers,
+    matchUps,
+    composition,
+    structureId,
+  });
+
+  if (inlineManager) {
+    applyInlineScoringWrappers({
+      container: structureContent,
       matchUps,
+      manager: inlineManager,
       composition,
-      structureId,
-    }),
+    });
+  }
+
+  const content = renderContainer({
+    content: structureContent,
     theme: composition.theme,
   });
   flightDisplay.appendChild(content);
@@ -109,10 +133,14 @@ export function renderEvent({
   context.refreshEventView = () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat });
 
   const hydrateParticipants = false;
-  getEventData({ tournamentId, eventId, hydrateParticipants }).then((data) => {
+  // Kick off IndexedDB read in parallel with the network fetch so the user's
+  // crowd sessions are available by the time we render the bracket.
+  const savedSessionsPromise = loadSavedSessionsForTournament(tournamentId);
+  getEventData({ tournamentId, eventId, hydrateParticipants }).then(async (data) => {
     const eventData = data?.data?.eventData || data?.data;
     const participants = data?.data?.participants || [];
     if (window?.['dev']) window['dev']['eventData'] = eventData;
+    const savedSessions = await savedSessionsPromise;
     const structureMatchUps = (structure) => {
       return Object.values(structure.roundMatchUps || {}).flat();
     };
@@ -154,6 +182,15 @@ export function renderEvent({
     let currentFlightIndex = 0;
     let currentStructureIndex = 0;
 
+    // One InlineScoringManager per event-render. Engines are pre-seeded from
+    // the saved crowd sessions for this tournament so a refresh resumes the
+    // user mid-game. The same manager is re-used across flight/structure
+    // switches so engine state isn't lost when switching tabs locally.
+    const allMatchUps: any[] = flightsData.flatMap((flight: any) =>
+      (flight.structures || []).flatMap((s: any) => Object.values(s.roundMatchUps || {}).flat()),
+    );
+    const inlineManager = buildInlineCrowdManager({ tournamentId, savedSessions, matchUps: allMatchUps });
+
     const renderFlight = (index) => {
       currentFlightIndex = index;
       const flight = flightsData[index];
@@ -180,11 +217,13 @@ export function renderEvent({
         removeAllChildNodes(flightDisplay);
 
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
-        const composition = resolvePublishedComposition(display);
-        composition.configuration.genderColor = true;
+        const baseComposition = resolvePublishedComposition(display);
+        baseComposition.configuration.genderColor = true;
+        // Merge inlineScoring config without mutating the cached published composition
+        const composition = withInlineScoringConfig(baseComposition);
 
         if (displayFormat === 'roundsColumns') {
-          renderRoundsColumns({ flightDisplay, matchUps, composition, drawId, structureId, display });
+          renderRoundsColumns({ flightDisplay, matchUps, composition, drawId, structureId, display, inlineManager });
         } else if (displayFormat === 'roundsStats') {
           createStatsTable({ drawId, structureId, eventData, participants });
         } else {
