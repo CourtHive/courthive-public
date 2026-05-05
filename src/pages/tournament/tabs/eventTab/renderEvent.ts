@@ -39,6 +39,7 @@ function renderRoundsColumns({
   structureId,
   display,
   inlineManager,
+  liveScoring,
 }: {
   flightDisplay: HTMLElement;
   matchUps: any[];
@@ -47,6 +48,7 @@ function renderRoundsColumns({
   structureId: string;
   display: any;
   inlineManager?: InlineScoringManager;
+  liveScoring?: { active: boolean; onChange: (next: boolean) => void };
 }) {
   const matchUpsMap = Object.fromEntries(matchUps.map(toMatchUpEntry));
   const eventHandlers = {
@@ -79,7 +81,7 @@ function renderRoundsColumns({
   });
   flightDisplay.appendChild(content);
 
-  // Below 768px: per-round column snap (or RR vertical stack) + chip nav.
+  // Round nav bar (always visible) + mobile snap/stack layout below 768px.
   // Tear down any prior install before rebuilding so observers don't leak
   // across flight/structure switches.
   context.teardownMobileBracket?.();
@@ -87,11 +89,28 @@ function renderRoundsColumns({
     flightDisplay,
     structureContent,
     matchUps,
+    liveScoring,
   });
 }
 
 function toMatchUpEntry(m: any) {
   return [m.matchUpId, m];
+}
+
+function readLocalStorageFlag(key: string): boolean {
+  try {
+    return globalThis.localStorage?.getItem(key) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function writeLocalStorageFlag(key: string, value: boolean): void {
+  try {
+    globalThis.localStorage?.setItem(key, value ? '1' : '0');
+  } catch {
+    // Private mode or unavailable — preference resets per session.
+  }
 }
 
 function buildStructureOption({
@@ -196,11 +215,23 @@ export function renderEvent({
     // One InlineScoringManager per event-render. Engines are pre-seeded from
     // the saved crowd sessions for this tournament so a refresh resumes the
     // user mid-game. The same manager is re-used across flight/structure
-    // switches so engine state isn't lost when switching tabs locally.
+    // switches and across live-scoring toggle flips so engine state isn't
+    // lost when the user switches tabs or turns the toggle off and back on.
     const allMatchUps: any[] = flightsData.flatMap((flight: any) =>
       (flight.structures || []).flatMap((s: any) => Object.values(s.roundMatchUps || {}).flat()),
     );
     const inlineManager = buildInlineCrowdManager({ tournamentId, savedSessions, matchUps: allMatchUps });
+
+    // Live-scoring toggle — opt-in. Default is OFF so the bracket renders
+    // with the TD's published composition unchanged. Per-(tournament, event)
+    // preference persists in localStorage.
+    const liveScoringKey = `chp.live-scoring.${tournamentId}.${eventId}`;
+    let liveScoringActive = readLocalStorageFlag(liveScoringKey);
+    const setLiveScoringActive = (next: boolean) => {
+      liveScoringActive = next;
+      writeLocalStorageFlag(liveScoringKey, next);
+      renderFlight(currentFlightIndex);
+    };
 
     const renderFlight = (index) => {
       currentFlightIndex = index;
@@ -230,11 +261,24 @@ export function renderEvent({
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
         const baseComposition = resolvePublishedComposition(display);
         baseComposition.configuration.genderColor = true;
-        // Merge inlineScoring config without mutating the cached published composition
-        const composition = withInlineScoringConfig(baseComposition);
+        // Live scoring layered in only when the visitor opted in via the
+        // toggle on the round nav bar. Default = TD's published composition
+        // is rendered unchanged.
+        const composition = liveScoringActive ? withInlineScoringConfig(baseComposition) : baseComposition;
+        const activeInlineManager = liveScoringActive ? inlineManager : undefined;
+        const liveScoring = { active: liveScoringActive, onChange: setLiveScoringActive };
 
         if (displayFormat === 'roundsColumns') {
-          renderRoundsColumns({ flightDisplay, matchUps, composition, drawId, structureId, display, inlineManager });
+          renderRoundsColumns({
+            flightDisplay,
+            matchUps,
+            composition,
+            drawId,
+            structureId,
+            display,
+            inlineManager: activeInlineManager,
+            liveScoring,
+          });
         } else if (displayFormat === 'roundsStats') {
           createStatsTable({ drawId, structureId, eventData, participants });
         } else {

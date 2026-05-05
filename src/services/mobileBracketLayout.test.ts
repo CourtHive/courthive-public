@@ -9,7 +9,7 @@ vi.mock('courthive-components', () => ({}));
 
 import { __test__ } from './mobileBracketLayout';
 
-const { resolveRoundLabel, MOBILE_QUERY, SNAP_CLASS, STACK_CLASS } = __test__;
+const { resolveRoundLabel, MOBILE_QUERY, SNAP_CLASS, STACK_CLASS, TOGGLE_ACTIVE_CLASS } = __test__;
 
 function buildContainer(headerText?: string): any {
   // Minimal stand-in for an HTMLElement.querySelector. Returns the same
@@ -61,5 +61,6 @@ describe('module constants', () => {
   it('exposes the modifier class names CSS depends on', () => {
     expect(SNAP_CLASS).toBe('chp-mobile-bracket--snap');
     expect(STACK_CLASS).toBe('chp-mobile-bracket--stack');
+    expect(TOGGLE_ACTIVE_CLASS).toBe('chp-round-nav__toggle--active');
   });
 });

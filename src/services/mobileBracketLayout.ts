@@ -1,37 +1,55 @@
 /**
- * Mobile bracket layout — runtime helper.
+ * Bracket header bar — runtime helper.
  *
- * Below 768px, applies one of two CSS modifier classes to the structure
- * container and renders a round-nav chip bar above it.
+ * Renders a sticky bar above the published structure with two
+ * responsibilities:
  *
- *  - non-RR: `.chp-mobile-bracket--snap` (horizontal scroll-snap, one
- *            round per viewport-width)
- *  - RR    : `.chp-mobile-bracket--stack` (full-width vertical stack)
+ *  1. **Round chip nav** (mobile-only via CSS) — one chip per round.
+ *     Click smooth-scrolls the matching round into view; an
+ *     IntersectionObserver highlights the active chip.
+ *  2. **Live-scoring toggle** (always visible) — opt-in switch the
+ *     consumer wires to swap between the published TD composition
+ *     and the inline-scoring overlay.
  *
- * The chip bar reads round labels from existing `.chc-round-header` text
- * content (when the publisher's composition has roundHeader on); falls
- * back to short generated labels (R1, R2, QF, SF, F).
+ * Below 768px the bar also drives one of two CSS modifier classes
+ * on the structure container so the bracket itself becomes
+ * touch-friendly:
  *
- * Returns a teardown function so the consumer can detach observers when
- * the structure is re-rendered (which happens on flight / structure
- * switches inside renderEvent).
+ *  - non-RR: `.chp-mobile-bracket--snap` (horizontal scroll-snap,
+ *            one round per viewport-width).
+ *  - RR    : `.chp-mobile-bracket--stack` (full-width vertical card
+ *            stack).
+ *
+ * Returns a teardown so the consumer can detach observers and DOM
+ * when the structure is re-rendered (which happens on flight /
+ * structure switches and when the live-scoring toggle flips).
  */
 
 const MOBILE_QUERY = '(max-width: 768px)';
 const SNAP_CLASS = 'chp-mobile-bracket--snap';
 const STACK_CLASS = 'chp-mobile-bracket--stack';
 const ARIA_CURRENT = 'aria-current';
+const TOGGLE_ACTIVE_CLASS = 'chp-round-nav__toggle--active';
+
+interface LiveScoringControl {
+  active: boolean;
+  onChange(next: boolean): void;
+  label?: string;
+  hint?: string;
+}
 
 interface InstallParams {
   flightDisplay: HTMLElement;
   structureContent: HTMLElement;
   matchUps: any[];
+  liveScoring?: LiveScoringControl;
 }
 
 export function installMobileBracketLayout({
   flightDisplay,
   structureContent,
   matchUps,
+  liveScoring,
 }: InstallParams): () => void {
   if (typeof globalThis.matchMedia !== 'function') return () => undefined;
 
@@ -44,20 +62,20 @@ export function installMobileBracketLayout({
   if (!structure) return () => undefined;
 
   const roundContainers = collectRoundContainers(structure);
-  if (roundContainers.length === 0) return () => undefined;
-
   const rounds = buildRoundsModel(roundContainers);
-  const navContainer = buildNavBar(rounds, structure);
+  // Render the bar even when no rounds were found, so the live-scoring
+  // toggle is always reachable. Chips only render when there are rounds.
+  const navContainer = buildNavBar({ rounds, structure, liveScoring });
 
   // Mount the nav above the structure inside flightDisplay so that
-  // sticky positioning anchors against flightDisplay's scroll container.
+  // sticky positioning anchors against the page scroll container.
   flightDisplay.insertBefore(navContainer, structureContent);
 
   let observer: IntersectionObserver | undefined;
 
   const apply = () => {
     structure.classList.remove(SNAP_CLASS, STACK_CLASS);
-    if (mql.matches) {
+    if (mql.matches && rounds.length > 0) {
       structure.classList.add(isRoundRobin ? STACK_CLASS : SNAP_CLASS);
       observer?.disconnect();
       observer = buildActiveRoundObserver({ structure, isRoundRobin, rounds });
@@ -136,10 +154,18 @@ function resolveRoundLabel(container: HTMLElement, index: number, total: number)
   return `R${index + 1}`;
 }
 
-function buildNavBar(rounds: RoundModel[], structure: HTMLElement): HTMLElement {
+function buildNavBar({
+  rounds,
+  structure,
+  liveScoring,
+}: {
+  rounds: RoundModel[];
+  structure: HTMLElement;
+  liveScoring?: LiveScoringControl;
+}): HTMLElement {
   const nav = document.createElement('nav');
   nav.className = 'chp-round-nav';
-  nav.setAttribute('aria-label', 'Rounds');
+  nav.setAttribute('aria-label', 'Bracket controls');
 
   for (const round of rounds) {
     round.chip.addEventListener('click', () => {
@@ -147,7 +173,27 @@ function buildNavBar(rounds: RoundModel[], structure: HTMLElement): HTMLElement 
     });
     nav.appendChild(round.chip);
   }
+
+  if (liveScoring) {
+    nav.appendChild(buildLiveScoringToggle(liveScoring));
+  }
+
   return nav;
+}
+
+function buildLiveScoringToggle(control: LiveScoringControl): HTMLButtonElement {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'chp-round-nav__toggle';
+  button.dataset.role = 'live-scoring-toggle';
+  button.textContent = control.label ?? 'Live scoring';
+  button.title = control.hint ?? 'Score this draw locally on your device. Nothing is sent to the tournament.';
+  button.setAttribute('aria-pressed', control.active ? 'true' : 'false');
+  if (control.active) button.classList.add(TOGGLE_ACTIVE_CLASS);
+  button.addEventListener('click', () => {
+    control.onChange(!control.active);
+  });
+  return button;
 }
 
 function scrollRoundIntoView(target: HTMLElement, structure: HTMLElement): void {
@@ -157,7 +203,7 @@ function scrollRoundIntoView(target: HTMLElement, structure: HTMLElement): void 
     structure.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
     return;
   }
-  // Stack mode: regular vertical scrollIntoView.
+  // Stack mode (or non-mobile): vertical scrollIntoView.
   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -216,4 +262,5 @@ export const __test__ = {
   MOBILE_QUERY,
   SNAP_CLASS,
   STACK_CLASS,
+  TOGGLE_ACTIVE_CLASS,
 };
