@@ -99,6 +99,24 @@
   }
 }
 
+/* ── Dropdown overflow guards (mobile) ─────────────────────────────── */
+/*
+ * The round-display button (`align: RIGHT`) gets `.is-right`, which anchors
+ * its menu to the trigger's right edge. On narrow phones that pushes the
+ * menu past the viewport's left edge — items render off-screen. Drop the
+ * right-anchor on mobile and cap menu width to the viewport.
+ */
+
+@media (max-width: 768px) {
+  .dropdown.is-right .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+  .dropdown-menu {
+    max-width: calc(100vw - 1rem);
+  }
+}
+
 /* ── Mobile bracket layouts ────────────────────────────────────────── */
 
 @media (max-width: 768px) {

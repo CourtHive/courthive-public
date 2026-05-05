@@ -67,9 +67,11 @@ export function installMobileBracketLayout({
   // toggle is always reachable. Chips only render when there are rounds.
   const navContainer = buildNavBar({ rounds, structure, liveScoring });
 
-  // Mount the nav above the structure inside flightDisplay so that
-  // sticky positioning anchors against the page scroll container.
-  flightDisplay.insertBefore(navContainer, structureContent);
+  // Mount the nav as the first child of flightDisplay so it sits above
+  // the structure visually. structureContent itself isn't a direct child
+  // — it's nested inside the renderContainer wrapper — so we anchor on
+  // flightDisplay's firstChild (null is fine; appends to end).
+  flightDisplay.insertBefore(navContainer, flightDisplay.firstChild);
 
   let observer: IntersectionObserver | undefined;
 
