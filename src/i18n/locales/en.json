@@ -4,12 +4,13 @@
     "events": "Events",
     "schedule": "Schedule",
     "matches": "Matches",
-    "players": "Players",
+    "players": "Participants",
     "stats": "Stats"
   },
   "players": {
     "name": "Name",
     "country": "Country",
+    "cityState": "City / State",
     "events": "Events",
     "rank": "Rank",
     "noParticipants": "No participants"

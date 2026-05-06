@@ -2,6 +2,7 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { eventConstants, fixtures } from 'tods-competition-factory';
 import { participantSorter } from 'src/common/sorters/participantSorter';
 import { destroyTable } from 'src/components/destroyTable';
+import { renderParticipant } from 'courthive-components';
 import { t } from 'src/i18n/i18n';
 
 const { ratingsParameters } = fixtures;
@@ -9,11 +10,28 @@ const { SINGLES } = eventConstants;
 
 const ANCHOR_ID = 'playersTable';
 
+const PARTICIPANTS_COMPOSITION = { configuration: { genderColor: true }, theme: 'chc-theme-basiccard' };
+
 interface ColumnConfig {
   country?: boolean;
   events?: boolean;
   ratings?: string[];
   rankings?: string[];
+}
+
+interface RowData {
+  participant: any;
+  name: string;
+  country: string;
+  cityState: string;
+  ratings: Record<string, any>;
+  ranking?: number | string;
+  events: { eventId: string; eventName: string; eventType?: string }[];
+}
+
+function resolveCityState(person: any): string {
+  const addr = person?.addresses?.[0];
+  return [addr?.city, addr?.state].filter(Boolean).join(', ') || '';
 }
 
 export function createPlayersTable({
@@ -31,10 +49,15 @@ export function createPlayersTable({
   const individuals = participants.filter((p) => p.participantType === 'INDIVIDUAL');
   individuals.sort(participantSorter);
 
-  const rows = individuals.map((p) => {
+  const rows: RowData[] = individuals.map((p) => {
     const person = p.person || {};
     const country = person.nationalityCode || '';
-    const events = (p.events || []).map((e) => e.eventName).join(', ');
+    const cityState = resolveCityState(person);
+    const events = (p.events || []).map((e) => ({
+      eventId: e.eventId,
+      eventName: e.eventName,
+      eventType: e.eventType,
+    }));
 
     const ratings: Record<string, any> = {};
     for (const item of p.ratings?.[SINGLES] || []) {
@@ -51,8 +74,10 @@ export function createPlayersTable({
     const ranking = rankingEntry?.scaleValue ?? undefined;
 
     return {
+      participant: p,
       name: p.participantName || '',
       country,
+      cityState,
       ratings,
       ranking,
       events,
@@ -96,9 +121,30 @@ export function createPlayersTable({
     hasRanking = false;
   }
 
-  // Name column is always shown
+  const hasCityState = rows.some((row) => row.cityState);
+
+  // Name column is always shown — rendered via renderParticipant so the
+  // bracket's gender colours and styling carry over to the list view.
+  // Returning outerHTML (instead of the live HTMLElement) sidesteps a
+  // Tabulator caching wrinkle where the same DOM node can briefly appear
+  // and then vanish across sort / virtual-scroll redraws.
   const columns: any[] = [
-    { title: t('players.name'), field: 'name', sorter: 'string', headerSort: true },
+    {
+      title: t('players.name'),
+      field: 'name',
+      sorter: 'string',
+      headerSort: true,
+      formatter: (cell: any) => {
+        const row = cell.getRow().getData() as RowData;
+        if (!row.participant) return row.name || '';
+        try {
+          return renderParticipant({ participant: row.participant, composition: PARTICIPANTS_COMPOSITION }).outerHTML;
+        } catch (err) {
+          console.warn('[participants] renderParticipant failed', err);
+          return row.name || '';
+        }
+      },
+    },
   ];
 
   // Country column (filtered by columnConfig)
@@ -110,6 +156,16 @@ export function createPlayersTable({
       sorter: 'string',
       headerSort: true,
       width: 100,
+    });
+  }
+
+  if (hasCityState) {
+    columns.push({
+      title: t('players.cityState'),
+      field: 'cityState',
+      sorter: 'string',
+      headerSort: true,
+      width: 180,
     });
   }
 
@@ -126,10 +182,34 @@ export function createPlayersTable({
 
   columns.push(...filteredRatingColumns);
 
-  // Events column (filtered by columnConfig)
+  // Events column — render each event as a chip rather than a comma-
+  // separated text string. Sorting is by the joined event-name text so
+  // tabulator's default string sorter still works against `events`.
   const showEvents = !columnConfig || columnConfig.events !== false;
   if (showEvents) {
-    columns.push({ title: t('players.events'), field: 'events', sorter: 'string', headerSort: true });
+    columns.push({
+      title: t('players.events'),
+      field: 'events',
+      sorter: (_a: unknown, _b: unknown, aRow: any, bRow: any) => {
+        const at = (aRow.getData().events as RowData['events']).map((e) => e.eventName).join(', ');
+        const bt = (bRow.getData().events as RowData['events']).map((e) => e.eventName).join(', ');
+        return at.localeCompare(bt, undefined, { numeric: true });
+      },
+      headerSort: true,
+      formatter: (cell: any) => {
+        const events = (cell.getRow().getData() as RowData).events || [];
+        const wrapper = document.createElement('div');
+        wrapper.className = 'chp-event-chips';
+        for (const ev of events) {
+          const chip = document.createElement('span');
+          chip.className = 'chp-event-chip';
+          if (ev.eventType) chip.dataset.eventType = ev.eventType;
+          chip.textContent = ev.eventName;
+          wrapper.appendChild(chip);
+        }
+        return wrapper;
+      },
+    });
   }
 
   new Tabulator(element, {

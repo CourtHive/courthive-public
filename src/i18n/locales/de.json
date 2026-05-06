@@ -4,12 +4,13 @@
     "events": "Bewerbe",
     "schedule": "Spielplan",
     "matches": "Spiele",
-    "players": "Spieler",
+    "players": "Teilnehmer",
     "stats": "Stats"
   },
   "players": {
     "name": "Name",
     "country": "Land",
+    "cityState": "Stadt / Bundesland",
     "events": "Bewerbe",
     "rank": "Rang",
     "noParticipants": "Keine Teilnehmer"

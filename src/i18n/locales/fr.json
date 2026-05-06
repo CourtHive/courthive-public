@@ -4,12 +4,13 @@
     "events": "Épreuves",
     "schedule": "Programme",
     "matches": "Matchs",
-    "players": "Joueurs",
+    "players": "Participants",
     "stats": "Stats"
   },
   "players": {
     "name": "Nom",
     "country": "Pays",
+    "cityState": "Ville / Région",
     "events": "Épreuves",
     "rank": "Classement",
     "noParticipants": "Aucun participant"

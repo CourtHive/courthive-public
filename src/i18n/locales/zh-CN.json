@@ -4,12 +4,13 @@
     "events": "赛事",
     "schedule": "赛程",
     "matches": "比赛",
-    "players": "选手",
+    "players": "参赛者",
     "stats": "统计"
   },
   "players": {
     "name": "姓名",
     "country": "国家",
+    "cityState": "城市 / 省份",
     "events": "赛事",
     "rank": "排名",
     "noParticipants": "暂无参赛选手"

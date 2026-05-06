@@ -4,12 +4,13 @@
     "events": "الأحداث",
     "schedule": "الجدول",
     "matches": "المباريات",
-    "players": "اللاعبون",
+    "players": "المشاركون",
     "stats": "الإحصائيات"
   },
   "players": {
     "name": "الاسم",
     "country": "البلد",
+    "cityState": "المدينة / المنطقة",
     "events": "الأحداث",
     "rank": "الترتيب",
     "noParticipants": "لا يوجد مشاركون"
