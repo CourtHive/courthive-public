@@ -9,13 +9,38 @@
  * Phase 2 spirit: anonymous + local-only. Phase 3 will add a relay write
  * for signed-in users on top of these same callbacks.
  */
+import { saveSession, listActiveSessions, CrowdTrackerSession } from 'src/services/crowdTracker';
 import { InlineScoringManager, renderInlineMatchUp } from 'courthive-components';
-
-import { saveSession, listActiveSessions } from 'src/services/crowdTracker';
-import type { CrowdTrackerSession } from 'src/services/crowdTracker';
 
 const IRREGULAR_STATUSES = new Set(['RETIRED', 'DEFAULTED', 'WALKOVER', 'SUSPENDED', 'CANCELLED', 'ABANDONED']);
 const PERSIST_DEBOUNCE_MS = 200;
+/**
+ * Hidden property used to remember a matchUp's pre-mutation status so we can
+ * revert it when the user toggles Track OFF. Stored on the matchUp object
+ * itself because matchUps are long-lived in the renderEvent closure and the
+ * mutation needs to be reversible across re-renders.
+ */
+const ORIGINAL_STATUS_KEY = '__inlineOriginalStatus';
+/**
+ * Same idea for matchUp.score — `overlayLocalScores` overlays the engine's
+ * current state onto matchUp.score so the locally-entered score is visible
+ * regardless of toggle state. We stash the TD's published score here so we
+ * can revert if the visitor clears their local score (drops out of the
+ * scored set) and the engine ends up empty.
+ */
+const ORIGINAL_SCORE_KEY = '__inlineOriginalScore';
+/**
+ * Custom property attached to the InlineScoringManager that records every
+ * matchUpId where actual scoring has happened (either via a hydrated
+ * IndexedDB session or via an in-session onScoreChange). Lets the toggle-OFF
+ * path keep [LIVE] on matchUps that have real scoring data while reverting
+ * the rest.
+ */
+const SCORED_IDS_KEY = '__scoredMatchUpIds';
+
+function matchUpHasScore(matchUp: any): boolean {
+  return Boolean(matchUp?.score?.sets?.length) || Boolean(matchUp?.winningSide);
+}
 
 interface PrebuildParams {
   tournamentId: string;
@@ -55,14 +80,75 @@ export async function loadSavedSessionsForTournament(
 /**
  * Mirror TMX's `markReadyMatchUpsInProgress`: any matchUp with both sides
  * resolved and no winner yet is treated as IN_PROGRESS so the inline-scoring
- * wrapper picks it up. Mutates the matchUps in place — same contract as TMX.
+ * wrapper picks it up. Mutates the matchUps in place — same contract as TMX
+ * — but stashes the pre-mutation status on `__inlineOriginalStatus` so the
+ * toggle-OFF path (`unmarkReadyMatchUpsInProgress`) can revert.
  */
 export function markReadyMatchUpsInProgress(matchUps: any[]): void {
   for (const m of matchUps || []) {
     const hasBothParticipants = m?.sides?.length === 2 && m.sides[0]?.participant && m.sides[1]?.participant;
     if (!hasBothParticipants) continue;
     if (m?.readyToScore && !m?.winningSide && (!m?.matchUpStatus || m.matchUpStatus === 'TO_BE_PLAYED')) {
+      if (!(ORIGINAL_STATUS_KEY in m)) m[ORIGINAL_STATUS_KEY] = m.matchUpStatus;
       m.matchUpStatus = 'IN_PROGRESS';
+    }
+  }
+}
+
+/**
+ * Revert the IN_PROGRESS mutation written by `markReadyMatchUpsInProgress`,
+ * except for matchUps that have actually been scored — those keep their
+ * IN_PROGRESS status (and therefore their [LIVE] badge) so the visitor can
+ * see at a glance which matchUps they've engaged with locally.
+ */
+export function unmarkReadyMatchUpsInProgress(matchUps: any[], scoredIds?: Set<string>): void {
+  for (const m of matchUps || []) {
+    if (!(ORIGINAL_STATUS_KEY in m)) continue;
+    if (scoredIds?.has(m.matchUpId)) continue;
+    m.matchUpStatus = m[ORIGINAL_STATUS_KEY];
+    delete m[ORIGINAL_STATUS_KEY];
+  }
+}
+
+/**
+ * Read the scored-matchUpIds Set off an InlineScoringManager built by
+ * `buildInlineCrowdManager`. Returns an empty Set if absent (e.g., the
+ * manager came from somewhere else).
+ */
+export function getScoredMatchUpIds(manager: InlineScoringManager): Set<string> {
+  return ((manager as any)[SCORED_IDS_KEY] as Set<string> | undefined) ?? new Set();
+}
+
+/**
+ * Overlay each scored matchUp's engine state onto matchUp.score / winningSide
+ * so the locally-entered score is visible in the bracket regardless of toggle
+ * state. For matchUps that drop out of the scored set (Clear pressed), revert
+ * to the TD's published score that we stashed on first overlay.
+ *
+ * Mutation pattern mirrors `markReadyMatchUpsInProgress`: stashes original on
+ * `__inlineOriginalScore` so the change is reversible across re-renders.
+ */
+export function overlayLocalScores(
+  matchUps: any[],
+  manager: InlineScoringManager,
+  scoredIds: Set<string>,
+): void {
+  for (const m of matchUps || []) {
+    const inScoredSet = m?.matchUpId && scoredIds.has(m.matchUpId);
+    if (inScoredSet) {
+      const engineMatchUp = manager.getMatchUp?.(m.matchUpId, m);
+      if (matchUpHasScore(engineMatchUp)) {
+        if (!(ORIGINAL_SCORE_KEY in m)) {
+          m[ORIGINAL_SCORE_KEY] = { score: m.score, winningSide: m.winningSide };
+        }
+        m.score = engineMatchUp.score;
+        if (engineMatchUp.winningSide !== undefined) m.winningSide = engineMatchUp.winningSide;
+      }
+    } else if (ORIGINAL_SCORE_KEY in m) {
+      const original = m[ORIGINAL_SCORE_KEY];
+      m.score = original.score;
+      m.winningSide = original.winningSide;
+      delete m[ORIGINAL_SCORE_KEY];
     }
   }
 }
@@ -85,6 +171,17 @@ export function buildInlineCrowdManager({
     if (m?.matchUpId) baseLookup.set(m.matchUpId, m);
   }
 
+  // matchUpIds that have actual scoring data — pre-populated from saved
+  // IndexedDB sessions that contain real score state, then kept in sync
+  // by every persist (add when a point lands, delete when the engine is
+  // cleared back to empty) so toggle-OFF can preserve [LIVE] on engaged
+  // matchUps only.
+  const scoredMatchUpIds = new Set<string>(
+    Array.from(savedSessions.entries())
+      .filter(([, session]) => matchUpHasScore(session.matchUp))
+      .map(([id]) => id),
+  );
+
   let persistTimer: ReturnType<typeof setTimeout> | null = null;
   let pendingPersist: (() => Promise<void>) | null = null;
 
@@ -101,6 +198,8 @@ export function buildInlineCrowdManager({
   };
 
   const schedulePersist = (matchUpId: string, scoredMatchUp: any): void => {
+    if (matchUpHasScore(scoredMatchUp)) scoredMatchUpIds.add(matchUpId);
+    else scoredMatchUpIds.delete(matchUpId);
     pendingPersist = async () => {
       const base = baseLookup.get(matchUpId);
       const matchUpFormat = scoredMatchUp?.matchUpFormat ?? base?.matchUpFormat ?? 'SET3-S:6/TB7';
@@ -158,6 +257,7 @@ export function buildInlineCrowdManager({
     }
   }
 
+  (manager as any)[SCORED_IDS_KEY] = scoredMatchUpIds;
   return manager;
 }
 
@@ -203,12 +303,17 @@ export function applyInlineScoringWrappers({
 /**
  * Merge the inlineScoring composition config onto a published composition.
  * Returns a shallow copy so we never mutate the cached published composition.
+ *
+ * `matchUpFooter: true` is the actual gate that lets `renderMatchUp` emit
+ * the footer with Undo / Redo / Clear / Submit buttons; without it the
+ * footer block is skipped entirely. (See renderMatchUp.ts:119.)
  */
 export function withInlineScoringConfig(composition: any): any {
   return {
     ...composition,
     configuration: {
       ...composition.configuration,
+      matchUpFooter: true,
       inlineScoring: {
         mode: 'games' as const,
         showFooter: true,

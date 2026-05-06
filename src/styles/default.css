@@ -44,7 +44,15 @@ body {
 
 .main {
   width: 100%;
-  height: 100vh;
+  /* `min-height` not `height`: a fixed `height: 100vh` clips the
+     containing-block to the viewport, so any child taller than that
+     (like a 32-draw bracket) overflows past `.main`'s bg into the
+     area where `html`'s `--chc-bg-secondary` paints through. In dark
+     mode that creates a sharply-bounded U-shape under the draw view
+     where `--chc-bg-primary` (#1a1a2e on `.main`) meets
+     `--chc-bg-secondary` (#16213e on `html`). Letting `.main` grow
+     with content keeps a single bg behind the entire page. */
+  min-height: 100vh;
 }
 
 h1 {

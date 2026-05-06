@@ -188,7 +188,7 @@ function buildLiveScoringToggle(control: LiveScoringControl): HTMLButtonElement 
   button.type = 'button';
   button.className = 'chp-round-nav__toggle';
   button.dataset.role = 'live-scoring-toggle';
-  button.textContent = control.label ?? 'Live scoring';
+  button.textContent = control.label ?? 'Track';
   button.title = control.hint ?? 'Score this draw locally on your device. Nothing is sent to the tournament.';
   button.setAttribute('aria-pressed', control.active ? 'true' : 'false');
   if (control.active) button.classList.add(TOGGLE_ACTIVE_CLASS);

@@ -15,6 +15,59 @@
  * the structure carries the round label.
  */
 
+/* ── Hide the [Score] placeholder on the published bracket ────────── */
+/*
+ * `renderSide.ts` injects a clickable "[Score]" placeholder for matchUps
+ * that are `readyToScore && !inlineScoring`. On TMX that's the TD's entry
+ * point to the scoring modal. On courthive-public there's no TD scoring,
+ * so the placeholder shouldn't appear. Hide it precisely:
+ * `.chc-score-wrapper--small` is shared between the placeholder AND the
+ * actual side-score wrapper, but the placeholder lacks `.sideScore`.
+ *
+ * In Track mode, `inlineScoring` is set on the composition so this
+ * branch in renderSide isn't taken — the placeholder is never rendered.
+ */
+
+#flightDisplay .chc-score-wrapper--small:not(.sideScore) {
+  display: none;
+}
+
+/* ── Inline scoring footer — hide Submit button ───────────────────── */
+/*
+ * In the anonymous local-only crowd-scoring context (Phase 2), every score
+ * event auto-saves to IndexedDB via the manager's onScoreChange callback,
+ * so the explicit "Submit" button is redundant and the label implies a
+ * destination ("submit to whom?") that doesn't exist yet. Hide it; reveal
+ * again when Phase 3 adds signed-in users + score-relay forwarding.
+ */
+
+.chc-inline-scoring-btn.chc-is-submit {
+  display: none;
+}
+
+/* ── Event-controls block (Event / Flight / Display dropdowns) ─────── */
+/*
+ * `dropDownButton.ts` bakes inline `margin-right: 1em` (left-aligned
+ * dropdowns) and `margin-left: 1em` (right-aligned dropdowns) onto each
+ * wrapper, which made the legacy non-flex layout space items. On narrow
+ * viewports the right-aligned Display dropdown wraps to a new row with a
+ * stranded 1em offset on the left — awkward. Switch this block to a
+ * proper flex+wrap layout with uniform gap and override the inline
+ * margins (the inline `style=""` requires `!important` to lose).
+ */
+
+#tournament_events > .block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#tournament_events > .block > .dropdown {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 /* ── Bar (always visible) ──────────────────────────────────────────── */
 
 .chp-round-nav {
@@ -23,7 +76,11 @@
   gap: 0.5rem;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
-  background: var(--chc-bg-elevated, #fff);
+  /* No differentiated bg: in light mode `--chc-bg-elevated` resolves to
+     the same colour as the surrounding page, so the bar already looked
+     uniform there; in dark mode it doesn't. Inheriting transparently
+     matches the light-mode look at both viewports. */
+  background: transparent;
   border-bottom: 1px solid var(--chc-border-secondary, #ddd);
   position: sticky;
   top: 0;
@@ -135,6 +192,16 @@
     scroll-snap-stop: always;
     min-width: 100%;
     flex: 0 0 100%;
+  }
+
+  /* Each round sizes to its own content instead of stretching to match
+     R1's height. Without this override, later rounds (R2-R5) inherit
+     R1's tall column and `chc-round { justify-content: space-around }`
+     fans out their few matchUps across that height, leaving big empty
+     gaps between cards on a phone. With `align-items: flex-start` each
+     round is just as tall as it needs to be, so matchUps stack tightly. */
+  .chp-mobile-bracket--snap.chc-structure {
+    align-items: flex-start;
   }
 
   /* Stack mode (round-robin) */

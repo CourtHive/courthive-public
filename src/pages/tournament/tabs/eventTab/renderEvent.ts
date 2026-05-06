@@ -1,10 +1,12 @@
-import { resolvePublishedComposition, renderContainer, renderStructure } from 'courthive-components';
-import type { InlineScoringManager } from 'courthive-components';
+import { resolvePublishedComposition, renderContainer, renderStructure, InlineScoringManager } from 'courthive-components';
 import {
   applyInlineScoringWrappers,
   buildInlineCrowdManager,
+  getScoredMatchUpIds,
   loadSavedSessionsForTournament,
   markReadyMatchUpsInProgress,
+  overlayLocalScores,
+  unmarkReadyMatchUpsInProgress,
   withInlineScoringConfig,
 } from 'src/services/inlineCrowdScoring';
 import { installMobileBracketLayout } from 'src/services/mobileBracketLayout';
@@ -267,6 +269,19 @@ export function renderEvent({
         const composition = liveScoringActive ? withInlineScoringConfig(baseComposition) : baseComposition;
         const activeInlineManager = liveScoringActive ? inlineManager : undefined;
         const liveScoring = { active: liveScoringActive, onChange: setLiveScoringActive };
+
+        // Toggle OFF: revert the IN_PROGRESS mutation written by a prior
+        // toggle-ON render, except for matchUps that were actually scored
+        // — those keep their [LIVE] badge so the visitor can still see
+        // which matchUps they've engaged with locally.
+        const scoredIds = getScoredMatchUpIds(inlineManager);
+        if (!liveScoringActive) {
+          unmarkReadyMatchUpsInProgress(matchUps, scoredIds);
+        }
+        // Overlay each scored matchUp's engine score onto matchUp.score so
+        // the locally-entered score is visible in the bracket even when
+        // Track is toggled off. Idempotent across renders.
+        overlayLocalScores(matchUps, inlineManager, scoredIds);
 
         if (displayFormat === 'roundsColumns') {
           renderRoundsColumns({
