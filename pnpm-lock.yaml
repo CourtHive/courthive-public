@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  tods-competition-factory: link:../factory
   courthive-components: link:../courthive-components
+  tods-competition-factory: link:../factory
 
 importers:
 
