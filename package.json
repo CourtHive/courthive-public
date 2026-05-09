@@ -71,7 +71,7 @@
     "i18next": "^26.0.0",
     "navigo": "8.11.1",
     "normalize-text": "2.6.0",
-    "semver": "7.7.4",
+    "semver": "7.8.0",
     "socket.io-client": "^4.8.3",
     "svelte": "^5.55.1",
     "tabulator-tables": "6.4.0",
