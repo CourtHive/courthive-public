@@ -9,6 +9,10 @@ export default function viteConfig({ mode }: { mode: string }) {
   const BASE_URL = (process.env.BASE_URL && `/${process.env.BASE_URL}/`) || '';
 
   return defineConfig({
+    server: {
+      port: 5174,
+      strictPort: true,
+    },
     build: {
       sourcemap: true,
       rolldownOptions: {
