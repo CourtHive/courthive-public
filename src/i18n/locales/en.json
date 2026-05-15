@@ -34,5 +34,26 @@
   },
   "language": {
     "select": "Select language"
+  },
+  "registrationProfile": {
+    "entry": "Entry & Eligibility",
+    "entriesOpen": "Entries open",
+    "entriesClose": "Entries close",
+    "withdrawalDeadline": "Withdrawal deadline",
+    "entryMethod": "Entry method",
+    "entryUrl": "Entry URL",
+    "entryFee": "Fee",
+    "accommodation": "Accommodation",
+    "transportation": "Transportation",
+    "hospitality": "Hospitality",
+    "medical": "Medical Information",
+    "ceremonies": "Ceremonies & Social Events",
+    "drawCeremony": "Draw ceremony",
+    "awardsCeremony": "Awards ceremony",
+    "regulations": "Regulations",
+    "sponsors": "Sponsors",
+    "additional": "Additional Information",
+    "dressCode": "Dress code",
+    "contingencyPlan": "Weather contingency"
   }
 }

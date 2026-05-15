@@ -1,9 +1,10 @@
 import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
+import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
-import i18next, { hasStoredLanguage } from 'src/i18n/i18n';
+import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId } from './helpers/tabIds';
@@ -54,15 +55,19 @@ export async function renderTournament(
     el.innerHTML = `${tournamentName}${dates}`;
   }
 
-  const notes = document.getElementById(getTabContentId('Info'));
-  const hasNotes = !!tournamentInfo.notes;
-  if (hasNotes) {
-    notes.innerHTML = tournamentInfo.notes;
-    displayTab('Info');
-  } else {
-    removeAllChildNodes(notes);
-    hideTab('Info');
+  const info = document.getElementById(getTabContentId('Info'));
+  removeAllChildNodes(info);
+  const profileBlock = renderRegistrationProfile(tournamentInfo.registrationProfile, t);
+  if (profileBlock) info.appendChild(profileBlock);
+  if (tournamentInfo.notes) {
+    const notesBlock = document.createElement('div');
+    notesBlock.className = 'tournament-notes';
+    notesBlock.innerHTML = tournamentInfo.notes;
+    info.appendChild(notesBlock);
   }
+  const hasInfo = !!(profileBlock || tournamentInfo.notes);
+  if (hasInfo) displayTab('Info');
+  else hideTab('Info');
 
   const hasEvents = !!tournamentInfo.eventInfo?.length;
   if (hasEvents) {
@@ -173,7 +178,7 @@ export async function renderTournament(
     targetTab = 'Events';
   } else if (deepLink?.eventId && hasEvents) {
     targetTab = 'Events';
-  } else if (hasNotes) {
+  } else if (hasInfo) {
     targetTab = 'Info';
   } else if (hasEvents) {
     targetTab = 'Events';
