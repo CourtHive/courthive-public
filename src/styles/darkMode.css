@@ -2,6 +2,11 @@
   background-color: var(--chc-bg-secondary);
 }
 
+[data-theme='dark'] .courthive-logo path,
+[data-theme='dark'] .courthive-logo line {
+  stroke: #ffffff;
+}
+
 [data-theme='dark'] .main,
 [data-theme='dark'] #tc-draws {
   background-color: var(--chc-bg-primary);
