@@ -5,6 +5,7 @@ import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
+import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId } from './helpers/tabIds';
@@ -20,9 +21,19 @@ export async function renderTournament(
 
   const tournamentInfo = result?.data?.tournamentInfo ?? {};
 
-  // Apply tournament default language if user hasn't explicitly chosen one
+  // Apply tournament default language if user hasn't explicitly chosen one.
+  // Locale resources may not be loaded yet (only `en` is bundled), so make
+  // sure the bundle is in i18next before swapping the active language — the
+  // background ensureLocaleCurrent call here populates from cache or
+  // fetches from CFS as needed.
   const publishLanguage = tournamentInfo.publishState?.language;
-  if (publishLanguage && !hasStoredLanguage()) {
+  if (publishLanguage && !hasStoredLanguage() && publishLanguage !== i18next.language) {
+    try {
+      await ensureLocaleCurrent(publishLanguage);
+    } catch {
+      // Fetch failed — changeLanguage will fall back to English keys,
+      // which is the same behaviour as before this change.
+    }
     i18next.changeLanguage(publishLanguage);
   }
 
