@@ -1,0 +1,88 @@
+name: sync-i18n
+
+# When courthive-public's bundled en.json changes on master, propagate
+# the additions / updates upstream to CourtHive/courthive-i18n. Same
+# pattern as TMX/.github/workflows/sync-i18n.yml — both call into
+# courthive-i18n's `scripts/merge-source-en.cjs` so merge policy lives
+# in exactly one place.
+#
+# Auth: the courthive-release-bot App needs Contents:Write +
+# Pull requests:Write on courthive-i18n (in addition to courthive-public).
+# Same RELEASE_BOT_CLIENT_ID + RELEASE_BOT_PRIVATE_KEY secrets.
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - src/i18n/locales/en.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mint App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.RELEASE_BOT_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_BOT_PRIVATE_KEY }}
+          owner: CourtHive
+          repositories: courthive-public,courthive-i18n
+
+      - name: Checkout courthive-public
+        uses: actions/checkout@v6
+        with:
+          path: source
+
+      - name: Checkout courthive-i18n
+        uses: actions/checkout@v6
+        with:
+          repository: CourtHive/courthive-i18n
+          token: ${{ steps.app-token.outputs.token }}
+          path: i18n
+          persist-credentials: true
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Merge en.json into courthive-i18n
+        id: merge
+        working-directory: i18n
+        run: |
+          set +e
+          node scripts/merge-source-en.cjs \
+            --source ../source/src/i18n/locales/en.json \
+            --label courthive-public > /tmp/pr-body.md
+          code=$?
+          set -e
+          if [ "$code" -eq 2 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$code" -ne 0 ]; then
+            echo "merge script failed with exit $code" >&2
+            exit 1
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Open / update PR on courthive-i18n
+        if: steps.merge.outputs.skip != 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          path: i18n
+          base: main
+          branch: chore/sync-i18n-from-courthive-public
+          delete-branch: true
+          commit-message: |
+            chore(i18n): sync en.json from courthive-public
+
+            See PR body for the full list of added / updated keys.
+          title: 'chore(i18n): sync en.json from courthive-public'
+          body-path: /tmp/pr-body.md
