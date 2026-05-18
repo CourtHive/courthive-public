@@ -78,22 +78,5 @@
     "tabulator-tables": "6.4.0",
     "tippy.js": "6.3.7",
     "tods-competition-factory": "3.7.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "tods-competition-factory": "link:../factory",
-      "courthive-components": "link:../courthive-components"
-    },
-    "ignoredBuiltDependencies": [
-      "@dep-tree/cli",
-      "@nestjs/core",
-      "@scarf/scarf",
-      "@swc/core",
-      "classic-level",
-      "core-js",
-      "esbuild",
-      "rollup",
-      "unrs-resolver"
-    ]
   }
 }
