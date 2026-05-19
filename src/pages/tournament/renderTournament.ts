@@ -2,6 +2,7 @@ import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/
 import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
 import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import { renderVenues } from './tabs/infoTab/renderVenues';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
@@ -76,7 +77,9 @@ export async function renderTournament(
     notesBlock.innerHTML = tournamentInfo.notes;
     info.appendChild(notesBlock);
   }
-  const hasInfo = !!(profileBlock || tournamentInfo.notes);
+  const venuesBlock = renderVenues(tournamentInfo.venues);
+  if (venuesBlock) info.appendChild(venuesBlock);
+  const hasInfo = !!(profileBlock || tournamentInfo.notes || venuesBlock);
   if (hasInfo) displayTab('Info');
   else hideTab('Info');
 

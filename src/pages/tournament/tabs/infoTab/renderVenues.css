@@ -1,0 +1,21 @@
+.tournament-venues {
+  margin-top: 1.5rem;
+}
+
+.tournament-venues__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.tournament-venues .venue-website-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-top: 1px solid var(--chc-vc-border, rgba(0, 0, 0, 0.08));
+}
+
+.tournament-venues .venue-website-link:hover {
+  text-decoration: underline;
+}
