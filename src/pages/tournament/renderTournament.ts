@@ -13,14 +13,28 @@ import { getTabContentId } from './helpers/tabIds';
 import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
 
+export function isFullyUnpublished(tournamentInfo: any): boolean {
+  if (!tournamentInfo) return true;
+  const hasEvents = !!tournamentInfo.eventInfo?.length;
+  const hasSchedule = !!tournamentInfo.publishState?.orderOfPlay?.published;
+  const hasParticipants = !!tournamentInfo.publishState?.participants?.published;
+  return !hasEvents && !hasSchedule && !hasParticipants;
+}
+
 export async function renderTournament(
   result,
   deepLink?: { eventId?: string; drawId?: string; structureId?: string; tab?: string },
 ) {
+  const tournamentInfo = result?.data?.tournamentInfo ?? {};
+
+  if (isFullyUnpublished(tournamentInfo)) {
+    const providerAbbr = context.providerAbbr;
+    context.router?.navigate(providerAbbr ? `/tournaments/${providerAbbr}` : '/');
+    return;
+  }
+
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
-
-  const tournamentInfo = result?.data?.tournamentInfo ?? {};
 
   // Apply tournament default language if user hasn't explicitly chosen one.
   // Locale resources may not be loaded yet (only `en` is bundled), so make

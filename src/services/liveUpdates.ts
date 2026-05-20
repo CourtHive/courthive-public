@@ -10,8 +10,11 @@
  * This is a read-only listener — the public viewer never sends mutations.
  */
 import { refreshActiveTab, patchMatchUps } from 'src/pages/tournament/helpers/tabDisplay';
-import { applyLiveScorePayload } from 'src/services/liveBoltScores';
+import { isFullyUnpublished } from 'src/pages/tournament/renderTournament';
 import type { PublicLivePayload } from 'src/services/publicLiveTypes';
+import { applyLiveScorePayload } from 'src/services/liveBoltScores';
+import { getTournamentInfo } from 'src/services/api/tournamentsApi';
+import { context } from 'src/common/context';
 import { io, Socket } from 'socket.io-client';
 
 let socket: Socket | undefined;
@@ -67,8 +70,23 @@ export function connectAndJoinRoom(tournamentId: string): void {
       console.log('[liveUpdates] received publicUpdate:', JSON.stringify(data, null, 2));
       if (data?.type === 'matchUpUpdate' && data.matchUps?.length) {
         patchMatchUps(data.matchUps, data.positionAssignments);
+      } else if (data?.type === 'publishChange') {
+        // Re-check tournament-level publish state so that a full unpublish
+        // navigates the visitor away. If still published, fall through to
+        // the active-tab refresh so locally-cached views update.
+        const tournamentId = currentRoom;
+        if (!tournamentId) return;
+        getTournamentInfo({ tournamentId }).then((result) => {
+          const tournamentInfo = result?.data?.tournamentInfo;
+          if (isFullyUnpublished(tournamentInfo)) {
+            const providerAbbr = context.providerAbbr;
+            context.router?.navigate(providerAbbr ? `/tournaments/${providerAbbr}` : '/');
+            return;
+          }
+          refreshActiveTab();
+        });
       } else {
-        // publishChange or unknown — full re-fetch
+        // unknown — full re-fetch
         refreshActiveTab();
       }
     });

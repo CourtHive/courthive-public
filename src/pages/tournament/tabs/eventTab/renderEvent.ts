@@ -156,6 +156,7 @@ export function renderEvent({
   drawId?: string;
   structureId?: string;
 }) {
+  const removeFlightButton = () => document.getElementById('flightButton')?.remove();
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
   const removeRoundDisplayButton = () => document.getElementById('roundDisplayButton')?.remove();
 
@@ -307,6 +308,7 @@ export function renderEvent({
       // consume after use so subsequent renders use currentStructureIndex
       targetStructureId = undefined;
 
+      removeStructureButton();
       if (flight.structures?.length > 1) {
         const structureOptions = flight.structures.map(
           buildStructureOption({ tournamentId, eventId, drawId, initialStructureIndex, renderSelectedStructure }),
@@ -355,6 +357,9 @@ export function renderEvent({
       selection: true,
       location: LEFT,
     };
+    removeFlightButton();
+    removeStructureButton();
+    removeRoundDisplayButton();
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);
 

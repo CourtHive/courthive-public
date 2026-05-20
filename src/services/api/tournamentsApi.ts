@@ -4,7 +4,7 @@ const MISSING_TOURNAMENT_ID = 'Missing tournamentId';
 
 export async function getTournamentInfo(params?: { tournamentId: string }) {
   if (!params?.tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
-  return await baseApi.post('/factory/tournamentinfo', { ...params, withVenueData: true });
+  return await baseApi.post('/factory/tournamentinfo', { ...params, withVenueData: true, usePublishState: true });
 }
 
 export async function getProviderCalendar({ providerAbbr }: { providerAbbr: string }) {
