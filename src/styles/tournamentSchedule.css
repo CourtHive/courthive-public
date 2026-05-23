@@ -1,39 +1,117 @@
-/* Schedule grid container — cell styling lives in courthive-components (.spl-grid-cell + .spl-cell--*) */
+/*
+ * Public schedule — schedule2-style CSS court grid + live "Now" strip.
+ *
+ * One column per court, time-ordered rows. Court cells are rendered by
+ * courthive-components' `buildScheduleGridCell` (`.spl-grid-cell` +
+ * `.spl-cell--*` status styling) and the live strip by `buildActiveStripPanel`
+ * (`.spl-active-strip*`). This file owns only the grid scaffold and the
+ * sticky header/row-number/strip layout. All colours flow from the shared
+ * `--sp-*` theme tokens so light/dark modes track automatically.
+ */
 
-#unscheduledMatchUps .tabulator-header,
-#unscheduledMatchUps .tabulator-row {
-  font-size: 0.7em;
-  padding: 0.1em;
-}
-#tournamentSchedule .tabulator-cell {
-  border-right: 1px solid var(--chc-border-primary, #dbdbdb);
-  padding: 0.1em;
-}
-
-/* Make the Tabulator outer cell honour the inner status background by stretching the inner cell */
-#tournamentSchedule .tabulator-cell .spl-grid-cell {
-  width: 100%;
-  height: 100%;
-  min-height: 11em;
+/* Scroll viewport — strip + grid share one container so they pan
+   horizontally as one; the strip and court headers stay pinned while the
+   grid scrolls vertically. */
+.chp-schedule {
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+  overflow: auto;
+  background: var(--sp-line, #e2e8f0);
 }
 
-/* Order-of-play row labels — kept for header/row-number rendering */
-.oop_round {
-  height: 11em;
-  width: 6em;
+/* Active strip (from courthive-components) — pin to the top of the viewport. */
+.chp-schedule > .spl-active-strip {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  flex-shrink: 0;
 }
-.oop_round_header {
-  height: 2em;
-  width: 6em;
-  font-size: 12px;
-  padding: 0.2em;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
+
+.chp-schedule-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--sp-line, #e2e8f0);
+}
+
+/* Top-left corner above the row-number column — sticks in both axes. */
+.chp-schedule-corner {
+  position: sticky;
+  top: var(--chp-strip-offset, 0);
+  left: 0;
+  z-index: 4;
+  background: var(--sp-panel-bg, #fff);
+}
+
+/* Court name headers — stick just below the strip. */
+.chp-schedule-court-header {
+  position: sticky;
+  top: var(--chp-strip-offset, 0);
+  z-index: 2;
+  background: var(--sp-panel-bg, #fff);
+  padding: 6px 4px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--sp-text, #1e293b);
+}
+
+.chp-schedule-court-header--empty {
+  background: var(--sp-panel-bg, #fff);
+}
+
+/* Row-number column — sticks to the left edge. */
+.chp-schedule-rownum {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: var(--sp-panel-bg, #fff);
+  padding: 6px 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--sp-muted, #888);
 }
-.court_header {
-  height: 2em;
-  background: var(--chc-bg-primary, #fff);
-  width: 14em;
+
+/* Court cells — the inner courthive-components cell fills the slot, carrying
+   its own status background, so the gap lines read between cells. */
+.chp-schedule-cell {
+  display: flex;
+  min-height: 80px;
+  background: var(--sp-panel-bg, #fff);
+}
+
+.chp-schedule-cell > .spl-grid-cell {
+  flex: 1;
+}
+
+.chp-schedule-cell--empty {
+  opacity: 0.4;
+}
+
+.chp-schedule-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: var(--sp-muted, #888);
+}
+
+/* ── Mobile: no padding around the grid — use the full viewport width ── */
+@media (max-width: 768px) {
+  #tournament_schedule.section {
+    padding: 0;
+  }
+
+  #scheduleHeader {
+    padding: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .chp-schedule {
+    height: calc(100dvh - 7rem);
+  }
 }
