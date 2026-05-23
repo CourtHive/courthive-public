@@ -223,4 +223,18 @@
   .chp-mobile-bracket--stack .tmx-rh {
     display: none;
   }
+
+  /* Shared: hide the connector lines between matchUps. In snap mode each
+     round occupies its own viewport-width column, so the leftward/rightward
+     `.chc-link` pseudo-elements dangle into empty space; in stack mode the
+     vertical card stack has no bracket geometry for them to trace. Either
+     way the connecting lines read as visual noise on a phone, so remove
+     them entirely (the pseudo-elements are absolutely positioned, so this
+     does not affect matchUp layout). */
+  .chp-mobile-bracket--snap .chc-link::before,
+  .chp-mobile-bracket--snap .chc-link::after,
+  .chp-mobile-bracket--stack .chc-link::before,
+  .chp-mobile-bracket--stack .chc-link::after {
+    display: none;
+  }
 }
