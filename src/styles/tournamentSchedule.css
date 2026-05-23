@@ -28,6 +28,15 @@
   flex-shrink: 0;
 }
 
+/* The strip's leading "Now" spacer is sticky-pinned to the left edge. Its
+   courthive-components default uses the semi-transparent --sp-panel-bg, so
+   grid cells show through it while scrolling horizontally — force it opaque to
+   match the row-number column below it. */
+.chp-schedule .spl-active-strip-spacer {
+  background: var(--sp-panel, #fff);
+  z-index: 2;
+}
+
 .chp-schedule-grid {
   display: grid;
   gap: 1px;
@@ -40,7 +49,7 @@
   top: var(--chp-strip-offset, 0);
   left: 0;
   z-index: 4;
-  background: var(--sp-panel-bg, #fff);
+  background: var(--sp-panel, #fff);
 }
 
 /* Court name headers — stick just below the strip. */
@@ -48,7 +57,7 @@
   position: sticky;
   top: var(--chp-strip-offset, 0);
   z-index: 2;
-  background: var(--sp-panel-bg, #fff);
+  background: var(--sp-panel, #fff);
   padding: 6px 4px;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -60,7 +69,7 @@
 }
 
 .chp-schedule-court-header--empty {
-  background: var(--sp-panel-bg, #fff);
+  background: var(--sp-panel, #fff);
 }
 
 /* Row-number column — sticks to the left edge. */
@@ -71,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--sp-panel-bg, #fff);
+  background: var(--sp-panel, #fff);
   padding: 6px 4px;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -83,7 +92,7 @@
 .chp-schedule-cell {
   display: flex;
   min-height: 80px;
-  background: var(--sp-panel-bg, #fff);
+  background: var(--sp-panel, #fff);
 }
 
 .chp-schedule-cell > .spl-grid-cell {
