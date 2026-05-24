@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/CourtHive/courthive-public/compare/v1.4.0...v1.5.0) (2026-05-24)
+
+
+### Features
+
+* **schedule:** replace Tabulator grid with schedule2 CSS grid and live strip ([f3cfffa](https://github.com/CourtHive/courthive-public/commit/f3cfffaefa813ccdaf19528e29a4c48ddd5b73aa))
+
+
+### Bug Fixes
+
+* **draws:** hide bracket connector lines on mobile ([6edb90b](https://github.com/CourtHive/courthive-public/commit/6edb90bfbabd341f3628493e0eebea8127f22cc6))
+* **schedule:** make pinned column and Now spacer opaque ([e2c2ec9](https://github.com/CourtHive/courthive-public/commit/e2c2ec91ff918c3a8e870a099385ff34e5ec59c6))
+
 ## [1.4.0](https://github.com/CourtHive/courthive-public/compare/v1.3.0...v1.4.0) (2026-05-21)
 
 
