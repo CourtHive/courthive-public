@@ -1,7 +1,5 @@
 allowBuilds:
-  esbuild: false
-ignoredBuiltDependencies:
-  - esbuild
+  esbuild: true
 overrides:
   courthive-components: link:../courthive-components
   tods-competition-factory: link:../factory
