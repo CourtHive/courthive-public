@@ -14,7 +14,7 @@
  * local-only.
  */
 
-import { buildInteractiveScoringShell } from 'courthive-components';
+import { buildInteractiveScoringShell, cModal } from 'courthive-components';
 import type { InteractiveScoringShell, StateChangedDetail } from 'courthive-components';
 
 import type { CrowdRelayController, CrowdScoreSnapshot } from 'src/services/crowdRelay';
@@ -100,6 +100,7 @@ export async function renderTrackPage(params: RenderTrackPageParams): Promise<vo
     side1Name,
     side2Name,
     initialMatchUp,
+    confirmReset: trackResetConfirm,
   });
 
   currentShell = shell;
@@ -158,6 +159,31 @@ interface TrackPageChrome {
   root: HTMLElement;
   shareToggle: HTMLButtonElement;
   shareStatus: HTMLElement;
+}
+
+// Reset confirmation hook for buildInteractiveScoringShell — themed cModal
+// Yes/No dialog. NEVER reach for window.confirm here: we own the look/feel
+// of every modal in this app. The shell skips the prompt entirely when this
+// hook is omitted (no native fallback).
+function trackResetConfirm(): Promise<boolean> {
+  return new Promise((resolve) => {
+    let settled = false;
+    const settle = (value: boolean) => {
+      if (settled) return;
+      settled = true;
+      resolve(value);
+    };
+    cModal.open({
+      title: 'Reset scoring session?',
+      content: 'This will clear all points entered for the current matchUp.',
+      buttons: [
+        { label: 'Cancel', intent: 'none', close: true, onClick: () => settle(false) },
+        { label: 'Reset', intent: 'is-warning', close: true, onClick: () => settle(true) },
+      ],
+      config: { maxWidth: 420 },
+      onClose: () => settle(false),
+    });
+  });
 }
 
 function buildPageChrome(tournamentId: string, matchUpId: string): TrackPageChrome {
