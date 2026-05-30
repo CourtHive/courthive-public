@@ -1,0 +1,20 @@
+/**
+ * Teams Grid — layout for the row of team-cards above the Players table.
+ *
+ * Card visuals live in courthive-components/team-card. This file is just
+ * grid + section heading styling.
+ */
+
+.chp-teams-grid-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--chc-text-primary, #eee);
+  margin: 0 0 0.6em 0;
+}
+
+.chp-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75em;
+  margin-bottom: 1.25em;
+}

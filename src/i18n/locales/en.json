@@ -13,7 +13,16 @@
     "cityState": "City / State",
     "events": "Events",
     "rank": "Rank",
-    "noParticipants": "No participants"
+    "noParticipants": "No participants",
+    "teamsHeading": "Teams",
+    "teamCounts": {
+      "players_one": "{{count}} player",
+      "players_other": "{{count}} players",
+      "coaches_one": "{{count}} coach",
+      "coaches_other": "{{count}} coaches",
+      "staff_one": "{{count}} staff",
+      "staff_other": "{{count}} staff"
+    }
   },
   "schedule": {
     "court": "Court",

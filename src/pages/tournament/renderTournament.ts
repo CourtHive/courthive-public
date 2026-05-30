@@ -187,6 +187,14 @@ export async function renderTournament(
     playersHeader.className = 'block';
     players.appendChild(playersHeader);
 
+    const teamsGrid = document.createElement('div');
+    teamsGrid.id = 'teamsGrid';
+    // Hidden by default until `createTeamsGrid` confirms the tournament has
+    // any TEAM participants. Avoids a flash of empty whitespace on the
+    // INDIVIDUAL-only path that all current public tournaments are on.
+    teamsGrid.style.display = 'none';
+    players.appendChild(teamsGrid);
+
     const playersDisplay = document.createElement('div');
     playersDisplay.id = 'playersTable';
     players.appendChild(playersDisplay);
