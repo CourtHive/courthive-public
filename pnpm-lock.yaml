@@ -5,6 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  '@courthive/provider-config': link:../provider-config
   courthive-components: link:../courthive-components
   tods-competition-factory: link:../factory
 
@@ -12,6 +13,9 @@ importers:
 
   .:
     dependencies:
+      '@courthive/provider-config':
+        specifier: link:../provider-config
+        version: link:../provider-config
       axios:
         specifier: 1.16.1
         version: 1.16.1

@@ -1,3 +1,12 @@
+/* Brighten link + logo-glow tokens in dark mode for legibility against
+   dark backgrounds. Providers may override via ProviderBranding.themeTokens. */
+[data-theme='dark'] {
+  --chc-text-link: #8c92ff;
+  --chc-text-link-hover: #a4a8ff;
+  --chc-logo-glow: #8c92ffaa;
+  --chc-logo-glow-alt: #6fa8e0aa;
+}
+
 [data-theme='dark'] .springboard {
   background-color: var(--chc-bg-secondary);
 }

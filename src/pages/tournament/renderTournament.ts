@@ -1,7 +1,9 @@
 import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
+import { getProviderBrandingByTournament } from 'src/services/api/tournamentsApi';
 import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import { applyProviderBranding } from 'src/services/providerBranding';
 import { renderVenues } from './tabs/infoTab/renderVenues';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
@@ -26,6 +28,15 @@ export async function renderTournament(
   deepLink?: { eventId?: string; drawId?: string; structureId?: string; tab?: string },
 ) {
   const tournamentInfo = result?.data?.tournamentInfo ?? {};
+
+  // Fire-and-forget: fetch the owning provider's branding and apply it
+  // as soon as it lands. Defaults stay in place if the lookup fails or
+  // the tournament has no provider mapping.
+  if (tournamentInfo.tournamentId) {
+    getProviderBrandingByTournament({ tournamentId: tournamentInfo.tournamentId })
+      .then((response) => applyProviderBranding(response?.data?.branding))
+      .catch(() => applyProviderBranding(undefined));
+  }
 
   if (isFullyUnpublished(tournamentInfo)) {
     const providerAbbr = context.providerAbbr;

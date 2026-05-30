@@ -42,3 +42,8 @@ export async function getParticipants(params?: { tournamentId: string }) {
 export async function getServerFactoryVersion() {
   return await baseApi.get('/factory/version');
 }
+
+export async function getProviderBrandingByTournament({ tournamentId }: { tournamentId: string }) {
+  if (!tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
+  return await baseApi.get(`/provider/by-tournament/${tournamentId}/branding`);
+}
