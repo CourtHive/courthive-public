@@ -79,3 +79,139 @@
   font-size: 1rem;
   opacity: 0.7;
 }
+
+.chp-me-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chp-me-list-item {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chp-me-list-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.chp-me-list-title {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+}
+
+.chp-me-list-title:hover {
+  text-decoration: underline;
+}
+
+.chp-me-list-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  opacity: 0.75;
+}
+
+.chp-me-list-meta-item::after {
+  content: '·';
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+
+.chp-me-list-meta-item:last-child::after {
+  content: '';
+}
+
+.chp-me-claim-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.chp-me-input {
+  flex: 1;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.875rem;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: inherit;
+}
+
+.chp-me-button {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.chp-me-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chp-me-claim-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chp-me-claim-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  border-radius: 0.25rem;
+}
+
+.chp-me-claim-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.chp-me-claim-name {
+  font-weight: 500;
+}
+
+.chp-me-claim-sub {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+.chp-me-claim-message {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.chp-me-claim-message[data-kind='error'] {
+  background: color-mix(in srgb, var(--chc-status-error, #f14668) 14%, transparent);
+  color: var(--chc-status-error, #f14668);
+}
+
+.chp-me-claim-message[data-kind='success'] {
+  background: color-mix(in srgb, var(--chc-status-success, #199f01) 14%, transparent);
+  color: var(--chc-status-success, #199f01);
+}

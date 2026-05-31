@@ -44,3 +44,63 @@ export async function fetchHiveIDMe(): Promise<HiveIDMeResponse | null> {
   if (!res.ok) throw new Error(`fetchHiveIDMe failed: HTTP ${res.status}`);
   return (await res.json()) as HiveIDMeResponse;
 }
+
+export interface ParticipationRow {
+  tournamentId: string;
+  tournamentName: string;
+  startDate: string | null;
+  endDate: string | null;
+  participantId: string;
+  participantName: string;
+  eventCount: number;
+}
+
+export interface ClaimableCandidate {
+  participantId: string;
+  participantName: string;
+  sex: string | null;
+  nationalityCode: string | null;
+  birthDate: string | null;
+  alreadyLinkedTo: string | null;
+}
+
+async function authenticatedJson<T>(path: string, init?: RequestInit): Promise<T | null> {
+  const session = readHiveIDSession();
+  if (!session?.token) return null;
+  const res = await fetch(`${getCfsBaseUrl()}${path}`, {
+    ...init,
+    headers: {
+      ...(init?.headers ?? {}),
+      Authorization: `Bearer ${session.token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  if (res.status === 401) return null;
+  if (!res.ok) {
+    let body: any = null;
+    try {
+      body = await res.json();
+    } catch {
+      /* non-JSON body */
+    }
+    const message = body?.message ?? `HTTP ${res.status}`;
+    throw new Error(typeof message === 'string' ? message : JSON.stringify(message));
+  }
+  return (await res.json()) as T;
+}
+
+export function fetchMyParticipations(): Promise<{ personId: string | null; participations: ParticipationRow[] } | null> {
+  return authenticatedJson('/auth/hiveid/me/participations');
+}
+
+export function fetchClaimable(tournamentId: string): Promise<{ tournamentId: string; candidates: ClaimableCandidate[] } | null> {
+  if (!tournamentId) return Promise.resolve({ tournamentId: '', candidates: [] });
+  return authenticatedJson(`/auth/hiveid/me/claimable/${encodeURIComponent(tournamentId)}`);
+}
+
+export function claimParticipant(tournamentId: string, participantId: string): Promise<{ success: true; tournamentId: string; participantId: string; personId: string } | null> {
+  return authenticatedJson('/auth/hiveid/me/claim', {
+    method: 'POST',
+    body: JSON.stringify({ tournamentId, participantId }),
+  });
+}
