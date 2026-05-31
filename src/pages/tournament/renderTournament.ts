@@ -2,6 +2,7 @@ import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/
 import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
 import { getProviderBrandingByTournament } from 'src/services/api/tournamentsApi';
 import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
+import { renderRegisterButton } from './tabs/infoTab/registrationButton';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { applyProviderBranding } from 'src/services/providerBranding';
 import { renderVenues } from './tabs/infoTab/renderVenues';
@@ -96,6 +97,18 @@ export async function renderTournament(
   removeAllChildNodes(info);
   const profileBlock = renderRegistrationProfile(tournamentInfo.registrationProfile, t);
   if (profileBlock) info.appendChild(profileBlock);
+
+  // HiveID submit form (Phase 2-A.1). Async — appends when eligibility
+  // resolves. Returns null + no-op for tournaments without a published
+  // registrationProfile, or when the caller already has a registration.
+  void renderRegisterButton({
+    tournamentId: tournamentInfo.tournamentId,
+    tournamentName: tournamentInfo.tournamentName,
+    registrationProfile: tournamentInfo.registrationProfile,
+    eventInfo: tournamentInfo.eventInfo,
+  }).then((btn) => {
+    if (btn && profileBlock) profileBlock.appendChild(btn);
+  });
   if (tournamentInfo.notes) {
     const notesBlock = document.createElement('div');
     notesBlock.className = 'tournament-notes';
