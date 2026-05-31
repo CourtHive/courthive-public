@@ -17,8 +17,9 @@
 import { buildInteractiveScoringShell, cModal } from 'courthive-components';
 import type { InteractiveScoringShell, StateChangedDetail } from 'courthive-components';
 
-import type { CrowdRelayController, CrowdScoreSnapshot } from 'src/services/crowdRelay';
+import type { CrowdRelayController, CrowdScoreSnapshot, SubmitParams } from 'src/services/crowdRelay';
 import { connectCrowdRelay, inferPointWinner } from 'src/services/crowdRelay';
+import { getDisplayName, readHiveIDSession } from 'src/services/hiveidSession';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { saveSession, loadSession } from 'src/services/crowdTracker';
 import { getJwtTokenStorageKey } from 'src/config/localStorage';
@@ -47,6 +48,8 @@ interface ShareSessionState {
   lastScore?: CrowdScoreSnapshot;
   /** True once a `version-conflict` rejection has surfaced for this session. */
   outOfSync: boolean;
+  /** Phase-5 scorer attribution threaded to score-relay on every submit. */
+  scorer?: NonNullable<SubmitParams['scorer']>;
 }
 
 let activeShare: ShareSessionState | undefined;
@@ -263,19 +266,30 @@ function wireShareToggle({ chrome, tournamentId, matchUpId, matchUpFormat }: Wir
       shareStatus.textContent = '';
       return;
     }
-    // Toggle ON — read JWT, connect relay
-    const token = readJwtToken();
-    if (!token) {
+    // Toggle ON — resolve a token from either admin TMX or HiveID
+    const resolved = resolveShareToken();
+    if (!resolved) {
       shareToggle.setAttribute(ARIA_PRESSED, 'false');
       shareToggle.textContent = SHARE_LABEL_OFF;
-      shareStatus.textContent = 'Sign in via TMX first';
+      shareStatus.textContent = 'Sign in with HiveID or TMX first';
       return;
     }
     const baseUrl = resolveCrowdRelayBaseUrl();
-    const session = startShareSession({ token, baseUrl, tournamentId, matchUpId, matchUpFormat, shareStatus });
+    const session = startShareSession({
+      token: resolved.token,
+      scorer: resolved.scorer,
+      baseUrl,
+      tournamentId,
+      matchUpId,
+      matchUpFormat,
+      shareStatus,
+    });
     activeShare = session;
     shareToggle.setAttribute(ARIA_PRESSED, 'true');
-    shareToggle.textContent = 'Sign in to share — ON';
+    shareToggle.textContent =
+      resolved.audience === 'hiveid' && resolved.scorer
+        ? `Sharing as ${resolved.scorer.displayName}`
+        : 'Sign in to share — ON';
     shareStatus.textContent = 'Sharing with tournament director';
   });
 }
@@ -287,10 +301,11 @@ interface StartShareSessionParams {
   matchUpId: string;
   matchUpFormat: string;
   shareStatus: HTMLElement;
+  scorer?: NonNullable<SubmitParams['scorer']>;
 }
 
 function startShareSession(params: StartShareSessionParams): ShareSessionState {
-  const { token, baseUrl, tournamentId, matchUpId, matchUpFormat, shareStatus } = params;
+  const { token, baseUrl, tournamentId, matchUpId, matchUpFormat, shareStatus, scorer } = params;
   const controller = connectCrowdRelay({ token, baseUrl });
   const sessionId = generateId('crowd-session');
   const clientId = resolveClientId();
@@ -302,6 +317,7 @@ function startShareSession(params: StartShareSessionParams): ShareSessionState {
     tournamentId,
     matchUpFormat,
     outOfSync: false,
+    scorer,
   };
   controller.on('rejected', (payload: any) => {
     if (payload?.reason === 'version-conflict') {
@@ -354,6 +370,7 @@ function relayPointIfSharing(detail: StateChangedDetail): void {
     },
     currentScore,
     formatHint: activeShare.matchUpFormat,
+    scorer: activeShare.scorer,
   });
 }
 
@@ -385,13 +402,46 @@ function toCrowdScoreSnapshot(matchUp: any): CrowdScoreSnapshot {
   };
 }
 
-function readJwtToken(): string | undefined {
+interface ResolvedScorerToken {
+  token: string;
+  audience: 'admin' | 'hiveid';
+  scorer?: NonNullable<SubmitParams['scorer']>;
+}
+
+/**
+ * Resolves a token for the /crowd relay handshake plus an optional
+ * scorer attribution block:
+ *
+ *   - admin tmxToken wins when present (back-compat: existing TMX users
+ *     on the public app keep their share path)
+ *   - falls back to a HiveID session — Phase 5 of the integration —
+ *     and stamps `personId` + display name so the relay can attribute
+ *     each point to a real human and later run quorum / reconciliation
+ *
+ *   - returns `undefined` when neither path has a token, which keeps
+ *     the "Sign in to share" toggle disabled (anonymous local-only).
+ */
+function resolveShareToken(): ResolvedScorerToken | undefined {
   try {
     const key = getJwtTokenStorageKey();
     const value = globalThis.localStorage?.getItem(key);
-    if (typeof value === 'string' && value.length > 0) return value;
+    if (typeof value === 'string' && value.length > 0) {
+      return { token: value, audience: 'admin' };
+    }
   } catch (err) {
     console.warn('[track] reading tmxToken failed', err);
+  }
+  const hiveid = readHiveIDSession();
+  if (hiveid?.token) {
+    return {
+      token: hiveid.token,
+      audience: 'hiveid',
+      scorer: {
+        personId: hiveid.personId,
+        displayName: getDisplayName(hiveid) || hiveid.personId || 'HiveID user',
+        audience: 'hiveid',
+      },
+    };
   }
   return undefined;
 }
@@ -431,7 +481,7 @@ function generateId(prefix: string): string {
  * Test seam — pure-logic helpers exposed for vitest only.
  */
 export const __test__ = {
-  readJwtToken,
+  resolveShareToken,
   resolveCrowdRelayBaseUrl,
   toCrowdScoreSnapshot,
   CROWD_RELAY_LOCAL_DEFAULT,

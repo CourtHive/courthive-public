@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 // courthive-components touches `document` at module-import time. Mock it so
 // this test can run in courthive-public's no-DOM vitest environment. The
-// helpers under test (readJwtToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot)
+// helpers under test (resolveShareToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot)
 // are pure and don't reach into the shell, so a hollow mock is sufficient.
 vi.mock('courthive-components', () => ({
   buildInteractiveScoringShell: vi.fn(),
@@ -25,7 +25,7 @@ vi.mock('src/services/api/tournamentsApi', () => ({
 
 import { __test__ } from './renderTrackPage';
 
-const { readJwtToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot, CROWD_RELAY_LOCAL_DEFAULT } = __test__;
+const { resolveShareToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot, CROWD_RELAY_LOCAL_DEFAULT } = __test__;
 
 interface LocalStorageStub {
   store: Record<string, string>;
@@ -64,38 +64,89 @@ afterEach(() => {
   });
 });
 
-describe('readJwtToken', () => {
-  it('returns the tmxToken value when present in localStorage', () => {
+const HIVEID_JWT = 'hiveid-jwt';
+
+describe('resolveShareToken', () => {
+  it('returns the admin tmxToken when present (audience: admin, no scorer)', () => {
     installLocalStorage({ tmxToken: 'jwt-abc-123' });
-    expect(readJwtToken()).toBe('jwt-abc-123');
+    expect(resolveShareToken()).toEqual({ token: 'jwt-abc-123', audience: 'admin' });
   });
 
-  it('returns undefined when the tmxToken key is missing', () => {
+  it('falls back to a HiveID session when tmxToken is absent', () => {
+    installLocalStorage({
+      hiveidSession: JSON.stringify({
+        token: HIVEID_JWT,
+        refreshToken: 'rtok',
+        personId: 'p-1',
+        cached: {
+          standardFamilyName: 'Doe',
+          standardGivenName: 'Jane',
+          birthDate: null,
+          sex: null,
+          nationalityCode: null,
+        },
+      }),
+    });
+    const resolved = resolveShareToken();
+    expect(resolved).toMatchObject({
+      token: HIVEID_JWT,
+      audience: 'hiveid',
+      scorer: { personId: 'p-1', displayName: 'Jane Doe', audience: 'hiveid' },
+    });
+  });
+
+  it('prefers admin tmxToken over HiveID when both are present', () => {
+    installLocalStorage({
+      tmxToken: 'admin-jwt',
+      hiveidSession: JSON.stringify({ token: HIVEID_JWT, refreshToken: 'r', personId: 'p', cached: {} }),
+    });
+    expect(resolveShareToken()).toEqual({ token: 'admin-jwt', audience: 'admin' });
+  });
+
+  it('returns undefined when neither tmxToken nor HiveID is present', () => {
     installLocalStorage({ someOtherKey: 'x' });
-    expect(readJwtToken()).toBeUndefined();
+    expect(resolveShareToken()).toBeUndefined();
   });
 
-  it('returns undefined when the stored value is the empty string', () => {
+  it('returns undefined when the stored tmxToken is empty AND no HiveID session', () => {
     installLocalStorage({ tmxToken: '' });
-    expect(readJwtToken()).toBeUndefined();
+    expect(resolveShareToken()).toBeUndefined();
   });
 
   it('returns undefined when localStorage is unavailable', () => {
-    // No localStorage installed for this test
-    expect(readJwtToken()).toBeUndefined();
+    expect(resolveShareToken()).toBeUndefined();
   });
 
-  it('returns undefined gracefully if localStorage throws (e.g. SecurityError)', () => {
+  it('falls back to HiveID gracefully if localStorage.getItem throws on tmxToken', () => {
+    let probedHiveID = false;
     Object.defineProperty(globalThis, 'localStorage', {
       value: {
-        getItem: () => {
-          throw new Error('SecurityError');
+        getItem: (key: string) => {
+          if (key === 'tmxToken') throw new Error('SecurityError');
+          if (key === 'hiveidSession') {
+            probedHiveID = true;
+            return JSON.stringify({
+              token: HIVEID_JWT,
+              refreshToken: 'rtok',
+              personId: 'p-1',
+              cached: {
+                standardFamilyName: 'Doe',
+                standardGivenName: 'Jane',
+                birthDate: null,
+                sex: null,
+                nationalityCode: null,
+              },
+            });
+          }
+          return null;
         },
       },
       configurable: true,
       writable: true,
     });
-    expect(readJwtToken()).toBeUndefined();
+    const resolved = resolveShareToken();
+    expect(probedHiveID).toBe(true);
+    expect(resolved?.audience).toBe('hiveid');
   });
 });
 

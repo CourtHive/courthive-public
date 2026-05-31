@@ -66,6 +66,19 @@ export interface SubmitParams {
   point: CrowdPoint;
   currentScore: CrowdScoreSnapshot;
   formatHint?: string;
+  /**
+   * HiveID attribution (Phase 5 of the HiveID integration). When the
+   * crowd scorer is signed in via HiveID, the public client threads
+   * their canonical `personId` + display name through every submit so
+   * score-relay can stamp `crowdScoredBy` on the matchUp + later
+   * reconcile multi-scorer quorum. Anonymous tmxToken-only sessions
+   * leave both fields undefined for back-compat.
+   */
+  scorer?: {
+    personId: string | null;
+    displayName: string;
+    audience?: 'admin' | 'hiveid';
+  };
 }
 
 export interface AckedEvent {
@@ -300,6 +313,7 @@ function safeSubmit(
     };
     if (params.formatHint) payload.formatHint = params.formatHint;
     if (typeof expectedVersion === 'number') payload.expectedVersion = expectedVersion;
+    if (params.scorer) payload.scorer = params.scorer;
     socket.emit('submitCrowdScore', payload);
   } catch (err: any) {
     controller.lastError = err instanceof Error ? err : new Error(String(err));
