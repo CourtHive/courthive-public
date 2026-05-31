@@ -14,14 +14,19 @@ import {
   fetchClaimable,
   fetchHiveIDMe,
   fetchMyParticipations,
+  fetchMyRegistrations,
+  withdrawRegistration,
   type ClaimableCandidate,
   type ParticipationRow,
+  type RegistrationEntry,
+  type RegistrationStatus,
 } from 'src/services/hiveidApi';
 import { clearHiveIDSession, getDisplayName, readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
 import { disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { context } from 'src/common/context';
 
 const SECTION_CLASS = 'chp-me-section';
+const BUTTON_CLASS = 'chp-me-button';
 
 export function renderMyCourtHive(container: HTMLElement): void {
   container.replaceChildren();
@@ -73,6 +78,9 @@ export function renderMyCourtHive(container: HTMLElement): void {
   profile.appendChild(profileBody);
   shell.appendChild(profile);
 
+  const registrations = renderRegistrationsSection();
+  shell.appendChild(registrations.section);
+
   const participations = renderParticipationsSection();
   shell.appendChild(participations.section);
 
@@ -85,6 +93,7 @@ export function renderMyCourtHive(container: HTMLElement): void {
 
   container.appendChild(shell);
 
+  void registrations.refresh();
   void participations.refresh();
 
   // Best-effort: refresh cached fields from /auth/hiveid/me so the
@@ -234,7 +243,7 @@ function renderClaimSection(opts: { onClaimed: () => void }): { section: HTMLEle
   const submit = document.createElement('button');
   submit.type = 'submit';
   submit.textContent = 'Find me';
-  submit.className = 'chp-me-button';
+  submit.className = BUTTON_CLASS;
   form.appendChild(submit);
 
   section.appendChild(form);
@@ -311,7 +320,7 @@ function buildClaimableRow(
 
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.className = 'chp-me-button';
+  btn.className = BUTTON_CLASS;
   btn.textContent = candidate.alreadyLinkedTo ? 'Already linked' : 'This is me';
   btn.disabled = !!candidate.alreadyLinkedTo;
   btn.onclick = async () => {
@@ -334,6 +343,109 @@ function buildClaimableRow(
   };
   li.appendChild(btn);
   return li;
+}
+
+function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Promise<void> } {
+  const section = document.createElement('section');
+  section.className = SECTION_CLASS;
+  const sectionTitle = document.createElement('h2');
+  sectionTitle.textContent = 'Your registrations';
+  section.appendChild(sectionTitle);
+
+  const body = document.createElement('div');
+  body.className = 'chp-me-registrations';
+  body.textContent = 'Loading…';
+  section.appendChild(body);
+
+  async function refresh(): Promise<void> {
+    body.replaceChildren();
+    body.textContent = 'Loading…';
+    try {
+      const entries = await fetchMyRegistrations();
+      if (!entries) {
+        body.textContent = 'Sign in to see your registrations.';
+        return;
+      }
+      if (!entries.length) {
+        body.textContent = 'You have no tournament registrations yet.';
+        return;
+      }
+      body.replaceChildren();
+      const list = document.createElement('ul');
+      list.className = 'chp-me-list';
+      for (const entry of entries) {
+        list.appendChild(buildRegistrationRow(entry, refresh));
+      }
+      body.appendChild(list);
+    } catch (err) {
+      console.warn('[hiveid registrations] fetch failed:', err);
+      body.textContent = 'Could not load your registrations. Please try again later.';
+    }
+  }
+
+  return { section, refresh };
+}
+
+function buildRegistrationRow(entry: RegistrationEntry, refresh: () => Promise<void>): HTMLElement {
+  const li = document.createElement('li');
+  li.className = 'chp-me-list-item';
+
+  const main = document.createElement('div');
+  main.className = 'chp-me-list-main';
+
+  const titleRow = document.createElement('div');
+  titleRow.style.display = 'flex';
+  titleRow.style.alignItems = 'center';
+  titleRow.style.gap = '0.5rem';
+  const nameLink = document.createElement('a');
+  nameLink.className = 'chp-me-list-title';
+  nameLink.href = `#/tournament/${encodeURIComponent(entry.tournamentId)}`;
+  nameLink.textContent = entry.tournamentId;
+  titleRow.appendChild(nameLink);
+  titleRow.appendChild(buildStatusPill(entry.status));
+  main.appendChild(titleRow);
+
+  const meta = document.createElement('div');
+  meta.className = 'chp-me-list-meta';
+  meta.appendChild(makeMetaSpan(`Applied ${entry.appliedAt.slice(0, 10)}`));
+  if (entry.eventIds.length) {
+    meta.appendChild(makeMetaSpan(`${entry.eventIds.length} event${entry.eventIds.length === 1 ? '' : 's'}`));
+  }
+  if (entry.statusReason) meta.appendChild(makeMetaSpan(entry.statusReason));
+  main.appendChild(meta);
+  li.appendChild(main);
+
+  if (canWithdraw(entry.status)) {
+    const withdraw = document.createElement('button');
+    withdraw.type = 'button';
+    withdraw.className = BUTTON_CLASS;
+    withdraw.textContent = 'Withdraw';
+    withdraw.onclick = async () => {
+      withdraw.disabled = true;
+      try {
+        await withdrawRegistration(entry.registrationId);
+        await refresh();
+      } catch (err) {
+        console.warn('[hiveid registrations] withdraw failed:', err);
+        withdraw.disabled = false;
+      }
+    };
+    li.appendChild(withdraw);
+  }
+
+  return li;
+}
+
+function canWithdraw(status: RegistrationStatus): boolean {
+  return status === 'applied' || status === 'accepted' || status === 'seeded' || status === 'waitlisted';
+}
+
+function buildStatusPill(status: RegistrationStatus): HTMLElement {
+  const pill = document.createElement('span');
+  pill.className = 'chp-me-status-pill';
+  pill.dataset.status = status;
+  pill.textContent = status;
+  return pill;
 }
 
 function appendField(dl: HTMLDListElement, label: string, value: string): void {

@@ -215,3 +215,31 @@
   background: color-mix(in srgb, var(--chc-status-success, #199f01) 14%, transparent);
   color: var(--chc-status-success, #199f01);
 }
+
+.chp-me-status-pill {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.chp-me-status-pill[data-status='accepted'],
+.chp-me-status-pill[data-status='seeded'] {
+  background: color-mix(in srgb, var(--chc-status-success, #199f01) 18%, transparent);
+  color: var(--chc-status-success, #199f01);
+}
+
+.chp-me-status-pill[data-status='waitlisted'] {
+  background: color-mix(in srgb, var(--chc-status-warning, #f7ae04) 18%, transparent);
+  color: var(--chc-status-warning, #f7ae04);
+}
+
+.chp-me-status-pill[data-status='rejected'],
+.chp-me-status-pill[data-status='withdrawn'] {
+  background: color-mix(in srgb, var(--chc-status-error, #df164c) 12%, transparent);
+  color: var(--chc-status-error, #df164c);
+}

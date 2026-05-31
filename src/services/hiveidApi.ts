@@ -104,3 +104,49 @@ export function claimParticipant(tournamentId: string, participantId: string): P
     body: JSON.stringify({ tournamentId, participantId }),
   });
 }
+
+export type RegistrationStatus =
+  | 'applied'
+  | 'accepted'
+  | 'seeded'
+  | 'withdrawn'
+  | 'waitlisted'
+  | 'rejected';
+
+export interface RegistrationEntry {
+  registrationId: string;
+  tournamentId: string;
+  userId: string;
+  personId: string | null;
+  eventIds: string[];
+  partnerUserId: string | null;
+  answers: Record<string, unknown>;
+  status: RegistrationStatus;
+  statusReason: string | null;
+  appliedAt: string;
+  statusAt: string;
+}
+
+export function fetchMyRegistrations(): Promise<RegistrationEntry[] | null> {
+  return authenticatedJson('/me/registrations');
+}
+
+export interface ApplyRegistrationBody {
+  tournamentId: string;
+  eventIds?: string[];
+  partnerUserId?: string | null;
+  answers?: Record<string, unknown>;
+}
+
+export function applyForTournament(body: ApplyRegistrationBody): Promise<RegistrationEntry | null> {
+  return authenticatedJson('/me/registrations', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+}
+
+export function withdrawRegistration(registrationId: string): Promise<RegistrationEntry | null> {
+  return authenticatedJson(`/me/registrations/${encodeURIComponent(registrationId)}`, {
+    method: 'DELETE',
+  });
+}
