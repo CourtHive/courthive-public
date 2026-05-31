@@ -1,0 +1,81 @@
+.chp-me-shell {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chp-me-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.chp-me-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.chp-me-logout {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.chp-me-logout:hover {
+  opacity: 0.85;
+}
+
+.chp-me-section {
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  border-radius: 0.5rem;
+}
+
+.chp-me-section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.chp-me-section--stub p {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.chp-me-dl {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.chp-me-dl dt {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.chp-me-dl dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.chp-me-empty {
+  padding: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.7;
+}

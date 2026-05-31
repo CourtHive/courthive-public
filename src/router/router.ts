@@ -2,13 +2,15 @@ import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsT
 import { renderTournament } from 'src/pages/tournament/renderTournament';
 import { destroyCurrentShell, renderTrackPage } from 'src/pages/track/renderTrackPage';
 import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
+import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
+import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -150,6 +152,27 @@ export function router() {
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
     });
+  });
+
+  router.on('/me', () => {
+    console.log('[router] matched: /me (HiveID profile)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_ME);
+    const container = document.getElementById(HIVEID_ME);
+    if (container) renderMyCourtHive(container);
+  });
+
+  router.on('/hiveid/magic/:code', (match) => {
+    const code = match?.data?.code;
+    console.log('[router] matched: /hiveid/magic/:code');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_MAGIC);
+    const container = document.getElementById(HIVEID_MAGIC);
+    if (container) renderMagicLinkConsume(container, code ?? '');
   });
 
   // Phase 2 — interactive tracking sandbox. Local-only, no server writes.

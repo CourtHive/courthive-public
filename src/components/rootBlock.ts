@@ -1,9 +1,13 @@
 import 'src/pages/track/track-page.css';
+import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
+import { connectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { toggleTheme } from 'src/services/themeService';
+import { getCfsBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -48,13 +52,34 @@ export function rootBlock() {
   langButton.onclick = () => toggleLanguageDropdown(langButton);
   navEnd.appendChild(langButton);
 
-  const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(globalThis.location.hostname);
   const userButton = document.createElement('button');
   userButton.className = 'navbar-item user-login';
   userButton.title = t('Login');
   userButton.textContent = '\uD83D\uDC64';
-  userButton.style.display = isLocal ? '' : 'none';
+  userButton.onclick = () => {
+    if (isAuthenticated()) {
+      context.router?.navigate('/me');
+      return;
+    }
+    const shell = buildHiveIDLogin({ cfsBaseUrl: getCfsBaseUrl(), mode: 'login' });
+    cModal.open({
+      title: 'Sign in to CourtHive',
+      content: (elem: HTMLElement) => {
+        elem.appendChild(shell.root);
+        return elem;
+      },
+      buttons: [{ label: 'Close' }],
+    });
+    shell.onAuthenticated((detail) => {
+      writeHiveIDSession(detail);
+      connectHiveIDSocket();
+      cModal.close();
+      context.router?.navigate('/me');
+    });
+  };
   navEnd.appendChild(userButton);
+  // Re-connect the HiveID socket on app boot if the session survived a reload.
+  if (isAuthenticated()) connectHiveIDSocket();
 
   navBrand.appendChild(navItem);
   nav.appendChild(navBrand);
@@ -82,10 +107,20 @@ export function rootBlock() {
   track.style.display = 'none';
   track.id = TRACK;
 
+  const hiveidMe = document.createElement('div');
+  hiveidMe.style.display = 'none';
+  hiveidMe.id = HIVEID_ME;
+
+  const hiveidMagic = document.createElement('div');
+  hiveidMagic.style.display = 'none';
+  hiveidMagic.id = HIVEID_MAGIC;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
   main.appendChild(track);
   main.appendChild(splash);
+  main.appendChild(hiveidMe);
+  main.appendChild(hiveidMagic);
 
   return main;
 }
