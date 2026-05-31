@@ -22,13 +22,23 @@ import {
   type RegistrationStatus,
 } from 'src/services/hiveidApi';
 import { clearHiveIDSession, getDisplayName, readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
-import { disconnectHiveIDSocket } from 'src/services/hiveidSocket';
+import { disconnectHiveIDSocket, onPersonUpdate, type PersonUpdateEvent } from 'src/services/hiveidSocket';
 import { context } from 'src/common/context';
 
 const SECTION_CLASS = 'chp-me-section';
 const BUTTON_CLASS = 'chp-me-button';
 
+// Module-scoped unsub for the personUpdate listener so a re-render of
+// /me cleans up the previous registration before installing the new one.
+// Navigating away (e.g. to /tournament/X) leaves the listener installed —
+// its refetches are idempotent and inexpensive against an unmounted DOM.
+let currentPersonUpdateUnsub: (() => void) | undefined;
+
 export function renderMyCourtHive(container: HTMLElement): void {
+  // Tear down any previous listener before re-rendering.
+  currentPersonUpdateUnsub?.();
+  currentPersonUpdateUnsub = undefined;
+
   container.replaceChildren();
 
   const session = readHiveIDSession();
@@ -95,6 +105,50 @@ export function renderMyCourtHive(container: HTMLElement): void {
 
   void registrations.refresh();
   void participations.refresh();
+
+  // HiveID Phase 4.0 — listen for personUpdate broadcasts so the page
+  // reflects identity-changing server events without a manual refresh.
+  // Today the only emitted kind is `merged` (CFS PersonsClient fans
+  // personMerged out to both survivor + deprecated rooms). Future
+  // phases extend this to roster/schedule/result events; we add new
+  // branches as those producers land.
+  currentPersonUpdateUnsub = onPersonUpdate((event: PersonUpdateEvent) => {
+    if (event.kind !== 'merged') return;
+    console.log('[me] personUpdate merged — refreshing identity + lists');
+    // Re-fetch identity. If anything actually changed, the existing
+    // fetchHiveIDMe() block in renderMyCourtHive triggers a full
+    // re-render that picks up the new personId + cached fields.
+    // For the surgical case (nothing identity-shaped changed), just
+    // refetch the two lists in place.
+    void fetchHiveIDMe()
+      .then((me) => {
+        if (!me) return;
+        const refreshed = readHiveIDSession();
+        if (!refreshed) return;
+        const samePerson = refreshed.personId === me.personId;
+        if (!samePerson) {
+          writeHiveIDSession({
+            token: refreshed.token,
+            refreshToken: refreshed.refreshToken,
+            personId: me.personId,
+            cached: {
+              standardFamilyName: me.cached.standardFamilyName,
+              standardGivenName: me.cached.standardGivenName,
+              birthDate: me.cached.birthDate,
+              sex: me.cached.sex,
+              nationalityCode: me.cached.nationalityCode,
+            },
+          });
+          renderMyCourtHive(container);
+          return;
+        }
+        void registrations.refresh();
+        void participations.refresh();
+      })
+      .catch((err) => {
+        console.warn('[me] personUpdate refresh failed:', err);
+      });
+  });
 
   // Best-effort: refresh cached fields from /auth/hiveid/me so the
   // display picks up any personMerged-driven rewrites since the
