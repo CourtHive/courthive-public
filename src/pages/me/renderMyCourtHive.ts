@@ -30,14 +30,39 @@ const BUTTON_CLASS = 'chp-me-button';
 
 // Module-scoped unsub for the personUpdate listener so a re-render of
 // /me cleans up the previous registration before installing the new one.
-// Navigating away (e.g. to /tournament/X) leaves the listener installed —
-// its refetches are idempotent and inexpensive against an unmounted DOM.
+// When the user navigates away (e.g. to /tournament/X), the listener
+// itself notices `container.isConnected === false` on the next event and
+// self-cleans-up — see the merged-event handler below.
 let currentPersonUpdateUnsub: (() => void) | undefined;
 
+// Re-entrance guard. A burst of `personMerged` events arriving while a
+// previous `fetchHiveIDMe()` is still pending used to fire a fresh
+// fetch for each event — and if the personId changed, each fetch ended
+// in a recursive `renderMyCourtHive(container)` call. The final /me
+// state reflects the latest server truth anyway, so dropping reactor
+// events while a refresh is in flight is loss-less.
+let identityRefreshInFlight = false;
+
+/**
+ * Internal — exposed for tests. Returns whether the merged-event
+ * handler should proceed with a /me refresh against this container,
+ * given the in-flight guard. False outcomes:
+ *  - container is detached → user navigated away; caller should also
+ *    unsubscribe to stop background work.
+ *  - a refresh is already in flight → drop, the in-flight call will
+ *    pick up the latest server state on its own.
+ */
+export function __shouldProcessMergedEvent(container: HTMLElement, inFlight: boolean): boolean {
+  if (!container.isConnected) return false;
+  if (inFlight) return false;
+  return true;
+}
+
 export function renderMyCourtHive(container: HTMLElement): void {
-  // Tear down any previous listener before re-rendering.
+  // Tear down any previous listener + in-flight flag before re-rendering.
   currentPersonUpdateUnsub?.();
   currentPersonUpdateUnsub = undefined;
+  identityRefreshInFlight = false;
 
   container.replaceChildren();
 
@@ -114,12 +139,23 @@ export function renderMyCourtHive(container: HTMLElement): void {
   // branches as those producers land.
   currentPersonUpdateUnsub = onPersonUpdate((event: PersonUpdateEvent) => {
     if (event.kind !== 'merged') return;
+
+    // Detached container — the user navigated away from /me since this
+    // listener was installed. Self-clean-up so background tabs stop
+    // refetching /me on every server-side merge from now until reload.
+    if (!container.isConnected) {
+      currentPersonUpdateUnsub?.();
+      currentPersonUpdateUnsub = undefined;
+      return;
+    }
+    // De-duplicate concurrent refreshes — the in-flight fetch will
+    // pick up the latest /me state, so dropping the reactor here is
+    // loss-less and avoids the recursive re-render storm a burst of
+    // merges would otherwise produce.
+    if (identityRefreshInFlight) return;
+    identityRefreshInFlight = true;
     console.log('[me] personUpdate merged — refreshing identity + lists');
-    // Re-fetch identity. If anything actually changed, the existing
-    // fetchHiveIDMe() block in renderMyCourtHive triggers a full
-    // re-render that picks up the new personId + cached fields.
-    // For the surgical case (nothing identity-shaped changed), just
-    // refetch the two lists in place.
+
     void fetchHiveIDMe()
       .then((me) => {
         if (!me) return;
@@ -139,7 +175,10 @@ export function renderMyCourtHive(container: HTMLElement): void {
               nationalityCode: me.cached.nationalityCode,
             },
           });
-          renderMyCourtHive(container);
+          // Guard the recursive re-render against a container that has
+          // become detached during the in-flight fetch — render against
+          // a stale DOM node would be a silent no-op + a wasted listener.
+          if (container.isConnected) renderMyCourtHive(container);
           return;
         }
         void registrations.refresh();
@@ -147,6 +186,9 @@ export function renderMyCourtHive(container: HTMLElement): void {
       })
       .catch((err) => {
         console.warn('[me] personUpdate refresh failed:', err);
+      })
+      .finally(() => {
+        identityRefreshInFlight = false;
       });
   });
 
