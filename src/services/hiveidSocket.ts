@@ -75,6 +75,16 @@ export function connectHiveIDSocket(): Socket | undefined {
     reconnectionDelay: 1000,
     reconnectionAttempts: Infinity,
     timeout: 20000,
+    // `auth` is re-evaluated on every connect attempt (initial + each
+    // reconnect), so a JWT rotation elsewhere is picked up without
+    // having to tear the socket down. extraHeaders, by contrast, is
+    // baked at construction time — kept here as a transitional fallback
+    // until older server builds (pre-2026-06-01 SocketGuard which only
+    // reads the Authorization header) are out of rotation.
+    auth: (cb: (data: { token: string }) => void) => {
+      const fresh = readHiveIDSession()?.token ?? '';
+      cb({ token: fresh });
+    },
     extraHeaders: { Authorization: `Bearer ${session.token}` },
     transportOptions: {
       polling: { extraHeaders: { Authorization: `Bearer ${session.token}` } },
@@ -82,6 +92,12 @@ export function connectHiveIDSocket(): Socket | undefined {
   });
   socket.on('connect', () => {
     console.log('[hiveidSocket] connected — id:', socket?.id);
+  });
+  socket.on('connect_error', (err) => {
+    // SocketGuard rejections surface here (and as 'exception' if the
+    // server-side WsException makes it through). Log enough to triage
+    // an auth failure without leaking the token.
+    console.warn('[hiveidSocket] connect_error:', err?.message ?? err);
   });
   socket.on('exception', (msg) => {
     console.warn('[hiveidSocket] server exception:', msg);
