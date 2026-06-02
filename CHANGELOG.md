@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/CourtHive/courthive-public/compare/v1.6.0...v1.6.1) (2026-06-02)
+
+
+### Documentation
+
+* **readme:** bump prereq floors and fix factory repo link ([4eb1232](https://github.com/CourtHive/courthive-public/commit/4eb1232caf04894a3180691e74b2557c9afed6cc))
+
 ## [1.6.0](https://github.com/CourtHive/courthive-public/compare/v1.5.0...v1.6.0) (2026-06-01)
 
 
