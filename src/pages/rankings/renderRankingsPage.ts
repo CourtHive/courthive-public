@@ -7,8 +7,24 @@
 // Pattern intentionally mirrors createTournamentsTable.ts in this repo:
 // vanilla DOM, no framework, --sp-* / --chc-* themed.
 
+import { buildLadderChart, LadderChartDatum } from 'courthive-components';
+
 import bobocaRankings from './data/boboca-rankings.json';
 import 'src/styles/rankings.css';
+
+// BASIC policy points → rung label (top of finishing-position range).
+// 100 → W, 70 → F, 50 → SF, 30 → QF, 15 → R16, 8 → R32, 4 → R64, 1 → R128.
+const RUNG_LABELS = ['R128', 'R64', 'R32', 'R16', 'QF', 'SF', 'F', 'W'];
+function pointsToRungIndex(points: number): number {
+  if (points >= 100) return 7; // W
+  if (points >= 70) return 6; // F
+  if (points >= 50) return 5; // SF
+  if (points >= 30) return 4; // QF
+  if (points >= 15) return 3; // R16
+  if (points >= 8) return 2; // R32
+  if (points >= 4) return 1; // R64
+  return 0; // R128
+}
 
 interface TournamentBreakdownEntry {
   tournamentId: string;
@@ -227,6 +243,35 @@ function buildDetailContent(e: RankingEntry): HTMLElement {
   header.textContent = `${e.name} · contributing tournaments`;
   wrap.appendChild(header);
 
+  // Ladder chart: per-tournament finishing rung over time. Marks are
+  // sized by `points` so deeper runs visually carry more weight than
+  // early exits.
+  if (e.tournaments.length > 0) {
+    const chartHost = document.createElement('div');
+    chartHost.className = 'rk-ladder-host';
+    wrap.appendChild(chartHost);
+
+    const data: LadderChartDatum[] = e.tournaments.map((t) => ({
+      date: t.endDate,
+      rung: pointsToRungIndex(t.points),
+      label: t.name,
+      detail: `${RUNG_LABELS[pointsToRungIndex(t.points)]} · ${t.points} pts`,
+      radius: 5 + Math.min(8, Math.sqrt(t.points)),
+    }));
+
+    // Defer mount one frame so chartHost has its layout width before the
+    // chart reads container.clientWidth.
+    requestAnimationFrame(() => {
+      buildLadderChart(chartHost, {
+        rungs: RUNG_LABELS,
+        data,
+        height: 220,
+        title: `${e.name} — finishing rung per tournament`,
+        showConnector: true,
+      });
+    });
+  }
+
   const list = document.createElement('table');
   list.className = 'rk-detail-table';
   list.innerHTML = `
@@ -234,16 +279,19 @@ function buildDetailContent(e: RankingEntry): HTMLElement {
       <tr>
         <th>Tournament</th>
         <th>End date</th>
+        <th>Rung</th>
         <th>Points</th>
       </tr>
     </thead>
   `;
   const body = document.createElement('tbody');
   for (const t of e.tournaments) {
+    const rungLabel = RUNG_LABELS[pointsToRungIndex(t.points)];
     const r = document.createElement('tr');
     r.innerHTML = `
       <td>${escape(t.name)}</td>
       <td>${escape(t.endDate)}</td>
+      <td>${escape(rungLabel)}</td>
       <td class="rk-col-pts">${t.points}</td>
     `;
     body.appendChild(r);

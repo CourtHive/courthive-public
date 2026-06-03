@@ -124,6 +124,14 @@
   background: var(--sp-hover-bg, rgba(0,0,0,0.05));
 }
 
+.rk-ladder-host {
+  margin: 8px 0 12px;
+  background: var(--sp-card-bg, #fff);
+  border: 1px solid var(--sp-border-subtle, #f3f4f6);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
 .rk-detail-row td {
   background: var(--sp-bg, #fafafa);
   border-bottom: 1px solid var(--sp-border, #e5e7eb);
