@@ -1,8 +1,9 @@
-// Rankings page — renders the BOBOCA demo rankings (default points policy)
-// from a pre-generated JSON file. The JSON is produced by an out-of-band
-// script that joins courthive_rankings.point_awards + persons_observed and
-// folds in tournament names from courthive.tournaments. Re-running the
-// generator + rebuilding this app updates the page.
+// Rankings page — renders provider rankings (default points policy).
+//
+// Data flow: fetch /api/rankings/bundle through the CFS rankings-proxy
+// (courthive-net → CFS → loopback rankings:3110/rankings/bundle). The
+// baked-in static JSON survives as a fallback for local dev + as a last-
+// resort when the proxy can't reach rankings.
 //
 // Pattern intentionally mirrors createTournamentsTable.ts in this repo:
 // vanilla DOM, no framework, --sp-* / --chc-* themed.
@@ -11,6 +12,8 @@ import { buildLadderChart, LadderChartDatum } from 'courthive-components';
 
 import bobocaRankings from './data/boboca-rankings.json';
 import 'src/styles/rankings.css';
+
+const BUNDLE_URL = '/api/rankings/bundle';
 
 // BASIC policy points → rung label (top of finishing-position range).
 // 100 → W, 70 → F, 50 → SF, 30 → QF, 15 → R16, 8 → R32, 4 → R64, 1 → R128.
@@ -54,28 +57,54 @@ interface RankingsBundle {
   };
 }
 
-const DATA = bobocaRankings as unknown as RankingsBundle;
+// Last-resort fallback when the proxy can't reach rankings. Bundled at
+// build time; refreshed manually via the export script when needed.
+const FALLBACK: RankingsBundle = bobocaRankings as unknown as RankingsBundle;
 
-const PROVIDER_RANKINGS: Record<string, RankingsBundle> = {
-  BOBOCA: DATA,
-};
+async function fetchBundle(): Promise<{ bundle: RankingsBundle; isLive: boolean }> {
+  try {
+    const res = await fetch(BUNDLE_URL, { headers: { accept: 'application/json' } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const live = (await res.json()) as RankingsBundle;
+    if (live?.rankings?.men && live?.rankings?.women) {
+      return { bundle: live, isLive: true };
+    }
+    throw new Error('bundle shape unrecognized');
+  } catch (e) {
+    console.warn('[rankings] live fetch failed — using static fallback:', e);
+    return { bundle: FALLBACK, isLive: false };
+  }
+}
 
 export function renderRankingsPage(container: HTMLElement, providerAbbr: string) {
   container.innerHTML = '';
-  const bundle = PROVIDER_RANKINGS[providerAbbr.toUpperCase()];
 
-  if (!bundle) {
-    const msg = document.createElement('div');
-    msg.className = 'rk-not-found';
-    msg.textContent = `No rankings available for "${providerAbbr}".`;
-    container.appendChild(msg);
-    return;
-  }
+  // Brief loading state while the live fetch resolves.
+  const loading = document.createElement('div');
+  loading.className = 'rk-not-found';
+  loading.textContent = 'Loading rankings…';
+  container.appendChild(loading);
 
+  fetchBundle().then(({ bundle, isLive }) => {
+    container.innerHTML = '';
+
+    if (bundle.provider.abbreviation.toUpperCase() !== providerAbbr.toUpperCase()) {
+      const msg = document.createElement('div');
+      msg.className = 'rk-not-found';
+      msg.textContent = `No rankings available for "${providerAbbr}".`;
+      container.appendChild(msg);
+      return;
+    }
+
+    renderBundle(container, bundle, isLive);
+  });
+}
+
+function renderBundle(container: HTMLElement, bundle: RankingsBundle, isLive: boolean) {
   const root = document.createElement('div');
   root.className = 'rk-root';
 
-  root.appendChild(buildHeader(bundle));
+  root.appendChild(buildHeader(bundle, isLive));
   root.appendChild(buildMetaBar(bundle));
   root.appendChild(buildTableSection(bundle));
   root.appendChild(buildMethodologyFooter(bundle));
@@ -83,7 +112,7 @@ export function renderRankingsPage(container: HTMLElement, providerAbbr: string)
   container.appendChild(root);
 }
 
-function buildHeader(bundle: RankingsBundle): HTMLElement {
+function buildHeader(bundle: RankingsBundle, isLive: boolean): HTMLElement {
   const header = document.createElement('div');
   header.className = 'rk-header';
 
@@ -94,7 +123,8 @@ function buildHeader(bundle: RankingsBundle): HTMLElement {
 
   const subtitle = document.createElement('div');
   subtitle.className = 'rk-subtitle';
-  subtitle.textContent = `Default points policy · As of ${bundle.asOfDate}`;
+  const liveTag = isLive ? ' · live' : ' · static fallback';
+  subtitle.textContent = `Default points policy · As of ${bundle.asOfDate}${liveTag}`;
   header.appendChild(subtitle);
 
   return header;
