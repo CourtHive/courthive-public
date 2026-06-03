@@ -1,0 +1,224 @@
+/* Rankings page — uses --sp-* / --chc-* theme tokens. */
+
+.rk-root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--sp-text, #111);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.rk-header { margin-bottom: 16px; }
+
+.rk-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: var(--sp-text, #111);
+}
+
+.rk-subtitle {
+  font-size: 14px;
+  color: var(--sp-muted, #6b7280);
+}
+
+.rk-meta-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 12px;
+  background: var(--sp-card-bg, #f9fafb);
+  border: 1px solid var(--sp-border, #e5e7eb);
+  border-radius: 12px;
+}
+
+.rk-meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rk-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sp-muted, #6b7280);
+}
+
+.rk-meta-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sp-text, #111);
+}
+
+.rk-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 880px) {
+  .rk-tables { grid-template-columns: 1fr; }
+  .rk-meta-bar { grid-template-columns: repeat(2, 1fr); }
+}
+
+.rk-panel {
+  background: var(--sp-card-bg, #fff);
+  border: 1px solid var(--sp-border, #e5e7eb);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.rk-panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  padding: 0 4px;
+  color: var(--sp-text, #111);
+}
+
+.rk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rk-table thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sp-muted, #6b7280);
+  border-bottom: 1px solid var(--sp-border, #e5e7eb);
+  padding: 6px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rk-table tbody td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--sp-border-subtle, #f3f4f6);
+  vertical-align: middle;
+}
+
+.rk-row:hover { background: var(--sp-hover-bg, rgba(0,0,0,0.03)); }
+
+.rk-col-rank { width: 48px; text-align: right; font-variant-numeric: tabular-nums; color: var(--sp-muted, #6b7280); }
+.rk-col-name { font-weight: 600; }
+.rk-col-pts  { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.rk-col-res  { text-align: right; font-variant-numeric: tabular-nums; color: var(--sp-muted, #6b7280); width: 60px; }
+.rk-col-events { text-align: right; width: 80px; }
+
+.rk-detail-toggle {
+  background: transparent;
+  border: 1px solid var(--sp-border, #e5e7eb);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--sp-text, #111);
+}
+
+.rk-detail-toggle:hover {
+  background: var(--sp-hover-bg, rgba(0,0,0,0.05));
+}
+
+.rk-detail-row td {
+  background: var(--sp-bg, #fafafa);
+  border-bottom: 1px solid var(--sp-border, #e5e7eb);
+}
+
+.rk-detail-content {
+  padding: 8px 12px;
+}
+
+.rk-detail-header {
+  font-size: 12px;
+  color: var(--sp-muted, #6b7280);
+  margin-bottom: 6px;
+}
+
+.rk-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  background: var(--sp-card-bg, #fff);
+  border: 1px solid var(--sp-border-subtle, #f3f4f6);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rk-detail-table thead th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sp-muted, #6b7280);
+  background: var(--sp-bg, #fafafa);
+  border-bottom: 1px solid var(--sp-border-subtle, #f3f4f6);
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+
+.rk-detail-table tbody td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--sp-border-subtle, #f3f4f6);
+}
+
+.rk-detail-table tbody tr:last-child td { border-bottom: none; }
+
+.rk-empty {
+  padding: 16px;
+  color: var(--sp-muted, #6b7280);
+  font-size: 13px;
+}
+
+.rk-footer {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--sp-card-bg, #fafafa);
+  border: 1px solid var(--sp-border, #e5e7eb);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--sp-text, #111);
+}
+
+.rk-footer-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.rk-footer-spaced { margin-top: 16px; }
+
+.rk-footer-text {
+  line-height: 1.5;
+  color: var(--sp-muted, #4b5563);
+}
+
+.rk-tournament-list {
+  margin: 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.rk-tournament-list li {
+  font-size: 12px;
+  color: var(--sp-muted, #4b5563);
+  margin: 2px 0;
+}
+
+.rk-footer-generated {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--sp-border-subtle, #f3f4f6);
+  font-size: 11px;
+  color: var(--sp-muted, #6b7280);
+}
+
+.rk-not-found {
+  padding: 24px;
+  text-align: center;
+  color: var(--sp-muted, #6b7280);
+  font-size: 14px;
+}

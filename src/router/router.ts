@@ -5,12 +5,13 @@ import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
 import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
+import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { HIVEID_MAGIC, HIVEID_ME, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -100,6 +101,18 @@ export function router() {
     context.providerAbbr = providerAbbr;
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
+  });
+
+  router.on('/rankings/:providerAbbr', (match) => {
+    console.log('[router] matched: /rankings/:providerAbbr', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    const providerAbbr = match?.data?.providerAbbr?.toUpperCase() ?? '';
+    context.providerAbbr = providerAbbr;
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    if (container) renderRankingsPage(container, providerAbbr);
   });
 
   router.on('/tournament/:tournamentId/event/:eventId/draw/:drawId/structure/:structureId', (match) => {

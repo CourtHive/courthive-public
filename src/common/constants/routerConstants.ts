@@ -7,5 +7,6 @@ export const DRAW = 'draw';
 export const STRUCTURE = 'structure';
 export const HIVEID_ME = 'hiveid-me';
 export const HIVEID_MAGIC = 'hiveid-magic';
+export const RANKINGS = 'rankings';
 
-export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC];
+export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS];
