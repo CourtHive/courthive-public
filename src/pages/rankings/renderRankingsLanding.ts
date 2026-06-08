@@ -80,7 +80,13 @@ function buildLandingRoot(bundles: BundleSummary[]): HTMLElement {
     root.appendChild(buildAvailableSection(bundles));
   }
 
-  root.appendChild(buildMethodologyFooter());
+  // Intentionally NO methodology footer here. Each provider chooses its
+  // own ranking-points policy (today: BOBOCA uses BASIC; future providers
+  // may use USTA / ITF / NATIONAL / custom). Methodology lives on the
+  // per-provider detail page (renderRankingsPage.buildMethodologyFooter),
+  // which reads policy.name from the bundle so the description always
+  // reflects the policy that produced the numbers shown. The landing is
+  // just a directory.
 
   return root;
 }
@@ -123,27 +129,6 @@ function buildAvailableSection(bundles: BundleSummary[]): HTMLElement {
   return section;
 }
 
-function buildMethodologyFooter(): HTMLElement {
-  const foot = document.createElement('div');
-  foot.className = 'rk-footer';
-
-  const title = document.createElement('div');
-  title.className = 'rk-footer-title';
-  title.textContent = 'About these rankings';
-  foot.appendChild(title);
-
-  const text = document.createElement('div');
-  text.className = 'rk-footer-text';
-  text.innerHTML = `
-    Points are awarded by finishing position using the
-    <strong>BASIC</strong> ranking-points policy bundled with
-    <code>tods-competition-factory</code>. Each list pulls live data
-    from the rankings service via <code>/api/rankings/bundle</code>;
-    deeper per-tournament breakdowns appear inside each provider's list.
-    More providers will appear here as they ingest results into the
-    rankings service.
-  `;
-  foot.appendChild(text);
-
-  return foot;
-}
+// (buildMethodologyFooter removed 2026-06-08 — see comment in
+// buildLandingRoot. Methodology is per-provider and lives on the detail
+// page, which reads policy.name from the bundle.)

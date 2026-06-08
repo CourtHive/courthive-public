@@ -340,16 +340,26 @@ function buildMethodologyFooter(bundle: RankingsBundle): HTMLElement {
   title.textContent = 'Methodology';
   foot.appendChild(title);
 
+  // Methodology text reads policy name + version from the bundle so the
+  // description always reflects the policy that produced the numbers
+  // shown — different providers can use different policies, and TMX
+  // / provider-config will eventually constrain which policy each
+  // provider uses. The per-rung point values (e.g. 100/70/50/30/... for
+  // BASIC) would need to come from the factory policy fixture; they're
+  // intentionally NOT spelled out inline so this stays correct when a
+  // bundle ships under USTA / ITF / NATIONAL / custom.
+  const policyName = escape(bundle.policy?.name ?? 'unknown');
+  const policyVersion = escape(bundle.policy?.version ?? '');
+  const policyLabel = policyVersion ? `${policyName} v${policyVersion}` : policyName;
+
   const text = document.createElement('div');
   text.className = 'rk-footer-text';
   text.innerHTML = `
     Points are awarded by finishing position using the
-    <strong>BASIC</strong> ranking-points policy bundled with
-    tods-competition-factory (1st: 100, 2nd: 70, 3-4: 50, 5-8: 30,
-    9-16: 15, 17-32: 8, 33-64: 4, 65+: 1). Each player's total is
-    the sum of points across all qualifying results in the
-    ${bundle.tournaments.length} tournaments below. Doubles points
-    are credited in full to each partner.
+    <strong>${policyLabel}</strong> ranking-points policy. Each player's
+    total is the sum of points across all qualifying results in the
+    ${bundle.tournaments.length} tournaments below. Doubles points are
+    credited in full to each partner.
   `;
   foot.appendChild(text);
 
