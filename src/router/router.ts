@@ -5,6 +5,7 @@ import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
 import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
+import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
@@ -101,6 +102,18 @@ export function router() {
     context.providerAbbr = providerAbbr;
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
+  });
+
+  // Provider-agnostic landing — lists what's available so /services and
+  // other surfaces don't have to deep-link a specific provider abbreviation.
+  router.on('/rankings', () => {
+    console.log('[router] matched: /rankings (landing)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    if (container) renderRankingsLanding(container);
   });
 
   router.on('/rankings/:providerAbbr', (match) => {

@@ -230,3 +230,32 @@
   color: var(--sp-muted, #6b7280);
   font-size: 14px;
 }
+
+/* Landing page (renderRankingsLanding) — list of available bundles. */
+.rk-landing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rk-landing-item {
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--sp-border-subtle, #f3f4f6);
+}
+.rk-landing-item:last-child {
+  border-bottom: none;
+}
+.rk-landing-link {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sp-link, #2563eb);
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+.rk-landing-link:hover {
+  text-decoration: underline;
+}
+.rk-landing-meta {
+  font-size: 13px;
+  color: var(--sp-muted, #6b7280);
+}
