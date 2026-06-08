@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.7.0](https://github.com/CourtHive/courthive-public/compare/v1.6.1...v1.7.0) (2026-06-08)
+
+
+### Features
+
+* **build:** emit dist/version.json so /pub/version.json returns real JSON ([faf40a1](https://github.com/CourtHive/courthive-public/commit/faf40a1dbdedb7b22975b211b63afc4173c371d3))
+* **rankings:** add /rankings/:providerAbbr route + BOBOCA demo page ([95f3ff9](https://github.com/CourtHive/courthive-public/commit/95f3ff94adcc71978857538b473219394657ba77))
+* **rankings:** fetch /api/rankings/bundle live with static fallback ([5ebd10c](https://github.com/CourtHive/courthive-public/commit/5ebd10ca31b37bbad488845d8ade90832b1226e3))
+* **rankings:** provider-agnostic landing at /#/rankings ([e89bdd6](https://github.com/CourtHive/courthive-public/commit/e89bdd68ac9ac605f413cf43df1335c1dda22bb9))
+* **rankings:** refresh BOBOCA JSON with canonical UUID personIds ([73b726c](https://github.com/CourtHive/courthive-public/commit/73b726cbb29ee6716f414a5a8a6c92bfb995fbc7))
+* **rankings:** refresh BOBOCA rankings with all 12 tournaments ([c789812](https://github.com/CourtHive/courthive-public/commit/c7898120c646cfaae0ca1d6be750e513ba81b600))
+* **rankings:** use rescued LadderChart in per-player expansion ([df69ec9](https://github.com/CourtHive/courthive-public/commit/df69ec95c1cf40f8af995758703845f45f6bc578))
+
+
+### Bug Fixes
+
+* **deps:** update tods-competition-factory to 5.3.0 ([872c505](https://github.com/CourtHive/courthive-public/commit/872c50526237d48808d926605eeaa7e59a836d70))
+* **deps:** update tods-competition-factory to 5.4.0 ([e828ba4](https://github.com/CourtHive/courthive-public/commit/e828ba4c00455365b3ac49ecd9bb6b1db501d26c))
+* **rankings:** policy methodology is per-provider, not universal ([e2bb32c](https://github.com/CourtHive/courthive-public/commit/e2bb32c2bc005abb7f631d247c0a7b9865e661e7))
+
 ## [1.6.1](https://github.com/CourtHive/courthive-public/compare/v1.6.0...v1.6.1) (2026-06-02)
 
 
