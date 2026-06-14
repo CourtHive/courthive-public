@@ -64,7 +64,7 @@
     "yargs": "18.0.0"
   },
   "dependencies": {
-    "@courthive/provider-config": "^0.4.0",
+    "@courthive/provider-config": "^0.6.0",
     "axios": "1.17.0",
     "courthive-components": "3.4.0",
     "d3-selection": "3.0.0",
