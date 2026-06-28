@@ -1,6 +1,6 @@
 {
   "name": "ch-project-template",
-  "packageManager": "pnpm@11.5.1",
+  "packageManager": "pnpm@11.9.0",
   "private": true,
   "version": "1.7.0",
   "type": "module",
