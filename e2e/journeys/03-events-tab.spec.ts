@@ -5,7 +5,7 @@ import { sel } from '../helpers/selectors';
 
 test.describe('tournament — events view', () => {
   test('renders the event selector and draw from /factory/eventdata', async ({ page }) => {
-    const fixture = buildPublishedTournament({ eventName: "Women's Singles", drawSize: 8 });
+    const fixture = buildPublishedTournament({ eventNames: ["Women's Singles"], drawSize: 8 });
     await installApiMocks(page, fixture);
 
     // Deep-link straight to the Events tab.

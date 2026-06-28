@@ -46,10 +46,14 @@ e2e/
                          the API origin so they can't shadow Vite modules
     selectors.ts         stable DOM id selectors mirroring the app constants
   journeys/
-    01-splash.spec.ts          root route renders the splash page
-    02-tournament-info.spec.ts title/logo/tabs hydrate from tournamentinfo
-    03-events-tab.spec.ts      event selector + draw render from eventdata
-    04-schedule-tab.spec.ts    Schedule tab wiring + scheduledmatchUps fetch
+    01-splash.spec.ts            root route renders the splash page
+    02-tournament-info.spec.ts   title/logo/tabs hydrate from tournamentinfo
+    03-events-tab.spec.ts        event selector + draw render from eventdata
+    04-schedule-tab.spec.ts      Schedule tab wiring (empty-state) + fetch
+    05-players-tab.spec.ts       Players tab + roster table from participants
+    06-events-switch.spec.ts     event dropdown switch loads the other event
+    07-deep-link-draw.spec.ts    /event/:id/draw/:id deep-link opens the draw
+    08-schedule-populated.spec.ts court grid renders scheduled matchUps
 ```
 
 ## Gotchas (learned the hard way)
@@ -63,3 +67,13 @@ e2e/
   `vite.config.ts` and the readiness poll never resolves.
 - **Vitest excludes `e2e/`** via `test.include` in `vite.config.ts` — the
   `*.spec.ts` files import `@playwright/test`, which throws under vitest.
+- **Linked CJS deps need `optimizeDeps.include`.** `@courthive/provider-config`
+  ships CommonJS and is `link:`-overridden in dev, so vite serves it raw via
+  `@fs` and skips the CJS→ESM interop — named imports fail and the app won't
+  boot. It's listed in `vite.config.ts` `optimizeDeps.include` so vite
+  pre-bundles it. (On CI the link is stripped and the published package is
+  auto-optimized from `node_modules`.)
+- **The schedule grid places cells by `courtOrder`, not `scheduledTime`.** The
+  schedule fixture sets `courtOrder` on each scheduled matchUp; without it
+  `scheduleGovernor.courtGridRows` returns empty rows and the grid renders no
+  cells.

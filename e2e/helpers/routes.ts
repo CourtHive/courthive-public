@@ -79,17 +79,22 @@ export async function installApiMocks(page: Page, fixture: PublicTournamentFixtu
 
   await page.route(`${API}/factory/eventdata`, (route) => {
     if (handledPreflight(route)) return;
-    void json(route, fixture.eventData);
+    // Resolve the requested event from the POST body so multi-event fixtures
+    // return the right draw; fall back to the first event.
+    const requestedEventId = route.request().postDataJSON()?.eventId;
+    const payload = fixture.eventData[requestedEventId] ?? fixture.eventData[fixture.eventId];
+    void json(route, payload);
   });
 
   await page.route(`${API}/factory/scheduledmatchUps`, (route) => {
     if (handledPreflight(route)) return;
-    void json(route, opts.scheduleData ?? {});
+    void json(route, opts.scheduleData ?? fixture.scheduleData ?? {});
   });
 
   await page.route(`${API}/factory/participants`, (route) => {
     if (handledPreflight(route)) return;
-    void json(route, { participants: opts.participants ?? fixture.eventData?.participants ?? [] });
+    const body = opts.participants ? { success: true, participants: opts.participants } : (fixture.participants ?? { participants: [] });
+    void json(route, body);
   });
 
   await page.route(`${API}/factory/version`, (route) => {
