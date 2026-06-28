@@ -60,5 +60,11 @@ export default function viteConfig({ mode }: { mode: string }) {
     optimizeDeps: {
       include: ['hotkeys-js'],
     },
-  });
+    // Vitest: only the in-source unit specs. The Playwright e2e suite lives in
+    // `e2e/**/*.spec.ts` and must not be collected by vitest (those files
+    // import `@playwright/test`, which throws under the vitest runner).
+    test: {
+      include: ['src/**/*.test.ts'],
+    },
+  } as any);
 };

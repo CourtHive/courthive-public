@@ -19,13 +19,16 @@
     "commitlint": "commitlint --edit",
     "config": "node config.mjs",
     "format": "prettier --write src",
-    "lint": "eslint src --fix --cache",
+    "lint": "eslint src e2e --fix --cache",
     "lint:staged": "TZ=UTC lint-staged",
     "pre-commit": "lint-staged",
     "prepare": "rimraf dist && husky",
     "preview": "vite preview",
     "start": "pnpm run config --check && vite --open",
-    "test": "TZ=UTC vitest"
+    "test": "TZ=UTC vitest",
+    "test:e2e": "playwright test --config e2e/playwright.config.ts",
+    "test:e2e:ui": "playwright test --config e2e/playwright.config.ts --ui",
+    "test:e2e:headed": "playwright test --config e2e/playwright.config.ts --headed"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
+    "@playwright/test": "^1.59.1",
     "@commitlint/config-conventional": "21.0.2",
     "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
