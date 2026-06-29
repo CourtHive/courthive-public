@@ -15,6 +15,7 @@ import {
   fetchHiveIDMe,
   fetchMyParticipations,
   fetchMyRegistrations,
+  resendHiveIDVerification,
   withdrawRegistration,
   type ClaimableCandidate,
   type ParticipationRow,
@@ -113,6 +114,9 @@ export function renderMyCourtHive(container: HTMLElement): void {
   profile.appendChild(profileBody);
   shell.appendChild(profile);
 
+  const verification = renderVerificationSection();
+  shell.appendChild(verification.section);
+
   const registrations = renderRegistrationsSection();
   shell.appendChild(registrations.section);
 
@@ -128,6 +132,7 @@ export function renderMyCourtHive(container: HTMLElement): void {
 
   container.appendChild(shell);
 
+  void verification.refresh();
   void registrations.refresh();
   void participations.refresh();
 
@@ -439,6 +444,78 @@ function buildClaimableRow(
   };
   li.appendChild(btn);
   return li;
+}
+
+function renderVerificationSection(): { section: HTMLElement; refresh: () => Promise<void> } {
+  const section = document.createElement('section');
+  section.className = SECTION_CLASS;
+  const sectionTitle = document.createElement('h2');
+  sectionTitle.textContent = 'Email verification';
+  section.appendChild(sectionTitle);
+
+  const body = document.createElement('div');
+  body.className = 'chp-me-verification';
+  body.textContent = 'Checking…';
+  section.appendChild(body);
+
+  function statusLine(text: string, kind: 'success' | 'warn' | 'error'): HTMLElement {
+    const p = document.createElement('p');
+    p.textContent = text;
+    p.style.margin = '0 0 0.75rem';
+    p.style.fontSize = '0.9rem';
+    const tokenByKind = {
+      success: 'var(--chc-status-success)',
+      warn: 'var(--chc-status-warning)',
+      error: 'var(--chc-status-error)',
+    };
+    p.style.color = tokenByKind[kind];
+    return p;
+  }
+
+  async function refresh(): Promise<void> {
+    body.replaceChildren();
+    body.textContent = 'Checking…';
+    const me = await fetchHiveIDMe().catch(() => null);
+    body.replaceChildren();
+    if (!me) {
+      body.textContent = 'Sign in to manage email verification.';
+      return;
+    }
+    const email = me.email || 'your email';
+    if (me.emailVerifiedAt) {
+      body.appendChild(statusLine(`✓ ${email} is verified.`, 'success'));
+      return;
+    }
+
+    body.appendChild(
+      statusLine(
+        `${email} is not verified yet. Verify it to become eligible as an official scorer.`,
+        'warn',
+      ),
+    );
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = BUTTON_CLASS;
+    btn.textContent = 'Resend verification email';
+    btn.onclick = async () => {
+      btn.disabled = true;
+      try {
+        const res = await resendHiveIDVerification();
+        if (res?.status === 'already_verified') {
+          await refresh();
+          return;
+        }
+        body.appendChild(statusLine('Verification email sent — check your inbox.', 'success'));
+      } catch (err) {
+        console.warn('[hiveid verification] resend failed:', err);
+        body.appendChild(statusLine('Could not send the email. Please try again later.', 'error'));
+        btn.disabled = false;
+      }
+    };
+    body.appendChild(btn);
+  }
+
+  return { section, refresh };
 }
 
 function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Promise<void> } {

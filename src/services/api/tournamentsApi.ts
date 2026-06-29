@@ -47,3 +47,8 @@ export async function getProviderBrandingByTournament({ tournamentId }: { tourna
   if (!tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
   return await baseApi.get(`/provider/by-tournament/${tournamentId}/branding`);
 }
+
+export async function getScoringLaunchByTournament({ tournamentId }: { tournamentId: string }) {
+  if (!tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
+  return await baseApi.get(`/provider/by-tournament/${tournamentId}/scoring-launch`);
+}

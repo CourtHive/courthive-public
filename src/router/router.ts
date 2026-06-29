@@ -3,6 +3,7 @@ import { renderTournament } from 'src/pages/tournament/renderTournament';
 import { destroyCurrentShell, renderTrackPage } from 'src/pages/track/renderTrackPage';
 import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
 import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
+import { renderVerifyEmail } from 'src/pages/me/renderVerifyEmail';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
 import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
@@ -199,6 +200,19 @@ export function router() {
     setDisplay(HIVEID_MAGIC);
     const container = document.getElementById(HIVEID_MAGIC);
     if (container) renderMagicLinkConsume(container, code ?? '');
+  });
+
+  // Email-verification landing — reuses the transient HIVEID_MAGIC container
+  // (both are short-lived landing pages, never shown simultaneously).
+  router.on('/verify-email/:token', (match) => {
+    const token = match?.data?.token;
+    console.log('[router] matched: /verify-email/:token');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_MAGIC);
+    const container = document.getElementById(HIVEID_MAGIC);
+    if (container) renderVerifyEmail(container, token ?? '');
   });
 
   // Phase 2 — interactive tracking sandbox. Local-only, no server writes.

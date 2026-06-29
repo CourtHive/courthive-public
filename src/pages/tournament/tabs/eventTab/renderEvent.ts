@@ -12,8 +12,10 @@ import {
 import { installMobileBracketLayout } from 'src/services/mobileBracketLayout';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { openScoringLaunchMenu } from 'src/components/scoringLaunchMenu';
 import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
 import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
@@ -33,7 +35,12 @@ function maybeOpenTeamScorecard(mu: any, display: any) {
   if (mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length) openScorecard({ matchUp: mu, display });
 }
 
+function isTeamScorecard(mu: any): boolean {
+  return mu?.matchUpType === 'TEAM' && mu.tieMatchUps?.length;
+}
+
 function renderRoundsColumns({
+  tournamentId,
   flightDisplay,
   matchUps,
   composition,
@@ -43,6 +50,7 @@ function renderRoundsColumns({
   inlineManager,
   liveScoring,
 }: {
+  tournamentId: string;
   flightDisplay: HTMLElement;
   matchUps: any[];
   composition: any;
@@ -54,8 +62,18 @@ function renderRoundsColumns({
 }) {
   const matchUpsMap = Object.fromEntries(matchUps.map(toMatchUpEntry));
   const eventHandlers = {
+    // Score area keeps the direct team-scorecard shortcut (no-op for singles).
     scoreClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
-    matchUpClick: (props: any) => maybeOpenTeamScorecard(getMatchUpFromPointer(matchUpsMap, props), display),
+    // Clicking the matchUp body opens the scoring-launch popover. For a TEAM
+    // matchUp the scorecard is offered as the first item so it stays reachable.
+    matchUpClick: (props: any) => {
+      const mu = getMatchUpFromPointer(matchUpsMap, props);
+      if (!mu?.matchUpId) return;
+      const extraItems = isTeamScorecard(mu)
+        ? [{ label: 'Open scorecard', onClick: () => openScorecard({ matchUp: mu, display }) }]
+        : [];
+      void openScoringLaunchMenu({ pointerEvent: props.pointerEvent, matchUp: mu, tournamentId, extraItems });
+    },
   };
 
   if (inlineManager) markReadyMatchUpsInProgress(matchUps);
@@ -166,6 +184,9 @@ export function renderEvent({
   context.refreshEventView = () => renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat });
 
   const hydrateParticipants = false;
+  // Warm the provider scoring-launch config so the per-matchUp "Score this
+  // match" popover opens instantly on first click.
+  prefetchScoringLaunch(tournamentId);
   // Kick off IndexedDB read in parallel with the network fetch so the user's
   // crowd sessions are available by the time we render the bracket.
   const savedSessionsPromise = loadSavedSessionsForTournament(tournamentId);
@@ -286,6 +307,7 @@ export function renderEvent({
 
         if (displayFormat === 'roundsColumns') {
           renderRoundsColumns({
+            tournamentId,
             flightDisplay,
             matchUps,
             composition,

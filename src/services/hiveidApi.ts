@@ -89,6 +89,37 @@ async function authenticatedJson<T>(path: string, init?: RequestInit): Promise<T
   return (await res.json()) as T;
 }
 
+export type ResendVerificationStatus = 'pending_verification' | 'already_verified' | 'no_contact_email';
+
+/** Authenticated — re-send the HiveID email-verification mail to the logged-in user. */
+export function resendHiveIDVerification(): Promise<{ success: boolean; status?: ResendVerificationStatus } | null> {
+  return authenticatedJson('/auth/hiveid/resend-verification', { method: 'POST' });
+}
+
+/**
+ * Public — exchange a single-use email-verification token (from the link in
+ * the verification email) for a verified stamp. Shared @Public CFS endpoint;
+ * no session required, so the link works on any device/browser.
+ */
+export async function consumeEmailVerification(token: string): Promise<{ success: true; contactEmail: string }> {
+  const res = await fetch(`${getCfsBaseUrl()}/auth/verify-email`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token }),
+  });
+  if (!res.ok) {
+    let body: any = null;
+    try {
+      body = await res.json();
+    } catch {
+      /* non-JSON body */
+    }
+    const message = body?.message ?? `HTTP ${res.status}`;
+    throw new Error(typeof message === 'string' ? message : JSON.stringify(message));
+  }
+  return (await res.json()) as { success: true; contactEmail: string };
+}
+
 export function fetchMyParticipations(): Promise<{ personId: string | null; participations: ParticipationRow[] } | null> {
   return authenticatedJson('/auth/hiveid/me/participations');
 }
