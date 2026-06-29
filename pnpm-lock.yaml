@@ -50,8 +50,8 @@ importers:
         specifier: ^5.55.1
         version: 5.56.4(@typescript-eslint/types@8.60.0)
       tabulator-tables:
-        specifier: 6.4.0
-        version: 6.4.0
+        specifier: 6.5.2
+        version: 6.5.2
       tippy.js:
         specifier: 6.3.7
         version: 6.3.7
@@ -1938,8 +1938,8 @@ packages:
     resolution: {integrity: sha512-/d0QHehmRuJW8gVz395MTkPcPozxzdjBMBE8oEYGz8O3b9KTMzzQ9ZHJQLuFKOHOPQbU6kx/X4iid/EBBzH7iw==}
     engines: {node: '>=18'}
 
-  tabulator-tables@6.4.0:
-    resolution: {integrity: sha512-Lxh+leFNoBo/Yyr4USs6gxqbfo8anYUaUMmoT91pfVLtoUgl/dE+qV7ahnFrKVMCYYqGG33aIMPR7FzpPBaNYA==}
+  tabulator-tables@6.5.2:
+    resolution: {integrity: sha512-cRL3xsaaf5RzND8KPbn4C9Ce5tzyiQUE01E/10zN50MjdRKl/Gl5nXkzLN6cvEyRfWHCPuqBF92y50CBw20WYA==}
 
   temp@0.9.4:
     resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
@@ -3953,7 +3953,7 @@ snapshots:
     transitivePeerDependencies:
       - '@typescript-eslint/types'
 
-  tabulator-tables@6.4.0: {}
+  tabulator-tables@6.5.2: {}
 
   temp@0.9.4:
     dependencies:
