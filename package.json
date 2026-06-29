@@ -70,7 +70,7 @@
   "dependencies": {
     "@courthive/provider-config": "^0.8.0",
     "axios": "1.17.0",
-    "courthive-components": "3.4.4",
+    "courthive-components": "3.4.5",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.21",
     "hotkeys-js": "4.0.4",
