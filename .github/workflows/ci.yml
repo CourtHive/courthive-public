@@ -1,0 +1,94 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+# pnpm-workspace.yaml `link:` overrides (factory / courthive-components /
+# provider-config) win over package.json pins, and the GitHub runner has no
+# sibling clones at ../factory etc., so any `link:` override resolves to a
+# dangling symlink. check-types / test / build / e2e all break on that, so we
+# strip the link: lines (and the lockfile that encodes them) defensively before
+# install. Mirrors TMX ci.yml + courthive-rankings 340ab59.
+# See MEMORY.md > feedback_ci_strip_link_overrides_in_workspace_yaml.
+
+jobs:
+  verify:
+    name: lint · types · unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: 'Strip link: overrides for CI'
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (fs.existsSync('pnpm-workspace.yaml')) {
+            const before = fs.readFileSync('pnpm-workspace.yaml', 'utf8');
+            const after = before.split('\n').filter(line => !/:\s*link:\S+\s*\$/.test(line)).join('\n');
+            if (after !== before) fs.writeFileSync('pnpm-workspace.yaml', after);
+          }
+          "
+          rm -f pnpm-lock.yaml
+
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm check-types
+      - run: pnpm test --run
+
+  e2e:
+    name: playwright e2e
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: 'Strip link: overrides for CI'
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (fs.existsSync('pnpm-workspace.yaml')) {
+            const before = fs.readFileSync('pnpm-workspace.yaml', 'utf8');
+            const after = before.split('\n').filter(line => !/:\s*link:\S+\s*\$/.test(line)).join('\n');
+            if (after !== before) fs.writeFileSync('pnpm-workspace.yaml', after);
+          }
+          "
+          rm -f pnpm-lock.yaml
+
+      - run: pnpm install
+
+      # pnpm install does not fetch the browser binary — install it (with OS
+      # deps) before the run. See MEMORY.md > feedback_test_storybook_needs_playwright_install.
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      # CI=1 makes Playwright spawn + manage its own vite dev server
+      # (reuseExistingServer is disabled under CI).
+      - name: Run e2e
+        run: pnpm test:e2e
+        env:
+          CI: '1'
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore

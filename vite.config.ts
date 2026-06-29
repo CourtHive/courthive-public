@@ -58,7 +58,18 @@ export default function viteConfig({ mode }: { mode: string }) {
       },
     },
     optimizeDeps: {
-      include: ['hotkeys-js'],
+      // hotkeys-js is CJS; @courthive/provider-config ships CommonJS and is
+      // `link:`-overridden in dev, so vite serves it raw via @fs and skips the
+      // CJS→ESM interop it applies to node_modules deps — pre-bundle it here so
+      // named ESM imports resolve. (On CI the link is stripped and the
+      // published package is auto-optimized from node_modules.)
+      include: ['hotkeys-js', '@courthive/provider-config'],
     },
-  });
+    // Vitest: only the in-source unit specs. The Playwright e2e suite lives in
+    // `e2e/**/*.spec.ts` and must not be collected by vitest (those files
+    // import `@playwright/test`, which throws under the vitest runner).
+    test: {
+      include: ['src/**/*.test.ts'],
+    },
+  } as any);
 };
