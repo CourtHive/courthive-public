@@ -54,6 +54,12 @@ export default function viteConfig({ mode }: { mode: string }) {
     resolve: {
       tsconfigPaths: true,
       alias: {
+        // Explicit `src` alias so `src/...` baseUrl imports resolve in BOTH .ts
+        // and .svelte files. vite 8.1.0 regressed `resolve.tsconfigPaths` for
+        // Svelte-component imports (`src/common/context` failed to resolve from
+        // TournamentList.svelte under rolldown); an explicit alias is processed
+        // by vite core for every import, sidestepping that bug.
+        src: path.resolve(__dirname, 'src'),
         'tods-competition-factory': path.resolve(__dirname, 'node_modules/tods-competition-factory'),
       },
     },
