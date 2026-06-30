@@ -1,0 +1,75 @@
+import { installApiMocks, installHiveIDMeMocks, seedHiveIDSessionInitScript } from '../helpers/routes';
+import { buildPublishedTournament } from '../helpers/fixtures';
+import { test, expect } from '@playwright/test';
+
+/**
+ * My CourtHive (`/#/me`) email-verification section (HiveID, Phase C/D).
+ *
+ * A signed-in identity (seeded `hiveidSession` + mocked `/auth/hiveid/me`)
+ * renders an "Email verification" section into `#hiveid-me`. Unverified shows
+ * a resend control whose click confirms the send; verified shows the verified
+ * status with no resend control. The mocked `me` deliberately matches the
+ * seeded session's personId + cached fields so the page's best-effort refresh
+ * doesn't trigger a re-render mid-assertion.
+ */
+const SESSION_PERSON = 'person-e2e';
+const CACHED = {
+  standardGivenName: 'Pat',
+  standardFamilyName: 'Player',
+  birthDate: '1990-01-01',
+  sex: 'MALE',
+  nationalityCode: 'USA',
+};
+
+function meResponse(emailVerifiedAt: string | null) {
+  return {
+    userId: 'user-e2e',
+    email: 'pat@example.com',
+    emailVerifiedAt,
+    personId: SESSION_PERSON,
+    personRevision: 1,
+    cached: {
+      standardFamilyName: CACHED.standardFamilyName,
+      standardGivenName: CACHED.standardGivenName,
+      birthDate: CACHED.birthDate,
+      sex: CACHED.sex,
+      nationalityCode: CACHED.nationalityCode,
+    },
+    consentPreferences: {},
+  };
+}
+
+test.describe('My CourtHive — email verification', () => {
+  test('unverified email shows resend, and resending confirms', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    await installHiveIDMeMocks(page, { me: meResponse(null), resendStatus: 'sent' });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: SESSION_PERSON, cached: CACHED });
+
+    await page.goto('/#/me');
+
+    const me = page.locator('#hiveid-me');
+    await expect(me).toContainText('Email verification');
+    await expect(me).toContainText(/is not verified yet/i);
+
+    const resend = me.getByRole('button', { name: /resend verification email/i });
+    await expect(resend).toBeVisible();
+    await resend.click();
+
+    await expect(me).toContainText(/verification email sent/i);
+  });
+
+  test('verified email shows the verified status and no resend control', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    await installHiveIDMeMocks(page, { me: meResponse('2026-06-01T00:00:00.000Z') });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: SESSION_PERSON, cached: CACHED });
+
+    await page.goto('/#/me');
+
+    const me = page.locator('#hiveid-me');
+    await expect(me).toContainText('Email verification');
+    await expect(me).toContainText(/is verified/i);
+    await expect(me.getByRole('button', { name: /resend verification email/i })).toHaveCount(0);
+  });
+});

@@ -118,3 +118,103 @@ export async function installApiMocks(page: Page, fixture: PublicTournamentFixtu
 export async function gotoTournament(page: Page, fixture: PublicTournamentFixture, subPath = '') {
   await page.goto(`/#/tournament/${fixture.tournamentId}${subPath}`);
 }
+
+/**
+ * Mock the per-tournament scoring-launch config endpoint
+ * (`GET /provider/by-tournament/:id/scoring-launch`). Register this AFTER
+ * `installApiMocks` so it wins over the broad `/provider/by-tournament/**`
+ * branding glob (Playwright matches the most-recently-registered route first).
+ * Pass `config: null` to exercise the EPIXODIC default-fallback path.
+ */
+export async function installScoringLaunchMock(page: Page, tournamentId: string, config: unknown) {
+  await page.route(`${API}/provider/by-tournament/${tournamentId}/scoring-launch`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, { success: true, scoringLaunch: config });
+  });
+}
+
+export interface HiveIDMeMockOptions {
+  /** Body for GET /auth/hiveid/me. */
+  me: Record<string, unknown>;
+  /** Status returned by POST /auth/hiveid/resend-verification (default 'sent'). */
+  resendStatus?: 'sent' | 'already_verified';
+  /** Body for GET /auth/hiveid/me/participations (defaults to an empty linked list). */
+  participations?: { personId: string | null; participations: unknown[] };
+  /** Body for GET /me/registrations (defaults to []). */
+  registrations?: unknown[];
+}
+
+/**
+ * Mock the HiveID `/me` REST surface so the My CourtHive page renders against a
+ * signed-in identity without a backend. Seed the matching `hiveidSession`
+ * localStorage entry via `seedHiveIDSessionInitScript` before navigating.
+ */
+export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions) {
+  await page.route(`${API}/auth/hiveid/me`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, opts.me);
+  });
+  await page.route(`${API}/auth/hiveid/me/participations`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, opts.participations ?? { personId: 'person-e2e', participations: [] });
+  });
+  await page.route(`${API}/me/registrations`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, opts.registrations ?? []);
+  });
+  await page.route(`${API}/auth/hiveid/resend-verification`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, { success: true, status: opts.resendStatus ?? 'sent' });
+  });
+}
+
+export interface VerifyEmailMockOptions {
+  /** When false, fail the POST with `status` + `message` to drive the error landing. */
+  ok?: boolean;
+  contactEmail?: string;
+  status?: number;
+  message?: string;
+}
+
+/** Mock POST /auth/verify-email for the verify-email landing page. */
+export async function installVerifyEmailMock(page: Page, opts: VerifyEmailMockOptions = {}) {
+  await page.route(`${API}/auth/verify-email`, (route) => {
+    if (handledPreflight(route)) return;
+    if (opts.ok === false) {
+      void json(route, { message: opts.message ?? 'invalid token' }, opts.status ?? 400);
+      return;
+    }
+    void json(route, { success: true, contactEmail: opts.contactEmail ?? 'pat@example.com' });
+  });
+}
+
+/** localStorage key the public-side HiveID session is stored under. */
+const HIVEID_SESSION_KEY = 'hiveidSession';
+
+/**
+ * Seed a signed-in HiveID session before the app boots so `/#/me` renders the
+ * authenticated shell. Playwright re-runs init scripts on every navigation, so
+ * the session survives `page.goto` within a test.
+ */
+export async function seedHiveIDSessionInitScript(
+  page: Page,
+  session: Record<string, unknown> = {
+    token: 'e2e.hiveid.token',
+    refreshToken: 'e2e.refresh',
+    personId: 'person-e2e',
+    cached: {
+      standardGivenName: 'Pat',
+      standardFamilyName: 'Player',
+      birthDate: '1990-01-01',
+      sex: 'MALE',
+      nationalityCode: 'USA',
+    },
+  },
+) {
+  await page.addInitScript(
+    ([key, value]) => {
+      localStorage.setItem(key as string, JSON.stringify(value));
+    },
+    [HIVEID_SESSION_KEY, session] as const,
+  );
+}
