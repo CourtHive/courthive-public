@@ -38,6 +38,30 @@
     "tableView": "Table view",
     "statistics": "Statistics"
   },
+  "scoring": {
+    "scoreThisMatch": "Score this match",
+    "openScorecard": "Open scorecard"
+  },
+  "verifyEmail": {
+    "verifying": "Verifying your email…",
+    "missingToken": "Missing verification token.",
+    "verifiedRedirect": "Your email is verified. Taking you to My CourtHive…",
+    "verifiedSignIn": "Your email is verified. You can now sign in.",
+    "invalidOrExpired": "This verification link is invalid or has expired. Sign in to My CourtHive to request a new one."
+  },
+  "me": {
+    "verification": {
+      "title": "Email verification",
+      "checking": "Checking…",
+      "signInToManage": "Sign in to manage email verification.",
+      "yourEmail": "your email",
+      "verified": "✓ {{email}} is verified.",
+      "notVerified": "{{email}} is not verified yet. Verify it to become eligible as an official scorer.",
+      "resend": "Resend verification email",
+      "sent": "Verification email sent — check your inbox.",
+      "sendFailed": "Could not send the email. Please try again later."
+    }
+  },
   "theme": {
     "toggleDark": "Toggle dark mode"
   },

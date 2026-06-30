@@ -20,6 +20,7 @@ import { drawsGovernor, tools } from 'tods-competition-factory';
 import { getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
 import { context } from 'src/common/context';
+import { t } from 'src/i18n/i18n';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -70,7 +71,7 @@ function renderRoundsColumns({
       const mu = getMatchUpFromPointer(matchUpsMap, props);
       if (!mu?.matchUpId) return;
       const extraItems = isTeamScorecard(mu)
-        ? [{ label: 'Open scorecard', onClick: () => openScorecard({ matchUp: mu, display }) }]
+        ? [{ label: t('scoring.openScorecard'), onClick: () => openScorecard({ matchUp: mu, display }) }]
         : [];
       void openScoringLaunchMenu({ pointerEvent: props.pointerEvent, matchUp: mu, tournamentId, extraItems });
     },

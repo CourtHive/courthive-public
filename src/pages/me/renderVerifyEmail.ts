@@ -9,6 +9,7 @@
 import { consumeEmailVerification, fetchHiveIDMe } from 'src/services/hiveidApi';
 import { readHiveIDSession } from 'src/services/hiveidSession';
 import { context } from 'src/common/context';
+import { t } from 'src/i18n/i18n';
 
 export function renderVerifyEmail(container: HTMLElement, token: string): void {
   container.replaceChildren();
@@ -18,12 +19,12 @@ export function renderVerifyEmail(container: HTMLElement, token: string): void {
   const msg = document.createElement('p');
   msg.style.padding = '2rem';
   msg.style.textAlign = 'center';
-  msg.textContent = 'Verifying your email…';
+  msg.textContent = t('verifyEmail.verifying');
   shell.appendChild(msg);
   container.appendChild(shell);
 
   if (!token) {
-    msg.textContent = 'Missing verification token.';
+    msg.textContent = t('verifyEmail.missingToken');
     return;
   }
 
@@ -31,17 +32,16 @@ export function renderVerifyEmail(container: HTMLElement, token: string): void {
     .then(() => {
       const session = readHiveIDSession();
       if (session?.token) {
-        msg.textContent = 'Your email is verified. Taking you to My CourtHive…';
+        msg.textContent = t('verifyEmail.verifiedRedirect');
         // Best-effort cache refresh; navigation does not depend on it.
         void fetchHiveIDMe().catch(() => undefined);
         context.router?.navigate('/me');
       } else {
-        msg.textContent = 'Your email is verified. You can now sign in.';
+        msg.textContent = t('verifyEmail.verifiedSignIn');
       }
     })
     .catch((err) => {
       console.warn('[hiveid verify-email] failed:', err);
-      msg.textContent =
-        'This verification link is invalid or has expired. Sign in to My CourtHive to request a new one.';
+      msg.textContent = t('verifyEmail.invalidOrExpired');
     });
 }

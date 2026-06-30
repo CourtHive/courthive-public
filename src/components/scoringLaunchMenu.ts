@@ -1,5 +1,6 @@
 import { fetchScoringLaunch, launchScoring } from 'src/services/scoringLaunch';
 import { renderMenu } from 'courthive-components';
+import { t } from 'src/i18n/i18n';
 
 /**
  * A small floating popover, anchored at the click point, offering a
@@ -106,7 +107,7 @@ export async function openScoringLaunchMenu({
 
   const items = [
     ...extraItems.map((item) => ({ label: item.label, onClick: item.onClick })),
-    { label: 'Score this match', onClick: () => launchScoring(config, ctx) },
+    { label: t('scoring.scoreThisMatch'), onClick: () => launchScoring(config, ctx) },
   ];
   renderMenu(popover, [{ items }], close);
 

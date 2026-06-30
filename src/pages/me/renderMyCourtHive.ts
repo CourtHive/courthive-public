@@ -25,6 +25,7 @@ import {
 import { clearHiveIDSession, getDisplayName, readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
 import { disconnectHiveIDSocket, onPersonUpdate, type PersonUpdateEvent } from 'src/services/hiveidSocket';
 import { context } from 'src/common/context';
+import { t } from 'src/i18n/i18n';
 
 const SECTION_CLASS = 'chp-me-section';
 const BUTTON_CLASS = 'chp-me-button';
@@ -450,12 +451,12 @@ function renderVerificationSection(): { section: HTMLElement; refresh: () => Pro
   const section = document.createElement('section');
   section.className = SECTION_CLASS;
   const sectionTitle = document.createElement('h2');
-  sectionTitle.textContent = 'Email verification';
+  sectionTitle.textContent = t('me.verification.title');
   section.appendChild(sectionTitle);
 
   const body = document.createElement('div');
   body.className = 'chp-me-verification';
-  body.textContent = 'Checking…';
+  body.textContent = t('me.verification.checking');
   section.appendChild(body);
 
   function statusLine(text: string, kind: 'success' | 'warn' | 'error'): HTMLElement {
@@ -474,29 +475,24 @@ function renderVerificationSection(): { section: HTMLElement; refresh: () => Pro
 
   async function refresh(): Promise<void> {
     body.replaceChildren();
-    body.textContent = 'Checking…';
+    body.textContent = t('me.verification.checking');
     const me = await fetchHiveIDMe().catch(() => null);
     body.replaceChildren();
     if (!me) {
-      body.textContent = 'Sign in to manage email verification.';
+      body.textContent = t('me.verification.signInToManage');
       return;
     }
-    const email = me.email || 'your email';
+    const email = me.email || t('me.verification.yourEmail');
     if (me.emailVerifiedAt) {
-      body.appendChild(statusLine(`✓ ${email} is verified.`, 'success'));
+      body.appendChild(statusLine(t('me.verification.verified', { email }), 'success'));
       return;
     }
 
-    body.appendChild(
-      statusLine(
-        `${email} is not verified yet. Verify it to become eligible as an official scorer.`,
-        'warn',
-      ),
-    );
+    body.appendChild(statusLine(t('me.verification.notVerified', { email }), 'warn'));
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = BUTTON_CLASS;
-    btn.textContent = 'Resend verification email';
+    btn.textContent = t('me.verification.resend');
     btn.onclick = async () => {
       btn.disabled = true;
       try {
@@ -505,10 +501,10 @@ function renderVerificationSection(): { section: HTMLElement; refresh: () => Pro
           await refresh();
           return;
         }
-        body.appendChild(statusLine('Verification email sent — check your inbox.', 'success'));
+        body.appendChild(statusLine(t('me.verification.sent'), 'success'));
       } catch (err) {
         console.warn('[hiveid verification] resend failed:', err);
-        body.appendChild(statusLine('Could not send the email. Please try again later.', 'error'));
+        body.appendChild(statusLine(t('me.verification.sendFailed'), 'error'));
         btn.disabled = false;
       }
     };
