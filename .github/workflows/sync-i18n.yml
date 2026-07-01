@@ -35,12 +35,12 @@ jobs:
           repositories: courthive-public,courthive-i18n
 
       - name: Checkout courthive-public
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: source
 
       - name: Checkout courthive-i18n
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: CourtHive/courthive-i18n
           token: ${{ steps.app-token.outputs.token }}
