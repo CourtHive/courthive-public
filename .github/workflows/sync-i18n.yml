@@ -81,8 +81,8 @@ jobs:
           branch: chore/sync-i18n-from-courthive-public
           delete-branch: true
           commit-message: |
-            chore(i18n): sync en.json from courthive-public
+            fix(i18n): sync en.json from courthive-public
 
             See PR body for the full list of added / updated keys.
-          title: 'chore(i18n): sync en.json from courthive-public'
+          title: 'fix(i18n): sync en.json from courthive-public'
           body-path: /tmp/pr-body.md
