@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.8.0](https://github.com/CourtHive/courthive-public/compare/v1.7.0...v1.8.0) (2026-07-02)
+
+
+### Features
+
+* **scoring:** per-matchUp launch menu and email verification ui ([4ecd878](https://github.com/CourtHive/courthive-public/commit/4ecd8789eef6d28e3bfa5831635f2ea6dabb8153))
+
+
+### Bug Fixes
+
+* **build:** add explicit src alias for vite 8.1.0 svelte resolution ([990902f](https://github.com/CourtHive/courthive-public/commit/990902f2ba6d4bd4c355888eb6d0a564329130a5))
+* **deps:** update courthive-components to 3.4.4 ([e314e64](https://github.com/CourtHive/courthive-public/commit/e314e64e170fd1fbc58350caed926716e4f8c306))
+* **deps:** update tods-competition-factory to 5.6.0 ([9d0b9c2](https://github.com/CourtHive/courthive-public/commit/9d0b9c2ae331f72efb504afc9943a1bfbfa8e12c))
+* **deps:** update tods-competition-factory to 5.7.0 ([af2a92a](https://github.com/CourtHive/courthive-public/commit/af2a92a841bffc91872193f29c56bf332fc2867b))
+* **deps:** update tods-competition-factory to 5.7.1 ([ddb0981](https://github.com/CourtHive/courthive-public/commit/ddb09810d9702fe60dbe486fbbd32b1e161ef455))
+
 ## [1.7.0](https://github.com/CourtHive/courthive-public/compare/v1.6.1...v1.7.0) (2026-06-08)
 
 
