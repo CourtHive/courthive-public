@@ -58,12 +58,15 @@ interface RankingsBundle {
 }
 
 // Last-resort fallback when the proxy can't reach rankings. Bundled at
-// build time; refreshed manually via the export script when needed.
+// build time; refreshed manually via the export script when needed. It is
+// BOBOCA-only, so it's used solely when the requested provider IS BOBOCA —
+// serving it under any other provider would be wrong.
 const FALLBACK: RankingsBundle = bobocaRankings as unknown as RankingsBundle;
 
-async function fetchBundle(): Promise<{ bundle: RankingsBundle; isLive: boolean }> {
+async function fetchBundle(providerAbbr: string): Promise<{ bundle: RankingsBundle; isLive: boolean }> {
+  const url = `${BUNDLE_URL}?provider=${encodeURIComponent(providerAbbr.toUpperCase())}`;
   try {
-    const res = await fetch(BUNDLE_URL, { headers: { accept: 'application/json' } });
+    const res = await fetch(url, { headers: { accept: 'application/json' } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const live = (await res.json()) as RankingsBundle;
     if (live?.rankings?.men && live?.rankings?.women) {
@@ -71,8 +74,13 @@ async function fetchBundle(): Promise<{ bundle: RankingsBundle; isLive: boolean 
     }
     throw new Error('bundle shape unrecognized');
   } catch (e) {
-    console.warn('[rankings] live fetch failed — using static fallback:', e);
-    return { bundle: FALLBACK, isLive: false };
+    console.warn('[rankings] live fetch failed:', e);
+    // The baked-in fallback only speaks for BOBOCA — never surface it under
+    // another provider's abbreviation.
+    if (providerAbbr.toUpperCase() === FALLBACK.provider.abbreviation.toUpperCase()) {
+      return { bundle: FALLBACK, isLive: false };
+    }
+    throw e;
   }
 }
 
@@ -85,19 +93,26 @@ export function renderRankingsPage(container: HTMLElement, providerAbbr: string)
   loading.textContent = 'Loading rankings…';
   container.appendChild(loading);
 
-  fetchBundle().then(({ bundle, isLive }) => {
+  const notFound = () => {
     container.innerHTML = '';
+    const msg = document.createElement('div');
+    msg.className = 'rk-not-found';
+    msg.textContent = `No rankings available for "${providerAbbr}".`;
+    container.appendChild(msg);
+  };
 
-    if (bundle.provider.abbreviation.toUpperCase() !== providerAbbr.toUpperCase()) {
-      const msg = document.createElement('div');
-      msg.className = 'rk-not-found';
-      msg.textContent = `No rankings available for "${providerAbbr}".`;
-      container.appendChild(msg);
-      return;
-    }
-
-    renderBundle(container, bundle, isLive);
-  });
+  fetchBundle(providerAbbr)
+    .then(({ bundle, isLive }) => {
+      container.innerHTML = '';
+      // Scoped fetch should already return the requested provider; keep the
+      // guard as a safety net against a mismatched bundle.
+      if (bundle.provider.abbreviation.toUpperCase() !== providerAbbr.toUpperCase()) {
+        notFound();
+        return;
+      }
+      renderBundle(container, bundle, isLive);
+    })
+    .catch(notFound);
 }
 
 function renderBundle(container: HTMLElement, bundle: RankingsBundle, isLive: boolean) {
