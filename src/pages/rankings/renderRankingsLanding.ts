@@ -1,37 +1,32 @@
 // Rankings landing page — provider-agnostic entry point at /#/rankings.
 //
-// Lists the ranking bundles currently available so visitors can pick a
-// provider before drilling into the per-provider table at
-// /#/rankings/:providerAbbr (renderRankingsPage). Today the rankings
-// service returns a single bundle (BOBOCA only — see
-// courthive-rankings/src/modules/bundle/bundle.controller.ts); this view
-// surfaces that one bundle as a single link and is ready to grow when
-// the service exposes a list endpoint.
+// Lists the providers that currently have rankings so visitors can pick one
+// before drilling into the per-provider table at /#/rankings/:providerAbbr
+// (renderRankingsPage). Reads the providers directory from
+// /api/rankings/providers (courthive-rankings' list endpoint) through the
+// CFS RankingsProxy.
 //
-// Sibling to renderRankingsPage.ts. Same data source (/api/rankings/bundle
-// through the CFS RankingsProxy), same --sp-* / --chc-* theme tokens, no
+// Sibling to renderRankingsPage.ts. Same --sp-* / --chc-* theme tokens, no
 // framework.
 
 import 'src/styles/rankings.css';
 
-const BUNDLE_URL = '/api/rankings/bundle';
+const PROVIDERS_URL = '/api/rankings/providers';
 
-interface BundleSummary {
-  provider: { name: string; abbreviation: string };
-  asOfDate: string;
-  tournaments: { id: string; name: string; endDate: string }[];
-  rankings: { men: { entries: unknown[] }; women: { entries: unknown[] } };
+interface ProviderSummary {
+  name: string;
+  abbreviation: string;
 }
 
-async function fetchAvailableBundles(): Promise<BundleSummary[]> {
+async function fetchProviders(): Promise<ProviderSummary[]> {
   try {
-    const res = await fetch(BUNDLE_URL, { headers: { accept: 'application/json' } });
+    const res = await fetch(PROVIDERS_URL, { headers: { accept: 'application/json' } });
     if (!res.ok) return [];
-    const bundle = (await res.json()) as BundleSummary;
-    if (!bundle?.provider?.abbreviation) return [];
-    return [bundle];
+    const providers = (await res.json()) as ProviderSummary[];
+    if (!Array.isArray(providers)) return [];
+    return providers.filter((p) => p?.abbreviation);
   } catch (e) {
-    console.warn('[rankings-landing] bundle fetch failed:', e);
+    console.warn('[rankings-landing] providers fetch failed:', e);
     return [];
   }
 }
@@ -44,13 +39,13 @@ export function renderRankingsLanding(container: HTMLElement) {
   loading.textContent = 'Loading available rank lists…';
   container.appendChild(loading);
 
-  fetchAvailableBundles().then((bundles) => {
+  fetchProviders().then((providers) => {
     container.innerHTML = '';
-    container.appendChild(buildLandingRoot(bundles));
+    container.appendChild(buildLandingRoot(providers));
   });
 }
 
-function buildLandingRoot(bundles: BundleSummary[]): HTMLElement {
+function buildLandingRoot(providers: ProviderSummary[]): HTMLElement {
   const root = document.createElement('div');
   root.className = 'rk-root';
 
@@ -69,7 +64,7 @@ function buildLandingRoot(bundles: BundleSummary[]): HTMLElement {
 
   root.appendChild(header);
 
-  if (bundles.length === 0) {
+  if (providers.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'rk-not-found';
     empty.textContent =
@@ -77,7 +72,7 @@ function buildLandingRoot(bundles: BundleSummary[]): HTMLElement {
       'or no provider has ingested results yet. Try again in a moment, or contact the operator.';
     root.appendChild(empty);
   } else {
-    root.appendChild(buildAvailableSection(bundles));
+    root.appendChild(buildAvailableSection(providers));
   }
 
   // Intentionally NO methodology footer here. Each provider chooses its
@@ -91,36 +86,26 @@ function buildLandingRoot(bundles: BundleSummary[]): HTMLElement {
   return root;
 }
 
-function buildAvailableSection(bundles: BundleSummary[]): HTMLElement {
+function buildAvailableSection(providers: ProviderSummary[]): HTMLElement {
   const section = document.createElement('section');
   section.className = 'rk-panel';
 
   const heading = document.createElement('h2');
   heading.className = 'rk-panel-title';
-  heading.textContent = `Available rank lists (${bundles.length})`;
+  heading.textContent = `Available rank lists (${providers.length})`;
   section.appendChild(heading);
 
   const list = document.createElement('ul');
   list.className = 'rk-landing-list';
-  for (const b of bundles) {
+  for (const p of providers) {
     const li = document.createElement('li');
     li.className = 'rk-landing-item';
 
     const link = document.createElement('a');
     link.className = 'rk-landing-link';
-    link.href = `#/rankings/${b.provider.abbreviation}`;
-    link.textContent = `${b.provider.name} (${b.provider.abbreviation})`;
+    link.href = `#/rankings/${p.abbreviation}`;
+    link.textContent = `${p.name} (${p.abbreviation})`;
     li.appendChild(link);
-
-    const meta = document.createElement('div');
-    meta.className = 'rk-landing-meta';
-    const men = b.rankings?.men?.entries?.length ?? 0;
-    const women = b.rankings?.women?.entries?.length ?? 0;
-    const tournaments = b.tournaments?.length ?? 0;
-    meta.textContent =
-      `As of ${b.asOfDate} · ${tournaments} tournament${tournaments === 1 ? '' : 's'}` +
-      ` · ${men} men ranked · ${women} women ranked`;
-    li.appendChild(meta);
 
     list.appendChild(li);
   }
