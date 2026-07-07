@@ -82,6 +82,6 @@
     "svelte": "^5.55.1",
     "tabulator-tables": "6.5.2",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "6.4.0"
+    "tods-competition-factory": "6.5.0"
   }
 }
