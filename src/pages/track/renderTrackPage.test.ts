@@ -25,7 +25,15 @@ vi.mock('src/services/api/tournamentsApi', () => ({
 
 import { __test__ } from './renderTrackPage';
 
-const { resolveShareToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot, CROWD_RELAY_LOCAL_DEFAULT } = __test__;
+const {
+  resolveShareToken,
+  resolveCrowdRelayBaseUrl,
+  resolveCrowdRelaySocketPath,
+  toCrowdScoreSnapshot,
+  CROWD_RELAY_LOCAL_DEFAULT,
+  RELAY_SOCKET_PATH_DEFAULT,
+  RELAY_SOCKET_PATH_PROXIED,
+} = __test__;
 
 interface LocalStorageStub {
   store: Record<string, string>;
@@ -150,6 +158,16 @@ describe('resolveShareToken', () => {
   });
 });
 
+const PROD_HOST = 'courthive.net';
+
+function stubLocation(host: string, hostname: string): void {
+  Object.defineProperty(globalThis, 'location', {
+    value: { host, hostname, hash: '' },
+    configurable: true,
+    writable: true,
+  });
+}
+
 describe('resolveCrowdRelayBaseUrl', () => {
   // import.meta.env is read-only via the proxy; backstop with a vi.stubGlobal
   // is unreliable, so verify the fallback paths instead. Vite injects
@@ -167,14 +185,6 @@ describe('resolveCrowdRelayBaseUrl', () => {
     });
   });
 
-  function stubLocation(host: string, hostname: string): void {
-    Object.defineProperty(globalThis, 'location', {
-      value: { host, hostname, hash: '' },
-      configurable: true,
-      writable: true,
-    });
-  }
-
   it('falls back to the local-default when on localhost and no env var is set', () => {
     stubLocation('localhost:5174', 'localhost');
     const url = resolveCrowdRelayBaseUrl();
@@ -189,7 +199,7 @@ describe('resolveCrowdRelayBaseUrl', () => {
   });
 
   it('falls back to https://courthive.net in non-local hosts without env var', () => {
-    stubLocation('courthive.net', 'courthive.net');
+    stubLocation(PROD_HOST, PROD_HOST);
     if (!import.meta.env?.VITE_SCORE_RELAY_URL) {
       expect(resolveCrowdRelayBaseUrl()).toBe('https://courthive.net');
     }
@@ -197,6 +207,38 @@ describe('resolveCrowdRelayBaseUrl', () => {
 
   it('exposes CROWD_RELAY_LOCAL_DEFAULT on port 8384 (matches score-relay RELAY_PORT)', () => {
     expect(CROWD_RELAY_LOCAL_DEFAULT).toBe('http://localhost:8384');
+  });
+});
+
+describe('resolveCrowdRelaySocketPath', () => {
+  let originalLocation: any;
+  beforeEach(() => {
+    originalLocation = globalThis.location;
+  });
+  afterEach(() => {
+    Object.defineProperty(globalThis, 'location', {
+      value: originalLocation,
+      configurable: true,
+      writable: true,
+    });
+  });
+
+  it('uses the default /socket.io/ path on localhost', () => {
+    stubLocation('localhost:5174', 'localhost');
+    if (!import.meta.env?.VITE_SCORE_RELAY_URL) {
+      expect(resolveCrowdRelaySocketPath()).toBe(RELAY_SOCKET_PATH_DEFAULT);
+    }
+  });
+
+  it('uses the nginx-proxied /relay/socket.io/ path on prod hosts without an env override', () => {
+    // Regression: a default-path handshake to https://courthive.net lands on
+    // CFS (no /crowd namespace) → "Invalid namespace"; the relay is reachable
+    // only under /relay/.
+    stubLocation(PROD_HOST, PROD_HOST);
+    if (!import.meta.env?.VITE_SCORE_RELAY_URL) {
+      expect(resolveCrowdRelaySocketPath()).toBe(RELAY_SOCKET_PATH_PROXIED);
+      expect(RELAY_SOCKET_PATH_PROXIED).toBe('/relay/socket.io/');
+    }
   });
 });
 

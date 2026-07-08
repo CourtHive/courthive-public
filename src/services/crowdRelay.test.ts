@@ -60,6 +60,19 @@ describe('connectCrowdRelay', () => {
     expect(lastIoArgs?.opts?.auth).toEqual({ token: 'tok-abc' });
   });
 
+  it('defaults the Socket.IO transport path to /socket.io/ when none is given', () => {
+    connectCrowdRelay({ token: 't', baseUrl: 'http://localhost:8384' });
+    expect(lastIoArgs?.opts?.path).toBe('/socket.io/');
+  });
+
+  it('forwards an explicit socketPath (prod nginx exposes the relay under /relay/)', () => {
+    // Without this, a same-origin default-path handshake lands on CFS and
+    // fails with "Invalid namespace" — no crowd scores reach the relay in prod.
+    connectCrowdRelay({ token: 't', baseUrl: 'https://courthive.net', socketPath: '/relay/socket.io/' });
+    expect(lastIoArgs?.url).toBe('https://courthive.net/crowd');
+    expect(lastIoArgs?.opts?.path).toBe('/relay/socket.io/');
+  });
+
   it('strips a trailing slash callers might forget on the base URL', () => {
     // The relay itself doesn't strip — that's resolveCrowdRelayBaseUrl's job.
     // Verify the relay passes the URL through unchanged so callers control it.

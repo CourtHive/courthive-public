@@ -26,6 +26,8 @@ import { getJwtTokenStorageKey } from 'src/config/localStorage';
 
 const PERSIST_DEBOUNCE_MS = 200;
 const CROWD_RELAY_LOCAL_DEFAULT = 'http://localhost:8384';
+const RELAY_SOCKET_PATH_DEFAULT = '/socket.io/';
+const RELAY_SOCKET_PATH_PROXIED = '/relay/socket.io/';
 const ARIA_PRESSED = 'aria-pressed';
 const SHARE_LABEL_OFF = 'Sign in to share — OFF';
 
@@ -275,10 +277,12 @@ function wireShareToggle({ chrome, tournamentId, matchUpId, matchUpFormat }: Wir
       return;
     }
     const baseUrl = resolveCrowdRelayBaseUrl();
+    const socketPath = resolveCrowdRelaySocketPath();
     const session = startShareSession({
       token: resolved.token,
       scorer: resolved.scorer,
       baseUrl,
+      socketPath,
       tournamentId,
       matchUpId,
       matchUpFormat,
@@ -297,6 +301,7 @@ function wireShareToggle({ chrome, tournamentId, matchUpId, matchUpFormat }: Wir
 interface StartShareSessionParams {
   token: string;
   baseUrl: string;
+  socketPath: string;
   tournamentId: string;
   matchUpId: string;
   matchUpFormat: string;
@@ -305,8 +310,8 @@ interface StartShareSessionParams {
 }
 
 function startShareSession(params: StartShareSessionParams): ShareSessionState {
-  const { token, baseUrl, tournamentId, matchUpId, matchUpFormat, shareStatus, scorer } = params;
-  const controller = connectCrowdRelay({ token, baseUrl });
+  const { token, baseUrl, socketPath, tournamentId, matchUpId, matchUpFormat, shareStatus, scorer } = params;
+  const controller = connectCrowdRelay({ token, baseUrl, socketPath });
   const sessionId = generateId('crowd-session');
   const clientId = resolveClientId();
   const state: ShareSessionState = {
@@ -456,6 +461,24 @@ function resolveCrowdRelayBaseUrl(): string {
   return 'https://courthive.net';
 }
 
+/**
+ * Resolve the Socket.IO transport path for the `/crowd` connection, branch-for-
+ * branch with `resolveCrowdRelayBaseUrl`. In production the relay is exposed by
+ * nginx ONLY under `/relay/`, so the transport path must carry that prefix; a
+ * default-path handshake to `https://courthive.net` lands on CFS and fails with
+ * "Invalid namespace" (no `/crowd` namespace there). An explicit
+ * `VITE_SCORE_RELAY_URL` points straight at a relay origin serving the default
+ * path, and localhost dev runs the relay standalone on :8384.
+ */
+function resolveCrowdRelaySocketPath(): string {
+  const fromEnv = import.meta.env?.VITE_SCORE_RELAY_URL;
+  if (typeof fromEnv === 'string' && fromEnv.length > 0) return RELAY_SOCKET_PATH_DEFAULT;
+  const local =
+    globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
+  if (local) return RELAY_SOCKET_PATH_DEFAULT;
+  return RELAY_SOCKET_PATH_PROXIED;
+}
+
 function resolveClientId(): string {
   try {
     const KEY = 'courthive-public:clientId';
@@ -483,8 +506,11 @@ function generateId(prefix: string): string {
 export const __test__ = {
   resolveShareToken,
   resolveCrowdRelayBaseUrl,
+  resolveCrowdRelaySocketPath,
   toCrowdScoreSnapshot,
   CROWD_RELAY_LOCAL_DEFAULT,
+  RELAY_SOCKET_PATH_DEFAULT,
+  RELAY_SOCKET_PATH_PROXIED,
 };
 
 interface ResolvedMatchUpMetadata {

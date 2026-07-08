@@ -121,9 +121,18 @@ export interface ConnectCrowdRelayOptions {
   token: string;
   /** Base URL for the score-relay server (no trailing slash, no namespace). */
   baseUrl: string;
+  /**
+   * Socket.IO transport path. Defaults to `/socket.io/`. In production the
+   * relay is nginx-proxied under `/relay/`, so the caller passes
+   * `/relay/socket.io/` — a default-path handshake to the same origin lands on
+   * CFS instead and fails with "Invalid namespace". Dev (standalone relay on
+   * :8384) uses the default.
+   */
+  socketPath?: string;
 }
 
 const NAMESPACE_PATH = '/crowd';
+const DEFAULT_SOCKET_PATH = '/socket.io/';
 
 /**
  * Open a Socket.IO connection to `${baseUrl}/crowd` and return a controller
@@ -134,13 +143,14 @@ const NAMESPACE_PATH = '/crowd';
  * preserved across reconnects so resume picks up where it left off.
  */
 export function connectCrowdRelay(options: ConnectCrowdRelayOptions): CrowdRelayController {
-  const { token, baseUrl } = options;
+  const { token, baseUrl, socketPath } = options;
   const listeners = new Map<CrowdRelayEvent, Set<Listener>>();
   const versionBySession = new Map<string, number>();
   const controller: CrowdRelayController = createControllerSkeleton();
 
   const socket = io(`${baseUrl}${NAMESPACE_PATH}`, {
     auth: { token },
+    path: socketPath ?? DEFAULT_SOCKET_PATH,
     reconnectionDelay: 1000,
     reconnectionAttempts: Infinity,
     timeout: 20000,
