@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
 overrides:
+  typescript: 6.0.3 # block native TS7 (no classic JS API — crashes tsc/nest/sonarjs); pairs with renovate TS-major block
   '@courthive/provider-config': link:../provider-config
   courthive-components: link:../courthive-components
   tods-competition-factory: link:../factory
