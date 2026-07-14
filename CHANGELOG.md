@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.8.1](https://github.com/CourtHive/courthive-public/compare/v1.8.0...v1.8.1) (2026-07-14)
+
+
+### Bug Fixes
+
+* **crowd:** connect /crowd via /relay/socket.io/ path in production ([d4472bc](https://github.com/CourtHive/courthive-public/commit/d4472bc81de45bcd6ab663dd2772ae8786513ab5))
+* **deps:** pin typescript to 6.0.3 to block native ts7 ([656471a](https://github.com/CourtHive/courthive-public/commit/656471ae682578810134abe643efbbf564caf99d))
+* **deps:** update tods-competition-factory to 6.2.0 ([43db5d7](https://github.com/CourtHive/courthive-public/commit/43db5d76b017b497de362b07c079a369bad940e9))
+* **deps:** update tods-competition-factory to 6.3.0 ([a771144](https://github.com/CourtHive/courthive-public/commit/a771144b01cea37bdb6d23567145d28e96aa4a12))
+* **deps:** update tods-competition-factory to 6.4.0 ([c5491c2](https://github.com/CourtHive/courthive-public/commit/c5491c2f44bc10a63a987d4bb69472d1ef9d9b6b))
+* **deps:** update tods-competition-factory to 6.5.0 ([649d80f](https://github.com/CourtHive/courthive-public/commit/649d80f3eb5c25e8632833b5db1474b9612844b4))
+* **deps:** update tods-competition-factory to 6.6.0 ([3fdb5b5](https://github.com/CourtHive/courthive-public/commit/3fdb5b58bfeb396a829a00dc15c27e2fbe4d95ca))
+* **deps:** update tods-competition-factory to 6.7.0 ([f38a096](https://github.com/CourtHive/courthive-public/commit/f38a0964a467e2e1ece3ccad89e0e93a8b6f65c6))
+* **tournament:** render splash dates as calendar days (timezone-independent) ([#447](https://github.com/CourtHive/courthive-public/issues/447)) ([e03eaf5](https://github.com/CourtHive/courthive-public/commit/e03eaf525f3ca03828ba99ab5db31f615a351fce))
+
 ## [1.8.0](https://github.com/CourtHive/courthive-public/compare/v1.7.0...v1.8.0) (2026-07-04)
 
 
