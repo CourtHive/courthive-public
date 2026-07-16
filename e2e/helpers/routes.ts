@@ -57,6 +57,9 @@ export interface MockOptions {
  */
 const API = 'http://localhost:8383';
 
+/** Seeded canonical personId shared by the HiveID mocks and the session seed. */
+const PERSON_E2E = 'person-e2e';
+
 export async function installApiMocks(page: Page, fixture: PublicTournamentFixture, opts: MockOptions = {}) {
   // Kill the live Socket.IO channel — no server in hermetic mode.
   await page.route(`${API}/socket.io/**`, (route) => route.abort());
@@ -156,7 +159,7 @@ export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions
   });
   await page.route(`${API}/auth/hiveid/me/participations`, (route) => {
     if (handledPreflight(route)) return;
-    void json(route, opts.participations ?? { personId: 'person-e2e', participations: [] });
+    void json(route, opts.participations ?? { personId: PERSON_E2E, participations: [] });
   });
   await page.route(`${API}/me/registrations`, (route) => {
     if (handledPreflight(route)) return;
@@ -166,6 +169,70 @@ export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions
     if (handledPreflight(route)) return;
     void json(route, { success: true, status: opts.resendStatus ?? 'sent' });
   });
+}
+
+/**
+ * Origin the courthive-declarations client targets in dev. `declarationsApi.ts`
+ * resolves to this whenever the page host is localhost/127.0.0.1, independent of
+ * the CFS origin. Player availability + consent land here — a different service
+ * from CFS, so it gets its own mock surface.
+ */
+const DECLARATIONS = 'http://localhost:3110';
+
+export interface DeclarationsMockState {
+  /** The payload captured by the most recent PUT /me/availability, or null. */
+  savedAvailability: () => any;
+  /** The consent record currently held by the mock, or null. */
+  savedConsent: () => any;
+}
+
+/**
+ * Stateful mock of the declarations service. GET reflects what a prior PUT
+ * stored, so the consent gate opens after consent is granted and the grid
+ * reloads the saved availability. `requireGuardian` makes PUT /me/consent
+ * reject (403 PARENTAL_CONSENT_REQUIRED) until a guardian email is supplied —
+ * exercising the minor/parental reveal path.
+ */
+export async function installDeclarationsMocks(
+  page: Page,
+  opts: { initialConsent?: any; requireGuardian?: boolean } = {},
+): Promise<DeclarationsMockState> {
+  let consent: any = opts.initialConsent ?? null;
+  let availability: any = null;
+
+  await page.route(`${DECLARATIONS}/me/consent**`, (route) => {
+    if (handledPreflight(route)) return;
+    if (route.request().method() === 'GET') {
+      void json(route, consent);
+      return;
+    }
+    const body: any = route.request().postDataJSON() ?? {};
+    const hasGuardian = !!body.guardian?.email;
+    if (opts.requireGuardian && !hasGuardian) {
+      void json(route, { code: 'PARENTAL_CONSENT_REQUIRED', message: 'guardian required' }, 403);
+      return;
+    }
+    consent = {
+      consentVersion: body.consentVersion ?? 'v1',
+      isMinor: !!opts.requireGuardian,
+      guardian: hasGuardian ? body.guardian : null,
+      revokedAt: null,
+    };
+    void json(route, consent);
+  });
+
+  await page.route(`${DECLARATIONS}/me/availability**`, (route) => {
+    if (handledPreflight(route)) return;
+    if (route.request().method() === 'GET') {
+      void json(route, availability);
+      return;
+    }
+    const payload: any = route.request().postDataJSON() ?? {};
+    availability = { personId: PERSON_E2E, providerId: 'BOBOCA', status: 'CURRENT', payload, updatedAt: '2026-08-01T00:00:00.000Z' };
+    void json(route, availability);
+  });
+
+  return { savedAvailability: () => availability, savedConsent: () => consent };
 }
 
 export interface VerifyEmailMockOptions {
@@ -201,7 +268,7 @@ export async function seedHiveIDSessionInitScript(
   session: Record<string, unknown> = {
     token: 'e2e.hiveid.token',
     refreshToken: 'e2e.refresh',
-    personId: 'person-e2e',
+    personId: PERSON_E2E,
     cached: {
       standardGivenName: 'Pat',
       standardFamilyName: 'Player',
