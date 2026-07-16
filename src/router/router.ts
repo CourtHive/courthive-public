@@ -6,6 +6,7 @@ import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
 import { renderVerifyEmail } from 'src/pages/me/renderVerifyEmail';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
+import { renderAvailability } from 'src/pages/me/renderAvailability';
 import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderDefaultPage } from 'src/pages/courthive/default';
@@ -179,6 +180,18 @@ export function router() {
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
     });
+  });
+
+  // Register the more specific availability route before /me so the exact-match
+  // /me handler never shadows it.
+  router.on('/me/availability/:providerAbbr', (match) => {
+    console.log('[router] matched: /me/availability/:providerAbbr', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_ME);
+    const container = document.getElementById(HIVEID_ME);
+    if (container) renderAvailability(container, match?.data?.providerAbbr ?? '');
   });
 
   router.on('/me', () => {

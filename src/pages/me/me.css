@@ -140,6 +140,12 @@
   margin-bottom: 0.75rem;
 }
 
+.chp-me-intro {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin: 0 0 0.75rem;
+}
+
 .chp-me-input {
   flex: 1;
   padding: 0.5rem 0.625rem;

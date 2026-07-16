@@ -121,6 +121,9 @@ export function renderMyCourtHive(container: HTMLElement): void {
   const registrations = renderRegistrationsSection();
   shell.appendChild(registrations.section);
 
+  const availabilityEntry = renderAvailabilityEntrySection();
+  shell.appendChild(availabilityEntry.section);
+
   const participations = renderParticipationsSection();
   shell.appendChild(participations.section);
 
@@ -512,6 +515,44 @@ function renderVerificationSection(): { section: HTMLElement; refresh: () => Pro
   }
 
   return { section, refresh };
+}
+
+// Availability entry point. The /me hub isn't provider-scoped, but availability
+// is keyed per person+provider — so the player picks a provider (prefilled from
+// the last one they browsed) and we navigate to the provider-scoped page. A
+// richer server-driven "my providers" list is a follow-up.
+function renderAvailabilityEntrySection(): { section: HTMLElement } {
+  const section = document.createElement('section');
+  section.className = SECTION_CLASS;
+  const sectionTitle = document.createElement('h2');
+  sectionTitle.textContent = 'Availability';
+  section.appendChild(sectionTitle);
+
+  const intro = document.createElement('p');
+  intro.className = 'chp-me-intro';
+  intro.textContent = 'Tell a provider which days you can play, so they can schedule your matches around you.';
+  section.appendChild(intro);
+
+  const form = document.createElement('form');
+  form.className = 'chp-me-claim-form';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.required = true;
+  input.className = 'chp-me-input';
+  input.placeholder = 'provider (e.g. BOBOCA)';
+  if (context.providerAbbr) input.value = context.providerAbbr;
+  const submit = document.createElement('button');
+  submit.type = 'submit';
+  submit.className = BUTTON_CLASS;
+  submit.textContent = 'Set availability';
+  form.append(input, submit);
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    const provider = input.value.trim().toUpperCase();
+    if (provider) context.router?.navigate(`/me/availability/${encodeURIComponent(provider)}`);
+  };
+  section.appendChild(form);
+  return { section };
 }
 
 function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Promise<void> } {
