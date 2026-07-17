@@ -61,7 +61,25 @@ export function rootBlock() {
       context.router?.navigate('/me');
       return;
     }
-    const shell = buildHiveIDLogin({ cfsBaseUrl: getCfsBaseUrl(), mode: 'login' });
+    const shell = buildHiveIDLogin({
+      cfsBaseUrl: getCfsBaseUrl(),
+      mode: 'login',
+      // Optional federation-id capture on signup: a person who quotes an existing
+      // trusted-provider id (e.g. their BOBOCA player id) is RESOLVED to their
+      // canonical person at signup — the only way the name-only signup fragment can
+      // acquire a personId. Without this, a fresh signup returns `incomplete`.
+      // Provider list is the backfill's trusted-provider set; can later come from a
+      // providers endpoint.
+      federationIdCapture: {
+        providers: [
+          { value: 'BOBOCA', label: 'BOBOCA' },
+          { value: 'HTS', label: 'HTS' },
+          { value: 'CTS', label: 'CTS' },
+        ],
+        idLabel: 'Player ID',
+        note: 'Already have a player ID from your club or federation? Enter it to link your existing record.',
+      },
+    });
     cModal.open({
       title: 'Sign in to CourtHive',
       content: (elem: HTMLElement) => {
