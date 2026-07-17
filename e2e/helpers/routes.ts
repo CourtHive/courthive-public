@@ -177,7 +177,7 @@ export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions
  * the CFS origin. Player availability + consent land here — a different service
  * from CFS, so it gets its own mock surface.
  */
-const DECLARATIONS = 'http://localhost:3110';
+const DECLARATIONS = 'http://localhost:3120';
 
 export interface DeclarationsMockState {
   /** The payload captured by the most recent PUT /me/availability, or null. */

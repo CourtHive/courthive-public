@@ -45,7 +45,7 @@ export function getDeclarationsBaseUrl(): string {
   const loc = win.location;
   const host = loc?.host ?? '';
   const local = host.includes('localhost') || loc?.hostname === '127.0.0.1';
-  return win.dev?.declarationsURL || (local ? 'http://localhost:3110' : 'https://courthive.net/declarations');
+  return win.dev?.declarationsURL || (local ? 'http://localhost:3120' : 'https://courthive.net/declarations');
 }
 
 function authHeaders(): Record<string, string> | null {

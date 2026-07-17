@@ -63,6 +63,6 @@ describe('declarationsApi', () => {
   });
 
   it('resolves a localhost declarations base URL in dev', () => {
-    expect(getDeclarationsBaseUrl()).toContain('3110');
+    expect(getDeclarationsBaseUrl()).toContain('3120');
   });
 });
