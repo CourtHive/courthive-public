@@ -2,7 +2,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 vi.mock('./hiveidSession', () => ({ readHiveIDSession: vi.fn() }));
 
-import { fetchMyAvailability, getDeclarationsBaseUrl, recordMyConsent, saveMyAvailability } from './declarationsApi';
+import {
+  fetchMyAvailability,
+  fetchMyRegistration,
+  getDeclarationsBaseUrl,
+  recordMyConsent,
+  saveMyAvailability,
+  submitRegistration,
+  withdrawRegistration,
+} from './declarationsApi';
 import { readHiveIDSession } from './hiveidSession';
 
 const SESSION: any = { token: 'jwt-1', personId: 'p1', cached: {} };
@@ -64,5 +72,29 @@ describe('declarationsApi', () => {
 
   it('resolves a localhost declarations base URL in dev', () => {
     expect(getDeclarationsBaseUrl()).toContain('3120');
+  });
+
+  it('submitRegistration PUTs the payload to /me/registrations/:tournamentId', async () => {
+    (readHiveIDSession as any).mockReturnValue(SESSION);
+    const fetchMock = vi.fn().mockResolvedValue(okJson({ status: 'SUBMITTED' }));
+    vi.stubGlobal('fetch', fetchMock);
+    await submitRegistration('BOBOCA', 't1', { eventIds: ["Men's Singles"] });
+    const [url, opts] = fetchMock.mock.calls[0];
+    expect(url).toContain('/me/registrations/t1?provider=BOBOCA');
+    expect(opts.method).toBe('PUT');
+    expect(JSON.parse(opts.body)).toEqual({ eventIds: ["Men's Singles"] });
+  });
+
+  it('fetchMyRegistration returns null when not signed in', async () => {
+    (readHiveIDSession as any).mockReturnValue(null);
+    expect(await fetchMyRegistration('BOBOCA', 't1')).toBeNull();
+  });
+
+  it('withdrawRegistration issues a DELETE', async () => {
+    (readHiveIDSession as any).mockReturnValue(SESSION);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200 });
+    vi.stubGlobal('fetch', fetchMock);
+    await withdrawRegistration('BOBOCA', 't1');
+    expect(fetchMock.mock.calls[0][1].method).toBe('DELETE');
   });
 });

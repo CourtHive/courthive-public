@@ -9,6 +9,8 @@
  */
 import { readHiveIDSession } from './hiveidSession';
 
+const NOT_SIGNED_IN = 'Not signed in';
+
 export type DayState = 'AVAILABLE' | 'IF_NEEDED' | 'UNAVAILABLE'; // absent from `days` = NOT_SET
 
 export interface AvailabilityPayload {
@@ -58,6 +60,10 @@ function providerQuery(provider: string): string {
   return `provider=${encodeURIComponent(provider)}`;
 }
 
+function registrationUrl(tournamentId: string, provider: string): string {
+  return `${getDeclarationsBaseUrl()}/me/registrations/${encodeURIComponent(tournamentId)}?${providerQuery(provider)}`;
+}
+
 export async function fetchMyAvailability(provider: string): Promise<AvailabilitySnapshot | null> {
   const headers = authHeaders();
   if (!headers) return null;
@@ -72,7 +78,7 @@ export async function saveMyAvailability(
   payload: AvailabilityPayload,
 ): Promise<AvailabilitySnapshot> {
   const headers = authHeaders();
-  if (!headers) throw new Error('Not signed in');
+  if (!headers) throw new Error(NOT_SIGNED_IN);
   const res = await fetch(`${getDeclarationsBaseUrl()}/me/availability?${providerQuery(provider)}`, {
     method: 'PUT',
     headers,
@@ -93,7 +99,7 @@ export async function fetchMyConsent(provider: string): Promise<ConsentRecord | 
 
 export async function recordMyConsent(provider: string, input: RecordConsentInput): Promise<ConsentRecord> {
   const headers = authHeaders();
-  if (!headers) throw new Error('Not signed in');
+  if (!headers) throw new Error(NOT_SIGNED_IN);
   const res = await fetch(`${getDeclarationsBaseUrl()}/me/consent?${providerQuery(provider)}`, {
     method: 'PUT',
     headers,
@@ -101,6 +107,67 @@ export async function recordMyConsent(provider: string, input: RecordConsentInpu
   });
   if (!res.ok) throw new Error(await describeError(res));
   return (await res.json()) as ConsentRecord;
+}
+
+// ---------------------------------------------------------------------------
+//  REGISTRATION declaration type (pending application against a tournament)
+// ---------------------------------------------------------------------------
+
+export interface RegistrationPayload {
+  // Pre-activation the proposal's events have no stable ids, so `eventIds` holds
+  // the event names; acceptance maps them to the activated eventIds. partner /
+  // notes / answers are free-form.
+  eventIds: string[];
+  partner?: { userId?: string; personId?: string; email?: string } | null;
+  notes?: string;
+  answers?: Record<string, unknown>;
+}
+
+export interface RegistrationSnapshot {
+  personId: string;
+  providerId: string;
+  tournamentId: string | null;
+  status: string;
+  payload: RegistrationPayload;
+  updatedAt: string;
+}
+
+export async function fetchMyRegistration(provider: string, tournamentId: string): Promise<RegistrationSnapshot | null> {
+  const headers = authHeaders();
+  if (!headers) return null;
+  const res = await fetch(
+    registrationUrl(tournamentId, provider),
+    { headers },
+  );
+  if (res.status === 401) return null;
+  if (!res.ok) throw new Error(`fetchMyRegistration failed: HTTP ${res.status}`);
+  const body = await res.json().catch(() => null);
+  return body && typeof body === 'object' ? (body as RegistrationSnapshot) : null;
+}
+
+export async function submitRegistration(
+  provider: string,
+  tournamentId: string,
+  payload: RegistrationPayload,
+): Promise<RegistrationSnapshot> {
+  const headers = authHeaders();
+  if (!headers) throw new Error(NOT_SIGNED_IN);
+  const res = await fetch(
+    registrationUrl(tournamentId, provider),
+    { method: 'PUT', headers, body: JSON.stringify(payload) },
+  );
+  if (!res.ok) throw new Error(await describeError(res));
+  return (await res.json()) as RegistrationSnapshot;
+}
+
+export async function withdrawRegistration(provider: string, tournamentId: string): Promise<void> {
+  const headers = authHeaders();
+  if (!headers) return;
+  const res = await fetch(
+    registrationUrl(tournamentId, provider),
+    { method: 'DELETE', headers },
+  );
+  if (!res.ok && res.status !== 401) throw new Error(await describeError(res));
 }
 
 // Surface the service's typed error code (CONSENT_REQUIRED / PARENTAL_CONSENT_REQUIRED / …)

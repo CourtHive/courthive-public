@@ -235,6 +235,55 @@ export async function installDeclarationsMocks(
   return { savedAvailability: () => availability, savedConsent: () => consent };
 }
 
+/** AMS server origin the public app targets in dev (sanctioning public read). */
+const AMS = 'http://localhost:3130';
+
+export interface ProposalRegistrationMockState {
+  /** The registration held by the mock (after a PUT), or null. */
+  savedRegistration: () => any;
+}
+
+/**
+ * Mock the proposal registration page's two backends: the AMS public read
+ * (`GET /sanctioning/registration/:tournamentId` → the supplied view) and the
+ * declarations REGISTRATION endpoints (`/me/registrations/:tournamentId` GET/PUT/
+ * DELETE, stateful so a submit is reflected on the next read).
+ */
+export async function installProposalRegistrationMocks(page: Page, view: any): Promise<ProposalRegistrationMockState> {
+  let registration: any = null;
+
+  await page.route(`${AMS}/sanctioning/registration/**`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, view);
+  });
+
+  await page.route(`${DECLARATIONS}/me/registrations/**`, (route) => {
+    if (handledPreflight(route)) return;
+    const method = route.request().method();
+    if (method === 'GET') {
+      void json(route, registration);
+      return;
+    }
+    if (method === 'DELETE') {
+      registration = registration ? { ...registration, status: 'WITHDRAWN' } : null;
+      void json(route, registration);
+      return;
+    }
+    const payload: any = route.request().postDataJSON() ?? {};
+    registration = {
+      personId: 'person-e2e',
+      providerId: view.provider,
+      tournamentId: view.tournamentId,
+      status: 'SUBMITTED',
+      payload,
+      updatedAt: '2027-01-01T00:00:00.000Z',
+    };
+    void json(route, registration);
+  });
+
+  return { savedRegistration: () => registration };
+}
+
 export interface VerifyEmailMockOptions {
   /** When false, fail the POST with `status` + `message` to drive the error landing. */
   ok?: boolean;

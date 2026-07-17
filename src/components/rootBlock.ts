@@ -1,7 +1,7 @@
 import 'src/pages/track/track-page.css';
 import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
@@ -137,6 +137,10 @@ export function rootBlock() {
   rankings.style.display = 'none';
   rankings.id = RANKINGS;
 
+  const register = document.createElement('div');
+  register.style.display = 'none';
+  register.id = REGISTER;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
   main.appendChild(track);
@@ -144,6 +148,7 @@ export function rootBlock() {
   main.appendChild(hiveidMe);
   main.appendChild(hiveidMagic);
   main.appendChild(rankings);
+  main.appendChild(register);
 
   return main;
 }

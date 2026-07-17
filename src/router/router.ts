@@ -9,12 +9,13 @@ import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
 import { renderAvailability } from 'src/pages/me/renderAvailability';
 import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
+import { renderProposalRegistration } from 'src/pages/register/renderProposalRegistration';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -128,6 +129,16 @@ export function router() {
     setDisplay(RANKINGS);
     const container = document.getElementById(RANKINGS);
     if (container) renderRankingsPage(container, providerAbbr);
+  });
+
+  router.on('/register/:tournamentId', (match) => {
+    console.log('[router] matched: /register/:tournamentId', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(REGISTER);
+    const container = document.getElementById(REGISTER);
+    if (container) renderProposalRegistration(container, match?.data?.tournamentId ?? '');
   });
 
   router.on('/tournament/:tournamentId/event/:eventId/draw/:drawId/structure/:structureId', (match) => {
