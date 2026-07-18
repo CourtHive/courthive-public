@@ -1,4 +1,10 @@
-import { installApiMocks, installProposalRegistrationMocks, seedHiveIDSessionInitScript } from '../helpers/routes';
+import {
+  installApiMocks,
+  installDeclarationsMocks,
+  installHiveIDSignupMock,
+  installProposalRegistrationMocks,
+  seedHiveIDSessionInitScript,
+} from '../helpers/routes';
 import { buildPublishedTournament } from '../helpers/fixtures';
 import { test, expect } from '@playwright/test';
 
@@ -6,7 +12,8 @@ import { test, expect } from '@playwright/test';
  * Proposal registration page (`/#/register/:tournamentId`). Renders from a
  * sanctioning proposal (AMS public read) — before the tournamentRecord exists —
  * and lets a signed-in person submit a REGISTRATION declaration. An unauthenticated
- * visitor is prompted to sign in.
+ * visitor onboards inline: consent notice + checkbox → create-account (mint-on-signup
+ * carrying the tournament's provider) → consent recorded → registration form.
  */
 const REGISTER = '#register';
 const TID = 'tid-1';
@@ -49,11 +56,49 @@ test.describe('Proposal registration', () => {
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain(MENS);
   });
 
-  test('an unauthenticated visitor is prompted to sign in', async ({ page }) => {
+  test('an unauthenticated visitor sees the inline create-account panel', async ({ page }) => {
     await bootstrap(page);
     await page.goto(`/#/register/${TID}`);
     const shell = page.locator(REGISTER);
     await expect(shell).toContainText(NAME);
-    await expect(shell).toContainText(/sign in .* to register/i);
+    // Consent notice is shown first; DOB/sex/signup fields are gated behind the checkbox.
+    await expect(shell).toContainText(/consent to CourtHive collecting/i);
+    await expect(shell.locator('.chp-reg-create-shell')).toBeHidden();
+  });
+
+  test('a brand-new person onboards inline: consent → create account → register', async ({ page }) => {
+    const reg = await bootstrap(page);
+    const decl = await installDeclarationsMocks(page);
+    const signupMock = await installHiveIDSignupMock(page, { personId: 'person-e2e' });
+
+    await page.goto(`/#/register/${TID}`);
+    const shell = page.locator(REGISTER);
+    await expect(shell).toContainText(NAME);
+
+    // 1. Consent gate — the signup shell is hidden until the notice is acknowledged.
+    const createShell = shell.locator('.chp-reg-create-shell');
+    await expect(createShell).toBeHidden();
+    await shell.locator('.chp-reg-check input[type="checkbox"]').check();
+    await expect(createShell).toBeVisible();
+
+    // 2. Fill the create-account form (name/email/DOB/sex) and submit.
+    await createShell.locator('#chc-hil-firstName').fill('Jamie');
+    await createShell.locator('#chc-hil-lastName').fill('Rivera');
+    await createShell.locator('#chc-hil-email').fill('jamie@example.com');
+    await createShell.locator('#chc-hil-birthDate').fill('1994-08-20');
+    await createShell.locator('#chc-hil-sex').selectOption('F');
+    await createShell.getByRole('button', { name: /create account/i }).click();
+
+    // 3. Signup forwarded DOB + sex + the tournament provider for the mint.
+    await expect.poll(() => signupMock.signupBody()?.birthDate).toBe('1994-08-20');
+    expect(signupMock.signupBody()?.sex).toBe('F');
+    expect(signupMock.signupBody()?.provider).toBe('BOBOCA');
+
+    // 4. Consent recorded post-signup, then the registration form appears.
+    await expect.poll(() => decl.savedConsent()?.consentVersion).toBe('v1');
+    await shell.getByRole('checkbox').first().check();
+    await shell.getByRole('button', { name: /^register$/i }).click();
+    await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
+    await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain(MENS);
   });
 });

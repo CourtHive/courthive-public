@@ -4,20 +4,35 @@
  * Renders from a sanctioning **proposal** (via the AMS public read), so the page
  * works BEFORE the tournamentRecord exists. A signed-in person selects events and
  * submits a REGISTRATION declaration to the declarations service (off CFS); the
- * TD accepts later, which is the only CFS touch. Inline create-account for a
- * brand-new person is a follow-up (onboarding step); today an unauthenticated
- * visitor is prompted to sign in.
+ * TD accepts later, which is the only CFS touch.
+ *
+ * A brand-new person onboards **inline** on this page (step 5): a consent notice +
+ * checkbox FIRST (decision #4 — DOB/sex only after consent), then email/name/DOB/sex
+ * → CFS signup carrying the tournament's `provider` so courthive-persons dedupes on
+ * name+DOB+sex or MINTS a canonical person anchored to that provider. On success the
+ * session is written, consent is recorded to the declarations service (keyed by the
+ * new personId; a minor reveals a guardian step), and the person can register. The
+ * embedded HiveID component also offers a "Log in" tab for returning users.
  */
 import './register.css';
 
 import { fetchProposalRegistration, type ProposalRegistrationView } from 'src/services/amsApi';
+import { readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
+import { connectHiveIDSocket } from 'src/services/hiveidSocket';
+import { buildHiveIDLogin } from 'courthive-components';
+import { getCfsBaseUrl } from 'src/services/hiveidApi';
 import {
   fetchMyRegistration,
+  recordMyConsent,
   submitRegistration,
   withdrawRegistration,
   type RegistrationSnapshot,
 } from 'src/services/declarationsApi';
-import { readHiveIDSession } from 'src/services/hiveidSession';
+
+// The authoritative consent version is a legal deliverable; 'v1' is a placeholder
+// until legal owns the policy text (COURTHIVE_PUBLIC_PRIVACY_AND_CONSENT).
+const CONSENT_VERSION = 'v1';
+const PARENTAL_CONSENT_REQUIRED = 'PARENTAL_CONSENT_REQUIRED';
 
 export function renderProposalRegistration(container: HTMLElement, tournamentId: string): void {
   container.replaceChildren();
@@ -75,18 +90,26 @@ function buildInfo(view: ProposalRegistrationView): HTMLElement {
 }
 
 async function buildForm(body: HTMLElement, view: ProposalRegistrationView, tournamentId: string): Promise<void> {
-  const session = readHiveIDSession();
   const provider = view.provider ?? '';
 
-  if (!session?.token) {
-    body.appendChild(buildEmpty('Please sign in (top right) to register for this tournament.'));
-    return;
-  }
   if (!provider) {
     body.appendChild(buildEmpty('This tournament has no provider — registration is unavailable.'));
     return;
   }
+  const session = readHiveIDSession();
+  if (!session?.token) {
+    buildCreateAccountPanel(body, view, tournamentId, provider);
+    return;
+  }
+  await buildRegistrationForm(body, view, tournamentId, provider);
+}
 
+async function buildRegistrationForm(
+  body: HTMLElement,
+  view: ProposalRegistrationView,
+  tournamentId: string,
+  provider: string,
+): Promise<void> {
   let existing: RegistrationSnapshot | null = null;
   try {
     existing = await fetchMyRegistration(provider, tournamentId);
@@ -132,6 +155,193 @@ async function buildForm(body: HTMLElement, view: ProposalRegistrationView, tour
     void doSubmit(provider, tournamentId, selected, status, submit);
   };
   body.appendChild(form);
+}
+
+// ---------------------------------------------------------------------------
+//  Inline create-account (onboarding step 5) — consent-first, then mint-on-signup
+// ---------------------------------------------------------------------------
+
+function buildCreateAccountPanel(
+  body: HTMLElement,
+  view: ProposalRegistrationView,
+  tournamentId: string,
+  provider: string,
+): void {
+  const panel = document.createElement('div');
+  panel.className = 'chp-reg-create';
+
+  const intro = document.createElement('p');
+  intro.className = 'chp-reg-create-intro';
+  intro.textContent =
+    'New to CourtHive? Create your player identity to register. Already have an account? Use the “Log in” tab below.';
+  panel.appendChild(intro);
+
+  // Consent notice + checkbox FIRST — decision #4: DOB/sex are collected only after
+  // the collection notice is acknowledged. The persisted consent record is written
+  // after signup (it is keyed by the personId the mint returns).
+  const notice = document.createElement('p');
+  notice.className = 'chp-reg-consent-notice';
+  notice.textContent =
+    `To create your player record we collect your name, email, date of birth, and sex. Your date of birth ` +
+    `and sex are used to find or create your unique player identity and are shared with ${provider} to manage ` +
+    `your entry. If you are under age, a parent or guardian must consent on your behalf.`;
+  panel.appendChild(notice);
+
+  const consent = buildCheckbox('I have read the notice and consent to CourtHive collecting this information.');
+  panel.appendChild(consent.wrap);
+
+  const shellHost = document.createElement('div');
+  shellHost.className = 'chp-reg-create-shell';
+  shellHost.hidden = true;
+
+  const gate = document.createElement('p');
+  gate.className = 'chp-reg-create-gate';
+  gate.textContent = 'Please acknowledge the notice above to continue.';
+
+  const message = document.createElement('div');
+  message.className = 'chp-reg-message';
+  message.hidden = true;
+
+  panel.append(shellHost, gate, message);
+
+  let mounted = false;
+  consent.input.onchange = () => {
+    const ok = consent.input.checked;
+    shellHost.hidden = !ok;
+    gate.hidden = ok;
+    if (ok && !mounted) {
+      mountCreateAccountShell(shellHost, view, tournamentId, provider, body, message);
+      mounted = true;
+    }
+  };
+
+  body.appendChild(panel);
+}
+
+function mountCreateAccountShell(
+  host: HTMLElement,
+  view: ProposalRegistrationView,
+  tournamentId: string,
+  provider: string,
+  body: HTMLElement,
+  message: HTMLElement,
+): void {
+  const shell = buildHiveIDLogin({
+    cfsBaseUrl: getCfsBaseUrl(),
+    mode: 'signup',
+    provider,
+    dobSexCapture: {
+      note: 'Your date of birth and sex help us find or create your player record.',
+    },
+    federationIdCapture: {
+      providers: [{ value: provider, label: provider }],
+      idLabel: `${provider} Player ID (optional)`,
+      note: `Already have a ${provider} player ID? Enter it to link your existing record instead.`,
+    },
+  });
+  host.appendChild(shell.root);
+  shell.onAuthenticated((detail) => {
+    writeHiveIDSession(detail);
+    connectHiveIDSocket();
+    void afterSignupConsent(body, view, tournamentId, provider, detail.cached?.birthDate ?? undefined, message);
+  });
+}
+
+// After signup the session carries a personId, so consent can be recorded. A minor
+// (service replies PARENTAL_CONSENT_REQUIRED) is routed to a guardian step; anything
+// else lets them proceed to the registration form.
+async function afterSignupConsent(
+  body: HTMLElement,
+  view: ProposalRegistrationView,
+  tournamentId: string,
+  provider: string,
+  birthDate: string | undefined,
+  message: HTMLElement,
+): Promise<void> {
+  try {
+    await recordMyConsent(provider, { consentVersion: CONSENT_VERSION, birthDate });
+    await buildForm(clearBody(body, view), view, tournamentId);
+  } catch (err) {
+    const code = err instanceof Error ? err.message : String(err);
+    if (code === PARENTAL_CONSENT_REQUIRED) {
+      renderGuardianStep(body, view, tournamentId, provider, birthDate);
+    } else {
+      showMessage(message, `Account created, but consent could not be recorded: ${code}`, 'error');
+    }
+  }
+}
+
+function renderGuardianStep(
+  body: HTMLElement,
+  view: ProposalRegistrationView,
+  tournamentId: string,
+  provider: string,
+  birthDate: string | undefined,
+): void {
+  const region = clearBody(body, view);
+  const form = document.createElement('form');
+  form.className = 'chp-reg-guardian';
+
+  const notice = document.createElement('p');
+  notice.className = 'chp-reg-consent-notice';
+  notice.textContent =
+    'You appear to be under age. A parent or guardian must provide their email to consent on your behalf ' +
+    'before you can register.';
+
+  const name = buildTextInput('Guardian name');
+  const email = buildTextInput('Guardian email');
+  email.input.type = 'email';
+
+  const message = document.createElement('div');
+  message.className = 'chp-reg-message';
+  message.hidden = true;
+
+  const submit = document.createElement('button');
+  submit.type = 'submit';
+  submit.className = 'chp-reg-button';
+  submit.textContent = 'Confirm guardian consent';
+
+  form.append(notice, name.wrap, email.wrap, message, submit);
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    void submitGuardianConsent({
+      provider,
+      tournamentId,
+      view,
+      body,
+      birthDate,
+      guardian: { name: name.input.value.trim(), email: email.input.value.trim() },
+      message,
+      submit,
+    });
+  };
+  region.appendChild(form);
+}
+
+async function submitGuardianConsent(args: {
+  provider: string;
+  tournamentId: string;
+  view: ProposalRegistrationView;
+  body: HTMLElement;
+  birthDate: string | undefined;
+  guardian: { name?: string; email?: string };
+  message: HTMLElement;
+  submit: HTMLButtonElement;
+}): Promise<void> {
+  const { provider, tournamentId, view, body, birthDate, guardian, message, submit } = args;
+  if (!guardian.email) {
+    showMessage(message, 'A guardian email is required.', 'error');
+    return;
+  }
+  submit.disabled = true;
+  try {
+    await recordMyConsent(provider, { consentVersion: CONSENT_VERSION, birthDate, guardian });
+    await buildForm(clearBody(body, view), view, tournamentId);
+  } catch (err) {
+    const code = err instanceof Error ? err.message : String(err);
+    showMessage(message, `Could not record consent: ${code}`, 'error');
+    submit.disabled = false;
+  }
 }
 
 function buildEventCheckbox(ev: ProposalRegistrationView['events'][number], selected: Set<string>): HTMLElement {
@@ -225,6 +435,34 @@ function buildEmpty(text: string): HTMLElement {
   empty.className = 'chp-reg-empty';
   empty.textContent = text;
   return empty;
+}
+
+function buildCheckbox(labelText: string): { wrap: HTMLElement; input: HTMLInputElement } {
+  const wrap = document.createElement('label');
+  wrap.className = 'chp-reg-check';
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  const span = document.createElement('span');
+  span.textContent = labelText;
+  wrap.append(input, span);
+  return { wrap, input };
+}
+
+function buildTextInput(placeholder: string): { wrap: HTMLElement; input: HTMLInputElement } {
+  const wrap = document.createElement('div');
+  wrap.className = 'chp-reg-field';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = placeholder;
+  input.className = 'chp-reg-input';
+  wrap.appendChild(input);
+  return { wrap, input };
+}
+
+function showMessage(el: HTMLElement, text: string, kind: 'info' | 'error' | 'success'): void {
+  el.textContent = text;
+  el.dataset.kind = kind;
+  el.hidden = !text;
 }
 
 function showStatus(el: HTMLElement, text: string, kind: 'idle' | 'saving' | 'saved' | 'error'): void {

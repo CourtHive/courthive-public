@@ -284,6 +284,43 @@ export async function installProposalRegistrationMocks(page: Page, view: any): P
   return { savedRegistration: () => registration };
 }
 
+export interface HiveIDSignupMockState {
+  /** The body captured by the most recent POST /auth/hiveid/signup, or null. */
+  signupBody: () => any;
+}
+
+/**
+ * Mock CFS `POST /auth/hiveid/signup` (the inline create-account / mint-on-signup
+ * path). Captures the request body (so a test can assert DOB/sex/provider were
+ * forwarded) and returns a `created` session whose `cached` reflects the submitted
+ * fields — mirroring a fresh persons mint.
+ */
+export async function installHiveIDSignupMock(
+  page: Page,
+  opts: { personId?: string } = {},
+): Promise<HiveIDSignupMockState> {
+  let body: any = null;
+  await page.route(`${API}/auth/hiveid/signup`, (route) => {
+    if (handledPreflight(route)) return;
+    body = route.request().postDataJSON() ?? {};
+    void json(route, {
+      status: 'created',
+      token: 'e2e.new.token',
+      refreshToken: 'e2e.new.refresh',
+      personId: opts.personId ?? PERSON_E2E,
+      personRevision: 1,
+      cached: {
+        standardGivenName: body.firstName ?? null,
+        standardFamilyName: body.lastName ?? null,
+        birthDate: body.birthDate ?? null,
+        sex: body.sex ?? null,
+        nationalityCode: null,
+      },
+    });
+  });
+  return { signupBody: () => body };
+}
+
 export interface VerifyEmailMockOptions {
   /** When false, fail the POST with `status` + `message` to drive the error landing. */
   ok?: boolean;
