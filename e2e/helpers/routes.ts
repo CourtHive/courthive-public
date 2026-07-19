@@ -203,10 +203,15 @@ export interface DeclarationsMockState {
  */
 export async function installDeclarationsMocks(
   page: Page,
-  opts: { initialConsent?: any; requireGuardian?: boolean } = {},
+  opts: { initialConsent?: any; requireGuardian?: boolean; providers?: string[] } = {},
 ): Promise<DeclarationsMockState> {
   let consent: any = opts.initialConsent ?? null;
   let availability: any = null;
+
+  await page.route(`${DECLARATIONS}/me/providers`, (route) => {
+    if (handledPreflight(route)) return;
+    void json(route, { providers: opts.providers ?? [] });
+  });
 
   await page.route(`${DECLARATIONS}/me/consent**`, (route) => {
     if (handledPreflight(route)) return;

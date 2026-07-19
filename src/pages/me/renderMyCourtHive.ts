@@ -32,7 +32,7 @@ import {
   type HiveIDSession,
 } from 'src/services/hiveidSession';
 import { disconnectHiveIDSocket, onPersonUpdate, type PersonUpdateEvent } from 'src/services/hiveidSocket';
-import { fetchProviderDirectory } from 'src/services/providersDirectory';
+import { fetchMyProviders } from 'src/services/declarationsApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -712,7 +712,10 @@ function renderAvailabilityEntrySection(): { section: HTMLElement } {
   };
   section.appendChild(form);
 
-  void fetchProviderDirectory().then((providers) => {
+  // "My providers" come from the declarations service (off CFS) — the providers the
+  // person already has registrations / availability / consent with. Empty (or the
+  // service is unreachable) → keep the text input.
+  void fetchMyProviders().then((providers) => {
     if (!providers.length) return;
     const select = buildProviderSelect(providers, context.providerAbbr);
     fieldHost.replaceChildren(select);
@@ -722,10 +725,7 @@ function renderAvailabilityEntrySection(): { section: HTMLElement } {
   return { section };
 }
 
-function buildProviderSelect(
-  providers: { name: string; abbreviation: string }[],
-  preselect?: string,
-): HTMLSelectElement {
+function buildProviderSelect(providers: string[], preselect?: string): HTMLSelectElement {
   const select = document.createElement('select');
   select.required = true;
   select.className = INPUT_CLASS;
@@ -734,11 +734,11 @@ function buildProviderSelect(
   placeholder.textContent = 'Select a provider…';
   select.appendChild(placeholder);
   const wanted = (preselect ?? '').toUpperCase();
-  for (const p of [...providers].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))) {
+  for (const providerId of [...providers].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))) {
     const opt = document.createElement('option');
-    opt.value = p.abbreviation;
-    opt.textContent = p.name && p.name !== p.abbreviation ? `${p.name} (${p.abbreviation})` : p.abbreviation;
-    if (p.abbreviation.toUpperCase() === wanted) opt.selected = true;
+    opt.value = providerId;
+    opt.textContent = providerId;
+    if (providerId.toUpperCase() === wanted) opt.selected = true;
     select.appendChild(opt);
   }
   return select;

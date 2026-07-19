@@ -64,6 +64,25 @@ function registrationUrl(tournamentId: string, provider: string): string {
   return `${getDeclarationsBaseUrl()}/me/registrations/${encodeURIComponent(tournamentId)}?${providerQuery(provider)}`;
 }
 
+/**
+ * The providers this person is involved with (has any registration / availability /
+ * consent for), from the declarations service — NOT CFS. Powers the availability
+ * provider picker so a user selects rather than types. Best-effort: [] on any failure.
+ */
+export async function fetchMyProviders(): Promise<string[]> {
+  const headers = authHeaders();
+  if (!headers) return [];
+  try {
+    const res = await fetch(`${getDeclarationsBaseUrl()}/me/providers`, { headers });
+    if (!res.ok) return [];
+    const body = await res.json().catch(() => null);
+    const providers = body?.providers;
+    return Array.isArray(providers) ? providers.filter((p: unknown): p is string => typeof p === 'string' && !!p) : [];
+  } catch {
+    return [];
+  }
+}
+
 export async function fetchMyAvailability(provider: string): Promise<AvailabilitySnapshot | null> {
   const headers = authHeaders();
   if (!headers) return null;

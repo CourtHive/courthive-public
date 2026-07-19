@@ -1,4 +1,9 @@
-import { installApiMocks, installHiveIDMeMocks, seedHiveIDSessionInitScript } from '../helpers/routes';
+import {
+  installApiMocks,
+  installDeclarationsMocks,
+  installHiveIDMeMocks,
+  seedHiveIDSessionInitScript,
+} from '../helpers/routes';
 import { buildPublishedTournament } from '../helpers/fixtures';
 import { test, expect } from '@playwright/test';
 
@@ -90,6 +95,20 @@ test.describe('My CourtHive — email verification', () => {
     await me.getByRole('button', { name: /save email/i }).click();
 
     await expect.poll(() => meMock.savedContactEmail()).toBe('real@example.com');
+  });
+
+  test('the availability picker offers my providers as a dropdown (off-CFS)', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    await installHiveIDMeMocks(page, { me: meResponse('2026-06-01T00:00:00.000Z') });
+    await installDeclarationsMocks(page, { providers: ['BOBOCA', 'HTS'] });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: SESSION_PERSON, cached: CACHED });
+
+    await page.goto('/#/me');
+    const me = page.locator(ME_SELECTOR);
+    const select = me.locator('select');
+    await expect(select).toBeVisible();
+    await expect(select.locator('option')).toContainText(['BOBOCA', 'HTS']);
   });
 
   // A stored token whose server-side session has expired must be treated as logged
