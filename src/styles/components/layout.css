@@ -37,6 +37,35 @@
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
+  position: relative;
+}
+
+/* Signed-in user menu (anchored under the person icon). --chc-* tokens → light+dark. */
+.chp-user-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  min-width: 12rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--chc-bg-elevated, var(--chc-bg-primary));
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 0.375rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+.chp-user-menu-item {
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--chc-text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+.chp-user-menu-item:hover {
+  background: var(--chc-hover-bg);
 }
 
 /* ── Hero ──────────────────────────────────────────────────── */

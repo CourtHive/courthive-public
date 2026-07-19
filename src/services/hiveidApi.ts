@@ -45,6 +45,35 @@ export async function fetchHiveIDMe(): Promise<HiveIDMeResponse | null> {
   return (await res.json()) as HiveIDMeResponse;
 }
 
+/**
+ * Distinct outcomes of checking whether the stored HiveID token is still accepted:
+ *  - `no-session`  — nothing stored; the user is simply logged out.
+ *  - `valid`       — CFS accepted the token; `me` carries the fresh identity.
+ *  - `expired`     — CFS returned 401; the stored token is stale/invalid and must be cleared.
+ *  - `unreachable` — CFS could not be reached or returned a transient (5xx) error; keep the
+ *                    session and degrade gracefully rather than logging the user out on a blip.
+ *
+ * The presence of a token in localStorage is NOT proof of being logged in — the server is the
+ * authority. Callers use this so a rejected token is treated as logged-out instead of rendering a
+ * "logged in" shell whose every authenticated panel then falls back to "Sign in…".
+ */
+export type SessionCheckStatus = 'no-session' | 'valid' | 'expired' | 'unreachable';
+
+export async function checkHiveIDSession(): Promise<{ status: SessionCheckStatus; me?: HiveIDMeResponse }> {
+  const session = readHiveIDSession();
+  if (!session?.token) return { status: 'no-session' };
+  try {
+    const res = await fetch(`${getCfsBaseUrl()}/auth/hiveid/me`, {
+      headers: { Authorization: `Bearer ${session.token}` },
+    });
+    if (res.status === 401) return { status: 'expired' };
+    if (!res.ok) return { status: 'unreachable' };
+    return { status: 'valid', me: (await res.json()) as HiveIDMeResponse };
+  } catch {
+    return { status: 'unreachable' };
+  }
+}
+
 export interface ParticipationRow {
   tournamentId: string;
   tournamentName: string;

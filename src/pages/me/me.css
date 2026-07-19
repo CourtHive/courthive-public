@@ -156,6 +156,19 @@
   color: inherit;
 }
 
+/* Availability provider picker — the field host stretches like a bare input, and
+   its child (text input or the upgraded select) fills it. */
+.chp-me-provider-field {
+  flex: 1;
+  display: flex;
+}
+.chp-me-provider-field > .chp-me-input {
+  width: 100%;
+}
+.chp-me-input option {
+  color: initial;
+}
+
 .chp-me-button {
   padding: 0.5rem 0.875rem;
   font-size: 0.875rem;

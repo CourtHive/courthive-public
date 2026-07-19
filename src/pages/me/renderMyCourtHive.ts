@@ -10,6 +10,7 @@
 import './me.css';
 
 import {
+  checkHiveIDSession,
   claimParticipant,
   fetchClaimable,
   fetchHiveIDMe,
@@ -22,13 +23,21 @@ import {
   type RegistrationEntry,
   type RegistrationStatus,
 } from 'src/services/hiveidApi';
-import { clearHiveIDSession, getDisplayName, readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
+import {
+  clearHiveIDSession,
+  getDisplayName,
+  readHiveIDSession,
+  writeHiveIDSession,
+  type HiveIDSession,
+} from 'src/services/hiveidSession';
 import { disconnectHiveIDSocket, onPersonUpdate, type PersonUpdateEvent } from 'src/services/hiveidSocket';
+import { fetchProviderDirectory } from 'src/services/providersDirectory';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
 const SECTION_CLASS = 'chp-me-section';
 const BUTTON_CLASS = 'chp-me-button';
+const INPUT_CLASS = 'chp-me-input';
 
 // Module-scoped unsub for the personUpdate listener so a re-render of
 // /me cleans up the previous registration before installing the new one.
@@ -70,12 +79,48 @@ export function renderMyCourtHive(container: HTMLElement): void {
 
   const session = readHiveIDSession();
   if (!session?.token) {
-    const empty = document.createElement('div');
-    empty.className = 'chp-me-empty';
-    empty.textContent = 'Please log in to see your CourtHive identity.';
-    container.appendChild(empty);
+    renderLoggedOut(container, 'Please log in to see your CourtHive identity.');
     return;
   }
+
+  const loading = document.createElement('div');
+  loading.className = 'chp-me-empty';
+  loading.textContent = 'Loading your CourtHive…';
+  container.appendChild(loading);
+
+  void gateAndRenderShell(container, session);
+}
+
+function renderLoggedOut(container: HTMLElement, message: string): void {
+  container.replaceChildren();
+  const empty = document.createElement('div');
+  empty.className = 'chp-me-empty';
+  empty.textContent = message;
+  container.appendChild(empty);
+}
+
+// A stored token is not proof of being logged in — the server is the authority. Verify it before
+// rendering the shell, so a rejected (stale/expired) token is treated as logged-out rather than
+// rendering a "logged in" page whose every authenticated panel then falls back to "Sign in…".
+async function gateAndRenderShell(container: HTMLElement, session: HiveIDSession): Promise<void> {
+  const check = await checkHiveIDSession();
+  if (!container.isConnected) return;
+  if (check.status === 'expired') {
+    clearHiveIDSession();
+    disconnectHiveIDSocket();
+    renderLoggedOut(
+      container,
+      'Your session has expired. Please sign in again (top right) to see your CourtHive identity.',
+    );
+    return;
+  }
+  // 'valid' → render with a live token; 'unreachable' → CFS is temporarily down, keep the session
+  // and render the shell (individual panels degrade to their own "could not load" messaging).
+  renderShell(container, session);
+}
+
+function renderShell(container: HTMLElement, session: HiveIDSession): void {
+  container.replaceChildren();
 
   const shell = document.createElement('div');
   shell.className = 'chp-me-shell';
@@ -342,7 +387,7 @@ function renderClaimSection(opts: { onClaimed: () => void }): { section: HTMLEle
   input.type = 'text';
   input.placeholder = 'tournament-uuid';
   input.required = true;
-  input.className = 'chp-me-input';
+  input.className = INPUT_CLASS;
   form.appendChild(input);
 
   const submit = document.createElement('button');
@@ -535,24 +580,64 @@ function renderAvailabilityEntrySection(): { section: HTMLElement } {
 
   const form = document.createElement('form');
   form.className = 'chp-me-claim-form';
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.required = true;
-  input.className = 'chp-me-input';
-  input.placeholder = 'provider (e.g. BOBOCA)';
-  if (context.providerAbbr) input.value = context.providerAbbr;
+
+  // The field starts as a text input (so it works even if the directory is empty
+  // or unreachable) and upgrades to a name-based dropdown once providers load —
+  // end users shouldn't have to know or type a provider's abbreviation.
+  const fieldHost = document.createElement('span');
+  fieldHost.className = 'chp-me-provider-field';
+  const fallback = document.createElement('input');
+  fallback.type = 'text';
+  fallback.required = true;
+  fallback.className = INPUT_CLASS;
+  fallback.placeholder = 'Search or type a provider';
+  if (context.providerAbbr) fallback.value = context.providerAbbr;
+  fieldHost.appendChild(fallback);
+
   const submit = document.createElement('button');
   submit.type = 'submit';
   submit.className = BUTTON_CLASS;
   submit.textContent = 'Set availability';
-  form.append(input, submit);
+  form.append(fieldHost, submit);
+
+  let readProvider = () => fallback.value.trim().toUpperCase();
   form.onsubmit = (e) => {
     e.preventDefault();
-    const provider = input.value.trim().toUpperCase();
+    const provider = readProvider();
     if (provider) context.router?.navigate(`/me/availability/${encodeURIComponent(provider)}`);
   };
   section.appendChild(form);
+
+  void fetchProviderDirectory().then((providers) => {
+    if (!providers.length) return;
+    const select = buildProviderSelect(providers, context.providerAbbr);
+    fieldHost.replaceChildren(select);
+    readProvider = () => select.value.trim().toUpperCase();
+  });
+
   return { section };
+}
+
+function buildProviderSelect(
+  providers: { name: string; abbreviation: string }[],
+  preselect?: string,
+): HTMLSelectElement {
+  const select = document.createElement('select');
+  select.required = true;
+  select.className = INPUT_CLASS;
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = 'Select a provider…';
+  select.appendChild(placeholder);
+  const wanted = (preselect ?? '').toUpperCase();
+  for (const p of [...providers].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))) {
+    const opt = document.createElement('option');
+    opt.value = p.abbreviation;
+    opt.textContent = p.name && p.name !== p.abbreviation ? `${p.name} (${p.abbreviation})` : p.abbreviation;
+    if (p.abbreviation.toUpperCase() === wanted) opt.selected = true;
+    select.appendChild(opt);
+  }
+  return select;
 }
 
 function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Promise<void> } {

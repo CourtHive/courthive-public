@@ -2,8 +2,8 @@ import 'src/pages/track/track-page.css';
 import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 import { HIVEID_MAGIC, HIVEID_ME, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
-import { isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
-import { connectHiveIDSocket } from 'src/services/hiveidSocket';
+import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
+import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { toggleTheme } from 'src/services/themeService';
@@ -57,43 +57,14 @@ export function rootBlock() {
   userButton.title = t('Login');
   userButton.textContent = '\uD83D\uDC64';
   userButton.onclick = () => {
+    // Signed in → a menu (My CourtHive + Sign out). Signed out → the login modal.
+    // Navigating straight to /me used to no-op when already on /me, and gave no way
+    // to sign out from the navbar.
     if (isAuthenticated()) {
-      context.router?.navigate('/me');
+      toggleUserMenu(userButton, navEnd);
       return;
     }
-    const shell = buildHiveIDLogin({
-      cfsBaseUrl: getCfsBaseUrl(),
-      mode: 'login',
-      // Optional federation-id capture on signup: a person who quotes an existing
-      // trusted-provider id (e.g. their BOBOCA player id) is RESOLVED to their
-      // canonical person at signup — the only way the name-only signup fragment can
-      // acquire a personId. Without this, a fresh signup returns `incomplete`.
-      // Provider list is the backfill's trusted-provider set; can later come from a
-      // providers endpoint.
-      federationIdCapture: {
-        providers: [
-          { value: 'BOBOCA', label: 'BOBOCA' },
-          { value: 'HTS', label: 'HTS' },
-          { value: 'CTS', label: 'CTS' },
-        ],
-        idLabel: 'Player ID',
-        note: 'Already have a player ID from your club or federation? Enter it to link your existing record.',
-      },
-    });
-    cModal.open({
-      title: 'Sign in to CourtHive',
-      content: (elem: HTMLElement) => {
-        elem.appendChild(shell.root);
-        return elem;
-      },
-      buttons: [{ label: 'Close' }],
-    });
-    shell.onAuthenticated((detail) => {
-      writeHiveIDSession(detail);
-      connectHiveIDSocket();
-      cModal.close();
-      context.router?.navigate('/me');
-    });
+    openLoginModal();
   };
   navEnd.appendChild(userButton);
   // Re-connect the HiveID socket on app boot if the session survived a reload.
@@ -151,4 +122,85 @@ export function rootBlock() {
   main.appendChild(register);
 
   return main;
+}
+
+function openLoginModal(): void {
+  const shell = buildHiveIDLogin({
+    cfsBaseUrl: getCfsBaseUrl(),
+    mode: 'login',
+    // Optional federation-id capture on signup: a person who quotes an existing
+    // trusted-provider id (e.g. their BOBOCA player id) is RESOLVED to their
+    // canonical person at signup. Provider list is the backfill's trusted-provider
+    // set; can later come from a providers endpoint.
+    federationIdCapture: {
+      providers: [
+        { value: 'BOBOCA', label: 'BOBOCA' },
+        { value: 'HTS', label: 'HTS' },
+        { value: 'CTS', label: 'CTS' },
+      ],
+      idLabel: 'Player ID',
+      note: 'Already have a player ID from your club or federation? Enter it to link your existing record.',
+    },
+  });
+  cModal.open({
+    title: 'Sign in to CourtHive',
+    content: (elem: HTMLElement) => {
+      elem.appendChild(shell.root);
+      return elem;
+    },
+    buttons: [{ label: 'Close' }],
+  });
+  shell.onAuthenticated((detail) => {
+    writeHiveIDSession(detail);
+    connectHiveIDSocket();
+    cModal.close();
+    context.router?.navigate('/me');
+  });
+}
+
+// Signed-in navbar menu, anchored under the person icon. Toggles: a second click
+// (or an outside click) closes it. Offers navigation to /me and a real sign-out.
+function toggleUserMenu(anchor: HTMLElement, host: HTMLElement): void {
+  const open = host.querySelector('.chp-user-menu');
+  if (open) {
+    open.remove();
+    return;
+  }
+  const menu = document.createElement('div');
+  menu.className = 'chp-user-menu';
+
+  const goMe = document.createElement('button');
+  goMe.type = 'button';
+  goMe.className = 'chp-user-menu-item';
+  goMe.textContent = t('My CourtHive');
+  goMe.onclick = () => {
+    menu.remove();
+    context.router?.navigate('/me');
+  };
+
+  const signOut = document.createElement('button');
+  signOut.type = 'button';
+  signOut.className = 'chp-user-menu-item';
+  signOut.textContent = t('Sign out');
+  signOut.onclick = () => {
+    menu.remove();
+    clearHiveIDSession();
+    disconnectHiveIDSocket();
+    context.router?.navigate('/');
+  };
+
+  menu.append(goMe, signOut);
+  host.appendChild(menu);
+  registerOutsideClose(menu, anchor);
+}
+
+function registerOutsideClose(menu: HTMLElement, anchor: HTMLElement): void {
+  const onDocClick = (ev: MouseEvent) => {
+    const target = ev.target as Node;
+    if (menu.contains(target) || anchor.contains(target)) return;
+    menu.remove();
+    document.removeEventListener('click', onDocClick, true);
+  };
+  // Defer registration one tick so the click that opened the menu doesn't close it.
+  setTimeout(() => document.addEventListener('click', onDocClick, true), 0);
 }

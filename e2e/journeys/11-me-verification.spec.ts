@@ -72,4 +72,34 @@ test.describe('My CourtHive — email verification', () => {
     await expect(me).toContainText(/is verified/i);
     await expect(me.getByRole('button', { name: /resend verification email/i })).toHaveCount(0);
   });
+
+  // A stored token whose server-side session has expired must be treated as logged
+  // out — not rendered as a "logged in" shell whose panels all say "Sign in…".
+  test('a rejected (expired) session is treated as logged out and cleared', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    await page.route('**/auth/hiveid/me', (route) => {
+      if (route.request().method() === 'OPTIONS') {
+        void route.fulfill({
+          status: 204,
+          headers: { 'access-control-allow-origin': '*', 'access-control-allow-headers': 'authorization,content-type' },
+        });
+        return;
+      }
+      void route.fulfill({
+        status: 401,
+        headers: { 'access-control-allow-origin': '*', 'content-type': 'application/json' },
+        body: JSON.stringify({ message: 'unauthorized' }),
+      });
+    });
+    await seedHiveIDSessionInitScript(page, { token: 'stale.token', personId: SESSION_PERSON, cached: CACHED });
+
+    await page.goto('/#/me');
+
+    const me = page.locator('#hiveid-me');
+    await expect(me).toContainText(/session has expired/i);
+    await expect(me).not.toContainText(/Email verification/);
+    // The stale session is cleared so nothing else in the app claims to be logged in.
+    await expect.poll(() => page.evaluate(() => localStorage.getItem('hiveidSession'))).toBeNull();
+  });
 });
