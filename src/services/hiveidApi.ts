@@ -22,6 +22,8 @@ export function getCfsBaseUrl(): string {
 export interface HiveIDMeResponse {
   userId: string;
   email: string;
+  /** The verification (contact) email — what /me displays + edits while unverified. */
+  contactEmail: string | null;
   emailVerifiedAt: string | null;
   personId: string | null;
   personRevision: number | null;
@@ -123,6 +125,20 @@ export type ResendVerificationStatus = 'pending_verification' | 'already_verifie
 /** Authenticated — re-send the HiveID email-verification mail to the logged-in user. */
 export function resendHiveIDVerification(): Promise<{ success: boolean; status?: ResendVerificationStatus } | null> {
   return authenticatedJson('/auth/hiveid/resend-verification', { method: 'POST' });
+}
+
+/**
+ * Authenticated — set/change the caller's verification (contact) email. Clears
+ * verified status server-side and sends a fresh verification mail. Returns the
+ * service result (`{ success, status, contactEmail }` or `{ error }`), or null on 401.
+ */
+export function setMyContactEmail(
+  contactEmail: string,
+): Promise<{ success?: boolean; status?: string; contactEmail?: string; error?: string } | null> {
+  return authenticatedJson('/auth/hiveid/me/contact-email', {
+    method: 'POST',
+    body: JSON.stringify({ contactEmail }),
+  });
 }
 
 /**

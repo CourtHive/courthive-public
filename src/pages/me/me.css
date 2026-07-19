@@ -156,6 +156,21 @@
   color: inherit;
 }
 
+/* Email verification actions + inline editor for a never-verified email. */
+.chp-me-verification-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.chp-me-email-editor {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.chp-me-email-editor[hidden] {
+  display: none;
+}
+
 /* Availability provider picker — the field host stretches like a bare input, and
    its child (text input or the upgraded select) fills it. */
 .chp-me-provider-field {

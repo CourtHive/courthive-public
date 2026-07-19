@@ -13,6 +13,7 @@ import { test, expect } from '@playwright/test';
  * doesn't trigger a re-render mid-assertion.
  */
 const SESSION_PERSON = 'person-e2e';
+const ME_SELECTOR = '#hiveid-me';
 const CACHED = {
   standardGivenName: 'Pat',
   standardFamilyName: 'Player',
@@ -48,7 +49,7 @@ test.describe('My CourtHive — email verification', () => {
 
     await page.goto('/#/me');
 
-    const me = page.locator('#hiveid-me');
+    const me = page.locator(ME_SELECTOR);
     await expect(me).toContainText('Email verification');
     await expect(me).toContainText(/is not verified yet/i);
 
@@ -67,10 +68,28 @@ test.describe('My CourtHive — email verification', () => {
 
     await page.goto('/#/me');
 
-    const me = page.locator('#hiveid-me');
+    const me = page.locator(ME_SELECTOR);
     await expect(me).toContainText('Email verification');
     await expect(me).toContainText(/is verified/i);
     await expect(me.getByRole('button', { name: /resend verification email/i })).toHaveCount(0);
+  });
+
+  test('a never-verified email can be changed in place', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    const meMock = await installHiveIDMeMocks(page, { me: meResponse(null) });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: SESSION_PERSON, cached: CACHED });
+
+    await page.goto('/#/me');
+    const me = page.locator(ME_SELECTOR);
+    await expect(me).toContainText(/is not verified yet/i);
+
+    await me.getByRole('button', { name: /change email/i }).click();
+    const input = me.locator('.chp-me-email-editor input[type="email"]');
+    await input.fill('real@example.com');
+    await me.getByRole('button', { name: /save email/i }).click();
+
+    await expect.poll(() => meMock.savedContactEmail()).toBe('real@example.com');
   });
 
   // A stored token whose server-side session has expired must be treated as logged
@@ -96,7 +115,7 @@ test.describe('My CourtHive — email verification', () => {
 
     await page.goto('/#/me');
 
-    const me = page.locator('#hiveid-me');
+    const me = page.locator(ME_SELECTOR);
     await expect(me).toContainText(/session has expired/i);
     await expect(me).not.toContainText(/Email verification/);
     // The stale session is cleared so nothing else in the app claims to be logged in.

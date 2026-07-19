@@ -153,6 +153,7 @@ export interface HiveIDMeMockOptions {
  * localStorage entry via `seedHiveIDSessionInitScript` before navigating.
  */
 export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions) {
+  let lastContactEmail: string | null = null;
   await page.route(`${API}/auth/hiveid/me`, (route) => {
     if (handledPreflight(route)) return;
     void json(route, opts.me);
@@ -169,6 +170,13 @@ export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions
     if (handledPreflight(route)) return;
     void json(route, { success: true, status: opts.resendStatus ?? 'sent' });
   });
+  await page.route(`${API}/auth/hiveid/me/contact-email`, (route) => {
+    if (handledPreflight(route)) return;
+    const body: any = route.request().postDataJSON() ?? {};
+    lastContactEmail = body.contactEmail ?? null;
+    void json(route, { success: true, status: 'pending_verification', contactEmail: lastContactEmail });
+  });
+  return { savedContactEmail: () => lastContactEmail };
 }
 
 /**

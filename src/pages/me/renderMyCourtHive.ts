@@ -17,6 +17,7 @@ import {
   fetchMyParticipations,
   fetchMyRegistrations,
   resendHiveIDVerification,
+  setMyContactEmail,
   withdrawRegistration,
   type ClaimableCandidate,
   type ParticipationRow,
@@ -530,36 +531,139 @@ function renderVerificationSection(): { section: HTMLElement; refresh: () => Pro
       body.textContent = t('me.verification.signInToManage');
       return;
     }
-    const email = me.email || t('me.verification.yourEmail');
+    const email = me.contactEmail || me.email || t('me.verification.yourEmail');
     if (me.emailVerifiedAt) {
       body.appendChild(statusLine(t('me.verification.verified', { email }), 'success'));
       return;
     }
 
     body.appendChild(statusLine(t('me.verification.notVerified', { email }), 'warn'));
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = BUTTON_CLASS;
-    btn.textContent = t('me.verification.resend');
-    btn.onclick = async () => {
-      btn.disabled = true;
-      try {
-        const res = await resendHiveIDVerification();
-        if (res?.status === 'already_verified') {
-          await refresh();
-          return;
-        }
-        body.appendChild(statusLine(t('me.verification.sent'), 'success'));
-      } catch (err) {
-        console.warn('[hiveid verification] resend failed:', err);
-        body.appendChild(statusLine(t('me.verification.sendFailed'), 'error'));
-        btn.disabled = false;
-      }
-    };
-    body.appendChild(btn);
+
+    const message = document.createElement('div');
+    const editor = buildEmailEditor(email, message, () => void refresh());
+
+    const actions = document.createElement('div');
+    actions.className = 'chp-me-verification-actions';
+
+    const resendBtn = document.createElement('button');
+    resendBtn.type = 'button';
+    resendBtn.className = BUTTON_CLASS;
+    resendBtn.textContent = t('me.verification.resend');
+    resendBtn.onclick = () => void doResendVerification(resendBtn, message, refresh);
+
+    // A never-verified email can be corrected in place — the user may have mistyped
+    // it at signup. Saving clears verified status server-side and re-sends the mail.
+    const editBtn = document.createElement('button');
+    editBtn.type = 'button';
+    editBtn.className = BUTTON_CLASS;
+    editBtn.textContent = 'Change email';
+    editBtn.onclick = () => editor.toggle();
+
+    actions.append(resendBtn, editBtn);
+    body.append(actions, editor.root, message);
   }
 
   return { section, refresh };
+}
+
+const VERIFICATION_COLORS: Record<'success' | 'warn' | 'error', string> = {
+  success: 'var(--chc-status-success)',
+  warn: 'var(--chc-status-warning)',
+  error: 'var(--chc-status-error)',
+};
+
+function showVerificationMessage(el: HTMLElement, text: string, kind: 'success' | 'warn' | 'error'): void {
+  el.replaceChildren();
+  const p = document.createElement('p');
+  p.textContent = text;
+  p.style.margin = '0.5rem 0 0';
+  p.style.fontSize = '0.9rem';
+  p.style.color = VERIFICATION_COLORS[kind];
+  el.appendChild(p);
+}
+
+async function doResendVerification(
+  btn: HTMLButtonElement,
+  message: HTMLElement,
+  refresh: () => Promise<void>,
+): Promise<void> {
+  btn.disabled = true;
+  try {
+    const res = await resendHiveIDVerification();
+    if (res?.status === 'already_verified') {
+      await refresh();
+      return;
+    }
+    showVerificationMessage(message, t('me.verification.sent'), 'success');
+  } catch (err) {
+    console.warn('[hiveid verification] resend failed:', err);
+    showVerificationMessage(message, t('me.verification.sendFailed'), 'error');
+    btn.disabled = false;
+  }
+}
+
+// Inline editor for a never-verified email. Hidden until the user chooses to change
+// it; saving delegates to the CFS hiveid endpoint (re-sends verification) and refreshes.
+function buildEmailEditor(
+  currentEmail: string,
+  message: HTMLElement,
+  onSaved: () => void,
+): { root: HTMLElement; toggle: () => void } {
+  const root = document.createElement('form');
+  root.className = 'chp-me-email-editor';
+  root.hidden = true;
+
+  const input = document.createElement('input');
+  input.type = 'email';
+  input.className = INPUT_CLASS;
+  input.value = currentEmail;
+  input.placeholder = 'you@example.com';
+
+  const save = document.createElement('button');
+  save.type = 'submit';
+  save.className = BUTTON_CLASS;
+  save.textContent = 'Save email';
+
+  root.append(input, save);
+  root.onsubmit = (e) => {
+    e.preventDefault();
+    void saveContactEmail(input, save, message, onSaved);
+  };
+
+  return {
+    root,
+    toggle: () => {
+      root.hidden = !root.hidden;
+      if (!root.hidden) input.focus();
+    },
+  };
+}
+
+async function saveContactEmail(
+  input: HTMLInputElement,
+  save: HTMLButtonElement,
+  message: HTMLElement,
+  onSaved: () => void,
+): Promise<void> {
+  const email = input.value.trim();
+  if (!email) {
+    showVerificationMessage(message, 'Enter an email address.', 'error');
+    return;
+  }
+  save.disabled = true;
+  try {
+    const res = await setMyContactEmail(email);
+    if (!res || res.error) {
+      showVerificationMessage(message, res?.error ?? 'Could not update your email. Please try again.', 'error');
+      save.disabled = false;
+      return;
+    }
+    onSaved();
+  } catch (err) {
+    console.warn('[hiveid verification] email update failed:', err);
+    showVerificationMessage(message, 'Could not update your email. Please try again.', 'error');
+    save.disabled = false;
+  }
 }
 
 // Availability entry point. The /me hub isn't provider-scoped, but availability
