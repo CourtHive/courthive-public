@@ -95,11 +95,12 @@ Public-side identity is separate from the admin `tmxToken`. `src/services/hiveid
 - `POST /auth/hiveid/resend-verification`, `POST /auth/verify-email` — email verification (`renderVerifyEmail.ts`).
 - `GET /auth/hiveid/me/participations` — participations list shown on `/me`.
 - `GET /auth/hiveid/me/claimable/:tournamentId` then `POST /auth/hiveid/me/claim` — the tournament-scoped claim flow, which fires the `addPersonOtherId` factory mutation to link a HiveID to an existing participant.
-- `GET /me/registrations`, `POST /me/registrations`, withdraw — self-service registration.
+
+Registration itself no longer touches CFS: submit + existing-check go directly to the courthive-declarations service via `src/services/declarationsApi.ts` (see below). The former `/me/registrations` CFS intake was retired.
 
 `src/services/hiveidSocket.ts` opens an authenticated connection to the CFS **`/hiveid`** namespace and dispatches **`personUpdate`** events discriminated by `kind` (`merged` / `roster` / `schedule` / `result`). `renderMyCourtHive.ts` (`/#/me`) subscribes via `onPersonUpdate`; on a `merged` event it refetches `/me` so canonical-person merges reflect immediately (with re-entrance guarding and self-cleanup when the container is detached).
 
-Public registration UI lives in the tournament Info tab: `registrationButton.ts` renders the CTA + submit modal (event picks + optional partner email; no fee/payment/eligibility-predicate logic yet — server is the truth source), and `registrationEligibility.ts` is the pure-logic gate (`hidden` / `sign-in-required` / `not-yet-open` / `closed` / `already-registered` / `open`).
+Public registration UI: the tournament Info tab shows a CTA (`registrationButton.ts`) gated by the pure-logic `registrationEligibility.ts` (`hidden` / `sign-in-required` / `not-yet-open` / `closed` / `already-registered` / `open`). The actionable "Register" state navigates to the canonical `/#/register/:tournamentId` page (`renderProposalRegistration.ts`), which owns event selection, consent, inline account creation, and the declarations submit. The Info-tab existing-registration check reads the person's snapshot from the declarations service, scoped by the tournament's owning provider (`parentOrganisation.organisationId`).
 
 ### Rankings
 
