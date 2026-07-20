@@ -18,9 +18,12 @@ export interface ScoringLaunchContextInput {
   drawId?: string;
 }
 
-function epixodicHref(matchUpId: string): string {
+function epixodicHref(matchUpId: string, scorerToken?: string): string {
   const base = EPIXODIC_BASE.endsWith('/') ? EPIXODIC_BASE : `${EPIXODIC_BASE}/`;
-  return `${base}#/match/${encodeURIComponent(matchUpId)}/scoring`;
+  const route = `#/match/${encodeURIComponent(matchUpId)}/scoring`;
+  // Hand off the signed-in HiveID identity so epixodic relays to /crowd as this
+  // person (crowd-scoring Phase D) — same identity flow as inline public scoring.
+  return scorerToken ? `${base}${route}?scorerToken=${encodeURIComponent(scorerToken)}` : `${base}${route}`;
 }
 
 /**
@@ -32,6 +35,7 @@ function epixodicHref(matchUpId: string): string {
 export function resolveScoringLaunchHref(
   config: ScoringLaunchConfig,
   ctx: ScoringLaunchContextInput,
+  scorerToken?: string,
 ): { href: string; internal: boolean } {
   if (config.app === 'EMBEDDED') {
     return { href: `#/track/${ctx.tournamentId}/${ctx.matchUpId}`, internal: true };
@@ -39,5 +43,5 @@ export function resolveScoringLaunchHref(
   if (config.app === 'EXTERNAL' && config.urlTemplate) {
     return { href: resolveScoringLaunchUrl(config.urlTemplate, ctx), internal: false };
   }
-  return { href: epixodicHref(ctx.matchUpId), internal: false };
+  return { href: epixodicHref(ctx.matchUpId, scorerToken), internal: false };
 }

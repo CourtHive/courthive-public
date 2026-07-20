@@ -1,6 +1,7 @@
 import { resolveScoringLaunchHref, type ScoringLaunchContextInput } from 'src/services/scoringLaunchResolve';
 import { DEFAULT_SCORING_LAUNCH, type ScoringLaunchConfig } from '@courthive/provider-config';
 import { getScoringLaunchByTournament } from 'src/services/api/tournamentsApi';
+import { readHiveIDSession } from 'src/services/hiveidSession';
 
 /**
  * Resolves which scoring app courthive-public launches for a per-matchUp
@@ -36,7 +37,10 @@ export function prefetchScoringLaunch(tournamentId: string): void {
 
 /** Navigate to a resolved launch target — in-app for EMBEDDED, new tab otherwise. */
 export function launchScoring(config: ScoringLaunchConfig, ctx: ScoringLaunchContextInput): void {
-  const { href, internal } = resolveScoringLaunchHref(config, ctx);
+  // Hand off the signed-in HiveID identity so a launched external scorer
+  // (epixodic) relays crowd scores as this person (Phase D).
+  const scorerToken = readHiveIDSession()?.token;
+  const { href, internal } = resolveScoringLaunchHref(config, ctx, scorerToken);
   if (internal) {
     globalThis.location.hash = href;
   } else {
