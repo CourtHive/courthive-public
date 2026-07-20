@@ -151,6 +151,17 @@ export interface RegistrationSnapshot {
   updatedAt: string;
 }
 
+/** All of the signed-in person's registrations for one provider (across tournaments). */
+export async function fetchMyRegistrations(provider: string): Promise<RegistrationSnapshot[]> {
+  const headers = authHeaders();
+  if (!headers) return [];
+  const res = await fetch(`${getDeclarationsBaseUrl()}/me/registrations?${providerQuery(provider)}`, { headers });
+  if (res.status === 401) return [];
+  if (!res.ok) throw new Error(`fetchMyRegistrations failed: HTTP ${res.status}`);
+  const body = await res.json().catch(() => null);
+  return Array.isArray(body) ? (body as RegistrationSnapshot[]) : [];
+}
+
 export async function fetchMyRegistration(provider: string, tournamentId: string): Promise<RegistrationSnapshot | null> {
   const headers = authHeaders();
   if (!headers) return null;

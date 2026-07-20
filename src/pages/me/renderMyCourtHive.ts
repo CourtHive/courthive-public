@@ -15,13 +15,10 @@ import {
   fetchClaimable,
   fetchHiveIDMe,
   fetchMyParticipations,
-  fetchMyRegistrations,
   resendHiveIDVerification,
   setMyContactEmail,
-  withdrawRegistration,
   type ClaimableCandidate,
   type ParticipationRow,
-  type RegistrationEntry,
   type RegistrationStatus,
 } from 'src/services/hiveidApi';
 import {
@@ -32,7 +29,12 @@ import {
   type HiveIDSession,
 } from 'src/services/hiveidSession';
 import { disconnectHiveIDSocket, onPersonUpdate, type PersonUpdateEvent } from 'src/services/hiveidSocket';
-import { fetchMyProviders } from 'src/services/declarationsApi';
+import {
+  fetchMyProviders,
+  fetchMyRegistrations,
+  withdrawRegistration,
+  type RegistrationSnapshot,
+} from 'src/services/declarationsApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -744,6 +746,33 @@ function buildProviderSelect(providers: string[], preselect?: string): HTMLSelec
   return select;
 }
 
+// courthive-declarations REGISTRATION statuses → the panel's display statuses.
+const REGISTRATION_STATUS_MAP: Record<string, RegistrationStatus> = {
+  SUBMITTED: 'applied',
+  ACCEPTED: 'accepted',
+  WAITLISTED: 'waitlisted',
+  REJECTED: 'rejected',
+  WITHDRAWN: 'withdrawn',
+};
+
+interface MeRegistrationRow {
+  provider: string;
+  tournamentId: string;
+  status: RegistrationStatus;
+  eventIds: string[];
+  appliedAt: string;
+}
+
+function toRow(snap: RegistrationSnapshot): MeRegistrationRow {
+  return {
+    provider: snap.providerId,
+    tournamentId: snap.tournamentId ?? '',
+    status: REGISTRATION_STATUS_MAP[snap.status] ?? 'applied',
+    eventIds: Array.isArray(snap.payload?.eventIds) ? snap.payload.eventIds : [],
+    appliedAt: snap.updatedAt,
+  };
+}
+
 function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Promise<void> } {
   const section = document.createElement('section');
   section.className = SECTION_CLASS;
@@ -760,24 +789,24 @@ function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Pr
     body.replaceChildren();
     body.textContent = 'Loading…';
     try {
-      const entries = await fetchMyRegistrations();
-      if (!entries) {
-        body.textContent = 'Sign in to see your registrations.';
-        return;
-      }
-      if (!entries.length) {
+      // Registrations live in the declarations service (off the mutation server),
+      // keyed per person+provider — aggregate across the person's providers.
+      const providers = await fetchMyProviders();
+      const perProvider = await Promise.all(providers.map((p) => fetchMyRegistrations(p).catch(() => [])));
+      const rows = perProvider.flat().map(toRow).filter((r) => r.tournamentId);
+      if (!rows.length) {
         body.textContent = 'You have no tournament registrations yet.';
         return;
       }
       body.replaceChildren();
       const list = document.createElement('ul');
       list.className = 'chp-me-list';
-      for (const entry of entries) {
-        list.appendChild(buildRegistrationRow(entry, refresh));
+      for (const row of rows) {
+        list.appendChild(buildRegistrationRow(row, refresh));
       }
       body.appendChild(list);
     } catch (err) {
-      console.warn('[hiveid registrations] fetch failed:', err);
+      console.warn('[registrations] fetch failed:', err);
       body.textContent = 'Could not load your registrations. Please try again later.';
     }
   }
@@ -785,7 +814,7 @@ function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Pr
   return { section, refresh };
 }
 
-function buildRegistrationRow(entry: RegistrationEntry, refresh: () => Promise<void>): HTMLElement {
+function buildRegistrationRow(row: MeRegistrationRow, refresh: () => Promise<void>): HTMLElement {
   const li = document.createElement('li');
   li.className = 'chp-me-list-item';
 
@@ -798,23 +827,22 @@ function buildRegistrationRow(entry: RegistrationEntry, refresh: () => Promise<v
   titleRow.style.gap = '0.5rem';
   const nameLink = document.createElement('a');
   nameLink.className = 'chp-me-list-title';
-  nameLink.href = `#/tournament/${encodeURIComponent(entry.tournamentId)}`;
-  nameLink.textContent = entry.tournamentId;
+  nameLink.href = `#/tournament/${encodeURIComponent(row.tournamentId)}`;
+  nameLink.textContent = row.tournamentId;
   titleRow.appendChild(nameLink);
-  titleRow.appendChild(buildStatusPill(entry.status));
+  titleRow.appendChild(buildStatusPill(row.status));
   main.appendChild(titleRow);
 
   const meta = document.createElement('div');
   meta.className = 'chp-me-list-meta';
-  meta.appendChild(makeMetaSpan(`Applied ${entry.appliedAt.slice(0, 10)}`));
-  if (entry.eventIds.length) {
-    meta.appendChild(makeMetaSpan(`${entry.eventIds.length} event${entry.eventIds.length === 1 ? '' : 's'}`));
+  meta.appendChild(makeMetaSpan(`Applied ${row.appliedAt.slice(0, 10)}`));
+  if (row.eventIds.length) {
+    meta.appendChild(makeMetaSpan(`${row.eventIds.length} event${row.eventIds.length === 1 ? '' : 's'}`));
   }
-  if (entry.statusReason) meta.appendChild(makeMetaSpan(entry.statusReason));
   main.appendChild(meta);
   li.appendChild(main);
 
-  if (canWithdraw(entry.status)) {
+  if (canWithdraw(row.status)) {
     const withdraw = document.createElement('button');
     withdraw.type = 'button';
     withdraw.className = BUTTON_CLASS;
@@ -822,10 +850,10 @@ function buildRegistrationRow(entry: RegistrationEntry, refresh: () => Promise<v
     withdraw.onclick = async () => {
       withdraw.disabled = true;
       try {
-        await withdrawRegistration(entry.registrationId);
+        await withdrawRegistration(row.provider, row.tournamentId);
         await refresh();
       } catch (err) {
-        console.warn('[hiveid registrations] withdraw failed:', err);
+        console.warn('[registrations] withdraw failed:', err);
         withdraw.disabled = false;
       }
     };
