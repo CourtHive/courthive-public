@@ -18,6 +18,9 @@ import { test, expect, Page, Route } from '@playwright/test';
 
 const PROVIDER = 'BOBOCA';
 const DECLARATIONS = 'http://localhost:3120';
+const REGISTER_BUTTON = '.chp-register-button';
+const REGISTER_CTA_TEXT = 'Register for this tournament';
+const PERSON_ID = 'person-e2e';
 
 const CORS: Record<string, string> = {
   'access-control-allow-origin': '*',
@@ -71,7 +74,7 @@ async function signInAndLoad(page: Page, fixture: PublicTournamentFixture) {
       email: 'pat@example.com',
       contactEmail: 'pat@example.com',
       emailVerifiedAt: '2026-01-01T00:00:00.000Z',
-      personId: 'person-e2e',
+      personId: PERSON_ID,
       personRevision: 1,
       cached: {
         standardGivenName: 'Pat',
@@ -94,9 +97,9 @@ test.describe('info tab — registration CTA (declarations migration)', () => {
     const mock = await installExistingRegistrationMock(page, null);
     await signInAndLoad(page, fixture);
 
-    const cta = page.locator('.chp-register-button');
+    const cta = page.locator(REGISTER_BUTTON);
     await expect(cta).toBeVisible();
-    await expect(cta).toHaveText('Register for this tournament');
+    await expect(cta).toHaveText(REGISTER_CTA_TEXT);
 
     // The existing-check hit the declarations service, scoped by provider.
     expect(mock.url()).toContain(`${DECLARATIONS}/me/registrations/${fixture.tournamentId}`);
@@ -111,7 +114,7 @@ test.describe('info tab — registration CTA (declarations migration)', () => {
     // still returned by the service, and must NOT show "already registered".
     const fixture = openRegistrationFixture();
     await installExistingRegistrationMock(page, {
-      personId: 'person-e2e',
+      personId: PERSON_ID,
       providerId: PROVIDER,
       tournamentId: fixture.tournamentId,
       status: 'WITHDRAWN',
@@ -120,9 +123,9 @@ test.describe('info tab — registration CTA (declarations migration)', () => {
     });
     await signInAndLoad(page, fixture);
 
-    const cta = page.locator('.chp-register-button');
+    const cta = page.locator(REGISTER_BUTTON);
     await expect(cta).toBeVisible();
-    await expect(cta).toHaveText('Register for this tournament');
+    await expect(cta).toHaveText(REGISTER_CTA_TEXT);
     await cta.click();
     await expect(page).toHaveURL(new RegExp(`#/register/${fixture.tournamentId}`));
   });
@@ -130,7 +133,7 @@ test.describe('info tab — registration CTA (declarations migration)', () => {
   test('submitted declarations snapshot → "Registered" CTA links to My CourtHive', async ({ page }) => {
     const fixture = openRegistrationFixture();
     await installExistingRegistrationMock(page, {
-      personId: 'person-e2e',
+      personId: PERSON_ID,
       providerId: PROVIDER,
       tournamentId: fixture.tournamentId,
       status: 'SUBMITTED',
@@ -139,7 +142,7 @@ test.describe('info tab — registration CTA (declarations migration)', () => {
     });
     await signInAndLoad(page, fixture);
 
-    const cta = page.locator('.chp-register-button');
+    const cta = page.locator(REGISTER_BUTTON);
     await expect(cta).toBeVisible();
     await expect(cta).toContainText('Registered');
     await cta.click();
