@@ -181,6 +181,26 @@ export function claimParticipant(tournamentId: string, participantId: string): P
   });
 }
 
+export interface ScorerTokenRequest {
+  tournamentId: string;
+  matchUpId?: string;
+  displayName?: string;
+}
+
+/**
+ * Authenticated — mint a short-lived, scope-narrowed `aud: 'score'` relay token
+ * for the signed-in HiveID user. This is what a launched external scorer
+ * (epixodic) carries so its crowd scores relay AS this person, instead of the
+ * full session JWT. Returns null when logged out (no session) or on failure —
+ * callers fall back to launching an anonymous crowd session.
+ */
+export function mintScorerToken(body: ScorerTokenRequest): Promise<{ token: string; expiresAt: string } | null> {
+  return authenticatedJson('/auth/scorer-token', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+}
+
 export type RegistrationStatus =
   | 'applied'
   | 'accepted'
