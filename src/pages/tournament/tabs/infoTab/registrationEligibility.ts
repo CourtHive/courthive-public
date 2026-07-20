@@ -18,9 +18,8 @@
  *                                non-terminal entry for this tournament
  *                                (applied / accepted / seeded /
  *                                waitlisted).
- *   - 'open'                  — full "Register" CTA. Modal launchable.
+ *   - 'open'                  — full "Register" CTA. Navigates to /register.
  */
-import type { RegistrationEntry } from 'src/services/hiveidApi';
 
 export type EligibilityOutcome =
   | 'hidden'
@@ -37,7 +36,7 @@ export interface EligibilityInput {
   } | null;
   eventInfo?: Array<{ eventId?: string }> | null;
   isAuthenticated: boolean;
-  existingRegistration: RegistrationEntry | null;
+  existingRegistration: { status: string } | null;
   now?: Date;
 }
 

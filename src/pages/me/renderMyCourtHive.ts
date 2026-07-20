@@ -19,7 +19,6 @@ import {
   setMyContactEmail,
   type ClaimableCandidate,
   type ParticipationRow,
-  type RegistrationStatus,
 } from 'src/services/hiveidApi';
 import {
   clearHiveIDSession,
@@ -745,6 +744,12 @@ function buildProviderSelect(providers: string[], preselect?: string): HTMLSelec
   }
   return select;
 }
+
+// The panel's display statuses for a registration row. Re-homed here from
+// hiveidApi when the mutation-server public intake was retired — the /me panel
+// reads registrations from the declarations service and maps their statuses
+// (below) onto these display values.
+type RegistrationStatus = 'applied' | 'accepted' | 'seeded' | 'withdrawn' | 'waitlisted' | 'rejected';
 
 // courthive-declarations REGISTRATION statuses → the panel's display statuses.
 const REGISTRATION_STATUS_MAP: Record<string, RegistrationStatus> = {

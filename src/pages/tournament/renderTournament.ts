@@ -103,7 +103,7 @@ export async function renderTournament(
   // registrationProfile, or when the caller already has a registration.
   void renderRegisterButton({
     tournamentId: tournamentInfo.tournamentId,
-    tournamentName: tournamentInfo.tournamentName,
+    provider: tournamentInfo.parentOrganisation?.organisationId,
     registrationProfile: tournamentInfo.registrationProfile,
     eventInfo: tournamentInfo.eventInfo,
   }).then((btn) => {
