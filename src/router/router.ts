@@ -10,6 +10,7 @@ import { renderAvailability } from 'src/pages/me/renderAvailability';
 import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderProposalRegistration } from 'src/pages/register/renderProposalRegistration';
+import { renderPartnerConfirm } from 'src/pages/register/renderPartnerConfirm';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
@@ -129,6 +130,16 @@ export function router() {
     setDisplay(RANKINGS);
     const container = document.getElementById(RANKINGS);
     if (container) renderRankingsPage(container, providerAbbr);
+  });
+
+  router.on('/register/partner/:token', (match) => {
+    console.log('[router] matched: /register/partner/:token', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(REGISTER);
+    const container = document.getElementById(REGISTER);
+    if (container) void renderPartnerConfirm(container, match?.data?.token ?? '');
   });
 
   router.on('/register/:tournamentId', (match) => {

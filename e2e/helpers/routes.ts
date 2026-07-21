@@ -297,6 +297,39 @@ export async function installProposalRegistrationMocks(page: Page, view: any): P
   return { savedRegistration: () => registration };
 }
 
+export interface PartnerConfirmMockState {
+  /** The registration payload captured by the invitee's PUT, or null. */
+  savedRegistration: () => any;
+  /** True once POST :token/accept was called. */
+  accepted: () => boolean;
+}
+
+/**
+ * Mock the partner-confirm landing's declarations calls: GET /partner-invites/:token
+ * (the invite), POST :token/accept (moves it ACCEPTED), and the invitee's registration
+ * PUT (captures the payload so a test can assert `partnerInviteId`).
+ */
+export async function installPartnerInviteMocks(page: Page, invite: any): Promise<PartnerConfirmMockState> {
+  let accepted = false;
+  let registration: any = null;
+  await page.route(`${DECLARATIONS}/partner-invites/**`, (route) => {
+    if (handledPreflight(route)) return;
+    const url = route.request().url();
+    if (url.endsWith('/accept')) {
+      accepted = true;
+      void json(route, { ...invite, status: 'ACCEPTED' });
+      return;
+    }
+    void json(route, invite);
+  });
+  await page.route(`${DECLARATIONS}/me/registrations/**`, (route) => {
+    if (handledPreflight(route)) return;
+    registration = route.request().postDataJSON() ?? {};
+    void json(route, { personId: 'person-e2e', providerId: invite.providerId, tournamentId: invite.tournamentId, status: 'SUBMITTED', payload: registration, updatedAt: 't' });
+  });
+  return { savedRegistration: () => registration, accepted: () => accepted };
+}
+
 export interface HiveIDSignupMockState {
   /** The body captured by the most recent POST /auth/hiveid/signup, or null. */
   signupBody: () => any;
