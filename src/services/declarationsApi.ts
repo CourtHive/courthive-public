@@ -138,6 +138,10 @@ export interface RegistrationPayload {
   // notes / answers are free-form.
   eventIds: string[];
   partner?: { userId?: string; personId?: string; email?: string } | null;
+  // Links this registration to a doubles PARTNER_INVITE (the id returned by
+  // createPartnerInvite / carried on the confirm-landing invite). Pair-completeness
+  // is derived server-side from both sides referencing the same invite.
+  partnerInviteId?: string;
   notes?: string;
   answers?: Record<string, unknown>;
 }
@@ -198,6 +202,78 @@ export async function withdrawRegistration(provider: string, tournamentId: strin
     { method: 'DELETE', headers },
   );
   if (!res.ok && res.status !== 401) throw new Error(await describeError(res));
+}
+
+// ---------------------------------------------------------------------------
+//  PARTNER_INVITE (doubles partner nomination)
+// ---------------------------------------------------------------------------
+
+export interface PartnerInviteView {
+  declarationId: string;
+  status: string; // INVITED | ACCEPTED | DECLINED | WITHDRAWN | EXPIRED
+  tournamentId: string | null;
+  event: string | null;
+  eventId: string | null;
+  providerId: string;
+  inviteeEmail: string | null;
+  nominatorPersonId: string;
+  createdAt: string;
+  expiresAt: string;
+  expired: boolean;
+}
+
+export interface CreatePartnerInviteInput {
+  tournamentId: string;
+  event: string;
+  eventId?: string | null;
+  inviteeEmail: string;
+}
+
+function partnerInvitesUrl(suffix = ''): string {
+  return `${getDeclarationsBaseUrl()}/partner-invites${suffix}`;
+}
+
+/** Nominator issues a doubles-partner invite (by email) for an event. Returns the invite. */
+export async function createPartnerInvite(
+  provider: string,
+  input: CreatePartnerInviteInput,
+): Promise<PartnerInviteView> {
+  const headers = authHeaders();
+  if (!headers) throw new Error(NOT_SIGNED_IN);
+  const res = await fetch(`${partnerInvitesUrl()}?${providerQuery(provider)}`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(input),
+  });
+  if (!res.ok) throw new Error(await describeError(res));
+  return (await res.json()) as PartnerInviteView;
+}
+
+/** Public read for the confirm landing — the single-use token is the credential. */
+export async function fetchPartnerInvite(token: string): Promise<PartnerInviteView | null> {
+  const res = await fetch(partnerInvitesUrl(`/${encodeURIComponent(token)}`));
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`fetchPartnerInvite failed: HTTP ${res.status}`);
+  const body = await res.json().catch(() => null);
+  return body && typeof body === 'object' ? (body as PartnerInviteView) : null;
+}
+
+/** Invitee accepts the pairing (stamps their personId; moves INVITED → ACCEPTED). */
+export async function acceptPartnerInvite(token: string): Promise<PartnerInviteView> {
+  const headers = authHeaders();
+  if (!headers) throw new Error(NOT_SIGNED_IN);
+  const res = await fetch(partnerInvitesUrl(`/${encodeURIComponent(token)}/accept`), { method: 'POST', headers });
+  if (!res.ok) throw new Error(await describeError(res));
+  return (await res.json()) as PartnerInviteView;
+}
+
+/** Invitee declines the pairing (INVITED → DECLINED). */
+export async function declinePartnerInvite(token: string): Promise<PartnerInviteView> {
+  const headers = authHeaders();
+  if (!headers) throw new Error(NOT_SIGNED_IN);
+  const res = await fetch(partnerInvitesUrl(`/${encodeURIComponent(token)}/decline`), { method: 'POST', headers });
+  if (!res.ok) throw new Error(await describeError(res));
+  return (await res.json()) as PartnerInviteView;
 }
 
 // Surface the service's typed error code (CONSENT_REQUIRED / PARENTAL_CONSENT_REQUIRED / …)

@@ -10,6 +10,9 @@ import {
   saveMyAvailability,
   submitRegistration,
   withdrawRegistration,
+  createPartnerInvite,
+  fetchPartnerInvite,
+  acceptPartnerInvite,
 } from './declarationsApi';
 import { readHiveIDSession } from './hiveidSession';
 
@@ -96,5 +99,41 @@ describe('declarationsApi', () => {
     vi.stubGlobal('fetch', fetchMock);
     await withdrawRegistration('BOBOCA', 't1');
     expect(fetchMock.mock.calls[0][1].method).toBe('DELETE');
+  });
+
+  describe('partner invites', () => {
+    it('createPartnerInvite POSTs to /partner-invites with provider + body', async () => {
+      (readHiveIDSession as any).mockReturnValue(SESSION);
+      const fetchMock = vi.fn().mockResolvedValue(okJson({ declarationId: 'inv-1', status: 'INVITED' }));
+      vi.stubGlobal('fetch', fetchMock);
+      const res = await createPartnerInvite('BOBOCA', { tournamentId: 't1', event: "Men's Doubles", eventId: 'e-md', inviteeEmail: 'p@x.com' });
+      const [url, opts] = fetchMock.mock.calls[0];
+      expect(url).toContain('/partner-invites?provider=BOBOCA');
+      expect(opts.method).toBe('POST');
+      expect(JSON.parse(opts.body)).toEqual({ tournamentId: 't1', event: "Men's Doubles", eventId: 'e-md', inviteeEmail: 'p@x.com' });
+      expect(res.declarationId).toBe('inv-1');
+    });
+
+    it('fetchPartnerInvite reads by token (public, no auth), null on 404', async () => {
+      const okMock = vi.fn().mockResolvedValue(okJson({ declarationId: 'inv-1', status: 'INVITED' }));
+      vi.stubGlobal('fetch', okMock);
+      expect((await fetchPartnerInvite('tok'))?.declarationId).toBe('inv-1');
+      expect(okMock.mock.calls[0][0]).toContain('/partner-invites/tok');
+
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 404 }));
+      expect(await fetchPartnerInvite('missing')).toBeNull();
+    });
+
+    it('acceptPartnerInvite POSTs to :token/accept with the bearer token', async () => {
+      (readHiveIDSession as any).mockReturnValue(SESSION);
+      const fetchMock = vi.fn().mockResolvedValue(okJson({ declarationId: 'inv-1', status: 'ACCEPTED' }));
+      vi.stubGlobal('fetch', fetchMock);
+      const res = await acceptPartnerInvite('tok');
+      const [url, opts] = fetchMock.mock.calls[0];
+      expect(url).toContain('/partner-invites/tok/accept');
+      expect(opts.method).toBe('POST');
+      expect(opts.headers.Authorization).toBe('Bearer jwt-1');
+      expect(res.status).toBe('ACCEPTED');
+    });
   });
 });
