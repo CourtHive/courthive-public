@@ -128,4 +128,28 @@ test.describe('Proposal registration', () => {
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain('evt-ms');
     expect(reg.savedRegistration()?.payload?.eventIds).not.toContain(MENS);
   });
+
+  test('nominating a partner for a doubles event creates an invite + links partnerInviteId', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    const viewWithDoubles = {
+      ...VIEW,
+      events: [{ eventId: 'e-md', eventName: "Men's Doubles", eventType: 'DOUBLES', gender: 'MALE' }],
+    };
+    const reg = await installProposalRegistrationMocks(page, viewWithDoubles);
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: PERSON, cached: {} });
+
+    await page.goto(`/#/register/${TID}`);
+    const shell = page.locator(REGISTER);
+    await expect(shell).toContainText("Men's Doubles");
+    await shell.locator('.chp-reg-partner input').fill('partner@example.com');
+    await shell.getByRole('checkbox').first().check();
+    await shell.getByRole('button', { name: /^register$/i }).click();
+    await expect(shell.locator(STATUS)).toHaveText(/registered/i);
+
+    // An invite was created for the doubles event and linked on the registration.
+    await expect.poll(() => reg.createdInvite()?.inviteeEmail).toBe('partner@example.com');
+    expect(reg.createdInvite()?.eventId).toBe('e-md');
+    await expect.poll(() => reg.savedRegistration()?.payload?.partnerInviteId).toBe('inv-created');
+  });
 });

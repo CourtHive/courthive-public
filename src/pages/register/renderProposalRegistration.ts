@@ -26,6 +26,7 @@ import {
   recordMyConsent,
   submitRegistration,
   withdrawRegistration,
+  createPartnerInvite,
   type RegistrationSnapshot,
 } from 'src/services/declarationsApi';
 
@@ -132,6 +133,14 @@ async function buildRegistrationForm(
   }
   form.appendChild(eventsWrap);
 
+  // Doubles partner nomination — for a selected doubles event, invite a partner by
+  // email (creates a PARTNER_INVITE + links partnerInviteId). One pairing per
+  // registration; shown only when the proposal has a doubles event.
+  const partnerState = { email: '' };
+  if (view.events.some((e) => e.eventType === 'DOUBLES')) {
+    form.appendChild(buildPartnerField(partnerState));
+  }
+
   const status = document.createElement('div');
   status.className = 'chp-reg-status';
   status.dataset.kind = 'idle';
@@ -152,7 +161,7 @@ async function buildRegistrationForm(
   form.append(status, actions);
   form.onsubmit = (e) => {
     e.preventDefault();
-    void doSubmit(provider, tournamentId, selected, status, submit);
+    void doSubmit({ provider, tournamentId, selected, status, submit, events: view.events, partnerState });
   };
   body.appendChild(form);
 }
@@ -364,13 +373,57 @@ function buildEventCheckbox(ev: ProposalRegistrationView['events'][number], sele
   return label;
 }
 
-async function doSubmit(
-  provider: string,
-  tournamentId: string,
-  selected: Set<string>,
-  status: HTMLElement,
-  submit: HTMLButtonElement,
-): Promise<void> {
+function buildPartnerField(partnerState: { email: string }): HTMLElement {
+  const wrap = document.createElement('fieldset');
+  wrap.className = 'chp-reg-partner';
+  const legend = document.createElement('legend');
+  legend.textContent = 'Doubles partner (optional)';
+  const hint = document.createElement('p');
+  hint.className = 'chp-reg-hint';
+  hint.textContent = 'For a doubles event, invite your partner by email — they confirm and register from a link.';
+  const input = document.createElement('input');
+  input.type = 'email';
+  input.className = 'chp-reg-input';
+  input.placeholder = "partner's email";
+  input.oninput = () => {
+    partnerState.email = input.value.trim();
+  };
+  wrap.append(legend, hint, input);
+  return wrap;
+}
+
+// If a partner email was supplied and a doubles event is selected, create the invite
+// for the FIRST selected doubles event and return its id to link on the registration.
+async function maybeCreatePartnerInvite(args: {
+  provider: string;
+  tournamentId: string;
+  events: ProposalRegistrationView['events'];
+  selected: Set<string>;
+  partnerState: { email: string };
+}): Promise<string | undefined> {
+  const { provider, tournamentId, events, selected, partnerState } = args;
+  if (!partnerState.email) return undefined;
+  const doubles = events.find((e) => e.eventType === 'DOUBLES' && selected.has(e.eventId ?? e.eventName));
+  if (!doubles) return undefined;
+  const invite = await createPartnerInvite(provider, {
+    tournamentId,
+    event: doubles.eventName,
+    eventId: doubles.eventId ?? null,
+    inviteeEmail: partnerState.email,
+  });
+  return invite.declarationId;
+}
+
+async function doSubmit(args: {
+  provider: string;
+  tournamentId: string;
+  selected: Set<string>;
+  status: HTMLElement;
+  submit: HTMLButtonElement;
+  events: ProposalRegistrationView['events'];
+  partnerState: { email: string };
+}): Promise<void> {
+  const { provider, tournamentId, selected, status, submit, events, partnerState } = args;
   const eventIds = [...selected];
   if (!eventIds.length) {
     showStatus(status, 'Select at least one event.', 'error');
@@ -379,8 +432,15 @@ async function doSubmit(
   submit.disabled = true;
   showStatus(status, 'Submitting…', 'saving');
   try {
-    await submitRegistration(provider, tournamentId, { eventIds });
-    showStatus(status, 'Registered — the tournament director will review your entry.', 'saved');
+    const partnerInviteId = await maybeCreatePartnerInvite({ provider, tournamentId, events, selected, partnerState });
+    await submitRegistration(provider, tournamentId, partnerInviteId ? { eventIds, partnerInviteId } : { eventIds });
+    showStatus(
+      status,
+      partnerInviteId
+        ? "Registered — we've emailed your partner to confirm the pairing."
+        : 'Registered — the tournament director will review your entry.',
+      'saved',
+    );
   } catch (err) {
     const code = err instanceof Error ? err.message : String(err);
     showStatus(status, `Could not register: ${code}`, 'error');

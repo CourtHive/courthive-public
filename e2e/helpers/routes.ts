@@ -254,6 +254,8 @@ const AMS = 'http://localhost:3130';
 export interface ProposalRegistrationMockState {
   /** The registration held by the mock (after a PUT), or null. */
   savedRegistration: () => any;
+  /** The body captured by a POST /partner-invites (nominate flow), or null. */
+  createdInvite: () => any;
 }
 
 /**
@@ -264,10 +266,18 @@ export interface ProposalRegistrationMockState {
  */
 export async function installProposalRegistrationMocks(page: Page, view: any): Promise<ProposalRegistrationMockState> {
   let registration: any = null;
+  let invite: any = null;
 
   await page.route(`${AMS}/sanctioning/registration/**`, (route) => {
     if (handledPreflight(route)) return;
     void json(route, view);
+  });
+
+  // Nominate flow: POST /partner-invites returns a created invite (captures the body).
+  await page.route(`${DECLARATIONS}/partner-invites**`, (route) => {
+    if (handledPreflight(route)) return;
+    invite = route.request().postDataJSON() ?? {};
+    void json(route, { declarationId: 'inv-created', status: 'INVITED', ...invite });
   });
 
   await page.route(`${DECLARATIONS}/me/registrations/**`, (route) => {
@@ -294,7 +304,7 @@ export async function installProposalRegistrationMocks(page: Page, view: any): P
     void json(route, registration);
   });
 
-  return { savedRegistration: () => registration };
+  return { savedRegistration: () => registration, createdInvite: () => invite };
 }
 
 export interface PartnerConfirmMockState {
