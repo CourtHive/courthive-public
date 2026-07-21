@@ -325,7 +325,7 @@ export async function installPartnerInviteMocks(page: Page, invite: any): Promis
   await page.route(`${DECLARATIONS}/me/registrations/**`, (route) => {
     if (handledPreflight(route)) return;
     registration = route.request().postDataJSON() ?? {};
-    void json(route, { personId: 'person-e2e', providerId: invite.providerId, tournamentId: invite.tournamentId, status: 'SUBMITTED', payload: registration, updatedAt: 't' });
+    void json(route, { personId: PERSON_E2E, providerId: invite.providerId, tournamentId: invite.tournamentId, status: 'SUBMITTED', payload: registration, updatedAt: 't' });
   });
   return { savedRegistration: () => registration, accepted: () => accepted };
 }
