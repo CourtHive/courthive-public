@@ -19,6 +19,8 @@ const REGISTER = '#register';
 const TID = 'tid-1';
 const MENS = "Men's Singles";
 const NAME = 'Spring Open';
+const PERSON = 'person-e2e';
+const STATUS = '.chp-reg-status';
 const VIEW = {
   tournamentId: TID,
   tournamentName: NAME,
@@ -42,7 +44,7 @@ async function bootstrap(page: any) {
 test.describe('Proposal registration', () => {
   test('a signed-in person registers for an event', async ({ page }) => {
     const reg = await bootstrap(page);
-    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: 'person-e2e', cached: {} });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: PERSON, cached: {} });
 
     await page.goto(`/#/register/${TID}`);
     const shell = page.locator(REGISTER);
@@ -52,7 +54,7 @@ test.describe('Proposal registration', () => {
     await shell.getByRole('checkbox').first().check();
     await shell.getByRole('button', { name: /^register$/i }).click();
 
-    await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
+    await expect(shell.locator(STATUS)).toHaveText(/registered/i);
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain(MENS);
   });
 
@@ -69,7 +71,7 @@ test.describe('Proposal registration', () => {
   test('a brand-new person onboards inline: consent → create account → register', async ({ page }) => {
     const reg = await bootstrap(page);
     const decl = await installDeclarationsMocks(page);
-    const signupMock = await installHiveIDSignupMock(page, { personId: 'person-e2e' });
+    const signupMock = await installHiveIDSignupMock(page, { personId: PERSON });
 
     await page.goto(`/#/register/${TID}`);
     const shell = page.locator(REGISTER);
@@ -98,7 +100,7 @@ test.describe('Proposal registration', () => {
     await expect.poll(() => decl.savedConsent()?.consentVersion).toBe('v1');
     await shell.getByRole('checkbox').first().check();
     await shell.getByRole('button', { name: /^register$/i }).click();
-    await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
+    await expect(shell.locator(STATUS)).toHaveText(/registered/i);
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain(MENS);
   });
 
@@ -113,14 +115,14 @@ test.describe('Proposal registration', () => {
       ],
     };
     const reg = await installProposalRegistrationMocks(page, viewWithIds);
-    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: 'person-e2e', cached: {} });
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: PERSON, cached: {} });
 
     await page.goto(`/#/register/${TID}`);
     const shell = page.locator(REGISTER);
     await expect(shell).toContainText(MENS); // still displays the name
     await shell.getByRole('checkbox').first().check();
     await shell.getByRole('button', { name: /^register$/i }).click();
-    await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
+    await expect(shell.locator(STATUS)).toHaveText(/registered/i);
 
     // The submitted payload keys on the eventId, not the display name.
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain('evt-ms');
