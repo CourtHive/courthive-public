@@ -101,4 +101,29 @@ test.describe('Proposal registration', () => {
     await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
     await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain(MENS);
   });
+
+  test('stores the stable eventId (not the name) when the proposal carries one', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 4, scheduleFirstRound: false });
+    await installApiMocks(page, fixture);
+    const viewWithIds = {
+      ...VIEW,
+      events: [
+        { eventId: 'evt-ms', eventName: MENS, eventType: 'SINGLES', gender: 'MALE' },
+        { eventId: 'evt-ws', eventName: "Women's Singles", eventType: 'SINGLES', gender: 'FEMALE' },
+      ],
+    };
+    const reg = await installProposalRegistrationMocks(page, viewWithIds);
+    await seedHiveIDSessionInitScript(page, { token: 'e2e.token', personId: 'person-e2e', cached: {} });
+
+    await page.goto(`/#/register/${TID}`);
+    const shell = page.locator(REGISTER);
+    await expect(shell).toContainText(MENS); // still displays the name
+    await shell.getByRole('checkbox').first().check();
+    await shell.getByRole('button', { name: /^register$/i }).click();
+    await expect(shell.locator('.chp-reg-status')).toHaveText(/registered/i);
+
+    // The submitted payload keys on the eventId, not the display name.
+    await expect.poll(() => reg.savedRegistration()?.payload?.eventIds).toContain('evt-ms');
+    expect(reg.savedRegistration()?.payload?.eventIds).not.toContain(MENS);
+  });
 });

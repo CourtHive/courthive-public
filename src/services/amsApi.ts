@@ -7,6 +7,9 @@
  */
 
 export interface ProposalRegistrationEvent {
+  // Stable eventId assigned at open-registration (reused by activation). Registration stores
+  // this so the entry joins to its event by id; null on proposals opened before eventId threading.
+  eventId?: string | null;
   eventName: string;
   eventType: string;
   gender?: string | null;

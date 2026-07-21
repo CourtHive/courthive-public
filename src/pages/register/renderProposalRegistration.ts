@@ -347,12 +347,15 @@ async function submitGuardianConsent(args: {
 function buildEventCheckbox(ev: ProposalRegistrationView['events'][number], selected: Set<string>): HTMLElement {
   const label = document.createElement('label');
   label.className = 'chp-reg-event';
+  // Store the stable eventId when present (id-join at accept); fall back to the event name for
+  // proposals opened before eventId threading. CFS resolveAcceptedEventIds accepts either.
+  const eventKey = ev.eventId ?? ev.eventName;
   const input = document.createElement('input');
   input.type = 'checkbox';
-  input.checked = selected.has(ev.eventName);
+  input.checked = selected.has(eventKey);
   input.onchange = () => {
-    if (input.checked) selected.add(ev.eventName);
-    else selected.delete(ev.eventName);
+    if (input.checked) selected.add(eventKey);
+    else selected.delete(eventKey);
   };
   const text = document.createElement('span');
   const meta = [ev.eventType, ev.gender].filter(Boolean).join(' · ');
