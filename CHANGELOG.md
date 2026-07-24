@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.9.0](https://github.com/CourtHive/courthive-public/compare/v1.8.1...v1.9.0) (2026-07-24)
+
+
+### Features
+
+* **hiveid:** enable federation-id capture on the login/signup modal ([4a60ce5](https://github.com/CourtHive/courthive-public/commit/4a60ce5bbca787ebeba6039102e7f07f81a3a68f))
+* **me:** player availability collection surface ([c205bdf](https://github.com/CourtHive/courthive-public/commit/c205bdf7015e77e34b9da41338bc93e8408369d1))
+* **me:** read + withdraw registrations from declarations, off the mutation server ([e419af3](https://github.com/CourtHive/courthive-public/commit/e419af352be00711e86f092ebfa1495ff7249725))
+* **me:** source the availability provider picker from my providers (off CFS) ([ff39952](https://github.com/CourtHive/courthive-public/commit/ff3995255d9f941de608eb6ef26927cec6d377e9))
+* **partner-invite:** confirm-landing page + route for the invitee ([86568e4](https://github.com/CourtHive/courthive-public/commit/86568e41c2b8c46fb94b037078f840c7960d0917))
+* **partner-invite:** declarations client methods + partnerInviteId on payload ([9fd412f](https://github.com/CourtHive/courthive-public/commit/9fd412fd950b307d34a0aaa41e99dab62532b575))
+* **partner-invite:** nominate a doubles partner on the register page ([b2ca660](https://github.com/CourtHive/courthive-public/commit/b2ca660192601f392c299f602f7e9d430a9b4989))
+* **register:** inline create-account with consent-gated dob/sex on the proposal page ([1bfb3ec](https://github.com/CourtHive/courthive-public/commit/1bfb3ec4b4f2ee780c24b539d8a92ddeef554518))
+* **register:** proposal registration page (sanctioning-proposal-driven) ([98ea787](https://github.com/CourtHive/courthive-public/commit/98ea7877147c27653e8d2d2b93f8ac7af75e484d))
+* **register:** store stable eventId (fallback to name) for proposal registration ([26065df](https://github.com/CourtHive/courthive-public/commit/26065df7e1850057a912b24e37a8649c41814509))
+* **registration:** consolidate info-tab cta to /register; existing-check via declarations ([369584a](https://github.com/CourtHive/courthive-public/commit/369584a0c6824502f01fcfdcee8a78ffccc68681))
+* **scoring-launch:** hand off HiveID identity to the launched scorer ([d430cf1](https://github.com/CourtHive/courthive-public/commit/d430cf1c259b89098f21714a75993ff219bd06c7))
+* **scoring:** hand epixodic a scoped score token, not the session jwt ([db5671e](https://github.com/CourtHive/courthive-public/commit/db5671e282f46b6ec35c380897e66d8814f08b5a))
+
+
+### Bug Fixes
+
+* **deps:** drop unused vitest-github-actions-reporter to clear undici advisories ([1f7ce3f](https://github.com/CourtHive/courthive-public/commit/1f7ce3f3aa0781157e4fe78dae361160939e7a8b))
+* **deps:** override vulnerable transitive dep to clear audit high ([cd8e0f4](https://github.com/CourtHive/courthive-public/commit/cd8e0f45093cf79a8ab3358793905f0c1a4fe37d))
+* **deps:** update courthive-components to 3.11.0 ([00c1941](https://github.com/CourtHive/courthive-public/commit/00c1941f02cd301fdcca51f82ff28f44c7d34a22))
+* **deps:** update tods-competition-factory to 6.10.0 ([55a1ed8](https://github.com/CourtHive/courthive-public/commit/55a1ed832e33eb22f390eb41ac3c785c441fd422))
+* **deps:** update tods-competition-factory to 6.11.0 ([e9c1e44](https://github.com/CourtHive/courthive-public/commit/e9c1e4400d44317f55a5826299083a377278512b))
+* **deps:** update tods-competition-factory to 6.12.0 ([90e6dfd](https://github.com/CourtHive/courthive-public/commit/90e6dfd89efe143d9e94a370db17ed837237039e))
+* **me:** default declarations base url to port 3120 ([2fea7a7](https://github.com/CourtHive/courthive-public/commit/2fea7a730c1f90c88d84b067a5fa15e0414928c2))
+* **me:** honor server session validity, add navbar sign-out + provider picker ([380a63b](https://github.com/CourtHive/courthive-public/commit/380a63b0e3875443b82ad7cba656cc917779c1d8))
+* **me:** point provider picker at CFS + let users edit an unverified email ([b83f0cd](https://github.com/CourtHive/courthive-public/commit/b83f0cda6499c526d46b669f36209a23e62dabe9))
+
+
+### Documentation
+
+* reflect registration migration off cfs to declarations ([fa71442](https://github.com/CourtHive/courthive-public/commit/fa714428ef93f8693623d1c431146791200bec48))
+
 ## [1.8.1](https://github.com/CourtHive/courthive-public/compare/v1.8.0...v1.8.1) (2026-07-14)
 
 
