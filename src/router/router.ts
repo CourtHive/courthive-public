@@ -80,6 +80,19 @@ export function updateRouteUrl({
   history.pushState(null, '', `#${path}`);
 }
 
+// Re-run the handler for the URL the user is currently on. Navigo's resolve()
+// no-ops when the location is unchanged (its internal "already" short-circuit
+// compares the last-resolved match), so we clear that match first to force a
+// re-run. Used after a HiveID sign-in so login-gated content (e.g. the
+// tournament registration CTA, which reads isAuthenticated() at render time)
+// re-renders in place instead of yanking the user away to their profile page.
+export function refreshCurrentRoute(): void {
+  const currentRouter = context.router;
+  if (!currentRouter) return;
+  currentRouter._setCurrent?.(null);
+  currentRouter.resolve();
+}
+
 export function router() {
   const useHash = true;
   const router = new Navigo('/', { hash: useHash });

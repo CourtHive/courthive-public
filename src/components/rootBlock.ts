@@ -6,6 +6,7 @@ import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/ser
 import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
+import { refreshCurrentRoute } from 'src/router/router';
 import { toggleTheme } from 'src/services/themeService';
 import { getCfsBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
@@ -154,7 +155,13 @@ function openLoginModal(): void {
     writeHiveIDSession(detail);
     connectHiveIDSocket();
     cModal.close();
-    context.router?.navigate('/me');
+    // Stay on the view the user signed in from (a tournament, rankings, etc.)
+    // rather than routing to the profile page — people log in to register or
+    // track a matchUp, and being bounced to /me buries the view they were on.
+    // Re-resolving refreshes login-gated content (e.g. the registration CTA
+    // flips from "Sign in to register" to "Register") without navigating away.
+    // The profile page remains reachable via the navbar person icon.
+    refreshCurrentRoute();
   });
 }
 
