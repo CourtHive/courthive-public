@@ -14,10 +14,12 @@ import {
   claimParticipant,
   fetchClaimable,
   fetchHiveIDMe,
+  fetchMyMatches,
   fetchMyParticipations,
   resendHiveIDVerification,
   setMyContactEmail,
   type ClaimableCandidate,
+  type MatchRow,
   type ParticipationRow,
 } from 'src/services/hiveidApi';
 import {
@@ -40,6 +42,14 @@ import { t } from 'src/i18n/i18n';
 const SECTION_CLASS = 'chp-me-section';
 const BUTTON_CLASS = 'chp-me-button';
 const INPUT_CLASS = 'chp-me-input';
+
+// Shared history-list DOM classes, used by the participations, matches, and
+// registrations sections (extracted so no literal repeats 3+ times — SonarJS).
+const LIST_CLASS = 'chp-me-list';
+const LIST_ITEM_CLASS = 'chp-me-list-item';
+const LIST_MAIN_CLASS = 'chp-me-list-main';
+const LIST_TITLE_CLASS = 'chp-me-list-title';
+const LIST_META_CLASS = 'chp-me-list-meta';
 
 // Module-scoped unsub for the personUpdate listener so a re-render of
 // /me cleans up the previous registration before installing the new one.
@@ -174,9 +184,13 @@ function renderShell(container: HTMLElement, session: HiveIDSession): void {
   const participations = renderParticipationsSection();
   shell.appendChild(participations.section);
 
+  const matches = renderMatchesSection();
+  shell.appendChild(matches.section);
+
   const claim = renderClaimSection({
     onClaimed: () => {
       void participations.refresh();
+      void matches.refresh();
     },
   });
   shell.appendChild(claim.section);
@@ -186,6 +200,7 @@ function renderShell(container: HTMLElement, session: HiveIDSession): void {
   void verification.refresh();
   void registrations.refresh();
   void participations.refresh();
+  void matches.refresh();
 
   // HiveID Phase 4.0 — listen for personUpdate broadcasts so the page
   // reflects identity-changing server events without a manual refresh.
@@ -239,6 +254,7 @@ function renderShell(container: HTMLElement, session: HiveIDSession): void {
         }
         void registrations.refresh();
         void participations.refresh();
+        void matches.refresh();
       })
       .catch((err) => {
         console.warn('[me] personUpdate refresh failed:', err);
@@ -315,7 +331,7 @@ function renderParticipationsSection(): { section: HTMLElement; refresh: () => P
       }
       body.replaceChildren();
       const list = document.createElement('ul');
-      list.className = 'chp-me-list';
+      list.className = LIST_CLASS;
       for (const row of result.participations) {
         list.appendChild(buildParticipationRow(row));
       }
@@ -329,21 +345,107 @@ function renderParticipationsSection(): { section: HTMLElement; refresh: () => P
   return { section, refresh };
 }
 
-function buildParticipationRow(row: ParticipationRow): HTMLElement {
+function renderMatchesSection(): { section: HTMLElement; refresh: () => Promise<void> } {
+  const section = document.createElement('section');
+  section.className = SECTION_CLASS;
+  const sectionTitle = document.createElement('h2');
+  sectionTitle.textContent = 'Matches you have played';
+  section.appendChild(sectionTitle);
+
+  const body = document.createElement('div');
+  body.className = 'chp-me-matches';
+  body.textContent = 'Loading…';
+  section.appendChild(body);
+
+  async function refresh(): Promise<void> {
+    body.replaceChildren();
+    body.textContent = 'Loading…';
+    try {
+      const result = await fetchMyMatches();
+      if (!result) {
+        body.textContent = 'Sign in to see your matches.';
+        return;
+      }
+      if (!result.personId) {
+        body.textContent = 'No CourtHive identity link yet — claim a participant below to start your history.';
+        return;
+      }
+      if (!result.matches.length) {
+        body.textContent = 'No matches yet — once you claim a participant your matches will appear here.';
+        return;
+      }
+      body.replaceChildren();
+      const list = document.createElement('ul');
+      list.className = LIST_CLASS;
+      for (const row of result.matches) {
+        list.appendChild(buildMatchRow(row));
+      }
+      body.appendChild(list);
+    } catch (err) {
+      console.warn('[hiveid matches] fetch failed:', err);
+      body.textContent = 'Could not load your match history. Please try again later.';
+    }
+  }
+
+  return { section, refresh };
+}
+
+function buildMatchRow(row: MatchRow): HTMLElement {
   const li = document.createElement('li');
-  li.className = 'chp-me-list-item';
+  li.className = LIST_ITEM_CLASS;
 
   const main = document.createElement('div');
-  main.className = 'chp-me-list-main';
+  main.className = LIST_MAIN_CLASS;
 
   const nameLink = document.createElement('a');
-  nameLink.className = 'chp-me-list-title';
+  nameLink.className = LIST_TITLE_CLASS;
   nameLink.href = `#/tournament/${encodeURIComponent(row.tournamentId)}`;
   nameLink.textContent = row.tournamentName || row.tournamentId;
   main.appendChild(nameLink);
 
   const meta = document.createElement('div');
-  meta.className = 'chp-me-list-meta';
+  meta.className = LIST_META_CLASS;
+  if (row.startDate) meta.appendChild(makeMetaSpan(row.startDate));
+  if (row.roundName) meta.appendChild(makeMetaSpan(row.roundName));
+  const outcome = formatMatchOutcome(row);
+  if (outcome) meta.appendChild(makeMetaSpan(outcome));
+  main.appendChild(meta);
+
+  li.appendChild(main);
+  return li;
+}
+
+// Human-readable outcome for the competitor's own perspective. Decided matchUps
+// read "Won"/"Lost" (with the score when present); an undecided row falls back to
+// its status (e.g. TO_BE_PLAYED → "To be played"), never a bare number.
+function formatMatchOutcome(row: MatchRow): string {
+  if (row.winningSide === null) {
+    return row.matchUpStatus ? titleCaseStatus(row.matchUpStatus) : '';
+  }
+  const result = row.winningSide === row.sideNumber ? 'Won' : 'Lost';
+  return row.scoreString ? `${result} ${row.scoreString}` : result;
+}
+
+function titleCaseStatus(status: string): string {
+  const words = status.toLowerCase().split('_');
+  return words.map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w)).join(' ');
+}
+
+function buildParticipationRow(row: ParticipationRow): HTMLElement {
+  const li = document.createElement('li');
+  li.className = LIST_ITEM_CLASS;
+
+  const main = document.createElement('div');
+  main.className = LIST_MAIN_CLASS;
+
+  const nameLink = document.createElement('a');
+  nameLink.className = LIST_TITLE_CLASS;
+  nameLink.href = `#/tournament/${encodeURIComponent(row.tournamentId)}`;
+  nameLink.textContent = row.tournamentName || row.tournamentId;
+  main.appendChild(nameLink);
+
+  const meta = document.createElement('div');
+  meta.className = LIST_META_CLASS;
   const dates = formatDateRange(row.startDate, row.endDate);
   if (dates) meta.appendChild(makeMetaSpan(dates));
   meta.appendChild(makeMetaSpan(`${row.eventCount} event${row.eventCount === 1 ? '' : 's'}`));
@@ -805,7 +907,7 @@ function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Pr
       }
       body.replaceChildren();
       const list = document.createElement('ul');
-      list.className = 'chp-me-list';
+      list.className = LIST_CLASS;
       for (const row of rows) {
         list.appendChild(buildRegistrationRow(row, refresh));
       }
@@ -821,17 +923,17 @@ function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Pr
 
 function buildRegistrationRow(row: MeRegistrationRow, refresh: () => Promise<void>): HTMLElement {
   const li = document.createElement('li');
-  li.className = 'chp-me-list-item';
+  li.className = LIST_ITEM_CLASS;
 
   const main = document.createElement('div');
-  main.className = 'chp-me-list-main';
+  main.className = LIST_MAIN_CLASS;
 
   const titleRow = document.createElement('div');
   titleRow.style.display = 'flex';
   titleRow.style.alignItems = 'center';
   titleRow.style.gap = '0.5rem';
   const nameLink = document.createElement('a');
-  nameLink.className = 'chp-me-list-title';
+  nameLink.className = LIST_TITLE_CLASS;
   nameLink.href = `#/tournament/${encodeURIComponent(row.tournamentId)}`;
   nameLink.textContent = row.tournamentId;
   titleRow.appendChild(nameLink);
@@ -839,7 +941,7 @@ function buildRegistrationRow(row: MeRegistrationRow, refresh: () => Promise<voi
   main.appendChild(titleRow);
 
   const meta = document.createElement('div');
-  meta.className = 'chp-me-list-meta';
+  meta.className = LIST_META_CLASS;
   meta.appendChild(makeMetaSpan(`Applied ${row.appliedAt.slice(0, 10)}`));
   if (row.eventIds.length) {
     meta.appendChild(makeMetaSpan(`${row.eventIds.length} event${row.eventIds.length === 1 ? '' : 's'}`));

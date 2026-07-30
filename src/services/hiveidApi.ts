@@ -86,6 +86,21 @@ export interface ParticipationRow {
   eventCount: number;
 }
 
+export interface MatchRow {
+  tournamentId: string;
+  tournamentName: string;
+  startDate: string | null;
+  matchUpId: string;
+  eventType: string | null;
+  roundName: string | null;
+  matchUpStatus: string | null;
+  /** Which side won (1 or 2), or null when the matchUp isn't decided yet. */
+  winningSide: number | null;
+  scoreString: string | null;
+  /** The side this person competed on — win/loss = `winningSide === sideNumber`. */
+  sideNumber: number;
+}
+
 export interface ClaimableCandidate {
   participantId: string;
   participantName: string;
@@ -167,6 +182,10 @@ export async function consumeEmailVerification(token: string): Promise<{ success
 
 export function fetchMyParticipations(): Promise<{ personId: string | null; participations: ParticipationRow[] } | null> {
   return authenticatedJson('/auth/hiveid/me/participations');
+}
+
+export function fetchMyMatches(): Promise<{ personId: string | null; matches: MatchRow[] } | null> {
+  return authenticatedJson('/auth/hiveid/me/matches');
 }
 
 export function fetchClaimable(tournamentId: string): Promise<{ tournamentId: string; candidates: ClaimableCandidate[] } | null> {
