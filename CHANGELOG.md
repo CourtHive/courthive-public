@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.10.0](https://github.com/CourtHive/courthive-public/compare/v1.9.1...v1.10.0) (2026-08-07)
+
+
+### Features
+
+* **me:** match history section on My CourtHive (F3) ([b380b03](https://github.com/CourtHive/courthive-public/commit/b380b033f181e35ca4229f4e73b39f59d3e57487))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 3.12.0 ([45912b9](https://github.com/CourtHive/courthive-public/commit/45912b972f6a6614b458f720b1cbf993bda72865))
+* **deps:** update courthive-components to 3.12.1 ([44cb836](https://github.com/CourtHive/courthive-public/commit/44cb836305ba67cfb6490219dc58c446a8892725))
+* **deps:** update tods-competition-factory to 6.14.0 ([3ae8127](https://github.com/CourtHive/courthive-public/commit/3ae81273aaaaeebf929dc2d293f941172a9dfd39))
+* **deps:** update tods-competition-factory to 6.14.1 ([3fe40d1](https://github.com/CourtHive/courthive-public/commit/3fe40d1471b00309ee72d0572528cce6daababa4))
+* **deps:** update tods-competition-factory to 6.15.0 ([28d694f](https://github.com/CourtHive/courthive-public/commit/28d694fdfb89ce901788bb6ba18430ed61090924))
+* **deps:** update tods-competition-factory to 6.16.0 ([09d4f92](https://github.com/CourtHive/courthive-public/commit/09d4f920c6f31ef762e40a6ad0114fe77aafa7b2))
+* **deps:** update tods-competition-factory to 6.17.0 ([35863c3](https://github.com/CourtHive/courthive-public/commit/35863c3c97ef69ec0b95a7487e4b3a5e4e952b64))
+* **deps:** update tods-competition-factory to 6.18.0 ([097bdd9](https://github.com/CourtHive/courthive-public/commit/097bdd9317a3da71e30c7daf890b6d3b00bd56eb))
+* **deps:** update tods-competition-factory to 6.19.0 ([9a652c9](https://github.com/CourtHive/courthive-public/commit/9a652c9c142db4d1f74e0963ed94f307d0a6e3f1))
+
 ## [1.9.1](https://github.com/CourtHive/courthive-public/compare/v1.9.0...v1.9.1) (2026-07-29)
 
 
