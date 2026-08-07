@@ -27,7 +27,8 @@ pnpm install              # Install dependencies (pnpm only)
 pnpm start                # Vite dev server
 pnpm build                # tsc + vite production build
 pnpm check-types          # tsc --noEmit
-pnpm lint                 # ESLint with auto-fix
+pnpm lint                 # ESLint — non-mutating, fails on any warning
+pnpm lint:fix             # ESLint with auto-fix (rewrites source)
 pnpm format               # Prettier on src/
 pnpm test                 # Vitest (TZ=UTC, watch mode)
 pnpm preview              # Preview production build

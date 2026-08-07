@@ -25,7 +25,8 @@ pnpm start        # Vite dev server (opens browser)
 | `pnpm build`       | Production build (`tsc` + `vite build`) |
 | `pnpm preview`     | Preview production build locally        |
 | `pnpm check-types` | TypeScript type check (`tsc --noEmit`)  |
-| `pnpm lint`        | ESLint with auto-fix                    |
+| `pnpm lint`        | ESLint — non-mutating, fails on any warning |
+| `pnpm lint:fix`    | ESLint with auto-fix (rewrites source) |
 | `pnpm format`      | Prettier on `src/`                      |
 | `pnpm test`        | Vitest (UTC timezone)                   |
 
