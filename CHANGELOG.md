@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.1](https://github.com/CourtHive/courthive-public/compare/v1.10.0...v1.10.1) (2026-08-09)
+
+
+### Bug Fixes
+
+* **deps:** update @courthive/provider-config to 0.12.0 ([7edb6c9](https://github.com/CourtHive/courthive-public/commit/7edb6c9991c2525e5987a4efcc4cf6b1a2b349ed))
+* **deps:** update courthive-components to 3.12.2 ([d55b8af](https://github.com/CourtHive/courthive-public/commit/d55b8afa23e982725d0e66c88f5708f9da7db044))
+* **deps:** update tods-competition-factory to 6.20.0 ([bf481ab](https://github.com/CourtHive/courthive-public/commit/bf481abeeafdd8f0ae0381cadade088526fac7d1))
+
 ## [1.10.0](https://github.com/CourtHive/courthive-public/compare/v1.9.1...v1.10.0) (2026-08-07)
 
 
