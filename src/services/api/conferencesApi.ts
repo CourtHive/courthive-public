@@ -63,7 +63,17 @@ export interface ConferenceIndex {
   conferences: ConferenceIndexEntry[];
 }
 
-const BASE = '/data/conferences';
+// Resolve against the DOCUMENT, not the site root and not import.meta.env.BASE_URL.
+//
+// courthive-public deploys under a path prefix (`/pub/`) but is built with vite `base: ''` — assets
+// are emitted relative, and `import.meta.env.BASE_URL` is empty. So both a root-absolute
+// '/data/conferences' AND a BASE_URL-derived path resolve to the site root and 404 under /pub/,
+// which is what shipped and produced "Could not load this conference".
+//
+// `document.baseURI` is the index.html location ('https://host/pub/'), unaffected by the hash route,
+// so resolving against it is correct at any prefix and in local dev.
+const conferenceUrl = (file: string): string => new URL(`data/conferences/${file}`, document.baseURI).href;
+
 let indexCache: Promise<ConferenceIndex> | undefined;
 const docCache = new Map<string, Promise<ConferenceDoc>>();
 
@@ -74,11 +84,11 @@ async function getJson<T>(url: string): Promise<T> {
 }
 
 export function fetchConferenceIndex(): Promise<ConferenceIndex> {
-  indexCache ??= getJson<ConferenceIndex>(`${BASE}/index.json`);
+  indexCache ??= getJson<ConferenceIndex>(conferenceUrl('index.json'));
   return indexCache;
 }
 
 export function fetchConference(slug: string): Promise<ConferenceDoc> {
-  if (!docCache.has(slug)) docCache.set(slug, getJson<ConferenceDoc>(`${BASE}/${encodeURIComponent(slug)}.json`));
+  if (!docCache.has(slug)) docCache.set(slug, getJson<ConferenceDoc>(conferenceUrl(`${encodeURIComponent(slug)}.json`)));
   return docCache.get(slug) as Promise<ConferenceDoc>;
 }
