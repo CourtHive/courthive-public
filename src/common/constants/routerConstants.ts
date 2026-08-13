@@ -10,5 +10,6 @@ export const HIVEID_MAGIC = 'hiveid-magic';
 export const RANKINGS = 'rankings';
 export const REGISTER = 'register';
 export const PROGRAM = 'program';
+export const PROGRAMS = 'programs';
 
-export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM];
+export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM, PROGRAMS];

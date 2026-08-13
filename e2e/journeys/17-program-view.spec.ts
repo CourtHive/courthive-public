@@ -29,10 +29,10 @@ function seasonDuals(): Dual[] {
   ];
 }
 
-// Registered AFTER installApiMocks so this handler wins for /programs/* (Playwright matches
-// most-recently-added routes first).
+// Scope the mock to the query ORIGIN (:3150), not '**/programs/**' — the broad glob would also
+// intercept Vite's module script for src/pages/programs/*, returning JSON and crashing the app.
 async function mockPrograms(page: Page, teamId: string, duals: Dual[]): Promise<void> {
-  await page.route('**/programs/**', (route) =>
+  await page.route('http://localhost:3150/programs/*/duals', (route) =>
     route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ teamId, duals }) }),
   );
 }

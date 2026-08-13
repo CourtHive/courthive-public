@@ -19,6 +19,7 @@
 import './teams-grid.css';
 import { CountParticipant, computeTeamCounts, indexIndividualsByTeamName } from './teamsCountLogic';
 import { buildTeamCard } from 'courthive-components';
+import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
 const ANCHOR_ID = 'teamsGrid';
@@ -63,8 +64,28 @@ export function createTeamsGrid({ participants = [] }: { participants?: GridPart
       nickname: team.participantOtherName || undefined,
       countSegments: counts,
     });
+    makeCardNavigable(card, team.participantId, team.participantName || '');
     grid.appendChild(card);
   }
+}
+
+// A team's participantId IS the read-model team_id, so each card links to that program's
+// by-team season (/#/program/:teamId). Wired here rather than via buildTeamCard so the shared
+// component stays presentation-only; role/tabindex/keydown keep it keyboard-accessible.
+function makeCardNavigable(card: HTMLElement, teamId: string, teamName: string): void {
+  if (!teamId) return;
+  card.classList.add('chp-team-card-link');
+  card.setAttribute('role', 'link');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('title', teamName ? t('players.viewProgram', { team: teamName }) : t('players.viewProgramGeneric'));
+  const go = () => context.router?.navigate(`/program/${encodeURIComponent(teamId)}`);
+  card.addEventListener('click', go);
+  card.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      go();
+    }
+  });
 }
 
 function formatCountSegments(

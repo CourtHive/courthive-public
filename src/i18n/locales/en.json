@@ -1,4 +1,7 @@
 {
+  "nav": {
+    "programs": "Programs"
+  },
   "tabs": {
     "info": "Info",
     "events": "Events",
@@ -15,6 +18,8 @@
     "rank": "Rank",
     "noParticipants": "No participants",
     "teamsHeading": "Teams",
+    "viewProgram": "View {{team}} season",
+    "viewProgramGeneric": "View program season",
     "teamCounts": {
       "players_one": "{{count}} player",
       "players_other": "{{count}} players",

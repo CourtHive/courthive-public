@@ -21,6 +21,12 @@ export interface ProgramDual {
   teamName: string;
 }
 
+export interface ProgramSummary {
+  teamId: string;
+  teamName: string;
+  dualCount: number;
+}
+
 function getQueryBaseUrl(): string {
   const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
   const win = globalThis as any;
@@ -34,4 +40,13 @@ export async function fetchProgramDuals(teamId: string): Promise<ProgramDual[]> 
   if (!res.ok) throw new Error(`fetchProgramDuals failed: HTTP ${res.status}`);
   const data = (await res.json()) as { teamId: string; duals: ProgramDual[] };
   return Array.isArray(data?.duals) ? data.duals : [];
+}
+
+/** The program directory — every team with a publicly-visible dual, name-ordered. */
+export async function fetchPrograms(): Promise<ProgramSummary[]> {
+  const url = `${getQueryBaseUrl()}/programs`;
+  const res = await fetch(url, { headers: { accept: 'application/json' } });
+  if (!res.ok) throw new Error(`fetchPrograms failed: HTTP ${res.status}`);
+  const data = (await res.json()) as { programs: ProgramSummary[] };
+  return Array.isArray(data?.programs) ? data.programs : [];
 }

@@ -1,7 +1,7 @@
 import 'src/pages/track/track-page.css';
 import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { HIVEID_MAGIC, HIVEID_ME, PROGRAM, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
@@ -31,6 +31,13 @@ export function rootBlock() {
 
   const navEnd = document.createElement('div');
   navEnd.className = 'navbar-end';
+
+  // Program directory — cross-provider browse/search of college programs (by-team seasons).
+  const programsLink = document.createElement('button');
+  programsLink.className = 'navbar-item programs-link';
+  programsLink.textContent = t('nav.programs');
+  programsLink.onclick = () => context.router.navigate('/programs');
+  navEnd.appendChild(programsLink);
 
   const themeToggle = document.createElement('button');
   themeToggle.className = 'navbar-item theme-toggle';
@@ -117,6 +124,10 @@ export function rootBlock() {
   program.style.display = 'none';
   program.id = PROGRAM;
 
+  const programs = document.createElement('div');
+  programs.style.display = 'none';
+  programs.id = PROGRAMS;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
   main.appendChild(track);
@@ -126,6 +137,7 @@ export function rootBlock() {
   main.appendChild(rankings);
   main.appendChild(register);
   main.appendChild(program);
+  main.appendChild(programs);
 
   return main;
 }
