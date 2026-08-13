@@ -1,0 +1,490 @@
+{
+ "conference": "Southern Collegiate Athletic Conference",
+ "slug": "southern-collegiate-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 3952,
+   "bands": {
+    "STRETCH": 482,
+    "UP": 1322,
+    "EVEN": 431,
+    "DOWN": 1198,
+    "ANCHOR": 519
+   },
+   "bandPct": {
+    "STRETCH": 12.2,
+    "UP": 33.5,
+    "EVEN": 10.9,
+    "DOWN": 30.3,
+    "ANCHOR": 13.1
+   },
+   "stretchRate": 12.2,
+   "anchorRate": 13.1,
+   "breadth": 0.928,
+   "competitiveRatio": 33.8,
+   "winRate": 48.6
+  },
+  "inConference": {
+   "matches": 934,
+   "bands": {
+    "STRETCH": 146,
+    "UP": 298,
+    "EVEN": 46,
+    "DOWN": 298,
+    "ANCHOR": 146
+   },
+   "bandPct": {
+    "STRETCH": 15.6,
+    "UP": 31.9,
+    "EVEN": 4.9,
+    "DOWN": 31.9,
+    "ANCHOR": 15.6
+   },
+   "stretchRate": 15.6,
+   "anchorRate": 15.6,
+   "breadth": 0.906,
+   "competitiveRatio": 26,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3018,
+   "bands": {
+    "STRETCH": 336,
+    "UP": 1024,
+    "EVEN": 385,
+    "DOWN": 900,
+    "ANCHOR": 373
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 33.9,
+    "EVEN": 12.8,
+    "DOWN": 29.8,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 12.4,
+   "breadth": 0.928,
+   "competitiveRatio": 36.2,
+   "winRate": 48.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 15.6,
+  "nonConference": 11.1,
+  "delta": -4.5,
+  "nonConferenceShare": 76.4
+ },
+ "members": [
+  {
+   "teamId": "A2C27FF7-9772-450B-8B00-1E1F54DF8F3E",
+   "name": "Trinity (Texas)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 17.17,
+   "matches": 446,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 176,
+    "EVEN": 34,
+    "DOWN": 139,
+    "ANCHOR": 82
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 39.5,
+    "EVEN": 7.6,
+    "DOWN": 31.2,
+    "ANCHOR": 18.4
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 18.4,
+   "breadth": 0.84,
+   "competitiveRatio": 50.9,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "CF3070D1-D578-44B5-8FFF-96EA94636900",
+   "name": "Southwestern (Texas)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.95,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 112,
+    "EVEN": 30,
+    "DOWN": 166,
+    "ANCHOR": 90
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 27.7,
+    "EVEN": 7.4,
+    "DOWN": 41.1,
+    "ANCHOR": 22.3
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 22.3,
+   "breadth": 0.815,
+   "competitiveRatio": 44.8,
+   "winRate": 58.9
+  },
+  {
+   "teamId": "0947D631-C21D-4CB4-B72F-BCF6226586FC",
+   "name": "Southwestern (Texas)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.18,
+   "matches": 368,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 134,
+    "EVEN": 42,
+    "DOWN": 111,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 36.4,
+    "EVEN": 11.4,
+    "DOWN": 30.2,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 7.3,
+   "breadth": 0.901,
+   "competitiveRatio": 28.5,
+   "winRate": 54.9
+  },
+  {
+   "teamId": "FDFABD3F-2FF0-4B6D-906F-845D7991F1A5",
+   "name": "Trinity (Texas)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 21.27,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 72,
+    "EVEN": 34,
+    "DOWN": 142,
+    "ANCHOR": 118
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.7,
+    "EVEN": 9.3,
+    "DOWN": 38.8,
+    "ANCHOR": 32.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 32.2,
+   "breadth": 0.791,
+   "competitiveRatio": 32.2,
+   "winRate": 75.1
+  },
+  {
+   "teamId": "EE14E4CF-386F-45EF-9CAD-4480C15766E9",
+   "name": "Colorado College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.85,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 143,
+    "EVEN": 6,
+    "DOWN": 105,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 12.3,
+    "UP": 43.9,
+    "EVEN": 1.8,
+    "DOWN": 32.2,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 12.3,
+   "anchorRate": 9.8,
+   "breadth": 0.799,
+   "competitiveRatio": 47.1,
+   "winRate": 49.4
+  },
+  {
+   "teamId": "E9F3995F-AD5D-4684-81B7-D9B04EB24F89",
+   "name": "Colorado College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.05,
+   "matches": 318,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 43,
+    "EVEN": 36,
+    "DOWN": 143,
+    "ANCHOR": 96
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.5,
+    "EVEN": 11.3,
+    "DOWN": 45,
+    "ANCHOR": 30.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 30.2,
+   "breadth": 0.769,
+   "competitiveRatio": 35,
+   "winRate": 63.5
+  },
+  {
+   "teamId": "4F6EDAC2-8119-4918-A143-4103F1AF0751",
+   "name": "Schreiner",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.25,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 149,
+    "EVEN": 54,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.1,
+    "UP": 51.2,
+    "EVEN": 18.6,
+    "DOWN": 16.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.1,
+   "anchorRate": 0,
+   "breadth": 0.762,
+   "competitiveRatio": 29.6,
+   "winRate": 33.7
+  },
+  {
+   "teamId": "FC22A889-9FE0-4F8C-B863-94ADF4952EFF",
+   "name": "University of Dallas",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.39,
+   "matches": 236,
+   "bands": {
+    "STRETCH": 93,
+    "UP": 71,
+    "EVEN": 34,
+    "DOWN": 38,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 39.4,
+    "UP": 30.1,
+    "EVEN": 14.4,
+    "DOWN": 16.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 39.4,
+   "anchorRate": 0,
+   "breadth": 0.809,
+   "competitiveRatio": 23.3,
+   "winRate": 22
+  },
+  {
+   "teamId": "37AA1921-91DE-4FA0-9203-A5F5E8738F1D",
+   "name": "St. Thomas (Texas)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.09,
+   "matches": 220,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 82,
+    "EVEN": 24,
+    "DOWN": 64,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 37.3,
+    "EVEN": 10.9,
+    "DOWN": 29.1,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 14.1,
+   "breadth": 0.905,
+   "competitiveRatio": 39.3,
+   "winRate": 40.9
+  },
+  {
+   "teamId": "10C2F855-9381-4417-A649-E0FD83B78F47",
+   "name": "Texas Lutheran",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.12,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 51,
+    "UP": 63,
+    "EVEN": 0,
+    "DOWN": 86,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 24.4,
+    "UP": 30.1,
+    "EVEN": 0,
+    "DOWN": 41.1,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 24.4,
+   "anchorRate": 4.3,
+   "breadth": 0.75,
+   "competitiveRatio": 30.6,
+   "winRate": 51.2
+  },
+  {
+   "teamId": "8583B103-9E1E-4D49-A8D5-34FAC7D7F9BE",
+   "name": "St. Thomas (Texas)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.39,
+   "matches": 202,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 26,
+    "EVEN": 57,
+    "DOWN": 73,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 12.9,
+    "EVEN": 28.2,
+    "DOWN": 36.1,
+    "ANCHOR": 16.8
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 16.8,
+   "breadth": 0.905,
+   "competitiveRatio": 32.7,
+   "winRate": 56.9
+  },
+  {
+   "teamId": "C2F6F259-5B83-4EA4-9796-0A04EEC26F99",
+   "name": "University of Dallas",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.58,
+   "matches": 200,
+   "bands": {
+    "STRETCH": 91,
+    "UP": 93,
+    "EVEN": 7,
+    "DOWN": 9,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 45.5,
+    "UP": 46.5,
+    "EVEN": 3.5,
+    "DOWN": 4.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 45.5,
+   "anchorRate": 0,
+   "breadth": 0.603,
+   "competitiveRatio": 10,
+   "winRate": 9.5
+  },
+  {
+   "teamId": "9FCAE238-C9D7-4782-BB35-2B5C9BDB9FE8",
+   "name": "Texas Lutheran",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.05,
+   "matches": 195,
+   "bands": {
+    "STRETCH": 32,
+    "UP": 93,
+    "EVEN": 44,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 47.7,
+    "EVEN": 22.6,
+    "DOWN": 13.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 0,
+   "breadth": 0.779,
+   "competitiveRatio": 17.9,
+   "winRate": 28.7
+  },
+  {
+   "teamId": "82C996E2-96F1-4674-A1B1-C55B4EF4F8EF",
+   "name": "Austin College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.63,
+   "matches": 171,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 65,
+    "EVEN": 29,
+    "DOWN": 49,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 38,
+    "EVEN": 17,
+    "DOWN": 28.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 0,
+   "breadth": 0.822,
+   "competitiveRatio": 16.4,
+   "winRate": 32.7
+  }
+ ]
+}

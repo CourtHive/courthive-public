@@ -1,0 +1,192 @@
+{
+ "conference": "Florida CCAA",
+ "slug": "florida-ccaa",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 3,
+ "fingerprint": {
+  "overall": {
+   "matches": 407,
+   "bands": {
+    "STRETCH": 78,
+    "UP": 89,
+    "EVEN": 38,
+    "DOWN": 136,
+    "ANCHOR": 66
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 21.9,
+    "EVEN": 9.3,
+    "DOWN": 33.4,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 16.2,
+   "breadth": 0.952,
+   "competitiveRatio": 40.3,
+   "winRate": 56
+  },
+  "inConference": {
+   "matches": 84,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 50,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 50
+   },
+   "stretchRate": 50,
+   "anchorRate": 50,
+   "breadth": 0.431,
+   "competitiveRatio": 28.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 323,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 89,
+    "EVEN": 38,
+    "DOWN": 136,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 27.6,
+    "EVEN": 11.8,
+    "DOWN": 42.1,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 7.4,
+   "breadth": 0.875,
+   "competitiveRatio": 43.3,
+   "winRate": 57.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 50,
+  "nonConference": 11.1,
+  "delta": -38.9,
+  "nonConferenceShare": 79.4
+ },
+ "members": [
+  {
+   "teamId": "7048BCFB-22DC-4151-8CC4-06379F267C38",
+   "name": "Hillsborough",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 20.41,
+   "matches": 180,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 16,
+    "DOWN": 88,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10,
+    "EVEN": 8.9,
+    "DOWN": 48.9,
+    "ANCHOR": 32.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 32.2,
+   "breadth": 0.721,
+   "competitiveRatio": 41.7,
+   "winRate": 75
+  },
+  {
+   "teamId": "8ED8067B-4417-44F4-BECB-30429947C026",
+   "name": "St. Petersburg",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 26.04,
+   "matches": 138,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 47,
+    "EVEN": 5,
+    "DOWN": 18,
+    "ANCHOR": 2
+   },
+   "bandPct": {
+    "STRETCH": 47.8,
+    "UP": 34.1,
+    "EVEN": 3.6,
+    "DOWN": 13,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 47.8,
+   "anchorRate": 1.4,
+   "breadth": 0.725,
+   "competitiveRatio": 34.8,
+   "winRate": 36.2
+  },
+  {
+   "teamId": "FEE0806C-6DD4-44A4-B155-109E7F64D5D3",
+   "name": "Eastern Florida State College",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 18.03,
+   "matches": 89,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 24,
+    "EVEN": 17,
+    "DOWN": 30,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 27,
+    "EVEN": 19.1,
+    "DOWN": 33.7,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 6.7,
+   "breadth": 0.925,
+   "competitiveRatio": 46.1,
+   "winRate": 48.3
+  }
+ ]
+}

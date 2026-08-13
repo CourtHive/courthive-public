@@ -1,0 +1,409 @@
+{
+ "conference": "City University of New York Athletic Conference",
+ "slug": "city-university-of-new-york-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 2141,
+   "bands": {
+    "STRETCH": 339,
+    "UP": 749,
+    "EVEN": 231,
+    "DOWN": 526,
+    "ANCHOR": 296
+   },
+   "bandPct": {
+    "STRETCH": 15.8,
+    "UP": 35,
+    "EVEN": 10.8,
+    "DOWN": 24.6,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 15.8,
+   "anchorRate": 13.8,
+   "breadth": 0.943,
+   "competitiveRatio": 16,
+   "winRate": 44.2
+  },
+  "inConference": {
+   "matches": 936,
+   "bands": {
+    "STRETCH": 189,
+    "UP": 252,
+    "EVEN": 54,
+    "DOWN": 252,
+    "ANCHOR": 189
+   },
+   "bandPct": {
+    "STRETCH": 20.2,
+    "UP": 26.9,
+    "EVEN": 5.8,
+    "DOWN": 26.9,
+    "ANCHOR": 20.2
+   },
+   "stretchRate": 20.2,
+   "anchorRate": 20.2,
+   "breadth": 0.943,
+   "competitiveRatio": 11.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1205,
+   "bands": {
+    "STRETCH": 150,
+    "UP": 497,
+    "EVEN": 177,
+    "DOWN": 274,
+    "ANCHOR": 107
+   },
+   "bandPct": {
+    "STRETCH": 12.4,
+    "UP": 41.2,
+    "EVEN": 14.7,
+    "DOWN": 22.7,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 12.4,
+   "anchorRate": 8.9,
+   "breadth": 0.906,
+   "competitiveRatio": 19.6,
+   "winRate": 39.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 20.2,
+  "nonConference": 12.4,
+  "delta": -7.8,
+  "nonConferenceShare": 56.3
+ },
+ "members": [
+  {
+   "teamId": "15B31C0C-880D-48FE-81C3-7E81C639BD1F",
+   "name": "Baruch (CUNY)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.89,
+   "matches": 278,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 26,
+    "EVEN": 0,
+    "DOWN": 49,
+    "ANCHOR": 191
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 9.4,
+    "EVEN": 0,
+    "DOWN": 17.6,
+    "ANCHOR": 68.7
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 68.7,
+   "breadth": 0.572,
+   "competitiveRatio": 15.5,
+   "winRate": 75.9
+  },
+  {
+   "teamId": "F3D30FEF-7279-4A7C-A310-FA6484710CF6",
+   "name": "Baruch (CUNY)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.47,
+   "matches": 276,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 63,
+    "EVEN": 33,
+    "DOWN": 151,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.8,
+    "EVEN": 12,
+    "DOWN": 54.7,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.5,
+   "breadth": 0.719,
+   "competitiveRatio": 13.4,
+   "winRate": 66.7
+  },
+  {
+   "teamId": "9D76B78A-620A-49AC-8959-1FC9ADE51234",
+   "name": "Brooklyn College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.17,
+   "matches": 234,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 101,
+    "EVEN": 39,
+    "DOWN": 54,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 43.2,
+    "EVEN": 16.7,
+    "DOWN": 23.1,
+    "ANCHOR": 7.7
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 7.7,
+   "breadth": 0.882,
+   "competitiveRatio": 20.9,
+   "winRate": 53
+  },
+  {
+   "teamId": "9082CBF5-C7D6-4394-A5D4-5A68340B0553",
+   "name": "Brooklyn College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.03,
+   "matches": 223,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 106,
+    "EVEN": 33,
+    "DOWN": 67,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.6,
+    "UP": 47.5,
+    "EVEN": 14.8,
+    "DOWN": 30,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.6,
+   "anchorRate": 0,
+   "breadth": 0.742,
+   "competitiveRatio": 21.5,
+   "winRate": 31.8
+  },
+  {
+   "teamId": "BA5D1002-D65F-4E80-9884-8A9F11A2A0F3",
+   "name": "Lehman",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.76,
+   "matches": 198,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 106,
+    "EVEN": 30,
+    "DOWN": 31,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.7,
+    "UP": 53.5,
+    "EVEN": 15.2,
+    "DOWN": 15.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.7,
+   "anchorRate": 0,
+   "breadth": 0.746,
+   "competitiveRatio": 17.2,
+   "winRate": 39.4
+  },
+  {
+   "teamId": "569BE98B-B102-42FC-A604-B40290887E5B",
+   "name": "Hunter",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.68,
+   "matches": 191,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 34,
+    "DOWN": 98,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.4,
+    "EVEN": 17.8,
+    "DOWN": 51.3,
+    "ANCHOR": 21.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.5,
+   "breadth": 0.747,
+   "competitiveRatio": 16.8,
+   "winRate": 66.5
+  },
+  {
+   "teamId": "75AABF3F-95C5-4B95-8106-F2468DDDE6AB",
+   "name": "York College (NY)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 31.61,
+   "matches": 160,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 62,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 61.3,
+    "UP": 38.8,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 61.3,
+   "anchorRate": 0,
+   "breadth": 0.415,
+   "competitiveRatio": 11.4,
+   "winRate": 7.5
+  },
+  {
+   "teamId": "166DFE91-73E0-4CE5-8C38-E090D38C2019",
+   "name": "York College (NY)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.45,
+   "matches": 151,
+   "bands": {
+    "STRETCH": 55,
+    "UP": 96,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 36.4,
+    "UP": 63.6,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 36.4,
+   "anchorRate": 0,
+   "breadth": 0.407,
+   "competitiveRatio": 9.3,
+   "winRate": 9.9
+  },
+  {
+   "teamId": "CBFA3093-A488-44DB-9BC2-940455AFA599",
+   "name": "Lehman",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.93,
+   "matches": 146,
+   "bands": {
+    "STRETCH": 44,
+    "UP": 73,
+    "EVEN": 5,
+    "DOWN": 24,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.1,
+    "UP": 50,
+    "EVEN": 3.4,
+    "DOWN": 16.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.1,
+   "anchorRate": 0,
+   "breadth": 0.696,
+   "competitiveRatio": 11.1,
+   "winRate": 16.4
+  },
+  {
+   "teamId": "EAF4CA3C-7138-40F4-ABDB-E76147C4FD4A",
+   "name": "Hunter",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.88,
+   "matches": 143,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 42,
+    "EVEN": 45,
+    "DOWN": 18,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 29.4,
+    "EVEN": 31.5,
+    "DOWN": 12.6,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 11.9,
+   "breadth": 0.944,
+   "competitiveRatio": 22.5,
+   "winRate": 40.6
+  },
+  {
+   "teamId": "941E998A-F599-49E2-B3BA-9E32FBE670DE",
+   "name": "John Jay",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.94,
+   "matches": 141,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 56,
+    "EVEN": 12,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.7,
+    "UP": 39.7,
+    "EVEN": 8.5,
+    "DOWN": 24.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.7,
+   "anchorRate": 0,
+   "breadth": 0.792,
+   "competitiveRatio": 13.5,
+   "winRate": 29.8
+  }
+ ]
+}

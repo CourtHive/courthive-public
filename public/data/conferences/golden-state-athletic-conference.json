@@ -1,0 +1,274 @@
+{
+ "conference": "Golden State Athletic Conference",
+ "slug": "golden-state-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 6,
+ "fingerprint": {
+  "overall": {
+   "matches": 1487,
+   "bands": {
+    "STRETCH": 332,
+    "UP": 559,
+    "EVEN": 158,
+    "DOWN": 364,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 22.3,
+    "UP": 37.6,
+    "EVEN": 10.6,
+    "DOWN": 24.5,
+    "ANCHOR": 5
+   },
+   "stretchRate": 22.3,
+   "anchorRate": 5,
+   "breadth": 0.891,
+   "competitiveRatio": 29.2,
+   "winRate": 36.2
+  },
+  "inConference": {
+   "matches": 232,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 95,
+    "EVEN": 42,
+    "DOWN": 95,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.9,
+    "EVEN": 18.1,
+    "DOWN": 40.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.647,
+   "competitiveRatio": 34.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1255,
+   "bands": {
+    "STRETCH": 332,
+    "UP": 464,
+    "EVEN": 116,
+    "DOWN": 269,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 26.5,
+    "UP": 37,
+    "EVEN": 9.2,
+    "DOWN": 21.4,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 26.5,
+   "anchorRate": 5.9,
+   "breadth": 0.893,
+   "competitiveRatio": 28.2,
+   "winRate": 33.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 26.5,
+  "delta": 26.5,
+  "nonConferenceShare": 84.4
+ },
+ "members": [
+  {
+   "teamId": "0B2911E3-8E16-440D-83C3-A78A07F2E814",
+   "name": "Hope International (Calif.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.8,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 104,
+    "UP": 78,
+    "EVEN": 54,
+    "DOWN": 42,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 33.2,
+    "UP": 24.9,
+    "EVEN": 17.3,
+    "DOWN": 13.4,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 33.2,
+   "anchorRate": 11.2,
+   "breadth": 0.951,
+   "competitiveRatio": 36.2,
+   "winRate": 37.4
+  },
+  {
+   "teamId": "F3644CC2-7369-47E6-95E0-3BD2AAD9FCED",
+   "name": "Arizona Christian",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.44,
+   "matches": 257,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 42,
+    "EVEN": 31,
+    "DOWN": 153,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 16.3,
+    "EVEN": 12.1,
+    "DOWN": 59.5,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 4.7,
+   "breadth": 0.743,
+   "competitiveRatio": 39.7,
+   "winRate": 53.7
+  },
+  {
+   "teamId": "291A372D-1F17-4AB2-88E5-8BAEE18E34A8",
+   "name": "Jessup (Calif.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.31,
+   "matches": 257,
+   "bands": {
+    "STRETCH": 137,
+    "UP": 97,
+    "EVEN": 0,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.3,
+    "UP": 37.7,
+    "EVEN": 0,
+    "DOWN": 8.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.3,
+   "anchorRate": 0,
+   "breadth": 0.571,
+   "competitiveRatio": 12.1,
+   "winRate": 11.7
+  },
+  {
+   "teamId": "F2B0F30D-E0B3-4CFF-AF9C-D06E43A53AD1",
+   "name": "OUAZ (Ariz.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.25,
+   "matches": 239,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 133,
+    "EVEN": 24,
+    "DOWN": 12,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 20.5,
+    "UP": 55.6,
+    "EVEN": 10,
+    "DOWN": 5,
+    "ANCHOR": 8.8
+   },
+   "stretchRate": 20.5,
+   "anchorRate": 8.8,
+   "breadth": 0.774,
+   "competitiveRatio": 29.7,
+   "winRate": 26.4
+  },
+  {
+   "teamId": "70876C3F-E66A-4069-95E2-9BBD087FB734",
+   "name": "OUAZ (Ariz.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.55,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 73,
+    "EVEN": 22,
+    "DOWN": 109,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 33.5,
+    "EVEN": 10.1,
+    "DOWN": 50,
+    "ANCHOR": 2.8
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 2.8,
+   "breadth": 0.724,
+   "competitiveRatio": 22,
+   "winRate": 39.4
+  },
+  {
+   "teamId": "CBD3D40F-A0E0-4258-9042-D484D0B4AF10",
+   "name": "Arizona Christian",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.94,
+   "matches": 203,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 136,
+    "EVEN": 27,
+    "DOWN": 25,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 67,
+    "EVEN": 13.3,
+    "DOWN": 12.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 0,
+   "breadth": 0.613,
+   "competitiveRatio": 33.5,
+   "winRate": 51.7
+  }
+ ]
+}

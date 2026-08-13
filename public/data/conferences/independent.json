@@ -1,0 +1,573 @@
+{
+ "conference": "Independent",
+ "slug": "independent",
+ "divisions": [
+  "DIV_III",
+  "DIV_II",
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 3195,
+   "bands": {
+    "STRETCH": 592,
+    "UP": 1317,
+    "EVEN": 459,
+    "DOWN": 616,
+    "ANCHOR": 211
+   },
+   "bandPct": {
+    "STRETCH": 18.5,
+    "UP": 41.2,
+    "EVEN": 14.4,
+    "DOWN": 19.3,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 18.5,
+   "anchorRate": 6.6,
+   "breadth": 0.903,
+   "competitiveRatio": 25.5,
+   "winRate": 40.4
+  },
+  "inConference": {
+   "matches": 64,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 32,
+    "EVEN": 0,
+    "DOWN": 32,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 0,
+    "DOWN": 50,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.431,
+   "competitiveRatio": 18.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3131,
+   "bands": {
+    "STRETCH": 592,
+    "UP": 1285,
+    "EVEN": 459,
+    "DOWN": 584,
+    "ANCHOR": 211
+   },
+   "bandPct": {
+    "STRETCH": 18.9,
+    "UP": 41,
+    "EVEN": 14.7,
+    "DOWN": 18.7,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 18.9,
+   "anchorRate": 6.7,
+   "breadth": 0.905,
+   "competitiveRatio": 25.6,
+   "winRate": 40.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 18.9,
+  "delta": 18.9,
+  "nonConferenceShare": 98
+ },
+ "members": [
+  {
+   "teamId": "932AB9C6-2C0C-45C6-94C3-090F50095FE3",
+   "name": "Salem (West Virginia)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.08,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 139,
+    "EVEN": 59,
+    "DOWN": 64,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8.1,
+    "UP": 48.8,
+    "EVEN": 20.7,
+    "DOWN": 22.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8.1,
+   "anchorRate": 0,
+   "breadth": 0.755,
+   "competitiveRatio": 37.9,
+   "winRate": 49.5
+  },
+  {
+   "teamId": "8AD821D2-84D1-4074-ABE1-1C45DA4A82CE",
+   "name": "Asbury",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.47,
+   "matches": 276,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 54,
+    "EVEN": 78,
+    "DOWN": 94,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 19.6,
+    "EVEN": 28.3,
+    "DOWN": 34.1,
+    "ANCHOR": 15.9
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 15.9,
+   "breadth": 0.882,
+   "competitiveRatio": 30.3,
+   "winRate": 70.3
+  },
+  {
+   "teamId": "5912D906-991E-4A95-9A9B-392305472CA1",
+   "name": "College of Idaho",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.14,
+   "matches": 270,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 155,
+    "EVEN": 39,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.6,
+    "UP": 57.4,
+    "EVEN": 14.4,
+    "DOWN": 12.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.6,
+   "anchorRate": 0,
+   "breadth": 0.714,
+   "competitiveRatio": 25.9,
+   "winRate": 22.2
+  },
+  {
+   "teamId": "8F0F7498-C4F2-4941-9385-82F6456F9AF9",
+   "name": "Salem (West Virginia)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 23.98,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 134,
+    "UP": 101,
+    "EVEN": 15,
+    "DOWN": 17,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50.2,
+    "UP": 37.8,
+    "EVEN": 5.6,
+    "DOWN": 6.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50.2,
+   "anchorRate": 0,
+   "breadth": 0.653,
+   "competitiveRatio": 40.8,
+   "winRate": 27.7
+  },
+  {
+   "teamId": "1CA493BB-4648-49BA-AD84-A1DF283881BB",
+   "name": "Georgia Gwinnett",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 13.11,
+   "matches": 258,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 21,
+    "EVEN": 8,
+    "DOWN": 104,
+    "ANCHOR": 125
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 8.1,
+    "EVEN": 3.1,
+    "DOWN": 40.3,
+    "ANCHOR": 48.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 48.4,
+   "breadth": 0.639,
+   "competitiveRatio": 24.4,
+   "winRate": 88.4
+  },
+  {
+   "teamId": "8A595219-A7D1-4FA4-9757-9C012CF3FE41",
+   "name": "McDaniel",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.34,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 66,
+    "EVEN": 41,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 54.5,
+    "UP": 28.1,
+    "EVEN": 17.4,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 54.5,
+   "anchorRate": 0,
+   "breadth": 0.616,
+   "competitiveRatio": 19.6,
+   "winRate": 24.7
+  },
+  {
+   "teamId": "E122D358-E336-4597-8CFF-390250480D30",
+   "name": "Georgia Gwinnett",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 22.25,
+   "matches": 211,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 76,
+    "EVEN": 38,
+    "DOWN": 56,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 1.4,
+    "UP": 36,
+    "EVEN": 18,
+    "DOWN": 26.5,
+    "ANCHOR": 18
+   },
+   "stretchRate": 1.4,
+   "anchorRate": 18,
+   "breadth": 0.868,
+   "competitiveRatio": 19,
+   "winRate": 76.8
+  },
+  {
+   "teamId": "1469EBB6-6775-4EA8-BCE1-0A587ACC6AE9",
+   "name": "Carlow University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.21,
+   "matches": 199,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 183,
+    "EVEN": 0,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 92,
+    "EVEN": 0,
+    "DOWN": 2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6,
+   "anchorRate": 0,
+   "breadth": 0.202,
+   "competitiveRatio": 22.7,
+   "winRate": 29.6
+  },
+  {
+   "teamId": "4945D0F2-1F07-4513-92B0-B7DBD644F1C4",
+   "name": "McDaniel",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.71,
+   "matches": 186,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 78,
+    "EVEN": 48,
+    "DOWN": 55,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 41.9,
+    "EVEN": 25.8,
+    "DOWN": 29.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.728,
+   "competitiveRatio": 17.4,
+   "winRate": 28
+  },
+  {
+   "teamId": "98969758-BCB9-4A44-A522-A2DE40EADD91",
+   "name": "Penn State - Brandywine",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.36,
+   "matches": 174,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 102,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 41.4,
+    "UP": 58.6,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 41.4,
+   "anchorRate": 0,
+   "breadth": 0.421,
+   "competitiveRatio": 18.4,
+   "winRate": 15.5
+  },
+  {
+   "teamId": "C0D5AB0F-E08F-4BD1-BEB3-4A9626C4BD2B",
+   "name": "Trinity Washington",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.26,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 81,
+    "EVEN": 14,
+    "DOWN": 11,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 37.3,
+    "UP": 47.9,
+    "EVEN": 8.3,
+    "DOWN": 6.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 37.3,
+   "anchorRate": 0,
+   "breadth": 0.686,
+   "competitiveRatio": 8.3,
+   "winRate": 7.7
+  },
+  {
+   "teamId": "1E6897E0-6D1F-4F78-A80F-331AFB67745E",
+   "name": "Penn State - Brandywine",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.09,
+   "matches": 158,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 52,
+    "EVEN": 56,
+    "DOWN": 45,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 32.9,
+    "EVEN": 35.4,
+    "DOWN": 28.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 0,
+   "breadth": 0.746,
+   "competitiveRatio": 16.5,
+   "winRate": 27.2
+  },
+  {
+   "teamId": "3900A450-1F59-43CC-A030-B8096ECDB92A",
+   "name": "Rust College (MS)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 27.79,
+   "matches": 143,
+   "bands": {
+    "STRETCH": 61,
+    "UP": 77,
+    "EVEN": 5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 42.7,
+    "UP": 53.8,
+    "EVEN": 3.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 42.7,
+   "anchorRate": 0,
+   "breadth": 0.506,
+   "competitiveRatio": 24.5,
+   "winRate": 28.7
+  },
+  {
+   "teamId": "AD7548E1-EC3F-49FA-BE02-23BA60CB5B74",
+   "name": "Stanton",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 19.96,
+   "matches": 121,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 43,
+    "EVEN": 12,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.8,
+    "UP": 35.5,
+    "EVEN": 9.9,
+    "DOWN": 34.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.8,
+   "anchorRate": 0,
+   "breadth": 0.798,
+   "competitiveRatio": 42.1,
+   "winRate": 36.4
+  },
+  {
+   "teamId": "80C676F8-2A4C-48F8-AEAE-90951D99116E",
+   "name": "Stanton",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 23.84,
+   "matches": 112,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 21,
+    "EVEN": 27,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 18.8,
+    "EVEN": 24.1,
+    "DOWN": 46.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 0,
+   "breadth": 0.778,
+   "competitiveRatio": 27.7,
+   "winRate": 42.9
+  },
+  {
+   "teamId": "04D6B60F-4FB6-4AF0-AB0A-A1115C6087F7",
+   "name": "Rust College (MS)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.95,
+   "matches": 66,
+   "bands": {
+    "STRETCH": 2,
+    "UP": 26,
+    "EVEN": 8,
+    "DOWN": 26,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 3,
+    "UP": 39.4,
+    "EVEN": 12.1,
+    "DOWN": 39.4,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 3,
+   "anchorRate": 6.1,
+   "breadth": 0.786,
+   "competitiveRatio": 24.2,
+   "winRate": 51.5
+  },
+  {
+   "teamId": "F506B374-791C-435B-B076-F8367DB25F36",
+   "name": "Carlow University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.89,
+   "matches": 65,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 42,
+    "EVEN": 11,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 64.6,
+    "EVEN": 16.9,
+    "DOWN": 18.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.556,
+   "competitiveRatio": 18.5,
+   "winRate": 20
+  }
+ ]
+}

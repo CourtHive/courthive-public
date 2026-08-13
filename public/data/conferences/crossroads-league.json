@@ -1,0 +1,652 @@
+{
+ "conference": "Crossroads League",
+ "slug": "crossroads-league",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 20,
+ "fingerprint": {
+  "overall": {
+   "matches": 5876,
+   "bands": {
+    "STRETCH": 750,
+    "UP": 1801,
+    "EVEN": 655,
+    "DOWN": 1724,
+    "ANCHOR": 946
+   },
+   "bandPct": {
+    "STRETCH": 12.8,
+    "UP": 30.7,
+    "EVEN": 11.1,
+    "DOWN": 29.3,
+    "ANCHOR": 16.1
+   },
+   "stretchRate": 12.8,
+   "anchorRate": 16.1,
+   "breadth": 0.947,
+   "competitiveRatio": 32.7,
+   "winRate": 50.1
+  },
+  "inConference": {
+   "matches": 3102,
+   "bands": {
+    "STRETCH": 534,
+    "UP": 836,
+    "EVEN": 362,
+    "DOWN": 836,
+    "ANCHOR": 534
+   },
+   "bandPct": {
+    "STRETCH": 17.2,
+    "UP": 27,
+    "EVEN": 11.7,
+    "DOWN": 27,
+    "ANCHOR": 17.2
+   },
+   "stretchRate": 17.2,
+   "anchorRate": 17.2,
+   "breadth": 0.971,
+   "competitiveRatio": 27.9,
+   "winRate": 49.9
+  },
+  "nonConference": {
+   "matches": 2774,
+   "bands": {
+    "STRETCH": 216,
+    "UP": 965,
+    "EVEN": 293,
+    "DOWN": 888,
+    "ANCHOR": 412
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 34.8,
+    "EVEN": 10.6,
+    "DOWN": 32,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 14.9,
+   "breadth": 0.902,
+   "competitiveRatio": 37.9,
+   "winRate": 50.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.2,
+  "nonConference": 7.8,
+  "delta": -9.4,
+  "nonConferenceShare": 47.2
+ },
+ "members": [
+  {
+   "teamId": "B3875C43-D03E-48F8-8E63-9E7001D5F925",
+   "name": "Marian (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.67,
+   "matches": 398,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 141,
+    "EVEN": 68,
+    "DOWN": 128,
+    "ANCHOR": 55
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 35.4,
+    "EVEN": 17.1,
+    "DOWN": 32.2,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 13.8,
+   "breadth": 0.852,
+   "competitiveRatio": 48.2,
+   "winRate": 54.3
+  },
+  {
+   "teamId": "516E4B16-CD73-4C93-9F66-5A37496F321B",
+   "name": "Indiana Wesleyan",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.21,
+   "matches": 392,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 59,
+    "EVEN": 49,
+    "DOWN": 161,
+    "ANCHOR": 120
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 15.1,
+    "EVEN": 12.5,
+    "DOWN": 41.1,
+    "ANCHOR": 30.6
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 30.6,
+   "breadth": 0.814,
+   "competitiveRatio": 26.3,
+   "winRate": 71.2
+  },
+  {
+   "teamId": "EFAA5C5D-E26C-4A47-9A77-C0B550787C5F",
+   "name": "Indiana Wesleyan",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.35,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 142,
+    "EVEN": 62,
+    "DOWN": 105,
+    "ANCHOR": 62
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 37.4,
+    "EVEN": 16.3,
+    "DOWN": 27.6,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 16.3,
+   "breadth": 0.872,
+   "competitiveRatio": 37.9,
+   "winRate": 46.8
+  },
+  {
+   "teamId": "A25EE445-F131-44AA-BBAB-1AFDA48D2172",
+   "name": "Grace (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.9,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 99,
+    "EVEN": 42,
+    "DOWN": 173,
+    "ANCHOR": 52
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 26.6,
+    "EVEN": 11.3,
+    "DOWN": 46.5,
+    "ANCHOR": 14
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 14,
+   "breadth": 0.805,
+   "competitiveRatio": 38.4,
+   "winRate": 70.7
+  },
+  {
+   "teamId": "86C03096-8441-4F49-A2D0-FBD5E80C459D",
+   "name": "Marian (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 22.88,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 75,
+    "EVEN": 28,
+    "DOWN": 221,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.2,
+    "EVEN": 7.5,
+    "DOWN": 59.6,
+    "ANCHOR": 12.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.7,
+   "breadth": 0.676,
+   "competitiveRatio": 33.7,
+   "winRate": 64.7
+  },
+  {
+   "teamId": "DE3FF237-9CEC-4D3B-B0F6-4C60E8CA869D",
+   "name": "Grace (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.7,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 224,
+    "EVEN": 12,
+    "DOWN": 51,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 8.5,
+    "UP": 63.8,
+    "EVEN": 3.4,
+    "DOWN": 14.5,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 8.5,
+   "anchorRate": 9.7,
+   "breadth": 0.695,
+   "competitiveRatio": 28.9,
+   "winRate": 54.4
+  },
+  {
+   "teamId": "BABED0D0-83EC-42E7-ABDA-914FF9EC5119",
+   "name": "Spring Arbor (Mich.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.35,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 119,
+    "EVEN": 71,
+    "DOWN": 80,
+    "ANCHOR": 73
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 34.1,
+    "EVEN": 20.3,
+    "DOWN": 22.9,
+    "ANCHOR": 20.9
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 20.9,
+   "breadth": 0.886,
+   "competitiveRatio": 28.9,
+   "winRate": 53.6
+  },
+  {
+   "teamId": "8FC46190-9279-4B90-B123-1059CEB8C656",
+   "name": "Spring Arbor (Mich.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.37,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 137,
+    "EVEN": 18,
+    "DOWN": 84,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 39.9,
+    "EVEN": 5.2,
+    "DOWN": 24.5,
+    "ANCHOR": 21.6
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 21.6,
+   "breadth": 0.876,
+   "competitiveRatio": 40.5,
+   "winRate": 46.1
+  },
+  {
+   "teamId": "493D7326-128F-4E23-ACA3-746EB1EB050E",
+   "name": "Goshen (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.3,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 66,
+    "EVEN": 28,
+    "DOWN": 166,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 20.4,
+    "EVEN": 8.6,
+    "DOWN": 51.2,
+    "ANCHOR": 17.9
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 17.9,
+   "breadth": 0.783,
+   "competitiveRatio": 31.3,
+   "winRate": 48.5
+  },
+  {
+   "teamId": "D023ECAF-A951-4238-9210-01A58AFEA559",
+   "name": "Huntington (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.24,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 118,
+    "EVEN": 77,
+    "DOWN": 74,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 36.6,
+    "EVEN": 23.9,
+    "DOWN": 23,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 14.6,
+   "breadth": 0.872,
+   "competitiveRatio": 30.2,
+   "winRate": 45.3
+  },
+  {
+   "teamId": "29721B9F-253A-4757-A3F0-0B8FE0D0098D",
+   "name": "Goshen (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.25,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 139,
+    "EVEN": 76,
+    "DOWN": 63,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 3.8,
+    "UP": 43.4,
+    "EVEN": 23.8,
+    "DOWN": 19.7,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 3.8,
+   "anchorRate": 9.4,
+   "breadth": 0.85,
+   "competitiveRatio": 44.8,
+   "winRate": 46.9
+  },
+  {
+   "teamId": "639C212B-47D6-465C-8D8B-5AA83789AB02",
+   "name": "Huntington (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 16.48,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 3,
+    "EVEN": 11,
+    "DOWN": 160,
+    "ANCHOR": 122
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 1,
+    "EVEN": 3.7,
+    "DOWN": 54.1,
+    "ANCHOR": 41.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 41.2,
+   "breadth": 0.539,
+   "competitiveRatio": 38.5,
+   "winRate": 73.3
+  },
+  {
+   "teamId": "8FCE51E0-9CBA-4E7E-A09A-DA3150E519C6",
+   "name": "Bethel (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.04,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 89,
+    "EVEN": 57,
+    "DOWN": 94,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.6,
+    "EVEN": 19.6,
+    "DOWN": 32.3,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.5,
+   "breadth": 0.84,
+   "competitiveRatio": 40.5,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "3B36DB0C-2656-4465-9D1D-0996EE79BFC6",
+   "name": "Bethel (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.95,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 51,
+    "DOWN": 75,
+    "ANCHOR": 73
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.7,
+    "EVEN": 17.8,
+    "DOWN": 26.1,
+    "ANCHOR": 25.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.4,
+   "breadth": 0.85,
+   "competitiveRatio": 33.4,
+   "winRate": 65.2
+  },
+  {
+   "teamId": "E0A3599A-C7F8-427E-8718-4789B343AE59",
+   "name": "Saint Francis (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.13,
+   "matches": 243,
+   "bands": {
+    "STRETCH": 67,
+    "UP": 81,
+    "EVEN": 0,
+    "DOWN": 47,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 27.6,
+    "UP": 33.3,
+    "EVEN": 0,
+    "DOWN": 19.3,
+    "ANCHOR": 19.8
+   },
+   "stretchRate": 27.6,
+   "anchorRate": 19.8,
+   "breadth": 0.845,
+   "competitiveRatio": 30,
+   "winRate": 36.6
+  },
+  {
+   "teamId": "7497A8A4-FEFC-4498-9183-8FDAD1ECAC4D",
+   "name": "Saint Francis (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 31.43,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 145,
+    "UP": 72,
+    "EVEN": 5,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 61.7,
+    "UP": 30.6,
+    "EVEN": 2.1,
+    "DOWN": 5.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 61.7,
+   "anchorRate": 0,
+   "breadth": 0.561,
+   "competitiveRatio": 14.5,
+   "winRate": 15.7
+  },
+  {
+   "teamId": "20EC97BA-7F73-4005-8960-CDA060A438C4",
+   "name": "Mount Vernon Nazarene (Ohio)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 30.57,
+   "matches": 221,
+   "bands": {
+    "STRETCH": 188,
+    "UP": 33,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 85.1,
+    "UP": 14.9,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 85.1,
+   "anchorRate": 0,
+   "breadth": 0.262,
+   "competitiveRatio": 6.8,
+   "winRate": 3.6
+  },
+  {
+   "teamId": "061808A5-2DC2-4CDC-85EC-B2A5E96F9120",
+   "name": "Mount Vernon Nazarene (Ohio)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 32.13,
+   "matches": 183,
+   "bands": {
+    "STRETCH": 130,
+    "UP": 53,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 71,
+    "UP": 29,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 71,
+   "anchorRate": 0,
+   "breadth": 0.374,
+   "competitiveRatio": 14.2,
+   "winRate": 4.9
+  },
+  {
+   "teamId": "7D6848D3-D5E8-4CEC-8B42-75AE1F265658",
+   "name": "Taylor University",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.96,
+   "matches": 106,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 51,
+    "EVEN": 0,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 37.7,
+    "UP": 48.1,
+    "EVEN": 0,
+    "DOWN": 14.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 37.7,
+   "anchorRate": 0,
+   "breadth": 0.619,
+   "competitiveRatio": 23.6,
+   "winRate": 30.2
+  },
+  {
+   "teamId": "3CDBA55B-9C18-4B81-ABA6-9734D5624848",
+   "name": "Taylor University",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 28.07,
+   "matches": 92,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 12,
+    "EVEN": 0,
+    "DOWN": 14,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 71.7,
+    "UP": 13,
+    "EVEN": 0,
+    "DOWN": 15.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 71.7,
+   "anchorRate": 0,
+   "breadth": 0.491,
+   "competitiveRatio": 30.4,
+   "winRate": 35.9
+  }
+ ]
+}

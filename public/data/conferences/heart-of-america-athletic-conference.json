@@ -1,0 +1,436 @@
+{
+ "conference": "Heart of America Athletic Conference",
+ "slug": "heart-of-america-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 3177,
+   "bands": {
+    "STRETCH": 315,
+    "UP": 978,
+    "EVEN": 526,
+    "DOWN": 918,
+    "ANCHOR": 440
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 30.8,
+    "EVEN": 16.6,
+    "DOWN": 28.9,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 13.8,
+   "breadth": 0.946,
+   "competitiveRatio": 36.6,
+   "winRate": 48
+  },
+  "inConference": {
+   "matches": 678,
+   "bands": {
+    "STRETCH": 84,
+    "UP": 206,
+    "EVEN": 98,
+    "DOWN": 206,
+    "ANCHOR": 84
+   },
+   "bandPct": {
+    "STRETCH": 12.4,
+    "UP": 30.4,
+    "EVEN": 14.5,
+    "DOWN": 30.4,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 12.4,
+   "anchorRate": 12.4,
+   "breadth": 0.945,
+   "competitiveRatio": 34,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2499,
+   "bands": {
+    "STRETCH": 231,
+    "UP": 772,
+    "EVEN": 428,
+    "DOWN": 712,
+    "ANCHOR": 356
+   },
+   "bandPct": {
+    "STRETCH": 9.2,
+    "UP": 30.9,
+    "EVEN": 17.1,
+    "DOWN": 28.5,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 9.2,
+   "anchorRate": 14.2,
+   "breadth": 0.945,
+   "competitiveRatio": 37.3,
+   "winRate": 47.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 12.4,
+  "nonConference": 9.2,
+  "delta": -3.2,
+  "nonConferenceShare": 78.7
+ },
+ "members": [
+  {
+   "teamId": "50211957-48ED-4034-BC84-8459F4CE1ED8",
+   "name": "Missouri Baptist",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.13,
+   "matches": 400,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 72,
+    "EVEN": 88,
+    "DOWN": 138,
+    "ANCHOR": 96
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 18,
+    "EVEN": 22,
+    "DOWN": 34.5,
+    "ANCHOR": 24
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 24,
+   "breadth": 0.879,
+   "competitiveRatio": 45.5,
+   "winRate": 63
+  },
+  {
+   "teamId": "298EDA78-5053-4E20-8A99-6632DF3D5133",
+   "name": "William Woods (Mo.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 17.55,
+   "matches": 389,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 96,
+    "EVEN": 29,
+    "DOWN": 133,
+    "ANCHOR": 125
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 24.7,
+    "EVEN": 7.5,
+    "DOWN": 34.2,
+    "ANCHOR": 32.1
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 32.1,
+   "breadth": 0.829,
+   "competitiveRatio": 46.8,
+   "winRate": 63.8
+  },
+  {
+   "teamId": "22A31CDD-EAE3-43B8-8630-D82C7F64EF87",
+   "name": "William Woods (Mo.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.24,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 143,
+    "EVEN": 52,
+    "DOWN": 79,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 13,
+    "UP": 43.1,
+    "EVEN": 15.7,
+    "DOWN": 23.8,
+    "ANCHOR": 4.5
+   },
+   "stretchRate": 13,
+   "anchorRate": 4.5,
+   "breadth": 0.87,
+   "competitiveRatio": 30.2,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "7A1508FD-0710-4A0E-A5EE-0580216E0A93",
+   "name": "Missouri Baptist",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.63,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 146,
+    "EVEN": 60,
+    "DOWN": 78,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 45.3,
+    "EVEN": 18.6,
+    "DOWN": 24.2,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 4.7,
+   "breadth": 0.837,
+   "competitiveRatio": 38.3,
+   "winRate": 47.8
+  },
+  {
+   "teamId": "9BFEB74E-110F-4AD9-9442-8DDB6D3850B0",
+   "name": "Baker (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.92,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 113,
+    "EVEN": 49,
+    "DOWN": 48,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 39.8,
+    "EVEN": 17.3,
+    "DOWN": 16.9,
+    "ANCHOR": 12.7
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 12.7,
+   "breadth": 0.933,
+   "competitiveRatio": 34.2,
+   "winRate": 36.3
+  },
+  {
+   "teamId": "F72461E8-D884-4B43-9B28-7790E16E96B6",
+   "name": "Texas Wesleyan",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.06,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 41,
+    "EVEN": 55,
+    "DOWN": 72,
+    "ANCHOR": 71
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 15.5,
+    "EVEN": 20.8,
+    "DOWN": 27.3,
+    "ANCHOR": 26.9
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 26.9,
+   "breadth": 0.961,
+   "competitiveRatio": 38.3,
+   "winRate": 54.9
+  },
+  {
+   "teamId": "474DFB7A-EBDD-4AF3-8D73-F0C298BF829E",
+   "name": "Grand View (Iowa)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.49,
+   "matches": 257,
+   "bands": {
+    "STRETCH": 55,
+    "UP": 66,
+    "EVEN": 34,
+    "DOWN": 84,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 21.4,
+    "UP": 25.7,
+    "EVEN": 13.2,
+    "DOWN": 32.7,
+    "ANCHOR": 7
+   },
+   "stretchRate": 21.4,
+   "anchorRate": 7,
+   "breadth": 0.931,
+   "competitiveRatio": 34.5,
+   "winRate": 35.4
+  },
+  {
+   "teamId": "19DD26E9-50BA-4F73-93D4-907F495852BA",
+   "name": "Missouri Valley",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.23,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 68,
+    "UP": 39,
+    "EVEN": 27,
+    "DOWN": 67,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 29.7,
+    "UP": 17,
+    "EVEN": 11.8,
+    "DOWN": 29.3,
+    "ANCHOR": 12.2
+   },
+   "stretchRate": 29.7,
+   "anchorRate": 12.2,
+   "breadth": 0.951,
+   "competitiveRatio": 45.6,
+   "winRate": 47.6
+  },
+  {
+   "teamId": "F4AD6C5E-0E00-45BD-8AF2-D85F5AC53E12",
+   "name": "Texas Wesleyan",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.11,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 7,
+    "UP": 26,
+    "EVEN": 49,
+    "DOWN": 103,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 11.9,
+    "EVEN": 22.5,
+    "DOWN": 47.2,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 15.1,
+   "breadth": 0.832,
+   "competitiveRatio": 30,
+   "winRate": 58.3
+  },
+  {
+   "teamId": "E9C6E748-5369-42B9-B729-202367F1FA0F",
+   "name": "Baker (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.45,
+   "matches": 201,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 118,
+    "EVEN": 42,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.5,
+    "UP": 58.7,
+    "EVEN": 20.9,
+    "DOWN": 12.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.5,
+   "anchorRate": 0,
+   "breadth": 0.682,
+   "competitiveRatio": 21.4,
+   "winRate": 24.4
+  },
+  {
+   "teamId": "10D98AB1-C504-4E9D-9FE2-F01FB48628F8",
+   "name": "Missouri Valley",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.71,
+   "matches": 147,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 54,
+    "EVEN": 16,
+    "DOWN": 66,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 5.4,
+    "UP": 36.7,
+    "EVEN": 10.9,
+    "DOWN": 44.9,
+    "ANCHOR": 2
+   },
+   "stretchRate": 5.4,
+   "anchorRate": 2,
+   "breadth": 0.75,
+   "competitiveRatio": 27.9,
+   "winRate": 40.8
+  },
+  {
+   "teamId": "26DABBE8-8CAC-462C-B800-D1E359FFE99E",
+   "name": "Grand View (Iowa)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.31,
+   "matches": 134,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 64,
+    "EVEN": 25,
+    "DOWN": 24,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.7,
+    "UP": 47.8,
+    "EVEN": 18.7,
+    "DOWN": 17.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.7,
+   "anchorRate": 0,
+   "breadth": 0.786,
+   "competitiveRatio": 26.3,
+   "winRate": 26.1
+  }
+ ]
+}

@@ -1,0 +1,597 @@
+{
+ "conference": "Sunshine State Conference",
+ "slug": "sunshine-state-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 6257,
+   "bands": {
+    "STRETCH": 371,
+    "UP": 1605,
+    "EVEN": 784,
+    "DOWN": 2619,
+    "ANCHOR": 878
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 25.7,
+    "EVEN": 12.5,
+    "DOWN": 41.9,
+    "ANCHOR": 14
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 14,
+   "breadth": 0.88,
+   "competitiveRatio": 41.4,
+   "winRate": 58.4
+  },
+  "inConference": {
+   "matches": 3114,
+   "bands": {
+    "STRETCH": 262,
+    "UP": 1066,
+    "EVEN": 458,
+    "DOWN": 1066,
+    "ANCHOR": 262
+   },
+   "bandPct": {
+    "STRETCH": 8.4,
+    "UP": 34.2,
+    "EVEN": 14.7,
+    "DOWN": 34.2,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 8.4,
+   "anchorRate": 8.4,
+   "breadth": 0.89,
+   "competitiveRatio": 42.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3143,
+   "bands": {
+    "STRETCH": 109,
+    "UP": 539,
+    "EVEN": 326,
+    "DOWN": 1553,
+    "ANCHOR": 616
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 17.1,
+    "EVEN": 10.4,
+    "DOWN": 49.4,
+    "ANCHOR": 19.6
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 19.6,
+   "breadth": 0.821,
+   "competitiveRatio": 40.2,
+   "winRate": 66.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.4,
+  "nonConference": 3.5,
+  "delta": -4.9,
+  "nonConferenceShare": 50.2
+ },
+ "members": [
+  {
+   "teamId": "7B025D77-EF76-43BF-BC13-8F927A14023B",
+   "name": "Nova Southeastern",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.02,
+   "matches": 442,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 42,
+    "DOWN": 304,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.9,
+    "EVEN": 9.5,
+    "DOWN": 68.8,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.9,
+   "breadth": 0.599,
+   "competitiveRatio": 38.2,
+   "winRate": 76.2
+  },
+  {
+   "teamId": "F880D78D-DF95-4454-A240-AE5F046F90D4",
+   "name": "Embry-Riddle (Florida)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.81,
+   "matches": 413,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 87,
+    "EVEN": 31,
+    "DOWN": 257,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.1,
+    "EVEN": 7.5,
+    "DOWN": 62.2,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.2,
+   "breadth": 0.644,
+   "competitiveRatio": 38.3,
+   "winRate": 69.2
+  },
+  {
+   "teamId": "BF6385C8-F54E-448E-AF42-29C788DAD8B3",
+   "name": "Barry",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 18,
+   "matches": 395,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 16,
+    "DOWN": 262,
+    "ANCHOR": 117
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 4.1,
+    "DOWN": 66.3,
+    "ANCHOR": 29.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.6,
+   "breadth": 0.474,
+   "competitiveRatio": 34.7,
+   "winRate": 81.8
+  },
+  {
+   "teamId": "B81CE08E-0610-4980-8291-E2ED8A64BFE6",
+   "name": "Saint Leo",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.15,
+   "matches": 394,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 101,
+    "DOWN": 155,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.8,
+    "EVEN": 25.6,
+    "DOWN": 39.3,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.2,
+   "breadth": 0.82,
+   "competitiveRatio": 48.2,
+   "winRate": 68.3
+  },
+  {
+   "teamId": "58EC6F0D-1171-4525-9D57-C9BE612B7A17",
+   "name": "Florida Southern",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.94,
+   "matches": 393,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 122,
+    "EVEN": 76,
+    "DOWN": 125,
+    "ANCHOR": 64
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 31,
+    "EVEN": 19.3,
+    "DOWN": 31.8,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 16.3,
+   "breadth": 0.873,
+   "competitiveRatio": 48.6,
+   "winRate": 62.6
+  },
+  {
+   "teamId": "BE195203-EB08-43FE-AC73-E56C40E1A443",
+   "name": "Barry",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 12.07,
+   "matches": 376,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 288,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 76.6,
+    "ANCHOR": 23.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.4,
+   "breadth": 0.338,
+   "competitiveRatio": 52.4,
+   "winRate": 77.4
+  },
+  {
+   "teamId": "83D2E75F-4722-4425-B04A-018CB43C2A75",
+   "name": "Tampa",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.41,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 197,
+    "EVEN": 23,
+    "DOWN": 102,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 54.4,
+    "EVEN": 6.4,
+    "DOWN": 28.2,
+    "ANCHOR": 11
+   },
+   "stretchRate": 0,
+   "anchorRate": 11,
+   "breadth": 0.688,
+   "competitiveRatio": 39.8,
+   "winRate": 43.9
+  },
+  {
+   "teamId": "F545D29E-37C0-4006-BB3E-31A4625D3BCD",
+   "name": "Florida Southern",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.76,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 153,
+    "EVEN": 31,
+    "DOWN": 157,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43.3,
+    "EVEN": 8.8,
+    "DOWN": 44.5,
+    "ANCHOR": 3.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.4,
+   "breadth": 0.653,
+   "competitiveRatio": 44,
+   "winRate": 62
+  },
+  {
+   "teamId": "8C69AF95-85AE-4CA2-811F-ACCE965634CD",
+   "name": "Saint Leo",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.18,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 210,
+    "EVEN": 32,
+    "DOWN": 67,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 5.1,
+    "UP": 60,
+    "EVEN": 9.1,
+    "DOWN": 19.1,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 5.1,
+   "anchorRate": 6.6,
+   "breadth": 0.729,
+   "competitiveRatio": 40.6,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "8367BA72-E6EC-4CAD-BDC2-A1D8FA2B1A5F",
+   "name": "Embry-Riddle (Florida)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.47,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 39,
+    "EVEN": 120,
+    "DOWN": 120,
+    "ANCHOR": 69
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.2,
+    "EVEN": 34.5,
+    "DOWN": 34.5,
+    "ANCHOR": 19.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.8,
+   "breadth": 0.808,
+   "competitiveRatio": 44.8,
+   "winRate": 63.8
+  },
+  {
+   "teamId": "742B94FE-F67F-4B4B-99CF-A8F7155BF433",
+   "name": "Rollins",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.47,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 47,
+    "EVEN": 111,
+    "DOWN": 102,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.9,
+    "EVEN": 32.8,
+    "DOWN": 30.2,
+    "ANCHOR": 23.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.1,
+   "breadth": 0.833,
+   "competitiveRatio": 42.9,
+   "winRate": 66.3
+  },
+  {
+   "teamId": "E04450EC-D9B4-4CDA-BBFE-C7080354B52B",
+   "name": "Palm Beach Atlantic",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.73,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 88,
+    "UP": 181,
+    "EVEN": 34,
+    "DOWN": 11,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 27.5,
+    "UP": 56.6,
+    "EVEN": 10.6,
+    "DOWN": 3.4,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 27.5,
+   "anchorRate": 1.9,
+   "breadth": 0.687,
+   "competitiveRatio": 30,
+   "winRate": 25.6
+  },
+  {
+   "teamId": "E6EC4CCB-ED7A-4A96-8541-A1AF9216E335",
+   "name": "Rollins",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.76,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 57,
+    "EVEN": 41,
+    "DOWN": 180,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 12.9,
+    "DOWN": 56.8,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.3,
+   "breadth": 0.716,
+   "competitiveRatio": 42.3,
+   "winRate": 54.6
+  },
+  {
+   "teamId": "AA1CE668-C14E-41AB-966D-DFC79708F4E6",
+   "name": "Palm Beach Atlantic",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.58,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 214,
+    "UP": 79,
+    "EVEN": 12,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 67.5,
+    "UP": 24.9,
+    "EVEN": 3.8,
+    "DOWN": 3.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 67.5,
+   "anchorRate": 0,
+   "breadth": 0.534,
+   "competitiveRatio": 42,
+   "winRate": 20.5
+  },
+  {
+   "teamId": "E0D443C7-4769-42B0-8C13-90B2D9268D58",
+   "name": "Eckerd",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.79,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 124,
+    "EVEN": 0,
+    "DOWN": 96,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 40.4,
+    "EVEN": 0,
+    "DOWN": 31.3,
+    "ANCHOR": 18.6
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 18.6,
+   "breadth": 0.789,
+   "competitiveRatio": 27,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "7DCB9826-E6F8-4801-8219-852A7DA99C0C",
+   "name": "Lynn",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 18.72,
+   "matches": 293,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 38,
+    "DOWN": 165,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.2,
+    "EVEN": 13,
+    "DOWN": 56.3,
+    "ANCHOR": 21.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.5,
+   "breadth": 0.707,
+   "competitiveRatio": 38.9,
+   "winRate": 63.1
+  },
+  {
+   "teamId": "EBCF6D8A-5574-430F-8B6D-A95A5A52C976",
+   "name": "Eckerd",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.57,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 99,
+    "EVEN": 12,
+    "DOWN": 117,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 36.3,
+    "EVEN": 4.4,
+    "DOWN": 42.9,
+    "ANCHOR": 11
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 11,
+   "breadth": 0.789,
+   "competitiveRatio": 42.1,
+   "winRate": 44.7
+  },
+  {
+   "teamId": "A54EAD09-5F96-4899-9B5C-BDF5D53CE7A7",
+   "name": "Lynn",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.15,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 53,
+    "EVEN": 64,
+    "DOWN": 99,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.9,
+    "EVEN": 24.1,
+    "DOWN": 37.2,
+    "ANCHOR": 18.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.8,
+   "breadth": 0.836,
+   "competitiveRatio": 49.2,
+   "winRate": 49.2
+  }
+ ]
+}

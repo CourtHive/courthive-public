@@ -1,0 +1,543 @@
+{
+ "conference": "University Athletic Association",
+ "slug": "university-athletic-association",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 5600,
+   "bands": {
+    "STRETCH": 229,
+    "UP": 1143,
+    "EVEN": 750,
+    "DOWN": 2121,
+    "ANCHOR": 1357
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 20.4,
+    "EVEN": 13.4,
+    "DOWN": 37.9,
+    "ANCHOR": 24.2
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 24.2,
+   "breadth": 0.892,
+   "competitiveRatio": 39.9,
+   "winRate": 65.2
+  },
+  "inConference": {
+   "matches": 1232,
+   "bands": {
+    "STRETCH": 122,
+    "UP": 358,
+    "EVEN": 272,
+    "DOWN": 358,
+    "ANCHOR": 122
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 29.1,
+    "EVEN": 22.1,
+    "DOWN": 29.1,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 9.9,
+   "breadth": 0.938,
+   "competitiveRatio": 39.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4368,
+   "bands": {
+    "STRETCH": 107,
+    "UP": 785,
+    "EVEN": 478,
+    "DOWN": 1763,
+    "ANCHOR": 1235
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 18,
+    "EVEN": 10.9,
+    "DOWN": 40.4,
+    "ANCHOR": 28.3
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 28.3,
+   "breadth": 0.848,
+   "competitiveRatio": 39.9,
+   "winRate": 69.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 9.9,
+  "nonConference": 2.4,
+  "delta": -7.5,
+  "nonConferenceShare": 78
+ },
+ "members": [
+  {
+   "teamId": "962EECC8-C817-4374-92D5-C043742EF7B3",
+   "name": "Case Western Reserve",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 15.15,
+   "matches": 582,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 36,
+    "EVEN": 77,
+    "DOWN": 197,
+    "ANCHOR": 272
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.2,
+    "EVEN": 13.2,
+    "DOWN": 33.8,
+    "ANCHOR": 46.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 46.7,
+   "breadth": 0.722,
+   "competitiveRatio": 37.8,
+   "winRate": 77
+  },
+  {
+   "teamId": "2F173191-1947-4D17-A249-E990F4ED2DAB",
+   "name": "University Of Chicago",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 13.99,
+   "matches": 428,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 10,
+    "DOWN": 264,
+    "ANCHOR": 154
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 2.3,
+    "DOWN": 61.7,
+    "ANCHOR": 36
+   },
+   "stretchRate": 0,
+   "anchorRate": 36,
+   "breadth": 0.468,
+   "competitiveRatio": 44,
+   "winRate": 78
+  },
+  {
+   "teamId": "9C409ABF-EE9C-41B1-92CF-96231C0E8E53",
+   "name": "Carnegie Mellon",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.46,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 77,
+    "EVEN": 6,
+    "DOWN": 195,
+    "ANCHOR": 126
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.1,
+    "EVEN": 1.5,
+    "DOWN": 48.3,
+    "ANCHOR": 31.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 31.2,
+   "breadth": 0.679,
+   "competitiveRatio": 34.7,
+   "winRate": 71.5
+  },
+  {
+   "teamId": "B41D07CC-8C91-4A21-B2F1-38A8808496DD",
+   "name": "Washington University In St. Louis",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 19.47,
+   "matches": 389,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 10,
+    "EVEN": 97,
+    "DOWN": 133,
+    "ANCHOR": 149
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.6,
+    "EVEN": 24.9,
+    "DOWN": 34.2,
+    "ANCHOR": 38.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 38.3,
+   "breadth": 0.73,
+   "competitiveRatio": 34.7,
+   "winRate": 75.3
+  },
+  {
+   "teamId": "FA5D4FCA-F538-4C67-9718-4D91756E45B2",
+   "name": "Washington University In St. Louis",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.38,
+   "matches": 367,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 129,
+    "EVEN": 26,
+    "DOWN": 135,
+    "ANCHOR": 77
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35.1,
+    "EVEN": 7.1,
+    "DOWN": 36.8,
+    "ANCHOR": 21
+   },
+   "stretchRate": 0,
+   "anchorRate": 21,
+   "breadth": 0.777,
+   "competitiveRatio": 49,
+   "winRate": 57.8
+  },
+  {
+   "teamId": "29BEAE48-37D1-42CD-B7EE-0B96ED7647E5",
+   "name": "University Of Chicago",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 19.3,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 86,
+    "DOWN": 129,
+    "ANCHOR": 140
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 24.2,
+    "DOWN": 36.3,
+    "ANCHOR": 39.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 39.4,
+   "breadth": 0.67,
+   "competitiveRatio": 34.9,
+   "winRate": 80
+  },
+  {
+   "teamId": "9176C3FB-0BD0-4782-8162-D28D75DCE33F",
+   "name": "Emory (GA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 19.78,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 119,
+    "DOWN": 171,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.8,
+    "EVEN": 33.6,
+    "DOWN": 48.3,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.3,
+   "breadth": 0.713,
+   "competitiveRatio": 39.4,
+   "winRate": 72
+  },
+  {
+   "teamId": "1273FE37-6C6D-43DE-A390-71A54BB7CAD2",
+   "name": "Emory (GA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 14.81,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 51,
+    "EVEN": 56,
+    "DOWN": 149,
+    "ANCHOR": 98
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.4,
+    "EVEN": 15.8,
+    "DOWN": 42.1,
+    "ANCHOR": 27.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 27.7,
+   "breadth": 0.802,
+   "competitiveRatio": 41.8,
+   "winRate": 64.7
+  },
+  {
+   "teamId": "8D265662-9C08-4660-A94C-8590D497A660",
+   "name": "Carnegie Mellon",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.85,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 97,
+    "EVEN": 61,
+    "DOWN": 160,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.7,
+    "EVEN": 17.4,
+    "DOWN": 45.7,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.1,
+   "breadth": 0.768,
+   "competitiveRatio": 49.6,
+   "winRate": 55.4
+  },
+  {
+   "teamId": "10C102FE-74DE-48E0-9985-28E3C60B5F1B",
+   "name": "Case Western Reserve",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 21.74,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 104,
+    "EVEN": 27,
+    "DOWN": 121,
+    "ANCHOR": 80
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.3,
+    "EVEN": 8.1,
+    "DOWN": 36.4,
+    "ANCHOR": 24.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.1,
+   "breadth": 0.794,
+   "competitiveRatio": 34.1,
+   "winRate": 65.1
+  },
+  {
+   "teamId": "46056C02-1A1B-4D58-B7EE-F777E6C1234F",
+   "name": "Rochester (New York)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.57,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 141,
+    "UP": 120,
+    "EVEN": 24,
+    "DOWN": 40,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43.4,
+    "UP": 36.9,
+    "EVEN": 7.4,
+    "DOWN": 12.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43.4,
+   "anchorRate": 0,
+   "breadth": 0.733,
+   "competitiveRatio": 28.1,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "397F86FE-33A6-43B7-ABAD-B6B2020B0F90",
+   "name": "Brandeis",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 22.47,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 102,
+    "EVEN": 40,
+    "DOWN": 117,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.2,
+    "EVEN": 12.6,
+    "DOWN": 36.9,
+    "ANCHOR": 18.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.3,
+   "breadth": 0.811,
+   "competitiveRatio": 34.3,
+   "winRate": 55.8
+  },
+  {
+   "teamId": "60C751B5-D686-4A3D-8FC6-35B502EE8722",
+   "name": "Rochester (New York)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.29,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 70,
+    "UP": 152,
+    "EVEN": 18,
+    "DOWN": 30,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 23.8,
+    "UP": 51.7,
+    "EVEN": 6.1,
+    "DOWN": 10.2,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 23.8,
+   "anchorRate": 8.2,
+   "breadth": 0.802,
+   "competitiveRatio": 38.8,
+   "winRate": 51.4
+  },
+  {
+   "teamId": "B0955AB3-9A47-4913-B76A-B8727F02B10D",
+   "name": "Brandeis",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.17,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 2,
+    "UP": 118,
+    "EVEN": 40,
+    "DOWN": 86,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 0.7,
+    "UP": 41.5,
+    "EVEN": 14.1,
+    "DOWN": 30.3,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 0.7,
+   "anchorRate": 13.4,
+   "breadth": 0.812,
+   "competitiveRatio": 53.9,
+   "winRate": 51.4
+  },
+  {
+   "teamId": "E35AC536-8ABF-4A55-AA96-5F1DC3A70A96",
+   "name": "NYU",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.02,
+   "matches": 259,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 85,
+    "EVEN": 24,
+    "DOWN": 128,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 6.2,
+    "UP": 32.8,
+    "EVEN": 9.3,
+    "DOWN": 49.4,
+    "ANCHOR": 2.3
+   },
+   "stretchRate": 6.2,
+   "anchorRate": 2.3,
+   "breadth": 0.742,
+   "competitiveRatio": 52.9,
+   "winRate": 54.1
+  },
+  {
+   "teamId": "369378C0-5C32-4DE4-97F0-803675C8C09E",
+   "name": "NYU",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 22.2,
+   "matches": 206,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 39,
+    "DOWN": 66,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.4,
+    "EVEN": 18.9,
+    "DOWN": 32,
+    "ANCHOR": 30.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 30.6,
+   "breadth": 0.841,
+   "competitiveRatio": 32,
+   "winRate": 64.6
+  }
+ ]
+}

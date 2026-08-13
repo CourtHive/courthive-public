@@ -1,0 +1,625 @@
+{
+ "conference": "Centennial Conference",
+ "slug": "centennial-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 19,
+ "fingerprint": {
+  "overall": {
+   "matches": 6402,
+   "bands": {
+    "STRETCH": 616,
+    "UP": 1938,
+    "EVEN": 788,
+    "DOWN": 2232,
+    "ANCHOR": 828
+   },
+   "bandPct": {
+    "STRETCH": 9.6,
+    "UP": 30.3,
+    "EVEN": 12.3,
+    "DOWN": 34.9,
+    "ANCHOR": 12.9
+   },
+   "stretchRate": 9.6,
+   "anchorRate": 12.9,
+   "breadth": 0.918,
+   "competitiveRatio": 35.3,
+   "winRate": 53.5
+  },
+  "inConference": {
+   "matches": 2772,
+   "bands": {
+    "STRETCH": 485,
+    "UP": 786,
+    "EVEN": 230,
+    "DOWN": 786,
+    "ANCHOR": 485
+   },
+   "bandPct": {
+    "STRETCH": 17.5,
+    "UP": 28.4,
+    "EVEN": 8.3,
+    "DOWN": 28.4,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 17.5,
+   "anchorRate": 17.5,
+   "breadth": 0.951,
+   "competitiveRatio": 28,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3630,
+   "bands": {
+    "STRETCH": 131,
+    "UP": 1152,
+    "EVEN": 558,
+    "DOWN": 1446,
+    "ANCHOR": 343
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 31.7,
+    "EVEN": 15.4,
+    "DOWN": 39.8,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 9.4,
+   "breadth": 0.846,
+   "competitiveRatio": 40.9,
+   "winRate": 56.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.5,
+  "nonConference": 3.6,
+  "delta": -13.9,
+  "nonConferenceShare": 56.7
+ },
+ "members": [
+  {
+   "teamId": "46D40F0A-80BC-454E-B98D-0A0777B8FE35",
+   "name": "Swarthmore",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 15.69,
+   "matches": 420,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 6,
+    "DOWN": 194,
+    "ANCHOR": 158
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.8,
+    "EVEN": 1.4,
+    "DOWN": 46.2,
+    "ANCHOR": 37.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 37.6,
+   "breadth": 0.663,
+   "competitiveRatio": 44.3,
+   "winRate": 71
+  },
+  {
+   "teamId": "0AA4E40A-642B-4D4D-8F90-038C517E0142",
+   "name": "Johns Hopkins",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.59,
+   "matches": 399,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 119,
+    "EVEN": 39,
+    "DOWN": 163,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.8,
+    "EVEN": 9.8,
+    "DOWN": 40.9,
+    "ANCHOR": 19.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.5,
+   "breadth": 0.791,
+   "competitiveRatio": 49.2,
+   "winRate": 65.4
+  },
+  {
+   "teamId": "7B6B1054-0278-4B3A-AA32-A7B239AC8BBD",
+   "name": "Johns Hopkins",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 19.72,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 92,
+    "DOWN": 142,
+    "ANCHOR": 124
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 5,
+    "EVEN": 24.4,
+    "DOWN": 37.7,
+    "ANCHOR": 32.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 32.9,
+   "breadth": 0.763,
+   "competitiveRatio": 40.1,
+   "winRate": 66.6
+  },
+  {
+   "teamId": "E9298F3E-F45B-4EC1-BE15-93A9F334D284",
+   "name": "Gettysburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.35,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 71,
+    "UP": 104,
+    "EVEN": 36,
+    "DOWN": 114,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 19.7,
+    "UP": 28.9,
+    "EVEN": 10,
+    "DOWN": 31.7,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 19.7,
+   "anchorRate": 9.7,
+   "breadth": 0.932,
+   "competitiveRatio": 30.3,
+   "winRate": 47.8
+  },
+  {
+   "teamId": "EA4740AD-650E-4454-855C-76B58C09F1B5",
+   "name": "Haverford",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.56,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 97,
+    "EVEN": 36,
+    "DOWN": 151,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 28,
+    "EVEN": 10.4,
+    "DOWN": 43.5,
+    "ANCHOR": 18.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.2,
+   "breadth": 0.785,
+   "competitiveRatio": 46.1,
+   "winRate": 59.1
+  },
+  {
+   "teamId": "E1A16EA5-48D0-4535-B402-711B0BEB81B0",
+   "name": "Swarthmore",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 22.84,
+   "matches": 344,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 103,
+    "EVEN": 6,
+    "DOWN": 149,
+    "ANCHOR": 80
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 29.9,
+    "EVEN": 1.7,
+    "DOWN": 43.3,
+    "ANCHOR": 23.3
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 23.3,
+   "breadth": 0.748,
+   "competitiveRatio": 34.1,
+   "winRate": 66.6
+  },
+  {
+   "teamId": "B20025CB-D142-410F-9696-9DB2081E4C03",
+   "name": "Franklin & Marshall College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.79,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 61,
+    "EVEN": 54,
+    "DOWN": 121,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 7.9,
+    "UP": 17.9,
+    "EVEN": 15.8,
+    "DOWN": 35.5,
+    "ANCHOR": 22.9
+   },
+   "stretchRate": 7.9,
+   "anchorRate": 22.9,
+   "breadth": 0.935,
+   "competitiveRatio": 43.8,
+   "winRate": 58.9
+  },
+  {
+   "teamId": "C8A06635-2CBC-4295-AC1E-EC59D4C612B6",
+   "name": "Gettysburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.57,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 188,
+    "EVEN": 52,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.1,
+    "UP": 55.3,
+    "EVEN": 15.3,
+    "DOWN": 15.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.1,
+   "anchorRate": 0,
+   "breadth": 0.732,
+   "competitiveRatio": 24.1,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "820A0B90-58C8-435B-A11A-02160642D834",
+   "name": "Washington College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.92,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 108,
+    "EVEN": 40,
+    "DOWN": 126,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 31.9,
+    "EVEN": 11.8,
+    "DOWN": 37.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 0,
+   "breadth": 0.808,
+   "competitiveRatio": 41.9,
+   "winRate": 49
+  },
+  {
+   "teamId": "D1F983FD-CCD6-43EC-A4ED-A88C7F090AC3",
+   "name": "Ursinus College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.94,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 108,
+    "EVEN": 18,
+    "DOWN": 95,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 21.4,
+    "UP": 32,
+    "EVEN": 5.3,
+    "DOWN": 28.2,
+    "ANCHOR": 13.1
+   },
+   "stretchRate": 21.4,
+   "anchorRate": 13.1,
+   "breadth": 0.916,
+   "competitiveRatio": 34.5,
+   "winRate": 54.6
+  },
+  {
+   "teamId": "C161DF12-2C21-46A3-AAB1-F7958A159262",
+   "name": "Ursinus College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.79,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 135,
+    "EVEN": 65,
+    "DOWN": 80,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 40.7,
+    "EVEN": 19.6,
+    "DOWN": 24.1,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 1.5,
+   "breadth": 0.85,
+   "competitiveRatio": 23.6,
+   "winRate": 42.5
+  },
+  {
+   "teamId": "C4557B89-56DC-40BC-9017-A9AD13006B26",
+   "name": "Franklin & Marshall College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.86,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 76,
+    "EVEN": 63,
+    "DOWN": 145,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 23.2,
+    "EVEN": 19.2,
+    "DOWN": 44.2,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 5.2,
+   "breadth": 0.855,
+   "competitiveRatio": 32.4,
+   "winRate": 52.4
+  },
+  {
+   "teamId": "9277BEAA-B009-49B2-8236-4CA20E7203D7",
+   "name": "Dickinson College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.27,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 38,
+    "EVEN": 48,
+    "DOWN": 194,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 11.7,
+    "EVEN": 14.7,
+    "DOWN": 59.5,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 10.4,
+   "breadth": 0.745,
+   "competitiveRatio": 27.6,
+   "winRate": 58
+  },
+  {
+   "teamId": "6168EBF1-28C5-4CAF-B8F3-E164671077B5",
+   "name": "Haverford",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.43,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 90,
+    "EVEN": 63,
+    "DOWN": 87,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 7.6,
+    "UP": 28.6,
+    "EVEN": 20,
+    "DOWN": 27.6,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 7.6,
+   "anchorRate": 16.2,
+   "breadth": 0.948,
+   "competitiveRatio": 36.8,
+   "winRate": 57.5
+  },
+  {
+   "teamId": "46970808-E6BE-41F3-87A0-CF2F0A6EBDA5",
+   "name": "Dickinson College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.71,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 144,
+    "EVEN": 48,
+    "DOWN": 30,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 46,
+    "EVEN": 15.3,
+    "DOWN": 9.6,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 8.9,
+   "breadth": 0.875,
+   "competitiveRatio": 34.2,
+   "winRate": 36.4
+  },
+  {
+   "teamId": "749C8A00-BF57-4625-8425-4CCFE6095A12",
+   "name": "Washington College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.29,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 164,
+    "EVEN": 30,
+    "DOWN": 109,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 53.4,
+    "EVEN": 9.8,
+    "DOWN": 35.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 0,
+   "breadth": 0.613,
+   "competitiveRatio": 39.5,
+   "winRate": 46.9
+  },
+  {
+   "teamId": "4528FA3F-1DC4-4879-9248-BEDB4DDF7505",
+   "name": "Muhlenberg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.16,
+   "matches": 306,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 108,
+    "EVEN": 18,
+    "DOWN": 90,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 23.5,
+    "UP": 35.3,
+    "EVEN": 5.9,
+    "DOWN": 29.4,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 23.5,
+   "anchorRate": 5.9,
+   "breadth": 0.871,
+   "competitiveRatio": 27.5,
+   "winRate": 43.1
+  },
+  {
+   "teamId": "BE49558E-DF61-452E-9E4A-5AED1D59042C",
+   "name": "Bryn Mawr",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.33,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 137,
+    "EVEN": 18,
+    "DOWN": 118,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 7.9,
+    "UP": 45.4,
+    "EVEN": 6,
+    "DOWN": 39.1,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 7.9,
+   "anchorRate": 1.7,
+   "breadth": 0.723,
+   "competitiveRatio": 32.9,
+   "winRate": 47.7
+  },
+  {
+   "teamId": "A6C75A67-D8E3-4072-8DAC-FB105B3DF8E6",
+   "name": "Muhlenberg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.93,
+   "matches": 269,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 77,
+    "EVEN": 56,
+    "DOWN": 72,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 28.6,
+    "EVEN": 20.8,
+    "DOWN": 26.8,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 3.7,
+   "breadth": 0.921,
+   "competitiveRatio": 18.2,
+   "winRate": 31.2
+  }
+ ]
+}

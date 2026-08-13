@@ -1,0 +1,491 @@
+{
+ "conference": "Northeast 10 Conference",
+ "slug": "northeast-10-conference",
+ "divisions": [
+  "DIV_I",
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 4066,
+   "bands": {
+    "STRETCH": 312,
+    "UP": 1434,
+    "EVEN": 692,
+    "DOWN": 1455,
+    "ANCHOR": 173
+   },
+   "bandPct": {
+    "STRETCH": 7.7,
+    "UP": 35.3,
+    "EVEN": 17,
+    "DOWN": 35.8,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 7.7,
+   "anchorRate": 4.3,
+   "breadth": 0.85,
+   "competitiveRatio": 39,
+   "winRate": 48.5
+  },
+  "inConference": {
+   "matches": 2368,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 905,
+    "EVEN": 486,
+    "DOWN": 905,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 38.2,
+    "EVEN": 20.5,
+    "DOWN": 38.2,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 1.5,
+   "breadth": 0.738,
+   "competitiveRatio": 42.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1698,
+   "bands": {
+    "STRETCH": 276,
+    "UP": 529,
+    "EVEN": 206,
+    "DOWN": 550,
+    "ANCHOR": 137
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 31.2,
+    "EVEN": 12.1,
+    "DOWN": 32.4,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 8.1,
+   "breadth": 0.921,
+   "competitiveRatio": 34.3,
+   "winRate": 46.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.5,
+  "nonConference": 16.3,
+  "delta": 14.8,
+  "nonConferenceShare": 41.8
+ },
+ "members": [
+  {
+   "teamId": "6CFF3338-9C53-458F-9412-F5587649C776",
+   "name": "Assumption University",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.64,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 94,
+    "EVEN": 69,
+    "DOWN": 131,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 4.9,
+    "UP": 25.7,
+    "EVEN": 18.9,
+    "DOWN": 35.8,
+    "ANCHOR": 14.8
+   },
+   "stretchRate": 4.9,
+   "anchorRate": 14.8,
+   "breadth": 0.908,
+   "competitiveRatio": 46.7,
+   "winRate": 50
+  },
+  {
+   "teamId": "E9EBCC74-1CC8-446B-89C9-938258EBB538",
+   "name": "Assumption University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.97,
+   "matches": 359,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 88,
+    "EVEN": 6,
+    "DOWN": 244,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 24.5,
+    "EVEN": 1.7,
+    "DOWN": 68,
+    "ANCHOR": 2.5
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 2.5,
+   "breadth": 0.548,
+   "competitiveRatio": 33.7,
+   "winRate": 62.1
+  },
+  {
+   "teamId": "F7F728B3-927F-4C55-BA6D-04C5C39E8640",
+   "name": "Adelphi",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.12,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 72,
+    "EVEN": 23,
+    "DOWN": 218,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 20.6,
+    "EVEN": 6.6,
+    "DOWN": 62.5,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 5.2,
+   "breadth": 0.686,
+   "competitiveRatio": 45,
+   "winRate": 63
+  },
+  {
+   "teamId": "13A21CD6-AEA2-4912-9EC3-E3BC4329A0DD",
+   "name": "Southern New Hampshire",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.09,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 85,
+    "EVEN": 63,
+    "DOWN": 126,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 9.3,
+    "UP": 26.4,
+    "EVEN": 19.6,
+    "DOWN": 39.1,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 9.3,
+   "anchorRate": 5.6,
+   "breadth": 0.882,
+   "competitiveRatio": 51.2,
+   "winRate": 49.4
+  },
+  {
+   "teamId": "BB0A86B5-F7EC-49A8-8C21-AA64DF285CCD",
+   "name": "Franklin Pierce",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.52,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 177,
+    "EVEN": 76,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.5,
+    "UP": 57.1,
+    "EVEN": 24.5,
+    "DOWN": 3.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.5,
+   "anchorRate": 0,
+   "breadth": 0.665,
+   "competitiveRatio": 52.6,
+   "winRate": 38.1
+  },
+  {
+   "teamId": "50B3A681-00AF-41D1-9AD2-3268E3A4D479",
+   "name": "Adelphi",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.47,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 39,
+    "EVEN": 22,
+    "DOWN": 214,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13,
+    "EVEN": 7.4,
+    "DOWN": 71.6,
+    "ANCHOR": 8
+   },
+   "stretchRate": 0,
+   "anchorRate": 8,
+   "breadth": 0.559,
+   "competitiveRatio": 35.1,
+   "winRate": 63.9
+  },
+  {
+   "teamId": "147E8098-EE9A-4FAC-8447-6AA8AD3DC735",
+   "name": "Bentley",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.43,
+   "matches": 288,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 158,
+    "EVEN": 72,
+    "DOWN": 24,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 9.7,
+    "UP": 54.9,
+    "EVEN": 25,
+    "DOWN": 8.3,
+    "ANCHOR": 2.1
+   },
+   "stretchRate": 9.7,
+   "anchorRate": 2.1,
+   "breadth": 0.74,
+   "competitiveRatio": 44.1,
+   "winRate": 33.3
+  },
+  {
+   "teamId": "42FA876A-D92E-40F2-83C5-106B30612081",
+   "name": "Saint Michael’s",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.52,
+   "matches": 283,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 143,
+    "EVEN": 70,
+    "DOWN": 58,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 50.5,
+    "EVEN": 24.7,
+    "DOWN": 20.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 0,
+   "breadth": 0.714,
+   "competitiveRatio": 48.2,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "7262EC99-71CA-4E2A-873D-C631F9748A41",
+   "name": "Southern New Hampshire",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.9,
+   "matches": 269,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 105,
+    "EVEN": 12,
+    "DOWN": 134,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 4.5,
+    "UP": 39,
+    "EVEN": 4.5,
+    "DOWN": 49.8,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 4.5,
+   "anchorRate": 2.2,
+   "breadth": 0.669,
+   "competitiveRatio": 37.9,
+   "winRate": 58.4
+  },
+  {
+   "teamId": "56101FF2-6E09-4ABA-80A2-407689B0096C",
+   "name": "Saint Michael’s",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.76,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 99,
+    "EVEN": 95,
+    "DOWN": 69,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.1,
+    "EVEN": 35.6,
+    "DOWN": 25.8,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.5,
+   "breadth": 0.713,
+   "competitiveRatio": 25.1,
+   "winRate": 34.8
+  },
+  {
+   "teamId": "82831D17-AD54-4F97-96F8-98BE409C326D",
+   "name": "Franklin Pierce",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.1,
+   "matches": 257,
+   "bands": {
+    "STRETCH": 67,
+    "UP": 104,
+    "EVEN": 58,
+    "DOWN": 28,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 26.1,
+    "UP": 40.5,
+    "EVEN": 22.6,
+    "DOWN": 10.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 26.1,
+   "anchorRate": 0,
+   "breadth": 0.804,
+   "competitiveRatio": 31.9,
+   "winRate": 39.3
+  },
+  {
+   "teamId": "D55C797B-5134-4537-98F8-3B2D11F2E7C2",
+   "name": "New Haven",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.28,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 13,
+    "UP": 33,
+    "EVEN": 34,
+    "DOWN": 138,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 13.1,
+    "EVEN": 13.5,
+    "DOWN": 54.8,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 13.5,
+   "breadth": 0.801,
+   "competitiveRatio": 33.9,
+   "winRate": 62.3
+  },
+  {
+   "teamId": "CA1A0325-719E-402D-9D77-79276CDAB191",
+   "name": "Saint Anselm",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.82,
+   "matches": 224,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 83,
+    "EVEN": 76,
+    "DOWN": 59,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 37.1,
+    "EVEN": 33.9,
+    "DOWN": 26.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.735,
+   "competitiveRatio": 21.5,
+   "winRate": 42.9
+  },
+  {
+   "teamId": "EA1443AA-DB2D-49EF-872C-2C47812CD75B",
+   "name": "Bentley",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.41,
+   "matches": 221,
+   "bands": {
+    "STRETCH": 51,
+    "UP": 154,
+    "EVEN": 16,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23.1,
+    "UP": 69.7,
+    "EVEN": 7.2,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23.1,
+   "anchorRate": 0,
+   "breadth": 0.485,
+   "competitiveRatio": 24.4,
+   "winRate": 22.6
+  }
+ ]
+}

@@ -1,0 +1,301 @@
+{
+ "conference": "New Jersey Athletic Conference",
+ "slug": "new-jersey-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1556,
+   "bands": {
+    "STRETCH": 105,
+    "UP": 352,
+    "EVEN": 208,
+    "DOWN": 605,
+    "ANCHOR": 286
+   },
+   "bandPct": {
+    "STRETCH": 6.7,
+    "UP": 22.6,
+    "EVEN": 13.4,
+    "DOWN": 38.9,
+    "ANCHOR": 18.4
+   },
+   "stretchRate": 6.7,
+   "anchorRate": 18.4,
+   "breadth": 0.911,
+   "competitiveRatio": 23.2,
+   "winRate": 57.5
+  },
+  "inConference": {
+   "matches": 432,
+   "bands": {
+    "STRETCH": 76,
+    "UP": 85,
+    "EVEN": 110,
+    "DOWN": 85,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 17.6,
+    "UP": 19.7,
+    "EVEN": 25.5,
+    "DOWN": 19.7,
+    "ANCHOR": 17.6
+   },
+   "stretchRate": 17.6,
+   "anchorRate": 17.6,
+   "breadth": 0.994,
+   "competitiveRatio": 7.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1124,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 267,
+    "EVEN": 98,
+    "DOWN": 520,
+    "ANCHOR": 210
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 23.8,
+    "EVEN": 8.7,
+    "DOWN": 46.3,
+    "ANCHOR": 18.7
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 18.7,
+   "breadth": 0.819,
+   "competitiveRatio": 29.3,
+   "winRate": 60.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.6,
+  "nonConference": 2.6,
+  "delta": -15,
+  "nonConferenceShare": 72.2
+ },
+ "members": [
+  {
+   "teamId": "DAF82DB4-841B-47D9-ABF1-3313ED0A622B",
+   "name": "The College Of New Jersey",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 12,
+    "DOWN": 187,
+    "ANCHOR": 83
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.9,
+    "EVEN": 3.8,
+    "DOWN": 58.4,
+    "ANCHOR": 25.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.9,
+   "breadth": 0.646,
+   "competitiveRatio": 23.8,
+   "winRate": 77.8
+  },
+  {
+   "teamId": "EE025F73-0CE4-498D-B456-FC5524B8E1AB",
+   "name": "The College Of New Jersey",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.76,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 71,
+    "EVEN": 42,
+    "DOWN": 120,
+    "ANCHOR": 86
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.3,
+    "EVEN": 13.2,
+    "DOWN": 37.6,
+    "ANCHOR": 27
+   },
+   "stretchRate": 0,
+   "anchorRate": 27,
+   "breadth": 0.822,
+   "competitiveRatio": 44.2,
+   "winRate": 68.7
+  },
+  {
+   "teamId": "4C80EB75-AF3C-4884-9A02-9499E6EA8B95",
+   "name": "Rutgers-Camden",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.89,
+   "matches": 258,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 52,
+    "EVEN": 51,
+    "DOWN": 114,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.2,
+    "EVEN": 19.8,
+    "DOWN": 44.2,
+    "ANCHOR": 15.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.9,
+   "breadth": 0.806,
+   "competitiveRatio": 13.6,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "1F13307E-CF56-4280-B9FD-86ED4241C60E",
+   "name": "Kean",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.24,
+   "matches": 220,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 0,
+    "EVEN": 36,
+    "DOWN": 97,
+    "ANCHOR": 66
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 0,
+    "EVEN": 16.4,
+    "DOWN": 44.1,
+    "ANCHOR": 30
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 30,
+   "breadth": 0.772,
+   "competitiveRatio": 18.6,
+   "winRate": 59.1
+  },
+  {
+   "teamId": "20FB555E-CDCB-4CE1-B300-83F2651A0350",
+   "name": "William Paterson University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.29,
+   "matches": 173,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 89,
+    "EVEN": 33,
+    "DOWN": 32,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 51.4,
+    "EVEN": 19.1,
+    "DOWN": 18.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11,
+   "anchorRate": 0,
+   "breadth": 0.753,
+   "competitiveRatio": 14.5,
+   "winRate": 24.9
+  },
+  {
+   "teamId": "012EA9EA-84AF-4945-A405-40E6666811EF",
+   "name": "Rutgers-Camden",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.54,
+   "matches": 156,
+   "bands": {
+    "STRETCH": 46,
+    "UP": 84,
+    "EVEN": 0,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 29.5,
+    "UP": 53.8,
+    "EVEN": 0,
+    "DOWN": 16.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 29.5,
+   "anchorRate": 0,
+   "breadth": 0.616,
+   "competitiveRatio": 19.2,
+   "winRate": 25
+  },
+  {
+   "teamId": "A2771F12-F4E9-45E5-9236-A869861B48F4",
+   "name": "Stockton",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.16,
+   "matches": 110,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 18,
+    "EVEN": 34,
+    "DOWN": 29,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 17.3,
+    "UP": 16.4,
+    "EVEN": 30.9,
+    "DOWN": 26.4,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 17.3,
+   "anchorRate": 9.1,
+   "breadth": 0.952,
+   "competitiveRatio": 11.8,
+   "winRate": 58.2
+  }
+ ]
+}

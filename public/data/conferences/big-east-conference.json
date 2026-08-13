@@ -1,0 +1,597 @@
+{
+ "conference": "Big East Conference",
+ "slug": "big-east-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 6349,
+   "bands": {
+    "STRETCH": 525,
+    "UP": 2469,
+    "EVEN": 1180,
+    "DOWN": 1875,
+    "ANCHOR": 300
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 38.9,
+    "EVEN": 18.6,
+    "DOWN": 29.5,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 4.7,
+   "breadth": 0.864,
+   "competitiveRatio": 47.7,
+   "winRate": 46.6
+  },
+  "inConference": {
+   "matches": 2134,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 746,
+    "EVEN": 492,
+    "DOWN": 746,
+    "ANCHOR": 75
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 35,
+    "EVEN": 23.1,
+    "DOWN": 35,
+    "ANCHOR": 3.5
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 3.5,
+   "breadth": 0.813,
+   "competitiveRatio": 51.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4215,
+   "bands": {
+    "STRETCH": 450,
+    "UP": 1723,
+    "EVEN": 688,
+    "DOWN": 1129,
+    "ANCHOR": 225
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 40.9,
+    "EVEN": 16.3,
+    "DOWN": 26.8,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 5.3,
+   "breadth": 0.876,
+   "competitiveRatio": 45.6,
+   "winRate": 44.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 3.5,
+  "nonConference": 10.7,
+  "delta": 7.2,
+  "nonConferenceShare": 66.4
+ },
+ "members": [
+  {
+   "teamId": "8F5D16E2-DA67-430E-8211-E7131E57AEE6",
+   "name": "Creighton",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15,
+   "matches": 408,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 111,
+    "EVEN": 92,
+    "DOWN": 112,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 27.2,
+    "EVEN": 22.5,
+    "DOWN": 27.5,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 11,
+   "anchorRate": 11.8,
+   "breadth": 0.957,
+   "competitiveRatio": 48.3,
+   "winRate": 53.2
+  },
+  {
+   "teamId": "F45EB031-245D-4B02-836A-293E7CEB3318",
+   "name": "Butler",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.19,
+   "matches": 386,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 142,
+    "EVEN": 99,
+    "DOWN": 94,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 12.4,
+    "UP": 36.8,
+    "EVEN": 25.6,
+    "DOWN": 24.4,
+    "ANCHOR": 0.8
+   },
+   "stretchRate": 12.4,
+   "anchorRate": 0.8,
+   "breadth": 0.844,
+   "competitiveRatio": 56.7,
+   "winRate": 42.2
+  },
+  {
+   "teamId": "C24BC9E5-EBB9-4B64-9075-76F3E7E3780C",
+   "name": "DePaul",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.17,
+   "matches": 382,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 134,
+    "EVEN": 47,
+    "DOWN": 144,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 4.7,
+    "UP": 35.1,
+    "EVEN": 12.3,
+    "DOWN": 37.7,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 4.7,
+   "anchorRate": 10.2,
+   "breadth": 0.851,
+   "competitiveRatio": 60.5,
+   "winRate": 50.5
+  },
+  {
+   "teamId": "3811B699-A12C-4E01-9E15-B0D6FFA6C9AB",
+   "name": "Marquette",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.26,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 284,
+    "EVEN": 58,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 75.3,
+    "EVEN": 15.4,
+    "DOWN": 6.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 0,
+   "breadth": 0.486,
+   "competitiveRatio": 52,
+   "winRate": 31.6
+  },
+  {
+   "teamId": "8038A51B-CC37-457A-A38A-08026081653E",
+   "name": "Xavier University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.96,
+   "matches": 375,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 136,
+    "EVEN": 130,
+    "DOWN": 39,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 12.5,
+    "UP": 36.3,
+    "EVEN": 34.7,
+    "DOWN": 10.4,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 12.5,
+   "anchorRate": 6.1,
+   "breadth": 0.871,
+   "competitiveRatio": 49.9,
+   "winRate": 42.4
+  },
+  {
+   "teamId": "4B0E137E-E694-4A50-9697-D83D16EB28DB",
+   "name": "Xavier University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.27,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 141,
+    "EVEN": 38,
+    "DOWN": 177,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.7,
+    "EVEN": 10.2,
+    "DOWN": 47.3,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.8,
+   "breadth": 0.684,
+   "competitiveRatio": 41.8,
+   "winRate": 65.8
+  },
+  {
+   "teamId": "EFC20C7C-F68C-4F58-9E48-73226DE7B931",
+   "name": "Butler",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.85,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 57,
+    "UP": 199,
+    "EVEN": 77,
+    "DOWN": 39,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.3,
+    "UP": 53.5,
+    "EVEN": 20.7,
+    "DOWN": 10.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.3,
+   "anchorRate": 0,
+   "breadth": 0.736,
+   "competitiveRatio": 44.9,
+   "winRate": 38.7
+  },
+  {
+   "teamId": "6B6FAD2E-2B5D-4169-AE8B-72DBCA1C57C9",
+   "name": "Villanova",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.42,
+   "matches": 367,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 171,
+    "EVEN": 49,
+    "DOWN": 120,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 46.6,
+    "EVEN": 13.4,
+    "DOWN": 32.7,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 4.1,
+   "breadth": 0.766,
+   "competitiveRatio": 44.1,
+   "winRate": 49.9
+  },
+  {
+   "teamId": "CE967C2C-2CF7-4456-8E81-C94A82136E06",
+   "name": "Georgetown University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.17,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 120,
+    "EVEN": 71,
+    "DOWN": 136,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 32.8,
+    "EVEN": 19.4,
+    "DOWN": 37.2,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 6.6,
+   "breadth": 0.846,
+   "competitiveRatio": 53.6,
+   "winRate": 49.5
+  },
+  {
+   "teamId": "1D326B18-424C-4AF5-B1C7-A3F8AB8ADAB6",
+   "name": "Villanova",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.38,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 69,
+    "UP": 175,
+    "EVEN": 53,
+    "DOWN": 41,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 48.6,
+    "EVEN": 14.7,
+    "DOWN": 11.4,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 6.1,
+   "breadth": 0.85,
+   "competitiveRatio": 40,
+   "winRate": 31.7
+  },
+  {
+   "teamId": "413E33E6-D6B7-4F92-B0BE-C7DE2204DDDC",
+   "name": "DePaul",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.27,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 132,
+    "EVEN": 76,
+    "DOWN": 138,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.5,
+    "EVEN": 21.6,
+    "DOWN": 39.2,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.705,
+   "competitiveRatio": 50,
+   "winRate": 52
+  },
+  {
+   "teamId": "4D9BE433-3CE7-4AC6-9F75-A0000272EE4C",
+   "name": "Marquette",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.6,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 220,
+    "EVEN": 27,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.8,
+    "UP": 63,
+    "EVEN": 7.7,
+    "DOWN": 3.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.8,
+   "anchorRate": 0,
+   "breadth": 0.593,
+   "competitiveRatio": 53.6,
+   "winRate": 30.7
+  },
+  {
+   "teamId": "54E7BDD0-6205-40E3-B9CE-B39172B62766",
+   "name": "Seton Hall",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.86,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 113,
+    "EVEN": 80,
+    "DOWN": 149,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 32.5,
+    "EVEN": 23,
+    "DOWN": 42.8,
+    "ANCHOR": 0.9
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 0.9,
+   "breadth": 0.714,
+   "competitiveRatio": 48,
+   "winRate": 47.1
+  },
+  {
+   "teamId": "DD646065-B4E6-4927-9885-AD7B4FAC91EC",
+   "name": "UConn",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.64,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 85,
+    "EVEN": 47,
+    "DOWN": 183,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.1,
+    "EVEN": 13.9,
+    "DOWN": 54,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.1,
+   "breadth": 0.709,
+   "competitiveRatio": 45.6,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "2E026C9F-D8C0-40CB-B054-227C33BB4ED8",
+   "name": "Creighton",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.92,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 49,
+    "EVEN": 75,
+    "DOWN": 154,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 15,
+    "EVEN": 23,
+    "DOWN": 47.2,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 8.9,
+   "breadth": 0.844,
+   "competitiveRatio": 40.6,
+   "winRate": 57.4
+  },
+  {
+   "teamId": "ACAA27F5-DB51-402D-B9D2-5982C3D245FC",
+   "name": "Georgetown University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.48,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 107,
+    "DOWN": 140,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.9,
+    "EVEN": 34.3,
+    "DOWN": 44.9,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.9,
+   "breadth": 0.694,
+   "competitiveRatio": 50.6,
+   "winRate": 49.4
+  },
+  {
+   "teamId": "325166F0-CF4B-442B-B73E-31880B4DF35B",
+   "name": "Providence College",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 24.7,
+   "matches": 311,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 164,
+    "EVEN": 6,
+    "DOWN": 51,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 28.9,
+    "UP": 52.7,
+    "EVEN": 1.9,
+    "DOWN": 16.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 28.9,
+   "anchorRate": 0,
+   "breadth": 0.664,
+   "competitiveRatio": 35.5,
+   "winRate": 28.6
+  },
+  {
+   "teamId": "9C142595-402C-4EA3-B358-E9B93B8C81D3",
+   "name": "St. John’s",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.07,
+   "matches": 245,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 34,
+    "EVEN": 48,
+    "DOWN": 123,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.9,
+    "EVEN": 19.6,
+    "DOWN": 50.2,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.3,
+   "breadth": 0.768,
+   "competitiveRatio": 36.2,
+   "winRate": 64.9
+  }
+ ]
+}

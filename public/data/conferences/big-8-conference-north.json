@@ -1,0 +1,300 @@
+{
+ "conference": "Big 8 Conference North",
+ "slug": "big-8-conference-north",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1077,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 444,
+    "EVEN": 58,
+    "DOWN": 377,
+    "ANCHOR": 69
+   },
+   "bandPct": {
+    "STRETCH": 12,
+    "UP": 41.2,
+    "EVEN": 5.4,
+    "DOWN": 35,
+    "ANCHOR": 6.4
+   },
+   "stretchRate": 12,
+   "anchorRate": 6.4,
+   "breadth": 0.82,
+   "competitiveRatio": 17.8,
+   "winRate": 50.1
+  },
+  "inConference": {
+   "matches": 278,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 87,
+    "EVEN": 22,
+    "DOWN": 87,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 31.3,
+    "EVEN": 7.9,
+    "DOWN": 31.3,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 14.7,
+   "breadth": 0.927,
+   "competitiveRatio": 9.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 799,
+   "bands": {
+    "STRETCH": 88,
+    "UP": 357,
+    "EVEN": 36,
+    "DOWN": 290,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 44.7,
+    "EVEN": 4.5,
+    "DOWN": 36.3,
+    "ANCHOR": 3.5
+   },
+   "stretchRate": 11,
+   "anchorRate": 3.5,
+   "breadth": 0.763,
+   "competitiveRatio": 20.7,
+   "winRate": 50.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14.7,
+  "nonConference": 11,
+  "delta": -3.7,
+  "nonConferenceShare": 74.2
+ },
+ "members": [
+  {
+   "teamId": "24FD9F4C-50E7-4848-BE24-5F3E93B604FD",
+   "name": "American River",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 25.7,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 85,
+    "EVEN": 26,
+    "DOWN": 138,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 19,
+    "UP": 27,
+    "EVEN": 8.3,
+    "DOWN": 43.8,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 19,
+   "anchorRate": 1.9,
+   "breadth": 0.815,
+   "competitiveRatio": 18.7,
+   "winRate": 63.5
+  },
+  {
+   "teamId": "EE3196AD-3AA0-4FEE-ABA4-17B52E76B291",
+   "name": "American River",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.55,
+   "matches": 251,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 78,
+    "EVEN": 10,
+    "DOWN": 124,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 31.1,
+    "EVEN": 4,
+    "DOWN": 49.4,
+    "ANCHOR": 13.1
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 13.1,
+   "breadth": 0.743,
+   "competitiveRatio": 12.4,
+   "winRate": 70.9
+  },
+  {
+   "teamId": "9E1EAEE6-9B36-44D4-8E1B-97EDADD362C3",
+   "name": "Folsom Lake",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 28.82,
+   "matches": 140,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 106,
+    "EVEN": 11,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 75.7,
+    "EVEN": 7.9,
+    "DOWN": 4.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 0,
+   "breadth": 0.498,
+   "competitiveRatio": 26.4,
+   "winRate": 31.4
+  },
+  {
+   "teamId": "75B8E570-D206-420A-B567-F18BC1F2E285",
+   "name": "Folsom Lake",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.99,
+   "matches": 137,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 88,
+    "EVEN": 0,
+    "DOWN": 28,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.3,
+    "UP": 64.2,
+    "EVEN": 0,
+    "DOWN": 20.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.3,
+   "anchorRate": 0,
+   "breadth": 0.557,
+   "competitiveRatio": 16.9,
+   "winRate": 19
+  },
+  {
+   "teamId": "B1C29C32-AF09-4632-85ED-C8F3F2EF3A23",
+   "name": "Sierra",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 26.43,
+   "matches": 111,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 81,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 73,
+    "ANCHOR": 27
+   },
+   "stretchRate": 0,
+   "anchorRate": 27,
+   "breadth": 0.363,
+   "competitiveRatio": 27.3,
+   "winRate": 77.5
+  },
+  {
+   "teamId": "D89301DD-4A12-433D-B4B9-7DD82F9DFD1F",
+   "name": "Shasta",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 28.72,
+   "matches": 63,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 52,
+    "EVEN": 11,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 82.5,
+    "EVEN": 17.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.288,
+   "competitiveRatio": 11.1,
+   "winRate": 9.5
+  },
+  {
+   "teamId": "D48662E8-FB76-4BEE-8AD3-13E226ECB882",
+   "name": "Shasta",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 32.53,
+   "matches": 60,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 35,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 41.7,
+    "UP": 58.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 41.7,
+   "anchorRate": 0,
+   "breadth": 0.422,
+   "competitiveRatio": 6.7,
+   "winRate": 0
+  }
+ ]
+}

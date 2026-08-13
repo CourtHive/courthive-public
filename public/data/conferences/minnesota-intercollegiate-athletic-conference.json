@@ -1,0 +1,680 @@
+{
+ "conference": "Minnesota Intercollegiate Athletic Conference",
+ "slug": "minnesota-intercollegiate-athletic-conference",
+ "divisions": [
+  "DIV_III",
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 21,
+ "fingerprint": {
+  "overall": {
+   "matches": 7458,
+   "bands": {
+    "STRETCH": 661,
+    "UP": 1954,
+    "EVEN": 920,
+    "DOWN": 2742,
+    "ANCHOR": 1181
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 26.2,
+    "EVEN": 12.3,
+    "DOWN": 36.8,
+    "ANCHOR": 15.8
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 15.8,
+   "breadth": 0.922,
+   "competitiveRatio": 35.5,
+   "winRate": 56.2
+  },
+  "inConference": {
+   "matches": 3434,
+   "bands": {
+    "STRETCH": 507,
+    "UP": 957,
+    "EVEN": 506,
+    "DOWN": 957,
+    "ANCHOR": 507
+   },
+   "bandPct": {
+    "STRETCH": 14.8,
+    "UP": 27.9,
+    "EVEN": 14.7,
+    "DOWN": 27.9,
+    "ANCHOR": 14.8
+   },
+   "stretchRate": 14.8,
+   "anchorRate": 14.8,
+   "breadth": 0.969,
+   "competitiveRatio": 33.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4024,
+   "bands": {
+    "STRETCH": 154,
+    "UP": 997,
+    "EVEN": 414,
+    "DOWN": 1785,
+    "ANCHOR": 674
+   },
+   "bandPct": {
+    "STRETCH": 3.8,
+    "UP": 24.8,
+    "EVEN": 10.3,
+    "DOWN": 44.4,
+    "ANCHOR": 16.7
+   },
+   "stretchRate": 3.8,
+   "anchorRate": 16.7,
+   "breadth": 0.848,
+   "competitiveRatio": 37.3,
+   "winRate": 61.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14.8,
+  "nonConference": 3.8,
+  "delta": -11,
+  "nonConferenceShare": 54
+ },
+ "members": [
+  {
+   "teamId": "D9B44DAC-6A45-4373-94BB-B407FFDE6B4C",
+   "name": "Gustavus Adolphus",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 22.45,
+   "matches": 560,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 0,
+    "DOWN": 234,
+    "ANCHOR": 267
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.5,
+    "EVEN": 0,
+    "DOWN": 41.8,
+    "ANCHOR": 47.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 47.7,
+   "breadth": 0.593,
+   "competitiveRatio": 27.2,
+   "winRate": 70.2
+  },
+  {
+   "teamId": "DE8454C7-A5F8-4492-A49F-E8134C3E32FA",
+   "name": "Gustavus Adolphus",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 17.43,
+   "matches": 553,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 158,
+    "EVEN": 29,
+    "DOWN": 129,
+    "ANCHOR": 237
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 28.6,
+    "EVEN": 5.2,
+    "DOWN": 23.3,
+    "ANCHOR": 42.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 42.9,
+   "breadth": 0.755,
+   "competitiveRatio": 38.7,
+   "winRate": 66.7
+  },
+  {
+   "teamId": "C7CA88A5-8AC0-4476-9AF9-C93D9C2DD777",
+   "name": "St. John’s",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.02,
+   "matches": 399,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 37,
+    "EVEN": 26,
+    "DOWN": 179,
+    "ANCHOR": 133
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 9.3,
+    "EVEN": 6.5,
+    "DOWN": 44.9,
+    "ANCHOR": 33.3
+   },
+   "stretchRate": 6,
+   "anchorRate": 33.3,
+   "breadth": 0.804,
+   "competitiveRatio": 45.1,
+   "winRate": 69.7
+  },
+  {
+   "teamId": "BA5ADF0A-23EF-4D80-8CFB-A8F5EF58DC1F",
+   "name": "Carleton",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.73,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 80,
+    "EVEN": 42,
+    "DOWN": 190,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.8,
+    "EVEN": 10.9,
+    "DOWN": 49.5,
+    "ANCHOR": 18.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.8,
+   "breadth": 0.765,
+   "competitiveRatio": 37.5,
+   "winRate": 73.4
+  },
+  {
+   "teamId": "6586415B-85C2-48B4-BB9D-1C02CE07E4DE",
+   "name": "Hamline",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.82,
+   "matches": 375,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 123,
+    "EVEN": 42,
+    "DOWN": 192,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 32.8,
+    "EVEN": 11.2,
+    "DOWN": 51.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 0,
+   "breadth": 0.683,
+   "competitiveRatio": 34.1,
+   "winRate": 50.9
+  },
+  {
+   "teamId": "E34FAC21-E340-4BC7-9DBB-1FAA0DC20725",
+   "name": "Bethel (MN)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.05,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 51,
+    "EVEN": 6,
+    "DOWN": 256,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 13.6,
+    "EVEN": 1.6,
+    "DOWN": 68.4,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 10.7,
+   "breadth": 0.62,
+   "competitiveRatio": 42.8,
+   "winRate": 65
+  },
+  {
+   "teamId": "DFE8508E-7541-4F7F-8E5C-E1AA4FD4D616",
+   "name": "Bethel (MN)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.02,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 29,
+    "EVEN": 74,
+    "DOWN": 141,
+    "ANCHOR": 121
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.9,
+    "EVEN": 20.3,
+    "DOWN": 38.6,
+    "ANCHOR": 33.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 33.2,
+   "breadth": 0.782,
+   "competitiveRatio": 27.1,
+   "winRate": 75.9
+  },
+  {
+   "teamId": "70E52B0D-5709-4789-8B07-9AB49962704B",
+   "name": "Hamline",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.83,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 125,
+    "EVEN": 0,
+    "DOWN": 179,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 36.1,
+    "EVEN": 0,
+    "DOWN": 51.7,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 6.9,
+   "breadth": 0.651,
+   "competitiveRatio": 44.9,
+   "winRate": 48.8
+  },
+  {
+   "teamId": "02825D7B-33E6-44B3-B186-5D204ECA011D",
+   "name": "St. Catherine",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.65,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 44,
+    "EVEN": 6,
+    "DOWN": 238,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 6.1,
+    "UP": 12.8,
+    "EVEN": 1.7,
+    "DOWN": 69,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 6.1,
+   "anchorRate": 10.4,
+   "breadth": 0.618,
+   "competitiveRatio": 30.8,
+   "winRate": 63.8
+  },
+  {
+   "teamId": "37C47B0D-CD92-4D0B-BB36-236F63DF5AE0",
+   "name": "St. Scholastica",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.87,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 144,
+    "EVEN": 66,
+    "DOWN": 47,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 22.3,
+    "UP": 42.7,
+    "EVEN": 19.6,
+    "DOWN": 13.9,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 22.3,
+   "anchorRate": 1.5,
+   "breadth": 0.841,
+   "competitiveRatio": 28.2,
+   "winRate": 49.3
+  },
+  {
+   "teamId": "E0308CB1-C027-402D-86D5-4421BFD55349",
+   "name": "Concordia-Moorhead",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 179,
+    "EVEN": 60,
+    "DOWN": 30,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 17.7,
+    "UP": 53.8,
+    "EVEN": 18,
+    "DOWN": 9,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 17.7,
+   "anchorRate": 1.5,
+   "breadth": 0.764,
+   "competitiveRatio": 28.9,
+   "winRate": 22.8
+  },
+  {
+   "teamId": "2647C2B2-5865-4453-964D-EA8D6FF486F1",
+   "name": "Macalester",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.97,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 86,
+    "UP": 165,
+    "EVEN": 22,
+    "DOWN": 59,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.9,
+    "UP": 49.7,
+    "EVEN": 6.6,
+    "DOWN": 17.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.9,
+   "anchorRate": 0,
+   "breadth": 0.736,
+   "competitiveRatio": 41.9,
+   "winRate": 46.7
+  },
+  {
+   "teamId": "75B4557C-958E-467E-976F-1B263FD56218",
+   "name": "Macalester",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.07,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 99,
+    "EVEN": 78,
+    "DOWN": 84,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 19.6,
+    "UP": 29.8,
+    "EVEN": 23.5,
+    "DOWN": 25.3,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 19.6,
+   "anchorRate": 1.8,
+   "breadth": 0.895,
+   "competitiveRatio": 30.4,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "6386D46C-7E90-4AD8-8F31-A8BA337DFB9A",
+   "name": "Saint Mary’s (MN)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.81,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 84,
+    "EVEN": 94,
+    "DOWN": 94,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 25.4,
+    "EVEN": 28.4,
+    "DOWN": 28.4,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 1.5,
+   "breadth": 0.884,
+   "competitiveRatio": 30.8,
+   "winRate": 49.2
+  },
+  {
+   "teamId": "DFCB90AE-9E53-4A6A-9A79-9D576F5CA571",
+   "name": "Carleton",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.96,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 47,
+    "DOWN": 122,
+    "ANCHOR": 108
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.3,
+    "EVEN": 14.4,
+    "DOWN": 37.3,
+    "ANCHOR": 33
+   },
+   "stretchRate": 0,
+   "anchorRate": 33,
+   "breadth": 0.808,
+   "competitiveRatio": 24.2,
+   "winRate": 82
+  },
+  {
+   "teamId": "B1C85FF5-4B52-421C-AEE0-7CCBC9B4ED1A",
+   "name": "St. Scholastica",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.03,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 79,
+    "EVEN": 48,
+    "DOWN": 132,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 24.3,
+    "EVEN": 14.8,
+    "DOWN": 40.6,
+    "ANCHOR": 12.9
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 12.9,
+   "breadth": 0.9,
+   "competitiveRatio": 42,
+   "winRate": 49.2
+  },
+  {
+   "teamId": "3127E854-9EDC-4964-8D99-A128A0A53827",
+   "name": "St. Olaf",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.97,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 78,
+    "EVEN": 72,
+    "DOWN": 100,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 12.8,
+    "UP": 25.6,
+    "EVEN": 23.6,
+    "DOWN": 32.8,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 12.8,
+   "anchorRate": 5.2,
+   "breadth": 0.915,
+   "competitiveRatio": 37.3,
+   "winRate": 53.4
+  },
+  {
+   "teamId": "2099CAF0-D0BD-43AA-9379-832DE87BD124",
+   "name": "St. Olaf",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.1,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 76,
+    "EVEN": 53,
+    "DOWN": 123,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 25.7,
+    "EVEN": 17.9,
+    "DOWN": 41.6,
+    "ANCHOR": 7.8
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 7.8,
+   "breadth": 0.875,
+   "competitiveRatio": 45.9,
+   "winRate": 44.6
+  },
+  {
+   "teamId": "CE0E6243-78AD-4246-9423-022BFC8E5A3A",
+   "name": "Concordia-Moorhead",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.21,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 54,
+    "EVEN": 47,
+    "DOWN": 129,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 8.5,
+    "UP": 19,
+    "EVEN": 16.5,
+    "DOWN": 45.4,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 8.5,
+   "anchorRate": 10.6,
+   "breadth": 0.881,
+   "competitiveRatio": 37.7,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "BE9F6C28-6B17-4C08-83A6-C8C3EB9EC800",
+   "name": "Saint Benedict",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.53,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 82,
+    "UP": 90,
+    "EVEN": 90,
+    "DOWN": 12,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 29.3,
+    "UP": 32.1,
+    "EVEN": 32.1,
+    "DOWN": 4.3,
+    "ANCHOR": 2.1
+   },
+   "stretchRate": 29.3,
+   "anchorRate": 2.1,
+   "breadth": 0.812,
+   "competitiveRatio": 34.6,
+   "winRate": 38.6
+  },
+  {
+   "teamId": "4C861C65-8404-46EC-863F-2DC787DD6D57",
+   "name": "Saint John’s (MN)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.34,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 150,
+    "EVEN": 18,
+    "DOWN": 72,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 10.9,
+    "UP": 54.5,
+    "EVEN": 6.5,
+    "DOWN": 26.2,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 10.9,
+   "anchorRate": 1.8,
+   "breadth": 0.73,
+   "competitiveRatio": 37.6,
+   "winRate": 42.5
+  }
+ ]
+}

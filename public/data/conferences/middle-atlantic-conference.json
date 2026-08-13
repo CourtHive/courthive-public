@@ -1,0 +1,787 @@
+{
+ "conference": "Middle Atlantic Conference",
+ "slug": "middle-atlantic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 25,
+ "fingerprint": {
+  "overall": {
+   "matches": 6258,
+   "bands": {
+    "STRETCH": 850,
+    "UP": 2232,
+    "EVEN": 748,
+    "DOWN": 1927,
+    "ANCHOR": 501
+   },
+   "bandPct": {
+    "STRETCH": 13.6,
+    "UP": 35.7,
+    "EVEN": 12,
+    "DOWN": 30.8,
+    "ANCHOR": 8
+   },
+   "stretchRate": 13.6,
+   "anchorRate": 8,
+   "breadth": 0.906,
+   "competitiveRatio": 28.4,
+   "winRate": 45.9
+  },
+  "inConference": {
+   "matches": 2956,
+   "bands": {
+    "STRETCH": 363,
+    "UP": 918,
+    "EVEN": 394,
+    "DOWN": 918,
+    "ANCHOR": 363
+   },
+   "bandPct": {
+    "STRETCH": 12.3,
+    "UP": 31.1,
+    "EVEN": 13.3,
+    "DOWN": 31.1,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 12.3,
+   "anchorRate": 12.3,
+   "breadth": 0.938,
+   "competitiveRatio": 24.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3302,
+   "bands": {
+    "STRETCH": 487,
+    "UP": 1314,
+    "EVEN": 354,
+    "DOWN": 1009,
+    "ANCHOR": 138
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 39.8,
+    "EVEN": 10.7,
+    "DOWN": 30.6,
+    "ANCHOR": 4.2
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 4.2,
+   "breadth": 0.86,
+   "competitiveRatio": 31.7,
+   "winRate": 42.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 12.3,
+  "nonConference": 14.7,
+  "delta": 2.4,
+  "nonConferenceShare": 52.8
+ },
+ "members": [
+  {
+   "teamId": "4F8810F2-C9EE-4FC0-8B7C-9FE3AEFE82EA",
+   "name": "Lebanon Valley",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.39,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 134,
+    "EVEN": 72,
+    "DOWN": 104,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 37.2,
+    "EVEN": 20,
+    "DOWN": 28.9,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 4.4,
+   "breadth": 0.876,
+   "competitiveRatio": 35.3,
+   "winRate": 50
+  },
+  {
+   "teamId": "BACD5FFA-A18D-44FD-A3A2-A4FDD0F280ED",
+   "name": "Stevens Institute Of Technology",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.85,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 32,
+    "UP": 126,
+    "EVEN": 12,
+    "DOWN": 47,
+    "ANCHOR": 115
+   },
+   "bandPct": {
+    "STRETCH": 9.6,
+    "UP": 38,
+    "EVEN": 3.6,
+    "DOWN": 14.2,
+    "ANCHOR": 34.6
+   },
+   "stretchRate": 9.6,
+   "anchorRate": 34.6,
+   "breadth": 0.843,
+   "competitiveRatio": 34.9,
+   "winRate": 66
+  },
+  {
+   "teamId": "3A99E32A-F860-45B5-B236-15DCBE4D95A3",
+   "name": "Lebanon Valley",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.11,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 65,
+    "DOWN": 132,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.3,
+    "EVEN": 19.6,
+    "DOWN": 39.8,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.4,
+   "breadth": 0.821,
+   "competitiveRatio": 28,
+   "winRate": 66.9
+  },
+  {
+   "teamId": "4E92B725-7392-44D1-B681-48D3DF86FA97",
+   "name": "Stevens Institute Of Technology",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.77,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 54,
+    "EVEN": 51,
+    "DOWN": 165,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 4.4,
+    "UP": 17.1,
+    "EVEN": 16.1,
+    "DOWN": 52.2,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 4.4,
+   "anchorRate": 10.1,
+   "breadth": 0.811,
+   "competitiveRatio": 32.1,
+   "winRate": 62.7
+  },
+  {
+   "teamId": "6C30C11F-1494-4470-BE72-CB54D1D3879A",
+   "name": "Albright",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.88,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 42,
+    "EVEN": 41,
+    "DOWN": 179,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 14,
+    "EVEN": 13.7,
+    "DOWN": 59.7,
+    "ANCHOR": 11.7
+   },
+   "stretchRate": 1,
+   "anchorRate": 11.7,
+   "breadth": 0.716,
+   "competitiveRatio": 23.5,
+   "winRate": 80.7
+  },
+  {
+   "teamId": "8796C341-CB0C-4D99-BEDC-0EE4E738AB77",
+   "name": "Albright",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.35,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 10,
+    "EVEN": 12,
+    "DOWN": 149,
+    "ANCHOR": 112
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 3.5,
+    "EVEN": 4.2,
+    "DOWN": 52.1,
+    "ANCHOR": 39.2
+   },
+   "stretchRate": 1,
+   "anchorRate": 39.2,
+   "breadth": 0.624,
+   "competitiveRatio": 29.7,
+   "winRate": 64
+  },
+  {
+   "teamId": "862F1ABA-5B4E-473C-A4E7-F0FBC70438A7",
+   "name": "Messiah",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.99,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 42,
+    "EVEN": 56,
+    "DOWN": 157,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.1,
+    "EVEN": 20.1,
+    "DOWN": 56.3,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.6,
+   "breadth": 0.71,
+   "competitiveRatio": 30.8,
+   "winRate": 52.7
+  },
+  {
+   "teamId": "9DC704F8-3183-41C7-B4CD-DD03384B0ED8",
+   "name": "Messiah",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.18,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 102,
+    "EVEN": 60,
+    "DOWN": 82,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 37.4,
+    "EVEN": 22,
+    "DOWN": 30,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 8.4,
+   "breadth": 0.842,
+   "competitiveRatio": 37.1,
+   "winRate": 52
+  },
+  {
+   "teamId": "FEB694E8-1A2F-44A7-A29E-4224A4CADB49",
+   "name": "DeSales",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.72,
+   "matches": 270,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 124,
+    "EVEN": 52,
+    "DOWN": 70,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 45.9,
+    "EVEN": 19.3,
+    "DOWN": 25.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 0,
+   "breadth": 0.77,
+   "competitiveRatio": 26.4,
+   "winRate": 40
+  },
+  {
+   "teamId": "FBEB70A8-0B86-4637-B88C-B1984116DBA1",
+   "name": "Stevenson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.86,
+   "matches": 263,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 128,
+    "EVEN": 12,
+    "DOWN": 99,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 48.7,
+    "EVEN": 4.6,
+    "DOWN": 37.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 0,
+   "breadth": 0.67,
+   "competitiveRatio": 32.1,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "DFB01C86-017C-4690-AE2E-3983E4003003",
+   "name": "Eastern University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.43,
+   "matches": 257,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 117,
+    "EVEN": 12,
+    "DOWN": 104,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.3,
+    "UP": 45.5,
+    "EVEN": 4.7,
+    "DOWN": 40.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.3,
+   "anchorRate": 0,
+   "breadth": 0.677,
+   "competitiveRatio": 27.7,
+   "winRate": 30.4
+  },
+  {
+   "teamId": "3BBFA06C-7DB1-4319-9D50-9D7C6119DE55",
+   "name": "York (Pennsylvania)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.62,
+   "matches": 254,
+   "bands": {
+    "STRETCH": 86,
+    "UP": 122,
+    "EVEN": 11,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 33.9,
+    "UP": 48,
+    "EVEN": 4.3,
+    "DOWN": 13.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 33.9,
+   "anchorRate": 0,
+   "breadth": 0.701,
+   "competitiveRatio": 32.3,
+   "winRate": 39
+  },
+  {
+   "teamId": "E0EFA819-BD7A-4235-ABBE-74D8B8DC1CC1",
+   "name": "DeSales",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.9,
+   "matches": 250,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 113,
+    "EVEN": 6,
+    "DOWN": 113,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.2,
+    "UP": 45.2,
+    "EVEN": 2.4,
+    "DOWN": 45.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.2,
+   "anchorRate": 0,
+   "breadth": 0.619,
+   "competitiveRatio": 31.7,
+   "winRate": 39.2
+  },
+  {
+   "teamId": "ABAAE269-46C8-4018-97A6-6B34738C8F3C",
+   "name": "Eastern University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.5,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 172,
+    "EVEN": 0,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.7,
+    "UP": 69.1,
+    "EVEN": 0,
+    "DOWN": 9.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.7,
+   "anchorRate": 0,
+   "breadth": 0.501,
+   "competitiveRatio": 22.4,
+   "winRate": 21.7
+  },
+  {
+   "teamId": "F76C9A07-00F9-44D0-AC2D-DD21C81F4186",
+   "name": "Arcadia",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.86,
+   "matches": 241,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 30,
+    "EVEN": 50,
+    "DOWN": 114,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 12.4,
+    "EVEN": 20.7,
+    "DOWN": 47.3,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 10,
+   "anchorRate": 9.5,
+   "breadth": 0.866,
+   "competitiveRatio": 31.7,
+   "winRate": 52.3
+  },
+  {
+   "teamId": "9FC34038-B4EC-4152-8DFF-9744772C1890",
+   "name": "King’s (PA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.66,
+   "matches": 240,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 112,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.3,
+    "UP": 46.7,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.3,
+   "anchorRate": 0,
+   "breadth": 0.429,
+   "competitiveRatio": 26.8,
+   "winRate": 32.5
+  },
+  {
+   "teamId": "060C9AE9-5C35-4B94-A857-CC6E86687D4C",
+   "name": "Stevenson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.79,
+   "matches": 238,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 81,
+    "EVEN": 80,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 34,
+    "EVEN": 33.6,
+    "DOWN": 22.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 0,
+   "breadth": 0.807,
+   "competitiveRatio": 21.9,
+   "winRate": 33.2
+  },
+  {
+   "teamId": "45B14626-1233-44E4-9328-F42943CABEFC",
+   "name": "Arcadia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.38,
+   "matches": 223,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 107,
+    "EVEN": 41,
+    "DOWN": 70,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 48,
+    "EVEN": 18.4,
+    "DOWN": 31.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 0,
+   "breadth": 0.691,
+   "competitiveRatio": 27.4,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "29C073F5-4E71-4D78-9E64-5690C2DF119E",
+   "name": "Misericordia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.02,
+   "matches": 220,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 24,
+    "DOWN": 126,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 10.9,
+    "DOWN": 57.3,
+    "ANCHOR": 31.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 31.8,
+   "breadth": 0.575,
+   "competitiveRatio": 24.5,
+   "winRate": 62.7
+  },
+  {
+   "teamId": "B22C8743-2D52-43FD-B441-3890CDD91829",
+   "name": "York (Pennsylvania)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.77,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 140,
+    "EVEN": 45,
+    "DOWN": 22,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 63.9,
+    "EVEN": 20.5,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 0,
+   "breadth": 0.622,
+   "competitiveRatio": 32.6,
+   "winRate": 44.3
+  },
+  {
+   "teamId": "7B01EC96-0981-4564-8685-1FDAF0BD3C73",
+   "name": "King’s (PA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.09,
+   "matches": 207,
+   "bands": {
+    "STRETCH": 109,
+    "UP": 92,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 52.7,
+    "UP": 44.4,
+    "EVEN": 2.9,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 52.7,
+   "anchorRate": 0,
+   "breadth": 0.498,
+   "competitiveRatio": 22.2,
+   "winRate": 26.1
+  },
+  {
+   "teamId": "17E8BD4D-8429-491B-95C2-807305FB00A5",
+   "name": "Misericordia",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.77,
+   "matches": 192,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 107,
+    "EVEN": 5,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.2,
+    "UP": 55.7,
+    "EVEN": 2.6,
+    "DOWN": 24.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.2,
+   "anchorRate": 0,
+   "breadth": 0.664,
+   "competitiveRatio": 20.3,
+   "winRate": 17.7
+  },
+  {
+   "teamId": "C2BA5EBA-9F23-4586-B143-E8E47A51D823",
+   "name": "Alvernia",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.72,
+   "matches": 170,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 98,
+    "EVEN": 0,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.8,
+    "UP": 57.6,
+    "EVEN": 0,
+    "DOWN": 3.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.8,
+   "anchorRate": 0,
+   "breadth": 0.499,
+   "competitiveRatio": 28.8,
+   "winRate": 23.5
+  },
+  {
+   "teamId": "7D485FC0-AAFB-403E-8430-6CD71CD52037",
+   "name": "Fairleigh Dickinson - Florham",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.91,
+   "matches": 165,
+   "bands": {
+    "STRETCH": 115,
+    "UP": 44,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 69.7,
+    "UP": 26.7,
+    "EVEN": 3.6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 69.7,
+   "anchorRate": 0,
+   "breadth": 0.45,
+   "competitiveRatio": 11.6,
+   "winRate": 9.7
+  },
+  {
+   "teamId": "DE2A2F70-E229-459C-AD3A-CDFA49592DBA",
+   "name": "Alvernia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.88,
+   "matches": 122,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 51,
+    "EVEN": 29,
+    "DOWN": 30,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 41.8,
+    "EVEN": 23.8,
+    "DOWN": 24.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 0,
+   "breadth": 0.795,
+   "competitiveRatio": 17.4,
+   "winRate": 36.9
+  }
+ ]
+}

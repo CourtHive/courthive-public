@@ -1,0 +1,436 @@
+{
+ "conference": "Central Intercollegiate Athletic Association",
+ "slug": "central-intercollegiate-athletic-association",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 2080,
+   "bands": {
+    "STRETCH": 443,
+    "UP": 760,
+    "EVEN": 165,
+    "DOWN": 520,
+    "ANCHOR": 192
+   },
+   "bandPct": {
+    "STRETCH": 21.3,
+    "UP": 36.5,
+    "EVEN": 7.9,
+    "DOWN": 25,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 21.3,
+   "anchorRate": 9.2,
+   "breadth": 0.91,
+   "competitiveRatio": 16.5,
+   "winRate": 40.4
+  },
+  "inConference": {
+   "matches": 1174,
+   "bands": {
+    "STRETCH": 165,
+    "UP": 372,
+    "EVEN": 100,
+    "DOWN": 372,
+    "ANCHOR": 165
+   },
+   "bandPct": {
+    "STRETCH": 14.1,
+    "UP": 31.7,
+    "EVEN": 8.5,
+    "DOWN": 31.7,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 14.1,
+   "anchorRate": 14.1,
+   "breadth": 0.926,
+   "competitiveRatio": 9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 906,
+   "bands": {
+    "STRETCH": 278,
+    "UP": 388,
+    "EVEN": 65,
+    "DOWN": 148,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 30.7,
+    "UP": 42.8,
+    "EVEN": 7.2,
+    "DOWN": 16.3,
+    "ANCHOR": 3
+   },
+   "stretchRate": 30.7,
+   "anchorRate": 3,
+   "breadth": 0.817,
+   "competitiveRatio": 26.1,
+   "winRate": 28
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14.1,
+  "nonConference": 30.7,
+  "delta": 16.6,
+  "nonConferenceShare": 43.6
+ },
+ "members": [
+  {
+   "teamId": "FE358F31-FAE8-42C6-A14E-4077A8F4E16C",
+   "name": "Shaw",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.53,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 85,
+    "EVEN": 6,
+    "DOWN": 99,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 32.2,
+    "EVEN": 2.3,
+    "DOWN": 37.5,
+    "ANCHOR": 18.6
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 18.6,
+   "breadth": 0.842,
+   "competitiveRatio": 19.3,
+   "winRate": 61.7
+  },
+  {
+   "teamId": "3FAD1A39-E662-42C1-A11A-6275AE6501B6",
+   "name": "Virginia State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.51,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 92,
+    "EVEN": 11,
+    "DOWN": 105,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 6.7,
+    "UP": 36.5,
+    "EVEN": 4.4,
+    "DOWN": 41.7,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 6.7,
+   "anchorRate": 10.7,
+   "breadth": 0.802,
+   "competitiveRatio": 11.9,
+   "winRate": 56.7
+  },
+  {
+   "teamId": "65B37B6E-0D41-4469-A90B-05CEEA59458B",
+   "name": "Bluefield State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.38,
+   "matches": 217,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 35,
+    "EVEN": 38,
+    "DOWN": 105,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 16.1,
+    "EVEN": 17.5,
+    "DOWN": 48.4,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 13.4,
+   "breadth": 0.846,
+   "competitiveRatio": 22.6,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "75F0DAFB-F677-43EF-9B50-CE26E618716F",
+   "name": "Bluefield State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.14,
+   "matches": 196,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 97,
+    "EVEN": 6,
+    "DOWN": 30,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 12.2,
+    "UP": 49.5,
+    "EVEN": 3.1,
+    "DOWN": 15.3,
+    "ANCHOR": 19.9
+   },
+   "stretchRate": 12.2,
+   "anchorRate": 19.9,
+   "breadth": 0.82,
+   "competitiveRatio": 35.4,
+   "winRate": 39.3
+  },
+  {
+   "teamId": "852A4463-0AC6-40AF-A03D-6338F24756C0",
+   "name": "Winston-Salem State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 30.1,
+   "matches": 187,
+   "bands": {
+    "STRETCH": 83,
+    "UP": 91,
+    "EVEN": 0,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 44.4,
+    "UP": 48.7,
+    "EVEN": 0,
+    "DOWN": 7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 44.4,
+   "anchorRate": 0,
+   "breadth": 0.557,
+   "competitiveRatio": 12.5,
+   "winRate": 21.4
+  },
+  {
+   "teamId": "1A8B8360-0AC8-40C7-A21E-D105683DBF40",
+   "name": "Shaw",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.46,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 40,
+    "EVEN": 22,
+    "DOWN": 22,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 38.5,
+    "UP": 23.7,
+    "EVEN": 13,
+    "DOWN": 13,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 38.5,
+   "anchorRate": 11.8,
+   "breadth": 0.927,
+   "competitiveRatio": 25.4,
+   "winRate": 37.3
+  },
+  {
+   "teamId": "4EE48407-ED2A-42B1-86E4-2EF1EEF65C82",
+   "name": "Johnson C. Smith",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.17,
+   "matches": 158,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 55,
+    "EVEN": 15,
+    "DOWN": 59,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 5.1,
+    "UP": 34.8,
+    "EVEN": 9.5,
+    "DOWN": 37.3,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 5.1,
+   "anchorRate": 13.3,
+   "breadth": 0.856,
+   "competitiveRatio": 14.5,
+   "winRate": 46.8
+  },
+  {
+   "teamId": "975C6844-8D4B-4C8E-BF68-EA6CCC08EBED",
+   "name": "Elizabeth City State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 29.32,
+   "matches": 156,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 104,
+    "EVEN": 0,
+    "DOWN": 41,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 66.7,
+    "EVEN": 0,
+    "DOWN": 26.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 0,
+   "breadth": 0.502,
+   "competitiveRatio": 13.5,
+   "winRate": 36.5
+  },
+  {
+   "teamId": "2A6E2190-29FA-4C5B-A5B3-5C35AC117923",
+   "name": "Livingstone College",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.74,
+   "matches": 125,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 51,
+    "EVEN": 11,
+    "DOWN": 46,
+    "ANCHOR": 7
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 40.8,
+    "EVEN": 8.8,
+    "DOWN": 36.8,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 8,
+   "anchorRate": 5.6,
+   "breadth": 0.815,
+   "competitiveRatio": 11.9,
+   "winRate": 32
+  },
+  {
+   "teamId": "961749EA-01F3-477B-B7D1-3EB7F190169B",
+   "name": "Bowie State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 31.78,
+   "matches": 125,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 25,
+    "EVEN": 35,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 52,
+    "UP": 20,
+    "EVEN": 28,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 52,
+   "anchorRate": 0,
+   "breadth": 0.633,
+   "competitiveRatio": 4.8,
+   "winRate": 26.4
+  },
+  {
+   "teamId": "590CBA28-989A-4291-B667-30B0D3038B8F",
+   "name": "Virginia State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 27.85,
+   "matches": 116,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 22,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 81,
+    "UP": 19,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 81,
+   "anchorRate": 0,
+   "breadth": 0.302,
+   "competitiveRatio": 6,
+   "winRate": 7.8
+  },
+  {
+   "teamId": "AEC19A7D-CA6C-4AFF-A369-8B46A5024F41",
+   "name": "Virginia Union",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 31.43,
+   "matches": 115,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 63,
+    "EVEN": 21,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27,
+    "UP": 54.8,
+    "EVEN": 18.3,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27,
+   "anchorRate": 0,
+   "breadth": 0.617,
+   "competitiveRatio": 4.3,
+   "winRate": 10.4
+  }
+ ]
+}

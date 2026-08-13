@@ -1,0 +1,409 @@
+{
+ "conference": "Wisconsin Intercollegiate Athletic Conference",
+ "slug": "wisconsin-intercollegiate-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 3842,
+   "bands": {
+    "STRETCH": 293,
+    "UP": 1097,
+    "EVEN": 447,
+    "DOWN": 1577,
+    "ANCHOR": 428
+   },
+   "bandPct": {
+    "STRETCH": 7.6,
+    "UP": 28.6,
+    "EVEN": 11.6,
+    "DOWN": 41,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 7.6,
+   "anchorRate": 11.1,
+   "breadth": 0.879,
+   "competitiveRatio": 32.4,
+   "winRate": 53
+  },
+  "inConference": {
+   "matches": 1110,
+   "bands": {
+    "STRETCH": 107,
+    "UP": 362,
+    "EVEN": 172,
+    "DOWN": 362,
+    "ANCHOR": 107
+   },
+   "bandPct": {
+    "STRETCH": 9.6,
+    "UP": 32.6,
+    "EVEN": 15.5,
+    "DOWN": 32.6,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 9.6,
+   "anchorRate": 9.6,
+   "breadth": 0.914,
+   "competitiveRatio": 26.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2732,
+   "bands": {
+    "STRETCH": 186,
+    "UP": 735,
+    "EVEN": 275,
+    "DOWN": 1215,
+    "ANCHOR": 321
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 26.9,
+    "EVEN": 10.1,
+    "DOWN": 44.5,
+    "ANCHOR": 11.7
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 11.7,
+   "breadth": 0.857,
+   "competitiveRatio": 34.8,
+   "winRate": 54.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 9.6,
+  "nonConference": 6.8,
+  "delta": -2.8,
+  "nonConferenceShare": 71.1
+ },
+ "members": [
+  {
+   "teamId": "0D1AE07F-76F5-456F-879E-FF8DCBD56BD5",
+   "name": "Wisconsin-Stevens Point",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.64,
+   "matches": 414,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 41,
+    "DOWN": 266,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.3,
+    "EVEN": 9.9,
+    "DOWN": 64.3,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.6,
+   "breadth": 0.62,
+   "competitiveRatio": 30.7,
+   "winRate": 55.8
+  },
+  {
+   "teamId": "FE14E375-77B6-4FD2-8431-7D9505960CE8",
+   "name": "Wisconsin-Stevens Point",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.94,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 197,
+    "EVEN": 53,
+    "DOWN": 88,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 48.8,
+    "EVEN": 13.1,
+    "DOWN": 21.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 0,
+   "breadth": 0.773,
+   "competitiveRatio": 35.9,
+   "winRate": 38.9
+  },
+  {
+   "teamId": "3043104C-290C-4115-9442-5B24D8723387",
+   "name": "Wisconsin-Whitewater",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.52,
+   "matches": 389,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 56,
+    "EVEN": 6,
+    "DOWN": 202,
+    "ANCHOR": 95
+   },
+   "bandPct": {
+    "STRETCH": 7.7,
+    "UP": 14.4,
+    "EVEN": 1.5,
+    "DOWN": 51.9,
+    "ANCHOR": 24.4
+   },
+   "stretchRate": 7.7,
+   "anchorRate": 24.4,
+   "breadth": 0.761,
+   "competitiveRatio": 45.2,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "F365BF8E-0364-4A01-BCE0-F0C7E5AD34D3",
+   "name": "Wisconsin-La Crosse",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.95,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 9,
+    "EVEN": 57,
+    "DOWN": 181,
+    "ANCHOR": 138
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.3,
+    "EVEN": 14.8,
+    "DOWN": 47,
+    "ANCHOR": 35.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 35.8,
+   "breadth": 0.679,
+   "competitiveRatio": 21.9,
+   "winRate": 80
+  },
+  {
+   "teamId": "B4D1C0BA-E317-4ECD-96DD-9C0BDA6B5568",
+   "name": "Wisconsin-Eau Claire",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.07,
+   "matches": 368,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 164,
+    "EVEN": 84,
+    "DOWN": 89,
+    "ANCHOR": 19
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 44.6,
+    "EVEN": 22.8,
+    "DOWN": 24.2,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 5.2,
+   "breadth": 0.811,
+   "competitiveRatio": 30.5,
+   "winRate": 60.3
+  },
+  {
+   "teamId": "14CC9CE1-B197-47CE-8CBA-E253AEF52955",
+   "name": "Wisconsin-Whitewater",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.97,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 47,
+    "EVEN": 76,
+    "DOWN": 148,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 13.1,
+    "EVEN": 21.1,
+    "DOWN": 41.1,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 10,
+   "anchorRate": 14.7,
+   "breadth": 0.915,
+   "competitiveRatio": 28.4,
+   "winRate": 57.8
+  },
+  {
+   "teamId": "72542691-AF9C-4969-B15A-E24329F94C5F",
+   "name": "Wisconsin-La Crosse",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.48,
+   "matches": 359,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 12,
+    "DOWN": 240,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.4,
+    "EVEN": 3.3,
+    "DOWN": 66.9,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.4,
+   "breadth": 0.589,
+   "competitiveRatio": 44.3,
+   "winRate": 63.5
+  },
+  {
+   "teamId": "BD20816E-B9C3-4AD0-BCFD-8899EE262F33",
+   "name": "University of Wisconsin-River Falls",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.82,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 150,
+    "EVEN": 35,
+    "DOWN": 93,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 46,
+    "EVEN": 10.7,
+    "DOWN": 28.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 0,
+   "breadth": 0.768,
+   "competitiveRatio": 27.6,
+   "winRate": 28.5
+  },
+  {
+   "teamId": "8BB99DCD-8003-464C-8C6E-8BBA424709E5",
+   "name": "University Of Wisconsin-Stout",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.61,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 191,
+    "EVEN": 24,
+    "DOWN": 50,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 18.2,
+    "UP": 59,
+    "EVEN": 7.4,
+    "DOWN": 15.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 18.2,
+   "anchorRate": 0,
+   "breadth": 0.685,
+   "competitiveRatio": 25,
+   "winRate": 25.3
+  },
+  {
+   "teamId": "3CF179E1-948D-4F06-ACB3-87A1F6C54497",
+   "name": "Wisconsin-Eau Claire",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.9,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 102,
+    "EVEN": 24,
+    "DOWN": 102,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 15,
+    "UP": 36.4,
+    "EVEN": 8.6,
+    "DOWN": 36.4,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 15,
+   "anchorRate": 3.6,
+   "breadth": 0.839,
+   "competitiveRatio": 40.4,
+   "winRate": 47.9
+  },
+  {
+   "teamId": "34CCB195-3C2A-4944-9696-71264DA2F8E5",
+   "name": "Wisconsin-Oshkosh",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.58,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 35,
+    "DOWN": 118,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.3,
+    "EVEN": 15,
+    "DOWN": 50.6,
+    "ANCHOR": 18
+   },
+   "stretchRate": 0,
+   "anchorRate": 18,
+   "breadth": 0.767,
+   "competitiveRatio": 23.2,
+   "winRate": 60.1
+  }
+ ]
+}

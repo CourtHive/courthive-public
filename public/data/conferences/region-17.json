@@ -1,0 +1,165 @@
+{
+ "conference": "Region 17",
+ "slug": "region-17",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 211,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 56,
+    "EVEN": 24,
+    "DOWN": 69,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 29.4,
+    "UP": 26.5,
+    "EVEN": 11.4,
+    "DOWN": 32.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 29.4,
+   "anchorRate": 0,
+   "breadth": 0.823,
+   "competitiveRatio": 19.4,
+   "winRate": 23.7
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 211,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 56,
+    "EVEN": 24,
+    "DOWN": 69,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 29.4,
+    "UP": 26.5,
+    "EVEN": 11.4,
+    "DOWN": 32.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 29.4,
+   "anchorRate": 0,
+   "breadth": 0.823,
+   "competitiveRatio": 19.4,
+   "winRate": 23.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 29.4,
+  "delta": 29.4,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "A5FF464E-18AF-41D9-BB4F-6D67F801DB03",
+   "name": "Oxford College of Emory",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.21,
+   "matches": 121,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 19,
+    "EVEN": 24,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 51.2,
+    "UP": 15.7,
+    "EVEN": 19.8,
+    "DOWN": 13.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 51.2,
+   "anchorRate": 0,
+   "breadth": 0.759,
+   "competitiveRatio": 12.4,
+   "winRate": 17.4
+  },
+  {
+   "teamId": "29DB68B8-81F1-45D4-AFBC-D686CB43529C",
+   "name": "Oxford College of Emory",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28,
+   "matches": 90,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 37,
+    "EVEN": 0,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 41.1,
+    "EVEN": 0,
+    "DOWN": 58.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.421,
+   "competitiveRatio": 28.9,
+   "winRate": 32.2
+  }
+ ]
+}

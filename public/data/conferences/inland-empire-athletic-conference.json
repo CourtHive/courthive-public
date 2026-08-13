@@ -1,0 +1,246 @@
+{
+ "conference": "Inland Empire Athletic Conference",
+ "slug": "inland-empire-athletic-conference",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 5,
+ "fingerprint": {
+  "overall": {
+   "matches": 834,
+   "bands": {
+    "STRETCH": 116,
+    "UP": 313,
+    "EVEN": 96,
+    "DOWN": 309,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.9,
+    "UP": 37.5,
+    "EVEN": 11.5,
+    "DOWN": 37.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.9,
+   "anchorRate": 0,
+   "breadth": 0.782,
+   "competitiveRatio": 23.5,
+   "winRate": 40.6
+  },
+  "inConference": {
+   "matches": 128,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 36,
+    "EVEN": 56,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 28.1,
+    "EVEN": 43.8,
+    "DOWN": 28.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.668,
+   "competitiveRatio": 23.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 706,
+   "bands": {
+    "STRETCH": 116,
+    "UP": 277,
+    "EVEN": 40,
+    "DOWN": 273,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 39.2,
+    "EVEN": 5.7,
+    "DOWN": 38.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 0,
+   "breadth": 0.742,
+   "competitiveRatio": 23.4,
+   "winRate": 39
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 16.4,
+  "delta": 16.4,
+  "nonConferenceShare": 84.7
+ },
+ "members": [
+  {
+   "teamId": "0E6E21C3-61A5-42E6-98DC-652765743420",
+   "name": "Mt. San Antonio",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.42,
+   "matches": 245,
+   "bands": {
+    "STRETCH": 56,
+    "UP": 72,
+    "EVEN": 30,
+    "DOWN": 87,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 22.9,
+    "UP": 29.4,
+    "EVEN": 12.2,
+    "DOWN": 35.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 22.9,
+   "anchorRate": 0,
+   "breadth": 0.821,
+   "competitiveRatio": 24.6,
+   "winRate": 36.7
+  },
+  {
+   "teamId": "ABCAA8D1-0E99-4A46-AFCB-919BAB7D17F5",
+   "name": "Mt. San Jacinto",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.81,
+   "matches": 196,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 76,
+    "EVEN": 12,
+    "DOWN": 108,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.8,
+    "EVEN": 6.1,
+    "DOWN": 55.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.539,
+   "competitiveRatio": 30.1,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "3231BFF8-1465-438D-947A-AB757C7FF4A2",
+   "name": "Mt. San Antonio",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.44,
+   "matches": 193,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 100,
+    "EVEN": 26,
+    "DOWN": 62,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 51.8,
+    "EVEN": 13.5,
+    "DOWN": 32.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 0,
+   "breadth": 0.665,
+   "competitiveRatio": 20.7,
+   "winRate": 49.7
+  },
+  {
+   "teamId": "872D921F-8E24-4240-A05A-A5A473245AA5",
+   "name": "College Of The Desert",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.03,
+   "matches": 121,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 35,
+    "EVEN": 28,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 28.9,
+    "EVEN": 23.1,
+    "DOWN": 43,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5,
+   "anchorRate": 0,
+   "breadth": 0.751,
+   "competitiveRatio": 23.5,
+   "winRate": 46.3
+  },
+  {
+   "teamId": "2FA4D7D8-CCD8-4016-872D-314D24141F20",
+   "name": "Imperial Valley",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 32,
+   "matches": 79,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 30,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 62,
+    "UP": 38,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 62,
+   "anchorRate": 0,
+   "breadth": 0.413,
+   "competitiveRatio": 10.3,
+   "winRate": 7.6
+  }
+ ]
+}

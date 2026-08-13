@@ -1,0 +1,516 @@
+{
+ "conference": "Southwestern Athletic Conference",
+ "slug": "southwestern-athletic-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 15,
+ "fingerprint": {
+  "overall": {
+   "matches": 3356,
+   "bands": {
+    "STRETCH": 1242,
+    "UP": 1063,
+    "EVEN": 180,
+    "DOWN": 640,
+    "ANCHOR": 231
+   },
+   "bandPct": {
+    "STRETCH": 37,
+    "UP": 31.7,
+    "EVEN": 5.4,
+    "DOWN": 19.1,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 37,
+   "anchorRate": 6.9,
+   "breadth": 0.863,
+   "competitiveRatio": 24.4,
+   "winRate": 32.5
+  },
+  "inConference": {
+   "matches": 1140,
+   "bands": {
+    "STRETCH": 148,
+    "UP": 394,
+    "EVEN": 56,
+    "DOWN": 394,
+    "ANCHOR": 148
+   },
+   "bandPct": {
+    "STRETCH": 13,
+    "UP": 34.6,
+    "EVEN": 4.9,
+    "DOWN": 34.6,
+    "ANCHOR": 13
+   },
+   "stretchRate": 13,
+   "anchorRate": 13,
+   "breadth": 0.878,
+   "competitiveRatio": 20.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2216,
+   "bands": {
+    "STRETCH": 1094,
+    "UP": 669,
+    "EVEN": 124,
+    "DOWN": 246,
+    "ANCHOR": 83
+   },
+   "bandPct": {
+    "STRETCH": 49.4,
+    "UP": 30.2,
+    "EVEN": 5.6,
+    "DOWN": 11.1,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 49.4,
+   "anchorRate": 3.7,
+   "breadth": 0.769,
+   "competitiveRatio": 26.3,
+   "winRate": 23.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 13,
+  "nonConference": 49.4,
+  "delta": 36.4,
+  "nonConferenceShare": 66
+ },
+ "members": [
+  {
+   "teamId": "43C0E313-F7BE-467D-B0D1-4BF808849C4C",
+   "name": "Alcorn State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 21.77,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 197,
+    "UP": 48,
+    "EVEN": 12,
+    "DOWN": 12,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 65.2,
+    "UP": 15.9,
+    "EVEN": 4,
+    "DOWN": 4,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 65.2,
+   "anchorRate": 10.9,
+   "breadth": 0.664,
+   "competitiveRatio": 18.7,
+   "winRate": 21.9
+  },
+  {
+   "teamId": "688B0EE9-1B58-4986-966B-F4E6BF720EF8",
+   "name": "Jackson State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.72,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 61,
+    "EVEN": 25,
+    "DOWN": 142,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 20.3,
+    "EVEN": 8.3,
+    "DOWN": 47.2,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 8,
+   "anchorRate": 16.3,
+   "breadth": 0.859,
+   "competitiveRatio": 37,
+   "winRate": 55.5
+  },
+  {
+   "teamId": "4D89E899-A482-4684-AB3B-E768B3733F38",
+   "name": "Alabama State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.32,
+   "matches": 288,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 134,
+    "EVEN": 38,
+    "DOWN": 90,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 46.5,
+    "EVEN": 13.2,
+    "DOWN": 31.3,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 3.8,
+   "breadth": 0.786,
+   "competitiveRatio": 35.4,
+   "winRate": 54.5
+  },
+  {
+   "teamId": "00AC7D58-AF2D-4CFA-AE15-64F8D0EFDFC4",
+   "name": "Alcorn State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 26.29,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 154,
+    "UP": 59,
+    "EVEN": 8,
+    "DOWN": 36,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 56.4,
+    "UP": 21.6,
+    "EVEN": 2.9,
+    "DOWN": 13.2,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 56.4,
+   "anchorRate": 5.9,
+   "breadth": 0.74,
+   "competitiveRatio": 13.4,
+   "winRate": 26.4
+  },
+  {
+   "teamId": "86FC0DBA-01FC-4B98-AEF5-C8B8DF086669",
+   "name": "Alabama State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.41,
+   "matches": 272,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 102,
+    "EVEN": 12,
+    "DOWN": 77,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 19.9,
+    "UP": 37.5,
+    "EVEN": 4.4,
+    "DOWN": 28.3,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 19.9,
+   "anchorRate": 9.9,
+   "breadth": 0.878,
+   "competitiveRatio": 35.7,
+   "winRate": 52.6
+  },
+  {
+   "teamId": "62E1CD0F-5B28-4015-AD59-332DC93EFA8A",
+   "name": "Alabama A&M",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.46,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 135,
+    "EVEN": 20,
+    "DOWN": 86,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 51.7,
+    "EVEN": 7.7,
+    "DOWN": 33,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 1.9,
+   "breadth": 0.711,
+   "competitiveRatio": 31,
+   "winRate": 34.9
+  },
+  {
+   "teamId": "2B25D0D3-35FD-49DD-A742-228980A3ADE9",
+   "name": "Florida A&M",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.18,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 136,
+    "EVEN": 0,
+    "DOWN": 38,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 25.3,
+    "UP": 54.6,
+    "EVEN": 0,
+    "DOWN": 15.3,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 25.3,
+   "anchorRate": 4.8,
+   "breadth": 0.69,
+   "competitiveRatio": 32.4,
+   "winRate": 36.5
+  },
+  {
+   "teamId": "E45D5A86-9C6E-4888-8668-EB662AEAC421",
+   "name": "Alabama A&M",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.73,
+   "matches": 246,
+   "bands": {
+    "STRETCH": 100,
+    "UP": 56,
+    "EVEN": 18,
+    "DOWN": 42,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 40.7,
+    "UP": 22.8,
+    "EVEN": 7.3,
+    "DOWN": 17.1,
+    "ANCHOR": 12.2
+   },
+   "stretchRate": 40.7,
+   "anchorRate": 12.2,
+   "breadth": 0.903,
+   "competitiveRatio": 31.3,
+   "winRate": 32.9
+  },
+  {
+   "teamId": "8E3A9E19-E217-4002-93AF-C6C8CF816444",
+   "name": "Jackson State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 18.25,
+   "matches": 241,
+   "bands": {
+    "STRETCH": 78,
+    "UP": 80,
+    "EVEN": 33,
+    "DOWN": 25,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 32.4,
+    "UP": 33.2,
+    "EVEN": 13.7,
+    "DOWN": 10.4,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 32.4,
+   "anchorRate": 10.4,
+   "breadth": 0.916,
+   "competitiveRatio": 30.8,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "EE14EAA6-A6ED-40F8-BC72-50FA6345A762",
+   "name": "Bethune-Cookman",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 25.12,
+   "matches": 187,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 65,
+    "EVEN": 6,
+    "DOWN": 41,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 35.3,
+    "UP": 34.8,
+    "EVEN": 3.2,
+    "DOWN": 21.9,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 35.3,
+   "anchorRate": 4.8,
+   "breadth": 0.823,
+   "competitiveRatio": 12.8,
+   "winRate": 23.5
+  },
+  {
+   "teamId": "92D88F63-D48D-4386-BD23-D5F416184576",
+   "name": "Southern University, Baton Rouge",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 24.13,
+   "matches": 186,
+   "bands": {
+    "STRETCH": 61,
+    "UP": 99,
+    "EVEN": 0,
+    "DOWN": 21,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 32.8,
+    "UP": 53.2,
+    "EVEN": 0,
+    "DOWN": 11.3,
+    "ANCHOR": 2.7
+   },
+   "stretchRate": 32.8,
+   "anchorRate": 2.7,
+   "breadth": 0.649,
+   "competitiveRatio": 27.7,
+   "winRate": 29
+  },
+  {
+   "teamId": "2E402D9B-A40C-4710-BC05-7F1376C93AE7",
+   "name": "Southern University, Baton Rouge",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 20.78,
+   "matches": 168,
+   "bands": {
+    "STRETCH": 110,
+    "UP": 29,
+    "EVEN": 0,
+    "DOWN": 20,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 65.5,
+    "UP": 17.3,
+    "EVEN": 0,
+    "DOWN": 11.9,
+    "ANCHOR": 5.4
+   },
+   "stretchRate": 65.5,
+   "anchorRate": 5.4,
+   "breadth": 0.616,
+   "competitiveRatio": 12.6,
+   "winRate": 13.1
+  },
+  {
+   "teamId": "72156573-7D31-4E36-8A37-E53E890D391C",
+   "name": "Mississippi Valley",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 26.86,
+   "matches": 139,
+   "bands": {
+    "STRETCH": 139,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 100,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 100,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": 0,
+   "winRate": 0
+  },
+  {
+   "teamId": "969686EB-0B95-4C59-99A6-4FECF74BEE0C",
+   "name": "Mississippi Valley",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 29.41,
+   "matches": 133,
+   "bands": {
+    "STRETCH": 111,
+    "UP": 22,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 83.5,
+    "UP": 16.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 83.5,
+   "anchorRate": 0,
+   "breadth": 0.279,
+   "competitiveRatio": 0.8,
+   "winRate": 0
+  },
+  {
+   "teamId": "A95CE69E-889A-497F-A032-638DEEBDE172",
+   "name": "Grambling",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 25.89,
+   "matches": 110,
+   "bands": {
+    "STRETCH": 55,
+    "UP": 37,
+    "EVEN": 8,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50,
+    "UP": 33.6,
+    "EVEN": 7.3,
+    "DOWN": 9.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50,
+   "anchorRate": 0,
+   "breadth": 0.697,
+   "competitiveRatio": 5.5,
+   "winRate": 13.6
+  }
+ ]
+}

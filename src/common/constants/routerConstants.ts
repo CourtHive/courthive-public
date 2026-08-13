@@ -11,5 +11,7 @@ export const RANKINGS = 'rankings';
 export const REGISTER = 'register';
 export const PROGRAM = 'program';
 export const PROGRAMS = 'programs';
+export const CONFERENCE = 'conference';
+export const CONFERENCES = 'conferences';
 
-export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM, PROGRAMS];
+export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM, PROGRAMS, CONFERENCE, CONFERENCES];

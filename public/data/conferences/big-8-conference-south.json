@@ -1,0 +1,435 @@
+{
+ "conference": "Big 8 Conference South",
+ "slug": "big-8-conference-south",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 2294,
+   "bands": {
+    "STRETCH": 325,
+    "UP": 797,
+    "EVEN": 187,
+    "DOWN": 796,
+    "ANCHOR": 189
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 34.7,
+    "EVEN": 8.2,
+    "DOWN": 34.7,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 8.2,
+   "breadth": 0.883,
+   "competitiveRatio": 21.1,
+   "winRate": 46.6
+  },
+  "inConference": {
+   "matches": 1350,
+   "bands": {
+    "STRETCH": 189,
+    "UP": 445,
+    "EVEN": 82,
+    "DOWN": 445,
+    "ANCHOR": 189
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 33,
+    "EVEN": 6.1,
+    "DOWN": 33,
+    "ANCHOR": 14
+   },
+   "stretchRate": 14,
+   "anchorRate": 14,
+   "breadth": 0.902,
+   "competitiveRatio": 21.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 944,
+   "bands": {
+    "STRETCH": 136,
+    "UP": 352,
+    "EVEN": 105,
+    "DOWN": 351,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.4,
+    "UP": 37.3,
+    "EVEN": 11.1,
+    "DOWN": 37.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.4,
+   "anchorRate": 0,
+   "breadth": 0.782,
+   "competitiveRatio": 20.8,
+   "winRate": 41.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14,
+  "nonConference": 14.4,
+  "delta": 0.4,
+  "nonConferenceShare": 41.2
+ },
+ "members": [
+  {
+   "teamId": "C399ACC6-FF88-438D-9FFA-F0E3D7E633D1",
+   "name": "Fresno City",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 25.51,
+   "matches": 311,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 86,
+    "EVEN": 26,
+    "DOWN": 110,
+    "ANCHOR": 77
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 27.7,
+    "EVEN": 8.4,
+    "DOWN": 35.4,
+    "ANCHOR": 24.8
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 24.8,
+   "breadth": 0.871,
+   "competitiveRatio": 19.6,
+   "winRate": 61.1
+  },
+  {
+   "teamId": "30D2AEB8-E401-442C-AAF5-A59E729D5F39",
+   "name": "Modesto",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28.84,
+   "matches": 224,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 103,
+    "EVEN": 28,
+    "DOWN": 76,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 12.5,
+    "DOWN": 33.9,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.6,
+   "breadth": 0.733,
+   "competitiveRatio": 22.4,
+   "winRate": 55.8
+  },
+  {
+   "teamId": "4CC89B3B-BDB8-473A-AD0F-52B6F4C595A3",
+   "name": "Modesto",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.4,
+   "matches": 220,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 65,
+    "EVEN": 6,
+    "DOWN": 120,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 7.7,
+    "UP": 29.5,
+    "EVEN": 2.7,
+    "DOWN": 54.5,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 7.7,
+   "anchorRate": 5.5,
+   "breadth": 0.712,
+   "competitiveRatio": 25,
+   "winRate": 61.8
+  },
+  {
+   "teamId": "FF4EB9AD-7AC1-4F43-A1F9-EE1601AE3E71",
+   "name": "College Of The Sequoias",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 27.36,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 81,
+    "EVEN": 0,
+    "DOWN": 137,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.2,
+    "EVEN": 0,
+    "DOWN": 62.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.41,
+   "competitiveRatio": 26.1,
+   "winRate": 44
+  },
+  {
+   "teamId": "84FB921B-53C5-4EBE-8B76-4B9CCC31EE41",
+   "name": "College Of The Sequoias",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.81,
+   "matches": 210,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 49,
+    "DOWN": 120,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 23.3,
+    "DOWN": 57.1,
+    "ANCHOR": 19.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.5,
+   "breadth": 0.608,
+   "competitiveRatio": 16.2,
+   "winRate": 82.4
+  },
+  {
+   "teamId": "9771715E-D53E-4BB5-96CC-5728F5B8A21A",
+   "name": "Fresno City",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28,
+   "matches": 207,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 19,
+    "EVEN": 48,
+    "DOWN": 92,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 9.2,
+    "EVEN": 23.2,
+    "DOWN": 44.4,
+    "ANCHOR": 20.3
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 20.3,
+   "breadth": 0.836,
+   "competitiveRatio": 25.2,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "5A764838-9BFA-4D41-83E2-D6E511216CFB",
+   "name": "Reedley",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 29.6,
+   "matches": 199,
+   "bands": {
+    "STRETCH": 64,
+    "UP": 94,
+    "EVEN": 6,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 32.2,
+    "UP": 47.2,
+    "EVEN": 3,
+    "DOWN": 17.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 32.2,
+   "anchorRate": 0,
+   "breadth": 0.702,
+   "competitiveRatio": 30.7,
+   "winRate": 34.2
+  },
+  {
+   "teamId": "BC894FBA-5194-44F4-8159-24858F62A213",
+   "name": "Porterville",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 31.27,
+   "matches": 181,
+   "bands": {
+    "STRETCH": 87,
+    "UP": 94,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 48.1,
+    "UP": 51.9,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 48.1,
+   "anchorRate": 0,
+   "breadth": 0.43,
+   "competitiveRatio": 18.8,
+   "winRate": 7.7
+  },
+  {
+   "teamId": "DE4E6556-4AEF-42FF-BAD2-34F8D58BD076",
+   "name": "Porterville",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.21,
+   "matches": 158,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 82,
+    "EVEN": 24,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.4,
+    "UP": 51.9,
+    "EVEN": 15.2,
+    "DOWN": 21.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.4,
+   "anchorRate": 0,
+   "breadth": 0.749,
+   "competitiveRatio": 12.7,
+   "winRate": 28.5
+  },
+  {
+   "teamId": "C075A889-7581-4778-810B-C9A4F891C313",
+   "name": "Reedley",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 33.07,
+   "matches": 154,
+   "bands": {
+    "STRETCH": 104,
+    "UP": 50,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 67.5,
+    "UP": 32.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 67.5,
+   "anchorRate": 0,
+   "breadth": 0.392,
+   "competitiveRatio": 5.8,
+   "winRate": 3.2
+  },
+  {
+   "teamId": "97DDC7F7-C28D-417B-8A12-7EAD04EE38BA",
+   "name": "Solano",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 27.89,
+   "matches": 134,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 74,
+    "EVEN": 0,
+    "DOWN": 43,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 12.7,
+    "UP": 55.2,
+    "EVEN": 0,
+    "DOWN": 32.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 12.7,
+   "anchorRate": 0,
+   "breadth": 0.593,
+   "competitiveRatio": 29.1,
+   "winRate": 32.1
+  },
+  {
+   "teamId": "4C34D3A9-4F89-4109-9E42-ED2C55A8E0F9",
+   "name": "Solano",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.66,
+   "matches": 78,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 49,
+    "EVEN": 0,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 62.8,
+    "EVEN": 0,
+    "DOWN": 37.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.41,
+   "competitiveRatio": 15.6,
+   "winRate": 53.8
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "conference": "Kansas Jayhawk Community College Conference",
+ "slug": "kansas-jayhawk-community-college-conference",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 348,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 131,
+    "EVEN": 55,
+    "DOWN": 111,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 37.6,
+    "EVEN": 15.8,
+    "DOWN": 31.9,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 4,
+   "anchorRate": 10.6,
+   "breadth": 0.865,
+   "competitiveRatio": 34.8,
+   "winRate": 42.8
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 348,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 131,
+    "EVEN": 55,
+    "DOWN": 111,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 37.6,
+    "EVEN": 15.8,
+    "DOWN": 31.9,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 4,
+   "anchorRate": 10.6,
+   "breadth": 0.865,
+   "competitiveRatio": 34.8,
+   "winRate": 42.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 4,
+  "delta": 4,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "2CCC2848-E854-4DF8-8290-58EBDEA5E7F9",
+   "name": "Pratt",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 17.18,
+   "matches": 206,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 24,
+    "DOWN": 90,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.1,
+    "EVEN": 11.7,
+    "DOWN": 43.7,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.6,
+   "breadth": 0.779,
+   "competitiveRatio": 42.2,
+   "winRate": 50
+  },
+  {
+   "teamId": "FC15A40B-F37D-42C6-AF37-18AB6D9C1263",
+   "name": "Pratt",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.91,
+   "matches": 142,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 69,
+    "EVEN": 31,
+    "DOWN": 21,
+    "ANCHOR": 7
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 48.6,
+    "EVEN": 21.8,
+    "DOWN": 14.8,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 4.9,
+   "breadth": 0.834,
+   "competitiveRatio": 23.9,
+   "winRate": 32.4
+  }
+ ]
+}

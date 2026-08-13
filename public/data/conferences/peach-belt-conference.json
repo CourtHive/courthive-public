@@ -1,0 +1,463 @@
+{
+ "conference": "Peach Belt Conference",
+ "slug": "peach-belt-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 13,
+ "fingerprint": {
+  "overall": {
+   "matches": 4489,
+   "bands": {
+    "STRETCH": 180,
+    "UP": 1328,
+    "EVEN": 632,
+    "DOWN": 1926,
+    "ANCHOR": 423
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 29.6,
+    "EVEN": 14.1,
+    "DOWN": 42.9,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 4,
+   "anchorRate": 9.4,
+   "breadth": 0.839,
+   "competitiveRatio": 46.3,
+   "winRate": 58.1
+  },
+  "inConference": {
+   "matches": 1636,
+   "bands": {
+    "STRETCH": 149,
+    "UP": 618,
+    "EVEN": 102,
+    "DOWN": 618,
+    "ANCHOR": 149
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 37.8,
+    "EVEN": 6.2,
+    "DOWN": 37.8,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 9.1,
+   "breadth": 0.836,
+   "competitiveRatio": 45.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2853,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 710,
+    "EVEN": 530,
+    "DOWN": 1308,
+    "ANCHOR": 274
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 24.9,
+    "EVEN": 18.6,
+    "DOWN": 45.8,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 9.6,
+   "breadth": 0.802,
+   "competitiveRatio": 46.6,
+   "winRate": 62.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 9.1,
+  "nonConference": 1.1,
+  "delta": -8,
+  "nonConferenceShare": 63.6
+ },
+ "members": [
+  {
+   "teamId": "7049801B-4A32-4259-9117-B6209161B057",
+   "name": "North Georgia",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.52,
+   "matches": 418,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 53,
+    "EVEN": 60,
+    "DOWN": 275,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.7,
+    "EVEN": 14.4,
+    "DOWN": 65.8,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.2,
+   "breadth": 0.624,
+   "competitiveRatio": 43.5,
+   "winRate": 73.2
+  },
+  {
+   "teamId": "D91B65CD-CFC9-4148-B6B3-41CB4999936A",
+   "name": "Flagler",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.29,
+   "matches": 414,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 167,
+    "EVEN": 44,
+    "DOWN": 163,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.3,
+    "EVEN": 10.6,
+    "DOWN": 39.4,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.7,
+   "breadth": 0.744,
+   "competitiveRatio": 41.5,
+   "winRate": 68.1
+  },
+  {
+   "teamId": "30904AD0-A8A2-4D2A-8989-4CBA0C06547A",
+   "name": "Flagler",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 13.01,
+   "matches": 390,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 11,
+    "EVEN": 12,
+    "DOWN": 277,
+    "ANCHOR": 90
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.8,
+    "EVEN": 3.1,
+    "DOWN": 71,
+    "ANCHOR": 23.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.1,
+   "breadth": 0.49,
+   "competitiveRatio": 48.7,
+   "winRate": 78.5
+  },
+  {
+   "teamId": "C7966FD0-5A7F-4B14-9C40-79240042A549",
+   "name": "Columbus State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 13.7,
+   "matches": 379,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 54,
+    "EVEN": 46,
+    "DOWN": 258,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.2,
+    "EVEN": 12.1,
+    "DOWN": 68.1,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.5,
+   "breadth": 0.594,
+   "competitiveRatio": 55.9,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "B82AB537-7DCB-4751-A016-A03EE5A5040B",
+   "name": "Georgia College",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.02,
+   "matches": 370,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 194,
+    "EVEN": 73,
+    "DOWN": 75,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 52.4,
+    "EVEN": 19.7,
+    "DOWN": 20.3,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.6,
+   "breadth": 0.732,
+   "competitiveRatio": 43.2,
+   "winRate": 55.4
+  },
+  {
+   "teamId": "5C1C0A78-1EE4-442F-9F72-82A2E854EBF6",
+   "name": "Columbus State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.53,
+   "matches": 369,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 46,
+    "DOWN": 249,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.5,
+    "EVEN": 12.5,
+    "DOWN": 67.5,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.6,
+   "breadth": 0.609,
+   "competitiveRatio": 43.7,
+   "winRate": 68
+  },
+  {
+   "teamId": "DDF4279D-D5D6-40E3-915C-2BE7D664C399",
+   "name": "North Georgia",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.87,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 122,
+    "EVEN": 31,
+    "DOWN": 188,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.3,
+    "EVEN": 8.5,
+    "DOWN": 51.4,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.8,
+   "breadth": 0.684,
+   "competitiveRatio": 56.4,
+   "winRate": 57.1
+  },
+  {
+   "teamId": "612805ED-8EC5-499E-8FD2-D7F20F6FFC71",
+   "name": "Lander",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.67,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 110,
+    "EVEN": 16,
+    "DOWN": 167,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.7,
+    "EVEN": 4.6,
+    "DOWN": 48.1,
+    "ANCHOR": 15.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.6,
+   "breadth": 0.713,
+   "competitiveRatio": 53.9,
+   "winRate": 60.2
+  },
+  {
+   "teamId": "DE4371C7-6D43-49DD-AC5E-77D4120F2501",
+   "name": "Augusta University",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.17,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 139,
+    "EVEN": 65,
+    "DOWN": 71,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 9.3,
+    "UP": 43.2,
+    "EVEN": 20.2,
+    "DOWN": 22,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 9.3,
+   "anchorRate": 5.3,
+   "breadth": 0.867,
+   "competitiveRatio": 57.1,
+   "winRate": 55.3
+  },
+  {
+   "teamId": "084AA921-5BBD-4679-9A11-A173BCD2E5C5",
+   "name": "Lander",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.76,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 157,
+    "EVEN": 84,
+    "DOWN": 46,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 49.8,
+    "EVEN": 26.7,
+    "DOWN": 14.6,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.9,
+   "breadth": 0.743,
+   "competitiveRatio": 37.1,
+   "winRate": 39
+  },
+  {
+   "teamId": "9D65F794-71EB-4546-AECD-6D3A0D771DA8",
+   "name": "Georgia College",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.69,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 141,
+    "EVEN": 89,
+    "DOWN": 39,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 45.8,
+    "EVEN": 28.9,
+    "DOWN": 12.7,
+    "ANCHOR": 5.8
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 5.8,
+   "breadth": 0.825,
+   "competitiveRatio": 48.7,
+   "winRate": 38.3
+  },
+  {
+   "teamId": "5D5343C7-5631-4427-B531-98D66D976899",
+   "name": "Augusta University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.19,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 93,
+    "EVEN": 46,
+    "DOWN": 118,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.9,
+    "EVEN": 15.3,
+    "DOWN": 39.2,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.6,
+   "breadth": 0.807,
+   "competitiveRatio": 43.3,
+   "winRate": 53.5
+  },
+  {
+   "teamId": "9BDEF04A-166A-4EFA-857C-BA37A59E3460",
+   "name": "Georgia Southwestern",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.69,
+   "matches": 190,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 41,
+    "EVEN": 20,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 67.9,
+    "UP": 21.6,
+    "EVEN": 10.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 67.9,
+   "anchorRate": 0,
+   "breadth": 0.516,
+   "competitiveRatio": 13.7,
+   "winRate": 10.5
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "conference": "Region 4",
+ "slug": "region-4",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 85,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 25,
+    "EVEN": 12,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 56.5,
+    "UP": 29.4,
+    "EVEN": 14.1,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 56.5,
+   "anchorRate": 0,
+   "breadth": 0.596,
+   "competitiveRatio": 30.6,
+   "winRate": 16.5
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 85,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 25,
+    "EVEN": 12,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 56.5,
+    "UP": 29.4,
+    "EVEN": 14.1,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 56.5,
+   "anchorRate": 0,
+   "breadth": 0.596,
+   "competitiveRatio": 30.6,
+   "winRate": 16.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 56.5,
+  "delta": 56.5,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "A7C94936-1869-41F5-9AC0-EAE5C037E7B9",
+   "name": "Southwestern Illinois",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.57,
+   "matches": 54,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 6,
+    "EVEN": 12,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 66.7,
+    "UP": 11.1,
+    "EVEN": 22.2,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 66.7,
+   "anchorRate": 0,
+   "breadth": 0.527,
+   "competitiveRatio": 42.6,
+   "winRate": 18.5
+  },
+  {
+   "teamId": "C5B9CD4E-03EF-4234-B5B2-8E53A99D20F4",
+   "name": "Southwestern Illinois",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.99,
+   "matches": 31,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 19,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.7,
+    "UP": 61.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.7,
+   "anchorRate": 0,
+   "breadth": 0.415,
+   "competitiveRatio": 9.7,
+   "winRate": 12.9
+  }
+ ]
+}

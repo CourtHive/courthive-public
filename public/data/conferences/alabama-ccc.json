@@ -1,0 +1,301 @@
+{
+ "conference": "Alabama CCC",
+ "slug": "alabama-ccc",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1325,
+   "bands": {
+    "STRETCH": 417,
+    "UP": 402,
+    "EVEN": 86,
+    "DOWN": 362,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 31.5,
+    "UP": 30.3,
+    "EVEN": 6.5,
+    "DOWN": 27.3,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 31.5,
+   "anchorRate": 4.4,
+   "breadth": 0.867,
+   "competitiveRatio": 21.8,
+   "winRate": 35.5
+  },
+  "inConference": {
+   "matches": 336,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 118,
+    "EVEN": 28,
+    "DOWN": 118,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 35.1,
+    "EVEN": 8.3,
+    "DOWN": 35.1,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 10.7,
+   "breadth": 0.883,
+   "competitiveRatio": 28,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 989,
+   "bands": {
+    "STRETCH": 381,
+    "UP": 284,
+    "EVEN": 58,
+    "DOWN": 244,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 38.5,
+    "UP": 28.7,
+    "EVEN": 5.9,
+    "DOWN": 24.7,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 38.5,
+   "anchorRate": 2.2,
+   "breadth": 0.821,
+   "competitiveRatio": 19.6,
+   "winRate": 30.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.7,
+  "nonConference": 38.5,
+  "delta": 27.8,
+  "nonConferenceShare": 74.6
+ },
+ "members": [
+  {
+   "teamId": "67BECD1D-5D06-47DA-A734-DF4BA9D51691",
+   "name": "Bevill State",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 24.85,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 69,
+    "EVEN": 0,
+    "DOWN": 105,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 25.7,
+    "EVEN": 0,
+    "DOWN": 39.2,
+    "ANCHOR": 21.6
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 21.6,
+   "breadth": 0.819,
+   "competitiveRatio": 27.6,
+   "winRate": 41.4
+  },
+  {
+   "teamId": "3B3AE21E-5835-461C-AC47-E4595C9D3D56",
+   "name": "Gadsden State",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 28.86,
+   "matches": 247,
+   "bands": {
+    "STRETCH": 132,
+    "UP": 83,
+    "EVEN": 0,
+    "DOWN": 32,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.4,
+    "UP": 33.6,
+    "EVEN": 0,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.4,
+   "anchorRate": 0,
+   "breadth": 0.6,
+   "competitiveRatio": 24.3,
+   "winRate": 29.1
+  },
+  {
+   "teamId": "7CC838C3-5B9B-4D2E-8292-AD24DC47A183",
+   "name": "Marion Military Institute",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 28.35,
+   "matches": 231,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 58,
+    "EVEN": 0,
+    "DOWN": 79,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 40.7,
+    "UP": 25.1,
+    "EVEN": 0,
+    "DOWN": 34.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 40.7,
+   "anchorRate": 0,
+   "breadth": 0.671,
+   "competitiveRatio": 25.1,
+   "winRate": 39.8
+  },
+  {
+   "teamId": "0AEFB59C-DA68-4317-89E0-C218A2D36E25",
+   "name": "Bevill State",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.44,
+   "matches": 221,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 75,
+    "EVEN": 28,
+    "DOWN": 94,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.9,
+    "UP": 33.9,
+    "EVEN": 12.7,
+    "DOWN": 42.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.9,
+   "anchorRate": 0,
+   "breadth": 0.766,
+   "competitiveRatio": 19.5,
+   "winRate": 40.7
+  },
+  {
+   "teamId": "A52FB888-2E06-47A0-ADCF-08711C151372",
+   "name": "Marion Military Institute",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.51,
+   "matches": 193,
+   "bands": {
+    "STRETCH": 70,
+    "UP": 50,
+    "EVEN": 44,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 36.3,
+    "UP": 25.9,
+    "EVEN": 22.8,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "stretchRate": 36.3,
+   "anchorRate": 0,
+   "breadth": 0.832,
+   "competitiveRatio": 8.8,
+   "winRate": 29.5
+  },
+  {
+   "teamId": "5877012F-F6A2-450A-B629-D9E2DDBB5188",
+   "name": "Central Alabama",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.76,
+   "matches": 85,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 31,
+    "EVEN": 14,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 29.4,
+    "UP": 36.5,
+    "EVEN": 16.5,
+    "DOWN": 17.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 29.4,
+   "anchorRate": 0,
+   "breadth": 0.827,
+   "competitiveRatio": 17.6,
+   "winRate": 31.8
+  },
+  {
+   "teamId": "A72F04C7-B017-434E-8851-3870D33D032A",
+   "name": "Central Alabama",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 29.97,
+   "matches": 80,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 36,
+    "EVEN": 0,
+    "DOWN": 8,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 45,
+    "UP": 45,
+    "EVEN": 0,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "stretchRate": 45,
+   "anchorRate": 0,
+   "breadth": 0.59,
+   "competitiveRatio": 26.3,
+   "winRate": 26.3
+  }
+ ]
+}

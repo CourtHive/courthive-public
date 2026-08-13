@@ -1,0 +1,570 @@
+{
+ "conference": "Big West Conference",
+ "slug": "big-west-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5846,
+   "bands": {
+    "STRETCH": 373,
+    "UP": 1934,
+    "EVEN": 1287,
+    "DOWN": 1846,
+    "ANCHOR": 406
+   },
+   "bandPct": {
+    "STRETCH": 6.4,
+    "UP": 33.1,
+    "EVEN": 22,
+    "DOWN": 31.6,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 6.4,
+   "anchorRate": 6.9,
+   "breadth": 0.885,
+   "competitiveRatio": 49,
+   "winRate": 49.3
+  },
+  "inConference": {
+   "matches": 2494,
+   "bands": {
+    "STRETCH": 106,
+    "UP": 794,
+    "EVEN": 694,
+    "DOWN": 794,
+    "ANCHOR": 106
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 31.8,
+    "EVEN": 27.8,
+    "DOWN": 31.8,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 4.3,
+   "breadth": 0.841,
+   "competitiveRatio": 51.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3352,
+   "bands": {
+    "STRETCH": 267,
+    "UP": 1140,
+    "EVEN": 593,
+    "DOWN": 1052,
+    "ANCHOR": 300
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 34,
+    "EVEN": 17.7,
+    "DOWN": 31.4,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 8,
+   "anchorRate": 8.9,
+   "breadth": 0.904,
+   "competitiveRatio": 46.8,
+   "winRate": 48.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 4.3,
+  "nonConference": 8,
+  "delta": 3.7,
+  "nonConferenceShare": 57.3
+ },
+ "members": [
+  {
+   "teamId": "C2EF4B53-1385-4D34-BE92-F15D5E2137A6",
+   "name": "UC Davis",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.06,
+   "matches": 400,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 106,
+    "EVEN": 146,
+    "DOWN": 81,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 26.5,
+    "EVEN": 36.5,
+    "DOWN": 20.3,
+    "ANCHOR": 10
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 10,
+   "breadth": 0.904,
+   "competitiveRatio": 52.3,
+   "winRate": 47.3
+  },
+  {
+   "teamId": "43CB3BB1-A5DE-4F0B-AB61-0852A45792D1",
+   "name": "UC Santa Barbara",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.71,
+   "matches": 395,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 132,
+    "EVEN": 49,
+    "DOWN": 199,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.4,
+    "EVEN": 12.4,
+    "DOWN": 50.4,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.8,
+   "breadth": 0.68,
+   "competitiveRatio": 46.6,
+   "winRate": 61
+  },
+  {
+   "teamId": "B2F22302-C4B1-4B21-B2C7-69574B7587FC",
+   "name": "Cal Poly",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.91,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 75,
+    "EVEN": 69,
+    "DOWN": 223,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 19.5,
+    "EVEN": 17.9,
+    "DOWN": 57.9,
+    "ANCHOR": 3.1
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 3.1,
+   "breadth": 0.693,
+   "competitiveRatio": 54.8,
+   "winRate": 62.3
+  },
+  {
+   "teamId": "B579E022-915B-49B8-89FB-0535793E1716",
+   "name": "UC San Diego",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.33,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 159,
+    "EVEN": 116,
+    "DOWN": 71,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.4,
+    "UP": 43.9,
+    "EVEN": 32,
+    "DOWN": 19.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.4,
+   "anchorRate": 0,
+   "breadth": 0.735,
+   "competitiveRatio": 48.3,
+   "winRate": 37.3
+  },
+  {
+   "teamId": "BA785579-D8F9-44A6-9031-1B76B034C382",
+   "name": "Long Beach State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.29,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 88,
+    "DOWN": 171,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 24.9,
+    "EVEN": 24.9,
+    "DOWN": 48.4,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.692,
+   "competitiveRatio": 53.1,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "0CA38170-BA7C-42C1-B26B-BDBEBF9CD4AF",
+   "name": "UC San Diego",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.69,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 165,
+    "EVEN": 47,
+    "DOWN": 65,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 20.6,
+    "UP": 47.3,
+    "EVEN": 13.5,
+    "DOWN": 18.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 20.6,
+   "anchorRate": 0,
+   "breadth": 0.785,
+   "competitiveRatio": 46.7,
+   "winRate": 39
+  },
+  {
+   "teamId": "D42BA499-E4F3-451E-B7A3-5747BDAC29BB",
+   "name": "Cal State Fullerton",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.69,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 103,
+    "EVEN": 86,
+    "DOWN": 154,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 29.5,
+    "EVEN": 24.6,
+    "DOWN": 44.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 0,
+   "breadth": 0.706,
+   "competitiveRatio": 49.6,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "2B203F79-A46E-4CE1-A865-56C45EC32A88",
+   "name": "California State University, Northridge",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.04,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 73,
+    "EVEN": 145,
+    "DOWN": 88,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 21,
+    "EVEN": 41.7,
+    "DOWN": 25.3,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 11.2,
+   "breadth": 0.824,
+   "competitiveRatio": 55.8,
+   "winRate": 59.8
+  },
+  {
+   "teamId": "8B7B52BE-0B2F-4363-964A-86CC93727D7F",
+   "name": "UC Riverside",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.02,
+   "matches": 344,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 225,
+    "EVEN": 47,
+    "DOWN": 28,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 65.4,
+    "EVEN": 13.7,
+    "DOWN": 8.1,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 4.1,
+   "breadth": 0.682,
+   "competitiveRatio": 37.3,
+   "winRate": 23.5
+  },
+  {
+   "teamId": "212E811D-D379-42CE-B784-7C7524735522",
+   "name": "UC Irvine",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.16,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 79,
+    "EVEN": 123,
+    "DOWN": 88,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 23,
+    "EVEN": 35.9,
+    "DOWN": 25.7,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 13.7,
+   "breadth": 0.869,
+   "competitiveRatio": 45.5,
+   "winRate": 44.6
+  },
+  {
+   "teamId": "E1B7B68B-58B9-4D19-9761-2E5BC89A816C",
+   "name": "UC Irvine",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.57,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 93,
+    "EVEN": 73,
+    "DOWN": 121,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 27.5,
+    "EVEN": 21.6,
+    "DOWN": 35.8,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 13.3,
+   "breadth": 0.866,
+   "competitiveRatio": 50.6,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "D5605EC8-CA90-4FF2-9165-7CAEAA90593D",
+   "name": "UC Davis",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.39,
+   "matches": 329,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 92,
+    "EVEN": 31,
+    "DOWN": 142,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 28,
+    "EVEN": 9.4,
+    "DOWN": 43.2,
+    "ANCHOR": 17.6
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 17.6,
+   "breadth": 0.821,
+   "competitiveRatio": 49.1,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "911FC75E-825E-4361-8C2B-EB8D074C3293",
+   "name": "UC Santa Barbara",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.7,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 65,
+    "EVEN": 40,
+    "DOWN": 161,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.9,
+    "EVEN": 12.3,
+    "DOWN": 49.4,
+    "ANCHOR": 18.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.4,
+   "breadth": 0.77,
+   "competitiveRatio": 49.7,
+   "winRate": 66
+  },
+  {
+   "teamId": "A3EDBD1F-7A70-4CDD-94CE-CBCEBA5A05AF",
+   "name": "Cal Poly",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.06,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 75,
+    "EVEN": 104,
+    "DOWN": 128,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.2,
+    "EVEN": 32.2,
+    "DOWN": 39.6,
+    "ANCHOR": 5
+   },
+   "stretchRate": 0,
+   "anchorRate": 5,
+   "breadth": 0.758,
+   "competitiveRatio": 58.5,
+   "winRate": 46.7
+  },
+  {
+   "teamId": "8875E91C-BC50-4841-917D-0870F073A5C0",
+   "name": "University Of Hawaii",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.2,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 151,
+    "EVEN": 94,
+    "DOWN": 45,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 47.3,
+    "EVEN": 29.5,
+    "DOWN": 14.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 0,
+   "breadth": 0.751,
+   "competitiveRatio": 53,
+   "winRate": 46.7
+  },
+  {
+   "teamId": "E398AB66-D246-4BA9-96BD-89A7DB4F1181",
+   "name": "UC Riverside",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.53,
+   "matches": 298,
+   "bands": {
+    "STRETCH": 154,
+    "UP": 108,
+    "EVEN": 9,
+    "DOWN": 0,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 51.7,
+    "UP": 36.2,
+    "EVEN": 3,
+    "DOWN": 0,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 51.7,
+   "anchorRate": 9.1,
+   "breadth": 0.641,
+   "competitiveRatio": 34.6,
+   "winRate": 22.1
+  },
+  {
+   "teamId": "F397DBCC-9EC5-4643-9BFE-401D9659496C",
+   "name": "University Of Hawaii",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.95,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 145,
+    "EVEN": 20,
+    "DOWN": 81,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 50.9,
+    "EVEN": 7,
+    "DOWN": 28.4,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 9.5,
+   "breadth": 0.773,
+   "competitiveRatio": 44.2,
+   "winRate": 37.2
+  }
+ ]
+}

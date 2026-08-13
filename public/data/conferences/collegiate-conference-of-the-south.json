@@ -1,0 +1,490 @@
+{
+ "conference": "Collegiate Conference of the South",
+ "slug": "collegiate-conference-of-the-south",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 4418,
+   "bands": {
+    "STRETCH": 722,
+    "UP": 1537,
+    "EVEN": 557,
+    "DOWN": 1221,
+    "ANCHOR": 381
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 34.8,
+    "EVEN": 12.6,
+    "DOWN": 27.6,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 8.6,
+   "breadth": 0.927,
+   "competitiveRatio": 27.1,
+   "winRate": 44.5
+  },
+  "inConference": {
+   "matches": 1584,
+   "bands": {
+    "STRETCH": 178,
+    "UP": 532,
+    "EVEN": 164,
+    "DOWN": 532,
+    "ANCHOR": 178
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 33.6,
+    "EVEN": 10.4,
+    "DOWN": 33.6,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 11.2,
+   "breadth": 0.907,
+   "competitiveRatio": 22,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2834,
+   "bands": {
+    "STRETCH": 544,
+    "UP": 1005,
+    "EVEN": 393,
+    "DOWN": 689,
+    "ANCHOR": 203
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 35.5,
+    "EVEN": 13.9,
+    "DOWN": 24.3,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 7.2,
+   "breadth": 0.926,
+   "competitiveRatio": 29.9,
+   "winRate": 41.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 11.2,
+  "nonConference": 19.2,
+  "delta": 8,
+  "nonConferenceShare": 64.1
+ },
+ "members": [
+  {
+   "teamId": "5B074564-FA5E-48DC-B6AF-04F65458B3B7",
+   "name": "Piedmont",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.48,
+   "matches": 438,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 96,
+    "EVEN": 97,
+    "DOWN": 116,
+    "ANCHOR": 126
+   },
+   "bandPct": {
+    "STRETCH": 0.7,
+    "UP": 21.9,
+    "EVEN": 22.1,
+    "DOWN": 26.5,
+    "ANCHOR": 28.8
+   },
+   "stretchRate": 0.7,
+   "anchorRate": 28.8,
+   "breadth": 0.877,
+   "competitiveRatio": 23.8,
+   "winRate": 75.6
+  },
+  {
+   "teamId": "B96DBAEB-A003-4F6E-B989-EB16DE12519A",
+   "name": "Piedmont",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.99,
+   "matches": 434,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 174,
+    "EVEN": 30,
+    "DOWN": 122,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 13.8,
+    "UP": 40.1,
+    "EVEN": 6.9,
+    "DOWN": 28.1,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 13.8,
+   "anchorRate": 11.1,
+   "breadth": 0.885,
+   "competitiveRatio": 37.1,
+   "winRate": 57.6
+  },
+  {
+   "teamId": "399840E4-F4A1-46A7-BD03-1AB1013743F4",
+   "name": "Huntingdon (AL)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.86,
+   "matches": 388,
+   "bands": {
+    "STRETCH": 76,
+    "UP": 170,
+    "EVEN": 48,
+    "DOWN": 71,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 19.6,
+    "UP": 43.8,
+    "EVEN": 12.4,
+    "DOWN": 18.3,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 19.6,
+   "anchorRate": 5.9,
+   "breadth": 0.881,
+   "competitiveRatio": 30.4,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "B9172A01-503E-4B19-875D-F6A4973312BD",
+   "name": "Covenant",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.91,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 66,
+    "EVEN": 77,
+    "DOWN": 188,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 6.2,
+    "UP": 17.1,
+    "EVEN": 20,
+    "DOWN": 48.8,
+    "ANCHOR": 7.8
+   },
+   "stretchRate": 6.2,
+   "anchorRate": 7.8,
+   "breadth": 0.836,
+   "competitiveRatio": 37.9,
+   "winRate": 62.3
+  },
+  {
+   "teamId": "C99265A0-52AB-4889-AAE9-970195E07EE6",
+   "name": "Huntingdon (AL)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.8,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 127,
+    "EVEN": 27,
+    "DOWN": 122,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 39.6,
+    "EVEN": 8.4,
+    "DOWN": 38,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14,
+   "anchorRate": 0,
+   "breadth": 0.757,
+   "competitiveRatio": 20,
+   "winRate": 38.9
+  },
+  {
+   "teamId": "EB742A2D-2618-40A4-B05B-D950FB73757E",
+   "name": "Maryville (TN)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.61,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 83,
+    "EVEN": 42,
+    "DOWN": 146,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.3,
+    "EVEN": 13.3,
+    "DOWN": 46.2,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.2,
+   "breadth": 0.779,
+   "competitiveRatio": 40.5,
+   "winRate": 49.1
+  },
+  {
+   "teamId": "50E70A41-0EEC-4BEA-9D1F-1EC8E93501F7",
+   "name": "Belhaven",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.91,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 174,
+    "EVEN": 47,
+    "DOWN": 66,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 55.1,
+    "EVEN": 14.9,
+    "DOWN": 20.9,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 1.9,
+   "breadth": 0.749,
+   "competitiveRatio": 30.8,
+   "winRate": 32
+  },
+  {
+   "teamId": "8F27435F-3EA3-4364-A79C-A445603C403E",
+   "name": "Covenant",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.86,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 41,
+    "EVEN": 71,
+    "DOWN": 128,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 13.9,
+    "EVEN": 24,
+    "DOWN": 43.2,
+    "ANCHOR": 16.9
+   },
+   "stretchRate": 2,
+   "anchorRate": 16.9,
+   "breadth": 0.844,
+   "competitiveRatio": 18.2,
+   "winRate": 41.2
+  },
+  {
+   "teamId": "1E0AA6BD-C056-4A10-87FF-05F9BDEEC737",
+   "name": "Asbury",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.26,
+   "matches": 288,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 70,
+    "EVEN": 41,
+    "DOWN": 117,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 24.3,
+    "EVEN": 14.2,
+    "DOWN": 40.6,
+    "ANCHOR": 16.7
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 16.7,
+   "breadth": 0.881,
+   "competitiveRatio": 35.1,
+   "winRate": 67
+  },
+  {
+   "teamId": "F72BE6C8-3499-4239-9FEF-9E684F8A841D",
+   "name": "LaGrange",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.11,
+   "matches": 282,
+   "bands": {
+    "STRETCH": 179,
+    "UP": 81,
+    "EVEN": 6,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 63.5,
+    "UP": 28.7,
+    "EVEN": 2.1,
+    "DOWN": 5.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 63.5,
+   "anchorRate": 0,
+   "breadth": 0.554,
+   "competitiveRatio": 20.2,
+   "winRate": 21.3
+  },
+  {
+   "teamId": "7C4DCFFD-1B06-4F06-B090-7BAE3449F7DD",
+   "name": "Maryville (TN)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.89,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 162,
+    "EVEN": 6,
+    "DOWN": 81,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 4.5,
+    "UP": 60.9,
+    "EVEN": 2.3,
+    "DOWN": 30.5,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 4.5,
+   "anchorRate": 1.9,
+   "breadth": 0.599,
+   "competitiveRatio": 27.5,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "07CADF0B-ED46-41E9-886A-CE9191FCEFF4",
+   "name": "LaGrange",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.35,
+   "matches": 239,
+   "bands": {
+    "STRETCH": 93,
+    "UP": 76,
+    "EVEN": 47,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.9,
+    "UP": 31.8,
+    "EVEN": 19.7,
+    "DOWN": 9.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.9,
+   "anchorRate": 0,
+   "breadth": 0.793,
+   "competitiveRatio": 10.5,
+   "winRate": 15.1
+  },
+  {
+   "teamId": "90BADB45-DE79-41C2-8911-E77290285228",
+   "name": "Belhaven",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.3,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 100,
+    "EVEN": 0,
+    "DOWN": 5,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 54.9,
+    "UP": 42.9,
+    "EVEN": 0,
+    "DOWN": 2.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 54.9,
+   "anchorRate": 0,
+   "breadth": 0.481,
+   "competitiveRatio": 13.4,
+   "winRate": 9.4
+  },
+  {
+   "teamId": "7B6A195F-2CA0-473E-B5A7-A05C1BF06580",
+   "name": "Agnes Scott",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.7,
+   "matches": 216,
+   "bands": {
+    "STRETCH": 61,
+    "UP": 117,
+    "EVEN": 18,
+    "DOWN": 20,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 28.2,
+    "UP": 54.2,
+    "EVEN": 8.3,
+    "DOWN": 9.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 28.2,
+   "anchorRate": 0,
+   "breadth": 0.694,
+   "competitiveRatio": 16.2,
+   "winRate": 24.1
+  }
+ ]
+}

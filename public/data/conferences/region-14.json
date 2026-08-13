@@ -1,0 +1,220 @@
+{
+ "conference": "Region 14",
+ "slug": "region-14",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 4,
+ "fingerprint": {
+  "overall": {
+   "matches": 752,
+   "bands": {
+    "STRETCH": 265,
+    "UP": 172,
+    "EVEN": 48,
+    "DOWN": 193,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 35.2,
+    "UP": 22.9,
+    "EVEN": 6.4,
+    "DOWN": 25.7,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 35.2,
+   "anchorRate": 9.8,
+   "breadth": 0.906,
+   "competitiveRatio": 32.9,
+   "winRate": 45.6
+  },
+  "inConference": {
+   "matches": 52,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 50,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 50
+   },
+   "stretchRate": 50,
+   "anchorRate": 50,
+   "breadth": 0.431,
+   "competitiveRatio": 7.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 700,
+   "bands": {
+    "STRETCH": 239,
+    "UP": 172,
+    "EVEN": 48,
+    "DOWN": 193,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 34.1,
+    "UP": 24.6,
+    "EVEN": 6.9,
+    "DOWN": 27.6,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 34.1,
+   "anchorRate": 6.9,
+   "breadth": 0.891,
+   "competitiveRatio": 34.8,
+   "winRate": 45.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 50,
+  "nonConference": 34.1,
+  "delta": -15.9,
+  "nonConferenceShare": 93.1
+ },
+ "members": [
+  {
+   "teamId": "8E51BB66-583F-44D0-9074-084A1D8A46A2",
+   "name": "Tyler Junior College",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 16.56,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 12,
+    "DOWN": 107,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.4,
+    "EVEN": 4.6,
+    "DOWN": 41,
+    "ANCHOR": 23
+   },
+   "stretchRate": 0,
+   "anchorRate": 23,
+   "breadth": 0.751,
+   "competitiveRatio": 43.1,
+   "winRate": 67
+  },
+  {
+   "teamId": "75534A1A-CF40-497F-86EA-91B6FF9DD01E",
+   "name": "Tyler Junior College",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 24.77,
+   "matches": 254,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 59,
+    "EVEN": 36,
+    "DOWN": 86,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 23.2,
+    "UP": 23.2,
+    "EVEN": 14.2,
+    "DOWN": 33.9,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 23.2,
+   "anchorRate": 5.5,
+   "breadth": 0.921,
+   "competitiveRatio": 31.1,
+   "winRate": 49.6
+  },
+  {
+   "teamId": "961BE833-38F8-4F7C-A82E-24A5B8A8EA51",
+   "name": "Jacksonville",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 27.04,
+   "matches": 177,
+   "bands": {
+    "STRETCH": 157,
+    "UP": 20,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 88.7,
+    "UP": 11.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 88.7,
+   "anchorRate": 0,
+   "breadth": 0.219,
+   "competitiveRatio": 23.9,
+   "winRate": 13.6
+  },
+  {
+   "teamId": "59C2A8EB-1E9B-4DB7-8619-9E459A1EED9A",
+   "name": "Jacksonville",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 32.23,
+   "matches": 60,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 11,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 81.7,
+    "UP": 18.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 81.7,
+   "anchorRate": 0,
+   "breadth": 0.296,
+   "competitiveRatio": 23.3,
+   "winRate": 30
+  }
+ ]
+}

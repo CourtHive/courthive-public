@@ -1,0 +1,220 @@
+{
+ "conference": "Mississippi Assn for Comm JuCo",
+ "slug": "mississippi-assn-for-comm-juco",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 4,
+ "fingerprint": {
+  "overall": {
+   "matches": 912,
+   "bands": {
+    "STRETCH": 103,
+    "UP": 363,
+    "EVEN": 173,
+    "DOWN": 227,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 39.8,
+    "EVEN": 19,
+    "DOWN": 24.9,
+    "ANCHOR": 5
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 5,
+   "breadth": 0.885,
+   "competitiveRatio": 20.5,
+   "winRate": 37.7
+  },
+  "inConference": {
+   "matches": 76,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 0,
+    "DOWN": 38,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 0,
+    "DOWN": 50,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.431,
+   "competitiveRatio": 18.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 836,
+   "bands": {
+    "STRETCH": 103,
+    "UP": 325,
+    "EVEN": 173,
+    "DOWN": 189,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 12.3,
+    "UP": 38.9,
+    "EVEN": 20.7,
+    "DOWN": 22.6,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 12.3,
+   "anchorRate": 5.5,
+   "breadth": 0.899,
+   "competitiveRatio": 20.7,
+   "winRate": 36.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 12.3,
+  "delta": 12.3,
+  "nonConferenceShare": 91.7
+ },
+ "members": [
+  {
+   "teamId": "95C2E077-4B8A-4420-A3CA-00EC26D01B4C",
+   "name": "Northwest Mississippi",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.07,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 73,
+    "EVEN": 75,
+    "DOWN": 66,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 27.2,
+    "EVEN": 28,
+    "DOWN": 24.6,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 6.7,
+   "breadth": 0.936,
+   "competitiveRatio": 19.8,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "4EF3985B-C729-4BF4-86EA-FAA497BE0BA4",
+   "name": "Northwest Mississippi",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.1,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 92,
+    "EVEN": 26,
+    "DOWN": 109,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.5,
+    "EVEN": 11.2,
+    "DOWN": 46.8,
+    "ANCHOR": 2.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 2.6,
+   "breadth": 0.659,
+   "competitiveRatio": 20.6,
+   "winRate": 51.9
+  },
+  {
+   "teamId": "E303B7DE-39F1-443C-A300-51C9A7E35E77",
+   "name": "Southwest Mississippi",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.94,
+   "matches": 228,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 118,
+    "EVEN": 30,
+    "DOWN": 16,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 18.4,
+    "UP": 51.8,
+    "EVEN": 13.2,
+    "DOWN": 7,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 18.4,
+   "anchorRate": 9.6,
+   "breadth": 0.827,
+   "competitiveRatio": 22.4,
+   "winRate": 35.5
+  },
+  {
+   "teamId": "D08A83C7-65F5-4102-8B7C-A288708DEF60",
+   "name": "Southwest Mississippi",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.96,
+   "matches": 183,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 80,
+    "EVEN": 42,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.7,
+    "UP": 43.7,
+    "EVEN": 23,
+    "DOWN": 19.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.7,
+   "anchorRate": 0,
+   "breadth": 0.802,
+   "competitiveRatio": 19.1,
+   "winRate": 23.5
+  }
+ ]
+}

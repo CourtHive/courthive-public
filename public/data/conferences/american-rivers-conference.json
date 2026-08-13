@@ -1,0 +1,598 @@
+{
+ "conference": "American Rivers Conference",
+ "slug": "american-rivers-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 6477,
+   "bands": {
+    "STRETCH": 717,
+    "UP": 2323,
+    "EVEN": 902,
+    "DOWN": 1970,
+    "ANCHOR": 565
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 35.9,
+    "EVEN": 13.9,
+    "DOWN": 30.4,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 8.7,
+   "breadth": 0.908,
+   "competitiveRatio": 31.4,
+   "winRate": 46.9
+  },
+  "inConference": {
+   "matches": 2746,
+   "bands": {
+    "STRETCH": 379,
+    "UP": 791,
+    "EVEN": 406,
+    "DOWN": 791,
+    "ANCHOR": 379
+   },
+   "bandPct": {
+    "STRETCH": 13.8,
+    "UP": 28.8,
+    "EVEN": 14.8,
+    "DOWN": 28.8,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 13.8,
+   "anchorRate": 13.8,
+   "breadth": 0.961,
+   "competitiveRatio": 25.1,
+   "winRate": 49.9
+  },
+  "nonConference": {
+   "matches": 3731,
+   "bands": {
+    "STRETCH": 338,
+    "UP": 1532,
+    "EVEN": 496,
+    "DOWN": 1179,
+    "ANCHOR": 186
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 41.1,
+    "EVEN": 13.3,
+    "DOWN": 31.6,
+    "ANCHOR": 5
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 5,
+   "breadth": 0.848,
+   "competitiveRatio": 36.1,
+   "winRate": 44.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 13.8,
+  "nonConference": 9.1,
+  "delta": -4.7,
+  "nonConferenceShare": 57.6
+ },
+ "members": [
+  {
+   "teamId": "EF02A259-54B2-4CF0-9DAE-8199427D080F",
+   "name": "Luther College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.57,
+   "matches": 496,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 81,
+    "EVEN": 71,
+    "DOWN": 144,
+    "ANCHOR": 191
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 16.3,
+    "EVEN": 14.3,
+    "DOWN": 29,
+    "ANCHOR": 38.5
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 38.5,
+   "breadth": 0.853,
+   "competitiveRatio": 40.7,
+   "winRate": 74
+  },
+  {
+   "teamId": "CF7F4A25-A2B3-4213-AE66-05B1DC7190EC",
+   "name": "Wartburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.35,
+   "matches": 489,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 203,
+    "EVEN": 51,
+    "DOWN": 164,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 41.5,
+    "EVEN": 10.4,
+    "DOWN": 33.5,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 4.7,
+   "breadth": 0.832,
+   "competitiveRatio": 40.8,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "75E282B3-C082-493E-924C-600AF5FB1BDE",
+   "name": "Coe College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.69,
+   "matches": 469,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 66,
+    "EVEN": 71,
+    "DOWN": 132,
+    "ANCHOR": 200
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.1,
+    "EVEN": 15.1,
+    "DOWN": 28.1,
+    "ANCHOR": 42.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 42.6,
+   "breadth": 0.797,
+   "competitiveRatio": 41.5,
+   "winRate": 65.7
+  },
+  {
+   "teamId": "79DA6B3B-77B6-4714-BDC7-5412C8BE11F3",
+   "name": "Wartburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.37,
+   "matches": 467,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 150,
+    "EVEN": 115,
+    "DOWN": 184,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 32.1,
+    "EVEN": 24.6,
+    "DOWN": 39.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 0,
+   "breadth": 0.747,
+   "competitiveRatio": 32.2,
+   "winRate": 53.3
+  },
+  {
+   "teamId": "8ADC2A9B-7A5C-4537-9AEF-90457E34106B",
+   "name": "Loras",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.19,
+   "matches": 411,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 165,
+    "EVEN": 73,
+    "DOWN": 158,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.1,
+    "EVEN": 17.8,
+    "DOWN": 38.4,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.6,
+   "breadth": 0.722,
+   "competitiveRatio": 29.7,
+   "winRate": 49.4
+  },
+  {
+   "teamId": "ADC264D0-B63B-4458-9739-24C13A09B6E3",
+   "name": "Luther College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.98,
+   "matches": 406,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 108,
+    "EVEN": 54,
+    "DOWN": 184,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 26.6,
+    "EVEN": 13.3,
+    "DOWN": 45.3,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 13.3,
+   "breadth": 0.814,
+   "competitiveRatio": 31,
+   "winRate": 65.3
+  },
+  {
+   "teamId": "8D019142-3069-476E-B31D-74E61E8DFA18",
+   "name": "Central (IA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.89,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 119,
+    "UP": 175,
+    "EVEN": 26,
+    "DOWN": 76,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.1,
+    "UP": 44.2,
+    "EVEN": 6.6,
+    "DOWN": 19.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.1,
+   "anchorRate": 0,
+   "breadth": 0.757,
+   "competitiveRatio": 35.1,
+   "winRate": 39.1
+  },
+  {
+   "teamId": "B7960C82-48AF-4B9E-8C01-6419FA409701",
+   "name": "Coe College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.58,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 47,
+    "EVEN": 57,
+    "DOWN": 244,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 11.9,
+    "EVEN": 14.4,
+    "DOWN": 61.6,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 10.6,
+   "breadth": 0.703,
+   "competitiveRatio": 27.3,
+   "winRate": 68.4
+  },
+  {
+   "teamId": "5B3587E9-091A-43D7-8EED-C6EEAFBADD26",
+   "name": "Loras",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.23,
+   "matches": 388,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 106,
+    "EVEN": 57,
+    "DOWN": 146,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 11.6,
+    "UP": 27.3,
+    "EVEN": 14.7,
+    "DOWN": 37.6,
+    "ANCHOR": 8.8
+   },
+   "stretchRate": 11.6,
+   "anchorRate": 8.8,
+   "breadth": 0.912,
+   "competitiveRatio": 42,
+   "winRate": 45.4
+  },
+  {
+   "teamId": "9F3A2756-7CD9-4BD2-97FB-25957ED1725D",
+   "name": "Central (IA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.38,
+   "matches": 361,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 117,
+    "EVEN": 83,
+    "DOWN": 137,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 32.4,
+    "EVEN": 23,
+    "DOWN": 38,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 5,
+   "anchorRate": 1.7,
+   "breadth": 0.801,
+   "competitiveRatio": 27.2,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "ED10EBFF-F9E0-410A-B4AD-2D11B4E6E9A4",
+   "name": "Buena Vista",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.13,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 203,
+    "EVEN": 41,
+    "DOWN": 39,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.5,
+    "UP": 59.2,
+    "EVEN": 12,
+    "DOWN": 11.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.5,
+   "anchorRate": 0,
+   "breadth": 0.694,
+   "competitiveRatio": 13.7,
+   "winRate": 14.6
+  },
+  {
+   "teamId": "E20EBCCA-79A0-47B8-BD09-7891EC440FE7",
+   "name": "Buena Vista",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.14,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 79,
+    "UP": 153,
+    "EVEN": 47,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.2,
+    "UP": 48.7,
+    "EVEN": 15,
+    "DOWN": 11.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.2,
+   "anchorRate": 0,
+   "breadth": 0.762,
+   "competitiveRatio": 23.9,
+   "winRate": 33.1
+  },
+  {
+   "teamId": "56B22348-346A-4491-87B2-840351B875CF",
+   "name": "Dubuque",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.09,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 131,
+    "EVEN": 59,
+    "DOWN": 95,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 45,
+    "EVEN": 20.3,
+    "DOWN": 32.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 0,
+   "breadth": 0.701,
+   "competitiveRatio": 30.6,
+   "winRate": 43.6
+  },
+  {
+   "teamId": "2FE95B67-2398-4B11-AEAF-8DE75B5F3999",
+   "name": "Dubuque",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.71,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 112,
+    "EVEN": 36,
+    "DOWN": 84,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 41.8,
+    "EVEN": 13.4,
+    "DOWN": 31.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 0,
+   "breadth": 0.788,
+   "competitiveRatio": 31.3,
+   "winRate": 38.8
+  },
+  {
+   "teamId": "792C9D4F-12F2-429E-B8CC-A9380A9A590B",
+   "name": "Simpson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.87,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 125,
+    "UP": 135,
+    "EVEN": 0,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 47,
+    "UP": 50.8,
+    "EVEN": 0,
+    "DOWN": 2.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 47,
+   "anchorRate": 0,
+   "breadth": 0.488,
+   "competitiveRatio": 21.1,
+   "winRate": 16.2
+  },
+  {
+   "teamId": "82F63495-DA75-4FDF-83F3-F425B6746802",
+   "name": "Nebraska Wesleyan",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.92,
+   "matches": 244,
+   "bands": {
+    "STRETCH": 74,
+    "UP": 85,
+    "EVEN": 20,
+    "DOWN": 65,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.3,
+    "UP": 34.8,
+    "EVEN": 8.2,
+    "DOWN": 26.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.3,
+   "anchorRate": 0,
+   "breadth": 0.799,
+   "competitiveRatio": 29.2,
+   "winRate": 37.3
+  },
+  {
+   "teamId": "4B590DCA-96A3-46C3-B441-589EE6682FF9",
+   "name": "Simpson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.3,
+   "matches": 237,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 146,
+    "EVEN": 17,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 26.2,
+    "UP": 61.6,
+    "EVEN": 7.2,
+    "DOWN": 5.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 26.2,
+   "anchorRate": 0,
+   "breadth": 0.615,
+   "competitiveRatio": 16.5,
+   "winRate": 20.7
+  },
+  {
+   "teamId": "AAB9B3D9-728F-4870-BF50-552A42FCBB30",
+   "name": "Nebraska Wesleyan",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.94,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 140,
+    "EVEN": 24,
+    "DOWN": 65,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 59.6,
+    "EVEN": 10.2,
+    "DOWN": 27.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 0,
+   "breadth": 0.616,
+   "competitiveRatio": 30.8,
+   "winRate": 37
+  }
+ ]
+}

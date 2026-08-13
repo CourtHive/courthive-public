@@ -1,0 +1,435 @@
+{
+ "conference": "Atlantic Sun Conference",
+ "slug": "atlantic-sun-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 4140,
+   "bands": {
+    "STRETCH": 437,
+    "UP": 1157,
+    "EVEN": 700,
+    "DOWN": 1507,
+    "ANCHOR": 339
+   },
+   "bandPct": {
+    "STRETCH": 10.6,
+    "UP": 27.9,
+    "EVEN": 16.9,
+    "DOWN": 36.4,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 10.6,
+   "anchorRate": 8.2,
+   "breadth": 0.911,
+   "competitiveRatio": 47.4,
+   "winRate": 48.9
+  },
+  "inConference": {
+   "matches": 950,
+   "bands": {
+    "STRETCH": 76,
+    "UP": 310,
+    "EVEN": 178,
+    "DOWN": 310,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 32.6,
+    "EVEN": 18.7,
+    "DOWN": 32.6,
+    "ANCHOR": 8
+   },
+   "stretchRate": 8,
+   "anchorRate": 8,
+   "breadth": 0.9,
+   "competitiveRatio": 52.2,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3190,
+   "bands": {
+    "STRETCH": 361,
+    "UP": 847,
+    "EVEN": 522,
+    "DOWN": 1197,
+    "ANCHOR": 263
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 26.6,
+    "EVEN": 16.4,
+    "DOWN": 37.5,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 8.2,
+   "breadth": 0.912,
+   "competitiveRatio": 46,
+   "winRate": 48.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8,
+  "nonConference": 11.3,
+  "delta": 3.3,
+  "nonConferenceShare": 77.1
+ },
+ "members": [
+  {
+   "teamId": "868C9054-233F-4D4D-9FC4-35EC08E877DE",
+   "name": "Bellarmine",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.3,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 76,
+    "UP": 178,
+    "EVEN": 35,
+    "DOWN": 83,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 19.8,
+    "UP": 46.4,
+    "EVEN": 9.1,
+    "DOWN": 21.6,
+    "ANCHOR": 3.1
+   },
+   "stretchRate": 19.8,
+   "anchorRate": 3.1,
+   "breadth": 0.829,
+   "competitiveRatio": 34.1,
+   "winRate": 35.4
+  },
+  {
+   "teamId": "B153FAD2-FDF8-4697-A1C4-632576465463",
+   "name": "North Florida",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.7,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 108,
+    "EVEN": 93,
+    "DOWN": 125,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 28.1,
+    "EVEN": 24.2,
+    "DOWN": 32.6,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 3.9,
+   "breadth": 0.893,
+   "competitiveRatio": 52.5,
+   "winRate": 51.3
+  },
+  {
+   "teamId": "A2BAF051-4021-4F55-AF9C-B2F4ADAE0076",
+   "name": "Lipscomb",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.88,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 156,
+    "EVEN": 28,
+    "DOWN": 149,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 3.1,
+    "UP": 40.6,
+    "EVEN": 7.3,
+    "DOWN": 38.8,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 3.1,
+   "anchorRate": 10.2,
+   "breadth": 0.786,
+   "competitiveRatio": 56.4,
+   "winRate": 50
+  },
+  {
+   "teamId": "05C8A8B6-B11B-4CBA-B77A-28390BEAD223",
+   "name": "Stetson",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.17,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 42,
+    "EVEN": 70,
+    "DOWN": 182,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 2.8,
+    "UP": 11.7,
+    "EVEN": 19.6,
+    "DOWN": 50.8,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 2.8,
+   "anchorRate": 15.1,
+   "breadth": 0.808,
+   "competitiveRatio": 52.5,
+   "winRate": 62
+  },
+  {
+   "teamId": "5DB0A0A5-EC3D-4961-852C-C257900B05E8",
+   "name": "Florida Gulf Coast",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.2,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 72,
+    "EVEN": 124,
+    "DOWN": 148,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.1,
+    "EVEN": 34.6,
+    "DOWN": 41.3,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.9,
+   "breadth": 0.734,
+   "competitiveRatio": 51.1,
+   "winRate": 57
+  },
+  {
+   "teamId": "C878C851-321F-48D8-938E-DBE08A94BEC5",
+   "name": "North Florida",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.52,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 11,
+    "EVEN": 37,
+    "DOWN": 267,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.2,
+    "EVEN": 10.7,
+    "DOWN": 76.9,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.2,
+   "breadth": 0.478,
+   "competitiveRatio": 50.1,
+   "winRate": 59.4
+  },
+  {
+   "teamId": "EC042EA2-5E5C-4318-B709-473732DAAFC9",
+   "name": "Stetson",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.2,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 45,
+    "EVEN": 54,
+    "DOWN": 175,
+    "ANCHOR": 64
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 13.2,
+    "EVEN": 15.8,
+    "DOWN": 51.3,
+    "ANCHOR": 18.8
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 18.8,
+   "breadth": 0.781,
+   "competitiveRatio": 44.6,
+   "winRate": 67.2
+  },
+  {
+   "teamId": "09FA2DEF-947B-4629-B20B-C7DF3F0F5669",
+   "name": "Florida Gulf Coast",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.01,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 56,
+    "EVEN": 60,
+    "DOWN": 165,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 16.7,
+    "EVEN": 17.9,
+    "DOWN": 49.3,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 10.4,
+   "breadth": 0.842,
+   "competitiveRatio": 52.2,
+   "winRate": 40.6
+  },
+  {
+   "teamId": "822847FC-9EBF-4A65-8CCE-3A9455652188",
+   "name": "Bellarmine",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.4,
+   "matches": 334,
+   "bands": {
+    "STRETCH": 70,
+    "UP": 145,
+    "EVEN": 58,
+    "DOWN": 39,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 21,
+    "UP": 43.4,
+    "EVEN": 17.4,
+    "DOWN": 11.7,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 21,
+   "anchorRate": 6.6,
+   "breadth": 0.885,
+   "competitiveRatio": 51.2,
+   "winRate": 39.5
+  },
+  {
+   "teamId": "8503F02E-D0F8-4DA0-9073-BCEF43507784",
+   "name": "Lipscomb",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.58,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 23,
+    "EVEN": 101,
+    "DOWN": 164,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 7.1,
+    "EVEN": 31.3,
+    "DOWN": 50.8,
+    "ANCHOR": 9
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 9,
+   "breadth": 0.737,
+   "competitiveRatio": 51.6,
+   "winRate": 62.8
+  },
+  {
+   "teamId": "0CDD94A1-39FE-44AE-A9BC-CDB1A87D6F32",
+   "name": "Queens (North Carolina)",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.66,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 76,
+    "UP": 183,
+    "EVEN": 36,
+    "DOWN": 10,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 24,
+    "UP": 57.7,
+    "EVEN": 11.4,
+    "DOWN": 3.2,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 24,
+   "anchorRate": 3.8,
+   "breadth": 0.708,
+   "competitiveRatio": 48.3,
+   "winRate": 39.1
+  },
+  {
+   "teamId": "D2094987-A0F7-44B3-98FA-F4D27157F6C6",
+   "name": "Queens (North Carolina)",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.7,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 122,
+    "UP": 138,
+    "EVEN": 4,
+    "DOWN": 0,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 44.4,
+    "UP": 50.2,
+    "EVEN": 1.5,
+    "DOWN": 0,
+    "ANCHOR": 4
+   },
+   "stretchRate": 44.4,
+   "anchorRate": 4,
+   "breadth": 0.557,
+   "competitiveRatio": 19,
+   "winRate": 15.3
+  }
+ ]
+}

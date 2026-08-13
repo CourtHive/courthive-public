@@ -1,0 +1,571 @@
+{
+ "conference": "Appalachian Athletic Conference",
+ "slug": "appalachian-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 4009,
+   "bands": {
+    "STRETCH": 866,
+    "UP": 1004,
+    "EVEN": 419,
+    "DOWN": 1059,
+    "ANCHOR": 661
+   },
+   "bandPct": {
+    "STRETCH": 21.6,
+    "UP": 25,
+    "EVEN": 10.5,
+    "DOWN": 26.4,
+    "ANCHOR": 16.5
+   },
+   "stretchRate": 21.6,
+   "anchorRate": 16.5,
+   "breadth": 0.971,
+   "competitiveRatio": 28.4,
+   "winRate": 46.5
+  },
+  "inConference": {
+   "matches": 2036,
+   "bands": {
+    "STRETCH": 507,
+    "UP": 424,
+    "EVEN": 174,
+    "DOWN": 424,
+    "ANCHOR": 507
+   },
+   "bandPct": {
+    "STRETCH": 24.9,
+    "UP": 20.8,
+    "EVEN": 8.5,
+    "DOWN": 20.8,
+    "ANCHOR": 24.9
+   },
+   "stretchRate": 24.9,
+   "anchorRate": 24.9,
+   "breadth": 0.967,
+   "competitiveRatio": 22.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1973,
+   "bands": {
+    "STRETCH": 359,
+    "UP": 580,
+    "EVEN": 245,
+    "DOWN": 635,
+    "ANCHOR": 154
+   },
+   "bandPct": {
+    "STRETCH": 18.2,
+    "UP": 29.4,
+    "EVEN": 12.4,
+    "DOWN": 32.2,
+    "ANCHOR": 7.8
+   },
+   "stretchRate": 18.2,
+   "anchorRate": 7.8,
+   "breadth": 0.928,
+   "competitiveRatio": 34.8,
+   "winRate": 42.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 24.9,
+  "nonConference": 18.2,
+  "delta": -6.7,
+  "nonConferenceShare": 49.2
+ },
+ "members": [
+  {
+   "teamId": "7A48B983-1F21-4236-83D9-945071A0B1DE",
+   "name": "Tennessee Wesleyan",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 21.22,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 47,
+    "EVEN": 50,
+    "DOWN": 77,
+    "ANCHOR": 140
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15,
+    "EVEN": 15.9,
+    "DOWN": 24.5,
+    "ANCHOR": 44.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 44.6,
+   "breadth": 0.796,
+   "competitiveRatio": 30.9,
+   "winRate": 72.9
+  },
+  {
+   "teamId": "4E076F4E-F32C-49F4-B3DC-F479D2D2F67D",
+   "name": "Milligan (Tenn.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 19.63,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 81,
+    "EVEN": 26,
+    "DOWN": 125,
+    "ANCHOR": 52
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 26.3,
+    "EVEN": 8.4,
+    "DOWN": 40.6,
+    "ANCHOR": 16.9
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 16.9,
+   "breadth": 0.885,
+   "competitiveRatio": 39.6,
+   "winRate": 50.3
+  },
+  {
+   "teamId": "32B59445-B92A-401C-81D0-D68733B12157",
+   "name": "Milligan (Tenn.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.36,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 85,
+    "EVEN": 36,
+    "DOWN": 127,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.9,
+    "UP": 28.1,
+    "EVEN": 11.9,
+    "DOWN": 42.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.9,
+   "anchorRate": 0,
+   "breadth": 0.797,
+   "competitiveRatio": 32,
+   "winRate": 42.4
+  },
+  {
+   "teamId": "4ABD5EE2-4DCD-41DA-9933-AED1BF71FB1C",
+   "name": "Johnson (Tenn.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.09,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 90,
+    "EVEN": 24,
+    "DOWN": 95,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 21.3,
+    "UP": 30.4,
+    "EVEN": 8.1,
+    "DOWN": 32.1,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 21.3,
+   "anchorRate": 8.1,
+   "breadth": 0.909,
+   "competitiveRatio": 26.4,
+   "winRate": 38.2
+  },
+  {
+   "teamId": "9C3B8714-496A-45B8-B413-B7E6D60ACC56",
+   "name": "Tennessee Wesleyan",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 11.91,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 88,
+    "ANCHOR": 198
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 30.8,
+    "ANCHOR": 69.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 69.2,
+   "breadth": 0.384,
+   "competitiveRatio": 31.5,
+   "winRate": 83.6
+  },
+  {
+   "teamId": "94744393-EB96-47BC-B015-D83BAEE88B1C",
+   "name": "Johnson (Tenn.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.25,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 53,
+    "EVEN": 55,
+    "DOWN": 104,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 19.5,
+    "UP": 19.1,
+    "EVEN": 19.9,
+    "DOWN": 37.5,
+    "ANCHOR": 4
+   },
+   "stretchRate": 19.5,
+   "anchorRate": 4,
+   "breadth": 0.902,
+   "competitiveRatio": 25.4,
+   "winRate": 40.1
+  },
+  {
+   "teamId": "EE68AE1E-6E4D-48FC-A519-6F5F98CCEEC8",
+   "name": "SCAD Atlanta (Ga.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 21.1,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 30,
+    "EVEN": 53,
+    "DOWN": 67,
+    "ANCHOR": 124
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.9,
+    "EVEN": 19.3,
+    "DOWN": 24.5,
+    "ANCHOR": 45.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 45.3,
+   "breadth": 0.785,
+   "competitiveRatio": 26,
+   "winRate": 58
+  },
+  {
+   "teamId": "C20FC346-AB3A-46CF-8EEB-E0F77D408CC8",
+   "name": "Truett McConnell (Ga.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.8,
+   "matches": 244,
+   "bands": {
+    "STRETCH": 79,
+    "UP": 100,
+    "EVEN": 22,
+    "DOWN": 43,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 32.4,
+    "UP": 41,
+    "EVEN": 9,
+    "DOWN": 17.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 32.4,
+   "anchorRate": 0,
+   "breadth": 0.779,
+   "competitiveRatio": 18.4,
+   "winRate": 24.6
+  },
+  {
+   "teamId": "AC44C950-E964-4EF2-9222-CD818E71DC4F",
+   "name": "Brenau (Ga.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.82,
+   "matches": 240,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 45,
+    "EVEN": 29,
+    "DOWN": 118,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 20,
+    "UP": 18.8,
+    "EVEN": 12.1,
+    "DOWN": 49.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 20,
+   "anchorRate": 0,
+   "breadth": 0.771,
+   "competitiveRatio": 32.5,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "8BCDDFBD-D86D-4B55-AC53-21336B66D590",
+   "name": "Truett McConnell (Ga.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 25.58,
+   "matches": 231,
+   "bands": {
+    "STRETCH": 130,
+    "UP": 85,
+    "EVEN": 6,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 56.3,
+    "UP": 36.8,
+    "EVEN": 2.6,
+    "DOWN": 4.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 56.3,
+   "anchorRate": 0,
+   "breadth": 0.573,
+   "competitiveRatio": 19.6,
+   "winRate": 19.5
+  },
+  {
+   "teamId": "E27D992C-77CC-4676-846C-3A613CBBC662",
+   "name": "SCAD Atlanta (Ga.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.61,
+   "matches": 223,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 62,
+    "EVEN": 3,
+    "DOWN": 56,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 18.8,
+    "UP": 27.8,
+    "EVEN": 1.3,
+    "DOWN": 25.1,
+    "ANCHOR": 26.9
+   },
+   "stretchRate": 18.8,
+   "anchorRate": 26.9,
+   "breadth": 0.888,
+   "competitiveRatio": 39.5,
+   "winRate": 50.2
+  },
+  {
+   "teamId": "43A02B7F-DA38-45F6-9743-A40A3CEBF244",
+   "name": "Columbia (S.C.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 24.43,
+   "matches": 198,
+   "bands": {
+    "STRETCH": 93,
+    "UP": 36,
+    "EVEN": 16,
+    "DOWN": 42,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 47,
+    "UP": 18.2,
+    "EVEN": 8.1,
+    "DOWN": 21.2,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 47,
+   "anchorRate": 5.6,
+   "breadth": 0.844,
+   "competitiveRatio": 21.8,
+   "winRate": 35.9
+  },
+  {
+   "teamId": "D20944AD-C6E3-4AF8-A17E-C4EAB68A1004",
+   "name": "Pikeville (Ky.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.5,
+   "matches": 184,
+   "bands": {
+    "STRETCH": 37,
+    "UP": 81,
+    "EVEN": 18,
+    "DOWN": 30,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 44,
+    "EVEN": 9.8,
+    "DOWN": 16.3,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 9.8,
+   "breadth": 0.891,
+   "competitiveRatio": 32.8,
+   "winRate": 50
+  },
+  {
+   "teamId": "BA2C82C0-A5E3-451D-A3D3-5E3D637EEF2E",
+   "name": "Columbia (S.C.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29,
+   "matches": 182,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 51,
+    "EVEN": 32,
+    "DOWN": 37,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 34.1,
+    "UP": 28,
+    "EVEN": 17.6,
+    "DOWN": 20.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 34.1,
+   "anchorRate": 0,
+   "breadth": 0.841,
+   "competitiveRatio": 17.1,
+   "winRate": 35.2
+  },
+  {
+   "teamId": "A6E6C4F2-8F41-4D14-B328-0BE83F01F4E8",
+   "name": "Pikeville (Ky.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 30.27,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 83,
+    "UP": 73,
+    "EVEN": 0,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 49.1,
+    "UP": 43.2,
+    "EVEN": 0,
+    "DOWN": 7.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 49.1,
+   "anchorRate": 0,
+   "breadth": 0.565,
+   "competitiveRatio": 24.3,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "B3207187-966F-4CD9-950B-AAA9C29C68E6",
+   "name": "Montreat (N.C.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.34,
+   "matches": 164,
+   "bands": {
+    "STRETCH": 52,
+    "UP": 42,
+    "EVEN": 35,
+    "DOWN": 12,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 31.7,
+    "UP": 25.6,
+    "EVEN": 21.3,
+    "DOWN": 7.3,
+    "ANCHOR": 14
+   },
+   "stretchRate": 31.7,
+   "anchorRate": 14,
+   "breadth": 0.938,
+   "competitiveRatio": 32.3,
+   "winRate": 34.1
+  },
+  {
+   "teamId": "C1156007-AB78-43A6-9160-D37B8113BB46",
+   "name": "Montreat (N.C.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.21,
+   "matches": 117,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 43,
+    "EVEN": 14,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.5,
+    "UP": 36.8,
+    "EVEN": 12,
+    "DOWN": 12.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.5,
+   "anchorRate": 0,
+   "breadth": 0.778,
+   "competitiveRatio": 23.3,
+   "winRate": 29.1
+  }
+ ]
+}

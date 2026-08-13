@@ -1,0 +1,490 @@
+{
+ "conference": "Mountain East Conference",
+ "slug": "mountain-east-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 3932,
+   "bands": {
+    "STRETCH": 248,
+    "UP": 1294,
+    "EVEN": 479,
+    "DOWN": 1448,
+    "ANCHOR": 463
+   },
+   "bandPct": {
+    "STRETCH": 6.3,
+    "UP": 32.9,
+    "EVEN": 12.2,
+    "DOWN": 36.8,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 6.3,
+   "anchorRate": 11.8,
+   "breadth": 0.88,
+   "competitiveRatio": 40.3,
+   "winRate": 50.7
+  },
+  "inConference": {
+   "matches": 1464,
+   "bands": {
+    "STRETCH": 158,
+    "UP": 512,
+    "EVEN": 124,
+    "DOWN": 512,
+    "ANCHOR": 158
+   },
+   "bandPct": {
+    "STRETCH": 10.8,
+    "UP": 35,
+    "EVEN": 8.5,
+    "DOWN": 35,
+    "ANCHOR": 10.8
+   },
+   "stretchRate": 10.8,
+   "anchorRate": 10.8,
+   "breadth": 0.885,
+   "competitiveRatio": 36.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2468,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 782,
+    "EVEN": 355,
+    "DOWN": 936,
+    "ANCHOR": 305
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 31.7,
+    "EVEN": 14.4,
+    "DOWN": 37.9,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 12.4,
+   "breadth": 0.864,
+   "competitiveRatio": 42.4,
+   "winRate": 51.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.8,
+  "nonConference": 3.6,
+  "delta": -7.2,
+  "nonConferenceShare": 62.8
+ },
+ "members": [
+  {
+   "teamId": "F5D4B81F-9E74-44A9-9C30-0308C6428E92",
+   "name": "West Virginia Wesleyan",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.66,
+   "matches": 361,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 104,
+    "EVEN": 48,
+    "DOWN": 179,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 28.8,
+    "EVEN": 13.3,
+    "DOWN": 49.6,
+    "ANCHOR": 5
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 5,
+   "breadth": 0.769,
+   "competitiveRatio": 42.1,
+   "winRate": 49.3
+  },
+  {
+   "teamId": "1040990C-53DD-4182-BD95-FA7DF44C727E",
+   "name": "Charleston (West Virginia)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.8,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 64,
+    "EVEN": 57,
+    "DOWN": 164,
+    "ANCHOR": 68
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.1,
+    "EVEN": 16.1,
+    "DOWN": 46.5,
+    "ANCHOR": 19.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.3,
+   "breadth": 0.794,
+   "competitiveRatio": 38.5,
+   "winRate": 68
+  },
+  {
+   "teamId": "4E9025B5-2A47-4D37-83DD-9EBA44A8D822",
+   "name": "Charleston (West Virginia)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.69,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 26,
+    "DOWN": 161,
+    "ANCHOR": 103
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 17.4,
+    "EVEN": 7.4,
+    "DOWN": 45.9,
+    "ANCHOR": 29.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.3,
+   "breadth": 0.754,
+   "competitiveRatio": 41.6,
+   "winRate": 69.5
+  },
+  {
+   "teamId": "41986E6D-89C2-4166-9372-8A5BC44D2944",
+   "name": "West Virginia Wesleyan",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.45,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 97,
+    "EVEN": 50,
+    "DOWN": 141,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 27.6,
+    "EVEN": 14.2,
+    "DOWN": 40.2,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 16.2,
+   "breadth": 0.848,
+   "competitiveRatio": 47.9,
+   "winRate": 60.7
+  },
+  {
+   "teamId": "78102B71-132C-4B27-975D-E1A7D51321A9",
+   "name": "Fairmont State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.6,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 67,
+    "EVEN": 39,
+    "DOWN": 199,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.1,
+    "EVEN": 11.7,
+    "DOWN": 59.8,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.4,
+   "breadth": 0.677,
+   "competitiveRatio": 42.9,
+   "winRate": 56.8
+  },
+  {
+   "teamId": "62C9F048-444B-433A-9F36-6A2C68A1F8BA",
+   "name": "Fairmont State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.62,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 71,
+    "EVEN": 55,
+    "DOWN": 165,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.8,
+    "EVEN": 16.9,
+    "DOWN": 50.8,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.5,
+   "breadth": 0.754,
+   "competitiveRatio": 49.8,
+   "winRate": 62.8
+  },
+  {
+   "teamId": "FFE7636C-8A1E-425D-AE82-1CA399D6BA3B",
+   "name": "Frostburg State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.7,
+   "matches": 306,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 94,
+    "EVEN": 40,
+    "DOWN": 139,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.7,
+    "EVEN": 13.1,
+    "DOWN": 45.4,
+    "ANCHOR": 10.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.8,
+   "breadth": 0.762,
+   "competitiveRatio": 33.1,
+   "winRate": 47.4
+  },
+  {
+   "teamId": "ACC574ED-E4E9-4713-BC29-A8ACE8F4B59A",
+   "name": "West Virginia State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.49,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 105,
+    "EVEN": 47,
+    "DOWN": 93,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 36.6,
+    "EVEN": 16.4,
+    "DOWN": 32.4,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 1,
+   "anchorRate": 13.6,
+   "breadth": 0.838,
+   "competitiveRatio": 50.7,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "D4AC52EC-3A8A-4809-AFB1-5FDA02E62BC1",
+   "name": "Davis & Elkins",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.62,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 112,
+    "EVEN": 27,
+    "DOWN": 74,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 6.3,
+    "UP": 39,
+    "EVEN": 9.4,
+    "DOWN": 25.8,
+    "ANCHOR": 19.5
+   },
+   "stretchRate": 6.3,
+   "anchorRate": 19.5,
+   "breadth": 0.889,
+   "competitiveRatio": 39.2,
+   "winRate": 46.3
+  },
+  {
+   "teamId": "E531A0DD-A53B-4ECF-9D02-D37BA1E00448",
+   "name": "Frostburg State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 21.6,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 121,
+    "EVEN": 28,
+    "DOWN": 62,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 10.8,
+    "UP": 46.5,
+    "EVEN": 10.8,
+    "DOWN": 23.8,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 10.8,
+   "anchorRate": 8.1,
+   "breadth": 0.858,
+   "competitiveRatio": 41.3,
+   "winRate": 38.8
+  },
+  {
+   "teamId": "7FF4C6FE-9635-4552-98F8-243C0E483372",
+   "name": "Davis & Elkins",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.22,
+   "matches": 226,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 156,
+    "EVEN": 6,
+    "DOWN": 40,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.6,
+    "UP": 69,
+    "EVEN": 2.7,
+    "DOWN": 17.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.6,
+   "anchorRate": 0,
+   "breadth": 0.557,
+   "competitiveRatio": 35.6,
+   "winRate": 39.8
+  },
+  {
+   "teamId": "635E9AD2-F549-4937-81F3-5891C0713A13",
+   "name": "West Virginia State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.51,
+   "matches": 207,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 132,
+    "EVEN": 33,
+    "DOWN": 21,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 7.2,
+    "UP": 63.8,
+    "EVEN": 15.9,
+    "DOWN": 10.1,
+    "ANCHOR": 2.9
+   },
+   "stretchRate": 7.2,
+   "anchorRate": 2.9,
+   "breadth": 0.686,
+   "competitiveRatio": 39.1,
+   "winRate": 35.3
+  },
+  {
+   "teamId": "78DDE7B2-84DF-425D-83CC-44EF1E616A8F",
+   "name": "West Liberty",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.8,
+   "matches": 147,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 86,
+    "EVEN": 11,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.2,
+    "UP": 58.5,
+    "EVEN": 7.5,
+    "DOWN": 6.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.2,
+   "anchorRate": 0,
+   "breadth": 0.649,
+   "competitiveRatio": 22.6,
+   "winRate": 26.5
+  },
+  {
+   "teamId": "D7F36390-B008-4AF5-8362-F52BF7825CF4",
+   "name": "West Liberty",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 27.08,
+   "matches": 138,
+   "bands": {
+    "STRETCH": 102,
+    "UP": 24,
+    "EVEN": 12,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 73.9,
+    "UP": 17.4,
+    "EVEN": 8.7,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 73.9,
+   "anchorRate": 0,
+   "breadth": 0.46,
+   "competitiveRatio": 10.9,
+   "winRate": 10.9
+  }
+ ]
+}

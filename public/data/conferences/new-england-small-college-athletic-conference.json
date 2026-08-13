@@ -1,0 +1,706 @@
+{
+ "conference": "New England Small College Athletic Conference",
+ "slug": "new-england-small-college-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 22,
+ "fingerprint": {
+  "overall": {
+   "matches": 7321,
+   "bands": {
+    "STRETCH": 688,
+    "UP": 2049,
+    "EVEN": 878,
+    "DOWN": 2673,
+    "ANCHOR": 1033
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 28,
+    "EVEN": 12,
+    "DOWN": 36.5,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 14.1,
+   "breadth": 0.918,
+   "competitiveRatio": 42.9,
+   "winRate": 55.6
+  },
+  "inConference": {
+   "matches": 4292,
+   "bands": {
+    "STRETCH": 609,
+    "UP": 1303,
+    "EVEN": 468,
+    "DOWN": 1303,
+    "ANCHOR": 609
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 30.4,
+    "EVEN": 10.9,
+    "DOWN": 30.4,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 14.2,
+   "breadth": 0.944,
+   "competitiveRatio": 42.2,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3029,
+   "bands": {
+    "STRETCH": 79,
+    "UP": 746,
+    "EVEN": 410,
+    "DOWN": 1370,
+    "ANCHOR": 424
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 24.6,
+    "EVEN": 13.5,
+    "DOWN": 45.2,
+    "ANCHOR": 14
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 14,
+   "breadth": 0.836,
+   "competitiveRatio": 43.9,
+   "winRate": 63.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14.2,
+  "nonConference": 2.6,
+  "delta": -11.6,
+  "nonConferenceShare": 41.4
+ },
+ "members": [
+  {
+   "teamId": "C7628A69-38F4-4AAB-8D63-F93875F61985",
+   "name": "Tufts",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 14.44,
+   "matches": 418,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 0,
+    "EVEN": 17,
+    "DOWN": 276,
+    "ANCHOR": 120
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 0,
+    "EVEN": 4.1,
+    "DOWN": 66,
+    "ANCHOR": 28.7
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 28.7,
+   "breadth": 0.507,
+   "competitiveRatio": 45.2,
+   "winRate": 77.8
+  },
+  {
+   "teamId": "1FF9FBCD-155E-4F1B-B9FB-FCD7023E02F7",
+   "name": "Bowdoin",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 15.66,
+   "matches": 414,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 67,
+    "EVEN": 48,
+    "DOWN": 228,
+    "ANCHOR": 71
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.2,
+    "EVEN": 11.6,
+    "DOWN": 55.1,
+    "ANCHOR": 17.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.1,
+   "breadth": 0.73,
+   "competitiveRatio": 54.3,
+   "winRate": 73.2
+  },
+  {
+   "teamId": "F6332123-CC97-47AF-89FA-856B30B7A454",
+   "name": "Wesleyan University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 18.82,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 22,
+    "DOWN": 216,
+    "ANCHOR": 139
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 5.8,
+    "DOWN": 57.3,
+    "ANCHOR": 36.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 36.9,
+   "breadth": 0.53,
+   "competitiveRatio": 38.2,
+   "winRate": 80.6
+  },
+  {
+   "teamId": "EFC22500-A827-4C9B-9AF2-7E92772F1278",
+   "name": "Middlebury",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.61,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 113,
+    "EVEN": 44,
+    "DOWN": 154,
+    "ANCHOR": 61
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.4,
+    "EVEN": 11.8,
+    "DOWN": 41.4,
+    "ANCHOR": 16.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.4,
+   "breadth": 0.793,
+   "competitiveRatio": 43.7,
+   "winRate": 72.6
+  },
+  {
+   "teamId": "C8751F63-774D-407A-AA58-883A97C0EF6C",
+   "name": "Amherst College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.71,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 76,
+    "EVEN": 95,
+    "DOWN": 112,
+    "ANCHOR": 75
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.2,
+    "EVEN": 26.5,
+    "DOWN": 31.3,
+    "ANCHOR": 20.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.9,
+   "breadth": 0.853,
+   "competitiveRatio": 43,
+   "winRate": 59.5
+  },
+  {
+   "teamId": "A6781640-2892-47BB-8369-844E5B39C90A",
+   "name": "Bowdoin",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.23,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 76,
+    "DOWN": 139,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.8,
+    "EVEN": 21.6,
+    "DOWN": 39.5,
+    "ANCHOR": 22.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.2,
+   "breadth": 0.827,
+   "competitiveRatio": 47.9,
+   "winRate": 63.9
+  },
+  {
+   "teamId": "EF7F856A-51BF-482C-803F-C3EBD4E3B44E",
+   "name": "Amherst College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.01,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 40,
+    "EVEN": 38,
+    "DOWN": 210,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.4,
+    "EVEN": 10.8,
+    "DOWN": 59.8,
+    "ANCHOR": 17.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.9,
+   "breadth": 0.686,
+   "competitiveRatio": 50.4,
+   "winRate": 67
+  },
+  {
+   "teamId": "D349A112-A7C9-48ED-AE1B-C86FB936AAA3",
+   "name": "Tufts",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.92,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 78,
+    "EVEN": 79,
+    "DOWN": 88,
+    "ANCHOR": 102
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.5,
+    "EVEN": 22.8,
+    "DOWN": 25.4,
+    "ANCHOR": 29.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.4,
+   "breadth": 0.858,
+   "competitiveRatio": 42.5,
+   "winRate": 65.1
+  },
+  {
+   "teamId": "FD5A2805-D248-481D-9B2E-3905A3DE7C90",
+   "name": "Middlebury",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.66,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 101,
+    "EVEN": 76,
+    "DOWN": 83,
+    "ANCHOR": 83
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.4,
+    "EVEN": 22.2,
+    "DOWN": 24.2,
+    "ANCHOR": 24.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.2,
+   "breadth": 0.858,
+   "competitiveRatio": 39.7,
+   "winRate": 72
+  },
+  {
+   "teamId": "6978A320-AAB3-42AA-9864-EFB6FBC1A7AB",
+   "name": "Connecticut College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.17,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 107,
+    "UP": 129,
+    "EVEN": 18,
+    "DOWN": 72,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 31.7,
+    "UP": 38.2,
+    "EVEN": 5.3,
+    "DOWN": 21.3,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 31.7,
+   "anchorRate": 3.6,
+   "breadth": 0.83,
+   "competitiveRatio": 44.1,
+   "winRate": 33.4
+  },
+  {
+   "teamId": "4224D585-989D-49E5-BB90-33B9A4001921",
+   "name": "Hamilton",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.18,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 93,
+    "EVEN": 36,
+    "DOWN": 150,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 28.4,
+    "EVEN": 11,
+    "DOWN": 45.9,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 9.2,
+   "breadth": 0.831,
+   "competitiveRatio": 46.2,
+   "winRate": 52.3
+  },
+  {
+   "teamId": "D572BFBE-E2B8-44A8-A0DC-D10485148609",
+   "name": "Connecticut College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.35,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 95,
+    "UP": 77,
+    "EVEN": 24,
+    "DOWN": 119,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 29.1,
+    "UP": 23.6,
+    "EVEN": 7.4,
+    "DOWN": 36.5,
+    "ANCHOR": 3.4
+   },
+   "stretchRate": 29.1,
+   "anchorRate": 3.4,
+   "breadth": 0.854,
+   "competitiveRatio": 34.7,
+   "winRate": 38
+  },
+  {
+   "teamId": "6C693FF2-9CF5-4535-8936-F6336F6FB663",
+   "name": "Williams College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 21.97,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 139,
+    "EVEN": 18,
+    "DOWN": 148,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 42.6,
+    "EVEN": 5.5,
+    "DOWN": 45.4,
+    "ANCHOR": 6.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.4,
+   "breadth": 0.658,
+   "competitiveRatio": 43.3,
+   "winRate": 58
+  },
+  {
+   "teamId": "0339E211-A6DA-411B-9C36-76D67768E827",
+   "name": "Williams College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 16.85,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 78,
+    "EVEN": 44,
+    "DOWN": 121,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.7,
+    "EVEN": 14.5,
+    "DOWN": 39.9,
+    "ANCHOR": 19.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.8,
+   "breadth": 0.818,
+   "competitiveRatio": 46,
+   "winRate": 66.3
+  },
+  {
+   "teamId": "0A82B389-6C9B-48CD-B717-F55202228060",
+   "name": "Bates",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.17,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 126,
+    "UP": 140,
+    "EVEN": 24,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 41.7,
+    "UP": 46.4,
+    "EVEN": 7.9,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 41.7,
+   "anchorRate": 0,
+   "breadth": 0.653,
+   "competitiveRatio": 35.4,
+   "winRate": 22.2
+  },
+  {
+   "teamId": "2291AE1E-3B05-4AA3-862D-44EEFDC39A9A",
+   "name": "Colby College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.23,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 137,
+    "EVEN": 42,
+    "DOWN": 77,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 45.5,
+    "EVEN": 14,
+    "DOWN": 25.6,
+    "ANCHOR": 8
+   },
+   "stretchRate": 7,
+   "anchorRate": 8,
+   "breadth": 0.851,
+   "competitiveRatio": 44.9,
+   "winRate": 44.5
+  },
+  {
+   "teamId": "4D673E95-86F4-493F-A34F-B9067B732713",
+   "name": "Trinity (Connecticut)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.87,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 100,
+    "EVEN": 30,
+    "DOWN": 72,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 32.7,
+    "UP": 33.3,
+    "EVEN": 10,
+    "DOWN": 24,
+    "ANCHOR": 0
+   },
+   "stretchRate": 32.7,
+   "anchorRate": 0,
+   "breadth": 0.811,
+   "competitiveRatio": 44.3,
+   "winRate": 41
+  },
+  {
+   "teamId": "BB80B20D-3DE0-493C-A93D-6E8E84528AF2",
+   "name": "Colby College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 22.9,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 123,
+    "EVEN": 18,
+    "DOWN": 120,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 8.1,
+    "UP": 41.4,
+    "EVEN": 6.1,
+    "DOWN": 40.4,
+    "ANCHOR": 4
+   },
+   "stretchRate": 8.1,
+   "anchorRate": 4,
+   "breadth": 0.767,
+   "competitiveRatio": 37.2,
+   "winRate": 48.5
+  },
+  {
+   "teamId": "E43ED867-736B-42B0-8AE0-80753577D5D2",
+   "name": "Hamilton",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.82,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 138,
+    "EVEN": 18,
+    "DOWN": 96,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 46.6,
+    "EVEN": 6.1,
+    "DOWN": 32.4,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 8.1,
+   "breadth": 0.793,
+   "competitiveRatio": 32.8,
+   "winRate": 45.9
+  },
+  {
+   "teamId": "005A62B6-D8F7-4A28-91A8-A0F18DD05FDF",
+   "name": "Bates",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.68,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 84,
+    "UP": 102,
+    "EVEN": 36,
+    "DOWN": 54,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 28.6,
+    "UP": 34.7,
+    "EVEN": 12.2,
+    "DOWN": 18.4,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 28.6,
+   "anchorRate": 6.1,
+   "breadth": 0.91,
+   "competitiveRatio": 44.2,
+   "winRate": 28.9
+  },
+  {
+   "teamId": "2F306551-24B6-46B3-9C1E-E93951BD4C9C",
+   "name": "Trinity (Connecticut)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.92,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 120,
+    "EVEN": 45,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.9,
+    "UP": 41.2,
+    "EVEN": 15.5,
+    "DOWN": 12.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.9,
+   "anchorRate": 0,
+   "breadth": 0.792,
+   "competitiveRatio": 28.5,
+   "winRate": 30.2
+  },
+  {
+   "teamId": "2EC92479-9FA1-402E-9AF3-BDEEA3946799",
+   "name": "Wesleyan University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 17.39,
+   "matches": 288,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 139,
+    "EVEN": 30,
+    "DOWN": 90,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 48.3,
+    "EVEN": 10.4,
+    "DOWN": 31.3,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.1,
+   "breadth": 0.734,
+   "competitiveRatio": 52.1,
+   "winRate": 50.3
+  }
+ ]
+}

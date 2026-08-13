@@ -1,0 +1,571 @@
+{
+ "conference": "College Conference of Illinois and Wisconsin",
+ "slug": "college-conference-of-illinois-and-wisconsin",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5423,
+   "bands": {
+    "STRETCH": 548,
+    "UP": 1893,
+    "EVEN": 623,
+    "DOWN": 1886,
+    "ANCHOR": 473
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 34.9,
+    "EVEN": 11.5,
+    "DOWN": 34.8,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 8.7,
+   "breadth": 0.887,
+   "competitiveRatio": 35.3,
+   "winRate": 52.4
+  },
+  "inConference": {
+   "matches": 2364,
+   "bands": {
+    "STRETCH": 282,
+    "UP": 758,
+    "EVEN": 284,
+    "DOWN": 758,
+    "ANCHOR": 282
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 32.1,
+    "EVEN": 12,
+    "DOWN": 32.1,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 11.9,
+   "breadth": 0.927,
+   "competitiveRatio": 31.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3059,
+   "bands": {
+    "STRETCH": 266,
+    "UP": 1135,
+    "EVEN": 339,
+    "DOWN": 1128,
+    "ANCHOR": 191
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 37.1,
+    "EVEN": 11.1,
+    "DOWN": 36.9,
+    "ANCHOR": 6.2
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 6.2,
+   "breadth": 0.848,
+   "competitiveRatio": 38.5,
+   "winRate": 54.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 11.9,
+  "nonConference": 8.7,
+  "delta": -3.2,
+  "nonConferenceShare": 56.4
+ },
+ "members": [
+  {
+   "teamId": "B3587BFC-EADB-4D32-8B9E-5DE20FDDC246",
+   "name": "Carthage",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.15,
+   "matches": 441,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 42,
+    "EVEN": 18,
+    "DOWN": 281,
+    "ANCHOR": 85
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 9.5,
+    "EVEN": 4.1,
+    "DOWN": 63.7,
+    "ANCHOR": 19.3
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 19.3,
+   "breadth": 0.667,
+   "competitiveRatio": 38.5,
+   "winRate": 73.5
+  },
+  {
+   "teamId": "EFB5EAE0-D712-44E8-A8A5-3AA2C6E59D55",
+   "name": "North Central (IL)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.42,
+   "matches": 429,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 108,
+    "EVEN": 46,
+    "DOWN": 180,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 25.2,
+    "EVEN": 10.7,
+    "DOWN": 42,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 11,
+   "anchorRate": 11.2,
+   "breadth": 0.894,
+   "competitiveRatio": 32.6,
+   "winRate": 60.6
+  },
+  {
+   "teamId": "05B6BD55-319B-44EC-8FAA-64AFC76DF63A",
+   "name": "North Central (IL)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.82,
+   "matches": 399,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 118,
+    "EVEN": 12,
+    "DOWN": 185,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 12,
+    "UP": 29.6,
+    "EVEN": 3,
+    "DOWN": 46.4,
+    "ANCHOR": 9
+   },
+   "stretchRate": 12,
+   "anchorRate": 9,
+   "breadth": 0.804,
+   "competitiveRatio": 46.6,
+   "winRate": 66.4
+  },
+  {
+   "teamId": "D0C21565-A8F8-4EFF-84F8-E4CE2CC30F98",
+   "name": "Augustana (IL)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.39,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 172,
+    "EVEN": 24,
+    "DOWN": 153,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 45.6,
+    "EVEN": 6.4,
+    "DOWN": 40.6,
+    "ANCHOR": 4.2
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 4.2,
+   "breadth": 0.71,
+   "competitiveRatio": 43.6,
+   "winRate": 61.8
+  },
+  {
+   "teamId": "4B25CE00-6FA4-4D25-ACF3-DA357929E3B1",
+   "name": "Carthage",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.25,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 72,
+    "EVEN": 58,
+    "DOWN": 168,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.5,
+    "EVEN": 16.5,
+    "DOWN": 47.7,
+    "ANCHOR": 15.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.3,
+   "breadth": 0.784,
+   "competitiveRatio": 29,
+   "winRate": 55.7
+  },
+  {
+   "teamId": "EE9AA9DC-E94B-4058-AC20-932D81E84FC2",
+   "name": "Wheaton College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.7,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 95,
+    "EVEN": 58,
+    "DOWN": 136,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.5,
+    "EVEN": 16.8,
+    "DOWN": 39.4,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.2,
+   "breadth": 0.818,
+   "competitiveRatio": 32.8,
+   "winRate": 73
+  },
+  {
+   "teamId": "F4EEACDE-9F96-4C17-92AF-6413ACE8C83D",
+   "name": "Carroll (WI)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.38,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 44,
+    "UP": 168,
+    "EVEN": 60,
+    "DOWN": 62,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 12.8,
+    "UP": 48.7,
+    "EVEN": 17.4,
+    "DOWN": 18,
+    "ANCHOR": 3.2
+   },
+   "stretchRate": 12.8,
+   "anchorRate": 3.2,
+   "breadth": 0.83,
+   "competitiveRatio": 41.2,
+   "winRate": 49.3
+  },
+  {
+   "teamId": "C5EC42A9-79AB-4D05-9E07-01B78ADBCBC0",
+   "name": "North Park",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.26,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 222,
+    "EVEN": 18,
+    "DOWN": 97,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 64.7,
+    "EVEN": 5.2,
+    "DOWN": 28.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 0,
+   "breadth": 0.537,
+   "competitiveRatio": 35.9,
+   "winRate": 54.2
+  },
+  {
+   "teamId": "1BE285C7-8DB2-4639-AABD-50943FFA8C21",
+   "name": "Wheaton College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.5,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 171,
+    "EVEN": 44,
+    "DOWN": 55,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 50.6,
+    "EVEN": 13,
+    "DOWN": 16.3,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 9.5,
+   "breadth": 0.85,
+   "competitiveRatio": 45.9,
+   "winRate": 52.1
+  },
+  {
+   "teamId": "C574FADF-4F88-4864-A02D-4AFD905A0E29",
+   "name": "Augustana (IL)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.48,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 186,
+    "EVEN": 57,
+    "DOWN": 66,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 55.2,
+    "EVEN": 16.9,
+    "DOWN": 19.6,
+    "ANCHOR": 8.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.3,
+   "breadth": 0.717,
+   "competitiveRatio": 36.8,
+   "winRate": 42.7
+  },
+  {
+   "teamId": "59C8A0D6-0CC7-437F-87EB-F7E4493500A5",
+   "name": "Carroll (WI)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.21,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 112,
+    "EVEN": 51,
+    "DOWN": 131,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.7,
+    "EVEN": 15.4,
+    "DOWN": 39.5,
+    "ANCHOR": 11.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.4,
+   "breadth": 0.789,
+   "competitiveRatio": 36.8,
+   "winRate": 48.8
+  },
+  {
+   "teamId": "A64C8AA1-DCA0-4891-8AEB-4798DC8404C4",
+   "name": "Illinois Wesleyan",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.74,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 131,
+    "EVEN": 36,
+    "DOWN": 103,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 8.5,
+    "UP": 41.1,
+    "EVEN": 11.3,
+    "DOWN": 32.3,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 8.5,
+   "anchorRate": 6.9,
+   "breadth": 0.851,
+   "competitiveRatio": 30.6,
+   "winRate": 43.3
+  },
+  {
+   "teamId": "485AAEAD-041C-4A99-A260-C2ABD2386DA2",
+   "name": "Illinois Wesleyan",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.14,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 78,
+    "DOWN": 148,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.8,
+    "EVEN": 24.6,
+    "DOWN": 46.7,
+    "ANCHOR": 12.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.9,
+   "breadth": 0.781,
+   "competitiveRatio": 34.2,
+   "winRate": 47.3
+  },
+  {
+   "teamId": "5024063B-91DC-40A4-9DAE-EA8BAF511FBD",
+   "name": "Millikin",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.82,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 98,
+    "EVEN": 30,
+    "DOWN": 108,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 38.9,
+    "EVEN": 11.9,
+    "DOWN": 42.9,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 4,
+   "anchorRate": 2.4,
+   "breadth": 0.746,
+   "competitiveRatio": 36.1,
+   "winRate": 50.8
+  },
+  {
+   "teamId": "3222C8C7-280F-4F48-866F-D2D989ED3582",
+   "name": "Millikin",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.01,
+   "matches": 187,
+   "bands": {
+    "STRETCH": 113,
+    "UP": 55,
+    "EVEN": 19,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 60.4,
+    "UP": 29.4,
+    "EVEN": 10.2,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 60.4,
+   "anchorRate": 0,
+   "breadth": 0.557,
+   "competitiveRatio": 25.4,
+   "winRate": 20.3
+  },
+  {
+   "teamId": "CBEC4F88-A736-448D-9E30-A4485CB1DE54",
+   "name": "Elmhurst",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.89,
+   "matches": 164,
+   "bands": {
+    "STRETCH": 116,
+    "UP": 34,
+    "EVEN": 14,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 70.7,
+    "UP": 20.7,
+    "EVEN": 8.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 70.7,
+   "anchorRate": 0,
+   "breadth": 0.485,
+   "competitiveRatio": 8.5,
+   "winRate": 4.3
+  },
+  {
+   "teamId": "770C59CD-E42E-4EF9-AA21-366E14DE8F40",
+   "name": "Elmhurst",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.65,
+   "matches": 146,
+   "bands": {
+    "STRETCH": 74,
+    "UP": 59,
+    "EVEN": 0,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50.7,
+    "UP": 40.4,
+    "EVEN": 0,
+    "DOWN": 8.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50.7,
+   "anchorRate": 0,
+   "breadth": 0.575,
+   "competitiveRatio": 9.6,
+   "winRate": 6.8
+  }
+ ]
+}

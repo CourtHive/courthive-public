@@ -1,0 +1,409 @@
+{
+ "conference": "Southern Intercollegiate Athletic Conference",
+ "slug": "southern-intercollegiate-athletic-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 2829,
+   "bands": {
+    "STRETCH": 572,
+    "UP": 986,
+    "EVEN": 214,
+    "DOWN": 706,
+    "ANCHOR": 351
+   },
+   "bandPct": {
+    "STRETCH": 20.2,
+    "UP": 34.9,
+    "EVEN": 7.6,
+    "DOWN": 25,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 20.2,
+   "anchorRate": 12.4,
+   "breadth": 0.927,
+   "competitiveRatio": 24.4,
+   "winRate": 41
+  },
+  "inConference": {
+   "matches": 1706,
+   "bands": {
+    "STRETCH": 292,
+    "UP": 500,
+    "EVEN": 122,
+    "DOWN": 500,
+    "ANCHOR": 292
+   },
+   "bandPct": {
+    "STRETCH": 17.1,
+    "UP": 29.3,
+    "EVEN": 7.2,
+    "DOWN": 29.3,
+    "ANCHOR": 17.1
+   },
+   "stretchRate": 17.1,
+   "anchorRate": 17.1,
+   "breadth": 0.94,
+   "competitiveRatio": 22.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1123,
+   "bands": {
+    "STRETCH": 280,
+    "UP": 486,
+    "EVEN": 92,
+    "DOWN": 206,
+    "ANCHOR": 59
+   },
+   "bandPct": {
+    "STRETCH": 24.9,
+    "UP": 43.3,
+    "EVEN": 8.2,
+    "DOWN": 18.3,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 24.9,
+   "anchorRate": 5.3,
+   "breadth": 0.857,
+   "competitiveRatio": 26.9,
+   "winRate": 27.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.1,
+  "nonConference": 24.9,
+  "delta": 7.8,
+  "nonConferenceShare": 39.7
+ },
+ "members": [
+  {
+   "teamId": "CAC1D8D6-57DC-4DF8-B214-5E299BCFEB84",
+   "name": "Spring Hill",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.06,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 171,
+    "EVEN": 46,
+    "DOWN": 127,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.4,
+    "UP": 47.5,
+    "EVEN": 12.8,
+    "DOWN": 35.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.4,
+   "anchorRate": 0,
+   "breadth": 0.697,
+   "competitiveRatio": 23.3,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "A9EAA84A-3622-4A89-ADA4-45F009C5DC3B",
+   "name": "Spring Hill",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.12,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 84,
+    "EVEN": 24,
+    "DOWN": 121,
+    "ANCHOR": 82
+   },
+   "bandPct": {
+    "STRETCH": 11.4,
+    "UP": 23.9,
+    "EVEN": 6.8,
+    "DOWN": 34.5,
+    "ANCHOR": 23.4
+   },
+   "stretchRate": 11.4,
+   "anchorRate": 23.4,
+   "breadth": 0.92,
+   "competitiveRatio": 35.9,
+   "winRate": 51
+  },
+  {
+   "teamId": "5AF95FDB-C98F-4FD3-8E4C-5E17C2D369B8",
+   "name": "Tuskegee",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.56,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 58,
+    "EVEN": 9,
+    "DOWN": 109,
+    "ANCHOR": 140
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 17.7,
+    "EVEN": 2.7,
+    "DOWN": 33.2,
+    "ANCHOR": 42.7
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 42.7,
+   "breadth": 0.78,
+   "competitiveRatio": 24.7,
+   "winRate": 64.6
+  },
+  {
+   "teamId": "85338E3B-56A5-4888-BD28-AFD07BB01D15",
+   "name": "Tuskegee",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.52,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 118,
+    "EVEN": 0,
+    "DOWN": 24,
+    "ANCHOR": 125
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 39.2,
+    "EVEN": 0,
+    "DOWN": 8,
+    "ANCHOR": 41.5
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 41.5,
+   "breadth": 0.733,
+   "competitiveRatio": 23.7,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "AAE1B6EA-E971-4AA3-9C3C-34C2F8853F5C",
+   "name": "Edward Waters University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.91,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 84,
+    "EVEN": 27,
+    "DOWN": 70,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 35.1,
+    "UP": 30.1,
+    "EVEN": 9.7,
+    "DOWN": 25.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 35.1,
+   "anchorRate": 0,
+   "breadth": 0.809,
+   "competitiveRatio": 17.3,
+   "winRate": 20.8
+  },
+  {
+   "teamId": "A0FADA0A-74B4-4413-B0E8-373E3452E988",
+   "name": "Clark Atlanta",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.44,
+   "matches": 242,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 55,
+    "EVEN": 54,
+    "DOWN": 127,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 22.7,
+    "EVEN": 22.3,
+    "DOWN": 52.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 0,
+   "breadth": 0.684,
+   "competitiveRatio": 27.8,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "59287BC4-DFC9-4F41-AB03-0622D5222392",
+   "name": "Albany State University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.8,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 138,
+    "EVEN": 21,
+    "DOWN": 22,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23,
+    "UP": 58.7,
+    "EVEN": 8.9,
+    "DOWN": 9.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23,
+   "anchorRate": 0,
+   "breadth": 0.676,
+   "competitiveRatio": 24.4,
+   "winRate": 51.5
+  },
+  {
+   "teamId": "589A8C26-4823-45C9-8572-67C87C838A48",
+   "name": "Benedict",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 23.77,
+   "matches": 206,
+   "bands": {
+    "STRETCH": 139,
+    "UP": 30,
+    "EVEN": 0,
+    "DOWN": 33,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 67.5,
+    "UP": 14.6,
+    "EVEN": 0,
+    "DOWN": 16,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 67.5,
+   "anchorRate": 1.9,
+   "breadth": 0.569,
+   "competitiveRatio": 27.1,
+   "winRate": 33
+  },
+  {
+   "teamId": "C617D794-227B-453A-B1DC-0D0129DCADF8",
+   "name": "Benedict",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.63,
+   "matches": 202,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 76,
+    "EVEN": 27,
+    "DOWN": 56,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.3,
+    "UP": 37.6,
+    "EVEN": 13.4,
+    "DOWN": 27.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.3,
+   "anchorRate": 0,
+   "breadth": 0.821,
+   "competitiveRatio": 23.3,
+   "winRate": 48
+  },
+  {
+   "teamId": "FCA6D4AE-6FAC-498D-BBFB-5338AFBD7628",
+   "name": "Savannah State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 29.46,
+   "matches": 177,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 133,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.5,
+    "UP": 75.1,
+    "EVEN": 3.4,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.5,
+   "anchorRate": 0,
+   "breadth": 0.41,
+   "competitiveRatio": 20.5,
+   "winRate": 19.8
+  },
+  {
+   "teamId": "CB309567-EFAF-47BD-8E31-9BA62B9E3A42",
+   "name": "LeMoyne-Owen",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 26.89,
+   "matches": 148,
+   "bands": {
+    "STRETCH": 92,
+    "UP": 39,
+    "EVEN": 0,
+    "DOWN": 17,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 62.2,
+    "UP": 26.4,
+    "EVEN": 0,
+    "DOWN": 11.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 62.2,
+   "anchorRate": 0,
+   "breadth": 0.556,
+   "competitiveRatio": 11.5,
+   "winRate": 10.8
+  }
+ ]
+}

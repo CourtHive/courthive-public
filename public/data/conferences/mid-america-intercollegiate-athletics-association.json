@@ -1,0 +1,490 @@
+{
+ "conference": "Mid America Intercollegiate Athletics Association",
+ "slug": "mid-america-intercollegiate-athletics-association",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 4672,
+   "bands": {
+    "STRETCH": 174,
+    "UP": 1398,
+    "EVEN": 649,
+    "DOWN": 1964,
+    "ANCHOR": 487
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 29.9,
+    "EVEN": 13.9,
+    "DOWN": 42,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 10.4,
+   "breadth": 0.844,
+   "competitiveRatio": 46.9,
+   "winRate": 55.9
+  },
+  "inConference": {
+   "matches": 1696,
+   "bands": {
+    "STRETCH": 101,
+    "UP": 682,
+    "EVEN": 130,
+    "DOWN": 682,
+    "ANCHOR": 101
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 40.2,
+    "EVEN": 7.7,
+    "DOWN": 40.2,
+    "ANCHOR": 6
+   },
+   "stretchRate": 6,
+   "anchorRate": 6,
+   "breadth": 0.786,
+   "competitiveRatio": 48.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2976,
+   "bands": {
+    "STRETCH": 73,
+    "UP": 716,
+    "EVEN": 519,
+    "DOWN": 1282,
+    "ANCHOR": 386
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 24.1,
+    "EVEN": 17.4,
+    "DOWN": 43.1,
+    "ANCHOR": 13
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 13,
+   "breadth": 0.849,
+   "competitiveRatio": 45.9,
+   "winRate": 59.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 6,
+  "nonConference": 2.5,
+  "delta": -3.5,
+  "nonConferenceShare": 63.7
+ },
+ "members": [
+  {
+   "teamId": "FF9EBCF8-882E-4FFF-9D76-1E5677B1002C",
+   "name": "Washburn",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.67,
+   "matches": 405,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 54,
+    "DOWN": 222,
+    "ANCHOR": 81
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.9,
+    "EVEN": 13.3,
+    "DOWN": 54.8,
+    "ANCHOR": 20
+   },
+   "stretchRate": 0,
+   "anchorRate": 20,
+   "breadth": 0.729,
+   "competitiveRatio": 52.8,
+   "winRate": 70.9
+  },
+  {
+   "teamId": "AFD4BD45-A066-4E3E-8D4F-22AC4B3912AA",
+   "name": "Northwest Missouri State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.8,
+   "matches": 402,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 34,
+    "EVEN": 82,
+    "DOWN": 235,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 8.5,
+    "EVEN": 20.4,
+    "DOWN": 58.5,
+    "ANCHOR": 12.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.7,
+   "breadth": 0.689,
+   "competitiveRatio": 48.8,
+   "winRate": 65.4
+  },
+  {
+   "teamId": "FAA192E4-2165-48AF-A1CA-773275C3D63A",
+   "name": "Nebraska-Kearney",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23,
+   "matches": 400,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 188,
+    "EVEN": 36,
+    "DOWN": 144,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 47,
+    "EVEN": 9,
+    "DOWN": 36,
+    "ANCHOR": 6
+   },
+   "stretchRate": 2,
+   "anchorRate": 6,
+   "breadth": 0.737,
+   "competitiveRatio": 48.8,
+   "winRate": 64
+  },
+  {
+   "teamId": "FAF37F46-CCD5-4D3C-9B78-1D83CC93D231",
+   "name": "Washburn",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.85,
+   "matches": 388,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 30,
+    "DOWN": 278,
+    "ANCHOR": 62
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 4.6,
+    "EVEN": 7.7,
+    "DOWN": 71.6,
+    "ANCHOR": 16
+   },
+   "stretchRate": 0,
+   "anchorRate": 16,
+   "breadth": 0.542,
+   "competitiveRatio": 43.8,
+   "winRate": 65.5
+  },
+  {
+   "teamId": "BEDB68D3-1E77-45F5-9221-79F1D0795BF6",
+   "name": "Univ. of Nebraska, Kearney",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.1,
+   "matches": 373,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 100,
+    "EVEN": 107,
+    "DOWN": 106,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 26.8,
+    "EVEN": 28.7,
+    "DOWN": 28.4,
+    "ANCHOR": 14.5
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 14.5,
+   "breadth": 0.879,
+   "competitiveRatio": 54.4,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "B7DE02D6-EF20-4D22-88B7-2ACB436F77F8",
+   "name": "Northwest Missouri State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.77,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 113,
+    "DOWN": 151,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.9,
+    "EVEN": 31.4,
+    "DOWN": 41.9,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.7,
+   "breadth": 0.78,
+   "competitiveRatio": 59.2,
+   "winRate": 55.8
+  },
+  {
+   "teamId": "D8EFFE23-2C2D-458D-A4D5-761AA2800F2A",
+   "name": "Northeastern State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.53,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 180,
+    "EVEN": 35,
+    "DOWN": 129,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 51.1,
+    "EVEN": 9.9,
+    "DOWN": 36.6,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 1.4,
+   "breadth": 0.647,
+   "competitiveRatio": 45.2,
+   "winRate": 45.7
+  },
+  {
+   "teamId": "85CD0066-307A-4789-A8C9-BD33928951CD",
+   "name": "Missouri Western",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.97,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 48,
+    "DOWN": 156,
+    "ANCHOR": 82
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.9,
+    "EVEN": 14.3,
+    "DOWN": 46.4,
+    "ANCHOR": 24.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.4,
+   "breadth": 0.784,
+   "competitiveRatio": 38.8,
+   "winRate": 64.9
+  },
+  {
+   "teamId": "9E677EA0-B587-4823-B864-7E1DFB34598B",
+   "name": "Central Oklahoma",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.41,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 42,
+    "EVEN": 51,
+    "DOWN": 193,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.5,
+    "EVEN": 15.2,
+    "DOWN": 57.6,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.6,
+   "breadth": 0.712,
+   "competitiveRatio": 49,
+   "winRate": 61.8
+  },
+  {
+   "teamId": "76C4AD7C-7D8E-4EB7-A165-737A1D5BA610",
+   "name": "Emporia State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.11,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 188,
+    "EVEN": 24,
+    "DOWN": 106,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 57.3,
+    "EVEN": 7.3,
+    "DOWN": 32.3,
+    "ANCHOR": 3
+   },
+   "stretchRate": 0,
+   "anchorRate": 3,
+   "breadth": 0.61,
+   "competitiveRatio": 47,
+   "winRate": 48.2
+  },
+  {
+   "teamId": "9F7EE995-B824-4683-86F5-B2B423299B37",
+   "name": "Fort Hays State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.47,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 69,
+    "UP": 133,
+    "EVEN": 23,
+    "DOWN": 97,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 21,
+    "UP": 40.5,
+    "EVEN": 7,
+    "DOWN": 29.6,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 21,
+   "anchorRate": 1.8,
+   "breadth": 0.816,
+   "competitiveRatio": 29.1,
+   "winRate": 42.1
+  },
+  {
+   "teamId": "9C65CA89-76CF-4C6E-877D-DAED30C58095",
+   "name": "Newman",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.36,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 161,
+    "EVEN": 6,
+    "DOWN": 97,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 53.5,
+    "EVEN": 2,
+    "DOWN": 32.2,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 7,
+   "anchorRate": 5.3,
+   "breadth": 0.696,
+   "competitiveRatio": 40.3,
+   "winRate": 49.8
+  },
+  {
+   "teamId": "53D3180B-2600-4F62-BA0C-3BD57BB6AF7A",
+   "name": "Arkansas-Fort Smith",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.79,
+   "matches": 269,
+   "bands": {
+    "STRETCH": 67,
+    "UP": 136,
+    "EVEN": 34,
+    "DOWN": 26,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 24.9,
+    "UP": 50.6,
+    "EVEN": 12.6,
+    "DOWN": 9.7,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 24.9,
+   "anchorRate": 2.2,
+   "breadth": 0.785,
+   "competitiveRatio": 45.4,
+   "winRate": 32.7
+  },
+  {
+   "teamId": "F2650D98-4EFA-4F79-BA7A-946E99C2F3CE",
+   "name": "Northeastern State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.3,
+   "matches": 95,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 6,
+    "DOWN": 24,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 62.1,
+    "EVEN": 6.3,
+    "DOWN": 25.3,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.3,
+   "breadth": 0.617,
+   "competitiveRatio": 55.8,
+   "winRate": 45.3
+  }
+ ]
+}

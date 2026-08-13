@@ -1,0 +1,219 @@
+{
+ "conference": "Pacific Coast Athletic Conference",
+ "slug": "pacific-coast-athletic-conference",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 4,
+ "fingerprint": {
+  "overall": {
+   "matches": 760,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 205,
+    "EVEN": 129,
+    "DOWN": 276,
+    "ANCHOR": 127
+   },
+   "bandPct": {
+    "STRETCH": 3,
+    "UP": 27,
+    "EVEN": 17,
+    "DOWN": 36.3,
+    "ANCHOR": 16.7
+   },
+   "stretchRate": 3,
+   "anchorRate": 16.7,
+   "breadth": 0.887,
+   "competitiveRatio": 22,
+   "winRate": 52.2
+  },
+  "inConference": {
+   "matches": 162,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 34,
+    "EVEN": 72,
+    "DOWN": 34,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 21,
+    "EVEN": 44.4,
+    "DOWN": 21,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 6.8,
+   "breadth": 0.858,
+   "competitiveRatio": 19.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 598,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 171,
+    "EVEN": 57,
+    "DOWN": 242,
+    "ANCHOR": 116
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 28.6,
+    "EVEN": 9.5,
+    "DOWN": 40.5,
+    "ANCHOR": 19.4
+   },
+   "stretchRate": 2,
+   "anchorRate": 19.4,
+   "breadth": 0.836,
+   "competitiveRatio": 22.7,
+   "winRate": 52.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 6.8,
+  "nonConference": 2,
+  "delta": -4.8,
+  "nonConferenceShare": 78.7
+ },
+ "members": [
+  {
+   "teamId": "4EEB3836-CF8A-492B-B105-E2F00308713E",
+   "name": "San Diego City",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.97,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 60,
+    "EVEN": 69,
+    "DOWN": 133,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.3,
+    "EVEN": 23.3,
+    "DOWN": 44.9,
+    "ANCHOR": 11.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.5,
+   "breadth": 0.79,
+   "competitiveRatio": 22,
+   "winRate": 64.2
+  },
+  {
+   "teamId": "B5CC4E1D-5E03-4EE7-80F5-41ED44C63C29",
+   "name": "San Diego City",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 23.71,
+   "matches": 211,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 0,
+    "DOWN": 91,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.7,
+    "EVEN": 0,
+    "DOWN": 43.1,
+    "ANCHOR": 34.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 34.1,
+   "breadth": 0.663,
+   "competitiveRatio": 22.7,
+   "winRate": 60.2
+  },
+  {
+   "teamId": "3A08C6DE-C70B-4802-9FC3-5A14B0EAA355",
+   "name": "Grossmont",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.57,
+   "matches": 156,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 29,
+    "EVEN": 54,
+    "DOWN": 52,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.6,
+    "EVEN": 34.6,
+    "DOWN": 33.3,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.5,
+   "breadth": 0.818,
+   "competitiveRatio": 26.6,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "D9476126-4E20-48FC-B301-369CC8743F27",
+   "name": "Southwestern Community College",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.73,
+   "matches": 97,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 68,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23.7,
+    "UP": 70.1,
+    "EVEN": 6.2,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23.7,
+   "anchorRate": 0,
+   "breadth": 0.474,
+   "competitiveRatio": 13.4,
+   "winRate": 10.3
+  }
+ ]
+}

@@ -1,0 +1,598 @@
+{
+ "conference": "American Southwest Conference",
+ "slug": "american-southwest-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 5243,
+   "bands": {
+    "STRETCH": 892,
+    "UP": 1997,
+    "EVEN": 581,
+    "DOWN": 1296,
+    "ANCHOR": 477
+   },
+   "bandPct": {
+    "STRETCH": 17,
+    "UP": 38.1,
+    "EVEN": 11.1,
+    "DOWN": 24.7,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 17,
+   "anchorRate": 9.1,
+   "breadth": 0.917,
+   "competitiveRatio": 31.2,
+   "winRate": 43.7
+  },
+  "inConference": {
+   "matches": 1836,
+   "bands": {
+    "STRETCH": 203,
+    "UP": 632,
+    "EVEN": 166,
+    "DOWN": 632,
+    "ANCHOR": 203
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 34.4,
+    "EVEN": 9,
+    "DOWN": 34.4,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 11.1,
+   "breadth": 0.894,
+   "competitiveRatio": 33.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3407,
+   "bands": {
+    "STRETCH": 689,
+    "UP": 1365,
+    "EVEN": 415,
+    "DOWN": 664,
+    "ANCHOR": 274
+   },
+   "bandPct": {
+    "STRETCH": 20.2,
+    "UP": 40.1,
+    "EVEN": 12.2,
+    "DOWN": 19.5,
+    "ANCHOR": 8
+   },
+   "stretchRate": 20.2,
+   "anchorRate": 8,
+   "breadth": 0.912,
+   "competitiveRatio": 30,
+   "winRate": 40.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 11.1,
+  "nonConference": 20.2,
+  "delta": 9.1,
+  "nonConferenceShare": 65
+ },
+ "members": [
+  {
+   "teamId": "737ED4D4-0D9F-457C-9F65-8159B0007082",
+   "name": "Hardin-Simmons",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.45,
+   "matches": 381,
+   "bands": {
+    "STRETCH": 52,
+    "UP": 181,
+    "EVEN": 24,
+    "DOWN": 70,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 13.6,
+    "UP": 47.5,
+    "EVEN": 6.3,
+    "DOWN": 18.4,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 13.6,
+   "anchorRate": 14.2,
+   "breadth": 0.862,
+   "competitiveRatio": 38.3,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "9CF83A52-7576-4C62-95A0-CECAD6CAF7B3",
+   "name": "East Texas Baptist",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.93,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 100,
+    "EVEN": 48,
+    "DOWN": 115,
+    "ANCHOR": 71
+   },
+   "bandPct": {
+    "STRETCH": 5.1,
+    "UP": 28.4,
+    "EVEN": 13.6,
+    "DOWN": 32.7,
+    "ANCHOR": 20.2
+   },
+   "stretchRate": 5.1,
+   "anchorRate": 20.2,
+   "breadth": 0.913,
+   "competitiveRatio": 41.5,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "ED00A8D2-FA8E-4C7B-96C1-AEE1B9C9A3DD",
+   "name": "Concordia University Texas",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.54,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 82,
+    "UP": 118,
+    "EVEN": 27,
+    "DOWN": 60,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 24.6,
+    "UP": 35.4,
+    "EVEN": 8.1,
+    "DOWN": 18,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 24.6,
+   "anchorRate": 13.8,
+   "breadth": 0.931,
+   "competitiveRatio": 32.7,
+   "winRate": 57.1
+  },
+  {
+   "teamId": "C71EA5E4-E3E3-450F-ADE6-B317E513251E",
+   "name": "Hardin-Simmons",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.54,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 163,
+    "EVEN": 49,
+    "DOWN": 54,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 12.8,
+    "UP": 49.7,
+    "EVEN": 14.9,
+    "DOWN": 16.5,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 12.8,
+   "anchorRate": 6.1,
+   "breadth": 0.846,
+   "competitiveRatio": 33.8,
+   "winRate": 41.5
+  },
+  {
+   "teamId": "EC847BA8-20A8-45BA-A19C-25E8AEAAADB8",
+   "name": "Ozarks (Arkansas)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.08,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 111,
+    "EVEN": 63,
+    "DOWN": 61,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 35.8,
+    "EVEN": 20.3,
+    "DOWN": 19.7,
+    "ANCHOR": 18.4
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 18.4,
+   "breadth": 0.925,
+   "competitiveRatio": 36.8,
+   "winRate": 46.5
+  },
+  {
+   "teamId": "A8076A93-BB12-4DEA-A39F-0210222E45CD",
+   "name": "LeTourneau",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.79,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 180,
+    "EVEN": 30,
+    "DOWN": 91,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 58.6,
+    "EVEN": 9.8,
+    "DOWN": 29.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2,
+   "anchorRate": 0,
+   "breadth": 0.607,
+   "competitiveRatio": 29.1,
+   "winRate": 48.2
+  },
+  {
+   "teamId": "783F1ECF-A7D5-473F-802B-6269A5F949F7",
+   "name": "LeTourneau",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.81,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 148,
+    "EVEN": 48,
+    "DOWN": 77,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 49.3,
+    "EVEN": 16,
+    "DOWN": 25.7,
+    "ANCHOR": 9
+   },
+   "stretchRate": 0,
+   "anchorRate": 9,
+   "breadth": 0.75,
+   "competitiveRatio": 40.7,
+   "winRate": 43.3
+  },
+  {
+   "teamId": "20473277-41B4-4788-BDD1-7DC637A19DC7",
+   "name": "Mary Hardin-Baylor",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.99,
+   "matches": 295,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 39,
+    "EVEN": 6,
+    "DOWN": 173,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 13.2,
+    "EVEN": 2,
+    "DOWN": 58.6,
+    "ANCHOR": 22
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 22,
+   "breadth": 0.698,
+   "competitiveRatio": 44.4,
+   "winRate": 53.6
+  },
+  {
+   "teamId": "769CD2F1-CA5A-44C4-8B0D-FA94A2059EFE",
+   "name": "East Texas Baptist",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.39,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 101,
+    "EVEN": 68,
+    "DOWN": 70,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 6.9,
+    "UP": 34.7,
+    "EVEN": 23.4,
+    "DOWN": 24.1,
+    "ANCHOR": 11
+   },
+   "stretchRate": 6.9,
+   "anchorRate": 11,
+   "breadth": 0.917,
+   "competitiveRatio": 31.6,
+   "winRate": 61.5
+  },
+  {
+   "teamId": "D3DCA46B-06D4-4FD1-AC7F-CCE6F1E66F45",
+   "name": "Mary Hardin-Baylor",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.39,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 84,
+    "EVEN": 24,
+    "DOWN": 146,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 29.3,
+    "EVEN": 8.4,
+    "DOWN": 50.9,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 7.3,
+   "breadth": 0.767,
+   "competitiveRatio": 35.1,
+   "winRate": 63.8
+  },
+  {
+   "teamId": "0FCD9FDC-8FD8-439C-884A-ED0DECADDAE1",
+   "name": "McMurry",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.09,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 121,
+    "UP": 88,
+    "EVEN": 0,
+    "DOWN": 70,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43.4,
+    "UP": 31.5,
+    "EVEN": 0,
+    "DOWN": 25.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43.4,
+   "anchorRate": 0,
+   "breadth": 0.667,
+   "competitiveRatio": 16.5,
+   "winRate": 24
+  },
+  {
+   "teamId": "A586B075-7E45-4382-BE9F-BD56934CD02A",
+   "name": "Concordia University Texas",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.95,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 80,
+    "EVEN": 39,
+    "DOWN": 100,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 28.7,
+    "EVEN": 14,
+    "DOWN": 35.8,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 10.4,
+   "breadth": 0.92,
+   "competitiveRatio": 26.2,
+   "winRate": 55.9
+  },
+  {
+   "teamId": "802DF893-289E-4EAC-BEB1-E0FC97B143C5",
+   "name": "Howard Payne",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.67,
+   "matches": 278,
+   "bands": {
+    "STRETCH": 164,
+    "UP": 69,
+    "EVEN": 35,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 59,
+    "UP": 24.8,
+    "EVEN": 12.6,
+    "DOWN": 3.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 59,
+   "anchorRate": 0,
+   "breadth": 0.645,
+   "competitiveRatio": 27.7,
+   "winRate": 17.6
+  },
+  {
+   "teamId": "699FFAD2-2862-44B6-80DD-3DD6BE43E0A7",
+   "name": "Ozarks (Arkansas)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.14,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 119,
+    "UP": 139,
+    "EVEN": 12,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43.4,
+    "UP": 50.7,
+    "EVEN": 4.4,
+    "DOWN": 1.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43.4,
+   "anchorRate": 0,
+   "breadth": 0.562,
+   "competitiveRatio": 11.7,
+   "winRate": 12.8
+  },
+  {
+   "teamId": "A0A55D0F-A3D1-4CD2-ACE8-8ED2D03AFFF3",
+   "name": "Texas-Dallas",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.9,
+   "matches": 270,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 118,
+    "EVEN": 30,
+    "DOWN": 52,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 15.6,
+    "UP": 43.7,
+    "EVEN": 11.1,
+    "DOWN": 19.3,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 15.6,
+   "anchorRate": 10.4,
+   "breadth": 0.899,
+   "competitiveRatio": 32.6,
+   "winRate": 35.6
+  },
+  {
+   "teamId": "3754A499-1A2E-4C41-9F6B-126CC6826420",
+   "name": "Texas-Dallas",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.92,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 115,
+    "EVEN": 38,
+    "DOWN": 87,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43.1,
+    "EVEN": 14.2,
+    "DOWN": 32.6,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.1,
+   "breadth": 0.769,
+   "competitiveRatio": 33.8,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "89FAE370-0445-4F76-BEEA-C8D63FD38B0D",
+   "name": "Howard Payne",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.1,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 92,
+    "EVEN": 33,
+    "DOWN": 56,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.4,
+    "UP": 42,
+    "EVEN": 15.1,
+    "DOWN": 25.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.4,
+   "anchorRate": 0,
+   "breadth": 0.809,
+   "competitiveRatio": 15.1,
+   "winRate": 29.7
+  },
+  {
+   "teamId": "B10CD4BD-5C68-4AD2-8DEB-2BDB547808B9",
+   "name": "McMurry",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.64,
+   "matches": 193,
+   "bands": {
+    "STRETCH": 115,
+    "UP": 71,
+    "EVEN": 7,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 59.6,
+    "UP": 36.8,
+    "EVEN": 3.6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 59.6,
+   "anchorRate": 0,
+   "breadth": 0.495,
+   "competitiveRatio": 18.1,
+   "winRate": 26.9
+  }
+ ]
+}

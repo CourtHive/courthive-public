@@ -1,0 +1,626 @@
+{
+ "conference": "Lone Star Conference",
+ "slug": "lone-star-conference",
+ "divisions": [
+  "DIV_II",
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 19,
+ "fingerprint": {
+  "overall": {
+   "matches": 6759,
+   "bands": {
+    "STRETCH": 785,
+    "UP": 1935,
+    "EVEN": 912,
+    "DOWN": 2327,
+    "ANCHOR": 800
+   },
+   "bandPct": {
+    "STRETCH": 11.6,
+    "UP": 28.6,
+    "EVEN": 13.5,
+    "DOWN": 34.4,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 11.6,
+   "anchorRate": 11.8,
+   "breadth": 0.931,
+   "competitiveRatio": 41.6,
+   "winRate": 50.9
+  },
+  "inConference": {
+   "matches": 2846,
+   "bands": {
+    "STRETCH": 444,
+    "UP": 750,
+    "EVEN": 458,
+    "DOWN": 750,
+    "ANCHOR": 444
+   },
+   "bandPct": {
+    "STRETCH": 15.6,
+    "UP": 26.4,
+    "EVEN": 16.1,
+    "DOWN": 26.4,
+    "ANCHOR": 15.6
+   },
+   "stretchRate": 15.6,
+   "anchorRate": 15.6,
+   "breadth": 0.98,
+   "competitiveRatio": 41.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3913,
+   "bands": {
+    "STRETCH": 341,
+    "UP": 1185,
+    "EVEN": 454,
+    "DOWN": 1577,
+    "ANCHOR": 356
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 30.3,
+    "EVEN": 11.6,
+    "DOWN": 40.3,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 9.1,
+   "breadth": 0.875,
+   "competitiveRatio": 41.6,
+   "winRate": 51.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 15.6,
+  "nonConference": 8.7,
+  "delta": -6.9,
+  "nonConferenceShare": 57.9
+ },
+ "members": [
+  {
+   "teamId": "65B3C12D-FFBC-48F6-B05F-73E9912FC3BE",
+   "name": "UT Tyler",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.17,
+   "matches": 448,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 78,
+    "DOWN": 207,
+    "ANCHOR": 75
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.6,
+    "EVEN": 17.4,
+    "DOWN": 46.2,
+    "ANCHOR": 16.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.7,
+   "breadth": 0.795,
+   "competitiveRatio": 46,
+   "winRate": 57.4
+  },
+  {
+   "teamId": "04805834-3632-4ECC-8C04-9E72DBF8647D",
+   "name": "Midwestern State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.53,
+   "matches": 443,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 90,
+    "DOWN": 201,
+    "ANCHOR": 68
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 20.3,
+    "DOWN": 45.4,
+    "ANCHOR": 15.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.3,
+   "breadth": 0.799,
+   "competitiveRatio": 40.9,
+   "winRate": 71.6
+  },
+  {
+   "teamId": "3DD228EA-1BE4-4BAC-B86E-F9F1EE7216A2",
+   "name": "UT Tyler",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.48,
+   "matches": 443,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 58,
+    "EVEN": 52,
+    "DOWN": 234,
+    "ANCHOR": 99
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.1,
+    "EVEN": 11.7,
+    "DOWN": 52.8,
+    "ANCHOR": 22.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.3,
+   "breadth": 0.739,
+   "competitiveRatio": 55.3,
+   "winRate": 68.6
+  },
+  {
+   "teamId": "57C507DB-1FCB-41ED-9470-1C688256644B",
+   "name": "Midwestern State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.91,
+   "matches": 432,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 143,
+    "EVEN": 38,
+    "DOWN": 215,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 33.1,
+    "EVEN": 8.8,
+    "DOWN": 49.8,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 6.3,
+   "breadth": 0.734,
+   "competitiveRatio": 60.2,
+   "winRate": 57.9
+  },
+  {
+   "teamId": "B925172A-B0DC-487C-A8F0-8E089D5DA0D2",
+   "name": "Lubbock Christian University",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.28,
+   "matches": 431,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 17,
+    "EVEN": 78,
+    "DOWN": 209,
+    "ANCHOR": 127
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.9,
+    "EVEN": 18.1,
+    "DOWN": 48.5,
+    "ANCHOR": 29.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.5,
+   "breadth": 0.713,
+   "competitiveRatio": 51,
+   "winRate": 67.1
+  },
+  {
+   "teamId": "A85DFA89-656E-4994-B9F0-079C553DFD57",
+   "name": "St. Mary’s (Texas)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.97,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 105,
+    "EVEN": 67,
+    "DOWN": 130,
+    "ANCHOR": 94
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.5,
+    "EVEN": 16.9,
+    "DOWN": 32.8,
+    "ANCHOR": 23.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.7,
+   "breadth": 0.845,
+   "competitiveRatio": 38.1,
+   "winRate": 62.4
+  },
+  {
+   "teamId": "81975D3E-9B70-47CD-9AEE-A5C44B014175",
+   "name": "Angelo State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.29,
+   "matches": 394,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 69,
+    "DOWN": 237,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 17.5,
+    "DOWN": 60.2,
+    "ANCHOR": 22.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.3,
+   "breadth": 0.588,
+   "competitiveRatio": 40.4,
+   "winRate": 71.6
+  },
+  {
+   "teamId": "4974B0B8-13CF-442E-A0C8-C97526D56E4E",
+   "name": "Lubbock Christian University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.79,
+   "matches": 393,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 145,
+    "EVEN": 69,
+    "DOWN": 137,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 36.9,
+    "EVEN": 17.6,
+    "DOWN": 34.9,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 9.2,
+   "breadth": 0.822,
+   "competitiveRatio": 39.9,
+   "winRate": 64.4
+  },
+  {
+   "teamId": "D53F5CFC-83EE-4B8C-9EB0-AC862DF8D4A8",
+   "name": "Texas A&M-Kingsville",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.59,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 159,
+    "EVEN": 48,
+    "DOWN": 142,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44.2,
+    "EVEN": 13.3,
+    "DOWN": 39.4,
+    "ANCHOR": 3.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.1,
+   "breadth": 0.685,
+   "competitiveRatio": 44.2,
+   "winRate": 49.7
+  },
+  {
+   "teamId": "76170EC1-E506-4E6C-B996-C80DCB634E37",
+   "name": "Texas Permian Basin",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.75,
+   "matches": 356,
+   "bands": {
+    "STRETCH": 78,
+    "UP": 118,
+    "EVEN": 41,
+    "DOWN": 90,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 21.9,
+    "UP": 33.1,
+    "EVEN": 11.5,
+    "DOWN": 25.3,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 21.9,
+   "anchorRate": 8.1,
+   "breadth": 0.932,
+   "competitiveRatio": 48.3,
+   "winRate": 55.6
+  },
+  {
+   "teamId": "2D69A0C4-9134-4566-9DE1-703EAB6D1AEB",
+   "name": "Cameron",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.78,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 156,
+    "EVEN": 61,
+    "DOWN": 108,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 45.9,
+    "EVEN": 17.9,
+    "DOWN": 31.8,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.4,
+   "breadth": 0.726,
+   "competitiveRatio": 45,
+   "winRate": 53.8
+  },
+  {
+   "teamId": "C364E62A-85EA-471E-9EF3-3B61C4B67558",
+   "name": "Cameron",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.59,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 95,
+    "EVEN": 27,
+    "DOWN": 165,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 28.3,
+    "EVEN": 8,
+    "DOWN": 49.1,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 11.9,
+   "breadth": 0.782,
+   "competitiveRatio": 53,
+   "winRate": 51.2
+  },
+  {
+   "teamId": "2045F812-6EBE-4907-A51E-A34AADDD66B7",
+   "name": "Texas Permian Basin",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.08,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 111,
+    "UP": 144,
+    "EVEN": 31,
+    "DOWN": 27,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 33,
+    "UP": 42.9,
+    "EVEN": 9.2,
+    "DOWN": 8,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 33,
+   "anchorRate": 6.8,
+   "breadth": 0.83,
+   "competitiveRatio": 35.7,
+   "winRate": 38.1
+  },
+  {
+   "teamId": "D685196A-BD6B-4DAB-BE86-04828FADAAFF",
+   "name": "Arkansas-Fort Smith",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.02,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 101,
+    "UP": 159,
+    "EVEN": 44,
+    "DOWN": 12,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 31.4,
+    "UP": 49.4,
+    "EVEN": 13.7,
+    "DOWN": 3.7,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 31.4,
+   "anchorRate": 1.9,
+   "breadth": 0.734,
+   "competitiveRatio": 30.6,
+   "winRate": 18.9
+  },
+  {
+   "teamId": "B20FE68F-EA90-4A00-8E29-FA360D480E12",
+   "name": "St. Mary’s (Texas)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.74,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 148,
+    "EVEN": 12,
+    "DOWN": 104,
+    "ANCHOR": 52
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46.8,
+    "EVEN": 3.8,
+    "DOWN": 32.9,
+    "ANCHOR": 16.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.5,
+   "breadth": 0.71,
+   "competitiveRatio": 44.6,
+   "winRate": 53.8
+  },
+  {
+   "teamId": "682E2D41-39F2-4E9B-957A-F6C0B3F85E8F",
+   "name": "Western New Mexico University",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.45,
+   "matches": 309,
+   "bands": {
+    "STRETCH": 124,
+    "UP": 114,
+    "EVEN": 40,
+    "DOWN": 21,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 40.1,
+    "UP": 36.9,
+    "EVEN": 12.9,
+    "DOWN": 6.8,
+    "ANCHOR": 3.2
+   },
+   "stretchRate": 40.1,
+   "anchorRate": 3.2,
+   "breadth": 0.803,
+   "competitiveRatio": 40.6,
+   "winRate": 25.9
+  },
+  {
+   "teamId": "13D180A9-64C9-42DA-9E91-DE236B482AF5",
+   "name": "Western New Mexico University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.43,
+   "matches": 295,
+   "bands": {
+    "STRETCH": 119,
+    "UP": 110,
+    "EVEN": 20,
+    "DOWN": 46,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 40.3,
+    "UP": 37.3,
+    "EVEN": 6.8,
+    "DOWN": 15.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 40.3,
+   "anchorRate": 0,
+   "breadth": 0.75,
+   "competitiveRatio": 21.2,
+   "winRate": 19.3
+  },
+  {
+   "teamId": "971ECF51-5F86-474C-8621-DAD996B5A29B",
+   "name": "Sul Ross State",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.42,
+   "matches": 212,
+   "bands": {
+    "STRETCH": 113,
+    "UP": 43,
+    "EVEN": 30,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.3,
+    "UP": 20.3,
+    "EVEN": 14.2,
+    "DOWN": 12.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.3,
+   "anchorRate": 0,
+   "breadth": 0.741,
+   "competitiveRatio": 6.6,
+   "winRate": 5.2
+  },
+  {
+   "teamId": "A3E0D8C9-3BDA-4EB5-BE5B-9DED544684BE",
+   "name": "Sul Ross State",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.3,
+   "matches": 197,
+   "bands": {
+    "STRETCH": 115,
+    "UP": 49,
+    "EVEN": 17,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 58.4,
+    "UP": 24.9,
+    "EVEN": 8.6,
+    "DOWN": 8.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 58.4,
+   "anchorRate": 0,
+   "breadth": 0.668,
+   "competitiveRatio": 4.6,
+   "winRate": 2.5
+  }
+ ]
+}

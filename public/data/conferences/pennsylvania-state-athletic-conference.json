@@ -1,0 +1,598 @@
+{
+ "conference": "Pennsylvania State Athletic Conference",
+ "slug": "pennsylvania-state-athletic-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 5130,
+   "bands": {
+    "STRETCH": 654,
+    "UP": 1886,
+    "EVEN": 751,
+    "DOWN": 1421,
+    "ANCHOR": 418
+   },
+   "bandPct": {
+    "STRETCH": 12.7,
+    "UP": 36.8,
+    "EVEN": 14.6,
+    "DOWN": 27.7,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 12.7,
+   "anchorRate": 8.1,
+   "breadth": 0.914,
+   "competitiveRatio": 31.8,
+   "winRate": 46.2
+  },
+  "inConference": {
+   "matches": 2090,
+   "bands": {
+    "STRETCH": 293,
+    "UP": 586,
+    "EVEN": 332,
+    "DOWN": 586,
+    "ANCHOR": 293
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 28,
+    "EVEN": 15.9,
+    "DOWN": 28,
+    "ANCHOR": 14
+   },
+   "stretchRate": 14,
+   "anchorRate": 14,
+   "breadth": 0.967,
+   "competitiveRatio": 26.2,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3040,
+   "bands": {
+    "STRETCH": 361,
+    "UP": 1300,
+    "EVEN": 419,
+    "DOWN": 835,
+    "ANCHOR": 125
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 42.8,
+    "EVEN": 13.8,
+    "DOWN": 27.5,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 4.1,
+   "breadth": 0.855,
+   "competitiveRatio": 35.6,
+   "winRate": 43.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14,
+  "nonConference": 11.9,
+  "delta": -2.1,
+  "nonConferenceShare": 59.3
+ },
+ "members": [
+  {
+   "teamId": "D5E5B1EE-73E0-44F0-B12B-1412D45C3C48",
+   "name": "Indiana (Pennsylvania)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.11,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 97,
+    "DOWN": 141,
+    "ANCHOR": 84
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.3,
+    "EVEN": 24,
+    "DOWN": 34.9,
+    "ANCHOR": 20.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.8,
+   "breadth": 0.845,
+   "competitiveRatio": 34.2,
+   "winRate": 65.8
+  },
+  {
+   "teamId": "C0A0F94A-46A7-4A21-B8AE-FD6468466A00",
+   "name": "Slippery Rock",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.89,
+   "matches": 364,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 94,
+    "DOWN": 103,
+    "ANCHOR": 106
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.8,
+    "EVEN": 25.8,
+    "DOWN": 28.3,
+    "ANCHOR": 29.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.1,
+   "breadth": 0.848,
+   "competitiveRatio": 29.7,
+   "winRate": 68.4
+  },
+  {
+   "teamId": "F1B8C8C4-D078-440A-9972-38A24E97039B",
+   "name": "California University of Pennsylvania",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.4,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 74,
+    "EVEN": 68,
+    "DOWN": 186,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.4,
+    "EVEN": 18.8,
+    "DOWN": 51.4,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.4,
+   "breadth": 0.747,
+   "competitiveRatio": 33.9,
+   "winRate": 53
+  },
+  {
+   "teamId": "D8DAF457-00F0-464A-A4DB-7BD22BD23DA4",
+   "name": "Edinboro",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.3,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 165,
+    "EVEN": 44,
+    "DOWN": 59,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 49.7,
+    "EVEN": 13.3,
+    "DOWN": 17.8,
+    "ANCHOR": 14.5
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 14.5,
+   "breadth": 0.838,
+   "competitiveRatio": 48.8,
+   "winRate": 60.8
+  },
+  {
+   "teamId": "8D9F73B7-5FF5-4A80-9FAB-DCC09615DDBA",
+   "name": "West Chester",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.25,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 149,
+    "EVEN": 75,
+    "DOWN": 59,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 45.8,
+    "EVEN": 23.1,
+    "DOWN": 18.2,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 1.8,
+   "breadth": 0.822,
+   "competitiveRatio": 34.1,
+   "winRate": 39.7
+  },
+  {
+   "teamId": "96E9D1ED-1027-477E-B0C1-8F4F28620F6D",
+   "name": "East Stroudsburg",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.65,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 68,
+    "DOWN": 182,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.6,
+    "EVEN": 21.1,
+    "DOWN": 56.3,
+    "ANCHOR": 13
+   },
+   "stretchRate": 0,
+   "anchorRate": 13,
+   "breadth": 0.709,
+   "competitiveRatio": 27.6,
+   "winRate": 56.7
+  },
+  {
+   "teamId": "9BA80DDE-1DFB-411F-BEDF-91682D88AF11",
+   "name": "Bloomsburg",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.31,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 68,
+    "EVEN": 48,
+    "DOWN": 140,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 22.1,
+    "EVEN": 15.6,
+    "DOWN": 45.6,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 2,
+   "anchorRate": 14.7,
+   "breadth": 0.833,
+   "competitiveRatio": 34.7,
+   "winRate": 61.9
+  },
+  {
+   "teamId": "4350941D-B1C3-4D6C-879D-6777A2728CF6",
+   "name": "Millersville",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.37,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 124,
+    "EVEN": 82,
+    "DOWN": 75,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 41.1,
+    "EVEN": 27.2,
+    "DOWN": 24.8,
+    "ANCHOR": 2
+   },
+   "stretchRate": 5,
+   "anchorRate": 2,
+   "breadth": 0.803,
+   "competitiveRatio": 33.8,
+   "winRate": 50
+  },
+  {
+   "teamId": "989E9EE7-7183-4E24-BDD4-BE5CACB51729",
+   "name": "Shippensburg",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.79,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 192,
+    "EVEN": 23,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 64.6,
+    "EVEN": 7.7,
+    "DOWN": 17.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 0,
+   "breadth": 0.631,
+   "competitiveRatio": 20.5,
+   "winRate": 27.9
+  },
+  {
+   "teamId": "3B2B7079-5FAD-482A-A054-5233CC051D1B",
+   "name": "Kutztown",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.22,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 97,
+    "EVEN": 0,
+    "DOWN": 129,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 36.2,
+    "EVEN": 0,
+    "DOWN": 48.1,
+    "ANCHOR": 4.5
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 4.5,
+   "breadth": 0.686,
+   "competitiveRatio": 37.7,
+   "winRate": 54.5
+  },
+  {
+   "teamId": "AA097C53-CAE4-42DF-A2BE-B94AB0D806B5",
+   "name": "West Chester",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 23.33,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 111,
+    "UP": 95,
+    "EVEN": 6,
+    "DOWN": 54,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 41.7,
+    "UP": 35.7,
+    "EVEN": 2.3,
+    "DOWN": 20.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 41.7,
+   "anchorRate": 0,
+   "breadth": 0.709,
+   "competitiveRatio": 31.3,
+   "winRate": 21.1
+  },
+  {
+   "teamId": "EE3FC13E-7B5F-4954-A246-96B2286C0A3D",
+   "name": "Millersville",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 23.9,
+   "matches": 265,
+   "bands": {
+    "STRETCH": 101,
+    "UP": 119,
+    "EVEN": 33,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.1,
+    "UP": 44.9,
+    "EVEN": 12.5,
+    "DOWN": 4.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.1,
+   "anchorRate": 0,
+   "breadth": 0.7,
+   "competitiveRatio": 44.9,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "45646E1E-2C5C-4EC1-81D1-99FA9721D0CB",
+   "name": "Edinboro",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.17,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 133,
+    "EVEN": 25,
+    "DOWN": 36,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 18.8,
+    "UP": 51.2,
+    "EVEN": 9.6,
+    "DOWN": 13.8,
+    "ANCHOR": 6.5
+   },
+   "stretchRate": 18.8,
+   "anchorRate": 6.5,
+   "breadth": 0.829,
+   "competitiveRatio": 21.9,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "CDD6CE8D-6348-47AE-9617-C62C54053C0C",
+   "name": "Kutztown",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.42,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 165,
+    "EVEN": 18,
+    "DOWN": 39,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 65.5,
+    "EVEN": 7.1,
+    "DOWN": 15.5,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 2.4,
+   "breadth": 0.663,
+   "competitiveRatio": 17.1,
+   "winRate": 31
+  },
+  {
+   "teamId": "4CD7F448-C50C-48BF-A74C-F722EEC9EE81",
+   "name": "Bloomsburg",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.74,
+   "matches": 244,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 107,
+    "EVEN": 0,
+    "DOWN": 125,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43.9,
+    "EVEN": 0,
+    "DOWN": 51.2,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.9,
+   "breadth": 0.53,
+   "competitiveRatio": 50,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "E32C4614-25F3-4EE3-A78D-3A3E9EA78582",
+   "name": "Lock Haven",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 31.01,
+   "matches": 195,
+   "bands": {
+    "STRETCH": 95,
+    "UP": 59,
+    "EVEN": 41,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 48.7,
+    "UP": 30.3,
+    "EVEN": 21,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 48.7,
+   "anchorRate": 0,
+   "breadth": 0.646,
+   "competitiveRatio": 15.4,
+   "winRate": 28.2
+  },
+  {
+   "teamId": "E640BA47-6756-4288-BF88-18CAE736C6A0",
+   "name": "Seton Hill",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.32,
+   "matches": 182,
+   "bands": {
+    "STRETCH": 51,
+    "UP": 107,
+    "EVEN": 6,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 28,
+    "UP": 58.8,
+    "EVEN": 3.3,
+    "DOWN": 9.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 28,
+   "anchorRate": 0,
+   "breadth": 0.628,
+   "competitiveRatio": 22.1,
+   "winRate": 19.8
+  },
+  {
+   "teamId": "441FEE5F-FA14-4AEE-8488-ED91AD13D2B2",
+   "name": "Clarion",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 30.93,
+   "matches": 182,
+   "bands": {
+    "STRETCH": 91,
+    "UP": 58,
+    "EVEN": 23,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50,
+    "UP": 31.9,
+    "EVEN": 12.6,
+    "DOWN": 5.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50,
+   "anchorRate": 0,
+   "breadth": 0.703,
+   "competitiveRatio": 19.3,
+   "winRate": 16.5
+  }
+ ]
+}

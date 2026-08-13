@@ -11,6 +11,8 @@ import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding'
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderProgramsPage } from 'src/pages/programs/renderProgramsPage';
 import { renderProgramPage } from 'src/pages/program/renderProgramPage';
+import { renderConferencesPage } from 'src/pages/conferences/renderConferencesPage';
+import { renderConferencePage } from 'src/pages/conference/renderConferencePage';
 import { renderProposalRegistration } from 'src/pages/register/renderProposalRegistration';
 import { renderPartnerConfirm } from 'src/pages/register/renderPartnerConfirm';
 import { renderDefaultPage } from 'src/pages/courthive/default';
@@ -18,7 +20,7 @@ import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { CONFERENCE, CONFERENCES, HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -165,6 +167,26 @@ export function router() {
     setDisplay(PROGRAM);
     const container = document.getElementById(PROGRAM);
     if (container) renderProgramPage(container, match?.data?.teamId ?? '');
+  });
+
+  router.on('/conferences', () => {
+    console.log('[router] matched: /conferences (directory)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(CONFERENCES);
+    const container = document.getElementById(CONFERENCES);
+    if (container) renderConferencesPage(container);
+  });
+
+  router.on('/conference/:slug', (match) => {
+    console.log('[router] matched: /conference/:slug', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(CONFERENCE);
+    const container = document.getElementById(CONFERENCE);
+    if (container) renderConferencePage(container, match?.data?.slug ?? '');
   });
 
   router.on('/register/partner/:token', (match) => {

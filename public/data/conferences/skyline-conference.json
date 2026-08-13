@@ -1,0 +1,490 @@
+{
+ "conference": "Skyline Conference",
+ "slug": "skyline-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 3041,
+   "bands": {
+    "STRETCH": 310,
+    "UP": 839,
+    "EVEN": 576,
+    "DOWN": 1061,
+    "ANCHOR": 255
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 27.6,
+    "EVEN": 18.9,
+    "DOWN": 34.9,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 8.4,
+   "breadth": 0.919,
+   "competitiveRatio": 25.6,
+   "winRate": 50.6
+  },
+  "inConference": {
+   "matches": 1554,
+   "bands": {
+    "STRETCH": 147,
+    "UP": 439,
+    "EVEN": 382,
+    "DOWN": 439,
+    "ANCHOR": 147
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 28.2,
+    "EVEN": 24.6,
+    "DOWN": 28.2,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 9.5,
+   "breadth": 0.935,
+   "competitiveRatio": 27,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1487,
+   "bands": {
+    "STRETCH": 163,
+    "UP": 400,
+    "EVEN": 194,
+    "DOWN": 622,
+    "ANCHOR": 108
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 26.9,
+    "EVEN": 13,
+    "DOWN": 41.8,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 11,
+   "anchorRate": 7.3,
+   "breadth": 0.88,
+   "competitiveRatio": 24.1,
+   "winRate": 51.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 9.5,
+  "nonConference": 11,
+  "delta": 1.5,
+  "nonConferenceShare": 48.9
+ },
+ "members": [
+  {
+   "teamId": "B7CA6388-7B28-45F1-A597-E8720C47D4CD",
+   "name": "Farmingdale State",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.9,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 41,
+    "EVEN": 29,
+    "DOWN": 177,
+    "ANCHOR": 59
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 12.7,
+    "EVEN": 9,
+    "DOWN": 54.6,
+    "ANCHOR": 18.2
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 18.2,
+   "breadth": 0.794,
+   "competitiveRatio": 25.1,
+   "winRate": 73.1
+  },
+  {
+   "teamId": "A66A2B61-03BD-4274-AE3B-D8ADC3B92191",
+   "name": "Farmingdale State",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.18,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 86,
+    "DOWN": 138,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.4,
+    "EVEN": 30,
+    "DOWN": 48.1,
+    "ANCHOR": 12.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.5,
+   "breadth": 0.743,
+   "competitiveRatio": 22.3,
+   "winRate": 66.9
+  },
+  {
+   "teamId": "81FD8AEE-7FC3-4EDD-BC35-854084784BD1",
+   "name": "Manhattanville",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.7,
+   "matches": 258,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 29,
+    "EVEN": 35,
+    "DOWN": 109,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 13.2,
+    "UP": 11.2,
+    "EVEN": 13.6,
+    "DOWN": 42.2,
+    "ANCHOR": 19.8
+   },
+   "stretchRate": 13.2,
+   "anchorRate": 19.8,
+   "breadth": 0.912,
+   "competitiveRatio": 25.2,
+   "winRate": 53.5
+  },
+  {
+   "teamId": "916E4CBC-963D-4A8F-960C-B83564CA64D4",
+   "name": "Yeshiva",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.11,
+   "matches": 248,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 51,
+    "EVEN": 62,
+    "DOWN": 78,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 13.7,
+    "UP": 20.6,
+    "EVEN": 25,
+    "DOWN": 31.5,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 13.7,
+   "anchorRate": 9.3,
+   "breadth": 0.95,
+   "competitiveRatio": 35.5,
+   "winRate": 46
+  },
+  {
+   "teamId": "C8BF5CCD-C258-4C4F-8D37-33D6E775EDED",
+   "name": "Manhattanville",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.71,
+   "matches": 227,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 12,
+    "EVEN": 46,
+    "DOWN": 130,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 5.3,
+    "EVEN": 20.3,
+    "DOWN": 57.3,
+    "ANCHOR": 15.9
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 15.9,
+   "breadth": 0.713,
+   "competitiveRatio": 22.2,
+   "winRate": 69.2
+  },
+  {
+   "teamId": "A7F3654E-6084-441D-9F61-D5AD1D41F5AA",
+   "name": "Purchase",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.31,
+   "matches": 210,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 34,
+    "EVEN": 37,
+    "DOWN": 101,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 16.2,
+    "EVEN": 17.6,
+    "DOWN": 48.1,
+    "ANCHOR": 12.9
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 12.9,
+   "breadth": 0.852,
+   "competitiveRatio": 21.9,
+   "winRate": 50
+  },
+  {
+   "teamId": "BAB59113-6D23-45D5-BC2A-0854C2C6BC21",
+   "name": "Sarah Lawrence",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.38,
+   "matches": 204,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 93,
+    "EVEN": 52,
+    "DOWN": 59,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 45.6,
+    "EVEN": 25.5,
+    "DOWN": 28.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.662,
+   "competitiveRatio": 20.8,
+   "winRate": 32.4
+  },
+  {
+   "teamId": "5AC8E9A6-5105-446D-BB2D-A6CF5B535BF5",
+   "name": "Purchase",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.39,
+   "matches": 204,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 81,
+    "EVEN": 53,
+    "DOWN": 70,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.7,
+    "EVEN": 26,
+    "DOWN": 34.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.673,
+   "competitiveRatio": 26,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "D2C6A730-4B56-4BDF-8EBB-6A2FCAB95621",
+   "name": "Merchant Marine",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.53,
+   "matches": 199,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 66,
+    "EVEN": 35,
+    "DOWN": 57,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 9,
+    "UP": 33.2,
+    "EVEN": 17.6,
+    "DOWN": 28.6,
+    "ANCHOR": 11.6
+   },
+   "stretchRate": 9,
+   "anchorRate": 11.6,
+   "breadth": 0.93,
+   "competitiveRatio": 34.7,
+   "winRate": 59.3
+  },
+  {
+   "teamId": "06424952-AFBD-4FAA-A96F-3722AE8CD754",
+   "name": "Mount Saint Mary (NY)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.23,
+   "matches": 188,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 134,
+    "EVEN": 6,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 22.3,
+    "UP": 71.3,
+    "EVEN": 3.2,
+    "DOWN": 3.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 22.3,
+   "anchorRate": 0,
+   "breadth": 0.495,
+   "competitiveRatio": 23.1,
+   "winRate": 21.8
+  },
+  {
+   "teamId": "CAEE51C1-A2FE-425E-A2B3-49DF63576D41",
+   "name": "St. Joseph’s (L.I.)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.16,
+   "matches": 185,
+   "bands": {
+    "STRETCH": 115,
+    "UP": 59,
+    "EVEN": 5,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 62.2,
+    "UP": 31.9,
+    "EVEN": 2.7,
+    "DOWN": 3.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 62.2,
+   "anchorRate": 0,
+   "breadth": 0.54,
+   "competitiveRatio": 15.8,
+   "winRate": 15.7
+  },
+  {
+   "teamId": "80E2B87A-7A9C-4230-9B25-79307A0A1FA1",
+   "name": "St. Joseph’s (L.I.)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.51,
+   "matches": 180,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 79,
+    "EVEN": 32,
+    "DOWN": 69,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43.9,
+    "EVEN": 17.8,
+    "DOWN": 38.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.644,
+   "competitiveRatio": 26.7,
+   "winRate": 51.7
+  },
+  {
+   "teamId": "88F8092A-3BCB-4E06-8E4A-DCDDAC2EE95C",
+   "name": "Mount Saint Mary (NY)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.22,
+   "matches": 172,
+   "bands": {
+    "STRETCH": 35,
+    "UP": 74,
+    "EVEN": 36,
+    "DOWN": 27,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 20.3,
+    "UP": 43,
+    "EVEN": 20.9,
+    "DOWN": 15.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 20.3,
+   "anchorRate": 0,
+   "breadth": 0.811,
+   "competitiveRatio": 29.1,
+   "winRate": 36.6
+  },
+  {
+   "teamId": "103D3C19-CAB0-4786-A096-5E690A4579B7",
+   "name": "Yeshiva",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.96,
+   "matches": 155,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 62,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.1,
+    "EVEN": 40,
+    "DOWN": 21.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.663,
+   "competitiveRatio": 30.3,
+   "winRate": 50.3
+  }
+ ]
+}

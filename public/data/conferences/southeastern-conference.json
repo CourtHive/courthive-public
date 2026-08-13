@@ -1,0 +1,948 @@
+{
+ "conference": "Southeastern Conference",
+ "slug": "southeastern-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 31,
+ "fingerprint": {
+  "overall": {
+   "matches": 12461,
+   "bands": {
+    "STRETCH": 91,
+    "UP": 3373,
+    "EVEN": 2038,
+    "DOWN": 4974,
+    "ANCHOR": 1985
+   },
+   "bandPct": {
+    "STRETCH": 0.7,
+    "UP": 27.1,
+    "EVEN": 16.4,
+    "DOWN": 39.9,
+    "ANCHOR": 15.9
+   },
+   "stretchRate": 0.7,
+   "anchorRate": 15.9,
+   "breadth": 0.836,
+   "competitiveRatio": 48.7,
+   "winRate": 60.3
+  },
+  "inConference": {
+   "matches": 7178,
+   "bands": {
+    "STRETCH": 91,
+    "UP": 2832,
+    "EVEN": 1332,
+    "DOWN": 2832,
+    "ANCHOR": 91
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 39.5,
+    "EVEN": 18.6,
+    "DOWN": 39.5,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 1.3,
+   "breadth": 0.719,
+   "competitiveRatio": 53.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 5283,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 541,
+    "EVEN": 706,
+    "DOWN": 2142,
+    "ANCHOR": 1894
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.2,
+    "EVEN": 13.4,
+    "DOWN": 40.5,
+    "ANCHOR": 35.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 35.9,
+   "breadth": 0.768,
+   "competitiveRatio": 41.5,
+   "winRate": 74.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.3,
+  "nonConference": 0,
+  "delta": -1.3,
+  "nonConferenceShare": 42.4
+ },
+ "members": [
+  {
+   "teamId": "815CD16B-2FD1-48AE-8A26-348A4631FBE3",
+   "name": "Mississippi State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 6.65,
+   "matches": 477,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 17,
+    "EVEN": 78,
+    "DOWN": 264,
+    "ANCHOR": 118
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.6,
+    "EVEN": 16.4,
+    "DOWN": 55.3,
+    "ANCHOR": 24.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.7,
+   "breadth": 0.676,
+   "competitiveRatio": 58.1,
+   "winRate": 69
+  },
+  {
+   "teamId": "2D6CA802-1B4B-429E-9AC5-99AAA96E9AED",
+   "name": "Texas A&M University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.13,
+   "matches": 471,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 224,
+    "EVEN": 66,
+    "DOWN": 148,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 47.6,
+    "EVEN": 14,
+    "DOWN": 31.4,
+    "ANCHOR": 7
+   },
+   "stretchRate": 0,
+   "anchorRate": 7,
+   "breadth": 0.732,
+   "competitiveRatio": 43.3,
+   "winRate": 76.2
+  },
+  {
+   "teamId": "EE4EDB63-EBBA-41BC-B47C-3380F94D02A7",
+   "name": "Louisiana State University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 6.95,
+   "matches": 464,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 44,
+    "EVEN": 54,
+    "DOWN": 223,
+    "ANCHOR": 143
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.5,
+    "EVEN": 11.6,
+    "DOWN": 48.1,
+    "ANCHOR": 30.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 30.8,
+   "breadth": 0.739,
+   "competitiveRatio": 55,
+   "winRate": 58.8
+  },
+  {
+   "teamId": "702D4D29-6636-4F06-A35C-F22E3953AE0C",
+   "name": "Texas A&M University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 6.43,
+   "matches": 461,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 55,
+    "DOWN": 301,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.7,
+    "EVEN": 11.9,
+    "DOWN": 65.3,
+    "ANCHOR": 16.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.1,
+   "breadth": 0.626,
+   "competitiveRatio": 61.2,
+   "winRate": 59.2
+  },
+  {
+   "teamId": "0CA249E7-017A-4C74-A26E-001B1E4F1A7A",
+   "name": "Auburn",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 13.72,
+   "matches": 460,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 96,
+    "DOWN": 228,
+    "ANCHOR": 111
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 5.4,
+    "EVEN": 20.9,
+    "DOWN": 49.6,
+    "ANCHOR": 24.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.1,
+   "breadth": 0.731,
+   "competitiveRatio": 40.4,
+   "winRate": 70.7
+  },
+  {
+   "teamId": "E71BCE99-4132-47AE-8006-5372D54FFDA9",
+   "name": "University of Texas at Austin",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 5.78,
+   "matches": 457,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 63,
+    "DOWN": 282,
+    "ANCHOR": 112
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 13.8,
+    "DOWN": 61.7,
+    "ANCHOR": 24.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.5,
+   "breadth": 0.569,
+   "competitiveRatio": 44.6,
+   "winRate": 77
+  },
+  {
+   "teamId": "4458BC13-C379-4847-B5CC-C752CDEB97BF",
+   "name": "University Of Tennessee, Knoxville",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.2,
+   "matches": 451,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 245,
+    "EVEN": 52,
+    "DOWN": 82,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 54.3,
+    "EVEN": 11.5,
+    "DOWN": 18.2,
+    "ANCHOR": 16
+   },
+   "stretchRate": 0,
+   "anchorRate": 16,
+   "breadth": 0.735,
+   "competitiveRatio": 51.7,
+   "winRate": 62.3
+  },
+  {
+   "teamId": "9B87115C-DEF8-48FB-A3D6-25887547FCBB",
+   "name": "University Of Alabama",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.15,
+   "matches": 445,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 285,
+    "EVEN": 35,
+    "DOWN": 61,
+    "ANCHOR": 55
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 64,
+    "EVEN": 7.9,
+    "DOWN": 13.7,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 2,
+   "anchorRate": 12.4,
+   "breadth": 0.68,
+   "competitiveRatio": 56.2,
+   "winRate": 54.4
+  },
+  {
+   "teamId": "DC80D974-5C75-47D8-A3A3-6361EA0C1C7C",
+   "name": "Auburn",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.4,
+   "matches": 444,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 234,
+    "EVEN": 39,
+    "DOWN": 106,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 52.7,
+    "EVEN": 8.8,
+    "DOWN": 23.9,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.6,
+   "breadth": 0.73,
+   "competitiveRatio": 55.2,
+   "winRate": 60.1
+  },
+  {
+   "teamId": "1A7CEAE0-50E2-4311-84A4-FF857DA8FB42",
+   "name": "University of South Carolina, Columbia",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.08,
+   "matches": 436,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 151,
+    "EVEN": 120,
+    "DOWN": 87,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.6,
+    "EVEN": 27.5,
+    "DOWN": 20,
+    "ANCHOR": 17.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.9,
+   "breadth": 0.84,
+   "competitiveRatio": 52.3,
+   "winRate": 59.4
+  },
+  {
+   "teamId": "4A8E8A56-D2F0-4F62-8CB2-7AEF3A0F71D6",
+   "name": "University Of Arkansas, Fayetteville",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.32,
+   "matches": 435,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 168,
+    "EVEN": 46,
+    "DOWN": 151,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.6,
+    "EVEN": 10.6,
+    "DOWN": 34.7,
+    "ANCHOR": 16.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.1,
+   "breadth": 0.787,
+   "competitiveRatio": 52.6,
+   "winRate": 57
+  },
+  {
+   "teamId": "6B435F63-1B41-4988-B46B-964B883547C5",
+   "name": "University of Kentucky",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.23,
+   "matches": 432,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 108,
+    "EVEN": 131,
+    "DOWN": 128,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 30.3,
+    "DOWN": 29.6,
+    "ANCHOR": 15
+   },
+   "stretchRate": 0,
+   "anchorRate": 15,
+   "breadth": 0.841,
+   "competitiveRatio": 54.9,
+   "winRate": 62.5
+  },
+  {
+   "teamId": "38FA7BCF-AEBC-4BCB-B253-B33A5AB8F7A7",
+   "name": "Vanderbilt",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.42,
+   "matches": 423,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 55,
+    "EVEN": 70,
+    "DOWN": 231,
+    "ANCHOR": 67
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13,
+    "EVEN": 16.5,
+    "DOWN": 54.6,
+    "ANCHOR": 15.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.8,
+   "breadth": 0.736,
+   "competitiveRatio": 48.7,
+   "winRate": 62.4
+  },
+  {
+   "teamId": "592AAFC0-8320-4FB0-8161-842BE0124A4D",
+   "name": "Vanderbilt",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.99,
+   "matches": 415,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 105,
+    "EVEN": 75,
+    "DOWN": 143,
+    "ANCHOR": 92
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.3,
+    "EVEN": 18.1,
+    "DOWN": 34.5,
+    "ANCHOR": 22.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.2,
+   "breadth": 0.844,
+   "competitiveRatio": 53.1,
+   "winRate": 54.2
+  },
+  {
+   "teamId": "DFA05CCB-B8A4-46C7-8921-3D60C8F170D7",
+   "name": "University Of Florida",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.31,
+   "matches": 405,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 74,
+    "EVEN": 60,
+    "DOWN": 210,
+    "ANCHOR": 61
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.3,
+    "EVEN": 14.8,
+    "DOWN": 51.9,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.1,
+   "breadth": 0.758,
+   "competitiveRatio": 57.8,
+   "winRate": 55.8
+  },
+  {
+   "teamId": "50878027-90B4-4884-B6F6-AF89C0CA04D9",
+   "name": "Ole Miss",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.53,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 131,
+    "EVEN": 34,
+    "DOWN": 153,
+    "ANCHOR": 86
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.4,
+    "EVEN": 8.4,
+    "DOWN": 37.9,
+    "ANCHOR": 21.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.3,
+   "breadth": 0.789,
+   "competitiveRatio": 52.7,
+   "winRate": 56.9
+  },
+  {
+   "teamId": "FD366E15-2791-4D95-979D-F7DF9B11EFD1",
+   "name": "University of Texas at Austin",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 13.95,
+   "matches": 397,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 44,
+    "EVEN": 105,
+    "DOWN": 209,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.1,
+    "EVEN": 26.4,
+    "DOWN": 52.6,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.8,
+   "breadth": 0.722,
+   "competitiveRatio": 44.8,
+   "winRate": 66.5
+  },
+  {
+   "teamId": "F81B9E62-3331-41DC-9A41-365B04B4DA5F",
+   "name": "University Of Georgia",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.75,
+   "matches": 393,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 108,
+    "EVEN": 75,
+    "DOWN": 122,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.5,
+    "EVEN": 19.1,
+    "DOWN": 31,
+    "ANCHOR": 22.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.4,
+   "breadth": 0.851,
+   "competitiveRatio": 50.6,
+   "winRate": 60.8
+  },
+  {
+   "teamId": "1C9C888B-631C-4C23-A1B3-C035F56249B4",
+   "name": "University of Oklahoma",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 6.78,
+   "matches": 383,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 63,
+    "DOWN": 205,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7,
+    "EVEN": 16.4,
+    "DOWN": 53.5,
+    "ANCHOR": 23
+   },
+   "stretchRate": 0,
+   "anchorRate": 23,
+   "breadth": 0.718,
+   "competitiveRatio": 53.5,
+   "winRate": 66.3
+  },
+  {
+   "teamId": "420C9573-714B-44EA-91AB-ED4FE98798EB",
+   "name": "University of Oklahoma",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 13.84,
+   "matches": 382,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 84,
+    "DOWN": 220,
+    "ANCHOR": 59
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 5,
+    "EVEN": 22,
+    "DOWN": 57.6,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.4,
+   "breadth": 0.676,
+   "competitiveRatio": 41.6,
+   "winRate": 67.5
+  },
+  {
+   "teamId": "F3141F46-4B84-476D-856F-5CBCA2E05DDD",
+   "name": "Louisiana State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.11,
+   "matches": 381,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 142,
+    "EVEN": 58,
+    "DOWN": 152,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.3,
+    "EVEN": 15.2,
+    "DOWN": 39.9,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.6,
+   "breadth": 0.756,
+   "competitiveRatio": 40,
+   "winRate": 61.2
+  },
+  {
+   "teamId": "C28600A7-313A-4E2D-BE49-5690779C7A85",
+   "name": "University Of Tennessee, Knoxville",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.65,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 112,
+    "EVEN": 109,
+    "DOWN": 122,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.2,
+    "EVEN": 29.4,
+    "DOWN": 32.9,
+    "ANCHOR": 7.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.5,
+   "breadth": 0.797,
+   "competitiveRatio": 49.5,
+   "winRate": 60.6
+  },
+  {
+   "teamId": "17C187D3-5257-444D-BFA9-F6E7E5216DE5",
+   "name": "University Of Georgia",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 12.47,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 313,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 86.5,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.5,
+   "breadth": 0.246,
+   "competitiveRatio": 43.4,
+   "winRate": 74
+  },
+  {
+   "teamId": "F191BC11-69D4-43A8-BDE3-6504436EC00A",
+   "name": "Mississippi State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.1,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 123,
+    "EVEN": 62,
+    "DOWN": 92,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.8,
+    "EVEN": 17.6,
+    "DOWN": 26.1,
+    "ANCHOR": 21.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.5,
+   "breadth": 0.841,
+   "competitiveRatio": 40.5,
+   "winRate": 46.7
+  },
+  {
+   "teamId": "A935994D-8385-43E9-83DC-2C815218A41A",
+   "name": "University Of Alabama",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.31,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 167,
+    "EVEN": 76,
+    "DOWN": 81,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 48.1,
+    "EVEN": 21.9,
+    "DOWN": 23.3,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.6,
+   "breadth": 0.748,
+   "competitiveRatio": 43.2,
+   "winRate": 55.6
+  },
+  {
+   "teamId": "2360C85E-A457-4D04-A247-95EC3C228F3A",
+   "name": "University of Kentucky",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.48,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 142,
+    "EVEN": 93,
+    "DOWN": 64,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 40.9,
+    "EVEN": 26.8,
+    "DOWN": 18.4,
+    "ANCHOR": 11
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 11,
+   "breadth": 0.854,
+   "competitiveRatio": 44.8,
+   "winRate": 49
+  },
+  {
+   "teamId": "8E734A46-A585-4277-8376-701A5246318D",
+   "name": "University of South Carolina, Columbia",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.04,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 103,
+    "EVEN": 56,
+    "DOWN": 157,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.4,
+    "EVEN": 16.5,
+    "DOWN": 46.3,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.8,
+   "breadth": 0.745,
+   "competitiveRatio": 49,
+   "winRate": 56.6
+  },
+  {
+   "teamId": "569E9DF5-C8FA-4BE7-A721-B0F2AA719FB5",
+   "name": "University Of Florida",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.09,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 79,
+    "DOWN": 184,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.2,
+    "EVEN": 23.6,
+    "DOWN": 54.9,
+    "ANCHOR": 14.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.3,
+   "breadth": 0.706,
+   "competitiveRatio": 43.9,
+   "winRate": 55.5
+  },
+  {
+   "teamId": "8C702B8C-9979-4156-B2C4-0A5BAB3EA848",
+   "name": "University Of Missouri",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.66,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 137,
+    "EVEN": 9,
+    "DOWN": 104,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 21.5,
+    "UP": 40.9,
+    "EVEN": 2.7,
+    "DOWN": 31,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 21.5,
+   "anchorRate": 3.9,
+   "breadth": 0.797,
+   "competitiveRatio": 30.5,
+   "winRate": 38.5
+  },
+  {
+   "teamId": "EACF4DD4-4595-4A45-B270-54D5F1B86804",
+   "name": "Ole Miss",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.66,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 163,
+    "EVEN": 17,
+    "DOWN": 109,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 48.9,
+    "EVEN": 5.1,
+    "DOWN": 32.7,
+    "ANCHOR": 13.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.2,
+   "breadth": 0.705,
+   "competitiveRatio": 40.2,
+   "winRate": 54.4
+  },
+  {
+   "teamId": "66E53259-2861-4CC9-87F2-811BDC958A26",
+   "name": "University Of Arkansas, Fayetteville",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.34,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 165,
+    "EVEN": 78,
+    "DOWN": 42,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 51.1,
+    "EVEN": 24.1,
+    "DOWN": 13,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.8,
+   "breadth": 0.748,
+   "competitiveRatio": 39.4,
+   "winRate": 41.8
+  }
+ ]
+}

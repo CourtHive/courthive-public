@@ -1,0 +1,246 @@
+{
+ "conference": "Horizon League Conference",
+ "slug": "horizon-league-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 5,
+ "fingerprint": {
+  "overall": {
+   "matches": 1610,
+   "bands": {
+    "STRETCH": 360,
+    "UP": 698,
+    "EVEN": 195,
+    "DOWN": 265,
+    "ANCHOR": 92
+   },
+   "bandPct": {
+    "STRETCH": 22.4,
+    "UP": 43.4,
+    "EVEN": 12.1,
+    "DOWN": 16.5,
+    "ANCHOR": 5.7
+   },
+   "stretchRate": 22.4,
+   "anchorRate": 5.7,
+   "breadth": 0.878,
+   "competitiveRatio": 41.2,
+   "winRate": 33.2
+  },
+  "inConference": {
+   "matches": 128,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 44,
+    "EVEN": 0,
+    "DOWN": 44,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 15.6,
+    "UP": 34.4,
+    "EVEN": 0,
+    "DOWN": 34.4,
+    "ANCHOR": 15.6
+   },
+   "stretchRate": 15.6,
+   "anchorRate": 15.6,
+   "breadth": 0.817,
+   "competitiveRatio": 31.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1482,
+   "bands": {
+    "STRETCH": 340,
+    "UP": 654,
+    "EVEN": 195,
+    "DOWN": 221,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 22.9,
+    "UP": 44.1,
+    "EVEN": 13.2,
+    "DOWN": 14.9,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 22.9,
+   "anchorRate": 4.9,
+   "breadth": 0.868,
+   "competitiveRatio": 42,
+   "winRate": 31.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 15.6,
+  "nonConference": 22.9,
+  "delta": 7.3,
+  "nonConferenceShare": 92
+ },
+ "members": [
+  {
+   "teamId": "5F6673EC-6D78-47F9-BFCC-04B3434BA826",
+   "name": "Indiana University of Indianapolis",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.88,
+   "matches": 391,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 198,
+    "EVEN": 47,
+    "DOWN": 54,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 9.2,
+    "UP": 50.6,
+    "EVEN": 12,
+    "DOWN": 13.8,
+    "ANCHOR": 14.3
+   },
+   "stretchRate": 9.2,
+   "anchorRate": 14.3,
+   "breadth": 0.852,
+   "competitiveRatio": 56.5,
+   "winRate": 35
+  },
+  {
+   "teamId": "EA1078DE-6DFB-440E-A82A-1A8F2FFDD872",
+   "name": "University of Wisconsin-Milwaukee",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.65,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 91,
+    "EVEN": 115,
+    "DOWN": 121,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 26.1,
+    "EVEN": 33,
+    "DOWN": 34.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6,
+   "anchorRate": 0,
+   "breadth": 0.779,
+   "competitiveRatio": 45.1,
+   "winRate": 39.1
+  },
+  {
+   "teamId": "F023F433-239B-4B42-88F2-FB7AB66450A5",
+   "name": "Chicago State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.57,
+   "matches": 342,
+   "bands": {
+    "STRETCH": 80,
+    "UP": 223,
+    "EVEN": 21,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23.4,
+    "UP": 65.2,
+    "EVEN": 6.1,
+    "DOWN": 5.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23.4,
+   "anchorRate": 0,
+   "breadth": 0.587,
+   "competitiveRatio": 32.3,
+   "winRate": 29.5
+  },
+  {
+   "teamId": "8DD5DCD2-A830-4B06-95CE-15B3A4E1E55C",
+   "name": "Chicago State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 21.29,
+   "matches": 283,
+   "bands": {
+    "STRETCH": 209,
+    "UP": 63,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 73.9,
+    "UP": 22.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 73.9,
+   "anchorRate": 3.9,
+   "breadth": 0.425,
+   "competitiveRatio": 29.3,
+   "winRate": 20.8
+  },
+  {
+   "teamId": "40540BCC-8566-456C-BFBE-EA1289BB5CFC",
+   "name": "Indiana University of Indianapolis",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.71,
+   "matches": 246,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 123,
+    "EVEN": 12,
+    "DOWN": 72,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 50,
+    "EVEN": 4.9,
+    "DOWN": 29.3,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 10.2,
+   "breadth": 0.776,
+   "competitiveRatio": 36.7,
+   "winRate": 41.5
+  }
+ ]
+}

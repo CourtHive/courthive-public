@@ -1,0 +1,652 @@
+{
+ "conference": "Upper Midwest Athletic Conference",
+ "slug": "upper-midwest-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 20,
+ "fingerprint": {
+  "overall": {
+   "matches": 5821,
+   "bands": {
+    "STRETCH": 874,
+    "UP": 2489,
+    "EVEN": 639,
+    "DOWN": 1490,
+    "ANCHOR": 329
+   },
+   "bandPct": {
+    "STRETCH": 15,
+    "UP": 42.8,
+    "EVEN": 11,
+    "DOWN": 25.6,
+    "ANCHOR": 5.7
+   },
+   "stretchRate": 15,
+   "anchorRate": 5.7,
+   "breadth": 0.871,
+   "competitiveRatio": 28.5,
+   "winRate": 42.6
+  },
+  "inConference": {
+   "matches": 1706,
+   "bands": {
+    "STRETCH": 182,
+    "UP": 579,
+    "EVEN": 184,
+    "DOWN": 579,
+    "ANCHOR": 182
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 33.9,
+    "EVEN": 10.8,
+    "DOWN": 33.9,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 10.7,
+   "breadth": 0.902,
+   "competitiveRatio": 22.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4115,
+   "bands": {
+    "STRETCH": 692,
+    "UP": 1910,
+    "EVEN": 455,
+    "DOWN": 911,
+    "ANCHOR": 147
+   },
+   "bandPct": {
+    "STRETCH": 16.8,
+    "UP": 46.4,
+    "EVEN": 11.1,
+    "DOWN": 22.1,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 16.8,
+   "anchorRate": 3.6,
+   "breadth": 0.84,
+   "competitiveRatio": 30.9,
+   "winRate": 39.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.7,
+  "nonConference": 16.8,
+  "delta": 6.1,
+  "nonConferenceShare": 70.7
+ },
+ "members": [
+  {
+   "teamId": "3FF9EA95-300D-4AEE-9EBD-19A58B22D146",
+   "name": "Northwestern-St. Paul",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.89,
+   "matches": 460,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 268,
+    "EVEN": 18,
+    "DOWN": 156,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 58.3,
+    "EVEN": 3.9,
+    "DOWN": 33.9,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 1.3,
+   "breadth": 0.596,
+   "competitiveRatio": 32.4,
+   "winRate": 50.2
+  },
+  {
+   "teamId": "D155CBC3-9723-4A8D-9F55-A65D9739788E",
+   "name": "Northwestern-St. Paul",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.34,
+   "matches": 451,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 269,
+    "EVEN": 18,
+    "DOWN": 134,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6.7,
+    "UP": 59.6,
+    "EVEN": 4,
+    "DOWN": 29.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6.7,
+   "anchorRate": 0,
+   "breadth": 0.607,
+   "competitiveRatio": 31.9,
+   "winRate": 50.1
+  },
+  {
+   "teamId": "01583016-9DDB-400B-AD2B-9689807F9A46",
+   "name": "Wisconsin-Superior",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.2,
+   "matches": 447,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 95,
+    "EVEN": 60,
+    "DOWN": 194,
+    "ANCHOR": 92
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 21.3,
+    "EVEN": 13.4,
+    "DOWN": 43.4,
+    "ANCHOR": 20.6
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 20.6,
+   "breadth": 0.835,
+   "competitiveRatio": 28.9,
+   "winRate": 65.8
+  },
+  {
+   "teamId": "7213F18E-A5C5-4062-996F-45691035C8F2",
+   "name": "Wisconsin-Superior",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.16,
+   "matches": 429,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 177,
+    "EVEN": 56,
+    "DOWN": 106,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 41.3,
+    "EVEN": 13.1,
+    "DOWN": 24.7,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 11.2,
+   "breadth": 0.9,
+   "competitiveRatio": 46.4,
+   "winRate": 49.7
+  },
+  {
+   "teamId": "57935C88-8412-4F04-8A37-78EDC4AB77BD",
+   "name": "Greenville University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.1,
+   "matches": 415,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 105,
+    "EVEN": 60,
+    "DOWN": 206,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 25.3,
+    "EVEN": 14.5,
+    "DOWN": 49.6,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 6.7,
+   "breadth": 0.797,
+   "competitiveRatio": 39.3,
+   "winRate": 65.5
+  },
+  {
+   "teamId": "D600ECC8-59E0-4D60-924A-78294BB5F266",
+   "name": "Greenville University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.11,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 75,
+    "DOWN": 153,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.2,
+    "EVEN": 22.3,
+    "DOWN": 45.5,
+    "ANCHOR": 6
+   },
+   "stretchRate": 0,
+   "anchorRate": 6,
+   "breadth": 0.753,
+   "competitiveRatio": 35.4,
+   "winRate": 58.6
+  },
+  {
+   "teamId": "32DFAC87-87A6-44C7-BF02-B909B3398462",
+   "name": "Webster University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.73,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 92,
+    "UP": 166,
+    "EVEN": 4,
+    "DOWN": 58,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 28.7,
+    "UP": 51.9,
+    "EVEN": 1.3,
+    "DOWN": 18.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 28.7,
+   "anchorRate": 0,
+   "breadth": 0.661,
+   "competitiveRatio": 28.4,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "42AF03BF-7988-4DFD-8A0F-B80ED466ACD7",
+   "name": "Principia",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.95,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 79,
+    "UP": 130,
+    "EVEN": 18,
+    "DOWN": 55,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 26.7,
+    "UP": 43.9,
+    "EVEN": 6.1,
+    "DOWN": 18.6,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 26.7,
+   "anchorRate": 4.7,
+   "breadth": 0.833,
+   "competitiveRatio": 30.7,
+   "winRate": 52
+  },
+  {
+   "teamId": "A9D201BE-DDD9-42E0-98A5-A0400FE883AA",
+   "name": "Webster University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.99,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 53,
+    "UP": 154,
+    "EVEN": 31,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 58.3,
+    "EVEN": 11.7,
+    "DOWN": 9.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 0,
+   "breadth": 0.694,
+   "competitiveRatio": 28,
+   "winRate": 42.4
+  },
+  {
+   "teamId": "9101E045-299B-4DDC-8C8A-5DBF2BD3AE8A",
+   "name": "Crown",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.07,
+   "matches": 262,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 176,
+    "EVEN": 32,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 18.3,
+    "UP": 67.2,
+    "EVEN": 12.2,
+    "DOWN": 2.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 18.3,
+   "anchorRate": 0,
+   "breadth": 0.573,
+   "competitiveRatio": 17.9,
+   "winRate": 12.6
+  },
+  {
+   "teamId": "ECAF5CDD-1A86-49F8-AB72-7CD8C6AB87DD",
+   "name": "MUW",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.46,
+   "matches": 259,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 58,
+    "EVEN": 5,
+    "DOWN": 141,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 2.3,
+    "UP": 22.4,
+    "EVEN": 1.9,
+    "DOWN": 54.4,
+    "ANCHOR": 18.9
+   },
+   "stretchRate": 2.3,
+   "anchorRate": 18.9,
+   "breadth": 0.711,
+   "competitiveRatio": 23.6,
+   "winRate": 36.7
+  },
+  {
+   "teamId": "7AE39286-5153-4100-8A61-D3EC60B1B6DC",
+   "name": "Martin Luther",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.56,
+   "matches": 253,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 120,
+    "EVEN": 44,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 47.4,
+    "EVEN": 17.4,
+    "DOWN": 20.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 0,
+   "breadth": 0.785,
+   "competitiveRatio": 24.9,
+   "winRate": 35.6
+  },
+  {
+   "teamId": "503F11AD-62CB-4922-9F2D-01265D0DBB6C",
+   "name": "Principia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.67,
+   "matches": 250,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 130,
+    "EVEN": 24,
+    "DOWN": 76,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 52,
+    "EVEN": 9.6,
+    "DOWN": 30.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8,
+   "anchorRate": 0,
+   "breadth": 0.702,
+   "competitiveRatio": 24.8,
+   "winRate": 50
+  },
+  {
+   "teamId": "C50690C5-1360-4DE7-98FF-C9568CA5BD14",
+   "name": "Bethany Lutheran",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.81,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 64,
+    "UP": 116,
+    "EVEN": 53,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.7,
+    "UP": 46.6,
+    "EVEN": 21.3,
+    "DOWN": 6.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.7,
+   "anchorRate": 0,
+   "breadth": 0.752,
+   "competitiveRatio": 24.1,
+   "winRate": 20.9
+  },
+  {
+   "teamId": "B0C8DED9-CA7A-4698-B54F-BC8B243B31F0",
+   "name": "Crown",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.94,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 85,
+    "UP": 78,
+    "EVEN": 60,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 37.1,
+    "UP": 34.1,
+    "EVEN": 26.2,
+    "DOWN": 2.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 37.1,
+   "anchorRate": 0,
+   "breadth": 0.734,
+   "competitiveRatio": 19.2,
+   "winRate": 17.9
+  },
+  {
+   "teamId": "9EAFFAFD-DF42-4365-A597-D37B6D4D9742",
+   "name": "Bethany Lutheran",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.41,
+   "matches": 228,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 43,
+    "EVEN": 15,
+    "DOWN": 82,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 18.9,
+    "EVEN": 6.6,
+    "DOWN": 36,
+    "ANCHOR": 31.6
+   },
+   "stretchRate": 7,
+   "anchorRate": 31.6,
+   "breadth": 0.877,
+   "competitiveRatio": 26.3,
+   "winRate": 42.1
+  },
+  {
+   "teamId": "2FE513D1-37E5-4CF8-B775-E7B7C28341BE",
+   "name": "University of Minnesota-Morris",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.47,
+   "matches": 222,
+   "bands": {
+    "STRETCH": 104,
+    "UP": 101,
+    "EVEN": 17,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 46.8,
+    "UP": 45.5,
+    "EVEN": 7.7,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 46.8,
+   "anchorRate": 0,
+   "breadth": 0.566,
+   "competitiveRatio": 18.9,
+   "winRate": 20.3
+  },
+  {
+   "teamId": "A073CE36-C8B9-4305-A8DF-254486CF7B26",
+   "name": "MUW",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.07,
+   "matches": 197,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 108,
+    "EVEN": 49,
+    "DOWN": 22,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 54.8,
+    "EVEN": 24.9,
+    "DOWN": 11.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 0,
+   "breadth": 0.708,
+   "competitiveRatio": 16.8,
+   "winRate": 26.4
+  },
+  {
+   "teamId": "9AF49710-F32E-4497-9F83-FB8576D6D499",
+   "name": "Westminster College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 31.42,
+   "matches": 145,
+   "bands": {
+    "STRETCH": 97,
+    "UP": 48,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 66.9,
+    "UP": 33.1,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 66.9,
+   "anchorRate": 0,
+   "breadth": 0.394,
+   "competitiveRatio": 8.3,
+   "winRate": 4.8
+  },
+  {
+   "teamId": "C37A72A1-5F14-4E01-AEBE-3DF4197D5742",
+   "name": "Westminster College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.47,
+   "matches": 109,
+   "bands": {
+    "STRETCH": 50,
+    "UP": 59,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 45.9,
+    "UP": 54.1,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 45.9,
+   "anchorRate": 0,
+   "breadth": 0.429,
+   "competitiveRatio": 12.8,
+   "winRate": 11.9
+  }
+ ]
+}

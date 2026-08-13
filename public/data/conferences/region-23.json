@@ -1,0 +1,544 @@
+{
+ "conference": "Region 23",
+ "slug": "region-23",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 4313,
+   "bands": {
+    "STRETCH": 829,
+    "UP": 1350,
+    "EVEN": 454,
+    "DOWN": 1261,
+    "ANCHOR": 419
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 31.3,
+    "EVEN": 10.5,
+    "DOWN": 29.2,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 9.7,
+   "breadth": 0.934,
+   "competitiveRatio": 24.4,
+   "winRate": 50.2
+  },
+  "inConference": {
+   "matches": 2144,
+   "bands": {
+    "STRETCH": 259,
+    "UP": 721,
+    "EVEN": 184,
+    "DOWN": 721,
+    "ANCHOR": 259
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 33.6,
+    "EVEN": 8.6,
+    "DOWN": 33.6,
+    "ANCHOR": 12.1
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 12.1,
+   "breadth": 0.904,
+   "competitiveRatio": 25.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2169,
+   "bands": {
+    "STRETCH": 570,
+    "UP": 629,
+    "EVEN": 270,
+    "DOWN": 540,
+    "ANCHOR": 160
+   },
+   "bandPct": {
+    "STRETCH": 26.3,
+    "UP": 29,
+    "EVEN": 12.4,
+    "DOWN": 24.9,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 26.3,
+   "anchorRate": 7.4,
+   "breadth": 0.937,
+   "competitiveRatio": 23.5,
+   "winRate": 50.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 12.1,
+  "nonConference": 26.3,
+  "delta": 14.2,
+  "nonConferenceShare": 50.3
+ },
+ "members": [
+  {
+   "teamId": "AF0E1C85-E6CA-4895-A28D-4B0A9435A722",
+   "name": "Jones",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 22.5,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 96,
+    "EVEN": 0,
+    "DOWN": 163,
+    "ANCHOR": 93
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 25.3,
+    "EVEN": 0,
+    "DOWN": 42.9,
+    "ANCHOR": 24.5
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 24.5,
+   "breadth": 0.775,
+   "competitiveRatio": 27.4,
+   "winRate": 72.9
+  },
+  {
+   "teamId": "CEDECABD-EB5F-48F8-9271-DD8C8BD47C3C",
+   "name": "Copiah-Lincoln",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 24.04,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 58,
+    "UP": 99,
+    "EVEN": 0,
+    "DOWN": 174,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 16.2,
+    "UP": 27.7,
+    "EVEN": 0,
+    "DOWN": 48.7,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 16.2,
+   "anchorRate": 7.3,
+   "breadth": 0.741,
+   "competitiveRatio": 30,
+   "winRate": 49
+  },
+  {
+   "teamId": "97061935-83C3-4DC3-91D9-74810387362D",
+   "name": "Copiah-Lincoln",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28.35,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 76,
+    "EVEN": 35,
+    "DOWN": 153,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 19.4,
+    "UP": 22.4,
+    "EVEN": 10.3,
+    "DOWN": 45,
+    "ANCHOR": 2.9
+   },
+   "stretchRate": 19.4,
+   "anchorRate": 2.9,
+   "breadth": 0.839,
+   "competitiveRatio": 22.4,
+   "winRate": 39.4
+  },
+  {
+   "teamId": "A44E57AB-1A7C-46EF-8D01-6CE7FC6F6400",
+   "name": "Meridian",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.12,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 113,
+    "UP": 56,
+    "EVEN": 81,
+    "DOWN": 57,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 34.1,
+    "UP": 16.9,
+    "EVEN": 24.5,
+    "DOWN": 17.2,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 34.1,
+   "anchorRate": 7.3,
+   "breadth": 0.935,
+   "competitiveRatio": 26.1,
+   "winRate": 42.9
+  },
+  {
+   "teamId": "ABE4483D-2C32-49BE-97D4-B085E073040C",
+   "name": "Hinds",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 27.12,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 70,
+    "UP": 169,
+    "EVEN": 30,
+    "DOWN": 29,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 21.7,
+    "UP": 52.5,
+    "EVEN": 9.3,
+    "DOWN": 9,
+    "ANCHOR": 7.5
+   },
+   "stretchRate": 21.7,
+   "anchorRate": 7.5,
+   "breadth": 0.809,
+   "competitiveRatio": 30.4,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "86782651-255B-4584-95E9-140CEC5F6766",
+   "name": "Mississippi Gulf Coast",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 21.45,
+   "matches": 306,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 53,
+    "EVEN": 30,
+    "DOWN": 65,
+    "ANCHOR": 116
+   },
+   "bandPct": {
+    "STRETCH": 13.7,
+    "UP": 17.3,
+    "EVEN": 9.8,
+    "DOWN": 21.2,
+    "ANCHOR": 37.9
+   },
+   "stretchRate": 13.7,
+   "anchorRate": 37.9,
+   "breadth": 0.932,
+   "competitiveRatio": 29.7,
+   "winRate": 54.6
+  },
+  {
+   "teamId": "4653F5B9-4A5B-49DF-9DE1-BAE4EF38A959",
+   "name": "Jones",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 26.66,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 0,
+    "DOWN": 223,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.2,
+    "EVEN": 0,
+    "DOWN": 75.9,
+    "ANCHOR": 15
+   },
+   "stretchRate": 0,
+   "anchorRate": 15,
+   "breadth": 0.443,
+   "competitiveRatio": 20.1,
+   "winRate": 90.8
+  },
+  {
+   "teamId": "45855932-B3D4-409B-963A-4BF21B37A059",
+   "name": "Hinds",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.49,
+   "matches": 292,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 169,
+    "EVEN": 52,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6.5,
+    "UP": 57.9,
+    "EVEN": 17.8,
+    "DOWN": 17.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6.5,
+   "anchorRate": 0,
+   "breadth": 0.689,
+   "competitiveRatio": 23.4,
+   "winRate": 50.3
+  },
+  {
+   "teamId": "6E08149F-6915-4556-B8BE-C073CD64A854",
+   "name": "Meridian",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 30.47,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 53,
+    "UP": 147,
+    "EVEN": 44,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 18.5,
+    "UP": 51.4,
+    "EVEN": 15.4,
+    "DOWN": 14.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 18.5,
+   "anchorRate": 0,
+   "breadth": 0.761,
+   "competitiveRatio": 25.2,
+   "winRate": 47.2
+  },
+  {
+   "teamId": "09CE2B73-FDBE-4A89-B4C6-AD9FDC794E5E",
+   "name": "Mississippi Gulf Coast",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28.3,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 85,
+    "EVEN": 33,
+    "DOWN": 107,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.4,
+    "UP": 32,
+    "EVEN": 12.4,
+    "DOWN": 40.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.4,
+   "anchorRate": 0,
+   "breadth": 0.794,
+   "competitiveRatio": 18.1,
+   "winRate": 54.1
+  },
+  {
+   "teamId": "4DD74FA7-D914-4A41-9055-D8CBC6BA6C5B",
+   "name": "East Central",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.04,
+   "matches": 263,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 76,
+    "EVEN": 65,
+    "DOWN": 60,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 28.9,
+    "EVEN": 24.7,
+    "DOWN": 22.8,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 13.7,
+   "breadth": 0.958,
+   "competitiveRatio": 29.7,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "ABC9585F-8340-4675-B1F3-64C5727B35F1",
+   "name": "Itawamba",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 25.77,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 57,
+    "UP": 57,
+    "EVEN": 66,
+    "DOWN": 38,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 24.9,
+    "UP": 24.9,
+    "EVEN": 28.8,
+    "DOWN": 16.6,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 24.9,
+   "anchorRate": 4.8,
+   "breadth": 0.929,
+   "competitiveRatio": 32,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "53DCC7CD-BDBD-483D-812A-E4E7F7B45FB6",
+   "name": "East Central",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.26,
+   "matches": 228,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 77,
+    "EVEN": 18,
+    "DOWN": 92,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 33.8,
+    "EVEN": 7.9,
+    "DOWN": 40.4,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 15.4,
+   "breadth": 0.818,
+   "competitiveRatio": 16.2,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "3D1BEA05-302F-414D-BAF3-DBE5949D78AC",
+   "name": "Itawamba",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.94,
+   "matches": 205,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 136,
+    "EVEN": 0,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.7,
+    "UP": 66.3,
+    "EVEN": 0,
+    "DOWN": 2.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.7,
+   "anchorRate": 0,
+   "breadth": 0.459,
+   "competitiveRatio": 20,
+   "winRate": 38.5
+  },
+  {
+   "teamId": "B267A679-8F77-4C9A-94C1-7D17A6104570",
+   "name": "Holmes",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 32.05,
+   "matches": 156,
+   "bands": {
+    "STRETCH": 156,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 100,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 100,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": 7.7,
+   "winRate": 2.6
+  },
+  {
+   "teamId": "C45A0D48-EE0C-4BB0-ABA7-F8CD670AF025",
+   "name": "Holmes",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 33.53,
+   "matches": 58,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 27,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.4,
+    "UP": 46.6,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.4,
+   "anchorRate": 0,
+   "breadth": 0.429,
+   "competitiveRatio": 3.4,
+   "winRate": 5.2
+  }
+ ]
+}

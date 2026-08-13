@@ -1,0 +1,408 @@
+{
+ "conference": "Horizon League",
+ "slug": "horizon-league",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 3723,
+   "bands": {
+    "STRETCH": 628,
+    "UP": 1324,
+    "EVEN": 562,
+    "DOWN": 933,
+    "ANCHOR": 276
+   },
+   "bandPct": {
+    "STRETCH": 16.9,
+    "UP": 35.6,
+    "EVEN": 15.1,
+    "DOWN": 25.1,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 16.9,
+   "anchorRate": 7.4,
+   "breadth": 0.928,
+   "competitiveRatio": 48.9,
+   "winRate": 45.4
+  },
+  "inConference": {
+   "matches": 936,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 267,
+    "EVEN": 144,
+    "DOWN": 267,
+    "ANCHOR": 129
+   },
+   "bandPct": {
+    "STRETCH": 13.8,
+    "UP": 28.5,
+    "EVEN": 15.4,
+    "DOWN": 28.5,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 13.8,
+   "anchorRate": 13.8,
+   "breadth": 0.963,
+   "competitiveRatio": 51,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2787,
+   "bands": {
+    "STRETCH": 499,
+    "UP": 1057,
+    "EVEN": 418,
+    "DOWN": 666,
+    "ANCHOR": 147
+   },
+   "bandPct": {
+    "STRETCH": 17.9,
+    "UP": 37.9,
+    "EVEN": 15,
+    "DOWN": 23.9,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 17.9,
+   "anchorRate": 5.3,
+   "breadth": 0.906,
+   "competitiveRatio": 48.2,
+   "winRate": 43.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 13.8,
+  "nonConference": 17.9,
+  "delta": 4.1,
+  "nonConferenceShare": 74.9
+ },
+ "members": [
+  {
+   "teamId": "C77B519D-0E04-4A9E-BAE6-44E8229E52E6",
+   "name": "Cleveland State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.32,
+   "matches": 449,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 120,
+    "EVEN": 18,
+    "DOWN": 203,
+    "ANCHOR": 84
+   },
+   "bandPct": {
+    "STRETCH": 5.3,
+    "UP": 26.7,
+    "EVEN": 4,
+    "DOWN": 45.2,
+    "ANCHOR": 18.7
+   },
+   "stretchRate": 5.3,
+   "anchorRate": 18.7,
+   "breadth": 0.814,
+   "competitiveRatio": 57.2,
+   "winRate": 60.6
+  },
+  {
+   "teamId": "F906B675-B2CE-474E-8773-B7435BC65AB3",
+   "name": "Cleveland State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22,
+   "matches": 398,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 200,
+    "EVEN": 94,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 50.3,
+    "EVEN": 23.6,
+    "DOWN": 20.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 0,
+   "breadth": 0.73,
+   "competitiveRatio": 51.8,
+   "winRate": 50.8
+  },
+  {
+   "teamId": "2DEDD918-6675-4BD9-A1E0-A5BCCC0FF94E",
+   "name": "Youngstown State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.31,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 145,
+    "EVEN": 91,
+    "DOWN": 132,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 38.8,
+    "EVEN": 24.3,
+    "DOWN": 35.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 0,
+   "breadth": 0.712,
+   "competitiveRatio": 48.5,
+   "winRate": 50.5
+  },
+  {
+   "teamId": "66BF58E4-A00F-4B55-BB0A-EBAFBDC3083C",
+   "name": "Tennessee State University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.35,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 120,
+    "UP": 152,
+    "EVEN": 30,
+    "DOWN": 64,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 32.3,
+    "UP": 40.9,
+    "EVEN": 8.1,
+    "DOWN": 17.2,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 32.3,
+   "anchorRate": 1.6,
+   "breadth": 0.81,
+   "competitiveRatio": 49.5,
+   "winRate": 32.3
+  },
+  {
+   "teamId": "9D17282B-42C2-4414-BFD8-4154C00FBFF7",
+   "name": "Youngstown State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.07,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 164,
+    "EVEN": 67,
+    "DOWN": 53,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 44.8,
+    "EVEN": 18.3,
+    "DOWN": 14.5,
+    "ANCHOR": 19.1
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 19.1,
+   "breadth": 0.857,
+   "competitiveRatio": 55.1,
+   "winRate": 58.5
+  },
+  {
+   "teamId": "76977C1F-2B03-4274-BE66-573C11DCCFE4",
+   "name": "Belmont University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.13,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 94,
+    "EVEN": 60,
+    "DOWN": 133,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 26.3,
+    "EVEN": 16.8,
+    "DOWN": 37.2,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 9.8,
+   "breadth": 0.917,
+   "competitiveRatio": 53.6,
+   "winRate": 46.1
+  },
+  {
+   "teamId": "6973121B-CA59-46D5-9BE1-07FC09EDD630",
+   "name": "Oakland University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.58,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 89,
+    "EVEN": 126,
+    "DOWN": 79,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 28.9,
+    "EVEN": 40.9,
+    "DOWN": 25.6,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 1.6,
+   "breadth": 0.773,
+   "competitiveRatio": 50.5,
+   "winRate": 40.3
+  },
+  {
+   "teamId": "2425AB7D-7429-4B4D-AB72-FD88C53D701C",
+   "name": "Northern Kentucky",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 20.32,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 211,
+    "UP": 29,
+    "EVEN": 6,
+    "DOWN": 38,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 74.3,
+    "UP": 10.2,
+    "EVEN": 2.1,
+    "DOWN": 13.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 74.3,
+   "anchorRate": 0,
+   "breadth": 0.5,
+   "competitiveRatio": 45.8,
+   "winRate": 40.1
+  },
+  {
+   "teamId": "755AF722-8BF2-4C06-BA03-A40D5DC99ED0",
+   "name": "Northern Kentucky",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.45,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 180,
+    "EVEN": 11,
+    "DOWN": 40,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.2,
+    "UP": 64.5,
+    "EVEN": 3.9,
+    "DOWN": 14.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.2,
+   "anchorRate": 0,
+   "breadth": 0.616,
+   "competitiveRatio": 36.7,
+   "winRate": 34.1
+  },
+  {
+   "teamId": "97EF8721-31F3-4C23-913F-E88A2013538E",
+   "name": "Tennessee Tech",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.23,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 58,
+    "EVEN": 41,
+    "DOWN": 93,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 15.3,
+    "UP": 21.2,
+    "EVEN": 15,
+    "DOWN": 33.9,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 15.3,
+   "anchorRate": 14.6,
+   "breadth": 0.962,
+   "competitiveRatio": 42.9,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "66061E97-25EC-4F46-9D4F-B217752AC766",
+   "name": "Southern Indiana",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.8,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 97,
+    "UP": 93,
+    "EVEN": 18,
+    "DOWN": 17,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 37.2,
+    "UP": 35.6,
+    "EVEN": 6.9,
+    "DOWN": 6.5,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 37.2,
+   "anchorRate": 13.8,
+   "breadth": 0.852,
+   "competitiveRatio": 35.8,
+   "winRate": 36.4
+  }
+ ]
+}

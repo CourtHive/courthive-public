@@ -1,0 +1,518 @@
+{
+ "conference": "Great Lakes Intercollegiate Athletic Conference",
+ "slug": "great-lakes-intercollegiate-athletic-conference",
+ "divisions": [
+  "DIV_II",
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 15,
+ "fingerprint": {
+  "overall": {
+   "matches": 4881,
+   "bands": {
+    "STRETCH": 271,
+    "UP": 1677,
+    "EVEN": 671,
+    "DOWN": 1818,
+    "ANCHOR": 444
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 34.4,
+    "EVEN": 13.7,
+    "DOWN": 37.2,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 9.1,
+   "breadth": 0.861,
+   "competitiveRatio": 44.8,
+   "winRate": 51.1
+  },
+  "inConference": {
+   "matches": 1796,
+   "bands": {
+    "STRETCH": 151,
+    "UP": 590,
+    "EVEN": 314,
+    "DOWN": 590,
+    "ANCHOR": 151
+   },
+   "bandPct": {
+    "STRETCH": 8.4,
+    "UP": 32.9,
+    "EVEN": 17.5,
+    "DOWN": 32.9,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 8.4,
+   "anchorRate": 8.4,
+   "breadth": 0.903,
+   "competitiveRatio": 46.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3085,
+   "bands": {
+    "STRETCH": 120,
+    "UP": 1087,
+    "EVEN": 357,
+    "DOWN": 1228,
+    "ANCHOR": 293
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 35.2,
+    "EVEN": 11.6,
+    "DOWN": 39.8,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 9.5,
+   "breadth": 0.829,
+   "competitiveRatio": 43.7,
+   "winRate": 51.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.4,
+  "nonConference": 3.9,
+  "delta": -4.5,
+  "nonConferenceShare": 63.2
+ },
+ "members": [
+  {
+   "teamId": "4F6AFEBB-1B43-4AC3-908F-CBE94FA4551D",
+   "name": "Wayne State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.93,
+   "matches": 424,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 149,
+    "EVEN": 81,
+    "DOWN": 136,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35.1,
+    "EVEN": 19.1,
+    "DOWN": 32.1,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.7,
+   "breadth": 0.821,
+   "competitiveRatio": 54.7,
+   "winRate": 60.1
+  },
+  {
+   "teamId": "94D42553-55B0-4689-A84E-956C382E82A8",
+   "name": "Ferris State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.18,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 152,
+    "EVEN": 48,
+    "DOWN": 179,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.5,
+    "EVEN": 12.5,
+    "DOWN": 46.5,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.6,
+   "breadth": 0.651,
+   "competitiveRatio": 38.4,
+   "winRate": 45.2
+  },
+  {
+   "teamId": "8BB86959-1CE8-4C94-A7DB-0F9250C276B8",
+   "name": "Ferris State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.74,
+   "matches": 359,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 81,
+    "EVEN": 63,
+    "DOWN": 167,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.6,
+    "EVEN": 17.5,
+    "DOWN": 46.5,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.4,
+   "breadth": 0.787,
+   "competitiveRatio": 52.9,
+   "winRate": 62.1
+  },
+  {
+   "teamId": "F93EF716-B0A2-4845-80B1-414B29BA74F7",
+   "name": "Grand Valley State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.08,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 11,
+    "EVEN": 30,
+    "DOWN": 233,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.1,
+    "EVEN": 8.5,
+    "DOWN": 66.2,
+    "ANCHOR": 22.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.2,
+   "breadth": 0.575,
+   "competitiveRatio": 47.4,
+   "winRate": 65.6
+  },
+  {
+   "teamId": "E816ADA9-351C-494B-84CD-3C2AADBAAE3D",
+   "name": "Grand Valley State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.06,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 60,
+    "DOWN": 175,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.6,
+    "EVEN": 17.3,
+    "DOWN": 50.4,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.6,
+   "breadth": 0.746,
+   "competitiveRatio": 50.7,
+   "winRate": 65.7
+  },
+  {
+   "teamId": "0778DBF5-519C-45EB-BE14-425698046834",
+   "name": "Purdue Northwest",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.69,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 181,
+    "EVEN": 43,
+    "DOWN": 47,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 13.6,
+    "UP": 54.5,
+    "EVEN": 13,
+    "DOWN": 14.2,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 13.6,
+   "anchorRate": 4.8,
+   "breadth": 0.801,
+   "competitiveRatio": 38.2,
+   "winRate": 38.6
+  },
+  {
+   "teamId": "3E11882F-3014-4DB1-9661-79139264D659",
+   "name": "Wayne State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.6,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 66,
+    "EVEN": 30,
+    "DOWN": 194,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.9,
+    "EVEN": 9.1,
+    "DOWN": 58.6,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.4,
+   "breadth": 0.69,
+   "competitiveRatio": 46.1,
+   "winRate": 65.3
+  },
+  {
+   "teamId": "2994A7E3-8C4B-4C76-BEBC-45CD23D0F610",
+   "name": "Davenport",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.78,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 101,
+    "EVEN": 62,
+    "DOWN": 140,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 30.5,
+    "EVEN": 18.7,
+    "DOWN": 42.3,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 7.3,
+   "breadth": 0.797,
+   "competitiveRatio": 41.4,
+   "winRate": 52.9
+  },
+  {
+   "teamId": "763D5C95-2587-4DEA-8B71-22E8EAD308DE",
+   "name": "Davenport",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.17,
+   "matches": 330,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 120,
+    "EVEN": 69,
+    "DOWN": 94,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 36.4,
+    "EVEN": 20.9,
+    "DOWN": 28.5,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 10.6,
+   "breadth": 0.877,
+   "competitiveRatio": 50.9,
+   "winRate": 47
+  },
+  {
+   "teamId": "8113E75C-4EDB-4410-9FD5-F20F6A05C8B5",
+   "name": "Purdue Northwest",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.76,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 132,
+    "EVEN": 59,
+    "DOWN": 110,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 40.4,
+    "EVEN": 18,
+    "DOWN": 33.6,
+    "ANCHOR": 7
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 7,
+   "breadth": 0.79,
+   "competitiveRatio": 50.8,
+   "winRate": 54.1
+  },
+  {
+   "teamId": "ABA2931B-D404-47D6-B792-1EAE38587E6F",
+   "name": "Roosevelt (Ill.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.05,
+   "matches": 298,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 79,
+    "EVEN": 30,
+    "DOWN": 75,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 21.1,
+    "UP": 26.5,
+    "EVEN": 10.1,
+    "DOWN": 25.2,
+    "ANCHOR": 17.1
+   },
+   "stretchRate": 21.1,
+   "anchorRate": 17.1,
+   "breadth": 0.97,
+   "competitiveRatio": 34.7,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "D191E4EF-5CEF-485C-840A-C21950C56223",
+   "name": "Roosevelt (Ill.)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.69,
+   "matches": 290,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 135,
+    "EVEN": 22,
+    "DOWN": 92,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 46.6,
+    "EVEN": 7.6,
+    "DOWN": 31.7,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 10,
+   "anchorRate": 4.1,
+   "breadth": 0.794,
+   "competitiveRatio": 31.7,
+   "winRate": 39
+  },
+  {
+   "teamId": "7B338215-76DE-4BF3-940A-91F388EA3D58",
+   "name": "Saginaw Valley State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.13,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 130,
+    "EVEN": 34,
+    "DOWN": 90,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 49.2,
+    "EVEN": 12.9,
+    "DOWN": 34.1,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.8,
+   "breadth": 0.686,
+   "competitiveRatio": 41.3,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "53D497D7-476F-4C78-A703-88046D090045",
+   "name": "Michigan Tech",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.13,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 120,
+    "EVEN": 28,
+    "DOWN": 68,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 46.9,
+    "EVEN": 10.9,
+    "DOWN": 26.6,
+    "ANCHOR": 2.3
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 2.3,
+   "breadth": 0.811,
+   "competitiveRatio": 40.8,
+   "winRate": 42.2
+  },
+  {
+   "teamId": "74808D56-D3D7-485C-83B7-C69FB907C2B9",
+   "name": "Michigan Tech",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.32,
+   "matches": 255,
+   "bands": {
+    "STRETCH": 81,
+    "UP": 138,
+    "EVEN": 12,
+    "DOWN": 18,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 31.8,
+    "UP": 54.1,
+    "EVEN": 4.7,
+    "DOWN": 7.1,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 31.8,
+   "anchorRate": 2.4,
+   "breadth": 0.693,
+   "competitiveRatio": 45.5,
+   "winRate": 27.5
+  }
+ ]
+}

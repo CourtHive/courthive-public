@@ -1,0 +1,759 @@
+{
+ "conference": "American Athletic Conference",
+ "slug": "american-athletic-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 24,
+ "fingerprint": {
+  "overall": {
+   "matches": 8033,
+   "bands": {
+    "STRETCH": 283,
+    "UP": 2766,
+    "EVEN": 1458,
+    "DOWN": 2955,
+    "ANCHOR": 571
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 34.4,
+    "EVEN": 18.2,
+    "DOWN": 36.8,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 7.1,
+   "breadth": 0.839,
+   "competitiveRatio": 48.8,
+   "winRate": 53.5
+  },
+  "inConference": {
+   "matches": 2254,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 882,
+    "EVEN": 422,
+    "DOWN": 882,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 39.1,
+    "EVEN": 18.7,
+    "DOWN": 39.1,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 1.5,
+   "breadth": 0.73,
+   "competitiveRatio": 51.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 5779,
+   "bands": {
+    "STRETCH": 249,
+    "UP": 1884,
+    "EVEN": 1036,
+    "DOWN": 2073,
+    "ANCHOR": 537
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 32.6,
+    "EVEN": 17.9,
+    "DOWN": 35.9,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 9.3,
+   "breadth": 0.868,
+   "competitiveRatio": 47.7,
+   "winRate": 54.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.5,
+  "nonConference": 4.3,
+  "delta": 2.8,
+  "nonConferenceShare": 71.9
+ },
+ "members": [
+  {
+   "teamId": "193A4FB2-4A26-4724-AD0B-188CB862C8B4",
+   "name": "South Florida",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.2,
+   "matches": 404,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 65,
+    "EVEN": 45,
+    "DOWN": 270,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.1,
+    "EVEN": 11.1,
+    "DOWN": 66.8,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.9,
+   "breadth": 0.606,
+   "competitiveRatio": 56.2,
+   "winRate": 59.7
+  },
+  {
+   "teamId": "E4EDD8F3-3396-4B0E-AD73-271BAE2A061E",
+   "name": "Charlotte",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.9,
+   "matches": 401,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 74,
+    "EVEN": 97,
+    "DOWN": 173,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.5,
+    "EVEN": 24.2,
+    "DOWN": 43.1,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.2,
+   "breadth": 0.805,
+   "competitiveRatio": 57.1,
+   "winRate": 60.3
+  },
+  {
+   "teamId": "C45E9EE0-09E1-4ACD-8FBC-056F21BA43EE",
+   "name": "Tulsa",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.38,
+   "matches": 398,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 122,
+    "EVEN": 93,
+    "DOWN": 86,
+    "ANCHOR": 91
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 30.7,
+    "EVEN": 23.4,
+    "DOWN": 21.6,
+    "ANCHOR": 22.9
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 22.9,
+   "breadth": 0.891,
+   "competitiveRatio": 47,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "2C645DC8-B625-479E-8CB3-CDCD76CF90CA",
+   "name": "Memphis",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.82,
+   "matches": 389,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 170,
+    "EVEN": 94,
+    "DOWN": 88,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 3.1,
+    "UP": 43.7,
+    "EVEN": 24.2,
+    "DOWN": 22.6,
+    "ANCHOR": 6.4
+   },
+   "stretchRate": 3.1,
+   "anchorRate": 6.4,
+   "breadth": 0.823,
+   "competitiveRatio": 58.1,
+   "winRate": 56.6
+  },
+  {
+   "teamId": "967734DC-DA8E-43E9-BF4E-355569C93441",
+   "name": "Tulsa",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.56,
+   "matches": 375,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 173,
+    "EVEN": 70,
+    "DOWN": 117,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 46.1,
+    "EVEN": 18.7,
+    "DOWN": 31.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4,
+   "anchorRate": 0,
+   "breadth": 0.722,
+   "competitiveRatio": 44.1,
+   "winRate": 57.3
+  },
+  {
+   "teamId": "B7B66F25-BABB-474F-8987-4AF0208EBA55",
+   "name": "Charlotte",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.35,
+   "matches": 370,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 71,
+    "DOWN": 184,
+    "ANCHOR": 67
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13,
+    "EVEN": 19.2,
+    "DOWN": 49.7,
+    "ANCHOR": 18.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.1,
+   "breadth": 0.77,
+   "competitiveRatio": 44.3,
+   "winRate": 71.9
+  },
+  {
+   "teamId": "F02EEF55-0142-475C-A01E-4D4F94735285",
+   "name": "Tulane",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.26,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 189,
+    "EVEN": 34,
+    "DOWN": 67,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 52.9,
+    "EVEN": 9.5,
+    "DOWN": 18.8,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 7.6,
+   "breadth": 0.817,
+   "competitiveRatio": 51.4,
+   "winRate": 40.3
+  },
+  {
+   "teamId": "666FEC6D-E816-44F9-B278-227E3BECA81C",
+   "name": "North Texas",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.71,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 119,
+    "EVEN": 78,
+    "DOWN": 127,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.9,
+    "EVEN": 22.2,
+    "DOWN": 36.2,
+    "ANCHOR": 7.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.7,
+   "breadth": 0.787,
+   "competitiveRatio": 42.5,
+   "winRate": 53.8
+  },
+  {
+   "teamId": "59CD7FA7-AC23-49F3-AEA1-6B0EB434D55E",
+   "name": "Wichita State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.56,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 140,
+    "EVEN": 32,
+    "DOWN": 151,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 41.2,
+    "EVEN": 9.4,
+    "DOWN": 44.4,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 1.8,
+   "breadth": 0.702,
+   "competitiveRatio": 55,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "BD1A0DAD-FEF7-4BAC-9DD1-119F9FAADACE",
+   "name": "University Of Alabama at Birmingham",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.14,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 101,
+    "EVEN": 52,
+    "DOWN": 154,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 30,
+    "EVEN": 15.4,
+    "DOWN": 45.7,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 5.3,
+   "breadth": 0.797,
+   "competitiveRatio": 41.5,
+   "winRate": 57
+  },
+  {
+   "teamId": "31894235-E994-4660-A773-50D353F245B0",
+   "name": "Rice",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.78,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 88,
+    "EVEN": 107,
+    "DOWN": 83,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 26.1,
+    "EVEN": 31.8,
+    "DOWN": 24.6,
+    "ANCHOR": 11.6
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 11.6,
+   "breadth": 0.918,
+   "competitiveRatio": 51,
+   "winRate": 53.7
+  },
+  {
+   "teamId": "8BFEA102-B1BC-437D-B717-6F5CEE3D66B3",
+   "name": "University Of Alabama at Birmingham",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.78,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 123,
+    "EVEN": 91,
+    "DOWN": 86,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 7.2,
+    "UP": 36.9,
+    "EVEN": 27.3,
+    "DOWN": 25.8,
+    "ANCHOR": 2.7
+   },
+   "stretchRate": 7.2,
+   "anchorRate": 2.7,
+   "breadth": 0.844,
+   "competitiveRatio": 52.1,
+   "winRate": 43.8
+  },
+  {
+   "teamId": "A49124D0-7326-497C-B9D1-49DAAA75578E",
+   "name": "Wichita State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.66,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 61,
+    "DOWN": 174,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.1,
+    "EVEN": 18.7,
+    "DOWN": 53.2,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.1,
+   "breadth": 0.746,
+   "competitiveRatio": 46.5,
+   "winRate": 61.2
+  },
+  {
+   "teamId": "94C921F4-008B-4E88-B2EA-BB61C878E795",
+   "name": "Florida Atlantic",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 79,
+    "DOWN": 151,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.8,
+    "EVEN": 24.2,
+    "DOWN": 46.3,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.7,
+   "breadth": 0.728,
+   "competitiveRatio": 57.4,
+   "winRate": 53.1
+  },
+  {
+   "teamId": "151AC562-95B5-4597-9CE2-26DB818B490E",
+   "name": "Rice",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.85,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 52,
+    "DOWN": 188,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.9,
+    "EVEN": 16.5,
+    "DOWN": 59.7,
+    "ANCHOR": 15.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.9,
+   "breadth": 0.683,
+   "competitiveRatio": 39.4,
+   "winRate": 64.1
+  },
+  {
+   "teamId": "4DCB42EB-6029-42BF-B047-2C2A1092E5B3",
+   "name": "Tulane",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.68,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 110,
+    "EVEN": 31,
+    "DOWN": 125,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.9,
+    "EVEN": 9.8,
+    "DOWN": 39.7,
+    "ANCHOR": 15.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.6,
+   "breadth": 0.778,
+   "competitiveRatio": 43.2,
+   "winRate": 49.5
+  },
+  {
+   "teamId": "73905425-3667-404F-8BDF-FF5BFCDD338E",
+   "name": "Memphis",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.77,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 189,
+    "EVEN": 48,
+    "DOWN": 73,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 60.4,
+    "EVEN": 15.3,
+    "DOWN": 23.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1,
+   "anchorRate": 0,
+   "breadth": 0.607,
+   "competitiveRatio": 48.6,
+   "winRate": 46.6
+  },
+  {
+   "teamId": "C19FA2BA-E94F-4A8D-91B5-0C094B9AB74C",
+   "name": "South Florida",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.14,
+   "matches": 309,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 132,
+    "EVEN": 88,
+    "DOWN": 75,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 42.7,
+    "EVEN": 28.5,
+    "DOWN": 24.3,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 1.6,
+   "breadth": 0.767,
+   "competitiveRatio": 48.5,
+   "winRate": 45.3
+  },
+  {
+   "teamId": "B03A8DEE-7B47-4EAF-91F8-87E112633989",
+   "name": "University Of Texas at San Antonio",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.75,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 32,
+    "UP": 213,
+    "EVEN": 33,
+    "DOWN": 25,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.6,
+    "UP": 70.3,
+    "EVEN": 10.9,
+    "DOWN": 8.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.6,
+   "anchorRate": 0,
+   "breadth": 0.579,
+   "competitiveRatio": 51.2,
+   "winRate": 46.9
+  },
+  {
+   "teamId": "9206C498-1F17-4A78-AC21-42CA7319FAA9",
+   "name": "Temple",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.61,
+   "matches": 295,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 108,
+    "EVEN": 30,
+    "DOWN": 115,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 36.6,
+    "EVEN": 10.2,
+    "DOWN": 39,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 0,
+   "breadth": 0.774,
+   "competitiveRatio": 47.1,
+   "winRate": 45.1
+  },
+  {
+   "teamId": "BD72D2A2-C006-4E7C-AAE3-D323BEC2F612",
+   "name": "University Of Texas at San Antonio",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.06,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 131,
+    "EVEN": 49,
+    "DOWN": 83,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 6.1,
+    "UP": 44.6,
+    "EVEN": 16.7,
+    "DOWN": 28.2,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 6.1,
+   "anchorRate": 4.4,
+   "breadth": 0.823,
+   "competitiveRatio": 40.1,
+   "winRate": 58.5
+  },
+  {
+   "teamId": "91FD613D-1FA4-4CED-885B-CD37AE8AA7D3",
+   "name": "East Carolina",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.18,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 154,
+    "EVEN": 49,
+    "DOWN": 36,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 13.7,
+    "UP": 54.2,
+    "EVEN": 17.3,
+    "DOWN": 12.7,
+    "ANCHOR": 2.1
+   },
+   "stretchRate": 13.7,
+   "anchorRate": 2.1,
+   "breadth": 0.777,
+   "competitiveRatio": 47.9,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "164D470A-0AF3-49BB-A132-11220DD2812D",
+   "name": "Temple",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.66,
+   "matches": 281,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 96,
+    "EVEN": 42,
+    "DOWN": 143,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.2,
+    "EVEN": 14.9,
+    "DOWN": 50.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.618,
+   "competitiveRatio": 47.7,
+   "winRate": 47
+  },
+  {
+   "teamId": "AE2DC44F-5CA0-4E59-8765-8B959D07E7D2",
+   "name": "Florida Atlantic",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.1,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 66,
+    "EVEN": 32,
+    "DOWN": 181,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.7,
+    "EVEN": 11.5,
+    "DOWN": 64.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.541,
+   "competitiveRatio": 48.7,
+   "winRate": 61.3
+  }
+ ]
+}

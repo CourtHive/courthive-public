@@ -1,0 +1,517 @@
+{
+ "conference": "Conference of New England",
+ "slug": "conference-of-new-england",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 15,
+ "fingerprint": {
+  "overall": {
+   "matches": 4331,
+   "bands": {
+    "STRETCH": 816,
+    "UP": 1399,
+    "EVEN": 377,
+    "DOWN": 1184,
+    "ANCHOR": 555
+   },
+   "bandPct": {
+    "STRETCH": 18.8,
+    "UP": 32.3,
+    "EVEN": 8.7,
+    "DOWN": 27.3,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 18.8,
+   "anchorRate": 12.8,
+   "breadth": 0.938,
+   "competitiveRatio": 26.4,
+   "winRate": 45
+  },
+  "inConference": {
+   "matches": 1812,
+   "bands": {
+    "STRETCH": 364,
+    "UP": 479,
+    "EVEN": 126,
+    "DOWN": 479,
+    "ANCHOR": 364
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 26.4,
+    "EVEN": 7,
+    "DOWN": 26.4,
+    "ANCHOR": 20.1
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 20.1,
+   "breadth": 0.953,
+   "competitiveRatio": 21.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2519,
+   "bands": {
+    "STRETCH": 452,
+    "UP": 920,
+    "EVEN": 251,
+    "DOWN": 705,
+    "ANCHOR": 191
+   },
+   "bandPct": {
+    "STRETCH": 17.9,
+    "UP": 36.5,
+    "EVEN": 10,
+    "DOWN": 28,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 17.9,
+   "anchorRate": 7.6,
+   "breadth": 0.906,
+   "competitiveRatio": 29.8,
+   "winRate": 41.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 20.1,
+  "nonConference": 17.9,
+  "delta": -2.2,
+  "nonConferenceShare": 58.2
+ },
+ "members": [
+  {
+   "teamId": "BE2FC0AF-293B-49AD-AE7C-2AECBED8018A",
+   "name": "Roger Williams",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.74,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 24,
+    "EVEN": 42,
+    "DOWN": 165,
+    "ANCHOR": 117
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 6.7,
+    "EVEN": 11.8,
+    "DOWN": 46.2,
+    "ANCHOR": 32.8
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 32.8,
+   "breadth": 0.776,
+   "competitiveRatio": 28.6,
+   "winRate": 74.2
+  },
+  {
+   "teamId": "D310909C-99CC-4D4B-AE9D-15830BB1FD40",
+   "name": "Endicott",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.35,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 145,
+    "EVEN": 63,
+    "DOWN": 41,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 13.8,
+    "UP": 41.7,
+    "EVEN": 18.1,
+    "DOWN": 11.8,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 13.8,
+   "anchorRate": 14.7,
+   "breadth": 0.92,
+   "competitiveRatio": 22.8,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "301FF3A7-1103-4E6E-B49A-A815D7D67E70",
+   "name": "Nichols College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.33,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 74,
+    "UP": 128,
+    "EVEN": 6,
+    "DOWN": 57,
+    "ANCHOR": 81
+   },
+   "bandPct": {
+    "STRETCH": 21.4,
+    "UP": 37,
+    "EVEN": 1.7,
+    "DOWN": 16.5,
+    "ANCHOR": 23.4
+   },
+   "stretchRate": 21.4,
+   "anchorRate": 23.4,
+   "breadth": 0.873,
+   "competitiveRatio": 30.1,
+   "winRate": 54.9
+  },
+  {
+   "teamId": "6121858E-AAFE-48E3-B12A-7F5CFE057D8B",
+   "name": "Roger Williams",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.11,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 44,
+    "EVEN": 87,
+    "DOWN": 150,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.4,
+    "EVEN": 26.5,
+    "DOWN": 45.7,
+    "ANCHOR": 14.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.3,
+   "breadth": 0.781,
+   "competitiveRatio": 27.8,
+   "winRate": 71.6
+  },
+  {
+   "teamId": "D7C101F9-391B-4C77-80F1-87CC97D02910",
+   "name": "Endicott",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.16,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 127,
+    "EVEN": 36,
+    "DOWN": 70,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 12.9,
+    "UP": 39.1,
+    "EVEN": 11.1,
+    "DOWN": 21.5,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 12.9,
+   "anchorRate": 15.4,
+   "breadth": 0.928,
+   "competitiveRatio": 37.8,
+   "winRate": 51.7
+  },
+  {
+   "teamId": "DD585B4F-C967-4938-917D-518C03D81959",
+   "name": "Nichols College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.47,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 69,
+    "EVEN": 18,
+    "DOWN": 147,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 22,
+    "EVEN": 5.8,
+    "DOWN": 47,
+    "ANCHOR": 13.1
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 13.1,
+   "breadth": 0.854,
+   "competitiveRatio": 25.4,
+   "winRate": 58.8
+  },
+  {
+   "teamId": "351041E1-B341-493A-BE1C-47B6B9BBED52",
+   "name": "Gordon (MA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.56,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 11,
+    "EVEN": 0,
+    "DOWN": 187,
+    "ANCHOR": 103
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.7,
+    "EVEN": 0,
+    "DOWN": 62.1,
+    "ANCHOR": 34.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 34.2,
+   "breadth": 0.487,
+   "competitiveRatio": 34.2,
+   "winRate": 54.2
+  },
+  {
+   "teamId": "36AB9EF0-B3C2-429B-B64A-E51DB419F9CF",
+   "name": "Gordon (MA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.03,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 75,
+    "EVEN": 66,
+    "DOWN": 111,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 22,
+    "DOWN": 37,
+    "ANCHOR": 16
+   },
+   "stretchRate": 0,
+   "anchorRate": 16,
+   "breadth": 0.833,
+   "competitiveRatio": 26.3,
+   "winRate": 52
+  },
+  {
+   "teamId": "A35C591A-DA8F-4078-B922-C1C304C83226",
+   "name": "Wentworth Institute Of Technology",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.42,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 153,
+    "EVEN": 12,
+    "DOWN": 51,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.8,
+    "UP": 52.6,
+    "EVEN": 4.1,
+    "DOWN": 17.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.8,
+   "anchorRate": 0,
+   "breadth": 0.698,
+   "competitiveRatio": 28.5,
+   "winRate": 36.1
+  },
+  {
+   "teamId": "6FF6E5A0-D6C0-4DA1-B7DB-52D740AFDFF8",
+   "name": "Western New England University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.35,
+   "matches": 289,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 104,
+    "EVEN": 24,
+    "DOWN": 102,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 14.5,
+    "UP": 36,
+    "EVEN": 8.3,
+    "DOWN": 35.3,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 14.5,
+   "anchorRate": 5.9,
+   "breadth": 0.863,
+   "competitiveRatio": 27.7,
+   "winRate": 37.7
+  },
+  {
+   "teamId": "51E26BD5-0D21-4CF2-A129-F4DF935A9140",
+   "name": "Curry",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.18,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 155,
+    "UP": 111,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 58.3,
+    "UP": 41.7,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 58.3,
+   "anchorRate": 0,
+   "breadth": 0.422,
+   "competitiveRatio": 16.6,
+   "winRate": 13.2
+  },
+  {
+   "teamId": "1558E8FC-B3B5-4D01-9685-FF022AD3F912",
+   "name": "Western New England University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.24,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 165,
+    "EVEN": 6,
+    "DOWN": 73,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.7,
+    "UP": 64.5,
+    "EVEN": 2.3,
+    "DOWN": 28.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.7,
+   "anchorRate": 0,
+   "breadth": 0.542,
+   "competitiveRatio": 22.7,
+   "winRate": 28.5
+  },
+  {
+   "teamId": "2E65ED46-6D5C-4710-81C7-7ADE6C39A17D",
+   "name": "Curry",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.62,
+   "matches": 226,
+   "bands": {
+    "STRETCH": 135,
+    "UP": 91,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 59.7,
+    "UP": 40.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 59.7,
+   "anchorRate": 0,
+   "breadth": 0.419,
+   "competitiveRatio": 13.3,
+   "winRate": 9.3
+  },
+  {
+   "teamId": "2F80A82D-30BC-4C85-AF7A-CC5A720EF3F7",
+   "name": "Suffolk University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.45,
+   "matches": 201,
+   "bands": {
+    "STRETCH": 102,
+    "UP": 81,
+    "EVEN": 0,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50.7,
+    "UP": 40.3,
+    "EVEN": 0,
+    "DOWN": 9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50.7,
+   "anchorRate": 0,
+   "breadth": 0.576,
+   "competitiveRatio": 24.9,
+   "winRate": 20.9
+  },
+  {
+   "teamId": "1E1B977A-0D34-41F7-96D0-12BE6F5B172F",
+   "name": "Suffolk University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.54,
+   "matches": 184,
+   "bands": {
+    "STRETCH": 84,
+    "UP": 71,
+    "EVEN": 17,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 45.7,
+    "UP": 38.6,
+    "EVEN": 9.2,
+    "DOWN": 6.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 45.7,
+   "anchorRate": 0,
+   "breadth": 0.698,
+   "competitiveRatio": 19,
+   "winRate": 17.9
+  }
+ ]
+}

@@ -1,0 +1,571 @@
+{
+ "conference": "Liberty League",
+ "slug": "liberty-league",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5369,
+   "bands": {
+    "STRETCH": 367,
+    "UP": 1715,
+    "EVEN": 900,
+    "DOWN": 1850,
+    "ANCHOR": 537
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 31.9,
+    "EVEN": 16.8,
+    "DOWN": 34.5,
+    "ANCHOR": 10
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 10,
+   "breadth": 0.898,
+   "competitiveRatio": 37.5,
+   "winRate": 51.3
+  },
+  "inConference": {
+   "matches": 2484,
+   "bands": {
+    "STRETCH": 216,
+    "UP": 767,
+    "EVEN": 518,
+    "DOWN": 767,
+    "ANCHOR": 216
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 30.9,
+    "EVEN": 20.9,
+    "DOWN": 30.9,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 8.7,
+   "breadth": 0.918,
+   "competitiveRatio": 35.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2885,
+   "bands": {
+    "STRETCH": 151,
+    "UP": 948,
+    "EVEN": 382,
+    "DOWN": 1083,
+    "ANCHOR": 321
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 32.9,
+    "EVEN": 13.2,
+    "DOWN": 37.5,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 11.1,
+   "breadth": 0.87,
+   "competitiveRatio": 38.9,
+   "winRate": 52.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.7,
+  "nonConference": 5.2,
+  "delta": -3.5,
+  "nonConferenceShare": 53.7
+ },
+ "members": [
+  {
+   "teamId": "7382AAAD-FE39-442C-8442-672DE856F7E9",
+   "name": "Skidmore",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.5,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 92,
+    "EVEN": 42,
+    "DOWN": 167,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 26.1,
+    "EVEN": 11.9,
+    "DOWN": 47.3,
+    "ANCHOR": 7.9
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 7.9,
+   "breadth": 0.834,
+   "competitiveRatio": 48.2,
+   "winRate": 52.7
+  },
+  {
+   "teamId": "A9370B2F-5966-4481-AF2D-56231C4495C2",
+   "name": "Vassar College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.09,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 33,
+    "EVEN": 106,
+    "DOWN": 179,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.4,
+    "EVEN": 30.1,
+    "DOWN": 50.9,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.7,
+   "breadth": 0.716,
+   "competitiveRatio": 37.8,
+   "winRate": 70.5
+  },
+  {
+   "teamId": "52D687C8-C734-42FB-A8DB-D7C4C8A27A2B",
+   "name": "Vassar College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 138,
+    "EVEN": 82,
+    "DOWN": 95,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 5.1,
+    "UP": 39.4,
+    "EVEN": 23.4,
+    "DOWN": 27.1,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 5.1,
+   "anchorRate": 4.9,
+   "breadth": 0.845,
+   "competitiveRatio": 40.6,
+   "winRate": 59.1
+  },
+  {
+   "teamId": "8D1D2C14-A62F-4DEB-8DD6-505520AFAD88",
+   "name": "Union (New York)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.26,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 168,
+    "EVEN": 52,
+    "DOWN": 78,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 49.4,
+    "EVEN": 15.3,
+    "DOWN": 22.9,
+    "ANCHOR": 8.8
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 8.8,
+   "breadth": 0.811,
+   "competitiveRatio": 52.1,
+   "winRate": 44.1
+  },
+  {
+   "teamId": "00A234AC-E4C3-41DE-9DE8-BC86C71B1E8F",
+   "name": "Hobart",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.86,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 110,
+    "EVEN": 75,
+    "DOWN": 90,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 32.8,
+    "EVEN": 22.4,
+    "DOWN": 26.9,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 8.1,
+   "breadth": 0.923,
+   "competitiveRatio": 46.6,
+   "winRate": 60
+  },
+  {
+   "teamId": "0E6F8F2A-001C-4D32-9CDA-E40F7FD594B0",
+   "name": "Union (New York)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.32,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 154,
+    "EVEN": 12,
+    "DOWN": 126,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 46.4,
+    "EVEN": 3.6,
+    "DOWN": 38,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 10.2,
+   "breadth": 0.714,
+   "competitiveRatio": 38.3,
+   "winRate": 52.7
+  },
+  {
+   "teamId": "B1BAD690-F760-4E53-B2EC-B2BDBEB99D3F",
+   "name": "St. Lawrence",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.38,
+   "matches": 329,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 60,
+    "DOWN": 155,
+    "ANCHOR": 114
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 18.2,
+    "DOWN": 47.1,
+    "ANCHOR": 34.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 34.7,
+   "breadth": 0.641,
+   "competitiveRatio": 34.3,
+   "winRate": 69
+  },
+  {
+   "teamId": "A63713D2-C833-4F66-B9C9-B1C3304F08E4",
+   "name": "Skidmore",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.47,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 100,
+    "EVEN": 83,
+    "DOWN": 121,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.2,
+    "EVEN": 25.9,
+    "DOWN": 37.7,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.3,
+   "breadth": 0.768,
+   "competitiveRatio": 31.6,
+   "winRate": 53
+  },
+  {
+   "teamId": "9E166E20-1F16-49C8-A431-331A94B93211",
+   "name": "St. Lawrence",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.22,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 196,
+    "EVEN": 30,
+    "DOWN": 60,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 61.1,
+    "EVEN": 9.3,
+    "DOWN": 18.7,
+    "ANCHOR": 9
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 9,
+   "breadth": 0.701,
+   "competitiveRatio": 40.2,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "D8B614D1-1B81-4768-BFB3-DB2B1403F4F8",
+   "name": "Rensselaer",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.27,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 75,
+    "EVEN": 24,
+    "DOWN": 188,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.7,
+    "EVEN": 7.6,
+    "DOWN": 59.5,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.2,
+   "breadth": 0.662,
+   "competitiveRatio": 40.5,
+   "winRate": 66.8
+  },
+  {
+   "teamId": "E33843C5-F1A2-4B55-BD30-2DB84BB405F7",
+   "name": "Ithaca",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.08,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 81,
+    "EVEN": 54,
+    "DOWN": 128,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.6,
+    "EVEN": 17.1,
+    "DOWN": 40.5,
+    "ANCHOR": 16.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.8,
+   "breadth": 0.818,
+   "competitiveRatio": 49.4,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "E4AB45DE-B9A5-4599-A8BC-A267787858F7",
+   "name": "Rochester Inst. Of Tech.",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.56,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 83,
+    "EVEN": 63,
+    "DOWN": 90,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 26.6,
+    "EVEN": 20.2,
+    "DOWN": 28.8,
+    "ANCHOR": 18.6
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 18.6,
+   "breadth": 0.939,
+   "competitiveRatio": 41.3,
+   "winRate": 46.5
+  },
+  {
+   "teamId": "8C50F8F9-0D26-47A9-A89A-3864B6F12710",
+   "name": "Ithaca",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.9,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 182,
+    "EVEN": 30,
+    "DOWN": 77,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 59.7,
+    "EVEN": 9.8,
+    "DOWN": 25.2,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 1.3,
+   "breadth": 0.663,
+   "competitiveRatio": 35.5,
+   "winRate": 42.6
+  },
+  {
+   "teamId": "1321A3AB-101D-431A-B8E7-BAFE6F1982FB",
+   "name": "Rensselaer",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.01,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 26,
+    "EVEN": 80,
+    "DOWN": 155,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 8.6,
+    "EVEN": 26.5,
+    "DOWN": 51.3,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.6,
+   "breadth": 0.731,
+   "competitiveRatio": 37.9,
+   "winRate": 63.2
+  },
+  {
+   "teamId": "E2881FCA-94C3-4443-94CE-4B06B4993714",
+   "name": "Rochester Inst. Of Tech.",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.34,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 132,
+    "EVEN": 60,
+    "DOWN": 77,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 5.4,
+    "UP": 44.6,
+    "EVEN": 20.3,
+    "DOWN": 26,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 5.4,
+   "anchorRate": 3.7,
+   "breadth": 0.816,
+   "competitiveRatio": 24.1,
+   "winRate": 36.5
+  },
+  {
+   "teamId": "498467D8-86C1-4AB9-B2A9-53122EE5527E",
+   "name": "Bard",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.3,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 111,
+    "EVEN": 24,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 34.6,
+    "UP": 42.7,
+    "EVEN": 9.2,
+    "DOWN": 13.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 34.6,
+   "anchorRate": 0,
+   "breadth": 0.758,
+   "competitiveRatio": 11.9,
+   "winRate": 25.8
+  },
+  {
+   "teamId": "19842B8D-2E65-4107-9C14-6ACA05E8B36D",
+   "name": "Bard",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.26,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 132,
+    "UP": 34,
+    "EVEN": 23,
+    "DOWN": 29,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 57.6,
+    "UP": 14.8,
+    "EVEN": 10,
+    "DOWN": 12.7,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 57.6,
+   "anchorRate": 4.8,
+   "breadth": 0.77,
+   "competitiveRatio": 10.9,
+   "winRate": 24.9
+  }
+ ]
+}

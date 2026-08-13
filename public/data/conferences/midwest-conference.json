@@ -1,0 +1,490 @@
+{
+ "conference": "Midwest Conference",
+ "slug": "midwest-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 4974,
+   "bands": {
+    "STRETCH": 585,
+    "UP": 1414,
+    "EVEN": 589,
+    "DOWN": 1749,
+    "ANCHOR": 637
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 28.4,
+    "EVEN": 11.8,
+    "DOWN": 35.2,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 12.8,
+   "breadth": 0.927,
+   "competitiveRatio": 29.1,
+   "winRate": 48.3
+  },
+  "inConference": {
+   "matches": 1602,
+   "bands": {
+    "STRETCH": 280,
+    "UP": 437,
+    "EVEN": 168,
+    "DOWN": 437,
+    "ANCHOR": 280
+   },
+   "bandPct": {
+    "STRETCH": 17.5,
+    "UP": 27.3,
+    "EVEN": 10.5,
+    "DOWN": 27.3,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 17.5,
+   "anchorRate": 17.5,
+   "breadth": 0.966,
+   "competitiveRatio": 21,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3372,
+   "bands": {
+    "STRETCH": 305,
+    "UP": 977,
+    "EVEN": 421,
+    "DOWN": 1312,
+    "ANCHOR": 357
+   },
+   "bandPct": {
+    "STRETCH": 9,
+    "UP": 29,
+    "EVEN": 12.5,
+    "DOWN": 38.9,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 9,
+   "anchorRate": 10.6,
+   "breadth": 0.895,
+   "competitiveRatio": 32.9,
+   "winRate": 47.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.5,
+  "nonConference": 9,
+  "delta": -8.5,
+  "nonConferenceShare": 67.8
+ },
+ "members": [
+  {
+   "teamId": "9FC1BBFD-2273-495F-82A0-F9438D76BDF4",
+   "name": "Grinnell",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.39,
+   "matches": 439,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 94,
+    "EVEN": 12,
+    "DOWN": 153,
+    "ANCHOR": 157
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 21.4,
+    "EVEN": 2.7,
+    "DOWN": 34.9,
+    "ANCHOR": 35.8
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 35.8,
+   "breadth": 0.819,
+   "competitiveRatio": 38.7,
+   "winRate": 65.8
+  },
+  {
+   "teamId": "B6F759F4-978B-4A4E-929C-89904CC1A93F",
+   "name": "Grinnell",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.94,
+   "matches": 439,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 58,
+    "EVEN": 82,
+    "DOWN": 155,
+    "ANCHOR": 114
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 13.2,
+    "EVEN": 18.7,
+    "DOWN": 35.3,
+    "ANCHOR": 26
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 26,
+   "breadth": 0.921,
+   "competitiveRatio": 30.5,
+   "winRate": 64
+  },
+  {
+   "teamId": "F4FCBA8E-1471-421F-8B18-A12A82637CAC",
+   "name": "Cornell College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.8,
+   "matches": 432,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 54,
+    "DOWN": 264,
+    "ANCHOR": 96
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 4.2,
+    "EVEN": 12.5,
+    "DOWN": 61.1,
+    "ANCHOR": 22.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.2,
+   "breadth": 0.638,
+   "competitiveRatio": 31.7,
+   "winRate": 66.4
+  },
+  {
+   "teamId": "4A96E1FD-3C81-4277-ADA3-BC121CFDD010",
+   "name": "Cornell College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.22,
+   "matches": 413,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 87,
+    "EVEN": 66,
+    "DOWN": 179,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 21.1,
+    "EVEN": 16,
+    "DOWN": 43.3,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 9.4,
+   "breadth": 0.894,
+   "competitiveRatio": 35.2,
+   "winRate": 55.9
+  },
+  {
+   "teamId": "C356EE5F-334F-4A3B-B0F8-2CCDE98C6FBC",
+   "name": "Ripon",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.61,
+   "matches": 402,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 201,
+    "EVEN": 47,
+    "DOWN": 106,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 50,
+    "EVEN": 11.7,
+    "DOWN": 26.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 0,
+   "breadth": 0.747,
+   "competitiveRatio": 24.1,
+   "winRate": 26.4
+  },
+  {
+   "teamId": "E96157ED-76AB-4E83-B662-8410B8C20F69",
+   "name": "Lawrence University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.18,
+   "matches": 391,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 120,
+    "EVEN": 24,
+    "DOWN": 107,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 32.7,
+    "UP": 30.7,
+    "EVEN": 6.1,
+    "DOWN": 27.4,
+    "ANCHOR": 3.1
+   },
+   "stretchRate": 32.7,
+   "anchorRate": 3.1,
+   "breadth": 0.846,
+   "competitiveRatio": 27.1,
+   "winRate": 32
+  },
+  {
+   "teamId": "41505784-C441-4D3E-BFFB-B6E383ABA5D6",
+   "name": "Ripon",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.58,
+   "matches": 386,
+   "bands": {
+    "STRETCH": 86,
+    "UP": 207,
+    "EVEN": 12,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 22.3,
+    "UP": 53.6,
+    "EVEN": 3.1,
+    "DOWN": 21,
+    "ANCHOR": 0
+   },
+   "stretchRate": 22.3,
+   "anchorRate": 0,
+   "breadth": 0.686,
+   "competitiveRatio": 30.1,
+   "winRate": 23.3
+  },
+  {
+   "teamId": "39CF42D4-960D-4857-9994-BE258EAA6349",
+   "name": "Lake Forest",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.43,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 62,
+    "DOWN": 182,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.6,
+    "EVEN": 16.9,
+    "DOWN": 49.7,
+    "ANCHOR": 20.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.8,
+   "breadth": 0.767,
+   "competitiveRatio": 24.4,
+   "winRate": 72.1
+  },
+  {
+   "teamId": "C15185D1-7FD0-455B-B86B-E8F670483CD6",
+   "name": "Lake Forest",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.4,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 79,
+    "EVEN": 21,
+    "DOWN": 161,
+    "ANCHOR": 87
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 21.9,
+    "EVEN": 5.8,
+    "DOWN": 44.7,
+    "ANCHOR": 24.2
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 24.2,
+   "breadth": 0.817,
+   "competitiveRatio": 36.1,
+   "winRate": 65
+  },
+  {
+   "teamId": "0527CAB5-AE2B-4FCD-B77A-74E908535F73",
+   "name": "Illinois College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.53,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 72,
+    "EVEN": 72,
+    "DOWN": 160,
+    "ANCHOR": 8
+   },
+   "bandPct": {
+    "STRETCH": 6.9,
+    "UP": 21.5,
+    "EVEN": 21.5,
+    "DOWN": 47.8,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 6.9,
+   "anchorRate": 2.4,
+   "breadth": 0.8,
+   "competitiveRatio": 25.4,
+   "winRate": 51.6
+  },
+  {
+   "teamId": "EFB0B10F-8F05-4497-B166-3A90FCCDF28A",
+   "name": "Illinois College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.45,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 96,
+    "EVEN": 54,
+    "DOWN": 93,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 15.1,
+    "UP": 29.5,
+    "EVEN": 16.6,
+    "DOWN": 28.6,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 15.1,
+   "anchorRate": 10.2,
+   "breadth": 0.953,
+   "competitiveRatio": 28.4,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "0BDCD127-CAD1-41B2-87D2-923007DFAE12",
+   "name": "Lawrence University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.79,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 106,
+    "EVEN": 36,
+    "DOWN": 82,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 13.1,
+    "UP": 38.5,
+    "EVEN": 13.1,
+    "DOWN": 29.8,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 13.1,
+   "anchorRate": 5.5,
+   "breadth": 0.882,
+   "competitiveRatio": 22.5,
+   "winRate": 33.5
+  },
+  {
+   "teamId": "28D0C913-1889-4A72-87B4-45D58C73C0C9",
+   "name": "Monmouth (IL)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.5,
+   "matches": 213,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 125,
+    "EVEN": 41,
+    "DOWN": 11,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.9,
+    "UP": 58.7,
+    "EVEN": 19.2,
+    "DOWN": 5.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.9,
+   "anchorRate": 0,
+   "breadth": 0.673,
+   "competitiveRatio": 26.3,
+   "winRate": 35.2
+  },
+  {
+   "teamId": "BF591B40-DC19-49CF-9B26-EE0DA8FD535F",
+   "name": "Monmouth (IL)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.19,
+   "matches": 198,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 105,
+    "EVEN": 6,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 36.4,
+    "UP": 53,
+    "EVEN": 3,
+    "DOWN": 7.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 36.4,
+   "anchorRate": 0,
+   "breadth": 0.625,
+   "competitiveRatio": 13.7,
+   "winRate": 7.1
+  }
+ ]
+}

@@ -1,0 +1,517 @@
+{
+ "conference": "Heartland Collegiate Athletic Conference",
+ "slug": "heartland-collegiate-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 15,
+ "fingerprint": {
+  "overall": {
+   "matches": 4464,
+   "bands": {
+    "STRETCH": 553,
+    "UP": 1558,
+    "EVEN": 772,
+    "DOWN": 1152,
+    "ANCHOR": 429
+   },
+   "bandPct": {
+    "STRETCH": 12.4,
+    "UP": 34.9,
+    "EVEN": 17.3,
+    "DOWN": 25.8,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 12.4,
+   "anchorRate": 9.6,
+   "breadth": 0.935,
+   "competitiveRatio": 29.7,
+   "winRate": 42.4
+  },
+  "inConference": {
+   "matches": 1786,
+   "bands": {
+    "STRETCH": 203,
+    "UP": 491,
+    "EVEN": 398,
+    "DOWN": 491,
+    "ANCHOR": 203
+   },
+   "bandPct": {
+    "STRETCH": 11.4,
+    "UP": 27.5,
+    "EVEN": 22.3,
+    "DOWN": 27.5,
+    "ANCHOR": 11.4
+   },
+   "stretchRate": 11.4,
+   "anchorRate": 11.4,
+   "breadth": 0.956,
+   "competitiveRatio": 29.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2678,
+   "bands": {
+    "STRETCH": 350,
+    "UP": 1067,
+    "EVEN": 374,
+    "DOWN": 661,
+    "ANCHOR": 226
+   },
+   "bandPct": {
+    "STRETCH": 13.1,
+    "UP": 39.8,
+    "EVEN": 14,
+    "DOWN": 24.7,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 13.1,
+   "anchorRate": 8.4,
+   "breadth": 0.908,
+   "competitiveRatio": 29.6,
+   "winRate": 37.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 11.4,
+  "nonConference": 13.1,
+  "delta": 1.7,
+  "nonConferenceShare": 60
+ },
+ "members": [
+  {
+   "teamId": "09E02890-7559-44BA-8E73-E5491D1A8B28",
+   "name": "Franklin College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.25,
+   "matches": 373,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 227,
+    "EVEN": 12,
+    "DOWN": 99,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 60.9,
+    "EVEN": 3.2,
+    "DOWN": 26.5,
+    "ANCHOR": 4.6
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 4.6,
+   "breadth": 0.654,
+   "competitiveRatio": 32.8,
+   "winRate": 38.9
+  },
+  {
+   "teamId": "5A389D00-B933-4118-8EB4-67ACDC6FA79C",
+   "name": "Rose-Hulman",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.55,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 69,
+    "EVEN": 35,
+    "DOWN": 189,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 18.9,
+    "EVEN": 9.6,
+    "DOWN": 51.8,
+    "ANCHOR": 16.4
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 16.4,
+   "breadth": 0.801,
+   "competitiveRatio": 41.6,
+   "winRate": 62.2
+  },
+  {
+   "teamId": "D4B3BD23-2903-46E2-8F6B-C6D53B96AA2E",
+   "name": "Anderson (IN)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.58,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 83,
+    "EVEN": 81,
+    "DOWN": 100,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 23.6,
+    "EVEN": 23,
+    "DOWN": 28.4,
+    "ANCHOR": 21.6
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 21.6,
+   "breadth": 0.921,
+   "competitiveRatio": 38.4,
+   "winRate": 56.3
+  },
+  {
+   "teamId": "87FF7D2D-4D17-4299-B04B-1CC41588331E",
+   "name": "Franklin College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.02,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 250,
+    "EVEN": 24,
+    "DOWN": 63,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 71.4,
+    "EVEN": 6.9,
+    "DOWN": 18,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.7,
+   "breadth": 0.531,
+   "competitiveRatio": 26.6,
+   "winRate": 34
+  },
+  {
+   "teamId": "F47009A4-96A7-40C2-8FAB-9B21A02A8139",
+   "name": "Anderson (IN)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.81,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 111,
+    "EVEN": 123,
+    "DOWN": 104,
+    "ANCHOR": 8
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.1,
+    "EVEN": 35.5,
+    "DOWN": 30.1,
+    "ANCHOR": 2.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 2.3,
+   "breadth": 0.734,
+   "competitiveRatio": 27.2,
+   "winRate": 50
+  },
+  {
+   "teamId": "7E979C02-5E18-4ACF-B40F-B97724667893",
+   "name": "Earlham",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.48,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 68,
+    "EVEN": 138,
+    "DOWN": 65,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 20.1,
+    "EVEN": 40.8,
+    "DOWN": 19.2,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 10.9,
+   "breadth": 0.909,
+   "competitiveRatio": 26.9,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "6779D970-0F14-4D0B-8164-51C03368F86E",
+   "name": "Rose-Hulman",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.63,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 111,
+    "EVEN": 107,
+    "DOWN": 60,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 33,
+    "EVEN": 31.8,
+    "DOWN": 17.9,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 9.8,
+   "breadth": 0.907,
+   "competitiveRatio": 32.1,
+   "winRate": 44.3
+  },
+  {
+   "teamId": "50CB0E8B-D369-4CB6-9C51-28977592236D",
+   "name": "Earlham",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.24,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 57,
+    "EVEN": 64,
+    "DOWN": 117,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 18.2,
+    "EVEN": 20.4,
+    "DOWN": 37.4,
+    "ANCHOR": 20.8
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 20.8,
+   "breadth": 0.894,
+   "competitiveRatio": 34.8,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "3128D2D8-D740-480B-8E5D-1DF55F7DEF22",
+   "name": "Transylvania",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.78,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 78,
+    "EVEN": 44,
+    "DOWN": 137,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 25.3,
+    "EVEN": 14.3,
+    "DOWN": 44.5,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 12.3,
+   "breadth": 0.847,
+   "competitiveRatio": 30.2,
+   "winRate": 56.2
+  },
+  {
+   "teamId": "3941EE89-4974-4DD9-BEC7-41603E288DE0",
+   "name": "Transylvania",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.41,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 113,
+    "EVEN": 69,
+    "DOWN": 63,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 37.4,
+    "EVEN": 22.8,
+    "DOWN": 20.9,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 4,
+   "anchorRate": 14.9,
+   "breadth": 0.897,
+   "competitiveRatio": 38.9,
+   "winRate": 50.7
+  },
+  {
+   "teamId": "1D62053F-6F00-4378-88FE-134AC3E847E4",
+   "name": "Hanover",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.14,
+   "matches": 258,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 132,
+    "EVEN": 0,
+    "DOWN": 73,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 11.6,
+    "UP": 51.2,
+    "EVEN": 0,
+    "DOWN": 28.3,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 11.6,
+   "anchorRate": 8.9,
+   "breadth": 0.724,
+   "competitiveRatio": 29.8,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "827BF338-4AB7-4C52-800D-7A708148CE90",
+   "name": "Hanover",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.93,
+   "matches": 242,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 73,
+    "EVEN": 75,
+    "DOWN": 74,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 30.2,
+    "EVEN": 31,
+    "DOWN": 30.6,
+    "ANCHOR": 5.8
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 5.8,
+   "breadth": 0.835,
+   "competitiveRatio": 30,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "E831D27A-3A3A-445C-BCF7-570315086462",
+   "name": "Manchester",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.63,
+   "matches": 224,
+   "bands": {
+    "STRETCH": 121,
+    "UP": 95,
+    "EVEN": 0,
+    "DOWN": 8,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 54,
+    "UP": 42.4,
+    "EVEN": 0,
+    "DOWN": 3.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 54,
+   "anchorRate": 0,
+   "breadth": 0.507,
+   "competitiveRatio": 6.7,
+   "winRate": 6.3
+  },
+  {
+   "teamId": "92B555F8-4C81-401E-A100-6719F635B521",
+   "name": "Berea",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 31.54,
+   "matches": 181,
+   "bands": {
+    "STRETCH": 142,
+    "UP": 39,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 78.5,
+    "UP": 21.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 78.5,
+   "anchorRate": 0,
+   "breadth": 0.324,
+   "competitiveRatio": 13.3,
+   "winRate": 7.2
+  },
+  {
+   "teamId": "480F2801-168B-4034-BEBA-A16F732A9969",
+   "name": "Berea",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 34.04,
+   "matches": 176,
+   "bands": {
+    "STRETCH": 124,
+    "UP": 52,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 70.5,
+    "UP": 29.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 70.5,
+   "anchorRate": 0,
+   "breadth": 0.377,
+   "competitiveRatio": 11.4,
+   "winRate": 9.1
+  }
+ ]
+}

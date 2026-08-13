@@ -1,0 +1,382 @@
+{
+ "conference": "Chicagoland Collegiate Athletic Conference",
+ "slug": "chicagoland-collegiate-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 10,
+ "fingerprint": {
+  "overall": {
+   "matches": 1721,
+   "bands": {
+    "STRETCH": 317,
+    "UP": 645,
+    "EVEN": 109,
+    "DOWN": 481,
+    "ANCHOR": 169
+   },
+   "bandPct": {
+    "STRETCH": 18.4,
+    "UP": 37.5,
+    "EVEN": 6.3,
+    "DOWN": 27.9,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 18.4,
+   "anchorRate": 9.8,
+   "breadth": 0.894,
+   "competitiveRatio": 30.9,
+   "winRate": 43.6
+  },
+  "inConference": {
+   "matches": 466,
+   "bands": {
+    "STRETCH": 113,
+    "UP": 106,
+    "EVEN": 28,
+    "DOWN": 106,
+    "ANCHOR": 113
+   },
+   "bandPct": {
+    "STRETCH": 24.2,
+    "UP": 22.7,
+    "EVEN": 6,
+    "DOWN": 22.7,
+    "ANCHOR": 24.2
+   },
+   "stretchRate": 24.2,
+   "anchorRate": 24.2,
+   "breadth": 0.95,
+   "competitiveRatio": 15.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1255,
+   "bands": {
+    "STRETCH": 204,
+    "UP": 539,
+    "EVEN": 81,
+    "DOWN": 375,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 42.9,
+    "EVEN": 6.5,
+    "DOWN": 29.9,
+    "ANCHOR": 4.5
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 4.5,
+   "breadth": 0.829,
+   "competitiveRatio": 36.7,
+   "winRate": 41.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 24.2,
+  "nonConference": 16.3,
+  "delta": -7.9,
+  "nonConferenceShare": 72.9
+ },
+ "members": [
+  {
+   "teamId": "6B31C1E5-77F4-437A-9BFE-FC4ACA3DDBAE",
+   "name": "Judson (Ill.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.86,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 64,
+    "UP": 124,
+    "EVEN": 15,
+    "DOWN": 75,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 21.1,
+    "UP": 40.9,
+    "EVEN": 5,
+    "DOWN": 24.8,
+    "ANCHOR": 8.3
+   },
+   "stretchRate": 21.1,
+   "anchorRate": 8.3,
+   "breadth": 0.866,
+   "competitiveRatio": 44.2,
+   "winRate": 43.2
+  },
+  {
+   "teamId": "68DF1898-CF02-471B-A93D-E92A5E9EE5AB",
+   "name": "Holy Cross (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 23.65,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 56,
+    "EVEN": 3,
+    "DOWN": 69,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 26.8,
+    "EVEN": 1.4,
+    "DOWN": 33,
+    "ANCHOR": 22.5
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 22.5,
+   "breadth": 0.876,
+   "competitiveRatio": 25.8,
+   "winRate": 50.2
+  },
+  {
+   "teamId": "9E352D7E-66BD-4AED-B4FD-B36440AD45A7",
+   "name": "St. Ambrose (Iowa)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 24.13,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 77,
+    "EVEN": 11,
+    "DOWN": 45,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 19.1,
+    "UP": 36.8,
+    "EVEN": 5.3,
+    "DOWN": 21.5,
+    "ANCHOR": 17.2
+   },
+   "stretchRate": 19.1,
+   "anchorRate": 17.2,
+   "breadth": 0.915,
+   "competitiveRatio": 30,
+   "winRate": 37.3
+  },
+  {
+   "teamId": "C9FCB4A8-5C1A-4715-95E5-9046222FFD7D",
+   "name": "Holy Cross (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 17.14,
+   "matches": 208,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 69,
+    "EVEN": 0,
+    "DOWN": 80,
+    "ANCHOR": 59
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.2,
+    "EVEN": 0,
+    "DOWN": 38.5,
+    "ANCHOR": 28.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 28.4,
+   "breadth": 0.678,
+   "competitiveRatio": 37.5,
+   "winRate": 69.2
+  },
+  {
+   "teamId": "93E1554A-531D-4FD6-B946-636A496435C9",
+   "name": "Olivet Nazarene (Ill.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.73,
+   "matches": 208,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 73,
+    "EVEN": 18,
+    "DOWN": 94,
+    "ANCHOR": 2
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 35.1,
+    "EVEN": 8.7,
+    "DOWN": 45.2,
+    "ANCHOR": 1
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 1,
+   "breadth": 0.755,
+   "competitiveRatio": 41.8,
+   "winRate": 52.4
+  },
+  {
+   "teamId": "66F1A322-52A6-4A9C-B1A6-7010BD01393D",
+   "name": "St. Ambrose (Iowa)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.9,
+   "matches": 178,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 54,
+    "EVEN": 22,
+    "DOWN": 92,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 30.3,
+    "EVEN": 12.4,
+    "DOWN": 51.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 0,
+   "breadth": 0.698,
+   "competitiveRatio": 22.5,
+   "winRate": 33.7
+  },
+  {
+   "teamId": "9244AB35-BACC-4035-A26E-CA01257AA790",
+   "name": "Olivet Nazarene (Ill.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.63,
+   "matches": 145,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 85,
+    "EVEN": 14,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.6,
+    "UP": 58.6,
+    "EVEN": 9.7,
+    "DOWN": 4.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.6,
+   "anchorRate": 0,
+   "breadth": 0.637,
+   "competitiveRatio": 18.6,
+   "winRate": 34.5
+  },
+  {
+   "teamId": "597D4ABD-EBB1-4C1D-9F97-537C8AE65535",
+   "name": "Judson (Ill.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.42,
+   "matches": 120,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 57,
+    "EVEN": 20,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 35.8,
+    "UP": 47.5,
+    "EVEN": 16.7,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 35.8,
+   "anchorRate": 0,
+   "breadth": 0.634,
+   "competitiveRatio": 25.8,
+   "winRate": 30.8
+  },
+  {
+   "teamId": "59D4B2C8-04B8-4FD5-9502-EE69AF1C6296",
+   "name": "St. Francis (Ill.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.98,
+   "matches": 89,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 46,
+    "EVEN": 6,
+    "DOWN": 20,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.1,
+    "UP": 51.7,
+    "EVEN": 6.7,
+    "DOWN": 22.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.1,
+   "anchorRate": 0,
+   "breadth": 0.73,
+   "competitiveRatio": 18,
+   "winRate": 36
+  },
+  {
+   "teamId": "C954C09F-DC94-4290-A81F-B623C0F2626A",
+   "name": "St. Francis (Ill.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 30.12,
+   "matches": 52,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 4,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 92.3,
+    "UP": 7.7,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 92.3,
+   "anchorRate": 0,
+   "breadth": 0.168,
+   "competitiveRatio": 5.8,
+   "winRate": 9.6
+  }
+ ]
+}

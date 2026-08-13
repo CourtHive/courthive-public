@@ -1,0 +1,166 @@
+{
+ "conference": "Wolverine Hoosier Athletic Conference",
+ "slug": "wolverine-hoosier-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 438,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 262,
+    "EVEN": 36,
+    "DOWN": 59,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 17.1,
+    "UP": 59.8,
+    "EVEN": 8.2,
+    "DOWN": 13.5,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 17.1,
+   "anchorRate": 1.4,
+   "breadth": 0.711,
+   "competitiveRatio": 40.5,
+   "winRate": 42.2
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 438,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 262,
+    "EVEN": 36,
+    "DOWN": 59,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 17.1,
+    "UP": 59.8,
+    "EVEN": 8.2,
+    "DOWN": 13.5,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 17.1,
+   "anchorRate": 1.4,
+   "breadth": 0.711,
+   "competitiveRatio": 40.5,
+   "winRate": 42.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 17.1,
+  "delta": 17.1,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "229081A0-D948-448E-BB13-1D934A5904F5",
+   "name": "Lawrence Tech (Mich.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.12,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 148,
+    "EVEN": 24,
+    "DOWN": 41,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 67.6,
+    "EVEN": 11,
+    "DOWN": 18.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.571,
+   "competitiveRatio": 34.4,
+   "winRate": 37.9
+  },
+  {
+   "teamId": "628BEE3B-A5AC-4401-9D3A-4C18A4BABCD4",
+   "name": "Lawrence Tech (Mich.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.32,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 69,
+    "UP": 114,
+    "EVEN": 12,
+    "DOWN": 18,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 31.5,
+    "UP": 52.1,
+    "EVEN": 5.5,
+    "DOWN": 8.2,
+    "ANCHOR": 2.7
+   },
+   "stretchRate": 31.5,
+   "anchorRate": 2.7,
+   "breadth": 0.725,
+   "competitiveRatio": 46.6,
+   "winRate": 46.6
+  }
+ ]
+}

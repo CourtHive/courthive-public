@@ -1,0 +1,436 @@
+{
+ "conference": "Northern Sun Intercollegiate Conference",
+ "slug": "northern-sun-intercollegiate-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 3207,
+   "bands": {
+    "STRETCH": 400,
+    "UP": 1167,
+    "EVEN": 471,
+    "DOWN": 967,
+    "ANCHOR": 202
+   },
+   "bandPct": {
+    "STRETCH": 12.5,
+    "UP": 36.4,
+    "EVEN": 14.7,
+    "DOWN": 30.2,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 12.5,
+   "anchorRate": 6.3,
+   "breadth": 0.898,
+   "competitiveRatio": 33.2,
+   "winRate": 47.1
+  },
+  "inConference": {
+   "matches": 1932,
+   "bands": {
+    "STRETCH": 141,
+    "UP": 680,
+    "EVEN": 290,
+    "DOWN": 680,
+    "ANCHOR": 141
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 35.2,
+    "EVEN": 15,
+    "DOWN": 35.2,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 7.3,
+   "breadth": 0.871,
+   "competitiveRatio": 32.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1275,
+   "bands": {
+    "STRETCH": 259,
+    "UP": 487,
+    "EVEN": 181,
+    "DOWN": 287,
+    "ANCHOR": 61
+   },
+   "bandPct": {
+    "STRETCH": 20.3,
+    "UP": 38.2,
+    "EVEN": 14.2,
+    "DOWN": 22.5,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 20.3,
+   "anchorRate": 4.8,
+   "breadth": 0.901,
+   "competitiveRatio": 34.2,
+   "winRate": 42.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 7.3,
+  "nonConference": 20.3,
+  "delta": 13,
+  "nonConferenceShare": 39.8
+ },
+ "members": [
+  {
+   "teamId": "F979E859-2A89-4363-92F1-BDBEB9E241F8",
+   "name": "Sioux Falls",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.83,
+   "matches": 373,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 147,
+    "EVEN": 48,
+    "DOWN": 107,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 17.4,
+    "UP": 39.4,
+    "EVEN": 12.9,
+    "DOWN": 28.7,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 17.4,
+   "anchorRate": 1.6,
+   "breadth": 0.845,
+   "competitiveRatio": 31.9,
+   "winRate": 41
+  },
+  {
+   "teamId": "215EF1AC-786C-4A9A-ABF6-791B1D739356",
+   "name": "Augustana (South Dakota)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.63,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 23,
+    "EVEN": 83,
+    "DOWN": 98,
+    "ANCHOR": 145
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.6,
+    "EVEN": 23.8,
+    "DOWN": 28.1,
+    "ANCHOR": 41.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 41.5,
+   "breadth": 0.772,
+   "competitiveRatio": 27.2,
+   "winRate": 79.7
+  },
+  {
+   "teamId": "17B73D18-0345-4C6D-A406-E5A4155B58F2",
+   "name": "University of Mary (ND)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.89,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 87,
+    "UP": 118,
+    "EVEN": 81,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.1,
+    "UP": 36.8,
+    "EVEN": 25.2,
+    "DOWN": 10.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.1,
+   "anchorRate": 0,
+   "breadth": 0.814,
+   "competitiveRatio": 31.2,
+   "winRate": 45.2
+  },
+  {
+   "teamId": "D5C22C9A-0E03-4618-AE87-FB88736390AD",
+   "name": "Winona State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.09,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 77,
+    "EVEN": 81,
+    "DOWN": 123,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 24.8,
+    "EVEN": 26.1,
+    "DOWN": 39.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 0,
+   "breadth": 0.798,
+   "competitiveRatio": 36.8,
+   "winRate": 39.4
+  },
+  {
+   "teamId": "491FF21D-3D9C-4643-AD28-47BAB8A5F666",
+   "name": "MSU Moorhead",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.39,
+   "matches": 295,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 153,
+    "EVEN": 55,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.3,
+    "UP": 51.9,
+    "EVEN": 18.6,
+    "DOWN": 14.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.3,
+   "anchorRate": 0,
+   "breadth": 0.757,
+   "competitiveRatio": 34.9,
+   "winRate": 44.7
+  },
+  {
+   "teamId": "2D7E47B4-8529-4605-BA72-D1CBA2848882",
+   "name": "Minnesota State Mankato",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.58,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 109,
+    "EVEN": 6,
+    "DOWN": 172,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 2.1,
+    "DOWN": 59.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.469,
+   "competitiveRatio": 38.9,
+   "winRate": 58.5
+  },
+  {
+   "teamId": "36A6B481-46E3-4395-A509-CE191B077905",
+   "name": "Minnesota-Crookston",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.84,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 50,
+    "EVEN": 48,
+    "DOWN": 119,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 16.8,
+    "UP": 18.7,
+    "EVEN": 17.9,
+    "DOWN": 44.4,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 16.8,
+   "anchorRate": 2.2,
+   "breadth": 0.849,
+   "competitiveRatio": 31.6,
+   "winRate": 50.7
+  },
+  {
+   "teamId": "42F5D444-4436-4B8F-B33A-9533B479F559",
+   "name": "Augustana (South Dakota)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.43,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 122,
+    "EVEN": 5,
+    "DOWN": 49,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 19.7,
+    "UP": 49,
+    "EVEN": 2,
+    "DOWN": 19.7,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 19.7,
+   "anchorRate": 9.6,
+   "breadth": 0.804,
+   "competitiveRatio": 40.6,
+   "winRate": 45.8
+  },
+  {
+   "teamId": "D6024BCD-5EAB-4FDF-B0E7-FEBEF956650A",
+   "name": "Saint Cloud State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.37,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 149,
+    "EVEN": 34,
+    "DOWN": 34,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 10.4,
+    "UP": 59.8,
+    "EVEN": 13.7,
+    "DOWN": 13.7,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 10.4,
+   "anchorRate": 2.4,
+   "breadth": 0.731,
+   "competitiveRatio": 35.6,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "31738832-A133-4EE9-B0DE-4C1FB6968FCE",
+   "name": "Minnesota Duluth",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.05,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 153,
+    "EVEN": 12,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 69.9,
+    "EVEN": 5.5,
+    "DOWN": 5.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 0,
+   "breadth": 0.55,
+   "competitiveRatio": 27.9,
+   "winRate": 24.2
+  },
+  {
+   "teamId": "3C2D8146-0476-4351-B0E6-1C0BF373F036",
+   "name": "Bemidji State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.24,
+   "matches": 215,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 42,
+    "EVEN": 0,
+    "DOWN": 158,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.5,
+    "EVEN": 0,
+    "DOWN": 73.5,
+    "ANCHOR": 7
+   },
+   "stretchRate": 0,
+   "anchorRate": 7,
+   "breadth": 0.454,
+   "competitiveRatio": 31.2,
+   "winRate": 29.3
+  },
+  {
+   "teamId": "FB8207BB-BC0E-413F-BC9D-76A8E1E6E570",
+   "name": "Jamestown",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.57,
+   "matches": 72,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 24,
+    "EVEN": 18,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.7,
+    "UP": 33.3,
+    "EVEN": 25,
+    "DOWN": 25,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.7,
+   "anchorRate": 0,
+   "breadth": 0.844,
+   "competitiveRatio": 26.4,
+   "winRate": 54.2
+  }
+ ]
+}

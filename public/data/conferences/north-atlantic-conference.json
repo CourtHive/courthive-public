@@ -1,0 +1,409 @@
+{
+ "conference": "North Atlantic Conference",
+ "slug": "north-atlantic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 1868,
+   "bands": {
+    "STRETCH": 198,
+    "UP": 645,
+    "EVEN": 293,
+    "DOWN": 605,
+    "ANCHOR": 127
+   },
+   "bandPct": {
+    "STRETCH": 10.6,
+    "UP": 34.5,
+    "EVEN": 15.7,
+    "DOWN": 32.4,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 10.6,
+   "anchorRate": 6.8,
+   "breadth": 0.897,
+   "competitiveRatio": 19.4,
+   "winRate": 42.1
+  },
+  "inConference": {
+   "matches": 1078,
+   "bands": {
+    "STRETCH": 109,
+    "UP": 347,
+    "EVEN": 166,
+    "DOWN": 347,
+    "ANCHOR": 109
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 32.2,
+    "EVEN": 15.4,
+    "DOWN": 32.2,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 10.1,
+   "breadth": 0.92,
+   "competitiveRatio": 17.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 790,
+   "bands": {
+    "STRETCH": 89,
+    "UP": 298,
+    "EVEN": 127,
+    "DOWN": 258,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 37.7,
+    "EVEN": 16.1,
+    "DOWN": 32.7,
+    "ANCHOR": 2.3
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 2.3,
+   "breadth": 0.845,
+   "competitiveRatio": 21.5,
+   "winRate": 31.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.1,
+  "nonConference": 11.3,
+  "delta": 1.2,
+  "nonConferenceShare": 42.3
+ },
+ "members": [
+  {
+   "teamId": "544CABF6-258B-48E6-8838-6FA33B74C5F1",
+   "name": "Thomas (Maine)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.53,
+   "matches": 253,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 30,
+    "EVEN": 12,
+    "DOWN": 182,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 11.9,
+    "EVEN": 4.7,
+    "DOWN": 71.9,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 9.1,
+   "breadth": 0.585,
+   "competitiveRatio": 25.9,
+   "winRate": 74.3
+  },
+  {
+   "teamId": "CD5CF82B-BC81-4B5E-B64C-49312FB9B558",
+   "name": "Lesley University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.26,
+   "matches": 234,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 75,
+    "EVEN": 56,
+    "DOWN": 80,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 32.1,
+    "EVEN": 23.9,
+    "DOWN": 34.2,
+    "ANCHOR": 8.5
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 8.5,
+   "breadth": 0.833,
+   "competitiveRatio": 14.6,
+   "winRate": 56
+  },
+  {
+   "teamId": "3B8B7EDD-2FB1-4686-8AE1-84B0A528ADB0",
+   "name": "Thomas (Maine)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.66,
+   "matches": 197,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 40,
+    "EVEN": 26,
+    "DOWN": 91,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.3,
+    "EVEN": 13.2,
+    "DOWN": 46.2,
+    "ANCHOR": 20.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.3,
+   "breadth": 0.79,
+   "competitiveRatio": 24.5,
+   "winRate": 53.8
+  },
+  {
+   "teamId": "BBFA7659-E4DD-4E3B-BE64-220BAA1B5CD1",
+   "name": "Vermont State - Lyndon",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.21,
+   "matches": 192,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 65,
+    "DOWN": 39,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 45.8,
+    "EVEN": 33.9,
+    "DOWN": 20.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.651,
+   "competitiveRatio": 26.2,
+   "winRate": 44.8
+  },
+  {
+   "teamId": "565AF975-1B55-4C7E-B477-F025808773FD",
+   "name": "SUNY Delhi",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.72,
+   "matches": 187,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 116,
+    "EVEN": 59,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 31.6,
+    "DOWN": 6.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.52,
+   "competitiveRatio": 23,
+   "winRate": 31
+  },
+  {
+   "teamId": "D7CA70A2-D4A8-4159-A5FF-ADAC8F8DD1E4",
+   "name": "Husson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.97,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 125,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 74,
+    "ANCHOR": 26
+   },
+   "stretchRate": 0,
+   "anchorRate": 26,
+   "breadth": 0.356,
+   "competitiveRatio": 24.4,
+   "winRate": 68.6
+  },
+  {
+   "teamId": "7A72107C-5B90-400F-B1EA-A59B9C0FE7A1",
+   "name": "Lesley University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.1,
+   "matches": 153,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 64,
+    "EVEN": 60,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 3.9,
+    "UP": 41.8,
+    "EVEN": 39.2,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "stretchRate": 3.9,
+   "anchorRate": 0,
+   "breadth": 0.711,
+   "competitiveRatio": 13.7,
+   "winRate": 13.7
+  },
+  {
+   "teamId": "35A81326-D33A-424D-B9D3-A6CB822657C7",
+   "name": "Vermont State - Lyndon",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.45,
+   "matches": 135,
+   "bands": {
+    "STRETCH": 82,
+    "UP": 53,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 60.7,
+    "UP": 39.3,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 60.7,
+   "anchorRate": 0,
+   "breadth": 0.416,
+   "competitiveRatio": 7.8,
+   "winRate": 6.7
+  },
+  {
+   "teamId": "EACA1153-309A-4D3B-B6C2-4C5B833F4A32",
+   "name": "Vermont State - Johnson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.7,
+   "matches": 132,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 50,
+    "EVEN": 0,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 36.4,
+    "UP": 37.9,
+    "EVEN": 0,
+    "DOWN": 25.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 36.4,
+   "anchorRate": 0,
+   "breadth": 0.674,
+   "competitiveRatio": 9.5,
+   "winRate": 23.5
+  },
+  {
+   "teamId": "D5D17959-BC9F-4C83-971C-ACF7D00F53C4",
+   "name": "Vermont State - Johnson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 31.48,
+   "matches": 110,
+   "bands": {
+    "STRETCH": 53,
+    "UP": 57,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 48.2,
+    "UP": 51.8,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 48.2,
+   "anchorRate": 0,
+   "breadth": 0.43,
+   "competitiveRatio": 20,
+   "winRate": 12.7
+  },
+  {
+   "teamId": "337AA70E-33E7-4FC4-9EF1-865B08E3D7F4",
+   "name": "SUNY Delhi",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.28,
+   "matches": 106,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 72,
+    "EVEN": 15,
+    "DOWN": 19,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 67.9,
+    "EVEN": 14.2,
+    "DOWN": 17.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.527,
+   "competitiveRatio": 12.3,
+   "winRate": 25.5
+  }
+ ]
+}

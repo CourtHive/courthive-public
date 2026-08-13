@@ -1,0 +1,597 @@
+{
+ "conference": "Southland Conference",
+ "slug": "southland-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 5841,
+   "bands": {
+    "STRETCH": 450,
+    "UP": 1929,
+    "EVEN": 848,
+    "DOWN": 1882,
+    "ANCHOR": 732
+   },
+   "bandPct": {
+    "STRETCH": 7.7,
+    "UP": 33,
+    "EVEN": 14.5,
+    "DOWN": 32.2,
+    "ANCHOR": 12.5
+   },
+   "stretchRate": 7.7,
+   "anchorRate": 12.5,
+   "breadth": 0.913,
+   "competitiveRatio": 43,
+   "winRate": 53.6
+  },
+  "inConference": {
+   "matches": 2410,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 943,
+    "EVEN": 440,
+    "DOWN": 943,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 39.1,
+    "EVEN": 18.3,
+    "DOWN": 39.1,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 1.7,
+   "breadth": 0.737,
+   "competitiveRatio": 49.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3431,
+   "bands": {
+    "STRETCH": 408,
+    "UP": 986,
+    "EVEN": 408,
+    "DOWN": 939,
+    "ANCHOR": 690
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 28.7,
+    "EVEN": 11.9,
+    "DOWN": 27.4,
+    "ANCHOR": 20.1
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 20.1,
+   "breadth": 0.958,
+   "competitiveRatio": 38.2,
+   "winRate": 56.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.7,
+  "nonConference": 11.9,
+  "delta": 10.2,
+  "nonConferenceShare": 58.7
+ },
+ "members": [
+  {
+   "teamId": "7F9B3F3B-A188-4DA5-A63E-25CBF7117C8D",
+   "name": "Lamar University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.57,
+   "matches": 381,
+   "bands": {
+    "STRETCH": 73,
+    "UP": 128,
+    "EVEN": 57,
+    "DOWN": 61,
+    "ANCHOR": 62
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 33.6,
+    "EVEN": 15,
+    "DOWN": 16,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 16.3,
+   "breadth": 0.967,
+   "competitiveRatio": 45.8,
+   "winRate": 48.8
+  },
+  {
+   "teamId": "231AFFFE-423F-4321-B824-B536BE329203",
+   "name": "McNeese",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.96,
+   "matches": 367,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 56,
+    "EVEN": 54,
+    "DOWN": 192,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.3,
+    "EVEN": 14.7,
+    "DOWN": 52.3,
+    "ANCHOR": 17.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.7,
+   "breadth": 0.755,
+   "competitiveRatio": 35.7,
+   "winRate": 72.8
+  },
+  {
+   "teamId": "9BD9BE97-8EC4-442E-BA85-81B5182B6E96",
+   "name": "University Of Texas Rio Grande Valley",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.1,
+   "matches": 363,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 112,
+    "EVEN": 78,
+    "DOWN": 76,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 25.9,
+    "UP": 30.9,
+    "EVEN": 21.5,
+    "DOWN": 20.9,
+    "ANCHOR": 0.8
+   },
+   "stretchRate": 25.9,
+   "anchorRate": 0.8,
+   "breadth": 0.876,
+   "competitiveRatio": 51,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "C9BEED0B-BCB1-41F9-86F9-EB3FD7C84EEA",
+   "name": "Southeastern Louisiana",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.56,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 129,
+    "EVEN": 50,
+    "DOWN": 124,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 36.8,
+    "EVEN": 14.2,
+    "DOWN": 35.3,
+    "ANCHOR": 12
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 12,
+   "breadth": 0.831,
+   "competitiveRatio": 44.6,
+   "winRate": 53.6
+  },
+  {
+   "teamId": "FD17CB3A-A863-4C98-AA4E-A6142D98DDA2",
+   "name": "New Jersey Institute of Technology",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.62,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 107,
+    "EVEN": 40,
+    "DOWN": 170,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 31.4,
+    "EVEN": 11.7,
+    "DOWN": 49.9,
+    "ANCHOR": 6.2
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 6.2,
+   "breadth": 0.73,
+   "competitiveRatio": 48.1,
+   "winRate": 70.1
+  },
+  {
+   "teamId": "A367833F-C510-43E6-90EE-25F9B626B7D4",
+   "name": "University Of Texas Rio Grande Valley",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.03,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 139,
+    "EVEN": 60,
+    "DOWN": 106,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 40.8,
+    "EVEN": 17.6,
+    "DOWN": 31.1,
+    "ANCHOR": 3.5
+   },
+   "stretchRate": 7,
+   "anchorRate": 3.5,
+   "breadth": 0.832,
+   "competitiveRatio": 45.7,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "48B5E98C-0F64-45EF-BFE5-D5426D85007F",
+   "name": "Texas A&M-Corpus Christi",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.46,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 7,
+    "EVEN": 44,
+    "DOWN": 196,
+    "ANCHOR": 89
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 2.1,
+    "EVEN": 13,
+    "DOWN": 57.8,
+    "ANCHOR": 26.3
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 26.3,
+   "breadth": 0.655,
+   "competitiveRatio": 31.3,
+   "winRate": 81.7
+  },
+  {
+   "teamId": "EA43EBAC-DA7C-42F4-97B5-6DF62FE488AE",
+   "name": "New Jersey Institute of Technology",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.74,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 107,
+    "EVEN": 103,
+    "DOWN": 108,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 32.3,
+    "EVEN": 31.1,
+    "DOWN": 32.6,
+    "ANCHOR": 1.2
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 1.2,
+   "breadth": 0.774,
+   "competitiveRatio": 47.7,
+   "winRate": 62.5
+  },
+  {
+   "teamId": "797B80D1-2EE4-4F99-9AFA-2BD3848BB82E",
+   "name": "Nicholls State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.47,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 187,
+    "EVEN": 36,
+    "DOWN": 40,
+    "ANCHOR": 56
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 56.5,
+    "EVEN": 10.9,
+    "DOWN": 12.1,
+    "ANCHOR": 16.9
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 16.9,
+   "breadth": 0.771,
+   "competitiveRatio": 39.3,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "B877C313-9706-43BF-AD67-2D9456CB0F72",
+   "name": "Stephen F. Austin",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.35,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 40,
+    "EVEN": 59,
+    "DOWN": 208,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 12.4,
+    "EVEN": 18.3,
+    "DOWN": 64.6,
+    "ANCHOR": 2.8
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 2.8,
+   "breadth": 0.638,
+   "competitiveRatio": 42.5,
+   "winRate": 50.6
+  },
+  {
+   "teamId": "2760951A-B787-4970-A896-560322101472",
+   "name": "Lamar University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.22,
+   "matches": 318,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 214,
+    "EVEN": 54,
+    "DOWN": 11,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 67.3,
+    "EVEN": 17,
+    "DOWN": 3.5,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 6.6,
+   "breadth": 0.637,
+   "competitiveRatio": 42.5,
+   "winRate": 37.1
+  },
+  {
+   "teamId": "8F4B8AE4-5CFF-45DA-99D9-4AE4175ACF1F",
+   "name": "New Orleans",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.92,
+   "matches": 304,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 134,
+    "EVEN": 32,
+    "DOWN": 52,
+    "ANCHOR": 62
+   },
+   "bandPct": {
+    "STRETCH": 7.9,
+    "UP": 44.1,
+    "EVEN": 10.5,
+    "DOWN": 17.1,
+    "ANCHOR": 20.4
+   },
+   "stretchRate": 7.9,
+   "anchorRate": 20.4,
+   "breadth": 0.885,
+   "competitiveRatio": 48.5,
+   "winRate": 53.6
+  },
+  {
+   "teamId": "FDD86433-9A19-4A49-86A3-A6EB2492FEF5",
+   "name": "University Of the Incarnate Word",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.37,
+   "matches": 304,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 159,
+    "EVEN": 46,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 52.3,
+    "EVEN": 15.1,
+    "DOWN": 26.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 0,
+   "breadth": 0.711,
+   "competitiveRatio": 42.4,
+   "winRate": 35.9
+  },
+  {
+   "teamId": "9DC67F17-E663-49EC-AB20-9D4D1F4DE2BC",
+   "name": "Texas A&M-Corpus Christi",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.74,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 23,
+    "EVEN": 25,
+    "DOWN": 125,
+    "ANCHOR": 112
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 7.7,
+    "EVEN": 8.3,
+    "DOWN": 41.7,
+    "ANCHOR": 37.3
+   },
+   "stretchRate": 5,
+   "anchorRate": 37.3,
+   "breadth": 0.799,
+   "competitiveRatio": 39,
+   "winRate": 68.7
+  },
+  {
+   "teamId": "29B19352-5DE6-4717-8370-FC6C54D69FEF",
+   "name": "Northwestern State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.11,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 90,
+    "EVEN": 30,
+    "DOWN": 137,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 30.3,
+    "EVEN": 10.1,
+    "DOWN": 46.1,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 9.8,
+   "breadth": 0.807,
+   "competitiveRatio": 44.6,
+   "winRate": 57.2
+  },
+  {
+   "teamId": "5A6A5B42-06F4-4854-8DFA-622E48D22C71",
+   "name": "University Of the Incarnate Word",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.92,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 21,
+    "EVEN": 44,
+    "DOWN": 124,
+    "ANCHOR": 81
+   },
+   "bandPct": {
+    "STRETCH": 5.3,
+    "UP": 7.4,
+    "EVEN": 15.4,
+    "DOWN": 43.5,
+    "ANCHOR": 28.4
+   },
+   "stretchRate": 5.3,
+   "anchorRate": 28.4,
+   "breadth": 0.842,
+   "competitiveRatio": 45.1,
+   "winRate": 62.1
+  },
+  {
+   "teamId": "4F4C4ABD-04F9-4FD5-BFBB-BD8B6D46E90D",
+   "name": "New Orleans",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.7,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 190,
+    "EVEN": 36,
+    "DOWN": 14,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 66.7,
+    "EVEN": 12.6,
+    "DOWN": 4.9,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 6,
+   "anchorRate": 9.8,
+   "breadth": 0.668,
+   "competitiveRatio": 41.9,
+   "winRate": 43.5
+  },
+  {
+   "teamId": "40AEE1B8-0379-46F0-A5D4-A51A8B7EEAE8",
+   "name": "Nicholls State University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 19.06,
+   "matches": 281,
+   "bands": {
+    "STRETCH": 102,
+    "UP": 86,
+    "EVEN": 0,
+    "DOWN": 57,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 36.3,
+    "UP": 30.6,
+    "EVEN": 0,
+    "DOWN": 20.3,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 36.3,
+   "anchorRate": 12.8,
+   "breadth": 0.818,
+   "competitiveRatio": 37.9,
+   "winRate": 43.4
+  }
+ ]
+}

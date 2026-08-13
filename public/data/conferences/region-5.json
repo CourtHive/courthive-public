@@ -1,0 +1,219 @@
+{
+ "conference": "Region 5",
+ "slug": "region-5",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 4,
+ "fingerprint": {
+  "overall": {
+   "matches": 1108,
+   "bands": {
+    "STRETCH": 132,
+    "UP": 437,
+    "EVEN": 206,
+    "DOWN": 209,
+    "ANCHOR": 124
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 39.4,
+    "EVEN": 18.6,
+    "DOWN": 18.9,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 11.2,
+   "breadth": 0.928,
+   "competitiveRatio": 34.5,
+   "winRate": 42.6
+  },
+  "inConference": {
+   "matches": 58,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 12,
+    "EVEN": 34,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.7,
+    "EVEN": 58.6,
+    "DOWN": 20.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.6,
+   "competitiveRatio": 41.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1050,
+   "bands": {
+    "STRETCH": 132,
+    "UP": 425,
+    "EVEN": 172,
+    "DOWN": 197,
+    "ANCHOR": 124
+   },
+   "bandPct": {
+    "STRETCH": 12.6,
+    "UP": 40.5,
+    "EVEN": 16.4,
+    "DOWN": 18.8,
+    "ANCHOR": 11.8
+   },
+   "stretchRate": 12.6,
+   "anchorRate": 11.8,
+   "breadth": 0.925,
+   "competitiveRatio": 34.2,
+   "winRate": 42.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 12.6,
+  "delta": 12.6,
+  "nonConferenceShare": 94.8
+ },
+ "members": [
+  {
+   "teamId": "A77762C7-02C8-4788-98FB-8B9D4F01434E",
+   "name": "Collin",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 19.96,
+   "matches": 342,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 128,
+    "EVEN": 57,
+    "DOWN": 48,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 18.4,
+    "UP": 37.4,
+    "EVEN": 16.7,
+    "DOWN": 14,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 18.4,
+   "anchorRate": 13.5,
+   "breadth": 0.947,
+   "competitiveRatio": 43.9,
+   "winRate": 54.7
+  },
+  {
+   "teamId": "D4264FC2-C604-4501-B92D-2132CE86443F",
+   "name": "Collin",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 24.84,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 114,
+    "EVEN": 73,
+    "DOWN": 80,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 34.2,
+    "EVEN": 21.9,
+    "DOWN": 24,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 9.9,
+   "breadth": 0.932,
+   "competitiveRatio": 27.7,
+   "winRate": 32.7
+  },
+  {
+   "teamId": "A5B19CB5-B5E8-45C4-B83F-2995C4B5C2BA",
+   "name": "Weatherford",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28.08,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 142,
+    "EVEN": 23,
+    "DOWN": 39,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 60.9,
+    "EVEN": 9.9,
+    "DOWN": 16.7,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 1.3,
+   "breadth": 0.702,
+   "competitiveRatio": 31.9,
+   "winRate": 33
+  },
+  {
+   "teamId": "7EEAE64A-0217-47AF-BABB-1CF2EB513873",
+   "name": "Weatherford",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 20.4,
+   "matches": 200,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 53,
+    "EVEN": 53,
+    "DOWN": 42,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 26.5,
+    "EVEN": 26.5,
+    "DOWN": 21,
+    "ANCHOR": 21
+   },
+   "stretchRate": 5,
+   "anchorRate": 21,
+   "breadth": 0.938,
+   "competitiveRatio": 33,
+   "winRate": 49.5
+  }
+ ]
+}

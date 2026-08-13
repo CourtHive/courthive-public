@@ -1,0 +1,328 @@
+{
+ "conference": "Central Atlantic Collegiate Conference",
+ "slug": "central-atlantic-collegiate-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 8,
+ "fingerprint": {
+  "overall": {
+   "matches": 2429,
+   "bands": {
+    "STRETCH": 209,
+    "UP": 872,
+    "EVEN": 313,
+    "DOWN": 756,
+    "ANCHOR": 279
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 35.9,
+    "EVEN": 12.9,
+    "DOWN": 31.1,
+    "ANCHOR": 11.5
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 11.5,
+   "breadth": 0.904,
+   "competitiveRatio": 37.3,
+   "winRate": 49.7
+  },
+  "inConference": {
+   "matches": 1190,
+   "bands": {
+    "STRETCH": 142,
+    "UP": 373,
+    "EVEN": 160,
+    "DOWN": 373,
+    "ANCHOR": 142
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 31.3,
+    "EVEN": 13.4,
+    "DOWN": 31.3,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 11.9,
+   "breadth": 0.935,
+   "competitiveRatio": 36.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1239,
+   "bands": {
+    "STRETCH": 67,
+    "UP": 499,
+    "EVEN": 153,
+    "DOWN": 383,
+    "ANCHOR": 137
+   },
+   "bandPct": {
+    "STRETCH": 5.4,
+    "UP": 40.3,
+    "EVEN": 12.3,
+    "DOWN": 30.9,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 5.4,
+   "anchorRate": 11.1,
+   "breadth": 0.863,
+   "competitiveRatio": 38.1,
+   "winRate": 49.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 11.9,
+  "nonConference": 5.4,
+  "delta": -6.5,
+  "nonConferenceShare": 51
+ },
+ "members": [
+  {
+   "teamId": "4DE6D8D7-3736-4FC0-95C8-428A1DA37E37",
+   "name": "Thomas Jefferson University",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.06,
+   "matches": 408,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 86,
+    "EVEN": 59,
+    "DOWN": 170,
+    "ANCHOR": 93
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.1,
+    "EVEN": 14.5,
+    "DOWN": 41.7,
+    "ANCHOR": 22.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.8,
+   "breadth": 0.814,
+   "competitiveRatio": 34.5,
+   "winRate": 56.9
+  },
+  {
+   "teamId": "7FA2DDA8-AC12-4EFC-A825-945DAAD72E58",
+   "name": "Wilmington (Delaware)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.01,
+   "matches": 364,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 94,
+    "EVEN": 47,
+    "DOWN": 150,
+    "ANCHOR": 73
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.8,
+    "EVEN": 12.9,
+    "DOWN": 41.2,
+    "ANCHOR": 20.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.1,
+   "breadth": 0.809,
+   "competitiveRatio": 37.8,
+   "winRate": 69
+  },
+  {
+   "teamId": "000AD733-498C-4E18-B529-9C1C7011ABDA",
+   "name": "Thomas Jefferson University",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.17,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 111,
+    "EVEN": 28,
+    "DOWN": 127,
+    "ANCHOR": 66
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 31.4,
+    "EVEN": 7.9,
+    "DOWN": 36,
+    "ANCHOR": 18.7
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 18.7,
+   "breadth": 0.879,
+   "competitiveRatio": 46.7,
+   "winRate": 57.2
+  },
+  {
+   "teamId": "B30F59C1-5C47-4515-B885-4CC91F4539F1",
+   "name": "Goldey-Beacom",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.59,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 148,
+    "EVEN": 39,
+    "DOWN": 98,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 48.8,
+    "EVEN": 12.9,
+    "DOWN": 32.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 0,
+   "breadth": 0.712,
+   "competitiveRatio": 36.5,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "B8CCCDB0-CF21-4AA0-9C41-60F9AF3293DF",
+   "name": "Post",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.88,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 85,
+    "UP": 138,
+    "EVEN": 57,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 30.4,
+    "UP": 49.3,
+    "EVEN": 20.4,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 30.4,
+   "anchorRate": 0,
+   "breadth": 0.643,
+   "competitiveRatio": 28.3,
+   "winRate": 27.5
+  },
+  {
+   "teamId": "AEECC6BA-ADEC-4787-A807-C201715E21BD",
+   "name": "Chestnut Hill",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.24,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 111,
+    "EVEN": 16,
+    "DOWN": 147,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.8,
+    "EVEN": 5.7,
+    "DOWN": 52.7,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.8,
+   "breadth": 0.584,
+   "competitiveRatio": 39.7,
+   "winRate": 56.3
+  },
+  {
+   "teamId": "2DCD5609-978E-4584-9DF1-9D6641E0EBE3",
+   "name": "Chestnut Hill",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.37,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 111,
+    "EVEN": 34,
+    "DOWN": 64,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 43.4,
+    "EVEN": 13.3,
+    "DOWN": 25,
+    "ANCHOR": 16.4
+   },
+   "stretchRate": 2,
+   "anchorRate": 16.4,
+   "breadth": 0.839,
+   "competitiveRatio": 42.2,
+   "winRate": 40.6
+  },
+  {
+   "teamId": "D3B4ED30-6DE8-458C-89E5-F4DAEEDD6E09",
+   "name": "Dominican New York",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.42,
+   "matches": 186,
+   "bands": {
+    "STRETCH": 80,
+    "UP": 73,
+    "EVEN": 33,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43,
+    "UP": 39.2,
+    "EVEN": 17.7,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43,
+   "anchorRate": 0,
+   "breadth": 0.644,
+   "competitiveRatio": 28.4,
+   "winRate": 21
+  }
+ ]
+}

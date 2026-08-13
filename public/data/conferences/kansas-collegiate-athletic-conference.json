@@ -1,0 +1,814 @@
+{
+ "conference": "Kansas Collegiate Athletic Conference",
+ "slug": "kansas-collegiate-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 26,
+ "fingerprint": {
+  "overall": {
+   "matches": 7544,
+   "bands": {
+    "STRETCH": 1016,
+    "UP": 2700,
+    "EVEN": 761,
+    "DOWN": 2330,
+    "ANCHOR": 737
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 35.8,
+    "EVEN": 10.1,
+    "DOWN": 30.9,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 9.8,
+   "breadth": 0.907,
+   "competitiveRatio": 30.6,
+   "winRate": 45.8
+  },
+  "inConference": {
+   "matches": 4922,
+   "bands": {
+    "STRETCH": 535,
+    "UP": 1679,
+    "EVEN": 494,
+    "DOWN": 1679,
+    "ANCHOR": 535
+   },
+   "bandPct": {
+    "STRETCH": 10.9,
+    "UP": 34.1,
+    "EVEN": 10,
+    "DOWN": 34.1,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 10.9,
+   "anchorRate": 10.9,
+   "breadth": 0.899,
+   "competitiveRatio": 30.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2622,
+   "bands": {
+    "STRETCH": 481,
+    "UP": 1021,
+    "EVEN": 267,
+    "DOWN": 651,
+    "ANCHOR": 202
+   },
+   "bandPct": {
+    "STRETCH": 18.3,
+    "UP": 38.9,
+    "EVEN": 10.2,
+    "DOWN": 24.8,
+    "ANCHOR": 7.7
+   },
+   "stretchRate": 18.3,
+   "anchorRate": 7.7,
+   "breadth": 0.904,
+   "competitiveRatio": 31.6,
+   "winRate": 38
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.9,
+  "nonConference": 18.3,
+  "delta": 7.4,
+  "nonConferenceShare": 34.8
+ },
+ "members": [
+  {
+   "teamId": "0A456C8E-BC2F-4F32-9FAB-C73FE777ECDF",
+   "name": "McPherson (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.76,
+   "matches": 389,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 64,
+    "EVEN": 45,
+    "DOWN": 145,
+    "ANCHOR": 73
+   },
+   "bandPct": {
+    "STRETCH": 15.9,
+    "UP": 16.5,
+    "EVEN": 11.6,
+    "DOWN": 37.3,
+    "ANCHOR": 18.8
+   },
+   "stretchRate": 15.9,
+   "anchorRate": 18.8,
+   "breadth": 0.945,
+   "competitiveRatio": 35,
+   "winRate": 64.3
+  },
+  {
+   "teamId": "3E9F7367-4AF8-4983-8634-5AF680D098B9",
+   "name": "Oklahoma Wesleyan",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.53,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 2,
+    "UP": 50,
+    "EVEN": 39,
+    "DOWN": 214,
+    "ANCHOR": 80
+   },
+   "bandPct": {
+    "STRETCH": 0.5,
+    "UP": 13,
+    "EVEN": 10.1,
+    "DOWN": 55.6,
+    "ANCHOR": 20.8
+   },
+   "stretchRate": 0.5,
+   "anchorRate": 20.8,
+   "breadth": 0.731,
+   "competitiveRatio": 27.6,
+   "winRate": 59.5
+  },
+  {
+   "teamId": "DBB62F86-0A1D-40C8-A9FD-92991821BA49",
+   "name": "Bethel (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.55,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 57,
+    "EVEN": 24,
+    "DOWN": 193,
+    "ANCHOR": 106
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15,
+    "EVEN": 6.3,
+    "DOWN": 50.8,
+    "ANCHOR": 27.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 27.9,
+   "breadth": 0.72,
+   "competitiveRatio": 36.1,
+   "winRate": 70.8
+  },
+  {
+   "teamId": "6EEF4F07-2D7D-421E-959F-8D68749F7F9F",
+   "name": "McPherson (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.4,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 112,
+    "EVEN": 24,
+    "DOWN": 156,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 29.9,
+    "EVEN": 6.4,
+    "DOWN": 41.7,
+    "ANCHOR": 16
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 16,
+   "breadth": 0.846,
+   "competitiveRatio": 29.1,
+   "winRate": 65.8
+  },
+  {
+   "teamId": "12E12649-7445-4B48-A037-8D30EE4FD822",
+   "name": "Bethel (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 25.36,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 40,
+    "EVEN": 48,
+    "DOWN": 214,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11,
+    "EVEN": 13.2,
+    "DOWN": 58.6,
+    "ANCHOR": 17.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.3,
+   "breadth": 0.699,
+   "competitiveRatio": 27.7,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "405224C8-1340-4FD8-8979-970731FA56B8",
+   "name": "Ottawa (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.03,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 138,
+    "EVEN": 33,
+    "DOWN": 107,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 17.4,
+    "UP": 38.1,
+    "EVEN": 9.1,
+    "DOWN": 29.6,
+    "ANCHOR": 5.8
+   },
+   "stretchRate": 17.4,
+   "anchorRate": 5.8,
+   "breadth": 0.88,
+   "competitiveRatio": 32.9,
+   "winRate": 61.9
+  },
+  {
+   "teamId": "2C6CF79C-2A10-45A6-9661-AFDD519FB309",
+   "name": "Saint Mary (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.69,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 62,
+    "EVEN": 22,
+    "DOWN": 163,
+    "ANCHOR": 92
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 17.7,
+    "EVEN": 6.3,
+    "DOWN": 46.4,
+    "ANCHOR": 26.2
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 26.2,
+   "breadth": 0.809,
+   "competitiveRatio": 34.5,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "E9A354D5-5AC0-40DE-943F-283A0B99A03E",
+   "name": "Kansas Wesleyan",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.76,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 189,
+    "EVEN": 27,
+    "DOWN": 74,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 54.2,
+    "EVEN": 7.7,
+    "DOWN": 21.2,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 6.6,
+   "breadth": 0.791,
+   "competitiveRatio": 32.5,
+   "winRate": 43.3
+  },
+  {
+   "teamId": "8FC5D508-19CB-4A92-AFCD-ACDE6CD02F42",
+   "name": "Oklahoma Wesleyan",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.47,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 81,
+    "EVEN": 26,
+    "DOWN": 159,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 6.1,
+    "UP": 23.5,
+    "EVEN": 7.5,
+    "DOWN": 46.1,
+    "ANCHOR": 16.8
+   },
+   "stretchRate": 6.1,
+   "anchorRate": 16.8,
+   "breadth": 0.846,
+   "competitiveRatio": 34.8,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "E82EB850-F211-4C5C-AFF1-A1B557DEFB91",
+   "name": "Bethany (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.03,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 143,
+    "EVEN": 48,
+    "DOWN": 123,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 42.3,
+    "EVEN": 14.2,
+    "DOWN": 36.4,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 5.3,
+   "breadth": 0.768,
+   "competitiveRatio": 37.9,
+   "winRate": 39.6
+  },
+  {
+   "teamId": "D0753FB5-48D7-4546-ACDC-8167BC00DB59",
+   "name": "Bethany (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.82,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 151,
+    "EVEN": 95,
+    "DOWN": 76,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 46,
+    "EVEN": 29,
+    "DOWN": 23.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 0,
+   "breadth": 0.701,
+   "competitiveRatio": 32.3,
+   "winRate": 37.8
+  },
+  {
+   "teamId": "39D194B2-5F17-4E8F-B9F8-AD7CCC7251E0",
+   "name": "Kansas Wesleyan",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.66,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 168,
+    "EVEN": 73,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 51.2,
+    "EVEN": 22.3,
+    "DOWN": 24.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 0,
+   "breadth": 0.681,
+   "competitiveRatio": 36,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "BFFC9E7F-BC46-452F-9ABD-9AA043EA15D7",
+   "name": "Saint Mary (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.78,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 135,
+    "EVEN": 78,
+    "DOWN": 89,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 42.2,
+    "EVEN": 24.4,
+    "DOWN": 27.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 0,
+   "breadth": 0.762,
+   "competitiveRatio": 32.8,
+   "winRate": 46.3
+  },
+  {
+   "teamId": "0859C5F9-8D85-4461-AEF9-AB1634B7EBB9",
+   "name": "Sterling (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 24.67,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 174,
+    "EVEN": 16,
+    "DOWN": 41,
+    "ANCHOR": 19
+   },
+   "bandPct": {
+    "STRETCH": 19.9,
+    "UP": 55.8,
+    "EVEN": 5.1,
+    "DOWN": 13.1,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 19.9,
+   "anchorRate": 6.1,
+   "breadth": 0.768,
+   "competitiveRatio": 35.3,
+   "winRate": 47.4
+  },
+  {
+   "teamId": "D2975E08-857D-4459-90AE-2EB5D9311463",
+   "name": "Friends (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 24.97,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 163,
+    "EVEN": 16,
+    "DOWN": 30,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 21.1,
+    "UP": 57.2,
+    "EVEN": 5.6,
+    "DOWN": 10.5,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 21.1,
+   "anchorRate": 5.6,
+   "breadth": 0.751,
+   "competitiveRatio": 33,
+   "winRate": 34.4
+  },
+  {
+   "teamId": "B033246E-9F01-4A83-8271-33FE5EDE0C99",
+   "name": "Sterling (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 30.64,
+   "matches": 270,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 131,
+    "EVEN": 0,
+    "DOWN": 45,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 34.8,
+    "UP": 48.5,
+    "EVEN": 0,
+    "DOWN": 16.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 34.8,
+   "anchorRate": 0,
+   "breadth": 0.632,
+   "competitiveRatio": 25.6,
+   "winRate": 51.5
+  },
+  {
+   "teamId": "75879C30-9731-421B-B34B-375F82A5EAFA",
+   "name": "Tabor (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 26.71,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 92,
+    "UP": 136,
+    "EVEN": 0,
+    "DOWN": 32,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 35.4,
+    "UP": 52.3,
+    "EVEN": 0,
+    "DOWN": 12.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 35.4,
+   "anchorRate": 0,
+   "breadth": 0.599,
+   "competitiveRatio": 35.4,
+   "winRate": 27.3
+  },
+  {
+   "teamId": "3A0D4B22-4D8C-491D-B6AE-2C81A1F843D1",
+   "name": "Evangel University",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 22.34,
+   "matches": 241,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 66,
+    "EVEN": 20,
+    "DOWN": 116,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 27.4,
+    "EVEN": 8.3,
+    "DOWN": 48.1,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 14.1,
+   "breadth": 0.789,
+   "competitiveRatio": 38.2,
+   "winRate": 45.6
+  },
+  {
+   "teamId": "F48D8F68-311E-4D10-AFD7-B0133BFDD8CD",
+   "name": "Friends (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.61,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 93,
+    "EVEN": 10,
+    "DOWN": 101,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.6,
+    "EVEN": 4.3,
+    "DOWN": 43,
+    "ANCHOR": 13.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.2,
+   "breadth": 0.703,
+   "competitiveRatio": 30.6,
+   "winRate": 42.6
+  },
+  {
+   "teamId": "DA433591-A42A-41C5-996D-053FAF48B568",
+   "name": "Ottawa (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.49,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 2,
+    "UP": 95,
+    "EVEN": 25,
+    "DOWN": 82,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 41.5,
+    "EVEN": 10.9,
+    "DOWN": 35.8,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 10.9,
+   "breadth": 0.781,
+   "competitiveRatio": 32.6,
+   "winRate": 64.6
+  },
+  {
+   "teamId": "60911811-82D3-4E8E-99C8-DEB7A9CF537D",
+   "name": "Evangel University",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.79,
+   "matches": 222,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 116,
+    "EVEN": 54,
+    "DOWN": 46,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 52.3,
+    "EVEN": 24.3,
+    "DOWN": 20.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.688,
+   "competitiveRatio": 27.5,
+   "winRate": 27.5
+  },
+  {
+   "teamId": "184C0B8A-474A-41EC-83CC-55815F338595",
+   "name": "Tabor (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 32.36,
+   "matches": 216,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 110,
+    "EVEN": 12,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43.5,
+    "UP": 50.9,
+    "EVEN": 5.6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43.5,
+   "anchorRate": 0,
+   "breadth": 0.538,
+   "competitiveRatio": 10.2,
+   "winRate": 5.6
+  },
+  {
+   "teamId": "8BDB704E-5FC8-42C8-9C4D-181D55870BCC",
+   "name": "Southwestern (Kan.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 29.91,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 194,
+    "UP": 15,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 92.8,
+    "UP": 7.2,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 92.8,
+   "anchorRate": 0,
+   "breadth": 0.16,
+   "competitiveRatio": 11,
+   "winRate": 7.7
+  },
+  {
+   "teamId": "472B7608-E54F-4DD7-9488-6577EA29E7A5",
+   "name": "Avila",
+   "gender": "M",
+   "division": null,
+   "lineupWTN": 25.83,
+   "matches": 180,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 97,
+    "EVEN": 0,
+    "DOWN": 26,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 21.7,
+    "UP": 53.9,
+    "EVEN": 0,
+    "DOWN": 14.4,
+    "ANCHOR": 10
+   },
+   "stretchRate": 21.7,
+   "anchorRate": 10,
+   "breadth": 0.73,
+   "competitiveRatio": 21.2,
+   "winRate": 22.8
+  },
+  {
+   "teamId": "DF59C691-6419-4159-9A20-4881EACFE22B",
+   "name": "Southwestern (Kan.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 32.21,
+   "matches": 138,
+   "bands": {
+    "STRETCH": 68,
+    "UP": 53,
+    "EVEN": 17,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 49.3,
+    "UP": 38.4,
+    "EVEN": 12.3,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 49.3,
+   "anchorRate": 0,
+   "breadth": 0.605,
+   "competitiveRatio": 7.2,
+   "winRate": 17.4
+  },
+  {
+   "teamId": "72FCE69F-7911-4425-8179-10D52AB6B095",
+   "name": "Avila",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 31.79,
+   "matches": 133,
+   "bands": {
+    "STRETCH": 46,
+    "UP": 61,
+    "EVEN": 9,
+    "DOWN": 17,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 34.6,
+    "UP": 45.9,
+    "EVEN": 6.8,
+    "DOWN": 12.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 34.6,
+   "anchorRate": 0,
+   "breadth": 0.727,
+   "competitiveRatio": 23.3,
+   "winRate": 22.6
+  }
+ ]
+}

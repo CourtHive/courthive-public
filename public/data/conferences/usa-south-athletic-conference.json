@@ -1,0 +1,436 @@
+{
+ "conference": "USA South Athletic Conference",
+ "slug": "usa-south-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 12,
+ "fingerprint": {
+  "overall": {
+   "matches": 3325,
+   "bands": {
+    "STRETCH": 515,
+    "UP": 1128,
+    "EVEN": 218,
+    "DOWN": 1099,
+    "ANCHOR": 365
+   },
+   "bandPct": {
+    "STRETCH": 15.5,
+    "UP": 33.9,
+    "EVEN": 6.6,
+    "DOWN": 33.1,
+    "ANCHOR": 11
+   },
+   "stretchRate": 15.5,
+   "anchorRate": 11,
+   "breadth": 0.896,
+   "competitiveRatio": 29.4,
+   "winRate": 48.5
+  },
+  "inConference": {
+   "matches": 1288,
+   "bands": {
+    "STRETCH": 221,
+    "UP": 412,
+    "EVEN": 22,
+    "DOWN": 412,
+    "ANCHOR": 221
+   },
+   "bandPct": {
+    "STRETCH": 17.2,
+    "UP": 32,
+    "EVEN": 1.7,
+    "DOWN": 32,
+    "ANCHOR": 17.2
+   },
+   "stretchRate": 17.2,
+   "anchorRate": 17.2,
+   "breadth": 0.872,
+   "competitiveRatio": 23.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2037,
+   "bands": {
+    "STRETCH": 294,
+    "UP": 716,
+    "EVEN": 196,
+    "DOWN": 687,
+    "ANCHOR": 144
+   },
+   "bandPct": {
+    "STRETCH": 14.4,
+    "UP": 35.1,
+    "EVEN": 9.6,
+    "DOWN": 33.7,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 14.4,
+   "anchorRate": 7.1,
+   "breadth": 0.886,
+   "competitiveRatio": 32.9,
+   "winRate": 47.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 17.2,
+  "nonConference": 14.4,
+  "delta": -2.8,
+  "nonConferenceShare": 61.3
+ },
+ "members": [
+  {
+   "teamId": "937D5342-65A5-408D-AE53-E7B492D45ED4",
+   "name": "North Carolina Wesleyan University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.38,
+   "matches": 472,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 213,
+    "EVEN": 53,
+    "DOWN": 126,
+    "ANCHOR": 68
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 45.1,
+    "EVEN": 11.2,
+    "DOWN": 26.7,
+    "ANCHOR": 14.4
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 14.4,
+   "breadth": 0.826,
+   "competitiveRatio": 41.8,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "8B12DF48-0C6B-470F-9754-103B9F4B2B39",
+   "name": "Pfeiffer",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.34,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 91,
+    "EVEN": 0,
+    "DOWN": 173,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 25.3,
+    "EVEN": 0,
+    "DOWN": 48.1,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 10.3,
+   "breadth": 0.764,
+   "competitiveRatio": 33.1,
+   "winRate": 61.1
+  },
+  {
+   "teamId": "00492551-8698-4BD7-B9DC-CA7854010E70",
+   "name": "Methodist (NC)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.11,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 31,
+    "EVEN": 41,
+    "DOWN": 129,
+    "ANCHOR": 100
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 10.1,
+    "EVEN": 13.4,
+    "DOWN": 42,
+    "ANCHOR": 32.6
+   },
+   "stretchRate": 2,
+   "anchorRate": 32.6,
+   "breadth": 0.812,
+   "competitiveRatio": 32.6,
+   "winRate": 60.9
+  },
+  {
+   "teamId": "201E0CD4-BF6A-42E9-A473-89C48EDDD060",
+   "name": "Pfeiffer",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.05,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 71,
+    "EVEN": 51,
+    "DOWN": 132,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 23.7,
+    "EVEN": 17,
+    "DOWN": 44,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 13.7,
+   "breadth": 0.835,
+   "competitiveRatio": 25.3,
+   "winRate": 67.7
+  },
+  {
+   "teamId": "49EB7AE3-8C40-48AD-8198-58A183AEEFEA",
+   "name": "North Carolina Wesleyan University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.54,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 84,
+    "EVEN": 6,
+    "DOWN": 137,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 29.4,
+    "EVEN": 2.1,
+    "DOWN": 47.9,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 7.3,
+   "breadth": 0.779,
+   "competitiveRatio": 27.3,
+   "winRate": 56.6
+  },
+  {
+   "teamId": "64F96CCC-7D05-41F2-88B3-546345D46742",
+   "name": "Brevard",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.66,
+   "matches": 271,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 84,
+    "EVEN": 12,
+    "DOWN": 103,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 9.6,
+    "UP": 31,
+    "EVEN": 4.4,
+    "DOWN": 38,
+    "ANCHOR": 17
+   },
+   "stretchRate": 9.6,
+   "anchorRate": 17,
+   "breadth": 0.867,
+   "competitiveRatio": 28.4,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "588D0DB3-C922-4A9A-90E7-29E9367F4713",
+   "name": "Methodist (NC)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.35,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 60,
+    "EVEN": 0,
+    "DOWN": 171,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 2.3,
+    "UP": 23,
+    "EVEN": 0,
+    "DOWN": 65.5,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 2.3,
+   "anchorRate": 9.2,
+   "breadth": 0.572,
+   "competitiveRatio": 25.3,
+   "winRate": 56.3
+  },
+  {
+   "teamId": "3E251AD0-BB8A-454C-858C-0B9078381DA4",
+   "name": "Southern Virginia",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.17,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 129,
+    "EVEN": 6,
+    "DOWN": 23,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 25.3,
+    "UP": 55.4,
+    "EVEN": 2.6,
+    "DOWN": 9.9,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 25.3,
+   "anchorRate": 6.9,
+   "breadth": 0.734,
+   "competitiveRatio": 30.5,
+   "winRate": 27.5
+  },
+  {
+   "teamId": "8C202360-5AE1-41B7-BD08-838CEDA140B6",
+   "name": "Southern Virginia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29,
+   "matches": 231,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 144,
+    "EVEN": 23,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 62.3,
+    "EVEN": 10,
+    "DOWN": 22.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 0,
+   "breadth": 0.63,
+   "competitiveRatio": 27.7,
+   "winRate": 53.2
+  },
+  {
+   "teamId": "5109EA91-BC37-44B9-807D-BD843D4DB68D",
+   "name": "Salem College (NC)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.06,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 117,
+    "EVEN": 26,
+    "DOWN": 48,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 53.4,
+    "EVEN": 11.9,
+    "DOWN": 21.9,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 5.5,
+   "breadth": 0.79,
+   "competitiveRatio": 26.9,
+   "winRate": 32.9
+  },
+  {
+   "teamId": "7AFDC877-410F-4FDB-A237-2105C9FC5D1D",
+   "name": "Meredith",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.73,
+   "matches": 212,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 78,
+    "EVEN": 0,
+    "DOWN": 5,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 60.8,
+    "UP": 36.8,
+    "EVEN": 0,
+    "DOWN": 2.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 60.8,
+   "anchorRate": 0,
+   "breadth": 0.471,
+   "competitiveRatio": 18.5,
+   "winRate": 14.2
+  },
+  {
+   "teamId": "CC88DD87-F361-4711-A01B-E377C67255FA",
+   "name": "William Peace University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.59,
+   "matches": 173,
+   "bands": {
+    "STRETCH": 147,
+    "UP": 26,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 85,
+    "UP": 15,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 85,
+   "anchorRate": 0,
+   "breadth": 0.263,
+   "competitiveRatio": 18.5,
+   "winRate": 15.6
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "conference": "Eastern Metro Athletic Conference",
+ "slug": "eastern-metro-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 382,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 224,
+    "EVEN": 23,
+    "DOWN": 90,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 58.6,
+    "EVEN": 6,
+    "DOWN": 23.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 0,
+   "breadth": 0.668,
+   "competitiveRatio": 26.2,
+   "winRate": 33.8
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 382,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 224,
+    "EVEN": 23,
+    "DOWN": 90,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 58.6,
+    "EVEN": 6,
+    "DOWN": 23.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 0,
+   "breadth": 0.668,
+   "competitiveRatio": 26.2,
+   "winRate": 33.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 11.8,
+  "delta": 11.8,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "D118D49E-04FF-4ED6-B6E2-D48F2539B22C",
+   "name": "Johnson & Wales University (NC)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.84,
+   "matches": 213,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 115,
+    "EVEN": 12,
+    "DOWN": 56,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.1,
+    "UP": 54,
+    "EVEN": 5.6,
+    "DOWN": 26.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.1,
+   "anchorRate": 0,
+   "breadth": 0.697,
+   "competitiveRatio": 34.7,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "E1D6F49E-70D4-4E7F-8B54-246933BC8D33",
+   "name": "Johnson & Wales University (NC)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.24,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 109,
+    "EVEN": 11,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 64.5,
+    "EVEN": 6.5,
+    "DOWN": 20.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 0,
+   "breadth": 0.62,
+   "competitiveRatio": 15.4,
+   "winRate": 25.4
+  }
+ ]
+}

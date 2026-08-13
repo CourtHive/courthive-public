@@ -1,0 +1,786 @@
+{
+ "conference": "Big 12 Conference",
+ "slug": "big-12-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 25,
+ "fingerprint": {
+  "overall": {
+   "matches": 8663,
+   "bands": {
+    "STRETCH": 174,
+    "UP": 2373,
+    "EVEN": 1405,
+    "DOWN": 3605,
+    "ANCHOR": 1106
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 27.4,
+    "EVEN": 16.2,
+    "DOWN": 41.6,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 2,
+   "anchorRate": 12.8,
+   "breadth": 0.842,
+   "competitiveRatio": 46.7,
+   "winRate": 57.6
+  },
+  "inConference": {
+   "matches": 3776,
+   "bands": {
+    "STRETCH": 114,
+    "UP": 1457,
+    "EVEN": 634,
+    "DOWN": 1457,
+    "ANCHOR": 114
+   },
+   "bandPct": {
+    "STRETCH": 3,
+    "UP": 38.6,
+    "EVEN": 16.8,
+    "DOWN": 38.6,
+    "ANCHOR": 3
+   },
+   "stretchRate": 3,
+   "anchorRate": 3,
+   "breadth": 0.774,
+   "competitiveRatio": 47.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4887,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 916,
+    "EVEN": 771,
+    "DOWN": 2148,
+    "ANCHOR": 992
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 18.7,
+    "EVEN": 15.8,
+    "DOWN": 44,
+    "ANCHOR": 20.3
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 20.3,
+   "breadth": 0.835,
+   "competitiveRatio": 46.1,
+   "winRate": 63.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 3,
+  "nonConference": 1.2,
+  "delta": -1.8,
+  "nonConferenceShare": 56.4
+ },
+ "members": [
+  {
+   "teamId": "C98C90AE-39D9-4A59-A427-6F7414841709",
+   "name": "Baylor University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.95,
+   "matches": 444,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 98,
+    "EVEN": 70,
+    "DOWN": 149,
+    "ANCHOR": 127
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.1,
+    "EVEN": 15.8,
+    "DOWN": 33.6,
+    "ANCHOR": 28.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 28.6,
+   "breadth": 0.838,
+   "competitiveRatio": 50.5,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "86645B29-FF03-4940-A4CB-A11694D9555B",
+   "name": "University Of Arizona",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.63,
+   "matches": 421,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 143,
+    "EVEN": 118,
+    "DOWN": 154,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34,
+    "EVEN": 28,
+    "DOWN": 36.6,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.4,
+   "breadth": 0.716,
+   "competitiveRatio": 46.1,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "96F36C2B-99A2-4795-9E32-84A32742FDEE",
+   "name": "TCU",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 5.55,
+   "matches": 399,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 48,
+    "DOWN": 250,
+    "ANCHOR": 101
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 12,
+    "DOWN": 62.7,
+    "ANCHOR": 25.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.3,
+   "breadth": 0.556,
+   "competitiveRatio": 54.6,
+   "winRate": 72.9
+  },
+  {
+   "teamId": "5C6BD727-2F1C-4EB1-97B9-6B42B922A57E",
+   "name": "Brigham Young",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.52,
+   "matches": 397,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 108,
+    "EVEN": 62,
+    "DOWN": 182,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.2,
+    "EVEN": 15.6,
+    "DOWN": 45.8,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.3,
+   "breadth": 0.776,
+   "competitiveRatio": 49.9,
+   "winRate": 60.5
+  },
+  {
+   "teamId": "554755E6-C18C-4936-9CAE-3E20507DBBE5",
+   "name": "University Of Central Florida",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.57,
+   "matches": 394,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 74,
+    "DOWN": 146,
+    "ANCHOR": 126
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.2,
+    "EVEN": 18.8,
+    "DOWN": 37.1,
+    "ANCHOR": 32
+   },
+   "stretchRate": 0,
+   "anchorRate": 32,
+   "breadth": 0.81,
+   "competitiveRatio": 45.2,
+   "winRate": 66.5
+  },
+  {
+   "teamId": "AB3F5FAB-38C0-4EB7-980A-1DC1CCE5E928",
+   "name": "University Of Arizona",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.89,
+   "matches": 391,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 114,
+    "DOWN": 109,
+    "ANCHOR": 109
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.1,
+    "EVEN": 29.2,
+    "DOWN": 27.9,
+    "ANCHOR": 27.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 27.9,
+   "breadth": 0.843,
+   "competitiveRatio": 41.2,
+   "winRate": 79.3
+  },
+  {
+   "teamId": "CE99ED51-D0DC-468B-810C-E084F0B8EDCD",
+   "name": "Oklahoma State University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.93,
+   "matches": 382,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 123,
+    "EVEN": 34,
+    "DOWN": 124,
+    "ANCHOR": 75
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 32.2,
+    "EVEN": 8.9,
+    "DOWN": 32.5,
+    "ANCHOR": 19.6
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 19.6,
+   "breadth": 0.9,
+   "competitiveRatio": 47.9,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "00C18030-9F90-41EC-943C-92E72050028C",
+   "name": "Baylor University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.96,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 86,
+    "EVEN": 101,
+    "DOWN": 190,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.6,
+    "EVEN": 26.6,
+    "DOWN": 50,
+    "ANCHOR": 0.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 0.8,
+   "breadth": 0.667,
+   "competitiveRatio": 47.5,
+   "winRate": 58.2
+  },
+  {
+   "teamId": "18BD9606-E3DB-4A1D-91D1-0F8E48F7951D",
+   "name": "Texas Tech",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.52,
+   "matches": 376,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 73,
+    "EVEN": 64,
+    "DOWN": 213,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.4,
+    "EVEN": 17,
+    "DOWN": 56.6,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.9,
+   "breadth": 0.7,
+   "competitiveRatio": 45.2,
+   "winRate": 59.8
+  },
+  {
+   "teamId": "80CFA0C6-E529-4B50-83CD-14C3845501AE",
+   "name": "Arizona State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.78,
+   "matches": 367,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 170,
+    "EVEN": 29,
+    "DOWN": 133,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46.3,
+    "EVEN": 7.9,
+    "DOWN": 36.2,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.5,
+   "breadth": 0.714,
+   "competitiveRatio": 52.9,
+   "winRate": 55.6
+  },
+  {
+   "teamId": "C5EEDCB8-9B29-4F51-AFBD-0095B385A661",
+   "name": "West Virginia University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.42,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 126,
+    "EVEN": 24,
+    "DOWN": 155,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 36.5,
+    "EVEN": 7,
+    "DOWN": 44.9,
+    "ANCHOR": 7.5
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 7.5,
+   "breadth": 0.769,
+   "competitiveRatio": 41.3,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "6C16896E-314A-47CD-9D57-18FB32E56B16",
+   "name": "University of Kansas",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.71,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 138,
+    "EVEN": 124,
+    "DOWN": 49,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.6,
+    "EVEN": 36.5,
+    "DOWN": 14.4,
+    "ANCHOR": 8.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.5,
+   "breadth": 0.76,
+   "competitiveRatio": 50,
+   "winRate": 52.1
+  },
+  {
+   "teamId": "FF5E4DB7-342B-4424-A242-BBCF3722D350",
+   "name": "University Of Utah",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.4,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 70,
+    "DOWN": 139,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 24.3,
+    "EVEN": 20.8,
+    "DOWN": 41.2,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.6,
+   "breadth": 0.812,
+   "competitiveRatio": 42.1,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "53F1C9BE-0B9C-49DA-AB3C-832D384F56AA",
+   "name": "Brigham Young",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 55,
+    "UP": 66,
+    "EVEN": 45,
+    "DOWN": 121,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 16.6,
+    "UP": 19.9,
+    "EVEN": 13.6,
+    "DOWN": 36.4,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 16.6,
+   "anchorRate": 13.6,
+   "breadth": 0.95,
+   "competitiveRatio": 55.7,
+   "winRate": 56.6
+  },
+  {
+   "teamId": "C468CCB0-0EB0-471C-91FF-DF81FC79A7BD",
+   "name": "University Of Central Florida",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.2,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 37,
+    "DOWN": 230,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.8,
+    "EVEN": 11.4,
+    "DOWN": 70.8,
+    "ANCHOR": 3.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.1,
+   "breadth": 0.548,
+   "competitiveRatio": 40.3,
+   "winRate": 65.2
+  },
+  {
+   "teamId": "BBED16DF-0C69-4725-9C9F-6F16C2989673",
+   "name": "Arizona State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.83,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 40,
+    "EVEN": 43,
+    "DOWN": 210,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.4,
+    "EVEN": 13.3,
+    "DOWN": 65,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.3,
+   "breadth": 0.639,
+   "competitiveRatio": 40.6,
+   "winRate": 64.1
+  },
+  {
+   "teamId": "42A73FED-B5A1-4F32-A4BD-EBA13632BC26",
+   "name": "University of Colorado, Boulder",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.07,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 124,
+    "EVEN": 45,
+    "DOWN": 124,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.4,
+    "EVEN": 13.9,
+    "DOWN": 38.4,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.3,
+   "breadth": 0.764,
+   "competitiveRatio": 49.2,
+   "winRate": 51.1
+  },
+  {
+   "teamId": "3ECE9146-8B44-4176-A783-A9BCEF286B93",
+   "name": "Cincinnati",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.71,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 163,
+    "EVEN": 6,
+    "DOWN": 97,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 6.6,
+    "UP": 50.9,
+    "EVEN": 1.9,
+    "DOWN": 30.3,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 6.6,
+   "anchorRate": 10.3,
+   "breadth": 0.741,
+   "competitiveRatio": 36.6,
+   "winRate": 43.1
+  },
+  {
+   "teamId": "B90BFA9F-5895-4BFD-A52F-2A37EA652AC9",
+   "name": "Kansas State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.2,
+   "matches": 309,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 208,
+    "EVEN": 19,
+    "DOWN": 43,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 67.3,
+    "EVEN": 6.1,
+    "DOWN": 13.9,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 5.5,
+   "breadth": 0.659,
+   "competitiveRatio": 46.6,
+   "winRate": 49.5
+  },
+  {
+   "teamId": "8169AF92-629D-4274-964F-EFA6320D0B9E",
+   "name": "Texas Tech",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.46,
+   "matches": 306,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 90,
+    "EVEN": 35,
+    "DOWN": 121,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 29.4,
+    "EVEN": 11.4,
+    "DOWN": 39.5,
+    "ANCHOR": 15
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 15,
+   "breadth": 0.87,
+   "competitiveRatio": 53.6,
+   "winRate": 48.4
+  },
+  {
+   "teamId": "FF94DF62-667E-458E-8E02-782DA2281FF3",
+   "name": "Oklahoma State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 13.33,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 40,
+    "DOWN": 206,
+    "ANCHOR": 59
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 13.1,
+    "DOWN": 67.5,
+    "ANCHOR": 19.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.3,
+   "breadth": 0.528,
+   "competitiveRatio": 41.3,
+   "winRate": 72.1
+  },
+  {
+   "teamId": "A41F5F5B-7957-43F1-AB9F-9F751BA0760C",
+   "name": "University Of Utah",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.26,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 97,
+    "EVEN": 42,
+    "DOWN": 139,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 32.1,
+    "EVEN": 13.9,
+    "DOWN": 46,
+    "ANCHOR": 3.3
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 3.3,
+   "breadth": 0.778,
+   "competitiveRatio": 49.5,
+   "winRate": 37.7
+  },
+  {
+   "teamId": "E1B3B09A-BC99-4AF8-8887-11F96CE762CE",
+   "name": "TCU",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.51,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 39,
+    "EVEN": 78,
+    "DOWN": 152,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.1,
+    "EVEN": 26.3,
+    "DOWN": 51.2,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.4,
+   "breadth": 0.735,
+   "competitiveRatio": 46.1,
+   "winRate": 65
+  },
+  {
+   "teamId": "C73BD96B-7B0F-4D5D-B105-60B8094A49A9",
+   "name": "Iowa State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.52,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 167,
+    "EVEN": 44,
+    "DOWN": 50,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 2.8,
+    "UP": 58.4,
+    "EVEN": 15.4,
+    "DOWN": 17.5,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 2.8,
+   "anchorRate": 5.9,
+   "breadth": 0.73,
+   "competitiveRatio": 52.8,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "8761F9A4-1727-4A10-89C3-69E4C625F52B",
+   "name": "University Of Houston",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.55,
+   "matches": 262,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 77,
+    "EVEN": 39,
+    "DOWN": 119,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.4,
+    "EVEN": 14.9,
+    "DOWN": 45.4,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.3,
+   "breadth": 0.768,
+   "competitiveRatio": 37.8,
+   "winRate": 42
+  }
+ ]
+}

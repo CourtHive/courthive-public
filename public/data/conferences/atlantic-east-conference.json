@@ -1,0 +1,355 @@
+{
+ "conference": "Atlantic East Conference",
+ "slug": "atlantic-east-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 9,
+ "fingerprint": {
+  "overall": {
+   "matches": 2006,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 969,
+    "EVEN": 278,
+    "DOWN": 606,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 6.4,
+    "UP": 48.3,
+    "EVEN": 13.9,
+    "DOWN": 30.2,
+    "ANCHOR": 1.2
+   },
+   "stretchRate": 6.4,
+   "anchorRate": 1.2,
+   "breadth": 0.756,
+   "competitiveRatio": 25.4,
+   "winRate": 41.8
+  },
+  "inConference": {
+   "matches": 610,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 247,
+    "EVEN": 116,
+    "DOWN": 247,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.5,
+    "EVEN": 19,
+    "DOWN": 40.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.651,
+   "competitiveRatio": 27.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1396,
+   "bands": {
+    "STRETCH": 128,
+    "UP": 722,
+    "EVEN": 162,
+    "DOWN": 359,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 9.2,
+    "UP": 51.7,
+    "EVEN": 11.6,
+    "DOWN": 25.7,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 9.2,
+   "anchorRate": 1.8,
+   "breadth": 0.765,
+   "competitiveRatio": 24.6,
+   "winRate": 38.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 9.2,
+  "delta": 9.2,
+  "nonConferenceShare": 69.6
+ },
+ "members": [
+  {
+   "teamId": "CD4951A2-9BD1-43AE-B3F8-579C2A16A734",
+   "name": "Marymount (VA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.38,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 88,
+    "EVEN": 36,
+    "DOWN": 173,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 29,
+    "EVEN": 11.9,
+    "DOWN": 57.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2,
+   "anchorRate": 0,
+   "breadth": 0.627,
+   "competitiveRatio": 25.1,
+   "winRate": 49.8
+  },
+  {
+   "teamId": "AB33F25D-80D4-48B8-B545-067FD77D2614",
+   "name": "Marymount (VA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.17,
+   "matches": 245,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 127,
+    "EVEN": 60,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.8,
+    "UP": 51.8,
+    "EVEN": 24.5,
+    "DOWN": 13.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.8,
+   "anchorRate": 0,
+   "breadth": 0.737,
+   "competitiveRatio": 23.8,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "E06FA791-A16A-4E97-974A-D311B0AFDD9F",
+   "name": "Marywood",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.76,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 16,
+    "DOWN": 125,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 36.7,
+    "EVEN": 7,
+    "DOWN": 54.6,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.593,
+   "competitiveRatio": 30.1,
+   "winRate": 46.7
+  },
+  {
+   "teamId": "B7D75863-0BDF-43B1-9BBC-245C7DC70BCE",
+   "name": "Neumann",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.85,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 134,
+    "EVEN": 44,
+    "DOWN": 28,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 61.5,
+    "EVEN": 20.2,
+    "DOWN": 12.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 0,
+   "breadth": 0.65,
+   "competitiveRatio": 29.4,
+   "winRate": 50
+  },
+  {
+   "teamId": "98640AFC-74AB-44CB-8D5F-15A688A2E36B",
+   "name": "Pratt Institute",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.07,
+   "matches": 210,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 71,
+    "EVEN": 0,
+    "DOWN": 112,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 33.8,
+    "EVEN": 0,
+    "DOWN": 53.3,
+    "ANCHOR": 10
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 10,
+   "breadth": 0.642,
+   "competitiveRatio": 26.7,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "1F2DB51C-C73F-4C23-A265-5071751FE236",
+   "name": "Immaculata",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.73,
+   "matches": 208,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 133,
+    "EVEN": 30,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.4,
+    "UP": 63.9,
+    "EVEN": 14.4,
+    "DOWN": 7.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.4,
+   "anchorRate": 0,
+   "breadth": 0.643,
+   "competitiveRatio": 27.9,
+   "winRate": 28.8
+  },
+  {
+   "teamId": "26C8B0CF-D20A-4EB2-8BA6-FD3DF78B1D57",
+   "name": "Neumann",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.27,
+   "matches": 200,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 80,
+    "EVEN": 45,
+    "DOWN": 55,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 40,
+    "EVEN": 22.5,
+    "DOWN": 27.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10,
+   "anchorRate": 0,
+   "breadth": 0.8,
+   "competitiveRatio": 22.3,
+   "winRate": 42.5
+  },
+  {
+   "teamId": "BCAD8BD1-6ADC-4FEE-BB49-EC4B0C2C2411",
+   "name": "Marywood",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.98,
+   "matches": 197,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 134,
+    "EVEN": 6,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.1,
+    "UP": 68,
+    "EVEN": 3,
+    "DOWN": 23.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.1,
+   "anchorRate": 0,
+   "breadth": 0.535,
+   "competitiveRatio": 19.3,
+   "winRate": 24.9
+  },
+  {
+   "teamId": "102AED5A-11BE-423F-957B-FAEBF09D29ED",
+   "name": "Immaculata",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.6,
+   "matches": 196,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 118,
+    "EVEN": 41,
+    "DOWN": 17,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 60.2,
+    "EVEN": 20.9,
+    "DOWN": 8.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 0,
+   "breadth": 0.67,
+   "competitiveRatio": 23.5,
+   "winRate": 32.1
+  }
+ ]
+}

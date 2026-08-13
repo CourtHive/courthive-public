@@ -1,0 +1,543 @@
+{
+ "conference": "Ivy League",
+ "slug": "ivy-league",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 5708,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 1374,
+    "EVEN": 1128,
+    "DOWN": 2417,
+    "ANCHOR": 758
+   },
+   "bandPct": {
+    "STRETCH": 0.5,
+    "UP": 24.1,
+    "EVEN": 19.8,
+    "DOWN": 42.3,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 0.5,
+   "anchorRate": 13.3,
+   "breadth": 0.822,
+   "competitiveRatio": 49.1,
+   "winRate": 59.8
+  },
+  "inConference": {
+   "matches": 2196,
+   "bands": {
+    "STRETCH": 19,
+    "UP": 739,
+    "EVEN": 680,
+    "DOWN": 739,
+    "ANCHOR": 19
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 33.7,
+    "EVEN": 31,
+    "DOWN": 33.7,
+    "ANCHOR": 0.9
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 0.9,
+   "breadth": 0.732,
+   "competitiveRatio": 51,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3512,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 635,
+    "EVEN": 448,
+    "DOWN": 1678,
+    "ANCHOR": 739
+   },
+   "bandPct": {
+    "STRETCH": 0.3,
+    "UP": 18.1,
+    "EVEN": 12.8,
+    "DOWN": 47.8,
+    "ANCHOR": 21
+   },
+   "stretchRate": 0.3,
+   "anchorRate": 21,
+   "breadth": 0.79,
+   "competitiveRatio": 47.9,
+   "winRate": 66
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0.9,
+  "nonConference": 0.3,
+  "delta": -0.6,
+  "nonConferenceShare": 61.5
+ },
+ "members": [
+  {
+   "teamId": "B39276ED-A8C8-4FA3-98A9-F915107798E7",
+   "name": "Princeton",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8,
+   "matches": 447,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 38,
+    "DOWN": 292,
+    "ANCHOR": 111
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 1.3,
+    "EVEN": 8.5,
+    "DOWN": 65.3,
+    "ANCHOR": 24.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.8,
+   "breadth": 0.554,
+   "competitiveRatio": 54.8,
+   "winRate": 64.7
+  },
+  {
+   "teamId": "85B89882-F2B1-4BDC-A1F2-4CEE0C1AD6CD",
+   "name": "Brown",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.71,
+   "matches": 435,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 161,
+    "EVEN": 18,
+    "DOWN": 143,
+    "ANCHOR": 82
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 37,
+    "EVEN": 4.1,
+    "DOWN": 32.9,
+    "ANCHOR": 18.9
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 18.9,
+   "breadth": 0.85,
+   "competitiveRatio": 51.7,
+   "winRate": 49
+  },
+  {
+   "teamId": "9D7E8D65-7878-47E7-9F33-FCB748BE886F",
+   "name": "Harvard",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.72,
+   "matches": 414,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 136,
+    "EVEN": 117,
+    "DOWN": 110,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.9,
+    "EVEN": 28.3,
+    "DOWN": 26.6,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.3,
+   "breadth": 0.828,
+   "competitiveRatio": 57,
+   "winRate": 64.3
+  },
+  {
+   "teamId": "9B43AE4C-3F9A-47F0-8BCB-8E1B70CC9302",
+   "name": "University of Pennsylvania",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.46,
+   "matches": 391,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 111,
+    "DOWN": 152,
+    "ANCHOR": 97
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.9,
+    "EVEN": 28.4,
+    "DOWN": 38.9,
+    "ANCHOR": 24.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.8,
+   "breadth": 0.79,
+   "competitiveRatio": 41.9,
+   "winRate": 63.2
+  },
+  {
+   "teamId": "0C562E0E-6590-4D08-AB0D-8DD91B82DD1E",
+   "name": "Dartmouth College",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.56,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 135,
+    "EVEN": 45,
+    "DOWN": 100,
+    "ANCHOR": 97
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35.8,
+    "EVEN": 11.9,
+    "DOWN": 26.5,
+    "ANCHOR": 25.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.7,
+   "breadth": 0.822,
+   "competitiveRatio": 49.6,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "06F842C2-F8DD-4CCD-9ABB-A4853DD2761F",
+   "name": "Columbia",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.56,
+   "matches": 369,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 156,
+    "EVEN": 73,
+    "DOWN": 85,
+    "ANCHOR": 55
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 42.3,
+    "EVEN": 19.8,
+    "DOWN": 23,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.9,
+   "breadth": 0.812,
+   "competitiveRatio": 47.2,
+   "winRate": 72.1
+  },
+  {
+   "teamId": "25951991-30A6-438E-8C23-D4B19984B29D",
+   "name": "Brown",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.28,
+   "matches": 356,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 112,
+    "EVEN": 41,
+    "DOWN": 185,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.5,
+    "EVEN": 11.5,
+    "DOWN": 52,
+    "ANCHOR": 5.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.1,
+   "breadth": 0.686,
+   "competitiveRatio": 44.1,
+   "winRate": 55.6
+  },
+  {
+   "teamId": "64305E8D-015D-473A-8B96-6949B90E1FA5",
+   "name": "Yale",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.15,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 128,
+    "EVEN": 51,
+    "DOWN": 140,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 36.1,
+    "EVEN": 14.4,
+    "DOWN": 39.4,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.1,
+   "breadth": 0.774,
+   "competitiveRatio": 56.3,
+   "winRate": 57.5
+  },
+  {
+   "teamId": "479CA8CE-37C4-4F3E-9B97-B59DA1625496",
+   "name": "Cornell",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.27,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 64,
+    "EVEN": 89,
+    "DOWN": 165,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.2,
+    "EVEN": 25.4,
+    "DOWN": 47,
+    "ANCHOR": 9.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.4,
+   "breadth": 0.768,
+   "competitiveRatio": 55,
+   "winRate": 65.2
+  },
+  {
+   "teamId": "E6F1C2DB-0F17-4605-89E7-F19C262F969E",
+   "name": "University of Pennsylvania",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.51,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 117,
+    "EVEN": 64,
+    "DOWN": 118,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.3,
+    "EVEN": 18.8,
+    "DOWN": 34.6,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.3,
+   "breadth": 0.812,
+   "competitiveRatio": 41.5,
+   "winRate": 60.7
+  },
+  {
+   "teamId": "658BA41D-A709-4B84-878E-48E576E652A9",
+   "name": "Dartmouth College",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.43,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 73,
+    "EVEN": 58,
+    "DOWN": 184,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.3,
+    "EVEN": 17.7,
+    "DOWN": 56.3,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.7,
+   "breadth": 0.675,
+   "competitiveRatio": 50.2,
+   "winRate": 48.6
+  },
+  {
+   "teamId": "E09676AB-08A2-4AEF-85E2-3D3A3AD35FCD",
+   "name": "Harvard",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.21,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 12,
+    "EVEN": 97,
+    "DOWN": 175,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.8,
+    "EVEN": 30.3,
+    "DOWN": 54.7,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.3,
+   "breadth": 0.659,
+   "competitiveRatio": 41.6,
+   "winRate": 61.6
+  },
+  {
+   "teamId": "3D8C66B0-F003-44C4-B844-D2FC676E812D",
+   "name": "Yale",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.15,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 21,
+    "EVEN": 96,
+    "DOWN": 180,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.7,
+    "EVEN": 30.5,
+    "DOWN": 57.1,
+    "ANCHOR": 5.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.7,
+   "breadth": 0.637,
+   "competitiveRatio": 45.7,
+   "winRate": 64.4
+  },
+  {
+   "teamId": "CB508D69-5789-4201-9B82-4478AD6A10BE",
+   "name": "Cornell",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.14,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 162,
+    "EVEN": 24,
+    "DOWN": 98,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 51.6,
+    "EVEN": 7.6,
+    "DOWN": 31.2,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.6,
+   "breadth": 0.699,
+   "competitiveRatio": 45.2,
+   "winRate": 52.9
+  },
+  {
+   "teamId": "75BB08CC-2BBC-4849-B979-A22C5042D2D1",
+   "name": "Princeton",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.36,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 108,
+    "DOWN": 160,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.3,
+    "EVEN": 35.8,
+    "DOWN": 53,
+    "ANCHOR": 1
+   },
+   "stretchRate": 0,
+   "anchorRate": 1,
+   "breadth": 0.611,
+   "competitiveRatio": 52.3,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "B3847373-DFF3-437B-8AC7-436170182388",
+   "name": "Columbia",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.59,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 29,
+    "EVEN": 98,
+    "DOWN": 130,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.9,
+    "EVEN": 33.3,
+    "DOWN": 44.2,
+    "ANCHOR": 12.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.6,
+   "breadth": 0.756,
+   "competitiveRatio": 47.3,
+   "winRate": 62.2
+  }
+ ]
+}

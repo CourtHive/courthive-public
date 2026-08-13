@@ -1,0 +1,733 @@
+{
+ "conference": "Atlantic 10 Conference",
+ "slug": "atlantic-10-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 23,
+ "fingerprint": {
+  "overall": {
+   "matches": 7223,
+   "bands": {
+    "STRETCH": 418,
+    "UP": 2750,
+    "EVEN": 1174,
+    "DOWN": 2493,
+    "ANCHOR": 388
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 38.1,
+    "EVEN": 16.3,
+    "DOWN": 34.5,
+    "ANCHOR": 5.4
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 5.4,
+   "breadth": 0.84,
+   "competitiveRatio": 44.3,
+   "winRate": 47.5
+  },
+  "inConference": {
+   "matches": 1994,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 825,
+    "EVEN": 298,
+    "DOWN": 825,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 41.4,
+    "EVEN": 14.9,
+    "DOWN": 41.4,
+    "ANCHOR": 1.2
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 1.2,
+   "breadth": 0.694,
+   "competitiveRatio": 42,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 5229,
+   "bands": {
+    "STRETCH": 395,
+    "UP": 1925,
+    "EVEN": 876,
+    "DOWN": 1668,
+    "ANCHOR": 365
+   },
+   "bandPct": {
+    "STRETCH": 7.6,
+    "UP": 36.8,
+    "EVEN": 16.8,
+    "DOWN": 31.9,
+    "ANCHOR": 7
+   },
+   "stretchRate": 7.6,
+   "anchorRate": 7,
+   "breadth": 0.878,
+   "competitiveRatio": 45.2,
+   "winRate": 46.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.2,
+  "nonConference": 7.6,
+  "delta": 6.4,
+  "nonConferenceShare": 72.4
+ },
+ "members": [
+  {
+   "teamId": "4B0560A2-5DE5-4807-9756-55D2E6814828",
+   "name": "Saint Joseph’s",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.66,
+   "matches": 383,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 110,
+    "EVEN": 30,
+    "DOWN": 181,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 28.7,
+    "EVEN": 7.8,
+    "DOWN": 47.3,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 7.6,
+   "breadth": 0.819,
+   "competitiveRatio": 44.9,
+   "winRate": 41.3
+  },
+  {
+   "teamId": "9E412A6F-09F8-48EA-B983-560E9B99D993",
+   "name": "Dayton",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.05,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 47,
+    "EVEN": 12,
+    "DOWN": 216,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 6.5,
+    "UP": 12.7,
+    "EVEN": 3.2,
+    "DOWN": 58.2,
+    "ANCHOR": 19.4
+   },
+   "stretchRate": 6.5,
+   "anchorRate": 19.4,
+   "breadth": 0.735,
+   "competitiveRatio": 37.6,
+   "winRate": 69
+  },
+  {
+   "teamId": "06471A92-4609-433C-BBB9-CD1CC8B44B31",
+   "name": "VCU",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.48,
+   "matches": 367,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 149,
+    "EVEN": 48,
+    "DOWN": 130,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.9,
+    "UP": 40.6,
+    "EVEN": 13.1,
+    "DOWN": 35.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.9,
+   "anchorRate": 0,
+   "breadth": 0.771,
+   "competitiveRatio": 55.6,
+   "winRate": 52
+  },
+  {
+   "teamId": "F92575F4-84C1-43DD-B5A5-04AD01DBC681",
+   "name": "Saint Joseph’s",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.7,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 234,
+    "EVEN": 38,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.4,
+    "UP": 65,
+    "EVEN": 10.6,
+    "DOWN": 13.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.4,
+   "anchorRate": 0,
+   "breadth": 0.64,
+   "competitiveRatio": 37.3,
+   "winRate": 29.7
+  },
+  {
+   "teamId": "B5C12112-7F4A-4916-B9D6-DA0F9035CCFD",
+   "name": "VCU",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.2,
+   "matches": 359,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 165,
+    "EVEN": 79,
+    "DOWN": 109,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 46,
+    "EVEN": 22,
+    "DOWN": 30.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 0,
+   "breadth": 0.696,
+   "competitiveRatio": 48.5,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "70AC3E0B-FDF5-4230-B118-B7B6D2F0B2E2",
+   "name": "Dayton",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.66,
+   "matches": 344,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 146,
+    "EVEN": 111,
+    "DOWN": 75,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 42.4,
+    "EVEN": 32.3,
+    "DOWN": 21.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 0,
+   "breadth": 0.732,
+   "competitiveRatio": 43.3,
+   "winRate": 44.2
+  },
+  {
+   "teamId": "9DB9FC0D-3E90-4735-8780-BA55FB808C97",
+   "name": "Richmond",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.91,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 90,
+    "EVEN": 69,
+    "DOWN": 150,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 26.4,
+    "EVEN": 20.2,
+    "DOWN": 44,
+    "ANCHOR": 8.5
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 8.5,
+   "breadth": 0.8,
+   "competitiveRatio": 47.5,
+   "winRate": 58.4
+  },
+  {
+   "teamId": "B1CB36A9-7CBB-4D38-B0FC-D3C5F7C8215D",
+   "name": "Richmond",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.48,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 132,
+    "EVEN": 91,
+    "DOWN": 103,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 39.4,
+    "EVEN": 27.2,
+    "DOWN": 30.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.734,
+   "competitiveRatio": 48.7,
+   "winRate": 52.2
+  },
+  {
+   "teamId": "2531AEEC-A8DC-405A-BE7A-E522A0E5D5DC",
+   "name": "St. Bonaventure",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.14,
+   "matches": 331,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 152,
+    "EVEN": 67,
+    "DOWN": 88,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 45.9,
+    "EVEN": 20.2,
+    "DOWN": 26.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 0,
+   "breadth": 0.76,
+   "competitiveRatio": 42.2,
+   "winRate": 32.3
+  },
+  {
+   "teamId": "227A96D2-C345-4A55-9D9C-92C3B54D5C41",
+   "name": "University Of Massachusetts, Amherst",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.54,
+   "matches": 320,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 72,
+    "EVEN": 21,
+    "DOWN": 171,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 22.5,
+    "EVEN": 6.6,
+    "DOWN": 53.4,
+    "ANCHOR": 16.6
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 16.6,
+   "breadth": 0.74,
+   "competitiveRatio": 47.8,
+   "winRate": 62.5
+  },
+  {
+   "teamId": "833D05EB-0BC8-4444-99B5-36D23037D74D",
+   "name": "Fordham",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.39,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 7,
+    "UP": 95,
+    "EVEN": 38,
+    "DOWN": 151,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 30.2,
+    "EVEN": 12.1,
+    "DOWN": 47.9,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 7.6,
+   "breadth": 0.777,
+   "competitiveRatio": 48.6,
+   "winRate": 41.3
+  },
+  {
+   "teamId": "89E5371A-C936-4F5B-94B6-55DDCC8009CE",
+   "name": "Davidson",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.98,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 161,
+    "EVEN": 71,
+    "DOWN": 47,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 51.1,
+    "EVEN": 22.5,
+    "DOWN": 14.9,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 1.9,
+   "breadth": 0.784,
+   "competitiveRatio": 50.5,
+   "winRate": 43.2
+  },
+  {
+   "teamId": "839B4430-43E1-4B78-AEC5-F3D55888AFE6",
+   "name": "Fordham",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.57,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 60,
+    "EVEN": 31,
+    "DOWN": 189,
+    "ANCHOR": 34
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.1,
+    "EVEN": 9.9,
+    "DOWN": 60.2,
+    "ANCHOR": 10.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.8,
+   "breadth": 0.678,
+   "competitiveRatio": 46.2,
+   "winRate": 63.7
+  },
+  {
+   "teamId": "285C51F2-C66F-41C0-AE54-C44057C8DE1A",
+   "name": "Davidson",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.83,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 91,
+    "EVEN": 33,
+    "DOWN": 174,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.4,
+    "EVEN": 10.6,
+    "DOWN": 56.1,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.9,
+   "breadth": 0.651,
+   "competitiveRatio": 43.2,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "3EC0EDD9-2076-4EF3-93F9-B00DD3138B57",
+   "name": "St. Bonaventure",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.94,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 155,
+    "EVEN": 48,
+    "DOWN": 33,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 21.2,
+    "UP": 50.5,
+    "EVEN": 15.6,
+    "DOWN": 10.7,
+    "ANCHOR": 2
+   },
+   "stretchRate": 21.2,
+   "anchorRate": 2,
+   "breadth": 0.796,
+   "competitiveRatio": 39.7,
+   "winRate": 29.3
+  },
+  {
+   "teamId": "C25F45F2-EACA-4B9A-9E30-DA04AC798F31",
+   "name": "University of Rhode Island",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.53,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 106,
+    "EVEN": 39,
+    "DOWN": 137,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.8,
+    "EVEN": 12.8,
+    "DOWN": 44.9,
+    "ANCHOR": 7.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.5,
+   "breadth": 0.736,
+   "competitiveRatio": 38.8,
+   "winRate": 61.3
+  },
+  {
+   "teamId": "654C0AAB-EE2A-4667-83FE-F11B4E18964A",
+   "name": "Duquesne",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.28,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 85,
+    "EVEN": 68,
+    "DOWN": 109,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 6.1,
+    "UP": 28.6,
+    "EVEN": 22.9,
+    "DOWN": 36.7,
+    "ANCHOR": 5.7
+   },
+   "stretchRate": 6.1,
+   "anchorRate": 5.7,
+   "breadth": 0.868,
+   "competitiveRatio": 46.8,
+   "winRate": 44.1
+  },
+  {
+   "teamId": "1BB8E55C-2106-4715-8378-7D1B62D016A9",
+   "name": "George Washington",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.24,
+   "matches": 293,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 152,
+    "EVEN": 58,
+    "DOWN": 72,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 51.9,
+    "EVEN": 19.8,
+    "DOWN": 24.6,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 2,
+   "anchorRate": 1.7,
+   "breadth": 0.718,
+   "competitiveRatio": 41.4,
+   "winRate": 43
+  },
+  {
+   "teamId": "917E7CF5-6F73-4BD8-AD40-FD85AC05E66D",
+   "name": "Duquesne",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.18,
+   "matches": 278,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 99,
+    "EVEN": 47,
+    "DOWN": 92,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 35.6,
+    "EVEN": 16.9,
+    "DOWN": 33.1,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 4,
+   "anchorRate": 10.4,
+   "breadth": 0.868,
+   "competitiveRatio": 44.4,
+   "winRate": 37.4
+  },
+  {
+   "teamId": "215EB18A-BB19-486E-A9B5-A70AD1790A04",
+   "name": "George Mason",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.51,
+   "matches": 271,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 109,
+    "EVEN": 61,
+    "DOWN": 62,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 40.2,
+    "EVEN": 22.5,
+    "DOWN": 22.9,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 4.1,
+   "breadth": 0.872,
+   "competitiveRatio": 33.7,
+   "winRate": 32.5
+  },
+  {
+   "teamId": "DC6C3807-278E-4207-8406-E84A46DEA6DE",
+   "name": "George Mason",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.33,
+   "matches": 242,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 94,
+    "EVEN": 21,
+    "DOWN": 88,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 38.8,
+    "EVEN": 8.7,
+    "DOWN": 36.4,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 8.7,
+   "breadth": 0.84,
+   "competitiveRatio": 51.5,
+   "winRate": 50
+  },
+  {
+   "teamId": "12EE6F9B-504D-4012-AA05-046BED0D49E6",
+   "name": "Saint Louis",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.38,
+   "matches": 233,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 122,
+    "EVEN": 32,
+    "DOWN": 41,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 11.6,
+    "UP": 52.4,
+    "EVEN": 13.7,
+    "DOWN": 17.6,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 11.6,
+   "anchorRate": 4.7,
+   "breadth": 0.815,
+   "competitiveRatio": 41.6,
+   "winRate": 35.2
+  },
+  {
+   "teamId": "B3436EB7-6272-4E7E-945F-D57D226CB238",
+   "name": "Saint Louis",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.44,
+   "matches": 232,
+   "bands": {
+    "STRETCH": 13,
+    "UP": 124,
+    "EVEN": 61,
+    "DOWN": 28,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 53.4,
+    "EVEN": 26.3,
+    "DOWN": 12.1,
+    "ANCHOR": 2.6
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 2.6,
+   "breadth": 0.744,
+   "competitiveRatio": 34.9,
+   "winRate": 48.3
+  }
+ ]
+}

@@ -1,0 +1,543 @@
+{
+ "conference": "Southern Conference",
+ "slug": "southern-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 5976,
+   "bands": {
+    "STRETCH": 493,
+    "UP": 2108,
+    "EVEN": 1149,
+    "DOWN": 1963,
+    "ANCHOR": 263
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 35.3,
+    "EVEN": 19.2,
+    "DOWN": 32.8,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 4.4,
+   "breadth": 0.866,
+   "competitiveRatio": 48.4,
+   "winRate": 47.3
+  },
+  "inConference": {
+   "matches": 2316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 907,
+    "EVEN": 502,
+    "DOWN": 907,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.2,
+    "EVEN": 21.7,
+    "DOWN": 39.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.662,
+   "competitiveRatio": 51.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3660,
+   "bands": {
+    "STRETCH": 493,
+    "UP": 1201,
+    "EVEN": 647,
+    "DOWN": 1056,
+    "ANCHOR": 263
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 32.8,
+    "EVEN": 17.7,
+    "DOWN": 28.9,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 7.2,
+   "breadth": 0.926,
+   "competitiveRatio": 46.7,
+   "winRate": 45.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 13.5,
+  "delta": 13.5,
+  "nonConferenceShare": 61.2
+ },
+ "members": [
+  {
+   "teamId": "BFEF7E8C-0DA8-42A8-AE69-11D28E53EAB5",
+   "name": "The Citadel",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.51,
+   "matches": 516,
+   "bands": {
+    "STRETCH": 135,
+    "UP": 125,
+    "EVEN": 83,
+    "DOWN": 125,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 26.2,
+    "UP": 24.2,
+    "EVEN": 16.1,
+    "DOWN": 24.2,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 26.2,
+   "anchorRate": 9.3,
+   "breadth": 0.965,
+   "competitiveRatio": 35.7,
+   "winRate": 21.1
+  },
+  {
+   "teamId": "797D7406-7B39-468A-89AE-147B676855B0",
+   "name": "Chattanooga",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.27,
+   "matches": 430,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 177,
+    "EVEN": 95,
+    "DOWN": 104,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 41.2,
+    "EVEN": 22.1,
+    "DOWN": 24.2,
+    "ANCHOR": 7
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 7,
+   "breadth": 0.863,
+   "competitiveRatio": 54.9,
+   "winRate": 51.9
+  },
+  {
+   "teamId": "15A64E5F-AA11-4935-AFCE-B43F84E45CDC",
+   "name": "Samford",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.53,
+   "matches": 395,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 68,
+    "EVEN": 80,
+    "DOWN": 215,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 2.3,
+    "UP": 17.2,
+    "EVEN": 20.3,
+    "DOWN": 54.4,
+    "ANCHOR": 5.8
+   },
+   "stretchRate": 2.3,
+   "anchorRate": 5.8,
+   "breadth": 0.751,
+   "competitiveRatio": 53.7,
+   "winRate": 59.5
+  },
+  {
+   "teamId": "227EF7D0-2D9A-4698-BED1-45933908A82A",
+   "name": "Furman",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.75,
+   "matches": 383,
+   "bands": {
+    "STRETCH": 58,
+    "UP": 145,
+    "EVEN": 104,
+    "DOWN": 70,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 15.1,
+    "UP": 37.9,
+    "EVEN": 27.2,
+    "DOWN": 18.3,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 15.1,
+   "anchorRate": 1.6,
+   "breadth": 0.859,
+   "competitiveRatio": 51.2,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "67EC62A5-5279-4D6B-97CB-62899104C8C5",
+   "name": "UNC Greensboro",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.34,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 210,
+    "EVEN": 60,
+    "DOWN": 87,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 4.5,
+    "UP": 55.3,
+    "EVEN": 15.8,
+    "DOWN": 22.9,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 4.5,
+   "anchorRate": 1.6,
+   "breadth": 0.722,
+   "competitiveRatio": 56.5,
+   "winRate": 37.9
+  },
+  {
+   "teamId": "C498251E-610F-4E62-A84A-139A595E141B",
+   "name": "East Tennessee State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.51,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 122,
+    "EVEN": 93,
+    "DOWN": 139,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 32.6,
+    "EVEN": 24.9,
+    "DOWN": 37.2,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 4,
+   "anchorRate": 1.3,
+   "breadth": 0.787,
+   "competitiveRatio": 48.8,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "7D7C3660-53D9-4FBD-BEDE-2D4AE380E624",
+   "name": "Furman",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.25,
+   "matches": 370,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 116,
+    "EVEN": 75,
+    "DOWN": 179,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.4,
+    "EVEN": 20.3,
+    "DOWN": 48.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.645,
+   "competitiveRatio": 48.6,
+   "winRate": 61.9
+  },
+  {
+   "teamId": "B6A0A9DA-9AA2-40FC-9605-ABAD58AFDA70",
+   "name": "Chattanooga",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.89,
+   "matches": 369,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 29,
+    "EVEN": 44,
+    "DOWN": 261,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 7.9,
+    "EVEN": 11.9,
+    "DOWN": 70.7,
+    "ANCHOR": 7.9
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 7.9,
+   "breadth": 0.6,
+   "competitiveRatio": 49.3,
+   "winRate": 58.3
+  },
+  {
+   "teamId": "03EA4BF9-4630-4DC5-9E97-E2B5A9230A25",
+   "name": "UNC Greensboro",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.65,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 213,
+    "EVEN": 83,
+    "DOWN": 30,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 58.4,
+    "EVEN": 22.7,
+    "DOWN": 8.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 0,
+   "breadth": 0.681,
+   "competitiveRatio": 46.7,
+   "winRate": 29.6
+  },
+  {
+   "teamId": "F40AEA03-E4EB-48B1-A818-25EB64D69CFC",
+   "name": "Samford",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.43,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 164,
+    "EVEN": 102,
+    "DOWN": 73,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 45.6,
+    "EVEN": 28.3,
+    "DOWN": 20.3,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 1.7,
+   "breadth": 0.77,
+   "competitiveRatio": 53.9,
+   "winRate": 44.2
+  },
+  {
+   "teamId": "7D084CDF-EC82-4F40-99DE-75524F7C1268",
+   "name": "East Tennessee State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.02,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 34,
+    "EVEN": 42,
+    "DOWN": 233,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 9.6,
+    "EVEN": 11.8,
+    "DOWN": 65.6,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 5.6,
+   "breadth": 0.688,
+   "competitiveRatio": 52.1,
+   "winRate": 62.5
+  },
+  {
+   "teamId": "83007027-7D20-42E6-A72E-3389C48E74C1",
+   "name": "Mercer University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.72,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 132,
+    "EVEN": 3,
+    "DOWN": 150,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 12.9,
+    "UP": 37.9,
+    "EVEN": 0.9,
+    "DOWN": 43.1,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 12.9,
+   "anchorRate": 5.2,
+   "breadth": 0.739,
+   "competitiveRatio": 49.1,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "45B4A6D4-1E01-491E-94A0-E0B4D6D6D885",
+   "name": "Mercer University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.62,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 173,
+    "EVEN": 55,
+    "DOWN": 76,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 49.7,
+    "EVEN": 15.8,
+    "DOWN": 21.8,
+    "ANCHOR": 4
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 4,
+   "breadth": 0.815,
+   "competitiveRatio": 42.2,
+   "winRate": 43.7
+  },
+  {
+   "teamId": "752F4C2A-95E9-4019-9946-DBD0C3BFFC97",
+   "name": "Wofford",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.32,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 122,
+    "EVEN": 62,
+    "DOWN": 113,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 36.2,
+    "EVEN": 18.4,
+    "DOWN": 33.5,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.9,
+   "breadth": 0.807,
+   "competitiveRatio": 44.2,
+   "winRate": 62.9
+  },
+  {
+   "teamId": "871521E6-2488-465C-B9EB-1B5797B31088",
+   "name": "Western Carolina",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.52,
+   "matches": 335,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 170,
+    "EVEN": 73,
+    "DOWN": 33,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 50.7,
+    "EVEN": 21.8,
+    "DOWN": 9.9,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 14,
+   "anchorRate": 3.6,
+   "breadth": 0.807,
+   "competitiveRatio": 39.8,
+   "winRate": 43.6
+  },
+  {
+   "teamId": "67596492-CA8A-4A21-BFAF-6312C57BFD25",
+   "name": "Wofford",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15,
+   "matches": 311,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 108,
+    "EVEN": 95,
+    "DOWN": 75,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 34.7,
+    "EVEN": 30.5,
+    "DOWN": 24.1,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 1.9,
+   "breadth": 0.846,
+   "competitiveRatio": 50.5,
+   "winRate": 41.8
+  }
+ ]
+}

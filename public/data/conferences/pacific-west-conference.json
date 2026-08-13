@@ -1,0 +1,761 @@
+{
+ "conference": "Pacific West Conference",
+ "slug": "pacific-west-conference",
+ "divisions": [
+  "DIV_II",
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 24,
+ "fingerprint": {
+  "overall": {
+   "matches": 7247,
+   "bands": {
+    "STRETCH": 813,
+    "UP": 2381,
+    "EVEN": 923,
+    "DOWN": 2298,
+    "ANCHOR": 832
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 32.9,
+    "EVEN": 12.7,
+    "DOWN": 31.7,
+    "ANCHOR": 11.5
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 11.5,
+   "breadth": 0.923,
+   "competitiveRatio": 40.1,
+   "winRate": 50.8
+  },
+  "inConference": {
+   "matches": 4830,
+   "bands": {
+    "STRETCH": 420,
+    "UP": 1665,
+    "EVEN": 660,
+    "DOWN": 1665,
+    "ANCHOR": 420
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 34.5,
+    "EVEN": 13.7,
+    "DOWN": 34.5,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 8.7,
+   "breadth": 0.889,
+   "competitiveRatio": 41.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2417,
+   "bands": {
+    "STRETCH": 393,
+    "UP": 716,
+    "EVEN": 263,
+    "DOWN": 633,
+    "ANCHOR": 412
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 29.6,
+    "EVEN": 10.9,
+    "DOWN": 26.2,
+    "ANCHOR": 17
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 17,
+   "breadth": 0.963,
+   "competitiveRatio": 36.6,
+   "winRate": 52.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.7,
+  "nonConference": 16.3,
+  "delta": 7.6,
+  "nonConferenceShare": 33.4
+ },
+ "members": [
+  {
+   "teamId": "7DF8013F-5B4E-4B9F-A8AE-5C14A4343115",
+   "name": "Colorado Mesa",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.97,
+   "matches": 427,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 225,
+    "EVEN": 11,
+    "DOWN": 125,
+    "ANCHOR": 66
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 52.7,
+    "EVEN": 2.6,
+    "DOWN": 29.3,
+    "ANCHOR": 15.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.5,
+   "breadth": 0.671,
+   "competitiveRatio": 37.8,
+   "winRate": 48
+  },
+  {
+   "teamId": "7A999AFE-379F-46A9-A96C-4F18B2A0CA18",
+   "name": "Azusa Pacific",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.34,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 38,
+    "EVEN": 70,
+    "DOWN": 216,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.6,
+    "EVEN": 17.7,
+    "DOWN": 54.5,
+    "ANCHOR": 18.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.2,
+   "breadth": 0.728,
+   "competitiveRatio": 45.2,
+   "winRate": 74
+  },
+  {
+   "teamId": "9CDE9A3D-0F22-4A90-86B5-177754ECACAC",
+   "name": "Azusa Pacific",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.09,
+   "matches": 375,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 18,
+    "DOWN": 258,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.7,
+    "EVEN": 4.8,
+    "DOWN": 68.8,
+    "ANCHOR": 19.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.7,
+   "breadth": 0.562,
+   "competitiveRatio": 37.3,
+   "winRate": 78.4
+  },
+  {
+   "teamId": "821C3E3C-D171-4D67-BD58-3A013A9284E9",
+   "name": "Point Loma",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.98,
+   "matches": 374,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 90,
+    "EVEN": 105,
+    "DOWN": 128,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 24.1,
+    "EVEN": 28.1,
+    "DOWN": 34.2,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 10.7,
+   "breadth": 0.876,
+   "competitiveRatio": 47.9,
+   "winRate": 67.1
+  },
+  {
+   "teamId": "BBA6D2DE-7A6F-4962-A5EE-7CFA99F5CA74",
+   "name": "Biola",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.23,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 65,
+    "DOWN": 179,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.7,
+    "EVEN": 17.5,
+    "DOWN": 48.2,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.5,
+   "breadth": 0.783,
+   "competitiveRatio": 44.9,
+   "winRate": 63.9
+  },
+  {
+   "teamId": "93856878-F73A-43DD-9798-DEC3EE32E60F",
+   "name": "Westmont College",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 198,
+    "EVEN": 57,
+    "DOWN": 56,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 57.1,
+    "EVEN": 16.4,
+    "DOWN": 16.1,
+    "ANCHOR": 2.6
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 2.6,
+   "breadth": 0.748,
+   "competitiveRatio": 30.9,
+   "winRate": 23.3
+  },
+  {
+   "teamId": "37E5B5EA-0EF9-490F-AEAE-AA510B52D9CB",
+   "name": "Colorado Mesa",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.13,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 169,
+    "EVEN": 41,
+    "DOWN": 66,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 14.1,
+    "UP": 49.6,
+    "EVEN": 12,
+    "DOWN": 19.4,
+    "ANCHOR": 5
+   },
+   "stretchRate": 14.1,
+   "anchorRate": 5,
+   "breadth": 0.836,
+   "competitiveRatio": 43.7,
+   "winRate": 41.6
+  },
+  {
+   "teamId": "1B307B89-BFDE-4E76-B036-63144753C51E",
+   "name": "Hawaii Pacific",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.04,
+   "matches": 329,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 80,
+    "EVEN": 67,
+    "DOWN": 116,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 24.3,
+    "EVEN": 20.4,
+    "DOWN": 35.3,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 14.9,
+   "breadth": 0.915,
+   "competitiveRatio": 43.2,
+   "winRate": 54.7
+  },
+  {
+   "teamId": "44D0D60F-262C-4D29-B3E9-DBCB00EA993B",
+   "name": "Fresno Pacific",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.42,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 109,
+    "EVEN": 40,
+    "DOWN": 102,
+    "ANCHOR": 52
+   },
+   "bandPct": {
+    "STRETCH": 3.8,
+    "UP": 34.6,
+    "EVEN": 12.7,
+    "DOWN": 32.4,
+    "ANCHOR": 16.5
+   },
+   "stretchRate": 3.8,
+   "anchorRate": 16.5,
+   "breadth": 0.88,
+   "competitiveRatio": 28.6,
+   "winRate": 39.4
+  },
+  {
+   "teamId": "8C053C8F-A550-4779-8626-663D5DC6ACEC",
+   "name": "Biola",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.2,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 9,
+    "EVEN": 43,
+    "DOWN": 161,
+    "ANCHOR": 99
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.9,
+    "EVEN": 13.8,
+    "DOWN": 51.6,
+    "ANCHOR": 31.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 31.7,
+   "breadth": 0.672,
+   "competitiveRatio": 55.9,
+   "winRate": 62.2
+  },
+  {
+   "teamId": "94F58249-CC65-4A19-AA40-FFCCA7F1A62B",
+   "name": "Dominican (California)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.57,
+   "matches": 311,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 67,
+    "EVEN": 54,
+    "DOWN": 109,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 21.5,
+    "EVEN": 17.4,
+    "DOWN": 35,
+    "ANCHOR": 20.3
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 20.3,
+   "breadth": 0.926,
+   "competitiveRatio": 31.5,
+   "winRate": 59.8
+  },
+  {
+   "teamId": "48151541-DB1B-4E3F-AD5A-3F6F0555A2B2",
+   "name": "Westmont College",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.71,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 146,
+    "EVEN": 27,
+    "DOWN": 81,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 47.4,
+    "EVEN": 8.8,
+    "DOWN": 26.3,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.5,
+   "breadth": 0.76,
+   "competitiveRatio": 48.5,
+   "winRate": 42.5
+  },
+  {
+   "teamId": "8F7E1CF5-8242-44A4-9BCE-E0C5B7930798",
+   "name": "Fresno Pacific",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.57,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 101,
+    "UP": 94,
+    "EVEN": 15,
+    "DOWN": 51,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 34.7,
+    "UP": 32.3,
+    "EVEN": 5.2,
+    "DOWN": 17.5,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 34.7,
+   "anchorRate": 10.3,
+   "breadth": 0.885,
+   "competitiveRatio": 47.4,
+   "winRate": 49.8
+  },
+  {
+   "teamId": "BF86CE18-9ED4-45A7-874E-373006E45180",
+   "name": "Stanislaus State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.52,
+   "matches": 290,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 146,
+    "EVEN": 18,
+    "DOWN": 59,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 16.9,
+    "UP": 50.3,
+    "EVEN": 6.2,
+    "DOWN": 20.3,
+    "ANCHOR": 6.2
+   },
+   "stretchRate": 16.9,
+   "anchorRate": 6.2,
+   "breadth": 0.817,
+   "competitiveRatio": 27.9,
+   "winRate": 46.2
+  },
+  {
+   "teamId": "6442AA8C-4616-4914-B3B3-E20D4FEFF473",
+   "name": "Concordia University Irvine",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.6,
+   "matches": 290,
+   "bands": {
+    "STRETCH": 200,
+    "UP": 78,
+    "EVEN": 0,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 69,
+    "UP": 26.9,
+    "EVEN": 0,
+    "DOWN": 4.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 69,
+   "anchorRate": 0,
+   "breadth": 0.461,
+   "competitiveRatio": 38.3,
+   "winRate": 54.1
+  },
+  {
+   "teamId": "7D575CED-E5F1-414D-BE20-2B9D1F361EAD",
+   "name": "Hawaii Pacific",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.23,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 106,
+    "EVEN": 41,
+    "DOWN": 133,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 37.1,
+    "EVEN": 14.3,
+    "DOWN": 46.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 0,
+   "breadth": 0.673,
+   "competitiveRatio": 54.2,
+   "winRate": 52.1
+  },
+  {
+   "teamId": "70D268B3-8BF1-48ED-B588-C33BC9A5C8C0",
+   "name": "Point Loma",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.67,
+   "matches": 282,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 131,
+    "EVEN": 62,
+    "DOWN": 74,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 46.5,
+    "EVEN": 22,
+    "DOWN": 26.2,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 4.3,
+   "breadth": 0.76,
+   "competitiveRatio": 51.1,
+   "winRate": 56
+  },
+  {
+   "teamId": "EE30A76E-B4B6-46C6-BF64-C54E0D80EDE6",
+   "name": "Hawaii Hilo",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.78,
+   "matches": 262,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 164,
+    "EVEN": 26,
+    "DOWN": 21,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 62.6,
+    "EVEN": 9.9,
+    "DOWN": 8,
+    "ANCHOR": 19.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.5,
+   "breadth": 0.648,
+   "competitiveRatio": 38.5,
+   "winRate": 49.2
+  },
+  {
+   "teamId": "48BA82C2-D4D6-4022-B462-6A265FB39BCC",
+   "name": "Menlo (Calif.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.75,
+   "matches": 242,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 72,
+    "EVEN": 16,
+    "DOWN": 112,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 29.8,
+    "EVEN": 6.6,
+    "DOWN": 46.3,
+    "ANCHOR": 8.7
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 8.7,
+   "breadth": 0.821,
+   "competitiveRatio": 43,
+   "winRate": 59.5
+  },
+  {
+   "teamId": "01B1C7C6-F745-4B43-90BF-86A58AD28092",
+   "name": "Hawaii Hilo",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.81,
+   "matches": 240,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 122,
+    "EVEN": 29,
+    "DOWN": 86,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50.8,
+    "EVEN": 12.1,
+    "DOWN": 35.8,
+    "ANCHOR": 1.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.3,
+   "breadth": 0.635,
+   "competitiveRatio": 53.3,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "CB58D8A6-2561-4177-885A-1D7299E77BE2",
+   "name": "Cal State LA",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.13,
+   "matches": 230,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 121,
+    "EVEN": 30,
+    "DOWN": 28,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 19.6,
+    "UP": 52.6,
+    "EVEN": 13,
+    "DOWN": 12.2,
+    "ANCHOR": 2.6
+   },
+   "stretchRate": 19.6,
+   "anchorRate": 2.6,
+   "breadth": 0.792,
+   "competitiveRatio": 28.8,
+   "winRate": 20
+  },
+  {
+   "teamId": "3BD4845B-3487-43A0-AE16-D6AF1D884DB2",
+   "name": "Menlo (Calif.)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.93,
+   "matches": 227,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 44,
+    "EVEN": 39,
+    "DOWN": 107,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 19.4,
+    "EVEN": 17.2,
+    "DOWN": 47.1,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 13.7,
+   "breadth": 0.835,
+   "competitiveRatio": 35.7,
+   "winRate": 60.4
+  },
+  {
+   "teamId": "D09B7E52-EF73-47A2-8DBB-CE2FDBF6C09F",
+   "name": "Jessup (Calif.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.85,
+   "matches": 225,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 68,
+    "EVEN": 49,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 40,
+    "UP": 30.2,
+    "EVEN": 21.8,
+    "DOWN": 8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 40,
+   "anchorRate": 0,
+   "breadth": 0.784,
+   "competitiveRatio": 25.8,
+   "winRate": 16.9
+  },
+  {
+   "teamId": "2D76CB1E-1174-4B5D-864B-204A48A4EE43",
+   "name": "Chaminade",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 30.51,
+   "matches": 176,
+   "bands": {
+    "STRETCH": 159,
+    "UP": 17,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 90.3,
+    "UP": 9.7,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 90.3,
+   "anchorRate": 0,
+   "breadth": 0.197,
+   "competitiveRatio": 2.3,
+   "winRate": 1.1
+  }
+ ]
+}

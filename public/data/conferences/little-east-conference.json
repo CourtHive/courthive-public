@@ -1,0 +1,490 @@
+{
+ "conference": "Little East Conference",
+ "slug": "little-east-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 3150,
+   "bands": {
+    "STRETCH": 255,
+    "UP": 1229,
+    "EVEN": 196,
+    "DOWN": 1203,
+    "ANCHOR": 267
+   },
+   "bandPct": {
+    "STRETCH": 8.1,
+    "UP": 39,
+    "EVEN": 6.2,
+    "DOWN": 38.2,
+    "ANCHOR": 8.5
+   },
+   "stretchRate": 8.1,
+   "anchorRate": 8.5,
+   "breadth": 0.82,
+   "competitiveRatio": 24.8,
+   "winRate": 49.9
+  },
+  "inConference": {
+   "matches": 1530,
+   "bands": {
+    "STRETCH": 109,
+    "UP": 640,
+    "EVEN": 32,
+    "DOWN": 640,
+    "ANCHOR": 109
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 41.8,
+    "EVEN": 2.1,
+    "DOWN": 41.8,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 7.1,
+   "breadth": 0.737,
+   "competitiveRatio": 25.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1620,
+   "bands": {
+    "STRETCH": 146,
+    "UP": 589,
+    "EVEN": 164,
+    "DOWN": 563,
+    "ANCHOR": 158
+   },
+   "bandPct": {
+    "STRETCH": 9,
+    "UP": 36.4,
+    "EVEN": 10.1,
+    "DOWN": 34.8,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 9,
+   "anchorRate": 9.8,
+   "breadth": 0.877,
+   "competitiveRatio": 24,
+   "winRate": 49.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 7.1,
+  "nonConference": 9,
+  "delta": 1.9,
+  "nonConferenceShare": 51.4
+ },
+ "members": [
+  {
+   "teamId": "8B6708A7-61DA-4A4E-A1BA-99614D496485",
+   "name": "Western Connecticut State University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.69,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 141,
+    "UP": 196,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 41.8,
+    "UP": 58.2,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 41.8,
+   "anchorRate": 0,
+   "breadth": 0.422,
+   "competitiveRatio": 25.5,
+   "winRate": 33.8
+  },
+  {
+   "teamId": "C45F7209-5495-4A48-90FE-6AFF2C7C1965",
+   "name": "Western Connecticut State University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.73,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 230,
+    "EVEN": 33,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 73,
+    "EVEN": 10.5,
+    "DOWN": 10.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 0,
+   "breadth": 0.54,
+   "competitiveRatio": 29.2,
+   "winRate": 37.8
+  },
+  {
+   "teamId": "3A9AD399-D3B0-4AFB-A112-9FCF645ACF38",
+   "name": "Massachusetts Boston",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.98,
+   "matches": 281,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 51,
+    "EVEN": 12,
+    "DOWN": 163,
+    "ANCHOR": 52
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 18.1,
+    "EVEN": 4.3,
+    "DOWN": 58,
+    "ANCHOR": 18.5
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 18.5,
+   "breadth": 0.697,
+   "competitiveRatio": 23.3,
+   "winRate": 71.5
+  },
+  {
+   "teamId": "7F7B2396-3511-4CD8-90D1-E30A7BD898CE",
+   "name": "Rhode Island College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.77,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 3,
+    "DOWN": 153,
+    "ANCHOR": 111
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 1.1,
+    "DOWN": 57.3,
+    "ANCHOR": 41.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 41.6,
+   "breadth": 0.456,
+   "competitiveRatio": 12.4,
+   "winRate": 86.9
+  },
+  {
+   "teamId": "7FFA88AF-E5ED-41C7-95C2-FC86CDBAC44F",
+   "name": "Massachusetts Dartmouth",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.46,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 67,
+    "EVEN": 29,
+    "DOWN": 142,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.2,
+    "EVEN": 11.3,
+    "DOWN": 55.5,
+    "ANCHOR": 7
+   },
+   "stretchRate": 0,
+   "anchorRate": 7,
+   "breadth": 0.69,
+   "competitiveRatio": 23,
+   "winRate": 53.9
+  },
+  {
+   "teamId": "0A2607C5-ADAE-4318-88FD-92C18AE45154",
+   "name": "Massachusetts Boston",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.82,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 92,
+    "EVEN": 39,
+    "DOWN": 80,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 39.1,
+    "EVEN": 16.6,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 0,
+   "breadth": 0.786,
+   "competitiveRatio": 28.5,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "069C8482-B126-4E6B-81BB-E20E16507592",
+   "name": "Rhode Island College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.42,
+   "matches": 212,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 0,
+    "DOWN": 153,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.6,
+    "EVEN": 0,
+    "DOWN": 72.2,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.2,
+   "breadth": 0.451,
+   "competitiveRatio": 29.2,
+   "winRate": 67.5
+  },
+  {
+   "teamId": "91DB9556-C0F2-42E0-9115-4E281C40E8CB",
+   "name": "Plymouth State",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.72,
+   "matches": 203,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 144,
+    "EVEN": 0,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.8,
+    "UP": 70.9,
+    "EVEN": 0,
+    "DOWN": 14.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.8,
+   "anchorRate": 0,
+   "breadth": 0.5,
+   "competitiveRatio": 24.4,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "98BBD867-A954-4F36-82BC-68A58F23ECBA",
+   "name": "Bridgewater State",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.1,
+   "matches": 200,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 24,
+    "EVEN": 16,
+    "DOWN": 122,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 12,
+    "EVEN": 8,
+    "DOWN": 61,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 13.5,
+   "breadth": 0.738,
+   "competitiveRatio": 29.6,
+   "winRate": 61
+  },
+  {
+   "teamId": "DEA21A73-651E-4ED3-AE51-B63329AC08AD",
+   "name": "Bridgewater State",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.56,
+   "matches": 194,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 24,
+    "DOWN": 95,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.7,
+    "EVEN": 12.4,
+    "DOWN": 49,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.9,
+   "breadth": 0.766,
+   "competitiveRatio": 27.3,
+   "winRate": 58.2
+  },
+  {
+   "teamId": "1D03A9A8-CDF1-4B4F-9E60-7CE65E776D20",
+   "name": "Southern Maine",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.68,
+   "matches": 185,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 131,
+    "EVEN": 18,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 70.8,
+    "EVEN": 9.7,
+    "DOWN": 19.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.491,
+   "competitiveRatio": 10.8,
+   "winRate": 23.2
+  },
+  {
+   "teamId": "0D74A1FA-2C9D-43C0-82C0-A65A0AD92018",
+   "name": "Salem State University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.87,
+   "matches": 166,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 0,
+    "DOWN": 133,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.5,
+    "EVEN": 0,
+    "DOWN": 80.1,
+    "ANCHOR": 5.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.4,
+   "breadth": 0.382,
+   "competitiveRatio": 36.1,
+   "winRate": 36.7
+  },
+  {
+   "teamId": "913005D5-47A0-481C-9E64-30155F7D0C57",
+   "name": "Castleton",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.82,
+   "matches": 151,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 16,
+    "DOWN": 63,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 41.1,
+    "EVEN": 10.6,
+    "DOWN": 41.7,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.6,
+   "breadth": 0.713,
+   "competitiveRatio": 25.7,
+   "winRate": 39.7
+  },
+  {
+   "teamId": "2B4871A8-9403-42FE-9622-468B9A6F1A93",
+   "name": "Southern Maine",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.64,
+   "matches": 148,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 114,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 18.9,
+    "UP": 77,
+    "EVEN": 4.1,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 18.9,
+   "anchorRate": 0,
+   "breadth": 0.401,
+   "competitiveRatio": 24.5,
+   "winRate": 25
+  }
+ ]
+}

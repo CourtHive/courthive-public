@@ -1,0 +1,409 @@
+{
+ "conference": "Empire 8",
+ "slug": "empire-8",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 11,
+ "fingerprint": {
+  "overall": {
+   "matches": 2703,
+   "bands": {
+    "STRETCH": 141,
+    "UP": 1132,
+    "EVEN": 495,
+    "DOWN": 896,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 41.9,
+    "EVEN": 18.3,
+    "DOWN": 33.1,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 1.4,
+   "breadth": 0.781,
+   "competitiveRatio": 26.7,
+   "winRate": 43
+  },
+  "inConference": {
+   "matches": 1234,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 503,
+    "EVEN": 192,
+    "DOWN": 503,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 40.8,
+    "EVEN": 15.6,
+    "DOWN": 40.8,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 1.5,
+   "breadth": 0.711,
+   "competitiveRatio": 28.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1469,
+   "bands": {
+    "STRETCH": 123,
+    "UP": 629,
+    "EVEN": 303,
+    "DOWN": 393,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 8.4,
+    "UP": 42.8,
+    "EVEN": 20.6,
+    "DOWN": 26.8,
+    "ANCHOR": 1.4
+   },
+   "stretchRate": 8.4,
+   "anchorRate": 1.4,
+   "breadth": 0.814,
+   "competitiveRatio": 25,
+   "winRate": 37.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.5,
+  "nonConference": 8.4,
+  "delta": 6.9,
+  "nonConferenceShare": 54.3
+ },
+ "members": [
+  {
+   "teamId": "7691FDDE-967F-45C5-8AFB-CB431C32B835",
+   "name": "Alfred University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.57,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 2,
+    "UP": 75,
+    "EVEN": 18,
+    "DOWN": 196,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0.7,
+    "UP": 25.8,
+    "EVEN": 6.2,
+    "DOWN": 67.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0.7,
+   "anchorRate": 0,
+   "breadth": 0.511,
+   "competitiveRatio": 32,
+   "winRate": 52.6
+  },
+  {
+   "teamId": "31DFB152-B244-49F3-8C9E-BB806BB3F58D",
+   "name": "Hartwick",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.58,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 21,
+    "EVEN": 52,
+    "DOWN": 180,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 7.5,
+    "EVEN": 18.6,
+    "DOWN": 64.3,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 8.6,
+   "breadth": 0.652,
+   "competitiveRatio": 20.4,
+   "winRate": 70.7
+  },
+  {
+   "teamId": "A2E8EA10-B887-4D41-A2D3-7F3E7D74E98B",
+   "name": "Nazareth",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.35,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 151,
+    "EVEN": 24,
+    "DOWN": 93,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 55.1,
+    "EVEN": 8.8,
+    "DOWN": 33.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 0,
+   "breadth": 0.616,
+   "competitiveRatio": 24.5,
+   "winRate": 47.4
+  },
+  {
+   "teamId": "4773A0F5-075E-4AAE-A3A5-686BAE31344A",
+   "name": "Nazareth",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.21,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 147,
+    "EVEN": 68,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.8,
+    "UP": 53.8,
+    "EVEN": 24.9,
+    "DOWN": 1.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.8,
+   "anchorRate": 0,
+   "breadth": 0.66,
+   "competitiveRatio": 33.7,
+   "winRate": 40.7
+  },
+  {
+   "teamId": "E7776561-71A6-4E6C-8A12-04ADB8EBB726",
+   "name": "Alfred University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.11,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 87,
+    "EVEN": 38,
+    "DOWN": 126,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.5,
+    "EVEN": 14.6,
+    "DOWN": 48.5,
+    "ANCHOR": 3.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.5,
+   "breadth": 0.693,
+   "competitiveRatio": 30.8,
+   "winRate": 41.2
+  },
+  {
+   "teamId": "29ED2622-FADC-4C2F-94EF-B02B7C0FC977",
+   "name": "Houghton",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.19,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 131,
+    "EVEN": 71,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 52.6,
+    "EVEN": 28.5,
+    "DOWN": 18.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.628,
+   "competitiveRatio": 22.5,
+   "winRate": 26.1
+  },
+  {
+   "teamId": "5BABB73E-81B2-47DC-9C28-F57A6AB84E3D",
+   "name": "Houghton",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.11,
+   "matches": 247,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 158,
+    "EVEN": 51,
+    "DOWN": 18,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 64,
+    "EVEN": 20.6,
+    "DOWN": 7.3,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 2.4,
+   "breadth": 0.656,
+   "competitiveRatio": 32.5,
+   "winRate": 45.7
+  },
+  {
+   "teamId": "61C4216D-8CAE-447E-9B55-B5018B1C246F",
+   "name": "St. John Fisher",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.56,
+   "matches": 243,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 29,
+    "EVEN": 54,
+    "DOWN": 139,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 11.9,
+    "EVEN": 22.2,
+    "DOWN": 57.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 0,
+   "breadth": 0.695,
+   "competitiveRatio": 32.6,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "452B8DB2-5FE6-4E7E-AE63-6FE3CE437F67",
+   "name": "St. John Fisher",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.62,
+   "matches": 241,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 124,
+    "EVEN": 51,
+    "DOWN": 66,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 51.5,
+    "EVEN": 21.2,
+    "DOWN": 27.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.637,
+   "competitiveRatio": 22.4,
+   "winRate": 43.6
+  },
+  {
+   "teamId": "202B5ADC-256F-47E7-8E8C-45CBB1A2F410",
+   "name": "Utica",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.84,
+   "matches": 173,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 109,
+    "EVEN": 23,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23.7,
+    "UP": 63,
+    "EVEN": 13.3,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23.7,
+   "anchorRate": 0,
+   "breadth": 0.56,
+   "competitiveRatio": 9.2,
+   "winRate": 10.4
+  },
+  {
+   "teamId": "006E92AE-6C3F-44FE-9EAA-F093311B40A2",
+   "name": "Russell Sage",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.98,
+   "matches": 172,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 100,
+    "EVEN": 45,
+    "DOWN": 27,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 58.1,
+    "EVEN": 26.2,
+    "DOWN": 15.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.594,
+   "competitiveRatio": 27.5,
+   "winRate": 37.8
+  }
+ ]
+}

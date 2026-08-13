@@ -1,0 +1,355 @@
+{
+ "conference": "Coast To Coast Conference",
+ "slug": "coast-to-coast-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 9,
+ "fingerprint": {
+  "overall": {
+   "matches": 3072,
+   "bands": {
+    "STRETCH": 173,
+    "UP": 1003,
+    "EVEN": 391,
+    "DOWN": 1207,
+    "ANCHOR": 298
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 32.6,
+    "EVEN": 12.7,
+    "DOWN": 39.3,
+    "ANCHOR": 9.7
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 9.7,
+   "breadth": 0.859,
+   "competitiveRatio": 41.3,
+   "winRate": 57.9
+  },
+  "inConference": {
+   "matches": 384,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 128,
+    "EVEN": 74,
+    "DOWN": 128,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 33.3,
+    "EVEN": 19.3,
+    "DOWN": 33.3,
+    "ANCHOR": 7
+   },
+   "stretchRate": 7,
+   "anchorRate": 7,
+   "breadth": 0.884,
+   "competitiveRatio": 49,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2688,
+   "bands": {
+    "STRETCH": 146,
+    "UP": 875,
+    "EVEN": 317,
+    "DOWN": 1079,
+    "ANCHOR": 271
+   },
+   "bandPct": {
+    "STRETCH": 5.4,
+    "UP": 32.6,
+    "EVEN": 11.8,
+    "DOWN": 40.1,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 5.4,
+   "anchorRate": 10.1,
+   "breadth": 0.853,
+   "competitiveRatio": 40.3,
+   "winRate": 59
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 7,
+  "nonConference": 5.4,
+  "delta": -1.6,
+  "nonConferenceShare": 87.5
+ },
+ "members": [
+  {
+   "teamId": "1BC3A907-A4CC-4257-89B5-BEC84DDEDE2B",
+   "name": "Mary Washington",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 17.76,
+   "matches": 468,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 138,
+    "EVEN": 40,
+    "DOWN": 214,
+    "ANCHOR": 76
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.5,
+    "EVEN": 8.5,
+    "DOWN": 45.7,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.2,
+   "breadth": 0.76,
+   "competitiveRatio": 58.7,
+   "winRate": 59.2
+  },
+  {
+   "teamId": "91B81904-B804-432B-AA46-BE061862AC7E",
+   "name": "UC Santa Cruz",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.77,
+   "matches": 391,
+   "bands": {
+    "STRETCH": 69,
+    "UP": 142,
+    "EVEN": 51,
+    "DOWN": 101,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 17.6,
+    "UP": 36.3,
+    "EVEN": 13,
+    "DOWN": 25.8,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 17.6,
+   "anchorRate": 7.2,
+   "breadth": 0.918,
+   "competitiveRatio": 43.5,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "0CB3AF58-7501-48E7-B363-2F160118A122",
+   "name": "Christopher Newport",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 18.39,
+   "matches": 379,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 119,
+    "EVEN": 60,
+    "DOWN": 158,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 31.4,
+    "EVEN": 15.8,
+    "DOWN": 41.7,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 9.5,
+   "breadth": 0.814,
+   "competitiveRatio": 48.3,
+   "winRate": 60.9
+  },
+  {
+   "teamId": "7D52D87D-4D84-46C7-B800-4066819F083A",
+   "name": "Mary Washington",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.99,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 132,
+    "EVEN": 53,
+    "DOWN": 128,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 37.2,
+    "EVEN": 14.9,
+    "DOWN": 36.1,
+    "ANCHOR": 5.1
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 5.1,
+   "breadth": 0.841,
+   "competitiveRatio": 37.2,
+   "winRate": 49.6
+  },
+  {
+   "teamId": "E7970DA3-2C04-4A93-9D7E-E291BD4EA857",
+   "name": "Christopher Newport",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.73,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 123,
+    "EVEN": 50,
+    "DOWN": 137,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 36.2,
+    "EVEN": 14.7,
+    "DOWN": 40.3,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 1.8,
+   "breadth": 0.792,
+   "competitiveRatio": 41.3,
+   "winRate": 57.9
+  },
+  {
+   "teamId": "4CB85FC9-E653-4ECA-851E-59118777C059",
+   "name": "UC Santa Cruz",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.55,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 132,
+    "EVEN": 64,
+    "DOWN": 89,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 40.4,
+    "EVEN": 19.6,
+    "DOWN": 27.2,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 5.5,
+   "breadth": 0.864,
+   "competitiveRatio": 33.9,
+   "winRate": 55
+  },
+  {
+   "teamId": "7ECFE845-6B78-4FB2-B752-8AB2F87D98DE",
+   "name": "Salisbury",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.31,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 155,
+    "EVEN": 36,
+    "DOWN": 79,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 49.4,
+    "EVEN": 11.5,
+    "DOWN": 25.2,
+    "ANCHOR": 5.7
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 5.7,
+   "breadth": 0.817,
+   "competitiveRatio": 44.6,
+   "winRate": 61.1
+  },
+  {
+   "teamId": "0F3FED0A-EE92-4B7C-A8DA-C411C680D5F4",
+   "name": "Salisbury",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.39,
+   "matches": 285,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 35,
+    "DOWN": 164,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.8,
+    "EVEN": 12.3,
+    "DOWN": 57.5,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.4,
+   "breadth": 0.693,
+   "competitiveRatio": 28.8,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "97AE5A33-0B2D-4F61-AD8A-AE4FC2673CB9",
+   "name": "Pratt Institute",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.78,
+   "matches": 213,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 2,
+    "DOWN": 137,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0.9,
+    "DOWN": 64.3,
+    "ANCHOR": 34.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 34.7,
+   "breadth": 0.432,
+   "competitiveRatio": 17.5,
+   "winRate": 83.6
+  }
+ ]
+}

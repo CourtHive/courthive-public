@@ -1,0 +1,679 @@
+{
+ "conference": "Great Lakes Valley Conference",
+ "slug": "great-lakes-valley-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 21,
+ "fingerprint": {
+  "overall": {
+   "matches": 6218,
+   "bands": {
+    "STRETCH": 674,
+    "UP": 2209,
+    "EVEN": 895,
+    "DOWN": 1924,
+    "ANCHOR": 516
+   },
+   "bandPct": {
+    "STRETCH": 10.8,
+    "UP": 35.5,
+    "EVEN": 14.4,
+    "DOWN": 30.9,
+    "ANCHOR": 8.3
+   },
+   "stretchRate": 10.8,
+   "anchorRate": 8.3,
+   "breadth": 0.905,
+   "competitiveRatio": 43.9,
+   "winRate": 49.6
+  },
+  "inConference": {
+   "matches": 2868,
+   "bands": {
+    "STRETCH": 267,
+    "UP": 996,
+    "EVEN": 342,
+    "DOWN": 996,
+    "ANCHOR": 267
+   },
+   "bandPct": {
+    "STRETCH": 9.3,
+    "UP": 34.7,
+    "EVEN": 11.9,
+    "DOWN": 34.7,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 9.3,
+   "anchorRate": 9.3,
+   "breadth": 0.889,
+   "competitiveRatio": 44.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3350,
+   "bands": {
+    "STRETCH": 407,
+    "UP": 1213,
+    "EVEN": 553,
+    "DOWN": 928,
+    "ANCHOR": 249
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 36.2,
+    "EVEN": 16.5,
+    "DOWN": 27.7,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 7.4,
+   "breadth": 0.913,
+   "competitiveRatio": 43,
+   "winRate": 49.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 9.3,
+  "nonConference": 12.1,
+  "delta": 2.8,
+  "nonConferenceShare": 53.9
+ },
+ "members": [
+  {
+   "teamId": "27AA0748-A053-4E34-8198-D506AB14ABE6",
+   "name": "McKendree",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.05,
+   "matches": 413,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 210,
+    "EVEN": 81,
+    "DOWN": 92,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50.8,
+    "EVEN": 19.6,
+    "DOWN": 22.3,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.3,
+   "breadth": 0.738,
+   "competitiveRatio": 53.6,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "25C68885-D8B4-47DC-AA28-C341C35A9377",
+   "name": "UIndy",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.05,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 60,
+    "EVEN": 55,
+    "DOWN": 196,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.4,
+    "EVEN": 15.1,
+    "DOWN": 53.7,
+    "ANCHOR": 14.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.8,
+   "breadth": 0.745,
+   "competitiveRatio": 47.7,
+   "winRate": 71.5
+  },
+  {
+   "teamId": "B5DB7371-4C32-4C74-BB54-DAB7524B2BB0",
+   "name": "McKendree",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.59,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 163,
+    "EVEN": 67,
+    "DOWN": 82,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 46.4,
+    "EVEN": 19.1,
+    "DOWN": 23.4,
+    "ANCHOR": 5.1
+   },
+   "stretchRate": 6,
+   "anchorRate": 5.1,
+   "breadth": 0.828,
+   "competitiveRatio": 44,
+   "winRate": 41
+  },
+  {
+   "teamId": "7A0A71C8-DF19-4F97-915B-7FB4C903753B",
+   "name": "Drury",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.84,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 50,
+    "EVEN": 63,
+    "DOWN": 174,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 15.3,
+    "EVEN": 19.3,
+    "DOWN": 53.2,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 10.7,
+   "breadth": 0.772,
+   "competitiveRatio": 53.2,
+   "winRate": 63.3
+  },
+  {
+   "teamId": "5B8C8D52-E7D7-4E70-9CAC-EE96DB2CD7DF",
+   "name": "Quincy",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.98,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 105,
+    "EVEN": 57,
+    "DOWN": 68,
+    "ANCHOR": 93
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.5,
+    "EVEN": 17.6,
+    "DOWN": 21.1,
+    "ANCHOR": 28.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 28.8,
+   "breadth": 0.844,
+   "competitiveRatio": 43.7,
+   "winRate": 54.5
+  },
+  {
+   "teamId": "11BD97DE-D451-4F34-BCAB-1445D2E74374",
+   "name": "Rockhurst",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.68,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 50,
+    "DOWN": 139,
+    "ANCHOR": 69
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.1,
+    "EVEN": 15.7,
+    "DOWN": 43.6,
+    "ANCHOR": 21.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.6,
+   "breadth": 0.808,
+   "competitiveRatio": 38.7,
+   "winRate": 67.4
+  },
+  {
+   "teamId": "0C09754A-79F3-45C6-9525-350A9900C9B3",
+   "name": "UIndy",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.03,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 107,
+    "EVEN": 31,
+    "DOWN": 147,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 33.9,
+    "EVEN": 9.8,
+    "DOWN": 46.5,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 8.2,
+   "breadth": 0.759,
+   "competitiveRatio": 35.1,
+   "winRate": 63
+  },
+  {
+   "teamId": "D226BE8C-A157-46D0-9AC6-78C0D218AE61",
+   "name": "Missouri-St. Louis",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.15,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 124,
+    "EVEN": 92,
+    "DOWN": 77,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40,
+    "EVEN": 29.7,
+    "DOWN": 24.8,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.5,
+   "breadth": 0.766,
+   "competitiveRatio": 54.2,
+   "winRate": 40.6
+  },
+  {
+   "teamId": "6646AA4B-7D71-44E7-9164-5BAEE40178AF",
+   "name": "Drury",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.6,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 94,
+    "EVEN": 14,
+    "DOWN": 184,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.5,
+    "EVEN": 4.5,
+    "DOWN": 59.7,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 5.2,
+   "breadth": 0.599,
+   "competitiveRatio": 43.1,
+   "winRate": 57.5
+  },
+  {
+   "teamId": "9CFA4E82-68A1-4A56-B55C-CC5FB52259B0",
+   "name": "Truman State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.02,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 35,
+    "UP": 87,
+    "EVEN": 56,
+    "DOWN": 123,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 11.4,
+    "UP": 28.3,
+    "EVEN": 18.2,
+    "DOWN": 40.1,
+    "ANCHOR": 2
+   },
+   "stretchRate": 11.4,
+   "anchorRate": 2,
+   "breadth": 0.844,
+   "competitiveRatio": 30,
+   "winRate": 41
+  },
+  {
+   "teamId": "41D8929F-2EF6-4104-818E-D7CF41754035",
+   "name": "Quincy",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.25,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 159,
+    "EVEN": 35,
+    "DOWN": 35,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 53.2,
+    "EVEN": 11.7,
+    "DOWN": 11.7,
+    "ANCHOR": 7
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 7,
+   "breadth": 0.821,
+   "competitiveRatio": 39.4,
+   "winRate": 41.1
+  },
+  {
+   "teamId": "71672BCA-1735-437F-83E9-F056C223ACBB",
+   "name": "Rockhurst",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.04,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 66,
+    "DOWN": 152,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10.4,
+    "EVEN": 22.2,
+    "DOWN": 51.2,
+    "ANCHOR": 16.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.2,
+   "breadth": 0.75,
+   "competitiveRatio": 53.9,
+   "winRate": 55.9
+  },
+  {
+   "teamId": "D2ACF5AD-8548-4A16-B1C3-8D8637E92B49",
+   "name": "Southwest Baptist",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.04,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 150,
+    "EVEN": 13,
+    "DOWN": 72,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 20.1,
+    "UP": 51,
+    "EVEN": 4.4,
+    "DOWN": 24.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 20.1,
+   "anchorRate": 0,
+   "breadth": 0.713,
+   "competitiveRatio": 43.9,
+   "winRate": 51
+  },
+  {
+   "teamId": "147561BC-C3D3-4CEE-95E1-52C98F61448C",
+   "name": "Southwest Baptist",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.1,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 180,
+    "EVEN": 22,
+    "DOWN": 51,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 62.9,
+    "EVEN": 7.7,
+    "DOWN": 17.8,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 6.3,
+   "breadth": 0.699,
+   "competitiveRatio": 45.1,
+   "winRate": 44.1
+  },
+  {
+   "teamId": "B7C2E49B-9A81-454E-8BA2-2656787E0ACC",
+   "name": "Illinois Springfield",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.71,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 154,
+    "EVEN": 18,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.5,
+    "UP": 56.4,
+    "EVEN": 6.6,
+    "DOWN": 9.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.5,
+   "anchorRate": 0,
+   "breadth": 0.672,
+   "competitiveRatio": 42.3,
+   "winRate": 33.3
+  },
+  {
+   "teamId": "D6348BCE-0460-4EAC-9B47-9211F3E89212",
+   "name": "Missouri-St. Louis",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.09,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 58,
+    "EVEN": 32,
+    "DOWN": 162,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.2,
+    "EVEN": 11.7,
+    "DOWN": 59.3,
+    "ANCHOR": 7.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.7,
+   "breadth": 0.676,
+   "competitiveRatio": 42.9,
+   "winRate": 58.6
+  },
+  {
+   "teamId": "883736A6-DFAE-49C5-A65A-64A39EB46799",
+   "name": "Illinois Springfield",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.73,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 149,
+    "EVEN": 18,
+    "DOWN": 51,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 59.1,
+    "EVEN": 7.1,
+    "DOWN": 20.2,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 2.4,
+   "breadth": 0.718,
+   "competitiveRatio": 46,
+   "winRate": 43.3
+  },
+  {
+   "teamId": "E7246405-79D4-4255-B017-4FDAD7C70AF0",
+   "name": "William Jewell College",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 28.22,
+   "matches": 247,
+   "bands": {
+    "STRETCH": 247,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 100,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 100,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": 32.7,
+   "winRate": 28.3
+  },
+  {
+   "teamId": "ECF48B04-F034-441D-A8CF-F1F62732BB33",
+   "name": "Maryville (Missouri)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.57,
+   "matches": 230,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 113,
+    "EVEN": 53,
+    "DOWN": 36,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 49.1,
+    "EVEN": 23,
+    "DOWN": 15.7,
+    "ANCHOR": 12.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.2,
+   "breadth": 0.767,
+   "competitiveRatio": 53.9,
+   "winRate": 42.2
+  },
+  {
+   "teamId": "FB045142-ABAF-4E36-84F7-D5D557252510",
+   "name": "William Jewell College",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 29.24,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 125,
+    "UP": 77,
+    "EVEN": 16,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 57.3,
+    "UP": 35.3,
+    "EVEN": 7.3,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 57.3,
+   "anchorRate": 0,
+   "breadth": 0.546,
+   "competitiveRatio": 19.1,
+   "winRate": 20.6
+  },
+  {
+   "teamId": "B82A64EB-AE8F-482A-9318-E2D87CB2974D",
+   "name": "Maryville (Missouri)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.51,
+   "matches": 210,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 77,
+    "EVEN": 56,
+    "DOWN": 57,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 36.7,
+    "EVEN": 26.7,
+    "DOWN": 27.1,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 4.8,
+   "breadth": 0.848,
+   "competitiveRatio": 49,
+   "winRate": 46.2
+  }
+ ]
+}

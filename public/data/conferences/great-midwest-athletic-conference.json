@@ -1,0 +1,625 @@
+{
+ "conference": "Great Midwest Athletic Conference",
+ "slug": "great-midwest-athletic-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 19,
+ "fingerprint": {
+  "overall": {
+   "matches": 6158,
+   "bands": {
+    "STRETCH": 641,
+    "UP": 2108,
+    "EVEN": 651,
+    "DOWN": 2109,
+    "ANCHOR": 649
+   },
+   "bandPct": {
+    "STRETCH": 10.4,
+    "UP": 34.2,
+    "EVEN": 10.6,
+    "DOWN": 34.2,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 10.4,
+   "anchorRate": 10.5,
+   "breadth": 0.897,
+   "competitiveRatio": 36.5,
+   "winRate": 49.5
+  },
+  "inConference": {
+   "matches": 2698,
+   "bands": {
+    "STRETCH": 433,
+    "UP": 806,
+    "EVEN": 220,
+    "DOWN": 806,
+    "ANCHOR": 433
+   },
+   "bandPct": {
+    "STRETCH": 16,
+    "UP": 29.9,
+    "EVEN": 8.2,
+    "DOWN": 29.9,
+    "ANCHOR": 16
+   },
+   "stretchRate": 16,
+   "anchorRate": 16,
+   "breadth": 0.94,
+   "competitiveRatio": 29,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3460,
+   "bands": {
+    "STRETCH": 208,
+    "UP": 1302,
+    "EVEN": 431,
+    "DOWN": 1303,
+    "ANCHOR": 216
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 37.6,
+    "EVEN": 12.5,
+    "DOWN": 37.7,
+    "ANCHOR": 6.2
+   },
+   "stretchRate": 6,
+   "anchorRate": 6.2,
+   "breadth": 0.831,
+   "competitiveRatio": 42.4,
+   "winRate": 49
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 16,
+  "nonConference": 6,
+  "delta": -10,
+  "nonConferenceShare": 56.2
+ },
+ "members": [
+  {
+   "teamId": "6BC97433-07CA-4E89-B298-4BC4A203EFC6",
+   "name": "Tiffin",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.11,
+   "matches": 429,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 97,
+    "EVEN": 24,
+    "DOWN": 234,
+    "ANCHOR": 74
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.6,
+    "EVEN": 5.6,
+    "DOWN": 54.5,
+    "ANCHOR": 17.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.2,
+   "breadth": 0.703,
+   "competitiveRatio": 47.4,
+   "winRate": 62
+  },
+  {
+   "teamId": "0DA97C99-7109-4B84-AD3E-4F20481E40EE",
+   "name": "Tiffin",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.19,
+   "matches": 414,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 179,
+    "EVEN": 60,
+    "DOWN": 142,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43.2,
+    "EVEN": 14.5,
+    "DOWN": 34.3,
+    "ANCHOR": 8
+   },
+   "stretchRate": 0,
+   "anchorRate": 8,
+   "breadth": 0.752,
+   "competitiveRatio": 40.1,
+   "winRate": 66.7
+  },
+  {
+   "teamId": "5F529D8F-19DA-4537-92D1-1DF3B6369D9D",
+   "name": "Cedarville",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 21.75,
+   "matches": 412,
+   "bands": {
+    "STRETCH": 56,
+    "UP": 177,
+    "EVEN": 47,
+    "DOWN": 115,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 13.6,
+    "UP": 43,
+    "EVEN": 11.4,
+    "DOWN": 27.9,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 13.6,
+   "anchorRate": 4.1,
+   "breadth": 0.851,
+   "competitiveRatio": 42.2,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "75BC9737-BED1-4F80-98F3-540DC80F55C9",
+   "name": "Cedarville",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.53,
+   "matches": 398,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 120,
+    "EVEN": 73,
+    "DOWN": 142,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 30.2,
+    "EVEN": 18.3,
+    "DOWN": 35.7,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 6,
+   "anchorRate": 9.8,
+   "breadth": 0.893,
+   "competitiveRatio": 30.7,
+   "winRate": 47.7
+  },
+  {
+   "teamId": "24EE1961-B73E-4D58-8070-A100DFBD1C58",
+   "name": "Walsh",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.05,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 168,
+    "EVEN": 56,
+    "DOWN": 108,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46,
+    "EVEN": 15.3,
+    "DOWN": 29.6,
+    "ANCHOR": 9
+   },
+   "stretchRate": 0,
+   "anchorRate": 9,
+   "breadth": 0.759,
+   "competitiveRatio": 40.3,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "8C7800CF-8367-4D48-852D-B4E10E603EA9",
+   "name": "Findlay",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.09,
+   "matches": 364,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 47,
+    "DOWN": 189,
+    "ANCHOR": 101
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.4,
+    "EVEN": 12.9,
+    "DOWN": 51.9,
+    "ANCHOR": 27.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 27.7,
+   "breadth": 0.717,
+   "competitiveRatio": 41.5,
+   "winRate": 73.9
+  },
+  {
+   "teamId": "85C0B59F-CC61-46B8-9EF9-E77353A2E775",
+   "name": "Walsh",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.43,
+   "matches": 363,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 234,
+    "EVEN": 36,
+    "DOWN": 64,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 64.5,
+    "EVEN": 9.9,
+    "DOWN": 17.6,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 4.7,
+   "breadth": 0.667,
+   "competitiveRatio": 52.1,
+   "winRate": 46.3
+  },
+  {
+   "teamId": "E446718A-9620-4C03-ACB9-69DCB13A0C2E",
+   "name": "Findlay",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.87,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 171,
+    "EVEN": 24,
+    "DOWN": 117,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 48.3,
+    "EVEN": 6.8,
+    "DOWN": 33.1,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.9,
+   "breadth": 0.716,
+   "competitiveRatio": 45.2,
+   "winRate": 55.4
+  },
+  {
+   "teamId": "9CB28D30-72D7-4DB4-9BB6-49DA4F201E99",
+   "name": "Hillsdale",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.66,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 112,
+    "EVEN": 84,
+    "DOWN": 102,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 31.7,
+    "EVEN": 23.8,
+    "DOWN": 28.9,
+    "ANCHOR": 8.8
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 8.8,
+   "breadth": 0.908,
+   "competitiveRatio": 40.2,
+   "winRate": 48.7
+  },
+  {
+   "teamId": "2F3F8A58-DE43-4B95-8CC7-232961268F3C",
+   "name": "Northwood",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.61,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 29,
+    "DOWN": 197,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.9,
+    "EVEN": 9,
+    "DOWN": 61.2,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.9,
+   "breadth": 0.667,
+   "competitiveRatio": 34.2,
+   "winRate": 69.9
+  },
+  {
+   "teamId": "19583676-5A99-4C79-8627-1E73E7EE0A55",
+   "name": "Ashland",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.32,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 120,
+    "EVEN": 46,
+    "DOWN": 98,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 37.6,
+    "EVEN": 14.4,
+    "DOWN": 30.7,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 5.3,
+   "breadth": 0.882,
+   "competitiveRatio": 28.9,
+   "winRate": 42.9
+  },
+  {
+   "teamId": "924AAAFC-81E4-43D1-B1A9-7FC521B9A976",
+   "name": "Hillsdale",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 18.63,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 119,
+    "EVEN": 30,
+    "DOWN": 135,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.9,
+    "EVEN": 9.6,
+    "DOWN": 43,
+    "ANCHOR": 9.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.6,
+   "breadth": 0.733,
+   "competitiveRatio": 49,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "14326CFD-AE10-4A52-A1EC-59E7DDBF6CC4",
+   "name": "Ashland",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 20.77,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 97,
+    "EVEN": 19,
+    "DOWN": 111,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 14.6,
+    "UP": 31.5,
+    "EVEN": 6.2,
+    "DOWN": 36,
+    "ANCHOR": 11.7
+   },
+   "stretchRate": 14.6,
+   "anchorRate": 11.7,
+   "breadth": 0.892,
+   "competitiveRatio": 33.7,
+   "winRate": 47.1
+  },
+  {
+   "teamId": "BAC66025-0B79-4CA3-BC79-9ACE95603F9E",
+   "name": "Northwood",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.75,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 47,
+    "EVEN": 20,
+    "DOWN": 154,
+    "ANCHOR": 78
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.7,
+    "EVEN": 6.7,
+    "DOWN": 51.5,
+    "ANCHOR": 26.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 26.1,
+   "breadth": 0.723,
+   "competitiveRatio": 41.8,
+   "winRate": 63.2
+  },
+  {
+   "teamId": "F4AF8360-2308-4EFB-B146-F03FA64967FE",
+   "name": "Thomas More (Ky.)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.93,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 128,
+    "EVEN": 19,
+    "DOWN": 64,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 8.8,
+    "UP": 46.7,
+    "EVEN": 6.9,
+    "DOWN": 23.4,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 8.8,
+   "anchorRate": 14.2,
+   "breadth": 0.852,
+   "competitiveRatio": 17.5,
+   "winRate": 41.2
+  },
+  {
+   "teamId": "57AE9C3B-7FED-4785-A066-79397C8F002B",
+   "name": "Kentucky Wesleyan",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.73,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 107,
+    "UP": 91,
+    "EVEN": 12,
+    "DOWN": 40,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 41.8,
+    "UP": 35.5,
+    "EVEN": 4.7,
+    "DOWN": 15.6,
+    "ANCHOR": 2.3
+   },
+   "stretchRate": 41.8,
+   "anchorRate": 2.3,
+   "breadth": 0.779,
+   "competitiveRatio": 20.7,
+   "winRate": 18.8
+  },
+  {
+   "teamId": "90E4DEFA-F84B-48C2-8280-6280F7DE7BCA",
+   "name": "Thomas More (Ky.)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.17,
+   "matches": 239,
+   "bands": {
+    "STRETCH": 77,
+    "UP": 82,
+    "EVEN": 11,
+    "DOWN": 48,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 32.2,
+    "UP": 34.3,
+    "EVEN": 4.6,
+    "DOWN": 20.1,
+    "ANCHOR": 8.8
+   },
+   "stretchRate": 32.2,
+   "anchorRate": 8.8,
+   "breadth": 0.876,
+   "competitiveRatio": 32.8,
+   "winRate": 29.7
+  },
+  {
+   "teamId": "0A538919-B207-44A4-A86F-DF45C9D4B2BF",
+   "name": "Kentucky Wesleyan",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 28.52,
+   "matches": 192,
+   "bands": {
+    "STRETCH": 94,
+    "UP": 46,
+    "EVEN": 14,
+    "DOWN": 38,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 49,
+    "UP": 24,
+    "EVEN": 7.3,
+    "DOWN": 19.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 49,
+   "anchorRate": 0,
+   "breadth": 0.748,
+   "competitiveRatio": 9.4,
+   "winRate": 17.2
+  },
+  {
+   "teamId": "883A3EB5-9445-4013-9480-407B48A10A98",
+   "name": "Ursuline",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 31.66,
+   "matches": 183,
+   "bands": {
+    "STRETCH": 140,
+    "UP": 32,
+    "EVEN": 0,
+    "DOWN": 11,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 76.5,
+    "UP": 17.5,
+    "EVEN": 0,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 76.5,
+   "anchorRate": 0,
+   "breadth": 0.422,
+   "competitiveRatio": 6.6,
+   "winRate": 7.7
+  }
+ ]
+}

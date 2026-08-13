@@ -1,0 +1,355 @@
+{
+ "conference": "Allegheny Mountain Collegiate Conference",
+ "slug": "allegheny-mountain-collegiate-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 9,
+ "fingerprint": {
+  "overall": {
+   "matches": 2033,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 795,
+    "EVEN": 561,
+    "DOWN": 639,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 39.1,
+    "EVEN": 27.6,
+    "DOWN": 31.4,
+    "ANCHOR": 0.6
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 0.6,
+   "breadth": 0.728,
+   "competitiveRatio": 25.8,
+   "winRate": 47.1
+  },
+  "inConference": {
+   "matches": 814,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 263,
+    "EVEN": 288,
+    "DOWN": 263,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.3,
+    "EVEN": 35.4,
+    "DOWN": 32.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.682,
+   "competitiveRatio": 23.6,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1219,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 532,
+    "EVEN": 273,
+    "DOWN": 376,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 43.6,
+    "EVEN": 22.4,
+    "DOWN": 30.8,
+    "ANCHOR": 1
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 1,
+   "breadth": 0.738,
+   "competitiveRatio": 27.3,
+   "winRate": 45.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 2.1,
+  "delta": 2.1,
+  "nonConferenceShare": 60
+ },
+ "members": [
+  {
+   "teamId": "F1A18A72-815F-4FD7-B506-DE79C7AE708E",
+   "name": "Penn State-Behrend",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.2,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 83,
+    "EVEN": 102,
+    "DOWN": 99,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 28,
+    "EVEN": 34.5,
+    "DOWN": 33.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 0,
+   "breadth": 0.758,
+   "competitiveRatio": 31.4,
+   "winRate": 57.4
+  },
+  {
+   "teamId": "7372D704-AD34-4ABC-9F69-FE13ED5B6AC8",
+   "name": "Penn State-Altoona",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.95,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 30,
+    "EVEN": 87,
+    "DOWN": 150,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.2,
+    "EVEN": 32.6,
+    "DOWN": 56.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.581,
+   "competitiveRatio": 35.6,
+   "winRate": 70.8
+  },
+  {
+   "teamId": "F93769E7-987D-4542-AD18-D3725C883B68",
+   "name": "Penn State-Altoona",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.08,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 28,
+    "DOWN": 220,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.3,
+    "EVEN": 10.5,
+    "DOWN": 82.7,
+    "ANCHOR": 4.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.5,
+   "breadth": 0.385,
+   "competitiveRatio": 26.7,
+   "winRate": 56.8
+  },
+  {
+   "teamId": "CFC34188-135B-4019-8299-1333AAAA685D",
+   "name": "Mount Aloysius",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.32,
+   "matches": 236,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 156,
+    "EVEN": 34,
+    "DOWN": 41,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 66.1,
+    "EVEN": 14.4,
+    "DOWN": 17.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 0,
+   "breadth": 0.583,
+   "competitiveRatio": 21.2,
+   "winRate": 25.4
+  },
+  {
+   "teamId": "A73341B6-B3E1-4903-BA0D-772FE8FE4A6C",
+   "name": "Penn State-Behrend",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.88,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 110,
+    "EVEN": 68,
+    "DOWN": 48,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 48,
+    "EVEN": 29.7,
+    "DOWN": 21,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 0,
+   "breadth": 0.682,
+   "competitiveRatio": 30.1,
+   "winRate": 61.1
+  },
+  {
+   "teamId": "3D401A63-6DEC-403C-BD00-AE2EBA125FFA",
+   "name": "Pittsburgh-Greensburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.17,
+   "matches": 213,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 199,
+    "EVEN": 8,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.8,
+    "UP": 93.4,
+    "EVEN": 3.8,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.8,
+   "anchorRate": 0,
+   "breadth": 0.179,
+   "competitiveRatio": 19.7,
+   "winRate": 17.4
+  },
+  {
+   "teamId": "2A9FA485-BD3E-4422-AF1B-FFAE32EF3CED",
+   "name": "Mount Aloysius",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.02,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 80,
+    "EVEN": 96,
+    "DOWN": 33,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.3,
+    "EVEN": 45.9,
+    "DOWN": 15.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.632,
+   "competitiveRatio": 26.3,
+   "winRate": 40.7
+  },
+  {
+   "teamId": "90FA04B9-3C5E-4692-B62E-0BBABB8F7A73",
+   "name": "Pittsburgh-Greensburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.31,
+   "matches": 166,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 78,
+    "EVEN": 66,
+    "DOWN": 22,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 47,
+    "EVEN": 39.8,
+    "DOWN": 13.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.615,
+   "competitiveRatio": 22.3,
+   "winRate": 62.7
+  },
+  {
+   "teamId": "8BA40789-7C23-432E-BC1A-EA62FB8027D6",
+   "name": "La Roche",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.27,
+   "matches": 151,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 53,
+    "EVEN": 72,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35.1,
+    "EVEN": 47.7,
+    "DOWN": 17.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.636,
+   "competitiveRatio": 8.6,
+   "winRate": 13.9
+  }
+ ]
+}

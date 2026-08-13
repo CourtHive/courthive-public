@@ -1,0 +1,948 @@
+{
+ "conference": "Big Ten Conference",
+ "slug": "big-ten-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 31,
+ "fingerprint": {
+  "overall": {
+   "matches": 11038,
+   "bands": {
+    "STRETCH": 146,
+    "UP": 3203,
+    "EVEN": 2141,
+    "DOWN": 4435,
+    "ANCHOR": 1113
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 29,
+    "EVEN": 19.4,
+    "DOWN": 40.2,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 10.1,
+   "breadth": 0.828,
+   "competitiveRatio": 48.6,
+   "winRate": 57.2
+  },
+  "inConference": {
+   "matches": 5368,
+   "bands": {
+    "STRETCH": 119,
+    "UP": 2043,
+    "EVEN": 1044,
+    "DOWN": 2043,
+    "ANCHOR": 119
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 38.1,
+    "EVEN": 19.4,
+    "DOWN": 38.1,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 2.2,
+   "breadth": 0.76,
+   "competitiveRatio": 49.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 5670,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 1160,
+    "EVEN": 1097,
+    "DOWN": 2392,
+    "ANCHOR": 994
+   },
+   "bandPct": {
+    "STRETCH": 0.5,
+    "UP": 20.5,
+    "EVEN": 19.3,
+    "DOWN": 42.2,
+    "ANCHOR": 17.5
+   },
+   "stretchRate": 0.5,
+   "anchorRate": 17.5,
+   "breadth": 0.831,
+   "competitiveRatio": 47.5,
+   "winRate": 64.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 2.2,
+  "nonConference": 0.5,
+  "delta": -1.7,
+  "nonConferenceShare": 51.4
+ },
+ "members": [
+  {
+   "teamId": "207D4B1B-1E63-4E78-BB86-DDAF39559295",
+   "name": "Ohio State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 6.22,
+   "matches": 452,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 17,
+    "EVEN": 39,
+    "DOWN": 252,
+    "ANCHOR": 144
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.8,
+    "EVEN": 8.6,
+    "DOWN": 55.8,
+    "ANCHOR": 31.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 31.9,
+   "breadth": 0.637,
+   "competitiveRatio": 40,
+   "winRate": 80.3
+  },
+  {
+   "teamId": "58F0B75C-C78A-4142-AA5D-4683C18E1164",
+   "name": "Michigan State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.76,
+   "matches": 416,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 99,
+    "DOWN": 216,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.5,
+    "EVEN": 23.8,
+    "DOWN": 51.9,
+    "ANCHOR": 16.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.8,
+   "breadth": 0.73,
+   "competitiveRatio": 57.8,
+   "winRate": 62.7
+  },
+  {
+   "teamId": "A9D92D42-3F88-4848-9408-52D767937662",
+   "name": "University of Illinois at Urbana-Champaign",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.19,
+   "matches": 392,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 63,
+    "EVEN": 126,
+    "DOWN": 156,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 16.1,
+    "EVEN": 32.1,
+    "DOWN": 39.8,
+    "ANCHOR": 12
+   },
+   "stretchRate": 0,
+   "anchorRate": 12,
+   "breadth": 0.795,
+   "competitiveRatio": 55.1,
+   "winRate": 62
+  },
+  {
+   "teamId": "87837156-EEC6-4DF9-91AC-949CCE75B2E3",
+   "name": "University of Michigan",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.31,
+   "matches": 390,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 95,
+    "EVEN": 88,
+    "DOWN": 181,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 24.4,
+    "EVEN": 22.6,
+    "DOWN": 46.4,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.7,
+   "breadth": 0.756,
+   "competitiveRatio": 43.8,
+   "winRate": 73.8
+  },
+  {
+   "teamId": "F0F65FF6-3EAB-4489-851D-855A9D36B5A4",
+   "name": "Northwestern",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.42,
+   "matches": 387,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 242,
+    "EVEN": 43,
+    "DOWN": 42,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 62.5,
+    "EVEN": 11.1,
+    "DOWN": 10.9,
+    "ANCHOR": 12.9
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 12.9,
+   "breadth": 0.707,
+   "competitiveRatio": 48.8,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "DF63A514-E637-4161-9CC6-351D66E2C018",
+   "name": "University of Nebraska-Lincoln",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.61,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 159,
+    "EVEN": 72,
+    "DOWN": 82,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 41.4,
+    "EVEN": 18.8,
+    "DOWN": 21.4,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 12.8,
+   "breadth": 0.892,
+   "competitiveRatio": 53.5,
+   "winRate": 57
+  },
+  {
+   "teamId": "F2C85FAE-4FF8-4096-9CF2-92BED9A6EC0A",
+   "name": "University Of Minnesota",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.7,
+   "matches": 378,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 143,
+    "EVEN": 82,
+    "DOWN": 125,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 37.8,
+    "EVEN": 21.7,
+    "DOWN": 33.1,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 6.3,
+   "breadth": 0.8,
+   "competitiveRatio": 48.5,
+   "winRate": 52.6
+  },
+  {
+   "teamId": "6EF2A11B-0968-48DF-88B9-E7DE245D0695",
+   "name": "Northwestern",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.5,
+   "matches": 376,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 95,
+    "EVEN": 125,
+    "DOWN": 126,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 25.3,
+    "EVEN": 33.2,
+    "DOWN": 33.5,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 7.2,
+   "breadth": 0.813,
+   "competitiveRatio": 44.4,
+   "winRate": 58
+  },
+  {
+   "teamId": "36D44C05-1BB6-4B49-A2D1-B2F00E27821E",
+   "name": "University of Michigan",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.77,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 175,
+    "EVEN": 60,
+    "DOWN": 116,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 47,
+    "EVEN": 16.1,
+    "DOWN": 31.2,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 4.8,
+   "breadth": 0.744,
+   "competitiveRatio": 53.5,
+   "winRate": 55.1
+  },
+  {
+   "teamId": "3EA7DC97-2460-4DD8-A18E-EF98A6741DA4",
+   "name": "Ohio State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 13.51,
+   "matches": 364,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 12,
+    "EVEN": 58,
+    "DOWN": 248,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.3,
+    "EVEN": 15.9,
+    "DOWN": 68.1,
+    "ANCHOR": 12.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.6,
+   "breadth": 0.577,
+   "competitiveRatio": 41.2,
+   "winRate": 75
+  },
+  {
+   "teamId": "8D0C3991-B6DE-4E6E-8037-530FB217B0A9",
+   "name": "Southern California",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.86,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 76,
+    "EVEN": 104,
+    "DOWN": 166,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21,
+    "EVEN": 28.7,
+    "DOWN": 45.9,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.4,
+   "breadth": 0.734,
+   "competitiveRatio": 42.8,
+   "winRate": 63.5
+  },
+  {
+   "teamId": "2AD9FAC4-4546-4D72-A73F-F9F98216736E",
+   "name": "University of Maryland, College Park",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.09,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 57,
+    "EVEN": 101,
+    "DOWN": 168,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.7,
+    "EVEN": 27.9,
+    "DOWN": 46.4,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.9,
+   "breadth": 0.766,
+   "competitiveRatio": 43.1,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "697A7501-5C60-4B68-9CDF-10F194E275E9",
+   "name": "UCLA",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 7.63,
+   "matches": 361,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 57,
+    "EVEN": 26,
+    "DOWN": 245,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.8,
+    "EVEN": 7.2,
+    "DOWN": 67.9,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.1,
+   "breadth": 0.598,
+   "competitiveRatio": 57.3,
+   "winRate": 62.9
+  },
+  {
+   "teamId": "21BAAA68-C3B5-4EAB-B424-EA430FE572E3",
+   "name": "Indiana University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 9.22,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 79,
+    "EVEN": 4,
+    "DOWN": 198,
+    "ANCHOR": 77
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.1,
+    "EVEN": 1.1,
+    "DOWN": 55.3,
+    "ANCHOR": 21.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.5,
+   "breadth": 0.647,
+   "competitiveRatio": 52.8,
+   "winRate": 48.3
+  },
+  {
+   "teamId": "C3A7CDAC-B592-4447-8EC1-AC901CBA0165",
+   "name": "UCLA",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 14.53,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 68,
+    "EVEN": 112,
+    "DOWN": 168,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 31.4,
+    "DOWN": 47.1,
+    "ANCHOR": 2.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 2.5,
+   "breadth": 0.7,
+   "competitiveRatio": 46.8,
+   "winRate": 63.9
+  },
+  {
+   "teamId": "A9BCEB19-DAC7-4B1A-8093-356440403F7B",
+   "name": "Southern California",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 8.33,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 98,
+    "EVEN": 93,
+    "DOWN": 158,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.6,
+    "EVEN": 26.2,
+    "DOWN": 44.5,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.706,
+   "competitiveRatio": 57.7,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "A543FDBB-635E-49F3-9DB7-131479EE826E",
+   "name": "Purdue",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.98,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 130,
+    "EVEN": 58,
+    "DOWN": 133,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 37.1,
+    "EVEN": 16.6,
+    "DOWN": 38,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 4,
+   "anchorRate": 4.3,
+   "breadth": 0.806,
+   "competitiveRatio": 59,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "82F82AEB-9233-42E5-8096-5231A7931664",
+   "name": "University of Washington",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 35,
+    "EVEN": 65,
+    "DOWN": 192,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 10,
+    "EVEN": 18.6,
+    "DOWN": 55,
+    "ANCHOR": 16.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.3,
+   "breadth": 0.726,
+   "competitiveRatio": 39.3,
+   "winRate": 67
+  },
+  {
+   "teamId": "83B5FACE-98D6-481C-969F-65C294B836E8",
+   "name": "Oregon",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.66,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 125,
+    "EVEN": 70,
+    "DOWN": 117,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 35.8,
+    "EVEN": 20.1,
+    "DOWN": 33.5,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 8.9,
+   "breadth": 0.833,
+   "competitiveRatio": 52.1,
+   "winRate": 53
+  },
+  {
+   "teamId": "72558FCB-208E-41A6-8F99-F264C4C3161A",
+   "name": "University of Nebraska-Lincoln",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.98,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 113,
+    "EVEN": 57,
+    "DOWN": 97,
+    "ANCHOR": 79
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.7,
+    "EVEN": 16.5,
+    "DOWN": 28,
+    "ANCHOR": 22.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 22.8,
+   "breadth": 0.843,
+   "competitiveRatio": 46,
+   "winRate": 59.2
+  },
+  {
+   "teamId": "E6FE2B4C-46C8-489D-8778-8926F2AE6FD0",
+   "name": "University Of Wisconsin, Madison",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 15.72,
+   "matches": 342,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 82,
+    "EVEN": 46,
+    "DOWN": 178,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 13.5,
+    "DOWN": 52,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.5,
+   "breadth": 0.739,
+   "competitiveRatio": 40.9,
+   "winRate": 68.1
+  },
+  {
+   "teamId": "120192A9-3571-49B1-AEC9-B9E7ECE54AF2",
+   "name": "University of Washington",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.89,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 184,
+    "EVEN": 32,
+    "DOWN": 71,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.8,
+    "UP": 54,
+    "EVEN": 9.4,
+    "DOWN": 20.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.8,
+   "anchorRate": 0,
+   "breadth": 0.729,
+   "competitiveRatio": 56,
+   "winRate": 49
+  },
+  {
+   "teamId": "13B755B1-A0E1-4DAC-AED1-CF6AD4DCA2A0",
+   "name": "University Of Iowa",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.47,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 80,
+    "EVEN": 103,
+    "DOWN": 143,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 23.7,
+    "EVEN": 30.6,
+    "DOWN": 42.4,
+    "ANCHOR": 3.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.3,
+   "breadth": 0.733,
+   "competitiveRatio": 50.6,
+   "winRate": 50.7
+  },
+  {
+   "teamId": "86FE8325-3AA7-4F9C-A2EA-39A0F6B8C5CA",
+   "name": "University Of Wisconsin, Madison",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 10.05,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 124,
+    "EVEN": 39,
+    "DOWN": 141,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 36.9,
+    "EVEN": 11.6,
+    "DOWN": 42,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.5,
+   "breadth": 0.749,
+   "competitiveRatio": 51.8,
+   "winRate": 44.9
+  },
+  {
+   "teamId": "5A544FC7-995D-4BD1-A8E2-FF3F9B61B00F",
+   "name": "Indiana University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.87,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 64,
+    "EVEN": 69,
+    "DOWN": 150,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.2,
+    "EVEN": 20.7,
+    "DOWN": 45,
+    "ANCHOR": 15
+   },
+   "stretchRate": 0,
+   "anchorRate": 15,
+   "breadth": 0.8,
+   "competitiveRatio": 48.3,
+   "winRate": 45.9
+  },
+  {
+   "teamId": "4672B75A-CBC6-437A-BA79-0F159B94FB59",
+   "name": "Oregon",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.59,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 169,
+    "EVEN": 40,
+    "DOWN": 79,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 51.7,
+    "EVEN": 12.2,
+    "DOWN": 24.2,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 10.1,
+   "breadth": 0.774,
+   "competitiveRatio": 46.8,
+   "winRate": 49.2
+  },
+  {
+   "teamId": "BFC17CF3-58EC-4151-B7D4-A36F97BF6105",
+   "name": "Pennsylvania State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.37,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 62,
+    "EVEN": 107,
+    "DOWN": 103,
+    "ANCHOR": 55
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 32.7,
+    "DOWN": 31.5,
+    "ANCHOR": 16.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.8,
+   "breadth": 0.835,
+   "competitiveRatio": 43.1,
+   "winRate": 48
+  },
+  {
+   "teamId": "E9A154D5-C60D-4C80-AE3F-53F566A0EC48",
+   "name": "University of Illinois at Urbana-Champaign",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 16.43,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 107,
+    "EVEN": 99,
+    "DOWN": 111,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.8,
+    "EVEN": 30.4,
+    "DOWN": 34,
+    "ANCHOR": 2.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 2.8,
+   "breadth": 0.742,
+   "competitiveRatio": 48.2,
+   "winRate": 56.4
+  },
+  {
+   "teamId": "3FDC2837-0AE1-42DA-B2E1-9B1B42D3904C",
+   "name": "Michigan State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.4,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 142,
+    "EVEN": 59,
+    "DOWN": 119,
+    "ANCHOR": 3
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44,
+    "EVEN": 18.3,
+    "DOWN": 36.8,
+    "ANCHOR": 0.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 0.9,
+   "breadth": 0.673,
+   "competitiveRatio": 44.3,
+   "winRate": 47.4
+  },
+  {
+   "teamId": "7C15C4D9-5C7A-452E-8B77-C85067203E3A",
+   "name": "Rutgers University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.39,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 179,
+    "EVEN": 21,
+    "DOWN": 78,
+    "ANCHOR": 9
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 59.3,
+    "EVEN": 7,
+    "DOWN": 25.8,
+    "ANCHOR": 3
+   },
+   "stretchRate": 5,
+   "anchorRate": 3,
+   "breadth": 0.683,
+   "competitiveRatio": 44,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "B21974DD-6C64-489A-8DFE-3B82289CE328",
+   "name": "Purdue",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.74,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 140,
+    "EVEN": 44,
+    "DOWN": 76,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 3.2,
+    "UP": 49.3,
+    "EVEN": 15.5,
+    "DOWN": 26.8,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 3.2,
+   "anchorRate": 5.3,
+   "breadth": 0.78,
+   "competitiveRatio": 45.9,
+   "winRate": 51.4
+  }
+ ]
+}

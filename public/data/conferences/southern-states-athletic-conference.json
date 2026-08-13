@@ -1,0 +1,543 @@
+{
+ "conference": "Southern States Athletic Conference",
+ "slug": "southern-states-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 4547,
+   "bands": {
+    "STRETCH": 545,
+    "UP": 1505,
+    "EVEN": 490,
+    "DOWN": 1433,
+    "ANCHOR": 574
+   },
+   "bandPct": {
+    "STRETCH": 12,
+    "UP": 33.1,
+    "EVEN": 10.8,
+    "DOWN": 31.5,
+    "ANCHOR": 12.6
+   },
+   "stretchRate": 12,
+   "anchorRate": 12.6,
+   "breadth": 0.923,
+   "competitiveRatio": 36.5,
+   "winRate": 49.5
+  },
+  "inConference": {
+   "matches": 1694,
+   "bands": {
+    "STRETCH": 262,
+    "UP": 524,
+    "EVEN": 122,
+    "DOWN": 524,
+    "ANCHOR": 262
+   },
+   "bandPct": {
+    "STRETCH": 15.5,
+    "UP": 30.9,
+    "EVEN": 7.2,
+    "DOWN": 30.9,
+    "ANCHOR": 15.5
+   },
+   "stretchRate": 15.5,
+   "anchorRate": 15.5,
+   "breadth": 0.927,
+   "competitiveRatio": 36,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2853,
+   "bands": {
+    "STRETCH": 283,
+    "UP": 981,
+    "EVEN": 368,
+    "DOWN": 909,
+    "ANCHOR": 312
+   },
+   "bandPct": {
+    "STRETCH": 9.9,
+    "UP": 34.4,
+    "EVEN": 12.9,
+    "DOWN": 31.9,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 9.9,
+   "anchorRate": 10.9,
+   "breadth": 0.911,
+   "competitiveRatio": 36.8,
+   "winRate": 49.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 15.5,
+  "nonConference": 9.9,
+  "delta": -5.6,
+  "nonConferenceShare": 62.7
+ },
+ "members": [
+  {
+   "teamId": "277F2C9F-84DE-4DF6-98FC-CC553293B64A",
+   "name": "Dillard (La.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.08,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 113,
+    "EVEN": 71,
+    "DOWN": 100,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 7.2,
+    "UP": 32.4,
+    "EVEN": 20.3,
+    "DOWN": 28.7,
+    "ANCHOR": 11.5
+   },
+   "stretchRate": 7.2,
+   "anchorRate": 11.5,
+   "breadth": 0.922,
+   "competitiveRatio": 51.1,
+   "winRate": 52.1
+  },
+  {
+   "teamId": "C36AD049-C14A-47BF-9C84-CBA7A6824F77",
+   "name": "Tennessee Southern (Tenn.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 19.96,
+   "matches": 347,
+   "bands": {
+    "STRETCH": 46,
+    "UP": 96,
+    "EVEN": 62,
+    "DOWN": 119,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 27.7,
+    "EVEN": 17.9,
+    "DOWN": 34.3,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 6.9,
+   "breadth": 0.921,
+   "competitiveRatio": 47,
+   "winRate": 43.2
+  },
+  {
+   "teamId": "75D4C51A-1482-488D-9515-45CC82620D75",
+   "name": "Dillard (La.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.34,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 169,
+    "EVEN": 30,
+    "DOWN": 63,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 53.8,
+    "EVEN": 9.6,
+    "DOWN": 20.1,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 7.6,
+   "breadth": 0.803,
+   "competitiveRatio": 35.7,
+   "winRate": 47.8
+  },
+  {
+   "teamId": "768E5CAB-90A9-48A7-B2CE-19D52D23BD1C",
+   "name": "Tennessee Southern (Tenn.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.69,
+   "matches": 304,
+   "bands": {
+    "STRETCH": 119,
+    "UP": 129,
+    "EVEN": 18,
+    "DOWN": 32,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 39.1,
+    "UP": 42.4,
+    "EVEN": 5.9,
+    "DOWN": 10.5,
+    "ANCHOR": 2
+   },
+   "stretchRate": 39.1,
+   "anchorRate": 2,
+   "breadth": 0.753,
+   "competitiveRatio": 16.8,
+   "winRate": 18.8
+  },
+  {
+   "teamId": "9D0382F1-6556-4094-A5BD-F692E302E540",
+   "name": "Loyola (La.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 23.29,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 149,
+    "EVEN": 25,
+    "DOWN": 81,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 49.3,
+    "EVEN": 8.3,
+    "DOWN": 26.8,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 2,
+   "anchorRate": 13.6,
+   "breadth": 0.781,
+   "competitiveRatio": 39.4,
+   "winRate": 62.9
+  },
+  {
+   "teamId": "6F5832D9-F9A9-4463-AF21-D978AD105E9A",
+   "name": "Mobile (Ala.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.37,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 51,
+    "UP": 168,
+    "EVEN": 6,
+    "DOWN": 50,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 17.1,
+    "UP": 56.2,
+    "EVEN": 2,
+    "DOWN": 16.7,
+    "ANCHOR": 8
+   },
+   "stretchRate": 17.1,
+   "anchorRate": 8,
+   "breadth": 0.749,
+   "competitiveRatio": 32.9,
+   "winRate": 56.9
+  },
+  {
+   "teamId": "8B50C061-536E-4E10-B94A-9122D05CFA7C",
+   "name": "Blue Mountain Christian (Miss.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.18,
+   "matches": 298,
+   "bands": {
+    "STRETCH": 69,
+    "UP": 111,
+    "EVEN": 36,
+    "DOWN": 42,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 23.2,
+    "UP": 37.2,
+    "EVEN": 12.1,
+    "DOWN": 14.1,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 23.2,
+   "anchorRate": 13.4,
+   "breadth": 0.937,
+   "competitiveRatio": 27.3,
+   "winRate": 29.5
+  },
+  {
+   "teamId": "F104A4C6-AAD5-4575-9B15-1424C0066BF0",
+   "name": "Middle Georgia State (Ga.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 21.49,
+   "matches": 298,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 47,
+    "DOWN": 164,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 8.1,
+    "EVEN": 15.8,
+    "DOWN": 55,
+    "ANCHOR": 21.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.1,
+   "breadth": 0.715,
+   "competitiveRatio": 36.8,
+   "winRate": 62.4
+  },
+  {
+   "teamId": "9BED2FDE-82A1-40B3-9F3F-EE2363216CF6",
+   "name": "William Carey (Miss.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 21.27,
+   "matches": 282,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 5,
+    "EVEN": 30,
+    "DOWN": 174,
+    "ANCHOR": 73
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 1.8,
+    "EVEN": 10.6,
+    "DOWN": 61.7,
+    "ANCHOR": 25.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.9,
+   "breadth": 0.595,
+   "competitiveRatio": 29.8,
+   "winRate": 77
+  },
+  {
+   "teamId": "72B32D4D-554F-4FF8-84BD-BACA89857E08",
+   "name": "Middle Georgia State (Ga.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 16.9,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 119,
+    "EVEN": 26,
+    "DOWN": 99,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 43,
+    "EVEN": 9.4,
+    "DOWN": 35.7,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.9,
+   "breadth": 0.749,
+   "competitiveRatio": 54.9,
+   "winRate": 49.5
+  },
+  {
+   "teamId": "9B9D6BAF-CB19-4D24-9033-0A8D4290C324",
+   "name": "Mobile (Ala.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.5,
+   "matches": 274,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 96,
+    "EVEN": 21,
+    "DOWN": 120,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35,
+    "EVEN": 7.7,
+    "DOWN": 43.8,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 13.5,
+   "breadth": 0.743,
+   "competitiveRatio": 29.9,
+   "winRate": 52.9
+  },
+  {
+   "teamId": "F8B981E2-248E-48D6-ABA1-0467C42150B8",
+   "name": "Abraham Baldwin",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.17,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 67,
+    "UP": 89,
+    "EVEN": 18,
+    "DOWN": 60,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 25.1,
+    "UP": 33.3,
+    "EVEN": 6.7,
+    "DOWN": 22.5,
+    "ANCHOR": 12.4
+   },
+   "stretchRate": 25.1,
+   "anchorRate": 12.4,
+   "breadth": 0.925,
+   "competitiveRatio": 37.1,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "F3DB89CA-B543-4DAD-A0B8-C1DB256CFFA1",
+   "name": "Blue Mountain Christian (Miss.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.78,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 32,
+    "UP": 90,
+    "EVEN": 6,
+    "DOWN": 108,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 34.1,
+    "EVEN": 2.3,
+    "DOWN": 40.9,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 10.6,
+   "breadth": 0.815,
+   "competitiveRatio": 24.8,
+   "winRate": 40.9
+  },
+  {
+   "teamId": "656F9C9A-8431-4DED-8CC4-C29FF1D745EC",
+   "name": "William Carey (Miss.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 15.58,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 42,
+    "DOWN": 107,
+    "ANCHOR": 84
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.5,
+    "EVEN": 16.7,
+    "DOWN": 42.5,
+    "ANCHOR": 33.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 33.3,
+   "breadth": 0.76,
+   "competitiveRatio": 41.3,
+   "winRate": 77.8
+  },
+  {
+   "teamId": "136ABA3C-8232-4A44-830D-944852087F47",
+   "name": "Loyola (La.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.46,
+   "matches": 245,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 70,
+    "EVEN": 38,
+    "DOWN": 110,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 28.6,
+    "EVEN": 15.5,
+    "DOWN": 44.9,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 9.8,
+   "breadth": 0.8,
+   "competitiveRatio": 47.1,
+   "winRate": 45.3
+  },
+  {
+   "teamId": "642BD104-8F7A-4465-A29E-29721C31E8F3",
+   "name": "Abraham Baldwin",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.61,
+   "matches": 175,
+   "bands": {
+    "STRETCH": 99,
+    "UP": 58,
+    "EVEN": 14,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 56.6,
+    "UP": 33.1,
+    "EVEN": 8,
+    "DOWN": 2.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 56.6,
+   "anchorRate": 0,
+   "breadth": 0.607,
+   "competitiveRatio": 25.7,
+   "winRate": 30.9
+  }
+ ]
+}

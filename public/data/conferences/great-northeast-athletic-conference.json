@@ -1,0 +1,301 @@
+{
+ "conference": "Great Northeast Athletic Conference",
+ "slug": "great-northeast-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1789,
+   "bands": {
+    "STRETCH": 183,
+    "UP": 616,
+    "EVEN": 285,
+    "DOWN": 593,
+    "ANCHOR": 112
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 34.4,
+    "EVEN": 15.9,
+    "DOWN": 33.1,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 6.3,
+   "breadth": 0.89,
+   "competitiveRatio": 30.2,
+   "winRate": 51.1
+  },
+  "inConference": {
+   "matches": 214,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 69,
+    "EVEN": 40,
+    "DOWN": 69,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 8.4,
+    "UP": 32.2,
+    "EVEN": 18.7,
+    "DOWN": 32.2,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 8.4,
+   "anchorRate": 8.4,
+   "breadth": 0.907,
+   "competitiveRatio": 24.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1575,
+   "bands": {
+    "STRETCH": 165,
+    "UP": 547,
+    "EVEN": 245,
+    "DOWN": 524,
+    "ANCHOR": 94
+   },
+   "bandPct": {
+    "STRETCH": 10.5,
+    "UP": 34.7,
+    "EVEN": 15.6,
+    "DOWN": 33.3,
+    "ANCHOR": 6
+   },
+   "stretchRate": 10.5,
+   "anchorRate": 6,
+   "breadth": 0.887,
+   "competitiveRatio": 31,
+   "winRate": 51.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.4,
+  "nonConference": 10.5,
+  "delta": 2.1,
+  "nonConferenceShare": 88
+ },
+ "members": [
+  {
+   "teamId": "857CA7BF-DB60-4241-8E4C-23868F2320D2",
+   "name": "Colby-Sawyer",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.37,
+   "matches": 398,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 192,
+    "EVEN": 36,
+    "DOWN": 105,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 48.2,
+    "EVEN": 9,
+    "DOWN": 26.4,
+    "ANCHOR": 9
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 9,
+   "breadth": 0.826,
+   "competitiveRatio": 35.2,
+   "winRate": 50.3
+  },
+  {
+   "teamId": "D29F055A-B097-441E-822B-BF7F4E2E8600",
+   "name": "Colby-Sawyer",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.41,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 24,
+    "EVEN": 71,
+    "DOWN": 155,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 8.1,
+    "EVEN": 23.9,
+    "DOWN": 52.2,
+    "ANCHOR": 14.1
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 14.1,
+   "breadth": 0.764,
+   "competitiveRatio": 28.3,
+   "winRate": 59.3
+  },
+  {
+   "teamId": "27446148-C68E-41F6-9C95-FE71F751930B",
+   "name": "Simmons University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.82,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 113,
+    "EVEN": 87,
+    "DOWN": 68,
+    "ANCHOR": 8
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 40.5,
+    "EVEN": 31.2,
+    "DOWN": 24.4,
+    "ANCHOR": 2.9
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 2.9,
+   "breadth": 0.761,
+   "competitiveRatio": 28.3,
+   "winRate": 49.1
+  },
+  {
+   "teamId": "D46B8816-A301-4899-B944-019797647E00",
+   "name": "Saint Joseph (CT)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.38,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 137,
+    "UP": 104,
+    "EVEN": 17,
+    "DOWN": 10,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 51.1,
+    "UP": 38.8,
+    "EVEN": 6.3,
+    "DOWN": 3.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 51.1,
+   "anchorRate": 0,
+   "breadth": 0.626,
+   "competitiveRatio": 38.1,
+   "winRate": 50.7
+  },
+  {
+   "teamId": "E7B6979A-FD7E-4F9F-9ED7-8DB4D6255556",
+   "name": "Saint Joseph (CT)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.28,
+   "matches": 241,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 111,
+    "EVEN": 48,
+    "DOWN": 82,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46.1,
+    "EVEN": 19.9,
+    "DOWN": 34,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.649,
+   "competitiveRatio": 21.6,
+   "winRate": 42.3
+  },
+  {
+   "teamId": "87B9897D-1C0C-4736-801E-3E6E26D4B5B9",
+   "name": "Norwich",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.14,
+   "matches": 202,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 54,
+    "EVEN": 6,
+    "DOWN": 122,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.7,
+    "EVEN": 3,
+    "DOWN": 60.4,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.9,
+   "breadth": 0.616,
+   "competitiveRatio": 27.7,
+   "winRate": 60.9
+  },
+  {
+   "teamId": "B1AB9C1C-95C4-40EF-A74B-CF1FF25BD64E",
+   "name": "Albertus Magnus",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.48,
+   "matches": 104,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 18,
+    "EVEN": 20,
+    "DOWN": 51,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 17.3,
+    "EVEN": 19.2,
+    "DOWN": 49,
+    "ANCHOR": 5.8
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 5.8,
+   "breadth": 0.837,
+   "competitiveRatio": 26,
+   "winRate": 38.5
+  }
+ ]
+}

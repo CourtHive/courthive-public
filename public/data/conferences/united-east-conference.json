@@ -1,0 +1,544 @@
+{
+ "conference": "United East Conference",
+ "slug": "united-east-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 3470,
+   "bands": {
+    "STRETCH": 215,
+    "UP": 1453,
+    "EVEN": 405,
+    "DOWN": 1264,
+    "ANCHOR": 133
+   },
+   "bandPct": {
+    "STRETCH": 6.2,
+    "UP": 41.9,
+    "EVEN": 11.7,
+    "DOWN": 36.4,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 6.2,
+   "anchorRate": 3.8,
+   "breadth": 0.796,
+   "competitiveRatio": 25.7,
+   "winRate": 44.4
+  },
+  "inConference": {
+   "matches": 1770,
+   "bands": {
+    "STRETCH": 70,
+    "UP": 705,
+    "EVEN": 220,
+    "DOWN": 705,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 39.8,
+    "EVEN": 12.4,
+    "DOWN": 39.8,
+    "ANCHOR": 4
+   },
+   "stretchRate": 4,
+   "anchorRate": 4,
+   "breadth": 0.775,
+   "competitiveRatio": 22.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1700,
+   "bands": {
+    "STRETCH": 145,
+    "UP": 748,
+    "EVEN": 185,
+    "DOWN": 559,
+    "ANCHOR": 63
+   },
+   "bandPct": {
+    "STRETCH": 8.5,
+    "UP": 44,
+    "EVEN": 10.9,
+    "DOWN": 32.9,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 8.5,
+   "anchorRate": 3.7,
+   "breadth": 0.808,
+   "competitiveRatio": 28.7,
+   "winRate": 38.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 4,
+  "nonConference": 8.5,
+  "delta": 4.5,
+  "nonConferenceShare": 49
+ },
+ "members": [
+  {
+   "teamId": "6AE1BAC9-C5D2-492D-97EC-9EB5C44A8F87",
+   "name": "Penn State Harrisburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.83,
+   "matches": 334,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 87,
+    "EVEN": 30,
+    "DOWN": 174,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 26,
+    "EVEN": 9,
+    "DOWN": 52.1,
+    "ANCHOR": 11.4
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 11.4,
+   "breadth": 0.756,
+   "competitiveRatio": 26.3,
+   "winRate": 61.7
+  },
+  {
+   "teamId": "E3936835-A290-44EB-BC71-E9CE853BCF1E",
+   "name": "Penn State Harrisburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.13,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 184,
+    "EVEN": 71,
+    "DOWN": 47,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6.2,
+    "UP": 57.1,
+    "EVEN": 22,
+    "DOWN": 14.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6.2,
+   "anchorRate": 0,
+   "breadth": 0.688,
+   "competitiveRatio": 22.8,
+   "winRate": 60.6
+  },
+  {
+   "teamId": "5E6C3B7A-609A-427B-8702-A1F510B333B1",
+   "name": "St. Mary’s (MD)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.95,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 113,
+    "EVEN": 22,
+    "DOWN": 105,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44.8,
+    "EVEN": 8.7,
+    "DOWN": 41.7,
+    "ANCHOR": 4.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.8,
+   "breadth": 0.672,
+   "competitiveRatio": 31.7,
+   "winRate": 54.8
+  },
+  {
+   "teamId": "184A9B8D-2A8C-43B2-BA13-CF57B2FD38F4",
+   "name": "St. Mary’s (MD)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.21,
+   "matches": 245,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 30,
+    "EVEN": 12,
+    "DOWN": 163,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 1.2,
+    "UP": 12.2,
+    "EVEN": 4.9,
+    "DOWN": 66.5,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 1.2,
+   "anchorRate": 15.1,
+   "breadth": 0.631,
+   "competitiveRatio": 22.4,
+   "winRate": 62.9
+  },
+  {
+   "teamId": "683F3E8D-B163-48D7-807F-999A3E577574",
+   "name": "Lancaster Bible",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.94,
+   "matches": 238,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 15,
+    "DOWN": 186,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.3,
+    "EVEN": 6.3,
+    "DOWN": 78.2,
+    "ANCHOR": 4.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 4.2,
+   "breadth": 0.464,
+   "competitiveRatio": 28.7,
+   "winRate": 53.8
+  },
+  {
+   "teamId": "06A417CB-9BA5-492C-8C51-ABAC28DD2C62",
+   "name": "Penn State-Abington",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.73,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 77,
+    "EVEN": 30,
+    "DOWN": 104,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 10.2,
+    "UP": 32.8,
+    "EVEN": 12.8,
+    "DOWN": 44.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 10.2,
+   "anchorRate": 0,
+   "breadth": 0.759,
+   "competitiveRatio": 38.2,
+   "winRate": 54.9
+  },
+  {
+   "teamId": "2FE2B0DB-F62A-48CF-BFAA-27CCFFA75242",
+   "name": "Penn State-Abington",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.03,
+   "matches": 229,
+   "bands": {
+    "STRETCH": 44,
+    "UP": 164,
+    "EVEN": 10,
+    "DOWN": 11,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.2,
+    "UP": 71.6,
+    "EVEN": 4.4,
+    "DOWN": 4.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.2,
+   "anchorRate": 0,
+   "breadth": 0.521,
+   "competitiveRatio": 19.7,
+   "winRate": 32.8
+  },
+  {
+   "teamId": "705F1BAB-8628-4ED9-B1D5-79D5D9D5CADE",
+   "name": "Lancaster Bible",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.75,
+   "matches": 227,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 140,
+    "EVEN": 48,
+    "DOWN": 27,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.3,
+    "UP": 61.7,
+    "EVEN": 21.1,
+    "DOWN": 11.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.3,
+   "anchorRate": 0,
+   "breadth": 0.643,
+   "competitiveRatio": 31.7,
+   "winRate": 21.6
+  },
+  {
+   "teamId": "17D5B5EC-E675-49C3-A508-27895260FE37",
+   "name": "Penn College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.07,
+   "matches": 216,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 54,
+    "EVEN": 10,
+    "DOWN": 137,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25,
+    "EVEN": 4.6,
+    "DOWN": 63.4,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.9,
+   "breadth": 0.598,
+   "competitiveRatio": 20.4,
+   "winRate": 40.7
+  },
+  {
+   "teamId": "19045F87-CF76-425A-AE3E-AFA67DAE4CD4",
+   "name": "Penn College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.79,
+   "matches": 216,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 108,
+    "EVEN": 18,
+    "DOWN": 90,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 8.3,
+    "DOWN": 41.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.571,
+   "competitiveRatio": 31.9,
+   "winRate": 36.1
+  },
+  {
+   "teamId": "7D3BC56B-71EC-48F2-80AC-5B5FBA217089",
+   "name": "Penn State-Berks",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.18,
+   "matches": 189,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 48,
+    "EVEN": 29,
+    "DOWN": 91,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.4,
+    "EVEN": 15.3,
+    "DOWN": 48.1,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.1,
+   "breadth": 0.765,
+   "competitiveRatio": 30.2,
+   "winRate": 47.6
+  },
+  {
+   "teamId": "1365A945-B753-4047-B320-01D7D8F9338A",
+   "name": "Cedar Crest",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.44,
+   "matches": 169,
+   "bands": {
+    "STRETCH": 71,
+    "UP": 98,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 42,
+    "UP": 58,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 42,
+   "anchorRate": 0,
+   "breadth": 0.423,
+   "competitiveRatio": 16,
+   "winRate": 16
+  },
+  {
+   "teamId": "3E715079-5A03-49A8-8B73-D2EB13D47F1C",
+   "name": "Cairn",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.7,
+   "matches": 164,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 61,
+    "EVEN": 34,
+    "DOWN": 69,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.2,
+    "EVEN": 20.7,
+    "DOWN": 42.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.658,
+   "competitiveRatio": 25.3,
+   "winRate": 55.5
+  },
+  {
+   "teamId": "1D4C1A96-9AB7-453E-9D50-02E79572749B",
+   "name": "Penn State-Berks",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.57,
+   "matches": 158,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 100,
+    "EVEN": 26,
+    "DOWN": 32,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 63.3,
+    "EVEN": 16.5,
+    "DOWN": 20.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.565,
+   "competitiveRatio": 17.2,
+   "winRate": 21.5
+  },
+  {
+   "teamId": "3D16D4EA-830E-46A9-94C7-BE188B2403B2",
+   "name": "Cairn",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.98,
+   "matches": 153,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 83,
+    "EVEN": 40,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 54.2,
+    "EVEN": 26.1,
+    "DOWN": 7.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 0,
+   "breadth": 0.705,
+   "competitiveRatio": 26.1,
+   "winRate": 25.5
+  },
+  {
+   "teamId": "1D353636-46CA-4027-96B5-61E82ADD4876",
+   "name": "Notre Dame (MD)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.45,
+   "matches": 123,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 79,
+    "EVEN": 10,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.6,
+    "UP": 64.2,
+    "EVEN": 8.1,
+    "DOWN": 13,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.6,
+   "anchorRate": 0,
+   "breadth": 0.643,
+   "competitiveRatio": 13,
+   "winRate": 17.1
+  }
+ ]
+}

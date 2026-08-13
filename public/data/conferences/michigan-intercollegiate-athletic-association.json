@@ -1,0 +1,571 @@
+{
+ "conference": "Michigan Intercollegiate Athletic Association",
+ "slug": "michigan-intercollegiate-athletic-association",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5473,
+   "bands": {
+    "STRETCH": 616,
+    "UP": 1729,
+    "EVEN": 635,
+    "DOWN": 1885,
+    "ANCHOR": 608
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 31.6,
+    "EVEN": 11.6,
+    "DOWN": 34.4,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 11.1,
+   "breadth": 0.914,
+   "competitiveRatio": 28.7,
+   "winRate": 50.5
+  },
+  "inConference": {
+   "matches": 2544,
+   "bands": {
+    "STRETCH": 339,
+    "UP": 822,
+    "EVEN": 222,
+    "DOWN": 822,
+    "ANCHOR": 339
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 32.3,
+    "EVEN": 8.7,
+    "DOWN": 32.3,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 13.3,
+   "breadth": 0.92,
+   "competitiveRatio": 22.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2929,
+   "bands": {
+    "STRETCH": 277,
+    "UP": 907,
+    "EVEN": 413,
+    "DOWN": 1063,
+    "ANCHOR": 269
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 31,
+    "EVEN": 14.1,
+    "DOWN": 36.3,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 9.2,
+   "breadth": 0.901,
+   "competitiveRatio": 34,
+   "winRate": 50.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 13.3,
+  "nonConference": 9.5,
+  "delta": -3.8,
+  "nonConferenceShare": 53.5
+ },
+ "members": [
+  {
+   "teamId": "A5D241AA-25B4-4022-8738-BABDAA9ACC1C",
+   "name": "Hope College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.13,
+   "matches": 421,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 70,
+    "EVEN": 42,
+    "DOWN": 250,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 16.6,
+    "EVEN": 10,
+    "DOWN": 59.4,
+    "ANCHOR": 11.4
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 11.4,
+   "breadth": 0.734,
+   "competitiveRatio": 34,
+   "winRate": 67.5
+  },
+  {
+   "teamId": "F1F0C964-2D47-4907-B933-7787FCE52F2B",
+   "name": "Saint Mary’s College (IN)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.58,
+   "matches": 401,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 49,
+    "EVEN": 85,
+    "DOWN": 199,
+    "ANCHOR": 68
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 12.2,
+    "EVEN": 21.2,
+    "DOWN": 49.6,
+    "ANCHOR": 17
+   },
+   "stretchRate": 0,
+   "anchorRate": 17,
+   "breadth": 0.767,
+   "competitiveRatio": 24.6,
+   "winRate": 66.6
+  },
+  {
+   "teamId": "3531658F-7BAD-4123-A034-C7E0C61FB0CC",
+   "name": "Trine",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.58,
+   "matches": 368,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 117,
+    "EVEN": 42,
+    "DOWN": 108,
+    "ANCHOR": 101
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.8,
+    "EVEN": 11.4,
+    "DOWN": 29.3,
+    "ANCHOR": 27.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 27.4,
+   "breadth": 0.824,
+   "competitiveRatio": 29.3,
+   "winRate": 62.8
+  },
+  {
+   "teamId": "18E1FF3F-B0DC-469D-AD95-018906B8BF0E",
+   "name": "Hope College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.1,
+   "matches": 361,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 142,
+    "EVEN": 78,
+    "DOWN": 81,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 39.3,
+    "EVEN": 21.6,
+    "DOWN": 22.4,
+    "ANCHOR": 15
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 15,
+   "breadth": 0.861,
+   "competitiveRatio": 41.8,
+   "winRate": 52.6
+  },
+  {
+   "teamId": "3E249669-0B2C-4484-8636-E5B5362241FE",
+   "name": "Trine",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.9,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 90,
+    "EVEN": 6,
+    "DOWN": 166,
+    "ANCHOR": 90
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.6,
+    "EVEN": 1.7,
+    "DOWN": 47.2,
+    "ANCHOR": 25.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 25.6,
+   "breadth": 0.697,
+   "competitiveRatio": 25,
+   "winRate": 60.5
+  },
+  {
+   "teamId": "E9BABA23-5F60-4EF0-944E-EC8EE67BA42C",
+   "name": "Kalamazoo",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 19.95,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 48,
+    "EVEN": 24,
+    "DOWN": 171,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 13.7,
+    "EVEN": 6.8,
+    "DOWN": 48.7,
+    "ANCHOR": 20.5
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 20.5,
+   "breadth": 0.848,
+   "competitiveRatio": 28.2,
+   "winRate": 63.8
+  },
+  {
+   "teamId": "B01BA5A9-9BC2-4C22-8B47-B0043561A558",
+   "name": "Kalamazoo",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.48,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 59,
+    "EVEN": 57,
+    "DOWN": 164,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 17.4,
+    "EVEN": 16.8,
+    "DOWN": 48.2,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 10.6,
+   "breadth": 0.857,
+   "competitiveRatio": 28.5,
+   "winRate": 56.5
+  },
+  {
+   "teamId": "E7680AE0-421F-4020-8CC2-9B710DE3BC7F",
+   "name": "Calvin",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.03,
+   "matches": 330,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 95,
+    "EVEN": 66,
+    "DOWN": 106,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 3.6,
+    "UP": 28.8,
+    "EVEN": 20,
+    "DOWN": 32.1,
+    "ANCHOR": 15.5
+   },
+   "stretchRate": 3.6,
+   "anchorRate": 15.5,
+   "breadth": 0.904,
+   "competitiveRatio": 34.2,
+   "winRate": 59.7
+  },
+  {
+   "teamId": "DFDCE819-BF7D-4735-B511-CAAD0A745A29",
+   "name": "Calvin",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.84,
+   "matches": 326,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 67,
+    "EVEN": 88,
+    "DOWN": 111,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 20.6,
+    "EVEN": 27,
+    "DOWN": 34,
+    "ANCHOR": 16.6
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 16.6,
+   "breadth": 0.88,
+   "competitiveRatio": 23.3,
+   "winRate": 68.1
+  },
+  {
+   "teamId": "24CE0D2C-5830-49E8-9388-4DB6F9EB98AD",
+   "name": "Adrian",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.85,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 150,
+    "EVEN": 29,
+    "DOWN": 121,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 47.5,
+    "EVEN": 9.2,
+    "DOWN": 38.3,
+    "ANCHOR": 3.2
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 3.2,
+   "breadth": 0.699,
+   "competitiveRatio": 32.1,
+   "winRate": 51.9
+  },
+  {
+   "teamId": "13147EAE-4304-439D-B5B1-3DE0158AB1E4",
+   "name": "Albion",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.87,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 139,
+    "EVEN": 18,
+    "DOWN": 110,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 45.9,
+    "EVEN": 5.9,
+    "DOWN": 36.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 0,
+   "breadth": 0.712,
+   "competitiveRatio": 31,
+   "winRate": 35.3
+  },
+  {
+   "teamId": "3B936019-927D-46C5-B9CE-3F15BD1A7C0A",
+   "name": "Adrian",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.59,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 144,
+    "EVEN": 18,
+    "DOWN": 82,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 13.2,
+    "UP": 47.7,
+    "EVEN": 6,
+    "DOWN": 27.2,
+    "ANCHOR": 6
+   },
+   "stretchRate": 13.2,
+   "anchorRate": 6,
+   "breadth": 0.815,
+   "competitiveRatio": 31.9,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "204808A4-1ECD-4A8B-A71C-49EF11B483A8",
+   "name": "Albion",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.41,
+   "matches": 289,
+   "bands": {
+    "STRETCH": 102,
+    "UP": 102,
+    "EVEN": 24,
+    "DOWN": 61,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 35.3,
+    "UP": 35.3,
+    "EVEN": 8.3,
+    "DOWN": 21.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 35.3,
+   "anchorRate": 0,
+   "breadth": 0.789,
+   "competitiveRatio": 17.1,
+   "winRate": 25.6
+  },
+  {
+   "teamId": "D24243AA-2474-4978-A586-9E85ED73F7D8",
+   "name": "The University of Olivet",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.04,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 143,
+    "UP": 102,
+    "EVEN": 24,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 52,
+    "UP": 37.1,
+    "EVEN": 8.7,
+    "DOWN": 2.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 52,
+   "anchorRate": 0,
+   "breadth": 0.624,
+   "competitiveRatio": 25.8,
+   "winRate": 18.9
+  },
+  {
+   "teamId": "10DC5350-8258-410B-A7F6-32889948F542",
+   "name": "The University of Olivet",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.57,
+   "matches": 265,
+   "bands": {
+    "STRETCH": 102,
+    "UP": 129,
+    "EVEN": 5,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 38.5,
+    "UP": 48.7,
+    "EVEN": 1.9,
+    "DOWN": 10.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 38.5,
+   "anchorRate": 0,
+   "breadth": 0.643,
+   "competitiveRatio": 19,
+   "winRate": 19.6
+  },
+  {
+   "teamId": "DC604D4B-0FB1-42D5-9566-FF61DBA23064",
+   "name": "Alma",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.01,
+   "matches": 238,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 113,
+    "EVEN": 24,
+    "DOWN": 89,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 2.5,
+    "UP": 47.5,
+    "EVEN": 10.1,
+    "DOWN": 37.4,
+    "ANCHOR": 2.5
+   },
+   "stretchRate": 2.5,
+   "anchorRate": 2.5,
+   "breadth": 0.707,
+   "competitiveRatio": 27.7,
+   "winRate": 45.4
+  },
+  {
+   "teamId": "6E1157A5-0B7C-4A17-9AEE-ED9C6D32F4B5",
+   "name": "Alma",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.83,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 86,
+    "UP": 113,
+    "EVEN": 5,
+    "DOWN": 31,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 36.6,
+    "UP": 48.1,
+    "EVEN": 2.1,
+    "DOWN": 13.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 36.6,
+   "anchorRate": 0,
+   "breadth": 0.664,
+   "competitiveRatio": 29.8,
+   "winRate": 26.8
+  }
+ ]
+}

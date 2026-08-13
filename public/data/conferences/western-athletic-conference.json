@@ -1,0 +1,490 @@
+{
+ "conference": "Western Athletic Conference",
+ "slug": "western-athletic-conference",
+ "divisions": [
+  "DIV_II",
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 14,
+ "fingerprint": {
+  "overall": {
+   "matches": 4808,
+   "bands": {
+    "STRETCH": 401,
+    "UP": 1400,
+    "EVEN": 858,
+    "DOWN": 1694,
+    "ANCHOR": 455
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 29.1,
+    "EVEN": 17.8,
+    "DOWN": 35.2,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 9.5,
+   "breadth": 0.91,
+   "competitiveRatio": 44,
+   "winRate": 50.8
+  },
+  "inConference": {
+   "matches": 478,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 186,
+    "EVEN": 70,
+    "DOWN": 186,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 3.8,
+    "UP": 38.9,
+    "EVEN": 14.6,
+    "DOWN": 38.9,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 3.8,
+   "anchorRate": 3.8,
+   "breadth": 0.785,
+   "competitiveRatio": 48.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 4330,
+   "bands": {
+    "STRETCH": 383,
+    "UP": 1214,
+    "EVEN": 788,
+    "DOWN": 1508,
+    "ANCHOR": 437
+   },
+   "bandPct": {
+    "STRETCH": 8.8,
+    "UP": 28,
+    "EVEN": 18.2,
+    "DOWN": 34.8,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 8.8,
+   "anchorRate": 10.1,
+   "breadth": 0.92,
+   "competitiveRatio": 43.6,
+   "winRate": 50.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 3.8,
+  "nonConference": 8.8,
+  "delta": 5,
+  "nonConferenceShare": 90.1
+ },
+ "members": [
+  {
+   "teamId": "AED307EF-F124-49D1-8605-9132A792F37A",
+   "name": "West Florida",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.74,
+   "matches": 424,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 29,
+    "EVEN": 83,
+    "DOWN": 247,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.8,
+    "EVEN": 19.6,
+    "DOWN": 58.3,
+    "ANCHOR": 15.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.3,
+   "breadth": 0.687,
+   "competitiveRatio": 44.7,
+   "winRate": 61.6
+  },
+  {
+   "teamId": "05BBA3D7-8968-41AA-B824-8C8D9A35B30B",
+   "name": "West Florida",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 13.59,
+   "matches": 419,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 32,
+    "EVEN": 75,
+    "DOWN": 267,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.6,
+    "EVEN": 17.9,
+    "DOWN": 63.7,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.7,
+   "breadth": 0.641,
+   "competitiveRatio": 47.8,
+   "winRate": 76.4
+  },
+  {
+   "teamId": "7D951BC8-D457-44C4-B877-4D3684A39E2F",
+   "name": "Eastern Kentucky",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.65,
+   "matches": 393,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 122,
+    "EVEN": 35,
+    "DOWN": 139,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 12.5,
+    "UP": 31,
+    "EVEN": 8.9,
+    "DOWN": 35.4,
+    "ANCHOR": 12.2
+   },
+   "stretchRate": 12.5,
+   "anchorRate": 12.2,
+   "breadth": 0.909,
+   "competitiveRatio": 44.5,
+   "winRate": 44.3
+  },
+  {
+   "teamId": "53211F0C-4935-4760-8821-EB7E9942A5EF",
+   "name": "Eastern Kentucky",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.18,
+   "matches": 382,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 205,
+    "EVEN": 81,
+    "DOWN": 60,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 53.7,
+    "EVEN": 21.2,
+    "DOWN": 15.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 0,
+   "breadth": 0.731,
+   "competitiveRatio": 41.7,
+   "winRate": 34.3
+  },
+  {
+   "teamId": "92C30D24-0FA2-4FC1-9133-4B92A703C5ED",
+   "name": "North Alabama",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.09,
+   "matches": 381,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 38,
+    "EVEN": 94,
+    "DOWN": 171,
+    "ANCHOR": 72
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 10,
+    "EVEN": 24.7,
+    "DOWN": 44.9,
+    "ANCHOR": 18.9
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 18.9,
+   "breadth": 0.817,
+   "competitiveRatio": 48.6,
+   "winRate": 62.2
+  },
+  {
+   "teamId": "E3FB66BD-CBB4-45BD-A7FF-0E1069D51A27",
+   "name": "Utah Tech",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.58,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 134,
+    "EVEN": 52,
+    "DOWN": 80,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 13.6,
+    "UP": 37.2,
+    "EVEN": 14.4,
+    "DOWN": 22.2,
+    "ANCHOR": 12.5
+   },
+   "stretchRate": 13.6,
+   "anchorRate": 12.5,
+   "breadth": 0.94,
+   "competitiveRatio": 34.4,
+   "winRate": 42.5
+  },
+  {
+   "teamId": "38F92389-7CEF-475A-8820-7D5071BB866D",
+   "name": "North Alabama",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.75,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 66,
+    "EVEN": 83,
+    "DOWN": 148,
+    "ANCHOR": 37
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 19.4,
+    "EVEN": 24.4,
+    "DOWN": 43.5,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 10.9,
+   "breadth": 0.831,
+   "competitiveRatio": 45.3,
+   "winRate": 62.6
+  },
+  {
+   "teamId": "AC780AF3-1787-41D0-AA42-C938F134D006",
+   "name": "Tarleton State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.15,
+   "matches": 330,
+   "bands": {
+    "STRETCH": 8,
+    "UP": 33,
+    "EVEN": 58,
+    "DOWN": 180,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 10,
+    "EVEN": 17.6,
+    "DOWN": 54.5,
+    "ANCHOR": 15.5
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 15.5,
+   "breadth": 0.774,
+   "competitiveRatio": 43.9,
+   "winRate": 64.2
+  },
+  {
+   "teamId": "8A699B87-0CE9-4BA4-802F-20CC4BE4B314",
+   "name": "Abilene Christian",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.95,
+   "matches": 329,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 43,
+    "EVEN": 32,
+    "DOWN": 138,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 21.9,
+    "UP": 13.1,
+    "EVEN": 9.7,
+    "DOWN": 41.9,
+    "ANCHOR": 13.4
+   },
+   "stretchRate": 21.9,
+   "anchorRate": 13.4,
+   "breadth": 0.906,
+   "competitiveRatio": 51.4,
+   "winRate": 47.1
+  },
+  {
+   "teamId": "CEC2CCBF-88A5-457D-B79C-0C22AE0C2E8E",
+   "name": "Austin Peay",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.87,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 11,
+    "UP": 144,
+    "EVEN": 46,
+    "DOWN": 91,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 44.7,
+    "EVEN": 14.3,
+    "DOWN": 28.3,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 9.3,
+   "breadth": 0.827,
+   "competitiveRatio": 43.6,
+   "winRate": 54.7
+  },
+  {
+   "teamId": "414149AC-7C42-48DA-8D79-FA6647E50C45",
+   "name": "Austin Peay",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.05,
+   "matches": 317,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 136,
+    "EVEN": 30,
+    "DOWN": 64,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 23.7,
+    "UP": 42.9,
+    "EVEN": 9.5,
+    "DOWN": 20.2,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 23.7,
+   "anchorRate": 3.8,
+   "breadth": 0.854,
+   "competitiveRatio": 47.3,
+   "winRate": 29
+  },
+  {
+   "teamId": "C9838CC9-BBBE-4C26-B8B4-4BD0CD37EEBC",
+   "name": "Abilene Christian",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.54,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 119,
+    "EVEN": 105,
+    "DOWN": 38,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 39.5,
+    "EVEN": 34.9,
+    "DOWN": 12.6,
+    "ANCHOR": 2
+   },
+   "stretchRate": 11,
+   "anchorRate": 2,
+   "breadth": 0.818,
+   "competitiveRatio": 44.3,
+   "winRate": 37.5
+  },
+  {
+   "teamId": "2D160640-3D6C-4F1A-9D4B-EEF0EF895EEC",
+   "name": "Seattle University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.75,
+   "matches": 258,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 187,
+    "EVEN": 51,
+    "DOWN": 5,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 72.5,
+    "EVEN": 19.8,
+    "DOWN": 1.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 0,
+   "breadth": 0.494,
+   "competitiveRatio": 39.1,
+   "winRate": 32.9
+  },
+  {
+   "teamId": "3711371F-11FB-4FD9-97CE-064C9E939FF5",
+   "name": "UT Arlington",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.94,
+   "matches": 252,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 112,
+    "EVEN": 33,
+    "DOWN": 66,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.3,
+    "UP": 44.4,
+    "EVEN": 13.1,
+    "DOWN": 26.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.3,
+   "anchorRate": 0,
+   "breadth": 0.791,
+   "competitiveRatio": 36.1,
+   "winRate": 48.4
+  }
+ ]
+}

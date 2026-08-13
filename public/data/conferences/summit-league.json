@@ -1,0 +1,462 @@
+{
+ "conference": "Summit League",
+ "slug": "summit-league",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 13,
+ "fingerprint": {
+  "overall": {
+   "matches": 4488,
+   "bands": {
+    "STRETCH": 412,
+    "UP": 1552,
+    "EVEN": 994,
+    "DOWN": 1277,
+    "ANCHOR": 253
+   },
+   "bandPct": {
+    "STRETCH": 9.2,
+    "UP": 34.6,
+    "EVEN": 22.1,
+    "DOWN": 28.5,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 9.2,
+   "anchorRate": 5.6,
+   "breadth": 0.895,
+   "competitiveRatio": 48.1,
+   "winRate": 48.4
+  },
+  "inConference": {
+   "matches": 1420,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 460,
+    "EVEN": 458,
+    "DOWN": 460,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 32.4,
+    "EVEN": 32.3,
+    "DOWN": 32.4,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 1.5,
+   "breadth": 0.758,
+   "competitiveRatio": 51.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3068,
+   "bands": {
+    "STRETCH": 391,
+    "UP": 1092,
+    "EVEN": 536,
+    "DOWN": 817,
+    "ANCHOR": 232
+   },
+   "bandPct": {
+    "STRETCH": 12.7,
+    "UP": 35.6,
+    "EVEN": 17.5,
+    "DOWN": 26.6,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 12.7,
+   "anchorRate": 7.6,
+   "breadth": 0.921,
+   "competitiveRatio": 46.5,
+   "winRate": 47.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.5,
+  "nonConference": 12.7,
+  "delta": 11.2,
+  "nonConferenceShare": 68.4
+ },
+ "members": [
+  {
+   "teamId": "6F0F797D-A855-4625-AB61-7C03D594BB8B",
+   "name": "Omaha",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.16,
+   "matches": 413,
+   "bands": {
+    "STRETCH": 31,
+    "UP": 198,
+    "EVEN": 94,
+    "DOWN": 84,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 7.5,
+    "UP": 47.9,
+    "EVEN": 22.8,
+    "DOWN": 20.3,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 7.5,
+   "anchorRate": 1.5,
+   "breadth": 0.789,
+   "competitiveRatio": 46.2,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "AEA7E626-650F-46EF-8B94-82B68B46004A",
+   "name": "North Dakota",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.32,
+   "matches": 388,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 67,
+    "EVEN": 150,
+    "DOWN": 136,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 3.1,
+    "UP": 17.3,
+    "EVEN": 38.7,
+    "DOWN": 35.1,
+    "ANCHOR": 5.9
+   },
+   "stretchRate": 3.1,
+   "anchorRate": 5.9,
+   "breadth": 0.816,
+   "competitiveRatio": 49.7,
+   "winRate": 52.3
+  },
+  {
+   "teamId": "EA541053-CC64-4334-9BAD-D032BAC0A507",
+   "name": "University of Denver",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 11.79,
+   "matches": 386,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 76,
+    "EVEN": 56,
+    "DOWN": 248,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 19.7,
+    "EVEN": 14.5,
+    "DOWN": 64.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 0,
+   "breadth": 0.59,
+   "competitiveRatio": 55.4,
+   "winRate": 71.8
+  },
+  {
+   "teamId": "CC9A8522-D6DA-4077-9673-5AD6D4E08638",
+   "name": "Omaha",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.38,
+   "matches": 382,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 123,
+    "EVEN": 56,
+    "DOWN": 156,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 32.2,
+    "EVEN": 14.7,
+    "DOWN": 40.8,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 5.2,
+   "breadth": 0.841,
+   "competitiveRatio": 57.2,
+   "winRate": 49
+  },
+  {
+   "teamId": "AD8FC18D-C5F9-442B-B17E-0981A7E5AE4C",
+   "name": "North Dakota",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.8,
+   "matches": 379,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 97,
+    "EVEN": 118,
+    "DOWN": 127,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 25.6,
+    "EVEN": 31.1,
+    "DOWN": 33.5,
+    "ANCHOR": 5.5
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 5.5,
+   "breadth": 0.853,
+   "competitiveRatio": 55.4,
+   "winRate": 49.9
+  },
+  {
+   "teamId": "E5EF6F95-D2A1-4534-849E-26F3F2CD0F5C",
+   "name": "Illinois State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.17,
+   "matches": 378,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 111,
+    "EVEN": 84,
+    "DOWN": 82,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 17.2,
+    "UP": 29.4,
+    "EVEN": 22.2,
+    "DOWN": 21.7,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 17.2,
+   "anchorRate": 9.5,
+   "breadth": 0.964,
+   "competitiveRatio": 52.1,
+   "winRate": 43.1
+  },
+  {
+   "teamId": "ADB4A977-A9E2-4778-963A-E84F7A5D596A",
+   "name": "University of South Dakota",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.74,
+   "matches": 338,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 235,
+    "EVEN": 0,
+    "DOWN": 18,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 22.2,
+    "UP": 69.5,
+    "EVEN": 0,
+    "DOWN": 5.3,
+    "ANCHOR": 3
+   },
+   "stretchRate": 22.2,
+   "anchorRate": 3,
+   "breadth": 0.526,
+   "competitiveRatio": 44.8,
+   "winRate": 45
+  },
+  {
+   "teamId": "2A0C44B7-DE98-40B1-B9B2-E3393D9656DB",
+   "name": "University of Denver",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 18.3,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 134,
+    "EVEN": 30,
+    "DOWN": 145,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 39.9,
+    "EVEN": 8.9,
+    "DOWN": 43.2,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 6.3,
+   "breadth": 0.739,
+   "competitiveRatio": 43.2,
+   "winRate": 64.3
+  },
+  {
+   "teamId": "0A73156B-B45F-4FBC-B206-566597076DA9",
+   "name": "Oral Roberts",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.81,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 112,
+    "EVEN": 103,
+    "DOWN": 53,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 7.7,
+    "UP": 35.8,
+    "EVEN": 32.9,
+    "DOWN": 16.9,
+    "ANCHOR": 6.7
+   },
+   "stretchRate": 7.7,
+   "anchorRate": 6.7,
+   "breadth": 0.878,
+   "competitiveRatio": 39.3,
+   "winRate": 34.8
+  },
+  {
+   "teamId": "45F83D63-5AA0-4B8C-88AC-69216F826C05",
+   "name": "Oral Roberts",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.73,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 79,
+    "UP": 165,
+    "EVEN": 12,
+    "DOWN": 28,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 25.2,
+    "UP": 52.7,
+    "EVEN": 3.8,
+    "DOWN": 8.9,
+    "ANCHOR": 9.3
+   },
+   "stretchRate": 25.2,
+   "anchorRate": 9.3,
+   "breadth": 0.774,
+   "competitiveRatio": 34.3,
+   "winRate": 29.4
+  },
+  {
+   "teamId": "48A04D59-32A9-42BB-9E8F-1C18DFCDB5B4",
+   "name": "St. Thomas (Minnesota)",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.38,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 96,
+    "EVEN": 101,
+    "DOWN": 98,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 31.5,
+    "EVEN": 33.1,
+    "DOWN": 32.1,
+    "ANCHOR": 2
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 2,
+   "breadth": 0.763,
+   "competitiveRatio": 50.5,
+   "winRate": 42
+  },
+  {
+   "teamId": "F7A61DCF-6C2B-498D-AB59-D18796B65533",
+   "name": "Drake",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.77,
+   "matches": 304,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 73,
+    "EVEN": 91,
+    "DOWN": 58,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 13.2,
+    "UP": 24,
+    "EVEN": 29.9,
+    "DOWN": 19.1,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 13.2,
+   "anchorRate": 13.8,
+   "breadth": 0.969,
+   "competitiveRatio": 47.7,
+   "winRate": 50.3
+  },
+  {
+   "teamId": "21170DD8-1B38-4BC1-AF72-173285605280",
+   "name": "Kansas City",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.62,
+   "matches": 253,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 65,
+    "EVEN": 99,
+    "DOWN": 44,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 10.7,
+    "UP": 25.7,
+    "EVEN": 39.1,
+    "DOWN": 17.4,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 10.7,
+   "anchorRate": 7.1,
+   "breadth": 0.899,
+   "competitiveRatio": 42.5,
+   "winRate": 37.5
+  }
+ ]
+}

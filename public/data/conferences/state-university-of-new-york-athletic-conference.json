@@ -1,0 +1,382 @@
+{
+ "conference": "State University of New York Athletic Conference",
+ "slug": "state-university-of-new-york-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 10,
+ "fingerprint": {
+  "overall": {
+   "matches": 2546,
+   "bands": {
+    "STRETCH": 263,
+    "UP": 917,
+    "EVEN": 454,
+    "DOWN": 807,
+    "ANCHOR": 105
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 36,
+    "EVEN": 17.8,
+    "DOWN": 31.7,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 4.1,
+   "breadth": 0.873,
+   "competitiveRatio": 25.5,
+   "winRate": 47.6
+  },
+  "inConference": {
+   "matches": 896,
+   "bands": {
+    "STRETCH": 41,
+    "UP": 340,
+    "EVEN": 134,
+    "DOWN": 340,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 37.9,
+    "EVEN": 15,
+    "DOWN": 37.9,
+    "ANCHOR": 4.6
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 4.6,
+   "breadth": 0.809,
+   "competitiveRatio": 26,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1650,
+   "bands": {
+    "STRETCH": 222,
+    "UP": 577,
+    "EVEN": 320,
+    "DOWN": 467,
+    "ANCHOR": 64
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 35,
+    "EVEN": 19.4,
+    "DOWN": 28.3,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 3.9,
+   "breadth": 0.894,
+   "competitiveRatio": 25.3,
+   "winRate": 46.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 4.6,
+  "nonConference": 13.5,
+  "delta": 8.9,
+  "nonConferenceShare": 64.8
+ },
+ "members": [
+  {
+   "teamId": "48BA21D9-9970-4E41-B3C6-663B515AB3B6",
+   "name": "SUNY Oneonta",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.02,
+   "matches": 351,
+   "bands": {
+    "STRETCH": 108,
+    "UP": 90,
+    "EVEN": 29,
+    "DOWN": 101,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 30.8,
+    "UP": 25.6,
+    "EVEN": 8.3,
+    "DOWN": 28.8,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 30.8,
+   "anchorRate": 6.6,
+   "breadth": 0.904,
+   "competitiveRatio": 23.4,
+   "winRate": 45
+  },
+  {
+   "teamId": "1530D279-1B85-45D5-9C92-E1E8F1A87C9F",
+   "name": "SUNY Oneonta",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.35,
+   "matches": 340,
+   "bands": {
+    "STRETCH": 64,
+    "UP": 192,
+    "EVEN": 60,
+    "DOWN": 24,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 18.8,
+    "UP": 56.5,
+    "EVEN": 17.6,
+    "DOWN": 7.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 18.8,
+   "anchorRate": 0,
+   "breadth": 0.702,
+   "competitiveRatio": 28,
+   "winRate": 36.2
+  },
+  {
+   "teamId": "6877B583-27DD-41B6-9546-7C0E41D5A967",
+   "name": "SUNY New Paltz",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.52,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 74,
+    "EVEN": 86,
+    "DOWN": 113,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 3.8,
+    "UP": 23.6,
+    "EVEN": 27.4,
+    "DOWN": 36,
+    "ANCHOR": 9.2
+   },
+   "stretchRate": 3.8,
+   "anchorRate": 9.2,
+   "breadth": 0.875,
+   "competitiveRatio": 21.7,
+   "winRate": 57.6
+  },
+  {
+   "teamId": "7F3ECCE2-DACA-48F6-9D66-D9F93FF79DE9",
+   "name": "SUNY Fredonia",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.45,
+   "matches": 243,
+   "bands": {
+    "STRETCH": 52,
+    "UP": 179,
+    "EVEN": 0,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.4,
+    "UP": 73.7,
+    "EVEN": 0,
+    "DOWN": 4.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.4,
+   "anchorRate": 0,
+   "breadth": 0.437,
+   "competitiveRatio": 25.5,
+   "winRate": 27.6
+  },
+  {
+   "teamId": "410A9505-1365-46BA-9EB8-4D2A722D5CCC",
+   "name": "Oswego State",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.6,
+   "matches": 238,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 21,
+    "DOWN": 170,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.5,
+    "EVEN": 8.8,
+    "DOWN": 71.4,
+    "ANCHOR": 17.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 17.2,
+   "breadth": 0.528,
+   "competitiveRatio": 21.9,
+   "winRate": 64.3
+  },
+  {
+   "teamId": "B381C5AF-5616-4232-AE09-40D39E61CC74",
+   "name": "SUNY Geneseo",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.97,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 80,
+    "EVEN": 40,
+    "DOWN": 115,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34,
+    "EVEN": 17,
+    "DOWN": 48.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.632,
+   "competitiveRatio": 20.9,
+   "winRate": 60.4
+  },
+  {
+   "teamId": "503D8093-1DCC-409D-9DB1-3293066082F1",
+   "name": "SUNY Cortland",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.25,
+   "matches": 220,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 85,
+    "EVEN": 46,
+    "DOWN": 83,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 38.6,
+    "EVEN": 20.9,
+    "DOWN": 37.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 0,
+   "breadth": 0.721,
+   "competitiveRatio": 30.5,
+   "winRate": 52.3
+  },
+  {
+   "teamId": "F279533F-B255-46CE-B312-9CF27AFF334E",
+   "name": "SUNY Brockport",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.54,
+   "matches": 205,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 127,
+    "EVEN": 31,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 62,
+    "EVEN": 15.1,
+    "DOWN": 17.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 0,
+   "breadth": 0.653,
+   "competitiveRatio": 25.9,
+   "winRate": 29.8
+  },
+  {
+   "teamId": "EB2B4C3A-F03F-47D7-80E5-5E5F3F702685",
+   "name": "Oswego State",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.65,
+   "matches": 201,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 24,
+    "EVEN": 87,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.5,
+    "UP": 11.9,
+    "EVEN": 43.3,
+    "DOWN": 40.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.5,
+   "anchorRate": 0,
+   "breadth": 0.697,
+   "competitiveRatio": 31.3,
+   "winRate": 54.2
+  },
+  {
+   "teamId": "50394FDD-A042-4881-9F50-3A2E606B143E",
+   "name": "SUNY Plattsburgh",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.36,
+   "matches": 199,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 60,
+    "EVEN": 54,
+    "DOWN": 73,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 30.2,
+    "EVEN": 27.1,
+    "DOWN": 36.7,
+    "ANCHOR": 6
+   },
+   "stretchRate": 0,
+   "anchorRate": 6,
+   "breadth": 0.778,
+   "competitiveRatio": 29.1,
+   "winRate": 51.8
+  }
+ ]
+}

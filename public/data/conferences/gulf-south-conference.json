@@ -1,0 +1,543 @@
+{
+ "conference": "Gulf South Conference",
+ "slug": "gulf-south-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 5253,
+   "bands": {
+    "STRETCH": 262,
+    "UP": 1781,
+    "EVEN": 710,
+    "DOWN": 1917,
+    "ANCHOR": 583
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 33.9,
+    "EVEN": 13.5,
+    "DOWN": 36.5,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 5,
+   "anchorRate": 11.1,
+   "breadth": 0.869,
+   "competitiveRatio": 44.6,
+   "winRate": 52.5
+  },
+  "inConference": {
+   "matches": 2188,
+   "bands": {
+    "STRETCH": 180,
+    "UP": 811,
+    "EVEN": 206,
+    "DOWN": 811,
+    "ANCHOR": 180
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 37.1,
+    "EVEN": 9.4,
+    "DOWN": 37.1,
+    "ANCHOR": 8.2
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 8.2,
+   "breadth": 0.851,
+   "competitiveRatio": 47,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3065,
+   "bands": {
+    "STRETCH": 82,
+    "UP": 970,
+    "EVEN": 504,
+    "DOWN": 1106,
+    "ANCHOR": 403
+   },
+   "bandPct": {
+    "STRETCH": 2.7,
+    "UP": 31.6,
+    "EVEN": 16.4,
+    "DOWN": 36.1,
+    "ANCHOR": 13.1
+   },
+   "stretchRate": 2.7,
+   "anchorRate": 13.1,
+   "breadth": 0.865,
+   "competitiveRatio": 43,
+   "winRate": 54.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8.2,
+  "nonConference": 2.7,
+  "delta": -5.5,
+  "nonConferenceShare": 58.3
+ },
+ "members": [
+  {
+   "teamId": "2A498A47-AFCE-41A8-9519-8786E69641FA",
+   "name": "Mississippi College",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.8,
+   "matches": 432,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 19,
+    "EVEN": 89,
+    "DOWN": 203,
+    "ANCHOR": 121
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 4.4,
+    "EVEN": 20.6,
+    "DOWN": 47,
+    "ANCHOR": 28
+   },
+   "stretchRate": 0,
+   "anchorRate": 28,
+   "breadth": 0.73,
+   "competitiveRatio": 41.3,
+   "winRate": 72.9
+  },
+  {
+   "teamId": "A1E1E36C-4E75-4FF2-B470-73B11084B7F1",
+   "name": "Mississippi College",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 13.85,
+   "matches": 401,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 12,
+    "EVEN": 81,
+    "DOWN": 214,
+    "ANCHOR": 94
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3,
+    "EVEN": 20.2,
+    "DOWN": 53.4,
+    "ANCHOR": 23.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.4,
+   "breadth": 0.686,
+   "competitiveRatio": 50.5,
+   "winRate": 64.8
+  },
+  {
+   "teamId": "72433A27-05EC-4B3B-B1AB-5A89DF6D81CA",
+   "name": "West Alabama",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 19.95,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 55,
+    "EVEN": 72,
+    "DOWN": 222,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 13.9,
+    "EVEN": 18.2,
+    "DOWN": 56.1,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.9,
+   "breadth": 0.722,
+   "competitiveRatio": 49.6,
+   "winRate": 59.3
+  },
+  {
+   "teamId": "4FE3A0EE-1CF7-4844-BF8B-92B897188F8D",
+   "name": "West Alabama",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 13.56,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 24,
+    "EVEN": 78,
+    "DOWN": 199,
+    "ANCHOR": 84
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 6.2,
+    "EVEN": 20.3,
+    "DOWN": 51.7,
+    "ANCHOR": 21.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.8,
+   "breadth": 0.727,
+   "competitiveRatio": 50.5,
+   "winRate": 44.7
+  },
+  {
+   "teamId": "C6F54727-FC81-4638-8089-FCBB02F2722A",
+   "name": "Auburn Montgomery",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.51,
+   "matches": 358,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 245,
+    "EVEN": 35,
+    "DOWN": 72,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 68.4,
+    "EVEN": 9.8,
+    "DOWN": 20.1,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.546,
+   "competitiveRatio": 50.4,
+   "winRate": 47.2
+  },
+  {
+   "teamId": "33301132-FE81-4421-934B-7DAAD72BD34E",
+   "name": "Valdosta State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.82,
+   "matches": 349,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 156,
+    "EVEN": 54,
+    "DOWN": 115,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44.7,
+    "EVEN": 15.5,
+    "DOWN": 33,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.9,
+   "breadth": 0.745,
+   "competitiveRatio": 43.8,
+   "winRate": 71.9
+  },
+  {
+   "teamId": "52D77657-CDE7-4A70-833A-4E3E954239CC",
+   "name": "Auburn Montgomery",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.34,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 184,
+    "EVEN": 54,
+    "DOWN": 93,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 54.6,
+    "EVEN": 16,
+    "DOWN": 27.6,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.8,
+   "breadth": 0.653,
+   "competitiveRatio": 45.7,
+   "winRate": 53.4
+  },
+  {
+   "teamId": "185D6B39-1EDE-45BC-873C-EAA9B8AB7A30",
+   "name": "Delta State",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.8,
+   "matches": 330,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 160,
+    "EVEN": 28,
+    "DOWN": 73,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 48.5,
+    "EVEN": 8.5,
+    "DOWN": 22.1,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 10,
+   "anchorRate": 10.9,
+   "breadth": 0.849,
+   "competitiveRatio": 37.6,
+   "winRate": 36.1
+  },
+  {
+   "teamId": "713EBDCB-FAB4-43FF-815A-48EBF17699C1",
+   "name": "Valdosta State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 21.04,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 129,
+    "EVEN": 41,
+    "DOWN": 125,
+    "ANCHOR": 19
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 41.1,
+    "EVEN": 13.1,
+    "DOWN": 39.8,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.1,
+   "breadth": 0.726,
+   "competitiveRatio": 46.2,
+   "winRate": 49
+  },
+  {
+   "teamId": "C3EDDD8A-D1F0-4FCD-A94D-FA54F65BB274",
+   "name": "Lee",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.41,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 122,
+    "EVEN": 33,
+    "DOWN": 122,
+    "ANCHOR": 22
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.8,
+    "EVEN": 11,
+    "DOWN": 40.8,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.4,
+   "breadth": 0.725,
+   "competitiveRatio": 38.6,
+   "winRate": 53.5
+  },
+  {
+   "teamId": "0ECFAB2B-EEC0-46D9-8460-7DB0BE15A657",
+   "name": "Lee",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.48,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 84,
+    "EVEN": 35,
+    "DOWN": 124,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 28.3,
+    "EVEN": 11.8,
+    "DOWN": 41.8,
+    "ANCHOR": 18.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.2,
+   "breadth": 0.798,
+   "competitiveRatio": 51.5,
+   "winRate": 74.4
+  },
+  {
+   "teamId": "5F9C8515-6D3E-4557-B213-F43FC8C22F86",
+   "name": "Montevallo",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.99,
+   "matches": 295,
+   "bands": {
+    "STRETCH": 10,
+    "UP": 131,
+    "EVEN": 30,
+    "DOWN": 112,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 44.4,
+    "EVEN": 10.2,
+    "DOWN": 38,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 4.1,
+   "breadth": 0.749,
+   "competitiveRatio": 46.8,
+   "winRate": 35.3
+  },
+  {
+   "teamId": "6332FE3A-858E-40DD-90D3-61283AF36CC8",
+   "name": "Christian Brothers",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 19.71,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 93,
+    "UP": 71,
+    "EVEN": 24,
+    "DOWN": 70,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 32.4,
+    "UP": 24.7,
+    "EVEN": 8.4,
+    "DOWN": 24.4,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 32.4,
+   "anchorRate": 10.1,
+   "breadth": 0.928,
+   "competitiveRatio": 40.8,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "4FE79688-7DCF-4795-9569-244891F81E03",
+   "name": "Delta State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.55,
+   "matches": 281,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 144,
+    "EVEN": 10,
+    "DOWN": 106,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 1.1,
+    "UP": 51.2,
+    "EVEN": 3.6,
+    "DOWN": 37.7,
+    "ANCHOR": 6.4
+   },
+   "stretchRate": 1.1,
+   "anchorRate": 6.4,
+   "breadth": 0.655,
+   "competitiveRatio": 33.5,
+   "winRate": 36.7
+  },
+  {
+   "teamId": "71CE57F8-0E81-4FBF-9C7C-8C0D415975BB",
+   "name": "Montevallo",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.36,
+   "matches": 279,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 143,
+    "EVEN": 34,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.5,
+    "UP": 51.3,
+    "EVEN": 12.2,
+    "DOWN": 15.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.5,
+   "anchorRate": 0,
+   "breadth": 0.755,
+   "competitiveRatio": 48,
+   "winRate": 46.6
+  },
+  {
+   "teamId": "7529B644-ABE1-4975-AC5F-E1BD1CDD8579",
+   "name": "Christian Brothers",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.01,
+   "matches": 213,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 102,
+    "EVEN": 12,
+    "DOWN": 25,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 29.6,
+    "UP": 47.9,
+    "EVEN": 5.6,
+    "DOWN": 11.7,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 29.6,
+   "anchorRate": 5.2,
+   "breadth": 0.795,
+   "competitiveRatio": 30.8,
+   "winRate": 33.3
+  }
+ ]
+}

@@ -1,0 +1,300 @@
+{
+ "conference": "Orange Empire Conference",
+ "slug": "orange-empire-conference",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1700,
+   "bands": {
+    "STRETCH": 246,
+    "UP": 502,
+    "EVEN": 127,
+    "DOWN": 623,
+    "ANCHOR": 202
+   },
+   "bandPct": {
+    "STRETCH": 14.5,
+    "UP": 29.5,
+    "EVEN": 7.5,
+    "DOWN": 36.6,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 14.5,
+   "anchorRate": 11.9,
+   "breadth": 0.904,
+   "competitiveRatio": 27.1,
+   "winRate": 57.5
+  },
+  "inConference": {
+   "matches": 604,
+   "bands": {
+    "STRETCH": 117,
+    "UP": 185,
+    "EVEN": 0,
+    "DOWN": 185,
+    "ANCHOR": 117
+   },
+   "bandPct": {
+    "STRETCH": 19.4,
+    "UP": 30.6,
+    "EVEN": 0,
+    "DOWN": 30.6,
+    "ANCHOR": 19.4
+   },
+   "stretchRate": 19.4,
+   "anchorRate": 19.4,
+   "breadth": 0.845,
+   "competitiveRatio": 25.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1096,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 317,
+    "EVEN": 127,
+    "DOWN": 438,
+    "ANCHOR": 85
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 28.9,
+    "EVEN": 11.6,
+    "DOWN": 40,
+    "ANCHOR": 7.8
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 7.8,
+   "breadth": 0.886,
+   "competitiveRatio": 28,
+   "winRate": 61.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 19.4,
+  "nonConference": 11.8,
+  "delta": -7.6,
+  "nonConferenceShare": 64.5
+ },
+ "members": [
+  {
+   "teamId": "417EE6F4-B8B0-49FC-A2E3-9694632FAF5B",
+   "name": "Riverside City",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 22.76,
+   "matches": 305,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 97,
+    "EVEN": 37,
+    "DOWN": 107,
+    "ANCHOR": 46
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 31.8,
+    "EVEN": 12.1,
+    "DOWN": 35.1,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 15.1,
+   "breadth": 0.895,
+   "competitiveRatio": 36.1,
+   "winRate": 69.8
+  },
+  {
+   "teamId": "22FE6114-8C54-44DB-956C-C2B2F08D2111",
+   "name": "Orange Coast",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 26.53,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 24,
+    "DOWN": 190,
+    "ANCHOR": 70
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 8.5,
+    "DOWN": 66.9,
+    "ANCHOR": 24.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 24.6,
+   "breadth": 0.511,
+   "competitiveRatio": 23.7,
+   "winRate": 82.7
+  },
+  {
+   "teamId": "1650BEE3-3B04-4483-BE46-6641E0552613",
+   "name": "Orange Coast",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 26.18,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 106,
+    "EVEN": 30,
+    "DOWN": 93,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 17.3,
+    "UP": 38.3,
+    "EVEN": 10.8,
+    "DOWN": 33.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 17.3,
+   "anchorRate": 0,
+   "breadth": 0.794,
+   "competitiveRatio": 24.5,
+   "winRate": 41.9
+  },
+  {
+   "teamId": "4D211DA8-772E-409F-89DA-54375B7E00CD",
+   "name": "Fullerton",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 27.92,
+   "matches": 249,
+   "bands": {
+    "STRETCH": 132,
+    "UP": 96,
+    "EVEN": 0,
+    "DOWN": 21,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53,
+    "UP": 38.6,
+    "EVEN": 0,
+    "DOWN": 8.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53,
+   "anchorRate": 0,
+   "breadth": 0.567,
+   "competitiveRatio": 25.8,
+   "winRate": 30.1
+  },
+  {
+   "teamId": "A456957B-8310-4DD8-A491-11D35A454630",
+   "name": "Riverside City",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.51,
+   "matches": 230,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 59,
+    "EVEN": 36,
+    "DOWN": 111,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.7,
+    "EVEN": 15.7,
+    "DOWN": 48.3,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.4,
+   "breadth": 0.762,
+   "competitiveRatio": 24.6,
+   "winRate": 74.3
+  },
+  {
+   "teamId": "F41CD938-1D6F-4BAD-8869-CA1C3DE2F3FE",
+   "name": "Fullerton",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.4,
+   "matches": 202,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 138,
+    "EVEN": 0,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 23.8,
+    "UP": 68.3,
+    "EVEN": 0,
+    "DOWN": 7.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 23.8,
+   "anchorRate": 0,
+   "breadth": 0.499,
+   "competitiveRatio": 20.3,
+   "winRate": 25.2
+  },
+  {
+   "teamId": "3F580467-E533-4FF6-BF00-D65C8189DE22",
+   "name": "Irvine Valley",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 20.21,
+   "matches": 153,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 0,
+    "DOWN": 85,
+    "ANCHOR": 62
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 3.9,
+    "EVEN": 0,
+    "DOWN": 55.6,
+    "ANCHOR": 40.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 40.5,
+   "breadth": 0.509,
+   "competitiveRatio": 35.3,
+   "winRate": 75.8
+  }
+ ]
+}

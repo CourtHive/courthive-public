@@ -1,0 +1,328 @@
+{
+ "conference": "East Coast Conference",
+ "slug": "east-coast-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 8,
+ "fingerprint": {
+  "overall": {
+   "matches": 2376,
+   "bands": {
+    "STRETCH": 266,
+    "UP": 734,
+    "EVEN": 184,
+    "DOWN": 842,
+    "ANCHOR": 350
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 30.9,
+    "EVEN": 7.7,
+    "DOWN": 35.4,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 14.7,
+   "breadth": 0.905,
+   "competitiveRatio": 35.7,
+   "winRate": 56.6
+  },
+  "inConference": {
+   "matches": 764,
+   "bands": {
+    "STRETCH": 129,
+    "UP": 236,
+    "EVEN": 34,
+    "DOWN": 236,
+    "ANCHOR": 129
+   },
+   "bandPct": {
+    "STRETCH": 16.9,
+    "UP": 30.9,
+    "EVEN": 4.5,
+    "DOWN": 30.9,
+    "ANCHOR": 16.9
+   },
+   "stretchRate": 16.9,
+   "anchorRate": 16.9,
+   "breadth": 0.91,
+   "competitiveRatio": 32.7,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1612,
+   "bands": {
+    "STRETCH": 137,
+    "UP": 498,
+    "EVEN": 150,
+    "DOWN": 606,
+    "ANCHOR": 221
+   },
+   "bandPct": {
+    "STRETCH": 8.5,
+    "UP": 30.9,
+    "EVEN": 9.3,
+    "DOWN": 37.6,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 8.5,
+   "anchorRate": 13.7,
+   "breadth": 0.891,
+   "competitiveRatio": 37.1,
+   "winRate": 59.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 16.9,
+  "nonConference": 8.5,
+  "delta": -8.4,
+  "nonConferenceShare": 67.8
+ },
+ "members": [
+  {
+   "teamId": "C5E460BB-0C0F-4852-849B-109171CE65DA",
+   "name": "Queens (New York)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.53,
+   "matches": 380,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 17,
+    "DOWN": 227,
+    "ANCHOR": 109
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 7.1,
+    "EVEN": 4.5,
+    "DOWN": 59.7,
+    "ANCHOR": 28.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 28.7,
+   "breadth": 0.617,
+   "competitiveRatio": 46.3,
+   "winRate": 73.2
+  },
+  {
+   "teamId": "21B20FB7-AE3B-4410-A65B-E9BBB40ECF08",
+   "name": "St. Thomas Aquinas",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.96,
+   "matches": 363,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 90,
+    "EVEN": 24,
+    "DOWN": 109,
+    "ANCHOR": 140
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 24.8,
+    "EVEN": 6.6,
+    "DOWN": 30,
+    "ANCHOR": 38.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 38.6,
+   "breadth": 0.779,
+   "competitiveRatio": 43,
+   "winRate": 66.9
+  },
+  {
+   "teamId": "4DE92024-7FC3-4290-BFBB-6DC5C348FEDB",
+   "name": "Daemen",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 29.97,
+   "matches": 300,
+   "bands": {
+    "STRETCH": 141,
+    "UP": 129,
+    "EVEN": 12,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 47,
+    "UP": 43,
+    "EVEN": 4,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 47,
+   "anchorRate": 0,
+   "breadth": 0.631,
+   "competitiveRatio": 19.7,
+   "winRate": 32
+  },
+  {
+   "teamId": "BF160E24-BF28-473F-8F20-B492577AA094",
+   "name": "St. Thomas Aquinas",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.53,
+   "matches": 298,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 155,
+    "EVEN": 55,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 52,
+    "EVEN": 18.5,
+    "DOWN": 17.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 0,
+   "breadth": 0.753,
+   "competitiveRatio": 29.5,
+   "winRate": 61.4
+  },
+  {
+   "teamId": "E7AE0B9D-44C2-4DA3-A22B-D95AA0B1DF4E",
+   "name": "Queens (New York)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.53,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 55,
+    "EVEN": 4,
+    "DOWN": 172,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 19.4,
+    "EVEN": 1.4,
+    "DOWN": 60.6,
+    "ANCHOR": 18.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.7,
+   "breadth": 0.618,
+   "competitiveRatio": 33.1,
+   "winRate": 69.4
+  },
+  {
+   "teamId": "86BE186E-98E5-48E7-B0F7-C3891386AE56",
+   "name": "District of Columbia",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.71,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 99,
+    "EVEN": 16,
+    "DOWN": 133,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 36,
+    "EVEN": 5.8,
+    "DOWN": 48.4,
+    "ANCHOR": 9.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 9.8,
+   "breadth": 0.691,
+   "competitiveRatio": 40,
+   "winRate": 58.9
+  },
+  {
+   "teamId": "BFBC2AC2-1680-481C-8F22-DE95DE060D94",
+   "name": "District of Columbia",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 21.41,
+   "matches": 269,
+   "bands": {
+    "STRETCH": 77,
+    "UP": 81,
+    "EVEN": 28,
+    "DOWN": 73,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 28.6,
+    "UP": 30.1,
+    "EVEN": 10.4,
+    "DOWN": 27.1,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 28.6,
+   "anchorRate": 3.7,
+   "breadth": 0.889,
+   "competitiveRatio": 39.9,
+   "winRate": 45.7
+  },
+  {
+   "teamId": "3F3A9A6A-9EC1-4A0E-AC58-4DC40482C2CF",
+   "name": "D’Youville",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 26.04,
+   "matches": 207,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 98,
+    "EVEN": 28,
+    "DOWN": 58,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 5.8,
+    "UP": 47.3,
+    "EVEN": 13.5,
+    "DOWN": 28,
+    "ANCHOR": 5.3
+   },
+   "stretchRate": 5.8,
+   "anchorRate": 5.3,
+   "breadth": 0.809,
+   "competitiveRatio": 28,
+   "winRate": 30
+  }
+ ]
+}

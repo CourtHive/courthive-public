@@ -1,0 +1,301 @@
+{
+ "conference": "Region 22",
+ "slug": "region-22",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 1989,
+   "bands": {
+    "STRETCH": 293,
+    "UP": 462,
+    "EVEN": 124,
+    "DOWN": 513,
+    "ANCHOR": 597
+   },
+   "bandPct": {
+    "STRETCH": 14.7,
+    "UP": 23.2,
+    "EVEN": 6.2,
+    "DOWN": 25.8,
+    "ANCHOR": 30
+   },
+   "stretchRate": 14.7,
+   "anchorRate": 30,
+   "breadth": 0.935,
+   "competitiveRatio": 21.3,
+   "winRate": 53.6
+  },
+  "inConference": {
+   "matches": 504,
+   "bands": {
+    "STRETCH": 144,
+    "UP": 108,
+    "EVEN": 0,
+    "DOWN": 108,
+    "ANCHOR": 144
+   },
+   "bandPct": {
+    "STRETCH": 28.6,
+    "UP": 21.4,
+    "EVEN": 0,
+    "DOWN": 21.4,
+    "ANCHOR": 28.6
+   },
+   "stretchRate": 28.6,
+   "anchorRate": 28.6,
+   "breadth": 0.855,
+   "competitiveRatio": 13.9,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1485,
+   "bands": {
+    "STRETCH": 149,
+    "UP": 354,
+    "EVEN": 124,
+    "DOWN": 405,
+    "ANCHOR": 453
+   },
+   "bandPct": {
+    "STRETCH": 10,
+    "UP": 23.8,
+    "EVEN": 8.4,
+    "DOWN": 27.3,
+    "ANCHOR": 30.5
+   },
+   "stretchRate": 10,
+   "anchorRate": 30.5,
+   "breadth": 0.93,
+   "competitiveRatio": 23.9,
+   "winRate": 54.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 28.6,
+  "nonConference": 10,
+  "delta": -18.6,
+  "nonConferenceShare": 74.7
+ },
+ "members": [
+  {
+   "teamId": "4E39A5CB-AC2F-497B-A828-9FC9FF7FC8EE",
+   "name": "Coastal Alabama - South",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 21.49,
+   "matches": 413,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 83,
+    "EVEN": 24,
+    "DOWN": 80,
+    "ANCHOR": 190
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 20.1,
+    "EVEN": 5.8,
+    "DOWN": 19.4,
+    "ANCHOR": 46
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 46,
+   "breadth": 0.855,
+   "competitiveRatio": 25.4,
+   "winRate": 65.6
+  },
+  {
+   "teamId": "BB958279-DECF-4F69-A01F-063AC47B6DB0",
+   "name": "Wallace State",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 20.73,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 48,
+    "EVEN": 29,
+    "DOWN": 110,
+    "ANCHOR": 167
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 12.5,
+    "EVEN": 7.6,
+    "DOWN": 28.6,
+    "ANCHOR": 43.5
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 43.5,
+   "breadth": 0.854,
+   "competitiveRatio": 28.7,
+   "winRate": 72.4
+  },
+  {
+   "teamId": "BB6E48B2-89C4-49AC-89DE-6D5B99D8C05A",
+   "name": "Coastal Alabama - South",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.35,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 80,
+    "EVEN": 12,
+    "DOWN": 167,
+    "ANCHOR": 94
+   },
+   "bandPct": {
+    "STRETCH": 4.9,
+    "UP": 21.6,
+    "EVEN": 3.2,
+    "DOWN": 45,
+    "ANCHOR": 25.3
+   },
+   "stretchRate": 4.9,
+   "anchorRate": 25.3,
+   "breadth": 0.805,
+   "competitiveRatio": 21.3,
+   "winRate": 63.1
+  },
+  {
+   "teamId": "84194ED9-BCEB-44F3-86D6-96EB08F2D614",
+   "name": "Wallace State",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 25.96,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 18,
+    "EVEN": 12,
+    "DOWN": 142,
+    "ANCHOR": 146
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 5.6,
+    "EVEN": 3.7,
+    "DOWN": 43.8,
+    "ANCHOR": 45.1
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 45.1,
+   "breadth": 0.669,
+   "competitiveRatio": 21.9,
+   "winRate": 66
+  },
+  {
+   "teamId": "8120BDF8-FB6C-4434-B57C-820C167E6377",
+   "name": "Snead State",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 31.08,
+   "matches": 181,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 96,
+    "EVEN": 47,
+    "DOWN": 14,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 53,
+    "EVEN": 26,
+    "DOWN": 7.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 0,
+   "breadth": 0.716,
+   "competitiveRatio": 11.6,
+   "winRate": 27.6
+  },
+  {
+   "teamId": "91BD0447-7B9A-4F70-86B1-6E5B450002C1",
+   "name": "Coastal Alabama - North",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 32.23,
+   "matches": 171,
+   "bands": {
+    "STRETCH": 113,
+    "UP": 58,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 66.1,
+    "UP": 33.9,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 66.1,
+   "anchorRate": 0,
+   "breadth": 0.398,
+   "competitiveRatio": 17,
+   "winRate": 5.8
+  },
+  {
+   "teamId": "97D3F1FC-F18A-45AC-B78B-653B3B9F8FA9",
+   "name": "Coastal Alabama - North",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 33.89,
+   "matches": 145,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 79,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 45.5,
+    "UP": 54.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 45.5,
+   "anchorRate": 0,
+   "breadth": 0.428,
+   "competitiveRatio": 6.2,
+   "winRate": 6.2
+  }
+ ]
+}

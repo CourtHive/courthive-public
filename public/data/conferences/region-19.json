@@ -1,0 +1,165 @@
+{
+ "conference": "Region 19",
+ "slug": "region-19",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 52,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 26,
+    "DOWN": 20,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.5,
+    "EVEN": 50,
+    "DOWN": 38.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.599,
+   "competitiveRatio": 40.4,
+   "winRate": 48.1
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 52,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 26,
+    "DOWN": 20,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.5,
+    "EVEN": 50,
+    "DOWN": 38.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.599,
+   "competitiveRatio": 40.4,
+   "winRate": 48.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 0,
+  "delta": 0,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "F09F941D-2DCF-4B1F-942A-384F7E7C9021",
+   "name": "Rowan College South Jersey - Gloucester",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 25.83,
+   "matches": 34,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 20,
+    "DOWN": 8,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 17.6,
+    "EVEN": 58.8,
+    "DOWN": 23.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.596,
+   "competitiveRatio": 44.1,
+   "winRate": 41.2
+  },
+  {
+   "teamId": "50049DA9-F9CF-4264-B70F-873ED648B884",
+   "name": "Rowan College South Jersey - Gloucester",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.64,
+   "matches": 18,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 6,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 33.3,
+    "DOWN": 66.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.395,
+   "competitiveRatio": 33.3,
+   "winRate": 61.1
+  }
+ ]
+}

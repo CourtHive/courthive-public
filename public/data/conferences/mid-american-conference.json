@@ -1,0 +1,192 @@
+{
+ "conference": "Mid American Conference",
+ "slug": "mid-american-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 3,
+ "fingerprint": {
+  "overall": {
+   "matches": 1227,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 306,
+    "EVEN": 276,
+    "DOWN": 521,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 24.9,
+    "EVEN": 22.5,
+    "DOWN": 42.5,
+    "ANCHOR": 7.2
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 7.2,
+   "breadth": 0.831,
+   "competitiveRatio": 52.7,
+   "winRate": 54.4
+  },
+  "inConference": {
+   "matches": 36,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 18,
+    "EVEN": 0,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50,
+    "EVEN": 0,
+    "DOWN": 50,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.431,
+   "competitiveRatio": 61.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1191,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 288,
+    "EVEN": 276,
+    "DOWN": 503,
+    "ANCHOR": 88
+   },
+   "bandPct": {
+    "STRETCH": 3,
+    "UP": 24.2,
+    "EVEN": 23.2,
+    "DOWN": 42.2,
+    "ANCHOR": 7.4
+   },
+   "stretchRate": 3,
+   "anchorRate": 7.4,
+   "breadth": 0.835,
+   "competitiveRatio": 52.4,
+   "winRate": 54.6
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 3,
+  "delta": 3,
+  "nonConferenceShare": 97.1
+ },
+ "members": [
+  {
+   "teamId": "CDAB065A-302D-4A01-A46F-5345609F3DA9",
+   "name": "NIU",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.34,
+   "matches": 438,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 128,
+    "EVEN": 58,
+    "DOWN": 223,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 4.1,
+    "UP": 29.2,
+    "EVEN": 13.2,
+    "DOWN": 50.9,
+    "ANCHOR": 2.5
+   },
+   "stretchRate": 4.1,
+   "anchorRate": 2.5,
+   "breadth": 0.742,
+   "competitiveRatio": 49.2,
+   "winRate": 59.8
+  },
+  {
+   "teamId": "F3EE0A57-4F18-4FDD-B4EA-CA9154C36E3E",
+   "name": "Miami (Ohio)",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.54,
+   "matches": 397,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 127,
+    "EVEN": 115,
+    "DOWN": 149,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32,
+    "EVEN": 29,
+    "DOWN": 37.5,
+    "ANCHOR": 1.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.5,
+   "breadth": 0.717,
+   "competitiveRatio": 58.2,
+   "winRate": 49.4
+  },
+  {
+   "teamId": "E5B75F8B-62D1-4ED6-B40A-04F4A6459DE9",
+   "name": "NIU",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.59,
+   "matches": 392,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 51,
+    "EVEN": 103,
+    "DOWN": 149,
+    "ANCHOR": 71
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 13,
+    "EVEN": 26.3,
+    "DOWN": 38,
+    "ANCHOR": 18.1
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 18.1,
+   "breadth": 0.892,
+   "competitiveRatio": 51,
+   "winRate": 53.6
+  }
+ ]
+}

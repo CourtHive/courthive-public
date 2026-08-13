@@ -1,0 +1,463 @@
+{
+ "conference": "River States Conference",
+ "slug": "river-states-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 13,
+ "fingerprint": {
+  "overall": {
+   "matches": 2909,
+   "bands": {
+    "STRETCH": 628,
+    "UP": 913,
+    "EVEN": 307,
+    "DOWN": 766,
+    "ANCHOR": 295
+   },
+   "bandPct": {
+    "STRETCH": 21.6,
+    "UP": 31.4,
+    "EVEN": 10.6,
+    "DOWN": 26.3,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 21.6,
+   "anchorRate": 10.1,
+   "breadth": 0.942,
+   "competitiveRatio": 27.8,
+   "winRate": 41
+  },
+  "inConference": {
+   "matches": 1076,
+   "bands": {
+    "STRETCH": 215,
+    "UP": 280,
+    "EVEN": 86,
+    "DOWN": 280,
+    "ANCHOR": 215
+   },
+   "bandPct": {
+    "STRETCH": 20,
+    "UP": 26,
+    "EVEN": 8,
+    "DOWN": 26,
+    "ANCHOR": 20
+   },
+   "stretchRate": 20,
+   "anchorRate": 20,
+   "breadth": 0.961,
+   "competitiveRatio": 23.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1833,
+   "bands": {
+    "STRETCH": 413,
+    "UP": 633,
+    "EVEN": 221,
+    "DOWN": 486,
+    "ANCHOR": 80
+   },
+   "bandPct": {
+    "STRETCH": 22.5,
+    "UP": 34.5,
+    "EVEN": 12.1,
+    "DOWN": 26.5,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 22.5,
+   "anchorRate": 4.4,
+   "breadth": 0.899,
+   "competitiveRatio": 30.4,
+   "winRate": 35.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 20,
+  "nonConference": 22.5,
+  "delta": 2.5,
+  "nonConferenceShare": 63
+ },
+ "members": [
+  {
+   "teamId": "3632123E-A725-4593-AB22-FBEEB6B51C98",
+   "name": "Oakland City (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.33,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 69,
+    "EVEN": 40,
+    "DOWN": 115,
+    "ANCHOR": 108
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 20.8,
+    "EVEN": 12,
+    "DOWN": 34.6,
+    "ANCHOR": 32.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 32.5,
+   "breadth": 0.816,
+   "competitiveRatio": 39.8,
+   "winRate": 64.2
+  },
+  {
+   "teamId": "F6B30106-EE10-47FC-8400-4EB835F5D0A1",
+   "name": "Oakland City (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.51,
+   "matches": 311,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 71,
+    "EVEN": 35,
+    "DOWN": 104,
+    "ANCHOR": 101
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.8,
+    "EVEN": 11.3,
+    "DOWN": 33.4,
+    "ANCHOR": 32.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 32.5,
+   "breadth": 0.817,
+   "competitiveRatio": 24,
+   "winRate": 62.1
+  },
+  {
+   "teamId": "5946049C-686B-4320-9256-22A28D2F38C9",
+   "name": "IU Kokomo (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.19,
+   "matches": 264,
+   "bands": {
+    "STRETCH": 73,
+    "UP": 121,
+    "EVEN": 17,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 27.7,
+    "UP": 45.8,
+    "EVEN": 6.4,
+    "DOWN": 20.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 27.7,
+   "anchorRate": 0,
+   "breadth": 0.753,
+   "competitiveRatio": 23.9,
+   "winRate": 27.3
+  },
+  {
+   "teamId": "7CB03E01-9BEB-4FC4-9828-1AF93F627727",
+   "name": "Midway (Ky.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.06,
+   "matches": 260,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 68,
+    "EVEN": 12,
+    "DOWN": 107,
+    "ANCHOR": 69
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 26.2,
+    "EVEN": 4.6,
+    "DOWN": 41.2,
+    "ANCHOR": 26.5
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 26.5,
+   "breadth": 0.792,
+   "competitiveRatio": 38.8,
+   "winRate": 51.2
+  },
+  {
+   "teamId": "4106BD95-C235-4066-BC78-477C16942F12",
+   "name": "IU East (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 25.62,
+   "matches": 239,
+   "bands": {
+    "STRETCH": 75,
+    "UP": 77,
+    "EVEN": 6,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 31.4,
+    "UP": 32.2,
+    "EVEN": 2.5,
+    "DOWN": 33.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 31.4,
+   "anchorRate": 0,
+   "breadth": 0.738,
+   "competitiveRatio": 22.2,
+   "winRate": 27.6
+  },
+  {
+   "teamId": "917C8F32-4938-40D6-8269-E69EDAEA2D5E",
+   "name": "Indiana Southeast (Ind.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 27.14,
+   "matches": 236,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 96,
+    "EVEN": 5,
+    "DOWN": 33,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 41.5,
+    "UP": 40.7,
+    "EVEN": 2.1,
+    "DOWN": 14,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 41.5,
+   "anchorRate": 1.7,
+   "breadth": 0.719,
+   "competitiveRatio": 23.8,
+   "winRate": 28.8
+  },
+  {
+   "teamId": "84E9492D-4CA7-4784-A44B-BB3E3F844CD0",
+   "name": "Indiana Southeast (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.52,
+   "matches": 219,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 31,
+    "EVEN": 75,
+    "DOWN": 71,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 16.4,
+    "UP": 14.2,
+    "EVEN": 34.2,
+    "DOWN": 32.4,
+    "ANCHOR": 2.7
+   },
+   "stretchRate": 16.4,
+   "anchorRate": 2.7,
+   "breadth": 0.873,
+   "competitiveRatio": 26.6,
+   "winRate": 43.4
+  },
+  {
+   "teamId": "9061F65C-5D48-49DF-AE37-B1874665AB21",
+   "name": "Shawnee State (Ohio)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 28.71,
+   "matches": 218,
+   "bands": {
+    "STRETCH": 153,
+    "UP": 54,
+    "EVEN": 0,
+    "DOWN": 11,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 70.2,
+    "UP": 24.8,
+    "EVEN": 0,
+    "DOWN": 5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 70.2,
+   "anchorRate": 0,
+   "breadth": 0.463,
+   "competitiveRatio": 23.4,
+   "winRate": 23.9
+  },
+  {
+   "teamId": "E8D6AF80-EFE8-421E-BA82-65AC87789339",
+   "name": "Shawnee State (Ohio)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 31.41,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 83,
+    "UP": 110,
+    "EVEN": 0,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 39.7,
+    "UP": 52.6,
+    "EVEN": 0,
+    "DOWN": 7.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 39.7,
+   "anchorRate": 0,
+   "breadth": 0.56,
+   "competitiveRatio": 20.1,
+   "winRate": 16.3
+  },
+  {
+   "teamId": "12CF2BD2-6C6C-4B31-A6EA-1CDF44AF59D4",
+   "name": "Midway (Ky.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.07,
+   "matches": 208,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 98,
+    "EVEN": 39,
+    "DOWN": 54,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 47.1,
+    "EVEN": 18.8,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 0,
+   "breadth": 0.76,
+   "competitiveRatio": 29.8,
+   "winRate": 47.6
+  },
+  {
+   "teamId": "B53D0CDE-CC2C-4330-84F2-4FBD68ECC5A5",
+   "name": "IU East (Ind.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.83,
+   "matches": 167,
+   "bands": {
+    "STRETCH": 38,
+    "UP": 34,
+    "EVEN": 56,
+    "DOWN": 39,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 22.8,
+    "UP": 20.4,
+    "EVEN": 33.5,
+    "DOWN": 23.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 22.8,
+   "anchorRate": 0,
+   "breadth": 0.849,
+   "competitiveRatio": 28.1,
+   "winRate": 46.1
+  },
+  {
+   "teamId": "5862B698-6F7E-4271-97EE-9B18C751CB22",
+   "name": "Brescia (Ky.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.25,
+   "matches": 161,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 59,
+    "EVEN": 16,
+    "DOWN": 34,
+    "ANCHOR": 7
+   },
+   "bandPct": {
+    "STRETCH": 28,
+    "UP": 36.6,
+    "EVEN": 9.9,
+    "DOWN": 21.1,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 28,
+   "anchorRate": 4.3,
+   "breadth": 0.881,
+   "competitiveRatio": 30.4,
+   "winRate": 29.8
+  },
+  {
+   "teamId": "700087E6-4FEF-4732-AE31-5401F021DE35",
+   "name": "Brescia (Ky.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.31,
+   "matches": 85,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 25,
+    "EVEN": 6,
+    "DOWN": 48,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 29.4,
+    "EVEN": 7.1,
+    "DOWN": 56.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 0,
+   "breadth": 0.657,
+   "competitiveRatio": 22.4,
+   "winRate": 51.8
+  }
+ ]
+}

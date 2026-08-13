@@ -1,0 +1,544 @@
+{
+ "conference": "Northern Athletic Collegiate Conference",
+ "slug": "northern-athletic-collegiate-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 16,
+ "fingerprint": {
+  "overall": {
+   "matches": 4755,
+   "bands": {
+    "STRETCH": 739,
+    "UP": 2019,
+    "EVEN": 515,
+    "DOWN": 1166,
+    "ANCHOR": 316
+   },
+   "bandPct": {
+    "STRETCH": 15.5,
+    "UP": 42.5,
+    "EVEN": 10.8,
+    "DOWN": 24.5,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 15.5,
+   "anchorRate": 6.6,
+   "breadth": 0.881,
+   "competitiveRatio": 27.3,
+   "winRate": 40.5
+  },
+  "inConference": {
+   "matches": 2214,
+   "bands": {
+    "STRETCH": 272,
+    "UP": 732,
+    "EVEN": 206,
+    "DOWN": 732,
+    "ANCHOR": 272
+   },
+   "bandPct": {
+    "STRETCH": 12.3,
+    "UP": 33.1,
+    "EVEN": 9.3,
+    "DOWN": 33.1,
+    "ANCHOR": 12.3
+   },
+   "stretchRate": 12.3,
+   "anchorRate": 12.3,
+   "breadth": 0.912,
+   "competitiveRatio": 22.2,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2541,
+   "bands": {
+    "STRETCH": 467,
+    "UP": 1287,
+    "EVEN": 309,
+    "DOWN": 434,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 18.4,
+    "UP": 50.6,
+    "EVEN": 12.2,
+    "DOWN": 17.1,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 18.4,
+   "anchorRate": 1.7,
+   "breadth": 0.798,
+   "competitiveRatio": 31.8,
+   "winRate": 32.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 12.3,
+  "nonConference": 18.4,
+  "delta": 6.1,
+  "nonConferenceShare": 53.4
+ },
+ "members": [
+  {
+   "teamId": "3DC743C3-D185-456E-84AD-7E78B09FC9C9",
+   "name": "Edgewood",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.59,
+   "matches": 430,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 108,
+    "EVEN": 115,
+    "DOWN": 135,
+    "ANCHOR": 48
+   },
+   "bandPct": {
+    "STRETCH": 5.6,
+    "UP": 25.1,
+    "EVEN": 26.7,
+    "DOWN": 31.4,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 5.6,
+   "anchorRate": 11.2,
+   "breadth": 0.913,
+   "competitiveRatio": 28.2,
+   "winRate": 64.4
+  },
+  {
+   "teamId": "A1FF2A59-42CC-43E7-9B82-4E5CFACA2D6C",
+   "name": "Concordia Wisconsin",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.81,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 97,
+    "UP": 209,
+    "EVEN": 30,
+    "DOWN": 49,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.2,
+    "UP": 54.3,
+    "EVEN": 7.8,
+    "DOWN": 12.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.2,
+   "anchorRate": 0,
+   "breadth": 0.708,
+   "competitiveRatio": 25.5,
+   "winRate": 45.2
+  },
+  {
+   "teamId": "090925E0-ACA2-4B23-BFB5-ADDC6943B606",
+   "name": "St. Norbert",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.61,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 125,
+    "EVEN": 55,
+    "DOWN": 124,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 6.6,
+    "UP": 34.2,
+    "EVEN": 15,
+    "DOWN": 33.9,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 6.6,
+   "anchorRate": 10.4,
+   "breadth": 0.89,
+   "competitiveRatio": 31.8,
+   "winRate": 44
+  },
+  {
+   "teamId": "8F054E59-6174-4122-834A-F93B77ECAA2D",
+   "name": "Illinois Institute Of Technology",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.33,
+   "matches": 365,
+   "bands": {
+    "STRETCH": 20,
+    "UP": 84,
+    "EVEN": 59,
+    "DOWN": 137,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 5.5,
+    "UP": 23,
+    "EVEN": 16.2,
+    "DOWN": 37.5,
+    "ANCHOR": 17.8
+   },
+   "stretchRate": 5.5,
+   "anchorRate": 17.8,
+   "breadth": 0.911,
+   "competitiveRatio": 37.5,
+   "winRate": 60
+  },
+  {
+   "teamId": "C19B70B0-4B40-48D9-B923-B78315EE9707",
+   "name": "Edgewood",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.15,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 182,
+    "EVEN": 12,
+    "DOWN": 96,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.9,
+    "UP": 50.3,
+    "EVEN": 3.3,
+    "DOWN": 26.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.9,
+   "anchorRate": 0,
+   "breadth": 0.703,
+   "competitiveRatio": 28.2,
+   "winRate": 28.7
+  },
+  {
+   "teamId": "1A71DCF5-7DBF-4D90-9CB5-B1E08C46AA82",
+   "name": "St. Norbert",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.66,
+   "matches": 341,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 168,
+    "EVEN": 48,
+    "DOWN": 72,
+    "ANCHOR": 47
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 49.3,
+    "EVEN": 14.1,
+    "DOWN": 21.1,
+    "ANCHOR": 13.8
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 13.8,
+   "breadth": 0.806,
+   "competitiveRatio": 29.3,
+   "winRate": 41.3
+  },
+  {
+   "teamId": "1908CC64-62BB-4313-80F2-09BE89D1FFFA",
+   "name": "Concordia Wisconsin",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.9,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 107,
+    "EVEN": 54,
+    "DOWN": 123,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 32.2,
+    "EVEN": 16.3,
+    "DOWN": 37,
+    "ANCHOR": 12.7
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 12.7,
+   "breadth": 0.846,
+   "competitiveRatio": 38.6,
+   "winRate": 56.3
+  },
+  {
+   "teamId": "3A7C29E9-AD21-4E3D-8774-11229E28A9BC",
+   "name": "Milwaukee School of Engineering",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.89,
+   "matches": 329,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 116,
+    "EVEN": 30,
+    "DOWN": 119,
+    "ANCHOR": 58
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 35.3,
+    "EVEN": 9.1,
+    "DOWN": 36.2,
+    "ANCHOR": 17.6
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 17.6,
+   "breadth": 0.828,
+   "competitiveRatio": 39,
+   "winRate": 57.8
+  },
+  {
+   "teamId": "A1E05111-ECF1-4080-89CD-5C77C20A9E68",
+   "name": "Illinois Institute Of Technology",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.06,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 120,
+    "EVEN": 44,
+    "DOWN": 107,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 39.9,
+    "EVEN": 14.6,
+    "DOWN": 35.5,
+    "ANCHOR": 6
+   },
+   "stretchRate": 4,
+   "anchorRate": 6,
+   "breadth": 0.815,
+   "competitiveRatio": 22.6,
+   "winRate": 40.2
+  },
+  {
+   "teamId": "3527EE10-7C80-44D8-B94D-BB8355BDD50F",
+   "name": "Milwaukee School of Engineering",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.82,
+   "matches": 278,
+   "bands": {
+    "STRETCH": 26,
+    "UP": 140,
+    "EVEN": 12,
+    "DOWN": 100,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 50.4,
+    "EVEN": 4.3,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 0,
+   "breadth": 0.665,
+   "competitiveRatio": 17.3,
+   "winRate": 33.8
+  },
+  {
+   "teamId": "20C63B22-C8AA-4AE1-9DBD-1541640FFC89",
+   "name": "Concordia Chicago",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.1,
+   "matches": 254,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 155,
+    "EVEN": 18,
+    "DOWN": 51,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11.8,
+    "UP": 61,
+    "EVEN": 7.1,
+    "DOWN": 20.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11.8,
+   "anchorRate": 0,
+   "breadth": 0.661,
+   "competitiveRatio": 19,
+   "winRate": 16.5
+  },
+  {
+   "teamId": "54634EAD-7A72-4A31-9F07-A040FC67D09F",
+   "name": "Concordia Chicago",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 29.19,
+   "matches": 242,
+   "bands": {
+    "STRETCH": 117,
+    "UP": 107,
+    "EVEN": 0,
+    "DOWN": 18,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 48.3,
+    "UP": 44.2,
+    "EVEN": 0,
+    "DOWN": 7.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 48.3,
+   "anchorRate": 0,
+   "breadth": 0.563,
+   "competitiveRatio": 17.8,
+   "winRate": 11.6
+  },
+  {
+   "teamId": "42128122-D333-4EE9-ABFC-BFEE01C918CF",
+   "name": "Wisconsin Lutheran College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 31.61,
+   "matches": 230,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 159,
+    "EVEN": 6,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13,
+    "UP": 69.1,
+    "EVEN": 2.6,
+    "DOWN": 15.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13,
+   "anchorRate": 0,
+   "breadth": 0.561,
+   "competitiveRatio": 23.6,
+   "winRate": 39.1
+  },
+  {
+   "teamId": "210D4522-F62E-4235-A448-B410034972F8",
+   "name": "Wisconsin Lutheran College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.39,
+   "matches": 221,
+   "bands": {
+    "STRETCH": 144,
+    "UP": 77,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 65.2,
+    "UP": 34.8,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 65.2,
+   "anchorRate": 0,
+   "breadth": 0.402,
+   "competitiveRatio": 23.1,
+   "winRate": 20.8
+  },
+  {
+   "teamId": "2834FAD9-D135-4717-A2AF-6593E2F9E17B",
+   "name": "Marian University (WI)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 33.21,
+   "matches": 178,
+   "bands": {
+    "STRETCH": 78,
+    "UP": 84,
+    "EVEN": 16,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 43.8,
+    "UP": 47.2,
+    "EVEN": 9,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 43.8,
+   "anchorRate": 0,
+   "breadth": 0.579,
+   "competitiveRatio": 13,
+   "winRate": 7.9
+  },
+  {
+   "teamId": "76FC90E0-0AD8-4BD9-B62D-6992CE56B521",
+   "name": "Lakeland",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.8,
+   "matches": 141,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 78,
+    "EVEN": 16,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 33.3,
+    "UP": 55.3,
+    "EVEN": 11.3,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 33.3,
+   "anchorRate": 0,
+   "breadth": 0.584,
+   "competitiveRatio": 23.4,
+   "winRate": 28.4
+  }
+ ]
+}

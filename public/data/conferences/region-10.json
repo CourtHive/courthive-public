@@ -1,0 +1,165 @@
+{
+ "conference": "Region 10",
+ "slug": "region-10",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 355,
+   "bands": {
+    "STRETCH": 158,
+    "UP": 115,
+    "EVEN": 36,
+    "DOWN": 22,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 44.5,
+    "UP": 32.4,
+    "EVEN": 10.1,
+    "DOWN": 6.2,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 44.5,
+   "anchorRate": 6.8,
+   "breadth": 0.815,
+   "competitiveRatio": 25.7,
+   "winRate": 27
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 355,
+   "bands": {
+    "STRETCH": 158,
+    "UP": 115,
+    "EVEN": 36,
+    "DOWN": 22,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 44.5,
+    "UP": 32.4,
+    "EVEN": 10.1,
+    "DOWN": 6.2,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 44.5,
+   "anchorRate": 6.8,
+   "breadth": 0.815,
+   "competitiveRatio": 25.7,
+   "winRate": 27
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 44.5,
+  "delta": 44.5,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "ECBA0549-0AAE-4CFF-9BCD-1BA69C4F7E7E",
+   "name": "University of South Carolina Sumter",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 21.05,
+   "matches": 214,
+   "bands": {
+    "STRETCH": 60,
+    "UP": 72,
+    "EVEN": 36,
+    "DOWN": 22,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 28,
+    "UP": 33.6,
+    "EVEN": 16.8,
+    "DOWN": 10.3,
+    "ANCHOR": 11.2
+   },
+   "stretchRate": 28,
+   "anchorRate": 11.2,
+   "breadth": 0.933,
+   "competitiveRatio": 30.5,
+   "winRate": 35.5
+  },
+  {
+   "teamId": "98BFBCA9-3463-46AF-92D5-F09050A01BF6",
+   "name": "University of South Carolina Sumter",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 29.77,
+   "matches": 141,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 43,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 69.5,
+    "UP": 30.5,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 69.5,
+   "anchorRate": 0,
+   "breadth": 0.382,
+   "competitiveRatio": 18.4,
+   "winRate": 14.2
+  }
+ ]
+}

@@ -1,0 +1,463 @@
+{
+ "conference": "Mid Eastern Athletic Conference",
+ "slug": "mid-eastern-athletic-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 13,
+ "fingerprint": {
+  "overall": {
+   "matches": 4052,
+   "bands": {
+    "STRETCH": 671,
+    "UP": 1244,
+    "EVEN": 753,
+    "DOWN": 960,
+    "ANCHOR": 424
+   },
+   "bandPct": {
+    "STRETCH": 16.6,
+    "UP": 30.7,
+    "EVEN": 18.6,
+    "DOWN": 23.7,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 16.6,
+   "anchorRate": 10.5,
+   "breadth": 0.963,
+   "competitiveRatio": 38.7,
+   "winRate": 43.7
+  },
+  "inConference": {
+   "matches": 1510,
+   "bands": {
+    "STRETCH": 230,
+    "UP": 350,
+    "EVEN": 350,
+    "DOWN": 350,
+    "ANCHOR": 230
+   },
+   "bandPct": {
+    "STRETCH": 15.2,
+    "UP": 23.2,
+    "EVEN": 23.2,
+    "DOWN": 23.2,
+    "ANCHOR": 15.2
+   },
+   "stretchRate": 15.2,
+   "anchorRate": 15.2,
+   "breadth": 0.988,
+   "competitiveRatio": 38.1,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2542,
+   "bands": {
+    "STRETCH": 441,
+    "UP": 894,
+    "EVEN": 403,
+    "DOWN": 610,
+    "ANCHOR": 194
+   },
+   "bandPct": {
+    "STRETCH": 17.3,
+    "UP": 35.2,
+    "EVEN": 15.9,
+    "DOWN": 24,
+    "ANCHOR": 7.6
+   },
+   "stretchRate": 17.3,
+   "anchorRate": 7.6,
+   "breadth": 0.933,
+   "competitiveRatio": 39,
+   "winRate": 39.9
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 15.2,
+  "nonConference": 17.3,
+  "delta": 2.1,
+  "nonConferenceShare": 62.7
+ },
+ "members": [
+  {
+   "teamId": "CD2DAD89-8A53-4E6B-8E7F-C69E8C2A77A1",
+   "name": "Norfolk State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.62,
+   "matches": 384,
+   "bands": {
+    "STRETCH": 34,
+    "UP": 111,
+    "EVEN": 50,
+    "DOWN": 112,
+    "ANCHOR": 77
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 28.9,
+    "EVEN": 13,
+    "DOWN": 29.2,
+    "ANCHOR": 20.1
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 20.1,
+   "breadth": 0.945,
+   "competitiveRatio": 45.6,
+   "winRate": 59.1
+  },
+  {
+   "teamId": "5FF79FBD-F23D-48E3-9B9F-0C027CE00929",
+   "name": "North Carolina Central",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.44,
+   "matches": 371,
+   "bands": {
+    "STRETCH": 52,
+    "UP": 91,
+    "EVEN": 84,
+    "DOWN": 91,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 24.5,
+    "EVEN": 22.6,
+    "DOWN": 24.5,
+    "ANCHOR": 14.3
+   },
+   "stretchRate": 14,
+   "anchorRate": 14.3,
+   "breadth": 0.981,
+   "competitiveRatio": 46.1,
+   "winRate": 52.3
+  },
+  {
+   "teamId": "0FC5FA3C-6215-46DE-AFF6-DA3502D1A301",
+   "name": "Morgan State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.34,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 52,
+    "UP": 162,
+    "EVEN": 77,
+    "DOWN": 36,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 14.2,
+    "UP": 44.3,
+    "EVEN": 21,
+    "DOWN": 9.8,
+    "ANCHOR": 10.7
+   },
+   "stretchRate": 14.2,
+   "anchorRate": 10.7,
+   "breadth": 0.89,
+   "competitiveRatio": 39.6,
+   "winRate": 39.9
+  },
+  {
+   "teamId": "CCB6F799-061F-4699-A195-D9DCC2AFDC7E",
+   "name": "Norfolk State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.95,
+   "matches": 360,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 43,
+    "EVEN": 100,
+    "DOWN": 161,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 11.9,
+    "EVEN": 27.8,
+    "DOWN": 44.7,
+    "ANCHOR": 14.7
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 14.7,
+   "breadth": 0.802,
+   "competitiveRatio": 33.1,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "4B48F0C2-48DE-467B-8E5C-EE18DD9B5ADA",
+   "name": "Morgan State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.18,
+   "matches": 352,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 61,
+    "EVEN": 85,
+    "DOWN": 166,
+    "ANCHOR": 25
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 17.3,
+    "EVEN": 24.1,
+    "DOWN": 47.2,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 7.1,
+   "breadth": 0.822,
+   "competitiveRatio": 42.7,
+   "winRate": 38.1
+  },
+  {
+   "teamId": "3EDE33C6-827C-4F2E-8D22-84F5C974ECC3",
+   "name": "North Carolina Central",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.73,
+   "matches": 318,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 118,
+    "EVEN": 63,
+    "DOWN": 72,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 11.3,
+    "UP": 37.1,
+    "EVEN": 19.8,
+    "DOWN": 22.6,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 11.3,
+   "anchorRate": 9.1,
+   "breadth": 0.926,
+   "competitiveRatio": 38.2,
+   "winRate": 47.8
+  },
+  {
+   "teamId": "13AD8FC4-CC06-4030-AD0F-BBA67D27211E",
+   "name": "Howard University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.29,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 99,
+    "EVEN": 86,
+    "DOWN": 88,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 33.1,
+    "EVEN": 28.8,
+    "DOWN": 29.4,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 4,
+   "anchorRate": 4.7,
+   "breadth": 0.843,
+   "competitiveRatio": 42.8,
+   "winRate": 44.8
+  },
+  {
+   "teamId": "F108268F-AB06-4773-B79D-5BA1A3034278",
+   "name": "South Carolina State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.7,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 53,
+    "UP": 178,
+    "EVEN": 29,
+    "DOWN": 32,
+    "ANCHOR": 5
+   },
+   "bandPct": {
+    "STRETCH": 17.8,
+    "UP": 59.9,
+    "EVEN": 9.8,
+    "DOWN": 10.8,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 17.8,
+   "anchorRate": 1.7,
+   "breadth": 0.715,
+   "competitiveRatio": 34,
+   "winRate": 55.6
+  },
+  {
+   "teamId": "8F53692D-38BD-414B-A074-346BA08B3123",
+   "name": "South Carolina State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.5,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 18,
+    "EVEN": 48,
+    "DOWN": 100,
+    "ANCHOR": 103
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 6.1,
+    "EVEN": 16.2,
+    "DOWN": 33.7,
+    "ANCHOR": 34.7
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 34.7,
+   "breadth": 0.883,
+   "competitiveRatio": 39.1,
+   "winRate": 63.6
+  },
+  {
+   "teamId": "BBAD712F-8D4A-482A-818B-E775F739993D",
+   "name": "Coppin State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 21.89,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 230,
+    "UP": 30,
+    "EVEN": 18,
+    "DOWN": 6,
+    "ANCHOR": 2
+   },
+   "bandPct": {
+    "STRETCH": 80.4,
+    "UP": 10.5,
+    "EVEN": 6.3,
+    "DOWN": 2.1,
+    "ANCHOR": 0.7
+   },
+   "stretchRate": 80.4,
+   "anchorRate": 0.7,
+   "breadth": 0.436,
+   "competitiveRatio": 23.1,
+   "winRate": 9.8
+  },
+  {
+   "teamId": "3A34FD57-ED2C-40A8-932B-00BA5253C843",
+   "name": "Howard University",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.6,
+   "matches": 273,
+   "bands": {
+    "STRETCH": 58,
+    "UP": 102,
+    "EVEN": 51,
+    "DOWN": 44,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 21.2,
+    "UP": 37.4,
+    "EVEN": 18.7,
+    "DOWN": 16.1,
+    "ANCHOR": 6.6
+   },
+   "stretchRate": 21.2,
+   "anchorRate": 6.6,
+   "breadth": 0.922,
+   "competitiveRatio": 41.8,
+   "winRate": 30.8
+  },
+  {
+   "teamId": "F9E62CE3-C3B6-4235-9CCC-755AE3A1C53C",
+   "name": "Delaware State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.5,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 155,
+    "EVEN": 62,
+    "DOWN": 44,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 58.1,
+    "EVEN": 23.2,
+    "DOWN": 16.5,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 2.2,
+   "breadth": 0.644,
+   "competitiveRatio": 45.1,
+   "winRate": 47.2
+  },
+  {
+   "teamId": "4F37F867-3126-4623-85F0-CC440DE6658A",
+   "name": "Coppin State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 26.42,
+   "matches": 182,
+   "bands": {
+    "STRETCH": 98,
+    "UP": 76,
+    "EVEN": 0,
+    "DOWN": 8,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.8,
+    "UP": 41.8,
+    "EVEN": 0,
+    "DOWN": 4.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.8,
+   "anchorRate": 0,
+   "breadth": 0.519,
+   "competitiveRatio": 21.7,
+   "winRate": 11
+  }
+ ]
+}

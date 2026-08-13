@@ -1,0 +1,517 @@
+{
+ "conference": "Great Plains Athletic Conference",
+ "slug": "great-plains-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 15,
+ "fingerprint": {
+  "overall": {
+   "matches": 4177,
+   "bands": {
+    "STRETCH": 699,
+    "UP": 1195,
+    "EVEN": 341,
+    "DOWN": 1316,
+    "ANCHOR": 626
+   },
+   "bandPct": {
+    "STRETCH": 16.7,
+    "UP": 28.6,
+    "EVEN": 8.2,
+    "DOWN": 31.5,
+    "ANCHOR": 15
+   },
+   "stretchRate": 16.7,
+   "anchorRate": 15,
+   "breadth": 0.938,
+   "competitiveRatio": 31.5,
+   "winRate": 51.2
+  },
+  "inConference": {
+   "matches": 1818,
+   "bands": {
+    "STRETCH": 381,
+    "UP": 485,
+    "EVEN": 86,
+    "DOWN": 485,
+    "ANCHOR": 381
+   },
+   "bandPct": {
+    "STRETCH": 21,
+    "UP": 26.7,
+    "EVEN": 4.7,
+    "DOWN": 26.7,
+    "ANCHOR": 21
+   },
+   "stretchRate": 21,
+   "anchorRate": 21,
+   "breadth": 0.935,
+   "competitiveRatio": 30.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2359,
+   "bands": {
+    "STRETCH": 318,
+    "UP": 710,
+    "EVEN": 255,
+    "DOWN": 831,
+    "ANCHOR": 245
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 30.1,
+    "EVEN": 10.8,
+    "DOWN": 35.2,
+    "ANCHOR": 10.4
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 10.4,
+   "breadth": 0.916,
+   "competitiveRatio": 32.3,
+   "winRate": 52.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 21,
+  "nonConference": 13.5,
+  "delta": -7.5,
+  "nonConferenceShare": 56.5
+ },
+ "members": [
+  {
+   "teamId": "16EABE33-D973-4AE2-9746-590B26762DD4",
+   "name": "Morningside (Iowa)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 18.37,
+   "matches": 433,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 61,
+    "EVEN": 30,
+    "DOWN": 167,
+    "ANCHOR": 172
+   },
+   "bandPct": {
+    "STRETCH": 0.7,
+    "UP": 14.1,
+    "EVEN": 6.9,
+    "DOWN": 38.6,
+    "ANCHOR": 39.7
+   },
+   "stretchRate": 0.7,
+   "anchorRate": 39.7,
+   "breadth": 0.764,
+   "competitiveRatio": 39.5,
+   "winRate": 79
+  },
+  {
+   "teamId": "FC8C7E32-DFAF-40E7-A566-57FD40380F6D",
+   "name": "Morningside (Iowa)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 24.19,
+   "matches": 401,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 6,
+    "EVEN": 24,
+    "DOWN": 204,
+    "ANCHOR": 167
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 1.5,
+    "EVEN": 6,
+    "DOWN": 50.9,
+    "ANCHOR": 41.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 41.6,
+   "breadth": 0.584,
+   "competitiveRatio": 31.3,
+   "winRate": 77.1
+  },
+  {
+   "teamId": "1DA6CCC2-2BDC-4748-86F6-CD85311BE0EE",
+   "name": "Doane (Neb.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 24.01,
+   "matches": 375,
+   "bands": {
+    "STRETCH": 50,
+    "UP": 187,
+    "EVEN": 34,
+    "DOWN": 59,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 13.3,
+    "UP": 49.9,
+    "EVEN": 9.1,
+    "DOWN": 15.7,
+    "ANCHOR": 12
+   },
+   "stretchRate": 13.3,
+   "anchorRate": 12,
+   "breadth": 0.857,
+   "competitiveRatio": 32.1,
+   "winRate": 40.5
+  },
+  {
+   "teamId": "DA9359DE-5702-4A50-A636-FE412A63ADBA",
+   "name": "Doane (Neb.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.19,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 120,
+    "EVEN": 46,
+    "DOWN": 148,
+    "ANCHOR": 43
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 33.6,
+    "EVEN": 12.9,
+    "DOWN": 41.5,
+    "ANCHOR": 12
+   },
+   "stretchRate": 0,
+   "anchorRate": 12,
+   "breadth": 0.777,
+   "competitiveRatio": 24.6,
+   "winRate": 53.2
+  },
+  {
+   "teamId": "CF311464-919C-4FF3-AE8A-2FD38A73D90D",
+   "name": "Concordia (Neb.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 20.3,
+   "matches": 322,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 55,
+    "EVEN": 6,
+    "DOWN": 142,
+    "ANCHOR": 119
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 17.1,
+    "EVEN": 1.9,
+    "DOWN": 44.1,
+    "ANCHOR": 37
+   },
+   "stretchRate": 0,
+   "anchorRate": 37,
+   "breadth": 0.687,
+   "competitiveRatio": 37.6,
+   "winRate": 58.1
+  },
+  {
+   "teamId": "21892B19-86B4-4963-946B-AF679AFF8F7F",
+   "name": "Northwestern (Iowa)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.94,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 131,
+    "EVEN": 21,
+    "DOWN": 113,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.1,
+    "UP": 42,
+    "EVEN": 6.7,
+    "DOWN": 36.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.1,
+   "anchorRate": 0,
+   "breadth": 0.745,
+   "competitiveRatio": 26.9,
+   "winRate": 48.7
+  },
+  {
+   "teamId": "AFE5FCDE-3D79-41B3-B371-2CDF5ADF6712",
+   "name": "Concordia (Neb.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 26.11,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 42,
+    "EVEN": 23,
+    "DOWN": 198,
+    "ANCHOR": 33
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 13.9,
+    "EVEN": 7.6,
+    "DOWN": 65.6,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 2,
+   "anchorRate": 10.9,
+   "breadth": 0.663,
+   "competitiveRatio": 27.5,
+   "winRate": 63.9
+  },
+  {
+   "teamId": "0A2622AA-6CAB-4C7F-9574-AEC123BA961C",
+   "name": "Midland (Neb.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 21.78,
+   "matches": 282,
+   "bands": {
+    "STRETCH": 49,
+    "UP": 91,
+    "EVEN": 35,
+    "DOWN": 71,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 17.4,
+    "UP": 32.3,
+    "EVEN": 12.4,
+    "DOWN": 25.2,
+    "ANCHOR": 12.8
+   },
+   "stretchRate": 17.4,
+   "anchorRate": 12.8,
+   "breadth": 0.956,
+   "competitiveRatio": 37.9,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "DEA8A9AB-AC9C-46F0-8A31-6EF38F5C0EB0",
+   "name": "Hastings (Neb.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.5,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 37,
+    "UP": 171,
+    "EVEN": 8,
+    "DOWN": 52,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.8,
+    "UP": 63.8,
+    "EVEN": 3,
+    "DOWN": 19.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.8,
+   "anchorRate": 0,
+   "breadth": 0.611,
+   "competitiveRatio": 27.7,
+   "winRate": 36.9
+  },
+  {
+   "teamId": "AA7EF237-5026-4712-B085-51C96819DD8F",
+   "name": "Hastings (Neb.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 28.23,
+   "matches": 223,
+   "bands": {
+    "STRETCH": 144,
+    "UP": 55,
+    "EVEN": 12,
+    "DOWN": 12,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 64.6,
+    "UP": 24.7,
+    "EVEN": 5.4,
+    "DOWN": 5.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 64.6,
+   "anchorRate": 0,
+   "breadth": 0.585,
+   "competitiveRatio": 19.8,
+   "winRate": 15.7
+  },
+  {
+   "teamId": "3C612D55-2DB1-4110-A3A6-23223D2FE7C7",
+   "name": "Mount Marty (S.D.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 28.42,
+   "matches": 222,
+   "bands": {
+    "STRETCH": 163,
+    "UP": 45,
+    "EVEN": 10,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 73.4,
+    "UP": 20.3,
+    "EVEN": 4.5,
+    "DOWN": 1.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 73.4,
+   "anchorRate": 0,
+   "breadth": 0.474,
+   "competitiveRatio": 35.1,
+   "winRate": 47.3
+  },
+  {
+   "teamId": "AB3F9570-166C-450A-AB1C-AC8A03A26F18",
+   "name": "Northwestern (Iowa)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 25.07,
+   "matches": 190,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 54,
+    "EVEN": 18,
+    "DOWN": 53,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 34.2,
+    "UP": 28.4,
+    "EVEN": 9.5,
+    "DOWN": 27.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 34.2,
+   "anchorRate": 0,
+   "breadth": 0.81,
+   "competitiveRatio": 47.1,
+   "winRate": 38.4
+  },
+  {
+   "teamId": "00004748-0DB3-4F48-8C04-DE5B1A149CCE",
+   "name": "Midland (Neb.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 28.72,
+   "matches": 187,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 85,
+    "EVEN": 26,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 25.1,
+    "UP": 45.5,
+    "EVEN": 13.9,
+    "DOWN": 15.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 25.1,
+   "anchorRate": 0,
+   "breadth": 0.788,
+   "competitiveRatio": 22.5,
+   "winRate": 45.5
+  },
+  {
+   "teamId": "C1909FEF-124D-4FEB-83BD-762E31FC0AE8",
+   "name": "Mount Marty (S.D.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 31.65,
+   "matches": 164,
+   "bands": {
+    "STRETCH": 88,
+    "UP": 56,
+    "EVEN": 16,
+    "DOWN": 4,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 53.7,
+    "UP": 34.1,
+    "EVEN": 9.8,
+    "DOWN": 2.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 53.7,
+   "anchorRate": 0,
+   "breadth": 0.633,
+   "competitiveRatio": 22.6,
+   "winRate": 27.4
+  },
+  {
+   "teamId": "0B97004D-ABF1-4A4E-A7A1-47E9E7AC3B47",
+   "name": "Saint Mary (Neb.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 27.45,
+   "matches": 139,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 36,
+    "EVEN": 32,
+    "DOWN": 60,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.9,
+    "EVEN": 23,
+    "DOWN": 43.2,
+    "ANCHOR": 7.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 7.9,
+   "breadth": 0.778,
+   "competitiveRatio": 36,
+   "winRate": 41.7
+  }
+ ]
+}

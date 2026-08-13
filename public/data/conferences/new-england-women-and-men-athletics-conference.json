@@ -1,0 +1,571 @@
+{
+ "conference": "New England Women and Men Athletics Conference",
+ "slug": "new-england-women-and-men-athletics-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5236,
+   "bands": {
+    "STRETCH": 805,
+    "UP": 1375,
+    "EVEN": 699,
+    "DOWN": 1546,
+    "ANCHOR": 811
+   },
+   "bandPct": {
+    "STRETCH": 15.4,
+    "UP": 26.3,
+    "EVEN": 13.3,
+    "DOWN": 29.5,
+    "ANCHOR": 15.5
+   },
+   "stretchRate": 15.4,
+   "anchorRate": 15.5,
+   "breadth": 0.967,
+   "competitiveRatio": 31.6,
+   "winRate": 50.2
+  },
+  "inConference": {
+   "matches": 2454,
+   "bands": {
+    "STRETCH": 616,
+    "UP": 508,
+    "EVEN": 206,
+    "DOWN": 508,
+    "ANCHOR": 616
+   },
+   "bandPct": {
+    "STRETCH": 25.1,
+    "UP": 20.7,
+    "EVEN": 8.4,
+    "DOWN": 20.7,
+    "ANCHOR": 25.1
+   },
+   "stretchRate": 25.1,
+   "anchorRate": 25.1,
+   "breadth": 0.966,
+   "competitiveRatio": 22.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2782,
+   "bands": {
+    "STRETCH": 189,
+    "UP": 867,
+    "EVEN": 493,
+    "DOWN": 1038,
+    "ANCHOR": 195
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 31.2,
+    "EVEN": 17.7,
+    "DOWN": 37.3,
+    "ANCHOR": 7
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 7,
+   "breadth": 0.874,
+   "competitiveRatio": 39.6,
+   "winRate": 50.4
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 25.1,
+  "nonConference": 6.8,
+  "delta": -18.3,
+  "nonConferenceShare": 53.1
+ },
+ "members": [
+  {
+   "teamId": "138A8A79-1E71-4007-8985-A717BA29C4A9",
+   "name": "Babson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 15.94,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 44,
+    "EVEN": 34,
+    "DOWN": 159,
+    "ANCHOR": 159
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 11.1,
+    "EVEN": 8.6,
+    "DOWN": 40.2,
+    "ANCHOR": 40.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 40.2,
+   "breadth": 0.738,
+   "competitiveRatio": 39.6,
+   "winRate": 70.5
+  },
+  {
+   "teamId": "85B136A3-C9A2-4772-A9CB-667D44BE7A79",
+   "name": "Massachusetts Inst. Of Tech.",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 17.46,
+   "matches": 383,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 102,
+    "EVEN": 28,
+    "DOWN": 123,
+    "ANCHOR": 130
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.6,
+    "EVEN": 7.3,
+    "DOWN": 32.1,
+    "ANCHOR": 33.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 33.9,
+   "breadth": 0.792,
+   "competitiveRatio": 43.3,
+   "winRate": 61.4
+  },
+  {
+   "teamId": "561020CE-B911-4D69-A12B-BC9E074A676C",
+   "name": "Babson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.1,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 17,
+    "EVEN": 73,
+    "DOWN": 133,
+    "ANCHOR": 123
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 4.9,
+    "EVEN": 21.1,
+    "DOWN": 38.4,
+    "ANCHOR": 35.5
+   },
+   "stretchRate": 0,
+   "anchorRate": 35.5,
+   "breadth": 0.753,
+   "competitiveRatio": 30.1,
+   "winRate": 72.5
+  },
+  {
+   "teamId": "EB92257F-6F21-48ED-A82D-776861C14E2C",
+   "name": "Massachusetts Inst. Of Tech.",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 20.42,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 33,
+    "EVEN": 76,
+    "DOWN": 132,
+    "ANCHOR": 102
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.6,
+    "EVEN": 22.2,
+    "DOWN": 38.5,
+    "ANCHOR": 29.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 29.7,
+   "breadth": 0.8,
+   "competitiveRatio": 28.9,
+   "winRate": 77.8
+  },
+  {
+   "teamId": "18D57E43-0731-477D-8877-D3A3B0B248AA",
+   "name": "Emerson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.7,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 42,
+    "UP": 99,
+    "EVEN": 52,
+    "DOWN": 107,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 13,
+    "UP": 30.7,
+    "EVEN": 16.1,
+    "DOWN": 33.1,
+    "ANCHOR": 7.1
+   },
+   "stretchRate": 13,
+   "anchorRate": 7.1,
+   "breadth": 0.917,
+   "competitiveRatio": 33.7,
+   "winRate": 44.6
+  },
+  {
+   "teamId": "B7E2C906-332E-4845-8417-87BA8BFCF725",
+   "name": "Wellesley College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 23.14,
+   "matches": 318,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 86,
+    "EVEN": 41,
+    "DOWN": 131,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27,
+    "EVEN": 12.9,
+    "DOWN": 41.2,
+    "ANCHOR": 18.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.9,
+   "breadth": 0.806,
+   "competitiveRatio": 36.9,
+   "winRate": 69.5
+  },
+  {
+   "teamId": "EA5C44B6-21CF-403B-AF04-2349D4ABE32B",
+   "name": "Wheaton College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.11,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 103,
+    "EVEN": 48,
+    "DOWN": 93,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 19.9,
+    "UP": 33,
+    "EVEN": 15.4,
+    "DOWN": 29.8,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 19.9,
+   "anchorRate": 1.9,
+   "breadth": 0.877,
+   "competitiveRatio": 27.9,
+   "winRate": 42.6
+  },
+  {
+   "teamId": "3C9310DE-582D-4D16-9A60-E633ACEBA75E",
+   "name": "Smith College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.12,
+   "matches": 301,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 103,
+    "EVEN": 6,
+    "DOWN": 120,
+    "ANCHOR": 54
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 34.2,
+    "EVEN": 2,
+    "DOWN": 39.9,
+    "ANCHOR": 17.9
+   },
+   "stretchRate": 6,
+   "anchorRate": 17.9,
+   "breadth": 0.8,
+   "competitiveRatio": 27.9,
+   "winRate": 53.5
+  },
+  {
+   "teamId": "CB697597-B512-47FB-82FB-0D9F329FDDF2",
+   "name": "Clark (MA)",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.69,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 36,
+    "EVEN": 63,
+    "DOWN": 105,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 19.7,
+    "UP": 12,
+    "EVEN": 21.1,
+    "DOWN": 35.1,
+    "ANCHOR": 12
+   },
+   "stretchRate": 19.7,
+   "anchorRate": 12,
+   "breadth": 0.948,
+   "competitiveRatio": 40.3,
+   "winRate": 54.8
+  },
+  {
+   "teamId": "A51E5AC2-0415-4D73-9D03-761DC568D593",
+   "name": "Emerson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.85,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 72,
+    "UP": 136,
+    "EVEN": 44,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 24.5,
+    "UP": 46.3,
+    "EVEN": 15,
+    "DOWN": 14.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 24.5,
+   "anchorRate": 0,
+   "breadth": 0.785,
+   "competitiveRatio": 27.2,
+   "winRate": 28.9
+  },
+  {
+   "teamId": "0D507F8A-62FF-480C-BFD9-82C6A700C9C7",
+   "name": "Springfield College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.51,
+   "matches": 294,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 75,
+    "EVEN": 28,
+    "DOWN": 120,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 12.2,
+    "UP": 25.5,
+    "EVEN": 9.5,
+    "DOWN": 40.8,
+    "ANCHOR": 11.9
+   },
+   "stretchRate": 12.2,
+   "anchorRate": 11.9,
+   "breadth": 0.9,
+   "competitiveRatio": 23.5,
+   "winRate": 46.6
+  },
+  {
+   "teamId": "7515FEAC-A414-4684-A592-F104A1CA0627",
+   "name": "Springfield College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.72,
+   "matches": 293,
+   "bands": {
+    "STRETCH": 54,
+    "UP": 60,
+    "EVEN": 41,
+    "DOWN": 78,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 18.4,
+    "UP": 20.5,
+    "EVEN": 14,
+    "DOWN": 26.6,
+    "ANCHOR": 20.5
+   },
+   "stretchRate": 18.4,
+   "anchorRate": 20.5,
+   "breadth": 0.987,
+   "competitiveRatio": 37.2,
+   "winRate": 55.3
+  },
+  {
+   "teamId": "3F9D9AEE-37AF-4DCE-BB99-605C8A6011BC",
+   "name": "Salve Regina",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.4,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 89,
+    "UP": 93,
+    "EVEN": 42,
+    "DOWN": 60,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 31.3,
+    "UP": 32.7,
+    "EVEN": 14.8,
+    "DOWN": 21.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 31.3,
+   "anchorRate": 0,
+   "breadth": 0.833,
+   "competitiveRatio": 22.3,
+   "winRate": 29.2
+  },
+  {
+   "teamId": "AD463CFB-1E3F-4DBD-B4D0-A22DE11348FA",
+   "name": "Wheaton College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.18,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 66,
+    "UP": 30,
+    "EVEN": 69,
+    "DOWN": 89,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 23.8,
+    "UP": 10.8,
+    "EVEN": 24.9,
+    "DOWN": 32.1,
+    "ANCHOR": 8.3
+   },
+   "stretchRate": 23.8,
+   "anchorRate": 8.3,
+   "breadth": 0.932,
+   "competitiveRatio": 45.1,
+   "winRate": 44.8
+  },
+  {
+   "teamId": "6D5C7238-5927-4A6D-958A-094207AE43FE",
+   "name": "Clark (MA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.74,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 90,
+    "UP": 130,
+    "EVEN": 42,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 33.6,
+    "UP": 48.5,
+    "EVEN": 15.7,
+    "DOWN": 2.2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 33.6,
+   "anchorRate": 0,
+   "breadth": 0.679,
+   "competitiveRatio": 16.4,
+   "winRate": 21.3
+  },
+  {
+   "teamId": "3099B27A-954A-4C16-8BC7-D7789A63361C",
+   "name": "Coast Guard",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.71,
+   "matches": 254,
+   "bands": {
+    "STRETCH": 74,
+    "UP": 132,
+    "EVEN": 6,
+    "DOWN": 42,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 29.1,
+    "UP": 52,
+    "EVEN": 2.4,
+    "DOWN": 16.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 29.1,
+   "anchorRate": 0,
+   "breadth": 0.674,
+   "competitiveRatio": 33.1,
+   "winRate": 37.8
+  },
+  {
+   "teamId": "DF9DFCCF-97B1-407E-A76E-D2EBB6BABD43",
+   "name": "Salve Regina",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.47,
+   "matches": 251,
+   "bands": {
+    "STRETCH": 143,
+    "UP": 96,
+    "EVEN": 6,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 57,
+    "UP": 38.2,
+    "EVEN": 2.4,
+    "DOWN": 2.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 57,
+   "anchorRate": 0,
+   "breadth": 0.538,
+   "competitiveRatio": 14,
+   "winRate": 12.4
+  }
+ ]
+}

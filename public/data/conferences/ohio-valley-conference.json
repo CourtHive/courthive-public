@@ -1,0 +1,301 @@
+{
+ "conference": "Ohio Valley Conference",
+ "slug": "ohio-valley-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 7,
+ "fingerprint": {
+  "overall": {
+   "matches": 2106,
+   "bands": {
+    "STRETCH": 218,
+    "UP": 734,
+    "EVEN": 320,
+    "DOWN": 647,
+    "ANCHOR": 187
+   },
+   "bandPct": {
+    "STRETCH": 10.4,
+    "UP": 34.9,
+    "EVEN": 15.2,
+    "DOWN": 30.7,
+    "ANCHOR": 8.9
+   },
+   "stretchRate": 10.4,
+   "anchorRate": 8.9,
+   "breadth": 0.911,
+   "competitiveRatio": 40,
+   "winRate": 43.7
+  },
+  "inConference": {
+   "matches": 634,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 239,
+    "EVEN": 114,
+    "DOWN": 239,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 3.3,
+    "UP": 37.7,
+    "EVEN": 18,
+    "DOWN": 37.7,
+    "ANCHOR": 3.3
+   },
+   "stretchRate": 3.3,
+   "anchorRate": 3.3,
+   "breadth": 0.789,
+   "competitiveRatio": 42,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 1472,
+   "bands": {
+    "STRETCH": 197,
+    "UP": 495,
+    "EVEN": 206,
+    "DOWN": 408,
+    "ANCHOR": 166
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 33.6,
+    "EVEN": 14,
+    "DOWN": 27.7,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 11.3,
+   "breadth": 0.94,
+   "competitiveRatio": 39.2,
+   "winRate": 41
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 3.3,
+  "nonConference": 13.4,
+  "delta": 10.1,
+  "nonConferenceShare": 69.9
+ },
+ "members": [
+  {
+   "teamId": "45C0BCCA-3F99-46FA-AC55-180D7F516F87",
+   "name": "Bryant",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.99,
+   "matches": 357,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 60,
+    "EVEN": 41,
+    "DOWN": 193,
+    "ANCHOR": 57
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 16.8,
+    "EVEN": 11.5,
+    "DOWN": 54.1,
+    "ANCHOR": 16
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 16,
+   "breadth": 0.772,
+   "competitiveRatio": 51,
+   "winRate": 54.9
+  },
+  {
+   "teamId": "DCCF532F-4144-4135-8FE3-5799F435F378",
+   "name": "Southeast Missouri State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.64,
+   "matches": 323,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 169,
+    "EVEN": 56,
+    "DOWN": 71,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 52.3,
+    "EVEN": 17.3,
+    "DOWN": 22,
+    "ANCHOR": 3.4
+   },
+   "stretchRate": 5,
+   "anchorRate": 3.4,
+   "breadth": 0.77,
+   "competitiveRatio": 39.3,
+   "winRate": 49.8
+  },
+  {
+   "teamId": "65DA9B9E-6C04-4F06-A168-1A270B471749",
+   "name": "Western Illinois University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.02,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 97,
+    "EVEN": 114,
+    "DOWN": 84,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 31.6,
+    "EVEN": 37.1,
+    "DOWN": 27.4,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.9,
+   "breadth": 0.754,
+   "competitiveRatio": 42.8,
+   "winRate": 35.8
+  },
+  {
+   "teamId": "BC8B5090-F32C-473E-BACF-9CE9E3D185A4",
+   "name": "Tennessee State University",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 25.06,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 151,
+    "UP": 140,
+    "EVEN": 6,
+    "DOWN": 6,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 49.8,
+    "UP": 46.2,
+    "EVEN": 2,
+    "DOWN": 2,
+    "ANCHOR": 0
+   },
+   "stretchRate": 49.8,
+   "anchorRate": 0,
+   "breadth": 0.534,
+   "competitiveRatio": 31.8,
+   "winRate": 17.5
+  },
+  {
+   "teamId": "B1A6F607-2D55-46D6-9644-57B6A2817125",
+   "name": "Southern Illinois University Edwardsville",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.13,
+   "matches": 297,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 6,
+    "EVEN": 16,
+    "DOWN": 187,
+    "ANCHOR": 85
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 2,
+    "EVEN": 5.4,
+    "DOWN": 63,
+    "ANCHOR": 28.6
+   },
+   "stretchRate": 1,
+   "anchorRate": 28.6,
+   "breadth": 0.579,
+   "competitiveRatio": 38.4,
+   "winRate": 73.7
+  },
+  {
+   "teamId": "456D383F-E113-411D-B1EB-2978200200E1",
+   "name": "Southern Indiana",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.97,
+   "matches": 268,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 186,
+    "EVEN": 0,
+    "DOWN": 30,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 13.4,
+    "UP": 69.4,
+    "EVEN": 0,
+    "DOWN": 11.2,
+    "ANCHOR": 6
+   },
+   "stretchRate": 13.4,
+   "anchorRate": 6,
+   "breadth": 0.582,
+   "competitiveRatio": 32.1,
+   "winRate": 31.3
+  },
+  {
+   "teamId": "9E65742C-3A6D-4693-82AD-B576E580FE93",
+   "name": "Lindenwood",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.05,
+   "matches": 251,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 76,
+    "EVEN": 87,
+    "DOWN": 76,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 2.4,
+    "UP": 30.3,
+    "EVEN": 34.7,
+    "DOWN": 30.3,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 2.4,
+   "anchorRate": 2.4,
+   "breadth": 0.789,
+   "competitiveRatio": 42.2,
+   "winRate": 38.6
+  }
+ ]
+}

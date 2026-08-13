@@ -1,0 +1,382 @@
+{
+ "conference": "Big South Conference",
+ "slug": "big-south-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 10,
+ "fingerprint": {
+  "overall": {
+   "matches": 3074,
+   "bands": {
+    "STRETCH": 227,
+    "UP": 1118,
+    "EVEN": 610,
+    "DOWN": 1008,
+    "ANCHOR": 111
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 36.4,
+    "EVEN": 19.8,
+    "DOWN": 32.8,
+    "ANCHOR": 3.6
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 3.6,
+   "breadth": 0.849,
+   "competitiveRatio": 47.3,
+   "winRate": 50.6
+  },
+  "inConference": {
+   "matches": 660,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 228,
+    "EVEN": 204,
+    "DOWN": 228,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 34.5,
+    "EVEN": 30.9,
+    "DOWN": 34.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.682,
+   "competitiveRatio": 53.2,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2414,
+   "bands": {
+    "STRETCH": 227,
+    "UP": 890,
+    "EVEN": 406,
+    "DOWN": 780,
+    "ANCHOR": 111
+   },
+   "bandPct": {
+    "STRETCH": 9.4,
+    "UP": 36.9,
+    "EVEN": 16.8,
+    "DOWN": 32.3,
+    "ANCHOR": 4.6
+   },
+   "stretchRate": 9.4,
+   "anchorRate": 4.6,
+   "breadth": 0.868,
+   "competitiveRatio": 45.7,
+   "winRate": 50.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 9.4,
+  "delta": 9.4,
+  "nonConferenceShare": 78.5
+ },
+ "members": [
+  {
+   "teamId": "6F6164DC-CE2A-4008-9E0D-65F8CF093470",
+   "name": "Gardner-Webb",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.7,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 127,
+    "EVEN": 67,
+    "DOWN": 167,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 4.7,
+    "UP": 33,
+    "EVEN": 17.4,
+    "DOWN": 43.4,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 4.7,
+   "anchorRate": 1.6,
+   "breadth": 0.771,
+   "competitiveRatio": 50,
+   "winRate": 69.4
+  },
+  {
+   "teamId": "EBB63AA8-5ADB-43F8-8889-9F98D662ECA3",
+   "name": "Presbyterian",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.24,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 176,
+    "EVEN": 88,
+    "DOWN": 76,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 49.6,
+    "EVEN": 24.8,
+    "DOWN": 21.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 0,
+   "breadth": 0.719,
+   "competitiveRatio": 47.6,
+   "winRate": 39.7
+  },
+  {
+   "teamId": "8025D0AF-4520-4D93-9B9E-238075F9E756",
+   "name": "UNC Asheville",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.57,
+   "matches": 346,
+   "bands": {
+    "STRETCH": 63,
+    "UP": 166,
+    "EVEN": 40,
+    "DOWN": 53,
+    "ANCHOR": 24
+   },
+   "bandPct": {
+    "STRETCH": 18.2,
+    "UP": 48,
+    "EVEN": 11.6,
+    "DOWN": 15.3,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 18.2,
+   "anchorRate": 6.9,
+   "breadth": 0.86,
+   "competitiveRatio": 43.9,
+   "winRate": 55.5
+  },
+  {
+   "teamId": "B50DCDBD-A074-4CC5-868F-8608ECD2A56D",
+   "name": "Presbyterian",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.62,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 36,
+    "UP": 116,
+    "EVEN": 60,
+    "DOWN": 107,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 11.1,
+    "UP": 35.7,
+    "EVEN": 18.5,
+    "DOWN": 32.9,
+    "ANCHOR": 1.8
+   },
+   "stretchRate": 11.1,
+   "anchorRate": 1.8,
+   "breadth": 0.847,
+   "competitiveRatio": 45.2,
+   "winRate": 40.3
+  },
+  {
+   "teamId": "791E25D1-B248-4D38-89AC-421004A9DC26",
+   "name": "Bryant",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.66,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 32,
+    "UP": 103,
+    "EVEN": 44,
+    "DOWN": 121,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 33,
+    "EVEN": 14.1,
+    "DOWN": 38.8,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 3.8,
+   "breadth": 0.85,
+   "competitiveRatio": 44.7,
+   "winRate": 45.2
+  },
+  {
+   "teamId": "74C02B3D-42C8-4EFB-B581-18164D59727F",
+   "name": "UNC Asheville",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.36,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 142,
+    "EVEN": 97,
+    "DOWN": 62,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 45.8,
+    "EVEN": 31.3,
+    "DOWN": 20,
+    "ANCHOR": 1.9
+   },
+   "stretchRate": 1,
+   "anchorRate": 1.9,
+   "breadth": 0.723,
+   "competitiveRatio": 49.4,
+   "winRate": 63.2
+  },
+  {
+   "teamId": "C1D8FE55-DB12-4865-8D8B-5A212D7CA16F",
+   "name": "Longwood",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.64,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 23,
+    "EVEN": 39,
+    "DOWN": 174,
+    "ANCHOR": 38
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 8.2,
+    "EVEN": 13.9,
+    "DOWN": 62.1,
+    "ANCHOR": 13.6
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 13.6,
+   "breadth": 0.701,
+   "competitiveRatio": 48.4,
+   "winRate": 50.7
+  },
+  {
+   "teamId": "B81CC098-CFCC-48A4-B52F-F07BCC9CA2A3",
+   "name": "Charleston Southern",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.77,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 65,
+    "EVEN": 14,
+    "DOWN": 167,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 9,
+    "UP": 23.5,
+    "EVEN": 5.1,
+    "DOWN": 60.3,
+    "ANCHOR": 2.2
+   },
+   "stretchRate": 9,
+   "anchorRate": 2.2,
+   "breadth": 0.681,
+   "competitiveRatio": 48.4,
+   "winRate": 60.6
+  },
+  {
+   "teamId": "3ECB4B55-6C61-486B-92A5-B8FDE7F7683C",
+   "name": "Longwood",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.84,
+   "matches": 275,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 94,
+    "EVEN": 86,
+    "DOWN": 76,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 2.2,
+    "UP": 34.2,
+    "EVEN": 31.3,
+    "DOWN": 27.6,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 2.2,
+   "anchorRate": 4.7,
+   "breadth": 0.816,
+   "competitiveRatio": 47.3,
+   "winRate": 36
+  },
+  {
+   "teamId": "07843DB8-A465-4C37-A0B1-82D20AC3CC4B",
+   "name": "Gardner-Webb",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.18,
+   "matches": 209,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 106,
+    "EVEN": 75,
+    "DOWN": 5,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 11,
+    "UP": 50.7,
+    "EVEN": 35.9,
+    "DOWN": 2.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 11,
+   "anchorRate": 0,
+   "breadth": 0.649,
+   "competitiveRatio": 48.6,
+   "winRate": 36.8
+  }
+ ]
+}

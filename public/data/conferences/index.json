@@ -1,0 +1,1886 @@
+{
+ "generatedFor": "courthive-public conference pages",
+ "threshold": 4,
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "conferences": [
+  {
+   "conference": "Southeastern Conference",
+   "slug": "southeastern-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 31,
+   "matches": 12461,
+   "stretchRate": 0.7,
+   "anchorRate": 15.9,
+   "breadth": 0.836,
+   "competitiveRatio": 48.7,
+   "nonConferenceShare": 42.4
+  },
+  {
+   "conference": "Atlantic Coast Conference",
+   "slug": "atlantic-coast-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 33,
+   "matches": 12327,
+   "stretchRate": 1.9,
+   "anchorRate": 15,
+   "breadth": 0.868,
+   "competitiveRatio": 46.8,
+   "nonConferenceShare": 47.7
+  },
+  {
+   "conference": "Big Ten Conference",
+   "slug": "big-ten-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 31,
+   "matches": 11038,
+   "stretchRate": 1.3,
+   "anchorRate": 10.1,
+   "breadth": 0.828,
+   "competitiveRatio": 48.6,
+   "nonConferenceShare": 51.4
+  },
+  {
+   "conference": "Conference Carolinas",
+   "slug": "conference-carolinas",
+   "divisions": [
+    "DIV_II",
+    "DIV_III"
+   ],
+   "programCount": 27,
+   "matches": 9367,
+   "stretchRate": 9.3,
+   "anchorRate": 9.4,
+   "breadth": 0.906,
+   "competitiveRatio": 41.2,
+   "nonConferenceShare": 49.1
+  },
+  {
+   "conference": "Big 12 Conference",
+   "slug": "big-12-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 25,
+   "matches": 8663,
+   "stretchRate": 2,
+   "anchorRate": 12.8,
+   "breadth": 0.842,
+   "competitiveRatio": 46.7,
+   "nonConferenceShare": 56.4
+  },
+  {
+   "conference": "American Athletic Conference",
+   "slug": "american-athletic-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 24,
+   "matches": 8033,
+   "stretchRate": 3.5,
+   "anchorRate": 7.1,
+   "breadth": 0.839,
+   "competitiveRatio": 48.8,
+   "nonConferenceShare": 71.9
+  },
+  {
+   "conference": "Kansas Collegiate Athletic Conference",
+   "slug": "kansas-collegiate-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 26,
+   "matches": 7544,
+   "stretchRate": 13.5,
+   "anchorRate": 9.8,
+   "breadth": 0.907,
+   "competitiveRatio": 30.6,
+   "nonConferenceShare": 34.8
+  },
+  {
+   "conference": "Minnesota Intercollegiate Athletic Conference",
+   "slug": "minnesota-intercollegiate-athletic-conference",
+   "divisions": [
+    "DIV_III",
+    "DIV_I"
+   ],
+   "programCount": 21,
+   "matches": 7458,
+   "stretchRate": 8.9,
+   "anchorRate": 15.8,
+   "breadth": 0.922,
+   "competitiveRatio": 35.5,
+   "nonConferenceShare": 54
+  },
+  {
+   "conference": "New England Small College Athletic Conference",
+   "slug": "new-england-small-college-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 22,
+   "matches": 7321,
+   "stretchRate": 9.4,
+   "anchorRate": 14.1,
+   "breadth": 0.918,
+   "competitiveRatio": 42.9,
+   "nonConferenceShare": 41.4
+  },
+  {
+   "conference": "Pacific West Conference",
+   "slug": "pacific-west-conference",
+   "divisions": [
+    "DIV_II",
+    "NAIA"
+   ],
+   "programCount": 24,
+   "matches": 7247,
+   "stretchRate": 11.2,
+   "anchorRate": 11.5,
+   "breadth": 0.923,
+   "competitiveRatio": 40.1,
+   "nonConferenceShare": 33.4
+  },
+  {
+   "conference": "Atlantic 10 Conference",
+   "slug": "atlantic-10-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 23,
+   "matches": 7223,
+   "stretchRate": 5.8,
+   "anchorRate": 5.4,
+   "breadth": 0.84,
+   "competitiveRatio": 44.3,
+   "nonConferenceShare": 72.4
+  },
+  {
+   "conference": "Sun Belt Conference",
+   "slug": "sun-belt-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 22,
+   "matches": 6856,
+   "stretchRate": 5.3,
+   "anchorRate": 5.8,
+   "breadth": 0.848,
+   "competitiveRatio": 46.1,
+   "nonConferenceShare": 61.5
+  },
+  {
+   "conference": "Lone Star Conference",
+   "slug": "lone-star-conference",
+   "divisions": [
+    "DIV_II",
+    "DIV_III"
+   ],
+   "programCount": 19,
+   "matches": 6759,
+   "stretchRate": 11.6,
+   "anchorRate": 11.8,
+   "breadth": 0.931,
+   "competitiveRatio": 41.6,
+   "nonConferenceShare": 57.9
+  },
+  {
+   "conference": "Old Dominion Athletic Conference",
+   "slug": "old-dominion-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 22,
+   "matches": 6742,
+   "stretchRate": 11.2,
+   "anchorRate": 10.9,
+   "breadth": 0.926,
+   "competitiveRatio": 28.8,
+   "nonConferenceShare": 44.4
+  },
+  {
+   "conference": "Coastal Athletic Association",
+   "slug": "coastal-athletic-association",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 21,
+   "matches": 6607,
+   "stretchRate": 6.8,
+   "anchorRate": 7.2,
+   "breadth": 0.853,
+   "competitiveRatio": 46.6,
+   "nonConferenceShare": 72.1
+  },
+  {
+   "conference": "South Atlantic Conference",
+   "slug": "south-atlantic-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 23,
+   "matches": 6607,
+   "stretchRate": 13.2,
+   "anchorRate": 14.2,
+   "breadth": 0.949,
+   "competitiveRatio": 37.5,
+   "nonConferenceShare": 46.3
+  },
+  {
+   "conference": "Mountain West Conference",
+   "slug": "mountain-west-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 20,
+   "matches": 6540,
+   "stretchRate": 1.6,
+   "anchorRate": 4.5,
+   "breadth": 0.776,
+   "competitiveRatio": 49.1,
+   "nonConferenceShare": 59.6
+  },
+  {
+   "conference": "American Rivers Conference",
+   "slug": "american-rivers-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 18,
+   "matches": 6477,
+   "stretchRate": 11.1,
+   "anchorRate": 8.7,
+   "breadth": 0.908,
+   "competitiveRatio": 31.4,
+   "nonConferenceShare": 57.6
+  },
+  {
+   "conference": "Centennial Conference",
+   "slug": "centennial-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 19,
+   "matches": 6402,
+   "stretchRate": 9.6,
+   "anchorRate": 12.9,
+   "breadth": 0.918,
+   "competitiveRatio": 35.3,
+   "nonConferenceShare": 56.7
+  },
+  {
+   "conference": "Big East Conference",
+   "slug": "big-east-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 18,
+   "matches": 6349,
+   "stretchRate": 8.3,
+   "anchorRate": 4.7,
+   "breadth": 0.864,
+   "competitiveRatio": 47.7,
+   "nonConferenceShare": 66.4
+  },
+  {
+   "conference": "Middle Atlantic Conference",
+   "slug": "middle-atlantic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 25,
+   "matches": 6258,
+   "stretchRate": 13.6,
+   "anchorRate": 8,
+   "breadth": 0.906,
+   "competitiveRatio": 28.4,
+   "nonConferenceShare": 52.8
+  },
+  {
+   "conference": "Sunshine State Conference",
+   "slug": "sunshine-state-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 18,
+   "matches": 6257,
+   "stretchRate": 5.9,
+   "anchorRate": 14,
+   "breadth": 0.88,
+   "competitiveRatio": 41.4,
+   "nonConferenceShare": 50.2
+  },
+  {
+   "conference": "Patriot League",
+   "slug": "patriot-league",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 18,
+   "matches": 6223,
+   "stretchRate": 7.7,
+   "anchorRate": 6.7,
+   "breadth": 0.852,
+   "competitiveRatio": 43,
+   "nonConferenceShare": 67.2
+  },
+  {
+   "conference": "Great Lakes Valley Conference",
+   "slug": "great-lakes-valley-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 21,
+   "matches": 6218,
+   "stretchRate": 10.8,
+   "anchorRate": 8.3,
+   "breadth": 0.905,
+   "competitiveRatio": 43.9,
+   "nonConferenceShare": 53.9
+  },
+  {
+   "conference": "Great Midwest Athletic Conference",
+   "slug": "great-midwest-athletic-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 19,
+   "matches": 6158,
+   "stretchRate": 10.4,
+   "anchorRate": 10.5,
+   "breadth": 0.897,
+   "competitiveRatio": 36.5,
+   "nonConferenceShare": 56.2
+  },
+  {
+   "conference": "Southern Conference",
+   "slug": "southern-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 16,
+   "matches": 5976,
+   "stretchRate": 8.2,
+   "anchorRate": 4.4,
+   "breadth": 0.866,
+   "competitiveRatio": 48.4,
+   "nonConferenceShare": 61.2
+  },
+  {
+   "conference": "Crossroads League",
+   "slug": "crossroads-league",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 20,
+   "matches": 5876,
+   "stretchRate": 12.8,
+   "anchorRate": 16.1,
+   "breadth": 0.947,
+   "competitiveRatio": 32.7,
+   "nonConferenceShare": 47.2
+  },
+  {
+   "conference": "Big West Conference",
+   "slug": "big-west-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 17,
+   "matches": 5846,
+   "stretchRate": 6.4,
+   "anchorRate": 6.9,
+   "breadth": 0.885,
+   "competitiveRatio": 49,
+   "nonConferenceShare": 57.3
+  },
+  {
+   "conference": "Southland Conference",
+   "slug": "southland-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 18,
+   "matches": 5841,
+   "stretchRate": 7.7,
+   "anchorRate": 12.5,
+   "breadth": 0.913,
+   "competitiveRatio": 43,
+   "nonConferenceShare": 58.7
+  },
+  {
+   "conference": "Landmark Conference",
+   "slug": "landmark-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 20,
+   "matches": 5829,
+   "stretchRate": 6.1,
+   "anchorRate": 7.4,
+   "breadth": 0.841,
+   "competitiveRatio": 28.6,
+   "nonConferenceShare": 43.9
+  },
+  {
+   "conference": "Upper Midwest Athletic Conference",
+   "slug": "upper-midwest-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 20,
+   "matches": 5821,
+   "stretchRate": 15,
+   "anchorRate": 5.7,
+   "breadth": 0.871,
+   "competitiveRatio": 28.5,
+   "nonConferenceShare": 70.7
+  },
+  {
+   "conference": "Metro Atlantic Athletic Conference",
+   "slug": "metro-atlantic-athletic-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 18,
+   "matches": 5798,
+   "stretchRate": 12.1,
+   "anchorRate": 4.4,
+   "breadth": 0.865,
+   "competitiveRatio": 45.2,
+   "nonConferenceShare": 57.9
+  },
+  {
+   "conference": "Big Sky Conference",
+   "slug": "big-sky-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 17,
+   "matches": 5722,
+   "stretchRate": 5.2,
+   "anchorRate": 9.1,
+   "breadth": 0.865,
+   "competitiveRatio": 51.4,
+   "nonConferenceShare": 54
+  },
+  {
+   "conference": "Ivy League",
+   "slug": "ivy-league",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 16,
+   "matches": 5708,
+   "stretchRate": 0.5,
+   "anchorRate": 13.3,
+   "breadth": 0.822,
+   "competitiveRatio": 49.1,
+   "nonConferenceShare": 61.5
+  },
+  {
+   "conference": "University Athletic Association",
+   "slug": "university-athletic-association",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 16,
+   "matches": 5600,
+   "stretchRate": 4.1,
+   "anchorRate": 24.2,
+   "breadth": 0.892,
+   "competitiveRatio": 39.9,
+   "nonConferenceShare": 78
+  },
+  {
+   "conference": "Conference USA",
+   "slug": "conference-usa",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 17,
+   "matches": 5549,
+   "stretchRate": 3.6,
+   "anchorRate": 9.3,
+   "breadth": 0.869,
+   "competitiveRatio": 45.2,
+   "nonConferenceShare": 84.6
+  },
+  {
+   "conference": "Michigan Intercollegiate Athletic Association",
+   "slug": "michigan-intercollegiate-athletic-association",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 17,
+   "matches": 5473,
+   "stretchRate": 11.3,
+   "anchorRate": 11.1,
+   "breadth": 0.914,
+   "competitiveRatio": 28.7,
+   "nonConferenceShare": 53.5
+  },
+  {
+   "conference": "West Coast Conference",
+   "slug": "west-coast-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 17,
+   "matches": 5431,
+   "stretchRate": 6.3,
+   "anchorRate": 5.9,
+   "breadth": 0.864,
+   "competitiveRatio": 48.1,
+   "nonConferenceShare": 67.4
+  },
+  {
+   "conference": "College Conference of Illinois and Wisconsin",
+   "slug": "college-conference-of-illinois-and-wisconsin",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 17,
+   "matches": 5423,
+   "stretchRate": 10.1,
+   "anchorRate": 8.7,
+   "breadth": 0.887,
+   "competitiveRatio": 35.3,
+   "nonConferenceShare": 56.4
+  },
+  {
+   "conference": "Liberty League",
+   "slug": "liberty-league",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 17,
+   "matches": 5369,
+   "stretchRate": 6.8,
+   "anchorRate": 10,
+   "breadth": 0.898,
+   "competitiveRatio": 37.5,
+   "nonConferenceShare": 53.7
+  },
+  {
+   "conference": "Gulf South Conference",
+   "slug": "gulf-south-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 16,
+   "matches": 5253,
+   "stretchRate": 5,
+   "anchorRate": 11.1,
+   "breadth": 0.869,
+   "competitiveRatio": 44.6,
+   "nonConferenceShare": 58.3
+  },
+  {
+   "conference": "American Southwest Conference",
+   "slug": "american-southwest-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 18,
+   "matches": 5243,
+   "stretchRate": 17,
+   "anchorRate": 9.1,
+   "breadth": 0.917,
+   "competitiveRatio": 31.2,
+   "nonConferenceShare": 65
+  },
+  {
+   "conference": "Southern California Intercollegiate Athletic Conference",
+   "slug": "southern-california-intercollegiate-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 16,
+   "matches": 5242,
+   "stretchRate": 12,
+   "anchorRate": 14.5,
+   "breadth": 0.938,
+   "competitiveRatio": 42.2,
+   "nonConferenceShare": 60.5
+  },
+  {
+   "conference": "New England Women and Men Athletics Conference",
+   "slug": "new-england-women-and-men-athletics-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 17,
+   "matches": 5236,
+   "stretchRate": 15.4,
+   "anchorRate": 15.5,
+   "breadth": 0.967,
+   "competitiveRatio": 31.6,
+   "nonConferenceShare": 53.1
+  },
+  {
+   "conference": "Pennsylvania State Athletic Conference",
+   "slug": "pennsylvania-state-athletic-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 18,
+   "matches": 5130,
+   "stretchRate": 12.7,
+   "anchorRate": 8.1,
+   "breadth": 0.914,
+   "competitiveRatio": 31.8,
+   "nonConferenceShare": 59.3
+  },
+  {
+   "conference": "North Coast Atlantic Conference",
+   "slug": "north-coast-atlantic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 15,
+   "matches": 5105,
+   "stretchRate": 16.6,
+   "anchorRate": 18.7,
+   "breadth": 0.955,
+   "competitiveRatio": 31.6,
+   "nonConferenceShare": 63.8
+  },
+  {
+   "conference": "Northeast Conference",
+   "slug": "northeast-conference",
+   "divisions": [
+    "DIV_I",
+    "DIV_II"
+   ],
+   "programCount": 16,
+   "matches": 5072,
+   "stretchRate": 6.5,
+   "anchorRate": 4.8,
+   "breadth": 0.852,
+   "competitiveRatio": 44.4,
+   "nonConferenceShare": 66
+  },
+  {
+   "conference": "Midwest Conference",
+   "slug": "midwest-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 4974,
+   "stretchRate": 11.8,
+   "anchorRate": 12.8,
+   "breadth": 0.927,
+   "competitiveRatio": 29.1,
+   "nonConferenceShare": 67.8
+  },
+  {
+   "conference": "Great Lakes Intercollegiate Athletic Conference",
+   "slug": "great-lakes-intercollegiate-athletic-conference",
+   "divisions": [
+    "DIV_II",
+    "NAIA"
+   ],
+   "programCount": 15,
+   "matches": 4881,
+   "stretchRate": 5.6,
+   "anchorRate": 9.1,
+   "breadth": 0.861,
+   "competitiveRatio": 44.8,
+   "nonConferenceShare": 63.2
+  },
+  {
+   "conference": "Presidents Athletic Conference",
+   "slug": "presidents-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 17,
+   "matches": 4827,
+   "stretchRate": 8.9,
+   "anchorRate": 7.5,
+   "breadth": 0.875,
+   "competitiveRatio": 23.5,
+   "nonConferenceShare": 46.5
+  },
+  {
+   "conference": "Western Athletic Conference",
+   "slug": "western-athletic-conference",
+   "divisions": [
+    "DIV_II",
+    "DIV_I"
+   ],
+   "programCount": 14,
+   "matches": 4808,
+   "stretchRate": 8.3,
+   "anchorRate": 9.5,
+   "breadth": 0.91,
+   "competitiveRatio": 44,
+   "nonConferenceShare": 90.1
+  },
+  {
+   "conference": "Northern Athletic Collegiate Conference",
+   "slug": "northern-athletic-collegiate-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 16,
+   "matches": 4755,
+   "stretchRate": 15.5,
+   "anchorRate": 6.6,
+   "breadth": 0.881,
+   "competitiveRatio": 27.3,
+   "nonConferenceShare": 53.4
+  },
+  {
+   "conference": "Mid America Intercollegiate Athletics Association",
+   "slug": "mid-america-intercollegiate-athletics-association",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 14,
+   "matches": 4672,
+   "stretchRate": 3.7,
+   "anchorRate": 10.4,
+   "breadth": 0.844,
+   "competitiveRatio": 46.9,
+   "nonConferenceShare": 63.7
+  },
+  {
+   "conference": "Northwest Conference",
+   "slug": "northwest-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 4663,
+   "stretchRate": 12.1,
+   "anchorRate": 4.9,
+   "breadth": 0.877,
+   "competitiveRatio": 34.1,
+   "nonConferenceShare": 39.7
+  },
+  {
+   "conference": "Southern States Athletic Conference",
+   "slug": "southern-states-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 16,
+   "matches": 4547,
+   "stretchRate": 12,
+   "anchorRate": 12.6,
+   "breadth": 0.923,
+   "competitiveRatio": 36.5,
+   "nonConferenceShare": 62.7
+  },
+  {
+   "conference": "Peach Belt Conference",
+   "slug": "peach-belt-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 13,
+   "matches": 4489,
+   "stretchRate": 4,
+   "anchorRate": 9.4,
+   "breadth": 0.839,
+   "competitiveRatio": 46.3,
+   "nonConferenceShare": 63.6
+  },
+  {
+   "conference": "Summit League",
+   "slug": "summit-league",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 13,
+   "matches": 4488,
+   "stretchRate": 9.2,
+   "anchorRate": 5.6,
+   "breadth": 0.895,
+   "competitiveRatio": 48.1,
+   "nonConferenceShare": 68.4
+  },
+  {
+   "conference": "Heartland Collegiate Athletic Conference",
+   "slug": "heartland-collegiate-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 15,
+   "matches": 4464,
+   "stretchRate": 12.4,
+   "anchorRate": 9.6,
+   "breadth": 0.935,
+   "competitiveRatio": 29.7,
+   "nonConferenceShare": 60
+  },
+  {
+   "conference": "Collegiate Conference of the South",
+   "slug": "collegiate-conference-of-the-south",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 4418,
+   "stretchRate": 16.3,
+   "anchorRate": 8.6,
+   "breadth": 0.927,
+   "competitiveRatio": 27.1,
+   "nonConferenceShare": 64.1
+  },
+  {
+   "conference": "Mid South Conference",
+   "slug": "mid-south-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 14,
+   "matches": 4364,
+   "stretchRate": 15.4,
+   "anchorRate": 11.9,
+   "breadth": 0.927,
+   "competitiveRatio": 36,
+   "nonConferenceShare": 57.4
+  },
+  {
+   "conference": "Conference of New England",
+   "slug": "conference-of-new-england",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 15,
+   "matches": 4331,
+   "stretchRate": 18.8,
+   "anchorRate": 12.8,
+   "breadth": 0.938,
+   "competitiveRatio": 26.4,
+   "nonConferenceShare": 58.2
+  },
+  {
+   "conference": "Region 23",
+   "slug": "region-23",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 16,
+   "matches": 4313,
+   "stretchRate": 19.2,
+   "anchorRate": 9.7,
+   "breadth": 0.934,
+   "competitiveRatio": 24.4,
+   "nonConferenceShare": 50.3
+  },
+  {
+   "conference": "Southern Athletic Association",
+   "slug": "southern-athletic-association",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 4213,
+   "stretchRate": 18.4,
+   "anchorRate": 9.6,
+   "breadth": 0.937,
+   "competitiveRatio": 34.8,
+   "nonConferenceShare": 66.9
+  },
+  {
+   "conference": "Great Plains Athletic Conference",
+   "slug": "great-plains-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 15,
+   "matches": 4177,
+   "stretchRate": 16.7,
+   "anchorRate": 15,
+   "breadth": 0.938,
+   "competitiveRatio": 31.5,
+   "nonConferenceShare": 56.5
+  },
+  {
+   "conference": "Atlantic Sun Conference",
+   "slug": "atlantic-sun-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 12,
+   "matches": 4140,
+   "stretchRate": 10.6,
+   "anchorRate": 8.2,
+   "breadth": 0.911,
+   "competitiveRatio": 47.4,
+   "nonConferenceShare": 77.1
+  },
+  {
+   "conference": "Northeast 10 Conference",
+   "slug": "northeast-10-conference",
+   "divisions": [
+    "DIV_I",
+    "DIV_II"
+   ],
+   "programCount": 14,
+   "matches": 4066,
+   "stretchRate": 7.7,
+   "anchorRate": 4.3,
+   "breadth": 0.85,
+   "competitiveRatio": 39,
+   "nonConferenceShare": 41.8
+  },
+  {
+   "conference": "Mid Eastern Athletic Conference",
+   "slug": "mid-eastern-athletic-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 13,
+   "matches": 4052,
+   "stretchRate": 16.6,
+   "anchorRate": 10.5,
+   "breadth": 0.963,
+   "competitiveRatio": 38.7,
+   "nonConferenceShare": 62.7
+  },
+  {
+   "conference": "Appalachian Athletic Conference",
+   "slug": "appalachian-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 17,
+   "matches": 4009,
+   "stretchRate": 21.6,
+   "anchorRate": 16.5,
+   "breadth": 0.971,
+   "competitiveRatio": 28.4,
+   "nonConferenceShare": 49.2
+  },
+  {
+   "conference": "Southern Collegiate Athletic Conference",
+   "slug": "southern-collegiate-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 3952,
+   "stretchRate": 12.2,
+   "anchorRate": 13.1,
+   "breadth": 0.928,
+   "competitiveRatio": 33.8,
+   "nonConferenceShare": 76.4
+  },
+  {
+   "conference": "Mountain East Conference",
+   "slug": "mountain-east-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 14,
+   "matches": 3932,
+   "stretchRate": 6.3,
+   "anchorRate": 11.8,
+   "breadth": 0.88,
+   "competitiveRatio": 40.3,
+   "nonConferenceShare": 62.8
+  },
+  {
+   "conference": "Wisconsin Intercollegiate Athletic Conference",
+   "slug": "wisconsin-intercollegiate-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 11,
+   "matches": 3842,
+   "stretchRate": 7.6,
+   "anchorRate": 11.1,
+   "breadth": 0.879,
+   "competitiveRatio": 32.4,
+   "nonConferenceShare": 71.1
+  },
+  {
+   "conference": "Mid-American Conference",
+   "slug": "mid-american-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 10,
+   "matches": 3830,
+   "stretchRate": 4,
+   "anchorRate": 3,
+   "breadth": 0.799,
+   "competitiveRatio": 53.2,
+   "nonConferenceShare": 69.3
+  },
+  {
+   "conference": "Horizon League",
+   "slug": "horizon-league",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 11,
+   "matches": 3723,
+   "stretchRate": 16.9,
+   "anchorRate": 7.4,
+   "breadth": 0.928,
+   "competitiveRatio": 48.9,
+   "nonConferenceShare": 74.9
+  },
+  {
+   "conference": "Red River Athletic Conference",
+   "slug": "red-river-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 11,
+   "matches": 3489,
+   "stretchRate": 6.2,
+   "anchorRate": 10.8,
+   "breadth": 0.897,
+   "competitiveRatio": 35.7,
+   "nonConferenceShare": 79
+  },
+  {
+   "conference": "Western State Conference",
+   "slug": "western-state-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 12,
+   "matches": 3471,
+   "stretchRate": 5.2,
+   "anchorRate": 9.4,
+   "breadth": 0.882,
+   "competitiveRatio": 29.1,
+   "nonConferenceShare": 34
+  },
+  {
+   "conference": "United East Conference",
+   "slug": "united-east-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 16,
+   "matches": 3470,
+   "stretchRate": 6.2,
+   "anchorRate": 3.8,
+   "breadth": 0.796,
+   "competitiveRatio": 25.7,
+   "nonConferenceShare": 49
+  },
+  {
+   "conference": "Southwestern Athletic Conference",
+   "slug": "southwestern-athletic-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 15,
+   "matches": 3356,
+   "stretchRate": 37,
+   "anchorRate": 6.9,
+   "breadth": 0.863,
+   "competitiveRatio": 24.4,
+   "nonConferenceShare": 66
+  },
+  {
+   "conference": "USA South Athletic Conference",
+   "slug": "usa-south-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 12,
+   "matches": 3325,
+   "stretchRate": 15.5,
+   "anchorRate": 11,
+   "breadth": 0.896,
+   "competitiveRatio": 29.4,
+   "nonConferenceShare": 61.3
+  },
+  {
+   "conference": "Ohio Athletic Conference",
+   "slug": "ohio-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 11,
+   "matches": 3302,
+   "stretchRate": 10.3,
+   "anchorRate": 6.4,
+   "breadth": 0.9,
+   "competitiveRatio": 29.3,
+   "nonConferenceShare": 70.7
+  },
+  {
+   "conference": "Northern Sun Intercollegiate Conference",
+   "slug": "northern-sun-intercollegiate-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 12,
+   "matches": 3207,
+   "stretchRate": 12.5,
+   "anchorRate": 6.3,
+   "breadth": 0.898,
+   "competitiveRatio": 33.2,
+   "nonConferenceShare": 39.8
+  },
+  {
+   "conference": "Independent",
+   "slug": "independent",
+   "divisions": [
+    "DIV_III",
+    "DIV_II",
+    "NAIA"
+   ],
+   "programCount": 17,
+   "matches": 3195,
+   "stretchRate": 18.5,
+   "anchorRate": 6.6,
+   "breadth": 0.903,
+   "competitiveRatio": 25.5,
+   "nonConferenceShare": 98
+  },
+  {
+   "conference": "Heart of America Athletic Conference",
+   "slug": "heart-of-america-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 12,
+   "matches": 3177,
+   "stretchRate": 9.9,
+   "anchorRate": 13.8,
+   "breadth": 0.946,
+   "competitiveRatio": 36.6,
+   "nonConferenceShare": 78.7
+  },
+  {
+   "conference": "Great American Conference",
+   "slug": "great-american-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 9,
+   "matches": 3165,
+   "stretchRate": 3.4,
+   "anchorRate": 6.2,
+   "breadth": 0.818,
+   "competitiveRatio": 47.8,
+   "nonConferenceShare": 73.8
+  },
+  {
+   "conference": "Little East Conference",
+   "slug": "little-east-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 3150,
+   "stretchRate": 8.1,
+   "anchorRate": 8.5,
+   "breadth": 0.82,
+   "competitiveRatio": 24.8,
+   "nonConferenceShare": 51.4
+  },
+  {
+   "conference": "Missouri Valley Conference",
+   "slug": "missouri-valley-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 9,
+   "matches": 3134,
+   "stretchRate": 4,
+   "anchorRate": 3.9,
+   "breadth": 0.827,
+   "competitiveRatio": 47,
+   "nonConferenceShare": 66.1
+  },
+  {
+   "conference": "Big South Conference",
+   "slug": "big-south-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 10,
+   "matches": 3074,
+   "stretchRate": 7.4,
+   "anchorRate": 3.6,
+   "breadth": 0.849,
+   "competitiveRatio": 47.3,
+   "nonConferenceShare": 78.5
+  },
+  {
+   "conference": "Coast To Coast Conference",
+   "slug": "coast-to-coast-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 9,
+   "matches": 3072,
+   "stretchRate": 5.6,
+   "anchorRate": 9.7,
+   "breadth": 0.859,
+   "competitiveRatio": 41.3,
+   "nonConferenceShare": 87.5
+  },
+  {
+   "conference": "Skyline Conference",
+   "slug": "skyline-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 14,
+   "matches": 3041,
+   "stretchRate": 10.2,
+   "anchorRate": 8.4,
+   "breadth": 0.919,
+   "competitiveRatio": 25.6,
+   "nonConferenceShare": 48.9
+  },
+  {
+   "conference": "The Sun Conference",
+   "slug": "the-sun-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 14,
+   "matches": 2969,
+   "stretchRate": 9.6,
+   "anchorRate": 14.6,
+   "breadth": 0.933,
+   "competitiveRatio": 30.1,
+   "nonConferenceShare": 65.2
+  },
+  {
+   "conference": "River States Conference",
+   "slug": "river-states-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 13,
+   "matches": 2909,
+   "stretchRate": 21.6,
+   "anchorRate": 10.1,
+   "breadth": 0.942,
+   "competitiveRatio": 27.8,
+   "nonConferenceShare": 63
+  },
+  {
+   "conference": "Southern Intercollegiate Athletic Conference",
+   "slug": "southern-intercollegiate-athletic-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 11,
+   "matches": 2829,
+   "stretchRate": 20.2,
+   "anchorRate": 12.4,
+   "breadth": 0.927,
+   "competitiveRatio": 24.4,
+   "nonConferenceShare": 39.7
+  },
+  {
+   "conference": "Empire 8",
+   "slug": "empire-8",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 11,
+   "matches": 2703,
+   "stretchRate": 5.2,
+   "anchorRate": 1.4,
+   "breadth": 0.781,
+   "competitiveRatio": 26.7,
+   "nonConferenceShare": 54.3
+  },
+  {
+   "conference": "State University of New York Athletic Conference",
+   "slug": "state-university-of-new-york-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 10,
+   "matches": 2546,
+   "stretchRate": 10.3,
+   "anchorRate": 4.1,
+   "breadth": 0.873,
+   "competitiveRatio": 25.5,
+   "nonConferenceShare": 64.8
+  },
+  {
+   "conference": "Central Atlantic Collegiate Conference",
+   "slug": "central-atlantic-collegiate-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 8,
+   "matches": 2429,
+   "stretchRate": 8.6,
+   "anchorRate": 11.5,
+   "breadth": 0.904,
+   "competitiveRatio": 37.3,
+   "nonConferenceShare": 51
+  },
+  {
+   "conference": "East Coast Conference",
+   "slug": "east-coast-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 8,
+   "matches": 2376,
+   "stretchRate": 11.2,
+   "anchorRate": 14.7,
+   "breadth": 0.905,
+   "competitiveRatio": 35.7,
+   "nonConferenceShare": 67.8
+  },
+  {
+   "conference": "Big 8 Conference South",
+   "slug": "big-8-conference-south",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 12,
+   "matches": 2294,
+   "stretchRate": 14.2,
+   "anchorRate": 8.2,
+   "breadth": 0.883,
+   "competitiveRatio": 21.1,
+   "nonConferenceShare": 41.2
+  },
+  {
+   "conference": "City University of New York Athletic Conference",
+   "slug": "city-university-of-new-york-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 11,
+   "matches": 2141,
+   "stretchRate": 15.8,
+   "anchorRate": 13.8,
+   "breadth": 0.943,
+   "competitiveRatio": 16,
+   "nonConferenceShare": 56.3
+  },
+  {
+   "conference": "Ohio Valley Conference",
+   "slug": "ohio-valley-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 7,
+   "matches": 2106,
+   "stretchRate": 10.4,
+   "anchorRate": 8.9,
+   "breadth": 0.911,
+   "competitiveRatio": 40,
+   "nonConferenceShare": 69.9
+  },
+  {
+   "conference": "Central Intercollegiate Athletic Association",
+   "slug": "central-intercollegiate-athletic-association",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 12,
+   "matches": 2080,
+   "stretchRate": 21.3,
+   "anchorRate": 9.2,
+   "breadth": 0.91,
+   "competitiveRatio": 16.5,
+   "nonConferenceShare": 43.6
+  },
+  {
+   "conference": "Allegheny Mountain Collegiate Conference",
+   "slug": "allegheny-mountain-collegiate-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 9,
+   "matches": 2033,
+   "stretchRate": 1.3,
+   "anchorRate": 0.6,
+   "breadth": 0.728,
+   "competitiveRatio": 25.8,
+   "nonConferenceShare": 60
+  },
+  {
+   "conference": "Atlantic East Conference",
+   "slug": "atlantic-east-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 9,
+   "matches": 2006,
+   "stretchRate": 6.4,
+   "anchorRate": 1.2,
+   "breadth": 0.756,
+   "competitiveRatio": 25.4,
+   "nonConferenceShare": 69.6
+  },
+  {
+   "conference": "Region 22",
+   "slug": "region-22",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 7,
+   "matches": 1989,
+   "stretchRate": 14.7,
+   "anchorRate": 30,
+   "breadth": 0.935,
+   "competitiveRatio": 21.3,
+   "nonConferenceShare": 74.7
+  },
+  {
+   "conference": "North Atlantic Conference",
+   "slug": "north-atlantic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 11,
+   "matches": 1868,
+   "stretchRate": 10.6,
+   "anchorRate": 6.8,
+   "breadth": 0.897,
+   "competitiveRatio": 19.4,
+   "nonConferenceShare": 42.3
+  },
+  {
+   "conference": "Great Northeast Athletic Conference",
+   "slug": "great-northeast-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 7,
+   "matches": 1789,
+   "stretchRate": 10.2,
+   "anchorRate": 6.3,
+   "breadth": 0.89,
+   "competitiveRatio": 30.2,
+   "nonConferenceShare": 88
+  },
+  {
+   "conference": "Chicagoland Collegiate Athletic Conference",
+   "slug": "chicagoland-collegiate-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 10,
+   "matches": 1721,
+   "stretchRate": 18.4,
+   "anchorRate": 9.8,
+   "breadth": 0.894,
+   "competitiveRatio": 30.9,
+   "nonConferenceShare": 72.9
+  },
+  {
+   "conference": "Orange Empire Conference",
+   "slug": "orange-empire-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 7,
+   "matches": 1700,
+   "stretchRate": 14.5,
+   "anchorRate": 11.9,
+   "breadth": 0.904,
+   "competitiveRatio": 27.1,
+   "nonConferenceShare": 64.5
+  },
+  {
+   "conference": "Horizon League Conference",
+   "slug": "horizon-league-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 5,
+   "matches": 1610,
+   "stretchRate": 22.4,
+   "anchorRate": 5.7,
+   "breadth": 0.878,
+   "competitiveRatio": 41.2,
+   "nonConferenceShare": 92
+  },
+  {
+   "conference": "New Jersey Athletic Conference",
+   "slug": "new-jersey-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 7,
+   "matches": 1556,
+   "stretchRate": 6.7,
+   "anchorRate": 18.4,
+   "breadth": 0.911,
+   "competitiveRatio": 23.2,
+   "nonConferenceShare": 72.2
+  },
+  {
+   "conference": "Golden State Athletic Conference",
+   "slug": "golden-state-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 6,
+   "matches": 1487,
+   "stretchRate": 22.3,
+   "anchorRate": 5,
+   "breadth": 0.891,
+   "competitiveRatio": 29.2,
+   "nonConferenceShare": 84.4
+  },
+  {
+   "conference": "Alabama CCC",
+   "slug": "alabama-ccc",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 7,
+   "matches": 1325,
+   "stretchRate": 31.5,
+   "anchorRate": 4.4,
+   "breadth": 0.867,
+   "competitiveRatio": 21.8,
+   "nonConferenceShare": 74.6
+  },
+  {
+   "conference": "Coast Conference",
+   "slug": "coast-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 10,
+   "matches": 1272,
+   "stretchRate": 7.8,
+   "anchorRate": 10.6,
+   "breadth": 0.897,
+   "competitiveRatio": 25.8,
+   "nonConferenceShare": 39.8
+  },
+  {
+   "conference": "Mid American Conference",
+   "slug": "mid-american-conference",
+   "divisions": [
+    "DIV_I"
+   ],
+   "programCount": 3,
+   "matches": 1227,
+   "stretchRate": 2.9,
+   "anchorRate": 7.2,
+   "breadth": 0.831,
+   "competitiveRatio": 52.7,
+   "nonConferenceShare": 97.1
+  },
+  {
+   "conference": "Region 5",
+   "slug": "region-5",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 4,
+   "matches": 1108,
+   "stretchRate": 11.9,
+   "anchorRate": 11.2,
+   "breadth": 0.928,
+   "competitiveRatio": 34.5,
+   "nonConferenceShare": 94.8
+  },
+  {
+   "conference": "Big 8 Conference North",
+   "slug": "big-8-conference-north",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 7,
+   "matches": 1077,
+   "stretchRate": 12,
+   "anchorRate": 6.4,
+   "breadth": 0.82,
+   "competitiveRatio": 17.8,
+   "nonConferenceShare": 74.2
+  },
+  {
+   "conference": "Region 6",
+   "slug": "region-6",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 6,
+   "matches": 1077,
+   "stretchRate": 8.6,
+   "anchorRate": 11,
+   "breadth": 0.861,
+   "competitiveRatio": 41.5,
+   "nonConferenceShare": 81.4
+  },
+  {
+   "conference": "Mississippi Assn for Comm JuCo",
+   "slug": "mississippi-assn-for-comm-juco",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 4,
+   "matches": 912,
+   "stretchRate": 11.3,
+   "anchorRate": 5,
+   "breadth": 0.885,
+   "competitiveRatio": 20.5,
+   "nonConferenceShare": 91.7
+  },
+  {
+   "conference": "Inland Empire Athletic Conference",
+   "slug": "inland-empire-athletic-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 5,
+   "matches": 834,
+   "stretchRate": 13.9,
+   "anchorRate": 0,
+   "breadth": 0.782,
+   "competitiveRatio": 23.5,
+   "nonConferenceShare": 84.7
+  },
+  {
+   "conference": "Pacific Coast Athletic Conference",
+   "slug": "pacific-coast-athletic-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 4,
+   "matches": 760,
+   "stretchRate": 3,
+   "anchorRate": 16.7,
+   "breadth": 0.887,
+   "competitiveRatio": 22,
+   "nonConferenceShare": 78.7
+  },
+  {
+   "conference": "Region 14",
+   "slug": "region-14",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 4,
+   "matches": 752,
+   "stretchRate": 35.2,
+   "anchorRate": 9.8,
+   "breadth": 0.906,
+   "competitiveRatio": 32.9,
+   "nonConferenceShare": 93.1
+  },
+  {
+   "conference": "Sooner Athletic Conference",
+   "slug": "sooner-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 2,
+   "matches": 545,
+   "stretchRate": 7.9,
+   "anchorRate": 2.8,
+   "breadth": 0.846,
+   "competitiveRatio": 35.2,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Wolverine Hoosier Athletic Conference",
+   "slug": "wolverine-hoosier-athletic-conference",
+   "divisions": [
+    "NAIA"
+   ],
+   "programCount": 2,
+   "matches": 438,
+   "stretchRate": 17.1,
+   "anchorRate": 1.4,
+   "breadth": 0.711,
+   "competitiveRatio": 40.5,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Florida CCAA",
+   "slug": "florida-ccaa",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 3,
+   "matches": 407,
+   "stretchRate": 19.2,
+   "anchorRate": 16.2,
+   "breadth": 0.952,
+   "competitiveRatio": 40.3,
+   "nonConferenceShare": 79.4
+  },
+  {
+   "conference": "Region 1",
+   "slug": "region-1",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 6,
+   "matches": 387,
+   "stretchRate": 34.1,
+   "anchorRate": 18.3,
+   "breadth": 0.873,
+   "competitiveRatio": 23.5,
+   "nonConferenceShare": 39
+  },
+  {
+   "conference": "Eastern Metro Athletic Conference",
+   "slug": "eastern-metro-athletic-conference",
+   "divisions": [
+    "DIV_III"
+   ],
+   "programCount": 2,
+   "matches": 382,
+   "stretchRate": 11.8,
+   "anchorRate": 0,
+   "breadth": 0.668,
+   "competitiveRatio": 26.2,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Region 10",
+   "slug": "region-10",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 2,
+   "matches": 355,
+   "stretchRate": 44.5,
+   "anchorRate": 6.8,
+   "breadth": 0.815,
+   "competitiveRatio": 25.7,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Kansas Jayhawk Community College Conference",
+   "slug": "kansas-jayhawk-community-college-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 2,
+   "matches": 348,
+   "stretchRate": 4,
+   "anchorRate": 10.6,
+   "breadth": 0.865,
+   "competitiveRatio": 34.8,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Region 17",
+   "slug": "region-17",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 2,
+   "matches": 211,
+   "stretchRate": 29.4,
+   "anchorRate": 0,
+   "breadth": 0.823,
+   "competitiveRatio": 19.4,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Rocky Mountain Athletic Conference",
+   "slug": "rocky-mountain-athletic-conference",
+   "divisions": [
+    "DIV_II"
+   ],
+   "programCount": 1,
+   "matches": 189,
+   "stretchRate": 58.7,
+   "anchorRate": 0,
+   "breadth": 0.541,
+   "competitiveRatio": 18.5,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Illinois Skyway Colleg Conf",
+   "slug": "illinois-skyway-colleg-conf",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 1,
+   "matches": 184,
+   "stretchRate": 35.3,
+   "anchorRate": 8.7,
+   "breadth": 0.868,
+   "competitiveRatio": 28.3,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "South Coast Conference",
+   "slug": "south-coast-conference",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 1,
+   "matches": 110,
+   "stretchRate": 26.4,
+   "anchorRate": 0,
+   "breadth": 0.479,
+   "competitiveRatio": 24.5,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Region 4",
+   "slug": "region-4",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 2,
+   "matches": 85,
+   "stretchRate": 56.5,
+   "anchorRate": 0,
+   "breadth": 0.596,
+   "competitiveRatio": 30.6,
+   "nonConferenceShare": 100
+  },
+  {
+   "conference": "Region 19",
+   "slug": "region-19",
+   "divisions": [
+    "JUCO"
+   ],
+   "programCount": 2,
+   "matches": 52,
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.599,
+   "competitiveRatio": 40.4,
+   "nonConferenceShare": 100
+  }
+ ]
+}

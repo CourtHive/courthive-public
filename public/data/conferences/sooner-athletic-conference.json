@@ -1,0 +1,166 @@
+{
+ "conference": "Sooner Athletic Conference",
+ "slug": "sooner-athletic-conference",
+ "divisions": [
+  "NAIA"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 2,
+ "fingerprint": {
+  "overall": {
+   "matches": 545,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 189,
+    "EVEN": 182,
+    "DOWN": 116,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 7.9,
+    "UP": 34.7,
+    "EVEN": 33.4,
+    "DOWN": 21.3,
+    "ANCHOR": 2.8
+   },
+   "stretchRate": 7.9,
+   "anchorRate": 2.8,
+   "breadth": 0.846,
+   "competitiveRatio": 35.2,
+   "winRate": 49
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 545,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 189,
+    "EVEN": 182,
+    "DOWN": 116,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 7.9,
+    "UP": 34.7,
+    "EVEN": 33.4,
+    "DOWN": 21.3,
+    "ANCHOR": 2.8
+   },
+   "stretchRate": 7.9,
+   "anchorRate": 2.8,
+   "breadth": 0.846,
+   "competitiveRatio": 35.2,
+   "winRate": 49
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 7.9,
+  "delta": 7.9,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "46BC0A0F-278C-4E84-86D0-4534F6A9B578",
+   "name": "John Brown (Ark.)",
+   "gender": "M",
+   "division": "NAIA",
+   "lineupWTN": 23.25,
+   "matches": 290,
+   "bands": {
+    "STRETCH": 28,
+    "UP": 88,
+    "EVEN": 103,
+    "DOWN": 56,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 9.7,
+    "UP": 30.3,
+    "EVEN": 35.5,
+    "DOWN": 19.3,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 9.7,
+   "anchorRate": 5.2,
+   "breadth": 0.886,
+   "competitiveRatio": 38.6,
+   "winRate": 49.3
+  },
+  {
+   "teamId": "9DE1ED3F-1761-4B25-8934-FAC5444E006F",
+   "name": "John Brown (Ark.)",
+   "gender": "W",
+   "division": "NAIA",
+   "lineupWTN": 29.27,
+   "matches": 255,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 101,
+    "EVEN": 79,
+    "DOWN": 60,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 5.9,
+    "UP": 39.6,
+    "EVEN": 31,
+    "DOWN": 23.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 5.9,
+   "anchorRate": 0,
+   "breadth": 0.769,
+   "competitiveRatio": 31.4,
+   "winRate": 48.6
+  }
+ ]
+}

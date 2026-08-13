@@ -1,0 +1,706 @@
+{
+ "conference": "Old Dominion Athletic Conference",
+ "slug": "old-dominion-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 22,
+ "fingerprint": {
+  "overall": {
+   "matches": 6742,
+   "bands": {
+    "STRETCH": 756,
+    "UP": 2124,
+    "EVEN": 946,
+    "DOWN": 2184,
+    "ANCHOR": 732
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 31.5,
+    "EVEN": 14,
+    "DOWN": 32.4,
+    "ANCHOR": 10.9
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 10.9,
+   "breadth": 0.926,
+   "competitiveRatio": 28.8,
+   "winRate": 50.7
+  },
+  "inConference": {
+   "matches": 3750,
+   "bands": {
+    "STRETCH": 449,
+    "UP": 1131,
+    "EVEN": 590,
+    "DOWN": 1131,
+    "ANCHOR": 449
+   },
+   "bandPct": {
+    "STRETCH": 12,
+    "UP": 30.2,
+    "EVEN": 15.7,
+    "DOWN": 30.2,
+    "ANCHOR": 12
+   },
+   "stretchRate": 12,
+   "anchorRate": 12,
+   "breadth": 0.946,
+   "competitiveRatio": 25.4,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2992,
+   "bands": {
+    "STRETCH": 307,
+    "UP": 993,
+    "EVEN": 356,
+    "DOWN": 1053,
+    "ANCHOR": 283
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 33.2,
+    "EVEN": 11.9,
+    "DOWN": 35.2,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 9.5,
+   "breadth": 0.897,
+   "competitiveRatio": 32.9,
+   "winRate": 51.5
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 12,
+  "nonConference": 10.3,
+  "delta": -1.7,
+  "nonConferenceShare": 44.4
+ },
+ "members": [
+  {
+   "teamId": "5F1A5CB3-C0A2-4CB1-901B-DCD43A50312A",
+   "name": "Washington and Lee",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 20.07,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 110,
+    "EVEN": 10,
+    "DOWN": 159,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 16.9,
+    "UP": 28.6,
+    "EVEN": 2.6,
+    "DOWN": 41.3,
+    "ANCHOR": 10.6
+   },
+   "stretchRate": 16.9,
+   "anchorRate": 10.6,
+   "breadth": 0.843,
+   "competitiveRatio": 37.7,
+   "winRate": 57.7
+  },
+  {
+   "teamId": "AA76F25E-4C9F-4567-84DF-2168D3DFEF65",
+   "name": "Virginia Wesleyan University",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.36,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 5,
+    "UP": 102,
+    "EVEN": 114,
+    "DOWN": 138,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 1.3,
+    "UP": 26.5,
+    "EVEN": 29.6,
+    "DOWN": 35.8,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 1.3,
+   "anchorRate": 6.8,
+   "breadth": 0.819,
+   "competitiveRatio": 41.8,
+   "winRate": 51.2
+  },
+  {
+   "teamId": "61357F50-6B62-4D53-825D-6B71023CF58E",
+   "name": "Washington and Lee",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 21.08,
+   "matches": 370,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 53,
+    "EVEN": 16,
+    "DOWN": 104,
+    "ANCHOR": 197
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 14.3,
+    "EVEN": 4.3,
+    "DOWN": 28.1,
+    "ANCHOR": 53.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 53.2,
+   "breadth": 0.688,
+   "competitiveRatio": 21.7,
+   "winRate": 82.4
+  },
+  {
+   "teamId": "5D87C35A-11D1-4EC8-BAA0-01E1E5B62374",
+   "name": "Virginia Wesleyan University",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.61,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 95,
+    "EVEN": 56,
+    "DOWN": 137,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 26.2,
+    "EVEN": 15.5,
+    "DOWN": 37.8,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 11.3,
+   "breadth": 0.915,
+   "competitiveRatio": 29.1,
+   "winRate": 47.2
+  },
+  {
+   "teamId": "2FFB4DE5-6C5F-4EFE-A246-F85296CE1DEE",
+   "name": "Hampden-Sydney",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.42,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 48,
+    "UP": 152,
+    "EVEN": 42,
+    "DOWN": 84,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 14,
+    "UP": 44.3,
+    "EVEN": 12.2,
+    "DOWN": 24.5,
+    "ANCHOR": 5
+   },
+   "stretchRate": 14,
+   "anchorRate": 5,
+   "breadth": 0.861,
+   "competitiveRatio": 35.3,
+   "winRate": 50.1
+  },
+  {
+   "teamId": "50E130BB-54F1-474A-BEF8-42DAC05D466F",
+   "name": "Sweet Briar",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.23,
+   "matches": 333,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 120,
+    "EVEN": 63,
+    "DOWN": 86,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 36,
+    "EVEN": 18.9,
+    "DOWN": 25.8,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 10.5,
+   "breadth": 0.921,
+   "competitiveRatio": 24.7,
+   "winRate": 60.7
+  },
+  {
+   "teamId": "54094DB4-63A7-4A0A-84A8-7BCE9C47935A",
+   "name": "Averett",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 24.96,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 91,
+    "EVEN": 0,
+    "DOWN": 197,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.7,
+    "EVEN": 0,
+    "DOWN": 60.1,
+    "ANCHOR": 12.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.2,
+   "breadth": 0.571,
+   "competitiveRatio": 22,
+   "winRate": 71.3
+  },
+  {
+   "teamId": "09EE9537-CF51-40E8-BADB-EEB8D0019419",
+   "name": "Shenandoah",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.31,
+   "matches": 325,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 70,
+    "EVEN": 96,
+    "DOWN": 116,
+    "ANCHOR": 31
+   },
+   "bandPct": {
+    "STRETCH": 3.7,
+    "UP": 21.5,
+    "EVEN": 29.5,
+    "DOWN": 35.7,
+    "ANCHOR": 9.5
+   },
+   "stretchRate": 3.7,
+   "anchorRate": 9.5,
+   "breadth": 0.873,
+   "competitiveRatio": 36.6,
+   "winRate": 60
+  },
+  {
+   "teamId": "BDE19553-67D3-4D13-9FB4-E704C82A9492",
+   "name": "Randolph College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.24,
+   "matches": 316,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 31,
+    "EVEN": 79,
+    "DOWN": 141,
+    "ANCHOR": 65
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 9.8,
+    "EVEN": 25,
+    "DOWN": 44.6,
+    "ANCHOR": 20.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.6,
+   "breadth": 0.783,
+   "competitiveRatio": 38.9,
+   "winRate": 62.7
+  },
+  {
+   "teamId": "2A575DD3-2588-4718-AF9E-7C32D1ABB2BD",
+   "name": "Averett",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.32,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 66,
+    "EVEN": 76,
+    "DOWN": 121,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 21.3,
+    "EVEN": 24.5,
+    "DOWN": 39,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 10.3,
+   "breadth": 0.884,
+   "competitiveRatio": 37.4,
+   "winRate": 61.6
+  },
+  {
+   "teamId": "C61CE979-0543-4DA1-A800-CF70DFF88465",
+   "name": "Roanoke",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 23.76,
+   "matches": 302,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 147,
+    "EVEN": 36,
+    "DOWN": 107,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4,
+    "UP": 48.7,
+    "EVEN": 11.9,
+    "DOWN": 35.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4,
+   "anchorRate": 0,
+   "breadth": 0.683,
+   "competitiveRatio": 35.1,
+   "winRate": 42.1
+  },
+  {
+   "teamId": "96855AA3-F115-4DD8-BEEE-8759568B6A12",
+   "name": "Randolph College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.5,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 82,
+    "EVEN": 65,
+    "DOWN": 96,
+    "ANCHOR": 41
+   },
+   "bandPct": {
+    "STRETCH": 5,
+    "UP": 27.4,
+    "EVEN": 21.7,
+    "DOWN": 32.1,
+    "ANCHOR": 13.7
+   },
+   "stretchRate": 5,
+   "anchorRate": 13.7,
+   "breadth": 0.916,
+   "competitiveRatio": 26.8,
+   "winRate": 53.5
+  },
+  {
+   "teamId": "47C1095B-6FAD-41FF-B21F-208E31C8FC09",
+   "name": "Roanoke",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.64,
+   "matches": 296,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 166,
+    "EVEN": 38,
+    "DOWN": 56,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 8.1,
+    "UP": 56.1,
+    "EVEN": 12.8,
+    "DOWN": 18.9,
+    "ANCHOR": 4.1
+   },
+   "stretchRate": 8.1,
+   "anchorRate": 4.1,
+   "breadth": 0.768,
+   "competitiveRatio": 27.2,
+   "winRate": 37.2
+  },
+  {
+   "teamId": "DC06CCD9-789C-44A1-9E26-F14D938153BA",
+   "name": "Guilford",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 25.66,
+   "matches": 289,
+   "bands": {
+    "STRETCH": 148,
+    "UP": 99,
+    "EVEN": 6,
+    "DOWN": 36,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 51.2,
+    "UP": 34.3,
+    "EVEN": 2.1,
+    "DOWN": 12.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 51.2,
+   "anchorRate": 0,
+   "breadth": 0.652,
+   "competitiveRatio": 24.2,
+   "winRate": 38.8
+  },
+  {
+   "teamId": "813450BD-9566-4460-9E24-257DE68B3573",
+   "name": "Shenandoah",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.02,
+   "matches": 287,
+   "bands": {
+    "STRETCH": 25,
+    "UP": 174,
+    "EVEN": 11,
+    "DOWN": 61,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 8.7,
+    "UP": 60.6,
+    "EVEN": 3.8,
+    "DOWN": 21.3,
+    "ANCHOR": 5.6
+   },
+   "stretchRate": 8.7,
+   "anchorRate": 5.6,
+   "breadth": 0.703,
+   "competitiveRatio": 27.3,
+   "winRate": 50.9
+  },
+  {
+   "teamId": "1BFFCD48-E340-43F0-A913-484D90379464",
+   "name": "Bridgewater (VA)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.86,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 64,
+    "UP": 166,
+    "EVEN": 12,
+    "DOWN": 44,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 22.4,
+    "UP": 58,
+    "EVEN": 4.2,
+    "DOWN": 15.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 22.4,
+   "anchorRate": 0,
+   "breadth": 0.666,
+   "competitiveRatio": 23.6,
+   "winRate": 35.7
+  },
+  {
+   "teamId": "50CA3A77-995B-4804-8353-35460BDDA468",
+   "name": "Guilford",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.34,
+   "matches": 282,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 68,
+    "EVEN": 76,
+    "DOWN": 103,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 24.1,
+    "EVEN": 27,
+    "DOWN": 36.5,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 10.3,
+   "breadth": 0.857,
+   "competitiveRatio": 24.9,
+   "winRate": 45.7
+  },
+  {
+   "teamId": "7F852FC9-B513-43AF-A009-5322449CF063",
+   "name": "Lynchburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 22.21,
+   "matches": 276,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 111,
+    "EVEN": 23,
+    "DOWN": 101,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 40.2,
+    "EVEN": 8.3,
+    "DOWN": 36.6,
+    "ANCHOR": 10.5
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 10.5,
+   "breadth": 0.817,
+   "competitiveRatio": 26.8,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "FA6F4B6D-FA20-4992-ACC8-5E1DAB09DC29",
+   "name": "Lynchburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.4,
+   "matches": 271,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 50,
+    "EVEN": 86,
+    "DOWN": 90,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 6.3,
+    "UP": 18.5,
+    "EVEN": 31.7,
+    "DOWN": 33.2,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 6.3,
+   "anchorRate": 10.3,
+   "breadth": 0.901,
+   "competitiveRatio": 25.8,
+   "winRate": 46.9
+  },
+  {
+   "teamId": "CD3FAC87-0DAD-4A34-96C3-4DDA42517F0F",
+   "name": "Randolph-Macon",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.58,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 12,
+    "EVEN": 37,
+    "DOWN": 143,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 4.6,
+    "EVEN": 14.2,
+    "DOWN": 54.8,
+    "ANCHOR": 16.1
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 16.1,
+   "breadth": 0.793,
+   "competitiveRatio": 26.3,
+   "winRate": 52.9
+  },
+  {
+   "teamId": "7E576414-9DF2-45BC-B5CC-90758C5BC0F7",
+   "name": "Randolph-Macon",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.29,
+   "matches": 232,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 132,
+    "EVEN": 4,
+    "DOWN": 64,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 9.5,
+    "UP": 56.9,
+    "EVEN": 1.7,
+    "DOWN": 27.6,
+    "ANCHOR": 4.3
+   },
+   "stretchRate": 9.5,
+   "anchorRate": 4.3,
+   "breadth": 0.687,
+   "competitiveRatio": 16,
+   "winRate": 11.6
+  },
+  {
+   "teamId": "87D50D10-19D0-4ED4-99FE-88BDD198679F",
+   "name": "Hollins",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 34.14,
+   "matches": 204,
+   "bands": {
+    "STRETCH": 177,
+    "UP": 27,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 86.8,
+    "UP": 13.2,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 86.8,
+   "anchorRate": 0,
+   "breadth": 0.243,
+   "competitiveRatio": 5.4,
+   "winRate": 3.4
+  }
+ ]
+}

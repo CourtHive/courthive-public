@@ -1,7 +1,7 @@
 import 'src/pages/track/track-page.css';
 import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import { CONFERENCE, CONFERENCES, HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
 import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
@@ -128,6 +128,14 @@ export function rootBlock() {
   programs.style.display = 'none';
   programs.id = PROGRAMS;
 
+  const conference = document.createElement('div');
+  conference.style.display = 'none';
+  conference.id = CONFERENCE;
+
+  const conferences = document.createElement('div');
+  conferences.style.display = 'none';
+  conferences.id = CONFERENCES;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
   main.appendChild(track);
@@ -137,6 +145,8 @@ export function rootBlock() {
   main.appendChild(rankings);
   main.appendChild(register);
   main.appendChild(program);
+  main.appendChild(conference);
+  main.appendChild(conferences);
   main.appendChild(programs);
 
   return main;

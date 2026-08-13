@@ -1,0 +1,571 @@
+{
+ "conference": "Presidents Athletic Conference",
+ "slug": "presidents-athletic-conference",
+ "divisions": [
+  "DIV_III"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 4827,
+   "bands": {
+    "STRETCH": 431,
+    "UP": 1547,
+    "EVEN": 631,
+    "DOWN": 1858,
+    "ANCHOR": 360
+   },
+   "bandPct": {
+    "STRETCH": 8.9,
+    "UP": 32,
+    "EVEN": 13.1,
+    "DOWN": 38.5,
+    "ANCHOR": 7.5
+   },
+   "stretchRate": 8.9,
+   "anchorRate": 7.5,
+   "breadth": 0.875,
+   "competitiveRatio": 23.5,
+   "winRate": 49.5
+  },
+  "inConference": {
+   "matches": 2582,
+   "bands": {
+    "STRETCH": 265,
+    "UP": 888,
+    "EVEN": 276,
+    "DOWN": 888,
+    "ANCHOR": 265
+   },
+   "bandPct": {
+    "STRETCH": 10.3,
+    "UP": 34.4,
+    "EVEN": 10.7,
+    "DOWN": 34.4,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 10.3,
+   "anchorRate": 10.3,
+   "breadth": 0.895,
+   "competitiveRatio": 21.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2245,
+   "bands": {
+    "STRETCH": 166,
+    "UP": 659,
+    "EVEN": 355,
+    "DOWN": 970,
+    "ANCHOR": 95
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 29.4,
+    "EVEN": 15.8,
+    "DOWN": 43.2,
+    "ANCHOR": 4.2
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 4.2,
+   "breadth": 0.833,
+   "competitiveRatio": 25.5,
+   "winRate": 48.8
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 10.3,
+  "nonConference": 7.4,
+  "delta": -2.9,
+  "nonConferenceShare": 46.5
+ },
+ "members": [
+  {
+   "teamId": "3D6DF1D1-76D2-48D8-BB07-94BB15DF9C91",
+   "name": "Allegheny",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 21.5,
+   "matches": 406,
+   "bands": {
+    "STRETCH": 50,
+    "UP": 42,
+    "EVEN": 18,
+    "DOWN": 132,
+    "ANCHOR": 164
+   },
+   "bandPct": {
+    "STRETCH": 12.3,
+    "UP": 10.3,
+    "EVEN": 4.4,
+    "DOWN": 32.5,
+    "ANCHOR": 40.4
+   },
+   "stretchRate": 12.3,
+   "anchorRate": 40.4,
+   "breadth": 0.846,
+   "competitiveRatio": 22.2,
+   "winRate": 71.9
+  },
+  {
+   "teamId": "0BED395B-22DA-4F6D-AA99-8A23FD2AC8C9",
+   "name": "Allegheny",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 25.97,
+   "matches": 399,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 48,
+    "EVEN": 24,
+    "DOWN": 216,
+    "ANCHOR": 87
+   },
+   "bandPct": {
+    "STRETCH": 6,
+    "UP": 12,
+    "EVEN": 6,
+    "DOWN": 54.1,
+    "ANCHOR": 21.8
+   },
+   "stretchRate": 6,
+   "anchorRate": 21.8,
+   "breadth": 0.781,
+   "competitiveRatio": 23.3,
+   "winRate": 62.4
+  },
+  {
+   "teamId": "44BA05CD-B4B0-43FB-AEDB-38DC88C4BCE8",
+   "name": "Franciscan",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 27.91,
+   "matches": 337,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 114,
+    "EVEN": 66,
+    "DOWN": 128,
+    "ANCHOR": 23
+   },
+   "bandPct": {
+    "STRETCH": 1.8,
+    "UP": 33.8,
+    "EVEN": 19.6,
+    "DOWN": 38,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 1.8,
+   "anchorRate": 6.8,
+   "breadth": 0.813,
+   "competitiveRatio": 27.3,
+   "winRate": 51
+  },
+  {
+   "teamId": "B26F6E2B-87F7-4681-B034-1B02CEF189F2",
+   "name": "Saint Vincent College",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.52,
+   "matches": 336,
+   "bands": {
+    "STRETCH": 21,
+    "UP": 43,
+    "EVEN": 57,
+    "DOWN": 215,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6.3,
+    "UP": 12.8,
+    "EVEN": 17,
+    "DOWN": 64,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6.3,
+   "anchorRate": 0,
+   "breadth": 0.636,
+   "competitiveRatio": 25.6,
+   "winRate": 62.8
+  },
+  {
+   "teamId": "AA55AD85-18D0-4EA7-9B77-3AB75591AD7A",
+   "name": "Saint Vincent College",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 29.41,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 128,
+    "EVEN": 11,
+    "DOWN": 188,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 39.1,
+    "EVEN": 3.4,
+    "DOWN": 57.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.497,
+   "competitiveRatio": 19.9,
+   "winRate": 59.9
+  },
+  {
+   "teamId": "19BB0BCA-5A85-4BC1-B839-40692759C84D",
+   "name": "Franciscan",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.45,
+   "matches": 313,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 156,
+    "EVEN": 62,
+    "DOWN": 50,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.4,
+    "UP": 49.8,
+    "EVEN": 19.8,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.4,
+   "anchorRate": 0,
+   "breadth": 0.77,
+   "competitiveRatio": 26,
+   "winRate": 36.7
+  },
+  {
+   "teamId": "BA998787-4325-4726-8F1B-380859F3083C",
+   "name": "Grove City",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 26.76,
+   "matches": 299,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 70,
+    "EVEN": 0,
+    "DOWN": 187,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 2,
+    "UP": 23.4,
+    "EVEN": 0,
+    "DOWN": 62.5,
+    "ANCHOR": 12
+   },
+   "stretchRate": 2,
+   "anchorRate": 12,
+   "breadth": 0.601,
+   "competitiveRatio": 21.7,
+   "winRate": 66.6
+  },
+  {
+   "teamId": "07D844B4-F1FD-4D5B-8787-999C73C0AE53",
+   "name": "Washington and Jefferson",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 26.49,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 54,
+    "EVEN": 57,
+    "DOWN": 124,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 16.1,
+    "UP": 19.3,
+    "EVEN": 20.4,
+    "DOWN": 44.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 16.1,
+   "anchorRate": 0,
+   "breadth": 0.805,
+   "competitiveRatio": 30.4,
+   "winRate": 38.6
+  },
+  {
+   "teamId": "ACBDFB6D-A153-4701-9AC0-D221F3580826",
+   "name": "Grove City",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 24.55,
+   "matches": 263,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 65,
+    "EVEN": 6,
+    "DOWN": 170,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 2.3,
+    "UP": 24.7,
+    "EVEN": 2.3,
+    "DOWN": 64.6,
+    "ANCHOR": 6.1
+   },
+   "stretchRate": 2.3,
+   "anchorRate": 6.1,
+   "breadth": 0.603,
+   "competitiveRatio": 22.8,
+   "winRate": 68.8
+  },
+  {
+   "teamId": "798E2F73-8DB8-45AE-8B73-AFD2B8614531",
+   "name": "Geneva",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.2,
+   "matches": 259,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 41,
+    "EVEN": 65,
+    "DOWN": 135,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 15.8,
+    "EVEN": 25.1,
+    "DOWN": 52.1,
+    "ANCHOR": 6.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.9,
+   "breadth": 0.723,
+   "competitiveRatio": 22.9,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "E38F3FDB-6041-47F0-B694-68D659813092",
+   "name": "Washington and Jefferson",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 28.34,
+   "matches": 256,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 68,
+    "EVEN": 77,
+    "DOWN": 95,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 26.6,
+    "EVEN": 30.1,
+    "DOWN": 37.1,
+    "ANCHOR": 6.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.3,
+   "breadth": 0.78,
+   "competitiveRatio": 33.3,
+   "winRate": 50.4
+  },
+  {
+   "teamId": "DE8452D7-124C-4499-9996-DC550416F71E",
+   "name": "Waynesburg",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.25,
+   "matches": 250,
+   "bands": {
+    "STRETCH": 17,
+    "UP": 115,
+    "EVEN": 64,
+    "DOWN": 54,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 6.8,
+    "UP": 46,
+    "EVEN": 25.6,
+    "DOWN": 21.6,
+    "ANCHOR": 0
+   },
+   "stretchRate": 6.8,
+   "anchorRate": 0,
+   "breadth": 0.758,
+   "competitiveRatio": 16.8,
+   "winRate": 26
+  },
+  {
+   "teamId": "2513F677-8469-49AA-99B3-478F8F4001FF",
+   "name": "Thiel",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 32.73,
+   "matches": 234,
+   "bands": {
+    "STRETCH": 109,
+    "UP": 125,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 46.6,
+    "UP": 53.4,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 46.6,
+   "anchorRate": 0,
+   "breadth": 0.429,
+   "competitiveRatio": 8.6,
+   "winRate": 7.3
+  },
+  {
+   "teamId": "804C0475-3995-43D8-9BEF-6B758278BDD1",
+   "name": "Geneva",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 27.4,
+   "matches": 232,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 81,
+    "EVEN": 64,
+    "DOWN": 69,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 34.9,
+    "EVEN": 27.6,
+    "DOWN": 29.7,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 0,
+   "breadth": 0.796,
+   "competitiveRatio": 31.5,
+   "winRate": 44.8
+  },
+  {
+   "teamId": "77E4457B-7A37-43E7-8792-DF54B0778EA4",
+   "name": "Westminster (Pennsylvania)",
+   "gender": "W",
+   "division": "DIV_III",
+   "lineupWTN": 30.31,
+   "matches": 231,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 130,
+    "EVEN": 41,
+    "DOWN": 31,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 12.6,
+    "UP": 56.3,
+    "EVEN": 17.7,
+    "DOWN": 13.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 12.6,
+   "anchorRate": 0,
+   "breadth": 0.721,
+   "competitiveRatio": 28.6,
+   "winRate": 53.2
+  },
+  {
+   "teamId": "8FCDC5CF-CA68-4420-9A0F-B11104518A2E",
+   "name": "Waynesburg",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 28.02,
+   "matches": 230,
+   "bands": {
+    "STRETCH": 18,
+    "UP": 137,
+    "EVEN": 11,
+    "DOWN": 64,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 7.8,
+    "UP": 59.6,
+    "EVEN": 4.8,
+    "DOWN": 27.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 7.8,
+   "anchorRate": 0,
+   "breadth": 0.627,
+   "competitiveRatio": 21.7,
+   "winRate": 27.8
+  },
+  {
+   "teamId": "CF015D68-4AC9-46CB-B18B-4A5FAD7BD85A",
+   "name": "Thiel",
+   "gender": "M",
+   "division": "DIV_III",
+   "lineupWTN": 30.48,
+   "matches": 175,
+   "bands": {
+    "STRETCH": 37,
+    "UP": 130,
+    "EVEN": 8,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 21.1,
+    "UP": 74.3,
+    "EVEN": 4.6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 21.1,
+   "anchorRate": 0,
+   "breadth": 0.429,
+   "competitiveRatio": 12.1,
+   "winRate": 10.9
+  }
+ ]
+}

@@ -1,0 +1,598 @@
+{
+ "conference": "Metro Atlantic Athletic Conference",
+ "slug": "metro-atlantic-athletic-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 18,
+ "fingerprint": {
+  "overall": {
+   "matches": 5798,
+   "bands": {
+    "STRETCH": 699,
+    "UP": 2397,
+    "EVEN": 839,
+    "DOWN": 1609,
+    "ANCHOR": 254
+   },
+   "bandPct": {
+    "STRETCH": 12.1,
+    "UP": 41.3,
+    "EVEN": 14.5,
+    "DOWN": 27.8,
+    "ANCHOR": 4.4
+   },
+   "stretchRate": 12.1,
+   "anchorRate": 4.4,
+   "breadth": 0.865,
+   "competitiveRatio": 45.2,
+   "winRate": 42.6
+  },
+  "inConference": {
+   "matches": 2440,
+   "bands": {
+    "STRETCH": 156,
+    "UP": 896,
+    "EVEN": 336,
+    "DOWN": 896,
+    "ANCHOR": 156
+   },
+   "bandPct": {
+    "STRETCH": 6.4,
+    "UP": 36.7,
+    "EVEN": 13.8,
+    "DOWN": 36.7,
+    "ANCHOR": 6.4
+   },
+   "stretchRate": 6.4,
+   "anchorRate": 6.4,
+   "breadth": 0.845,
+   "competitiveRatio": 47.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3358,
+   "bands": {
+    "STRETCH": 543,
+    "UP": 1501,
+    "EVEN": 503,
+    "DOWN": 713,
+    "ANCHOR": 98
+   },
+   "bandPct": {
+    "STRETCH": 16.2,
+    "UP": 44.7,
+    "EVEN": 15,
+    "DOWN": 21.2,
+    "ANCHOR": 2.9
+   },
+   "stretchRate": 16.2,
+   "anchorRate": 2.9,
+   "breadth": 0.852,
+   "competitiveRatio": 43.3,
+   "winRate": 37.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 6.4,
+  "nonConference": 16.2,
+  "delta": 9.8,
+  "nonConferenceShare": 57.9
+ },
+ "members": [
+  {
+   "teamId": "04AF8B21-64E9-45FE-8B13-9B33AF61D998",
+   "name": "Rider",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.71,
+   "matches": 394,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 110,
+    "EVEN": 39,
+    "DOWN": 221,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 27.9,
+    "EVEN": 9.9,
+    "DOWN": 56.1,
+    "ANCHOR": 4.6
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 4.6,
+   "breadth": 0.692,
+   "competitiveRatio": 51.5,
+   "winRate": 43.1
+  },
+  {
+   "teamId": "32240BE1-DB07-48E8-AF5F-243C03C81BFE",
+   "name": "Quinnipiac",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.49,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 77,
+    "UP": 115,
+    "EVEN": 57,
+    "DOWN": 108,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 20,
+    "UP": 29.9,
+    "EVEN": 14.8,
+    "DOWN": 28.1,
+    "ANCHOR": 7.3
+   },
+   "stretchRate": 20,
+   "anchorRate": 7.3,
+   "breadth": 0.94,
+   "competitiveRatio": 48.3,
+   "winRate": 45.7
+  },
+  {
+   "teamId": "72386254-B28A-4B84-85B0-FD8084881003",
+   "name": "Quinnipiac",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.26,
+   "matches": 361,
+   "bands": {
+    "STRETCH": 33,
+    "UP": 52,
+    "EVEN": 45,
+    "DOWN": 213,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 9.1,
+    "UP": 14.4,
+    "EVEN": 12.5,
+    "DOWN": 59,
+    "ANCHOR": 5
+   },
+   "stretchRate": 9.1,
+   "anchorRate": 5,
+   "breadth": 0.757,
+   "competitiveRatio": 41,
+   "winRate": 58.2
+  },
+  {
+   "teamId": "C39285F1-2395-445A-A742-2E2312ACD2DE",
+   "name": "Rider",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.79,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 230,
+    "EVEN": 36,
+    "DOWN": 64,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 65,
+    "EVEN": 10.2,
+    "DOWN": 18.1,
+    "ANCHOR": 3.4
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 3.4,
+   "breadth": 0.653,
+   "competitiveRatio": 40.7,
+   "winRate": 35
+  },
+  {
+   "teamId": "A89FC64B-791F-439D-80F5-F59236E77D63",
+   "name": "Fairfield",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.21,
+   "matches": 350,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 121,
+    "EVEN": 78,
+    "DOWN": 130,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0.9,
+    "UP": 34.6,
+    "EVEN": 22.3,
+    "DOWN": 37.1,
+    "ANCHOR": 5.1
+   },
+   "stretchRate": 0.9,
+   "anchorRate": 5.1,
+   "breadth": 0.785,
+   "competitiveRatio": 43.6,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "82EB5D5D-9F95-47DD-9012-4BC2991C9A84",
+   "name": "Niagara",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.03,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 151,
+    "EVEN": 99,
+    "DOWN": 53,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 43.4,
+    "EVEN": 28.4,
+    "DOWN": 15.2,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 10.3,
+   "breadth": 0.83,
+   "competitiveRatio": 45.2,
+   "winRate": 44
+  },
+  {
+   "teamId": "BC77BE1F-40D8-42AE-BEB3-5AC0F29D7716",
+   "name": "Mount St. Mary’s",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 18.32,
+   "matches": 342,
+   "bands": {
+    "STRETCH": 53,
+    "UP": 141,
+    "EVEN": 36,
+    "DOWN": 77,
+    "ANCHOR": 35
+   },
+   "bandPct": {
+    "STRETCH": 15.5,
+    "UP": 41.2,
+    "EVEN": 10.5,
+    "DOWN": 22.5,
+    "ANCHOR": 10.2
+   },
+   "stretchRate": 15.5,
+   "anchorRate": 10.2,
+   "breadth": 0.907,
+   "competitiveRatio": 47.4,
+   "winRate": 44.4
+  },
+  {
+   "teamId": "0A9B327D-9B24-43F0-A8CB-35C533702D53",
+   "name": "Fairfield",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.44,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 39,
+    "UP": 96,
+    "EVEN": 69,
+    "DOWN": 110,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 29.4,
+    "EVEN": 21.1,
+    "DOWN": 33.6,
+    "ANCHOR": 4
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 4,
+   "breadth": 0.892,
+   "competitiveRatio": 48.9,
+   "winRate": 46.8
+  },
+  {
+   "teamId": "1FF57268-96DE-446B-BC40-AE0D4C962388",
+   "name": "Marist",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 16.31,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 23,
+    "UP": 100,
+    "EVEN": 52,
+    "DOWN": 121,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 7.1,
+    "UP": 30.9,
+    "EVEN": 16,
+    "DOWN": 37.3,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 7.1,
+   "anchorRate": 8.6,
+   "breadth": 0.885,
+   "competitiveRatio": 50.6,
+   "winRate": 48.1
+  },
+  {
+   "teamId": "9BB13964-0A96-4F22-88B0-DADED5B573E5",
+   "name": "Siena",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 23.39,
+   "matches": 312,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 238,
+    "EVEN": 30,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.8,
+    "UP": 76.3,
+    "EVEN": 9.6,
+    "DOWN": 9.3,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.8,
+   "anchorRate": 0,
+   "breadth": 0.496,
+   "competitiveRatio": 49.4,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "43DF1196-0A91-4D56-85B0-E59A84A483CE",
+   "name": "Marist",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.06,
+   "matches": 309,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 67,
+    "EVEN": 52,
+    "DOWN": 161,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 21.7,
+    "EVEN": 16.8,
+    "DOWN": 52.1,
+    "ANCHOR": 6.5
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 6.5,
+   "breadth": 0.777,
+   "competitiveRatio": 40.8,
+   "winRate": 43.7
+  },
+  {
+   "teamId": "0A49430A-F4ED-469B-97C0-FE80A0695370",
+   "name": "Sacred Heart",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.55,
+   "matches": 309,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 120,
+    "EVEN": 60,
+    "DOWN": 108,
+    "ANCHOR": 21
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.8,
+    "EVEN": 19.4,
+    "DOWN": 35,
+    "ANCHOR": 6.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 6.8,
+   "breadth": 0.768,
+   "competitiveRatio": 35,
+   "winRate": 51.1
+  },
+  {
+   "teamId": "3D1FC2B5-5BAA-4AC5-BA43-E8EC11F5873A",
+   "name": "Siena",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 17.9,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 46,
+    "UP": 148,
+    "EVEN": 57,
+    "DOWN": 57,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 14.9,
+    "UP": 48.1,
+    "EVEN": 18.5,
+    "DOWN": 18.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 14.9,
+   "anchorRate": 0,
+   "breadth": 0.783,
+   "competitiveRatio": 52.9,
+   "winRate": 41.6
+  },
+  {
+   "teamId": "420446C8-DF50-4290-A204-29CA7BBDE631",
+   "name": "Sacred Heart",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 18.87,
+   "matches": 308,
+   "bands": {
+    "STRETCH": 47,
+    "UP": 220,
+    "EVEN": 6,
+    "DOWN": 35,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 15.3,
+    "UP": 71.4,
+    "EVEN": 1.9,
+    "DOWN": 11.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 15.3,
+   "anchorRate": 0,
+   "breadth": 0.529,
+   "competitiveRatio": 52.9,
+   "winRate": 36
+  },
+  {
+   "teamId": "030BC799-2799-4A67-A1E0-69F347D1F639",
+   "name": "Mount St. Mary’s",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.74,
+   "matches": 286,
+   "bands": {
+    "STRETCH": 14,
+    "UP": 108,
+    "EVEN": 93,
+    "DOWN": 64,
+    "ANCHOR": 7
+   },
+   "bandPct": {
+    "STRETCH": 4.9,
+    "UP": 37.8,
+    "EVEN": 32.5,
+    "DOWN": 22.4,
+    "ANCHOR": 2.4
+   },
+   "stretchRate": 4.9,
+   "anchorRate": 2.4,
+   "breadth": 0.812,
+   "competitiveRatio": 38.8,
+   "winRate": 35
+  },
+  {
+   "teamId": "86B666D8-31E4-42F5-B976-9A02BEBB9C15",
+   "name": "Merrimack",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 19.57,
+   "matches": 280,
+   "bands": {
+    "STRETCH": 55,
+    "UP": 190,
+    "EVEN": 6,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 19.6,
+    "UP": 67.9,
+    "EVEN": 2.1,
+    "DOWN": 10.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 19.6,
+   "anchorRate": 0,
+   "breadth": 0.559,
+   "competitiveRatio": 42.9,
+   "winRate": 33.2
+  },
+  {
+   "teamId": "D7E4D000-C496-492B-85A0-A6B015C03760",
+   "name": "Niagara",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 20.64,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 140,
+    "UP": 97,
+    "EVEN": 0,
+    "DOWN": 29,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 52.6,
+    "UP": 36.5,
+    "EVEN": 0,
+    "DOWN": 10.9,
+    "ANCHOR": 0
+   },
+   "stretchRate": 52.6,
+   "anchorRate": 0,
+   "breadth": 0.589,
+   "competitiveRatio": 50.2,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "39751C9F-2689-44D0-A812-787B1CA93AFA",
+   "name": "Merrimack",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 26.94,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 118,
+    "UP": 93,
+    "EVEN": 24,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 50.2,
+    "UP": 39.6,
+    "EVEN": 10.2,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 50.2,
+   "anchorRate": 0,
+   "breadth": 0.588,
+   "competitiveRatio": 27.2,
+   "winRate": 18.3
+  }
+ ]
+}

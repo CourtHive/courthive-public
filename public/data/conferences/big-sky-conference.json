@@ -1,0 +1,570 @@
+{
+ "conference": "Big Sky Conference",
+ "slug": "big-sky-conference",
+ "divisions": [
+  "DIV_I"
+ ],
+ "seasons": [
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 17,
+ "fingerprint": {
+  "overall": {
+   "matches": 5722,
+   "bands": {
+    "STRETCH": 300,
+    "UP": 2426,
+    "EVEN": 1006,
+    "DOWN": 1468,
+    "ANCHOR": 522
+   },
+   "bandPct": {
+    "STRETCH": 5.2,
+    "UP": 42.4,
+    "EVEN": 17.6,
+    "DOWN": 25.7,
+    "ANCHOR": 9.1
+   },
+   "stretchRate": 5.2,
+   "anchorRate": 9.1,
+   "breadth": 0.865,
+   "competitiveRatio": 51.4,
+   "winRate": 49
+  },
+  "inConference": {
+   "matches": 2634,
+   "bands": {
+    "STRETCH": 45,
+    "UP": 987,
+    "EVEN": 570,
+    "DOWN": 987,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 37.5,
+    "EVEN": 21.6,
+    "DOWN": 37.5,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 1.7,
+   "breadth": 0.749,
+   "competitiveRatio": 58.3,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3088,
+   "bands": {
+    "STRETCH": 255,
+    "UP": 1439,
+    "EVEN": 436,
+    "DOWN": 481,
+    "ANCHOR": 477
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 46.6,
+    "EVEN": 14.1,
+    "DOWN": 15.6,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 15.4,
+   "breadth": 0.88,
+   "competitiveRatio": 45.6,
+   "winRate": 48.1
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 1.7,
+  "nonConference": 8.3,
+  "delta": 6.6,
+  "nonConferenceShare": 54
+ },
+ "members": [
+  {
+   "teamId": "DCEDEAE6-4AEE-484E-8841-EEFF49F61DCE",
+   "name": "Sacramento State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 17.9,
+   "matches": 406,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 15,
+    "EVEN": 37,
+    "DOWN": 280,
+    "ANCHOR": 68
+   },
+   "bandPct": {
+    "STRETCH": 1.5,
+    "UP": 3.7,
+    "EVEN": 9.1,
+    "DOWN": 69,
+    "ANCHOR": 16.7
+   },
+   "stretchRate": 1.5,
+   "anchorRate": 16.7,
+   "breadth": 0.595,
+   "competitiveRatio": 49.1,
+   "winRate": 68
+  },
+  {
+   "teamId": "2208DC75-3067-4E1F-9796-D4BC324CE9AD",
+   "name": "Northern Arizona",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.37,
+   "matches": 368,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 64,
+    "EVEN": 55,
+    "DOWN": 169,
+    "ANCHOR": 64
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 17.4,
+    "EVEN": 14.9,
+    "DOWN": 45.9,
+    "ANCHOR": 17.4
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 17.4,
+   "breadth": 0.861,
+   "competitiveRatio": 55.2,
+   "winRate": 67.7
+  },
+  {
+   "teamId": "DA33685C-DB57-428E-8DA8-8FF3C1523306",
+   "name": "Idaho State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.32,
+   "matches": 366,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 142,
+    "EVEN": 96,
+    "DOWN": 68,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.8,
+    "EVEN": 26.2,
+    "DOWN": 18.6,
+    "ANCHOR": 16.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.4,
+   "breadth": 0.825,
+   "competitiveRatio": 57.1,
+   "winRate": 56
+  },
+  {
+   "teamId": "0E9C11B8-B7A0-4456-89CF-FA422075D587",
+   "name": "Montana State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.62,
+   "matches": 355,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 159,
+    "EVEN": 89,
+    "DOWN": 71,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44.8,
+    "EVEN": 25.1,
+    "DOWN": 20,
+    "ANCHOR": 10.1
+   },
+   "stretchRate": 0,
+   "anchorRate": 10.1,
+   "breadth": 0.783,
+   "competitiveRatio": 56.6,
+   "winRate": 41.7
+  },
+  {
+   "teamId": "562FBB01-5445-4962-8C24-BA692BFEE723",
+   "name": "University Of Montana",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.07,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 88,
+    "EVEN": 57,
+    "DOWN": 140,
+    "ANCHOR": 66
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 24.9,
+    "EVEN": 16.1,
+    "DOWN": 39.5,
+    "ANCHOR": 18.6
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 18.6,
+   "breadth": 0.845,
+   "competitiveRatio": 51.7,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "628F44DE-33E5-4F1F-AF3F-7F7D0AA7F547",
+   "name": "Idaho State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.42,
+   "matches": 353,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 96,
+    "EVEN": 36,
+    "DOWN": 176,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 4.2,
+    "UP": 27.2,
+    "EVEN": 10.2,
+    "DOWN": 49.9,
+    "ANCHOR": 8.5
+   },
+   "stretchRate": 4.2,
+   "anchorRate": 8.5,
+   "breadth": 0.794,
+   "competitiveRatio": 46.2,
+   "winRate": 56.1
+  },
+  {
+   "teamId": "6323C0EC-C161-4AEC-BE54-42C46FDC44EE",
+   "name": "University Of Idaho",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 14.7,
+   "matches": 348,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 174,
+    "EVEN": 88,
+    "DOWN": 41,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 50,
+    "EVEN": 25.3,
+    "DOWN": 11.8,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 8.6,
+   "breadth": 0.803,
+   "competitiveRatio": 58.3,
+   "winRate": 40.8
+  },
+  {
+   "teamId": "17BD624C-B7BF-43E8-B7CF-78ED615738CA",
+   "name": "Montana State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.2,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 177,
+    "EVEN": 72,
+    "DOWN": 81,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 4.3,
+    "UP": 51.3,
+    "EVEN": 20.9,
+    "DOWN": 23.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 4.3,
+   "anchorRate": 0,
+   "breadth": 0.712,
+   "competitiveRatio": 49.4,
+   "winRate": 50.1
+  },
+  {
+   "teamId": "91249E9C-3170-40C0-A1E7-1893654FA2F4",
+   "name": "University Of Idaho",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.61,
+   "matches": 345,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 131,
+    "EVEN": 46,
+    "DOWN": 144,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 38,
+    "EVEN": 13.3,
+    "DOWN": 41.7,
+    "ANCHOR": 5.2
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 5.2,
+   "breadth": 0.761,
+   "competitiveRatio": 52.2,
+   "winRate": 53
+  },
+  {
+   "teamId": "44F14F0D-5BA1-4743-8372-2D709304738B",
+   "name": "Sacramento State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.16,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 165,
+    "EVEN": 78,
+    "DOWN": 33,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 3.5,
+    "UP": 48.7,
+    "EVEN": 23,
+    "DOWN": 9.7,
+    "ANCHOR": 15
+   },
+   "stretchRate": 3.5,
+   "anchorRate": 15,
+   "breadth": 0.819,
+   "competitiveRatio": 53.6,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "3D7D14F4-B808-4B04-95B5-0852733F5FD4",
+   "name": "Weber State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.6,
+   "matches": 332,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 222,
+    "EVEN": 54,
+    "DOWN": 16,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 12,
+    "UP": 66.9,
+    "EVEN": 16.3,
+    "DOWN": 4.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 12,
+   "anchorRate": 0,
+   "breadth": 0.6,
+   "competitiveRatio": 59.8,
+   "winRate": 34.9
+  },
+  {
+   "teamId": "F31B3628-9D2E-4935-A458-3D8D1726D690",
+   "name": "Weber State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.93,
+   "matches": 328,
+   "bands": {
+    "STRETCH": 62,
+    "UP": 250,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 10
+   },
+   "bandPct": {
+    "STRETCH": 18.9,
+    "UP": 76.2,
+    "EVEN": 1.8,
+    "DOWN": 0,
+    "ANCHOR": 3
+   },
+   "stretchRate": 18.9,
+   "anchorRate": 3,
+   "breadth": 0.436,
+   "competitiveRatio": 49.1,
+   "winRate": 32.3
+  },
+  {
+   "teamId": "C44F5698-19A4-479B-BC61-3C8809B65A35",
+   "name": "Eastern Washington",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.66,
+   "matches": 327,
+   "bands": {
+    "STRETCH": 27,
+    "UP": 171,
+    "EVEN": 87,
+    "DOWN": 30,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 52.3,
+    "EVEN": 26.6,
+    "DOWN": 9.2,
+    "ANCHOR": 3.7
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 3.7,
+   "breadth": 0.769,
+   "competitiveRatio": 47.1,
+   "winRate": 36.4
+  },
+  {
+   "teamId": "F1D82E86-8013-4811-8490-F2E542F08FFB",
+   "name": "University Of Montana",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 22.05,
+   "matches": 319,
+   "bands": {
+    "STRETCH": 43,
+    "UP": 166,
+    "EVEN": 70,
+    "DOWN": 40,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 13.5,
+    "UP": 52,
+    "EVEN": 21.9,
+    "DOWN": 12.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 13.5,
+   "anchorRate": 0,
+   "breadth": 0.748,
+   "competitiveRatio": 48.9,
+   "winRate": 37
+  },
+  {
+   "teamId": "6F000E19-24CB-459B-8C57-F2AFE4E0F7D7",
+   "name": "Northern Arizona",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.76,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 104,
+    "EVEN": 48,
+    "DOWN": 143,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 33.5,
+    "EVEN": 15.5,
+    "DOWN": 46.1,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 1,
+   "anchorRate": 3.9,
+   "breadth": 0.735,
+   "competitiveRatio": 47.2,
+   "winRate": 59.4
+  },
+  {
+   "teamId": "6F7117AF-11D9-4594-9116-FDE01C7B2198",
+   "name": "Portland State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.76,
+   "matches": 266,
+   "bands": {
+    "STRETCH": 22,
+    "UP": 178,
+    "EVEN": 18,
+    "DOWN": 12,
+    "ANCHOR": 36
+   },
+   "bandPct": {
+    "STRETCH": 8.3,
+    "UP": 66.9,
+    "EVEN": 6.8,
+    "DOWN": 4.5,
+    "ANCHOR": 13.5
+   },
+   "stretchRate": 8.3,
+   "anchorRate": 13.5,
+   "breadth": 0.663,
+   "competitiveRatio": 47.4,
+   "winRate": 32.3
+  },
+  {
+   "teamId": "6570DA12-00BD-43E8-82D0-3D03857DAB68",
+   "name": "Portland State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.64,
+   "matches": 261,
+   "bands": {
+    "STRETCH": 15,
+    "UP": 124,
+    "EVEN": 69,
+    "DOWN": 24,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 47.5,
+    "EVEN": 26.4,
+    "DOWN": 9.2,
+    "ANCHOR": 11.1
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 11.1,
+   "breadth": 0.828,
+   "competitiveRatio": 41.2,
+   "winRate": 39.1
+  }
+ ]
+}

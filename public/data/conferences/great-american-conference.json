@@ -1,0 +1,355 @@
+{
+ "conference": "Great American Conference",
+ "slug": "great-american-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 9,
+ "fingerprint": {
+  "overall": {
+   "matches": 3165,
+   "bands": {
+    "STRETCH": 108,
+    "UP": 1240,
+    "EVEN": 511,
+    "DOWN": 1109,
+    "ANCHOR": 197
+   },
+   "bandPct": {
+    "STRETCH": 3.4,
+    "UP": 39.2,
+    "EVEN": 16.1,
+    "DOWN": 35,
+    "ANCHOR": 6.2
+   },
+   "stretchRate": 3.4,
+   "anchorRate": 6.2,
+   "breadth": 0.818,
+   "competitiveRatio": 47.8,
+   "winRate": 54.7
+  },
+  "inConference": {
+   "matches": 828,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 310,
+    "EVEN": 208,
+    "DOWN": 310,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 37.4,
+    "EVEN": 25.1,
+    "DOWN": 37.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.673,
+   "competitiveRatio": 53.5,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 2337,
+   "bands": {
+    "STRETCH": 108,
+    "UP": 930,
+    "EVEN": 303,
+    "DOWN": 799,
+    "ANCHOR": 197
+   },
+   "bandPct": {
+    "STRETCH": 4.6,
+    "UP": 39.8,
+    "EVEN": 13,
+    "DOWN": 34.2,
+    "ANCHOR": 8.4
+   },
+   "stretchRate": 4.6,
+   "anchorRate": 8.4,
+   "breadth": 0.838,
+   "competitiveRatio": 45.8,
+   "winRate": 56.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 4.6,
+  "delta": 4.6,
+  "nonConferenceShare": 73.8
+ },
+ "members": [
+  {
+   "teamId": "871AE31F-2111-484C-8150-42DEAFBBF0B9",
+   "name": "Harding",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.97,
+   "matches": 396,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 88,
+    "EVEN": 17,
+    "DOWN": 231,
+    "ANCHOR": 60
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.2,
+    "EVEN": 4.3,
+    "DOWN": 58.3,
+    "ANCHOR": 15.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.2,
+   "breadth": 0.665,
+   "competitiveRatio": 56.1,
+   "winRate": 62.4
+  },
+  {
+   "teamId": "509A0039-57A9-4F40-AA69-893F32F4DED3",
+   "name": "Ouachita Baptist",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.62,
+   "matches": 388,
+   "bands": {
+    "STRETCH": 4,
+    "UP": 145,
+    "EVEN": 105,
+    "DOWN": 119,
+    "ANCHOR": 15
+   },
+   "bandPct": {
+    "STRETCH": 1,
+    "UP": 37.4,
+    "EVEN": 27.1,
+    "DOWN": 30.7,
+    "ANCHOR": 3.9
+   },
+   "stretchRate": 1,
+   "anchorRate": 3.9,
+   "breadth": 0.781,
+   "competitiveRatio": 54.4,
+   "winRate": 55.7
+  },
+  {
+   "teamId": "B228A421-E3E6-4033-8B8F-26004DCEA11B",
+   "name": "Southern Arkansas",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.81,
+   "matches": 372,
+   "bands": {
+    "STRETCH": 40,
+    "UP": 205,
+    "EVEN": 65,
+    "DOWN": 56,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 10.8,
+    "UP": 55.1,
+    "EVEN": 17.5,
+    "DOWN": 15.1,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 10.8,
+   "anchorRate": 1.6,
+   "breadth": 0.761,
+   "competitiveRatio": 44.4,
+   "winRate": 58.6
+  },
+  {
+   "teamId": "0CAB5482-2582-4D83-9F6E-F9F1B3146312",
+   "name": "Harding",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.44,
+   "matches": 364,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 200,
+    "EVEN": 61,
+    "DOWN": 62,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 54.9,
+    "EVEN": 16.8,
+    "DOWN": 17,
+    "ANCHOR": 3
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 3,
+   "breadth": 0.771,
+   "competitiveRatio": 42.8,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "0B38FAAE-B89D-4FAD-B20F-B66D2FDBB80F",
+   "name": "Southern Arkansas",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.02,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 122,
+    "EVEN": 88,
+    "DOWN": 123,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0.8,
+    "UP": 34.5,
+    "EVEN": 24.9,
+    "DOWN": 34.7,
+    "ANCHOR": 5.1
+   },
+   "stretchRate": 0.8,
+   "anchorRate": 5.1,
+   "breadth": 0.791,
+   "competitiveRatio": 56.2,
+   "winRate": 59.6
+  },
+  {
+   "teamId": "72E5BA46-7F68-4436-B047-E79746B84132",
+   "name": "Ouachita Baptist",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.96,
+   "matches": 344,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 209,
+    "EVEN": 67,
+    "DOWN": 42,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 2.6,
+    "UP": 60.8,
+    "EVEN": 19.5,
+    "DOWN": 12.2,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 2.6,
+   "anchorRate": 4.9,
+   "breadth": 0.697,
+   "competitiveRatio": 41.1,
+   "winRate": 40.4
+  },
+  {
+   "teamId": "2A7CECAD-116A-4996-8702-45C876EB0619",
+   "name": "Southeastern Oklahoma State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.39,
+   "matches": 343,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 83,
+    "EVEN": 49,
+    "DOWN": 192,
+    "ANCHOR": 13
+   },
+   "bandPct": {
+    "STRETCH": 1.7,
+    "UP": 24.2,
+    "EVEN": 14.3,
+    "DOWN": 56,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 1.7,
+   "anchorRate": 3.8,
+   "breadth": 0.709,
+   "competitiveRatio": 49,
+   "winRate": 63.6
+  },
+  {
+   "teamId": "B5436DA4-68E6-4426-ADB5-D4DCBB3ED71B",
+   "name": "Henderson State",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.89,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 71,
+    "EVEN": 24,
+    "DOWN": 197,
+    "ANCHOR": 29
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 22.1,
+    "EVEN": 7.5,
+    "DOWN": 61.4,
+    "ANCHOR": 9
+   },
+   "stretchRate": 0,
+   "anchorRate": 9,
+   "breadth": 0.649,
+   "competitiveRatio": 44.1,
+   "winRate": 58.9
+  },
+  {
+   "teamId": "F31D17F6-0749-4657-A523-6F33B5AEF120",
+   "name": "Arkansas Tech",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.94,
+   "matches": 283,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 117,
+    "EVEN": 35,
+    "DOWN": 87,
+    "ANCHOR": 28
+   },
+   "bandPct": {
+    "STRETCH": 5.7,
+    "UP": 41.3,
+    "EVEN": 12.4,
+    "DOWN": 30.7,
+    "ANCHOR": 9.9
+   },
+   "stretchRate": 5.7,
+   "anchorRate": 9.9,
+   "breadth": 0.856,
+   "competitiveRatio": 38.4,
+   "winRate": 42
+  }
+ ]
+}

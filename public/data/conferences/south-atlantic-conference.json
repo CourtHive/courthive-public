@@ -1,0 +1,733 @@
+{
+ "conference": "South Atlantic Conference",
+ "slug": "south-atlantic-conference",
+ "divisions": [
+  "DIV_II"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 23,
+ "fingerprint": {
+  "overall": {
+   "matches": 6607,
+   "bands": {
+    "STRETCH": 871,
+    "UP": 1890,
+    "EVEN": 841,
+    "DOWN": 2069,
+    "ANCHOR": 936
+   },
+   "bandPct": {
+    "STRETCH": 13.2,
+    "UP": 28.6,
+    "EVEN": 12.7,
+    "DOWN": 31.3,
+    "ANCHOR": 14.2
+   },
+   "stretchRate": 13.2,
+   "anchorRate": 14.2,
+   "breadth": 0.949,
+   "competitiveRatio": 37.5,
+   "winRate": 51.2
+  },
+  "inConference": {
+   "matches": 3546,
+   "bands": {
+    "STRETCH": 529,
+    "UP": 1045,
+    "EVEN": 398,
+    "DOWN": 1045,
+    "ANCHOR": 529
+   },
+   "bandPct": {
+    "STRETCH": 14.9,
+    "UP": 29.5,
+    "EVEN": 11.2,
+    "DOWN": 29.5,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 14.9,
+   "anchorRate": 14.9,
+   "breadth": 0.953,
+   "competitiveRatio": 33.8,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 3061,
+   "bands": {
+    "STRETCH": 342,
+    "UP": 845,
+    "EVEN": 443,
+    "DOWN": 1024,
+    "ANCHOR": 407
+   },
+   "bandPct": {
+    "STRETCH": 11.2,
+    "UP": 27.6,
+    "EVEN": 14.5,
+    "DOWN": 33.5,
+    "ANCHOR": 13.3
+   },
+   "stretchRate": 11.2,
+   "anchorRate": 13.3,
+   "breadth": 0.941,
+   "competitiveRatio": 41.9,
+   "winRate": 52.7
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 14.9,
+  "nonConference": 11.2,
+  "delta": -3.7,
+  "nonConferenceShare": 46.3
+ },
+ "members": [
+  {
+   "teamId": "E639A6BC-604B-478A-A183-7BED485AC5EC",
+   "name": "Lincoln Memorial",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.98,
+   "matches": 381,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 68,
+    "EVEN": 50,
+    "DOWN": 180,
+    "ANCHOR": 83
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 17.8,
+    "EVEN": 13.1,
+    "DOWN": 47.2,
+    "ANCHOR": 21.8
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.8,
+   "breadth": 0.783,
+   "competitiveRatio": 45.1,
+   "winRate": 65.4
+  },
+  {
+   "teamId": "76F9E5E9-B287-4982-9E6E-F8DBCE74A6B2",
+   "name": "Lincoln Memorial",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.57,
+   "matches": 362,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 169,
+    "EVEN": 62,
+    "DOWN": 89,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 46.7,
+    "EVEN": 17.1,
+    "DOWN": 24.6,
+    "ANCHOR": 11.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 11.6,
+   "breadth": 0.778,
+   "competitiveRatio": 36.5,
+   "winRate": 48.9
+  },
+  {
+   "teamId": "1F50EAFB-D8C7-4C44-A032-7A69E2BC96E5",
+   "name": "Tusculum",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.75,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 131,
+    "EVEN": 59,
+    "DOWN": 79,
+    "ANCHOR": 49
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 40.4,
+    "EVEN": 18.2,
+    "DOWN": 24.4,
+    "ANCHOR": 15.1
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 15.1,
+   "breadth": 0.857,
+   "competitiveRatio": 46.6,
+   "winRate": 51.9
+  },
+  {
+   "teamId": "2CB71BD6-2307-4B6A-8CCC-ADD50C3760D2",
+   "name": "Wingate",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 15.51,
+   "matches": 324,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 114,
+    "EVEN": 51,
+    "DOWN": 106,
+    "ANCHOR": 53
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 35.2,
+    "EVEN": 15.7,
+    "DOWN": 32.7,
+    "ANCHOR": 16.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 16.4,
+   "breadth": 0.82,
+   "competitiveRatio": 40.7,
+   "winRate": 68.2
+  },
+  {
+   "teamId": "CA9BB01B-A4EA-4081-B106-A2E85225DE4B",
+   "name": "Wingate",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.17,
+   "matches": 321,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 107,
+    "EVEN": 21,
+    "DOWN": 161,
+    "ANCHOR": 26
+   },
+   "bandPct": {
+    "STRETCH": 1.9,
+    "UP": 33.3,
+    "EVEN": 6.5,
+    "DOWN": 50.2,
+    "ANCHOR": 8.1
+   },
+   "stretchRate": 1.9,
+   "anchorRate": 8.1,
+   "breadth": 0.726,
+   "competitiveRatio": 39.3,
+   "winRate": 68.2
+  },
+  {
+   "teamId": "8E5510DE-802C-4405-9513-41281EF65BDA",
+   "name": "Newberry",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.79,
+   "matches": 315,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 81,
+    "EVEN": 32,
+    "DOWN": 175,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 25.7,
+    "EVEN": 10.2,
+    "DOWN": 55.6,
+    "ANCHOR": 8.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 8.6,
+   "breadth": 0.695,
+   "competitiveRatio": 40,
+   "winRate": 64.1
+  },
+  {
+   "teamId": "280E98E0-FE87-4FB9-8C82-3E1D4A8A6102",
+   "name": "Catawba",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 20.2,
+   "matches": 314,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 9,
+    "EVEN": 32,
+    "DOWN": 198,
+    "ANCHOR": 75
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 2.9,
+    "EVEN": 10.2,
+    "DOWN": 63.1,
+    "ANCHOR": 23.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 23.9,
+   "breadth": 0.601,
+   "competitiveRatio": 31.2,
+   "winRate": 76.4
+  },
+  {
+   "teamId": "5DC18176-AA14-4021-BFC6-CD31C0827A39",
+   "name": "Anderson (South Carolina)",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 23.7,
+   "matches": 310,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 120,
+    "EVEN": 52,
+    "DOWN": 74,
+    "ANCHOR": 64
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 38.7,
+    "EVEN": 16.8,
+    "DOWN": 23.9,
+    "ANCHOR": 20.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 20.6,
+   "breadth": 0.829,
+   "competitiveRatio": 34,
+   "winRate": 65.5
+  },
+  {
+   "teamId": "6D9CDF05-B82A-473F-BEA5-49E819CF0D4F",
+   "name": "Virginia at Wise",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.3,
+   "matches": 307,
+   "bands": {
+    "STRETCH": 9,
+    "UP": 104,
+    "EVEN": 40,
+    "DOWN": 110,
+    "ANCHOR": 44
+   },
+   "bandPct": {
+    "STRETCH": 2.9,
+    "UP": 33.9,
+    "EVEN": 13,
+    "DOWN": 35.8,
+    "ANCHOR": 14.3
+   },
+   "stretchRate": 2.9,
+   "anchorRate": 14.3,
+   "breadth": 0.859,
+   "competitiveRatio": 37.3,
+   "winRate": 43.6
+  },
+  {
+   "teamId": "82D7D500-0E6D-4CE3-B9C7-A6CCFE95E089",
+   "name": "Lenoir-Rhyne",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.1,
+   "matches": 303,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 56,
+    "EVEN": 19,
+    "DOWN": 183,
+    "ANCHOR": 45
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 18.5,
+    "EVEN": 6.3,
+    "DOWN": 60.4,
+    "ANCHOR": 14.9
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.9,
+   "breadth": 0.667,
+   "competitiveRatio": 34.7,
+   "winRate": 55.4
+  },
+  {
+   "teamId": "67A4F64C-F56E-42D0-97C1-D25B32BC45D5",
+   "name": "Catawba",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 14.15,
+   "matches": 293,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 3,
+    "EVEN": 15,
+    "DOWN": 193,
+    "ANCHOR": 82
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 1,
+    "EVEN": 5.1,
+    "DOWN": 65.9,
+    "ANCHOR": 28
+   },
+   "stretchRate": 0,
+   "anchorRate": 28,
+   "breadth": 0.516,
+   "competitiveRatio": 43.3,
+   "winRate": 73.4
+  },
+  {
+   "teamId": "AF5F6E99-4405-45E7-9EC5-6B4E7AEDF3D5",
+   "name": "Coker",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 24.09,
+   "matches": 291,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 114,
+    "EVEN": 85,
+    "DOWN": 54,
+    "ANCHOR": 32
+   },
+   "bandPct": {
+    "STRETCH": 2.1,
+    "UP": 39.2,
+    "EVEN": 29.2,
+    "DOWN": 18.6,
+    "ANCHOR": 11
+   },
+   "stretchRate": 2.1,
+   "anchorRate": 11,
+   "breadth": 0.846,
+   "competitiveRatio": 35.4,
+   "winRate": 56.7
+  },
+  {
+   "teamId": "93CF377E-E9F0-46D7-BB37-2F47F031DC45",
+   "name": "Tusculum",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 25.13,
+   "matches": 288,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 183,
+    "EVEN": 7,
+    "DOWN": 55,
+    "ANCHOR": 14
+   },
+   "bandPct": {
+    "STRETCH": 10.1,
+    "UP": 63.5,
+    "EVEN": 2.4,
+    "DOWN": 19.1,
+    "ANCHOR": 4.9
+   },
+   "stretchRate": 10.1,
+   "anchorRate": 4.9,
+   "breadth": 0.667,
+   "competitiveRatio": 32.3,
+   "winRate": 45.8
+  },
+  {
+   "teamId": "7FF31DAC-D024-4EF5-B52A-2BB7C4C67E2E",
+   "name": "Newberry",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.19,
+   "matches": 284,
+   "bands": {
+    "STRETCH": 209,
+    "UP": 48,
+    "EVEN": 0,
+    "DOWN": 15,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 73.6,
+    "UP": 16.9,
+    "EVEN": 0,
+    "DOWN": 5.3,
+    "ANCHOR": 4.2
+   },
+   "stretchRate": 73.6,
+   "anchorRate": 4.2,
+   "breadth": 0.506,
+   "competitiveRatio": 44.9,
+   "winRate": 31
+  },
+  {
+   "teamId": "6DA366AB-CBC2-40DE-9AE8-35471FEA540C",
+   "name": "Anderson (South Carolina)",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.42,
+   "matches": 277,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 77,
+    "EVEN": 58,
+    "DOWN": 49,
+    "ANCHOR": 93
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.8,
+    "EVEN": 20.9,
+    "DOWN": 17.7,
+    "ANCHOR": 33.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 33.6,
+   "breadth": 0.843,
+   "competitiveRatio": 36.8,
+   "winRate": 55.2
+  },
+  {
+   "teamId": "FB94DE4F-4640-45FE-98C0-9A5628594F3C",
+   "name": "Coker",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.26,
+   "matches": 267,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 76,
+    "EVEN": 104,
+    "DOWN": 37,
+    "ANCHOR": 50
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 28.5,
+    "EVEN": 39,
+    "DOWN": 13.9,
+    "ANCHOR": 18.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 18.7,
+   "breadth": 0.816,
+   "competitiveRatio": 42.7,
+   "winRate": 43.1
+  },
+  {
+   "teamId": "615CBB8A-88B8-4B31-A190-33D24A53DD3F",
+   "name": "Carson-Newman",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 17.01,
+   "matches": 263,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 85,
+    "EVEN": 57,
+    "DOWN": 70,
+    "ANCHOR": 51
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 32.3,
+    "EVEN": 21.7,
+    "DOWN": 26.6,
+    "ANCHOR": 19.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 19.4,
+   "breadth": 0.849,
+   "competitiveRatio": 43,
+   "winRate": 47.5
+  },
+  {
+   "teamId": "8BEB4512-77CB-45DD-BB23-85A08945CBB9",
+   "name": "Lenoir-Rhyne",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 16.72,
+   "matches": 259,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 71,
+    "EVEN": 37,
+    "DOWN": 96,
+    "ANCHOR": 55
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 27.4,
+    "EVEN": 14.3,
+    "DOWN": 37.1,
+    "ANCHOR": 21.2
+   },
+   "stretchRate": 0,
+   "anchorRate": 21.2,
+   "breadth": 0.826,
+   "competitiveRatio": 46.3,
+   "winRate": 52.5
+  },
+  {
+   "teamId": "CD764750-4CFF-4D35-9AE0-14F2BB6A3282",
+   "name": "Carson-Newman",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 22.78,
+   "matches": 254,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 74,
+    "EVEN": 41,
+    "DOWN": 100,
+    "ANCHOR": 39
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 29.1,
+    "EVEN": 16.1,
+    "DOWN": 39.4,
+    "ANCHOR": 15.4
+   },
+   "stretchRate": 0,
+   "anchorRate": 15.4,
+   "breadth": 0.813,
+   "competitiveRatio": 39.4,
+   "winRate": 52.4
+  },
+  {
+   "teamId": "2A7189A0-E2ED-4598-BBC3-452768EAC91A",
+   "name": "Mars Hill",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 22.95,
+   "matches": 235,
+   "bands": {
+    "STRETCH": 177,
+    "UP": 39,
+    "EVEN": 0,
+    "DOWN": 19,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 75.3,
+    "UP": 16.6,
+    "EVEN": 0,
+    "DOWN": 8.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 75.3,
+   "anchorRate": 0,
+   "breadth": 0.444,
+   "competitiveRatio": 30.2,
+   "winRate": 16.6
+  },
+  {
+   "teamId": "0342C6FB-A84E-40E4-9B5E-BF3291AC38D9",
+   "name": "Emory & Henry",
+   "gender": "M",
+   "division": "DIV_II",
+   "lineupWTN": 26.42,
+   "matches": 234,
+   "bands": {
+    "STRETCH": 205,
+    "UP": 29,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 87.6,
+    "UP": 12.4,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 87.6,
+   "anchorRate": 0,
+   "breadth": 0.233,
+   "competitiveRatio": 25.3,
+   "winRate": 14.5
+  },
+  {
+   "teamId": "56B90B09-374A-4F47-B62A-977F1DDACE7D",
+   "name": "Emory & Henry",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 27.5,
+   "matches": 208,
+   "bands": {
+    "STRETCH": 59,
+    "UP": 109,
+    "EVEN": 14,
+    "DOWN": 26,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 28.4,
+    "UP": 52.4,
+    "EVEN": 6.7,
+    "DOWN": 12.5,
+    "ANCHOR": 0
+   },
+   "stretchRate": 28.4,
+   "anchorRate": 0,
+   "breadth": 0.707,
+   "competitiveRatio": 26.7,
+   "winRate": 21.2
+  },
+  {
+   "teamId": "C1C5DC7A-EDF0-43AF-8983-FABA1CDB514A",
+   "name": "Mars Hill",
+   "gender": "W",
+   "division": "DIV_II",
+   "lineupWTN": 29.26,
+   "matches": 193,
+   "bands": {
+    "STRETCH": 165,
+    "UP": 23,
+    "EVEN": 5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 85.5,
+    "UP": 11.9,
+    "EVEN": 2.6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 85.5,
+   "anchorRate": 0,
+   "breadth": 0.3,
+   "competitiveRatio": 16.7,
+   "winRate": 13
+  }
+ ]
+}

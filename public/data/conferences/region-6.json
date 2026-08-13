@@ -1,0 +1,274 @@
+{
+ "conference": "Region 6",
+ "slug": "region-6",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "programCount": 6,
+ "fingerprint": {
+  "overall": {
+   "matches": 1077,
+   "bands": {
+    "STRETCH": 93,
+    "UP": 450,
+    "EVEN": 88,
+    "DOWN": 328,
+    "ANCHOR": 118
+   },
+   "bandPct": {
+    "STRETCH": 8.6,
+    "UP": 41.8,
+    "EVEN": 8.2,
+    "DOWN": 30.5,
+    "ANCHOR": 11
+   },
+   "stretchRate": 8.6,
+   "anchorRate": 11,
+   "breadth": 0.861,
+   "competitiveRatio": 41.5,
+   "winRate": 55.1
+  },
+  "inConference": {
+   "matches": 200,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 84,
+    "EVEN": 0,
+    "DOWN": 84,
+    "ANCHOR": 16
+   },
+   "bandPct": {
+    "STRETCH": 8,
+    "UP": 42,
+    "EVEN": 0,
+    "DOWN": 42,
+    "ANCHOR": 8
+   },
+   "stretchRate": 8,
+   "anchorRate": 8,
+   "breadth": 0.704,
+   "competitiveRatio": 46,
+   "winRate": 50
+  },
+  "nonConference": {
+   "matches": 877,
+   "bands": {
+    "STRETCH": 77,
+    "UP": 366,
+    "EVEN": 88,
+    "DOWN": 244,
+    "ANCHOR": 102
+   },
+   "bandPct": {
+    "STRETCH": 8.8,
+    "UP": 41.7,
+    "EVEN": 10,
+    "DOWN": 27.8,
+    "ANCHOR": 11.6
+   },
+   "stretchRate": 8.8,
+   "anchorRate": 11.6,
+   "breadth": 0.879,
+   "competitiveRatio": 40.5,
+   "winRate": 56.2
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51471,
+   "UP": 174555,
+   "EVEN": 76349,
+   "DOWN": 176225,
+   "ANCHOR": 52814
+  },
+  "bandPct": {
+   "STRETCH": 9.7,
+   "UP": 32.8,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.7,
+  "anchorRate": 9.9,
+  "breadth": 0.911,
+  "competitiveRatio": 37.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 8,
+  "nonConference": 8.8,
+  "delta": 0.8,
+  "nonConferenceShare": 81.4
+ },
+ "members": [
+  {
+   "teamId": "15A88F6B-EFDC-423F-B8B3-F4340A78D994",
+   "name": "Cowley",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 17.73,
+   "matches": 238,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 114,
+    "EVEN": 17,
+    "DOWN": 77,
+    "ANCHOR": 30
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 47.9,
+    "EVEN": 7.1,
+    "DOWN": 32.4,
+    "ANCHOR": 12.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 12.6,
+   "breadth": 0.725,
+   "competitiveRatio": 53.2,
+   "winRate": 62.2
+  },
+  {
+   "teamId": "43A9DC7D-C2CB-4596-BDAC-1CF2CC2B5347",
+   "name": "Cowley",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 24.16,
+   "matches": 215,
+   "bands": {
+    "STRETCH": 16,
+    "UP": 69,
+    "EVEN": 6,
+    "DOWN": 84,
+    "ANCHOR": 40
+   },
+   "bandPct": {
+    "STRETCH": 7.4,
+    "UP": 32.1,
+    "EVEN": 2.8,
+    "DOWN": 39.1,
+    "ANCHOR": 18.6
+   },
+   "stretchRate": 7.4,
+   "anchorRate": 18.6,
+   "breadth": 0.831,
+   "competitiveRatio": 36.3,
+   "winRate": 67.9
+  },
+  {
+   "teamId": "673B3BED-2127-439B-8671-3B0D5DE21766",
+   "name": "Seward County",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 18.76,
+   "matches": 185,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 75,
+    "EVEN": 12,
+    "DOWN": 71,
+    "ANCHOR": 27
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 40.5,
+    "EVEN": 6.5,
+    "DOWN": 38.4,
+    "ANCHOR": 14.6
+   },
+   "stretchRate": 0,
+   "anchorRate": 14.6,
+   "breadth": 0.741,
+   "competitiveRatio": 47.6,
+   "winRate": 40
+  },
+  {
+   "teamId": "09CD7D92-52A3-403C-BD6B-2A2D1CAAF2A1",
+   "name": "Barton Community College",
+   "gender": "M",
+   "division": "JUCO",
+   "lineupWTN": 20.63,
+   "matches": 165,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 83,
+    "EVEN": 35,
+    "DOWN": 18,
+    "ANCHOR": 17
+   },
+   "bandPct": {
+    "STRETCH": 7.3,
+    "UP": 50.3,
+    "EVEN": 21.2,
+    "DOWN": 10.9,
+    "ANCHOR": 10.3
+   },
+   "stretchRate": 7.3,
+   "anchorRate": 10.3,
+   "breadth": 0.833,
+   "competitiveRatio": 41.8,
+   "winRate": 56.4
+  },
+  {
+   "teamId": "E95C0CCE-7801-4095-8366-ADC69D3FCACF",
+   "name": "Seward County",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 28.25,
+   "matches": 153,
+   "bands": {
+    "STRETCH": 65,
+    "UP": 55,
+    "EVEN": 18,
+    "DOWN": 15,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 42.5,
+    "UP": 35.9,
+    "EVEN": 11.8,
+    "DOWN": 9.8,
+    "ANCHOR": 0
+   },
+   "stretchRate": 42.5,
+   "anchorRate": 0,
+   "breadth": 0.752,
+   "competitiveRatio": 32.5,
+   "winRate": 46.4
+  },
+  {
+   "teamId": "3FDB2E66-80D9-4F89-9671-99ABE7EFBBC5",
+   "name": "Barton Community College",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 27.02,
+   "matches": 121,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 54,
+    "EVEN": 0,
+    "DOWN": 63,
+    "ANCHOR": 4
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 44.6,
+    "EVEN": 0,
+    "DOWN": 52.1,
+    "ANCHOR": 3.3
+   },
+   "stretchRate": 0,
+   "anchorRate": 3.3,
+   "breadth": 0.505,
+   "competitiveRatio": 29.8,
+   "winRate": 50.4
+  }
+ ]
+}
