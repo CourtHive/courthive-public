@@ -107,6 +107,18 @@
   color: var(--chc-text-primary, #363636);
 }
 
+/* Program directory button — same reset as the other navbar buttons. Without it the browser's
+   default button background (#efefef) persists in both themes, which renders the label invisible
+   in dark mode (light text on a light grey chip). */
+.programs-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  line-height: 1;
+  color: var(--chc-text-primary, #363636);
+}
+
 /* Language toggle button */
 .language-toggle {
   background: none;
