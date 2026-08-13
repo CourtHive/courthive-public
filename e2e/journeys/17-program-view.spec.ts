@@ -21,11 +21,14 @@ interface Dual {
   teamName: string;
 }
 
+const PROVIDER_ID = 'prov-1';
+const TEAM_NAME = 'Wake Forest University';
+
 function seasonDuals(): Dual[] {
   return [
-    { tournamentId: 'ita-dual-A', tournamentName: 'Wake Forest University vs Virginia Tech', startDate: '2026-03-20', endDate: '2026-03-20', providerId: 'prov-1', teamName: 'Wake Forest University' },
-    { tournamentId: 'ita-dual-B', tournamentName: 'Wake Forest University vs Baylor University', startDate: '2026-02-22', endDate: '2026-02-22', providerId: 'prov-1', teamName: 'Wake Forest University' },
-    { tournamentId: 'ita-dual-C', tournamentName: 'Wake Forest University vs Duke University', startDate: '2025-04-10', endDate: '2025-04-10', providerId: 'prov-1', teamName: 'Wake Forest University' },
+    { tournamentId: 'ita-dual-A', tournamentName: `${TEAM_NAME} vs Virginia Tech`, startDate: '2026-03-20', endDate: '2026-03-20', providerId: PROVIDER_ID, teamName: TEAM_NAME },
+    { tournamentId: 'ita-dual-B', tournamentName: `${TEAM_NAME} vs Baylor University`, startDate: '2026-02-22', endDate: '2026-02-22', providerId: PROVIDER_ID, teamName: TEAM_NAME },
+    { tournamentId: 'ita-dual-C', tournamentName: `${TEAM_NAME} vs Duke University`, startDate: '2025-04-10', endDate: '2025-04-10', providerId: PROVIDER_ID, teamName: TEAM_NAME },
   ];
 }
 
@@ -55,15 +58,15 @@ test.describe('Program view — by-team season', () => {
 
     // First dual: name, scorecard link, and calendar-correct date (no UTC day shift).
     const firstLink = program.locator('.chp-program-name').first();
-    await expect(firstLink).toHaveText('Wake Forest University vs Virginia Tech');
+    await expect(firstLink).toHaveText(`${TEAM_NAME} vs Virginia Tech`);
     await expect(firstLink).toHaveAttribute('href', '#/tournament/ita-dual-A');
     await expect(program.locator('.chp-program-date').first()).toHaveText('Mar 20, 2026');
 
     // 2025 group has the single Duke dual.
     await expect(program.locator('.chp-program-name')).toHaveText([
-      'Wake Forest University vs Virginia Tech',
-      'Wake Forest University vs Baylor University',
-      'Wake Forest University vs Duke University',
+      `${TEAM_NAME} vs Virginia Tech`,
+      `${TEAM_NAME} vs Baylor University`,
+      `${TEAM_NAME} vs Duke University`,
     ]);
   });
 
