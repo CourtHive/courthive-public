@@ -15,22 +15,22 @@
   "overall": {
    "matches": 4331,
    "bands": {
-    "STRETCH": 816,
-    "UP": 1399,
+    "STRETCH": 810,
+    "UP": 1405,
     "EVEN": 377,
-    "DOWN": 1184,
-    "ANCHOR": 555
+    "DOWN": 1190,
+    "ANCHOR": 549
    },
    "bandPct": {
-    "STRETCH": 18.8,
-    "UP": 32.3,
+    "STRETCH": 18.7,
+    "UP": 32.4,
     "EVEN": 8.7,
-    "DOWN": 27.3,
-    "ANCHOR": 12.8
+    "DOWN": 27.5,
+    "ANCHOR": 12.7
    },
-   "stretchRate": 18.8,
-   "anchorRate": 12.8,
-   "breadth": 0.938,
+   "stretchRate": 18.7,
+   "anchorRate": 12.7,
+   "breadth": 0.937,
    "competitiveRatio": 25.7,
    "winRate": 45
   },
@@ -59,22 +59,22 @@
   "nonConference": {
    "matches": 2519,
    "bands": {
-    "STRETCH": 452,
-    "UP": 920,
+    "STRETCH": 446,
+    "UP": 926,
     "EVEN": 251,
-    "DOWN": 705,
-    "ANCHOR": 191
+    "DOWN": 711,
+    "ANCHOR": 185
    },
    "bandPct": {
-    "STRETCH": 17.9,
-    "UP": 36.5,
+    "STRETCH": 17.7,
+    "UP": 36.8,
     "EVEN": 10,
-    "DOWN": 28,
-    "ANCHOR": 7.6
+    "DOWN": 28.2,
+    "ANCHOR": 7.3
    },
-   "stretchRate": 17.9,
-   "anchorRate": 7.6,
-   "breadth": 0.906,
+   "stretchRate": 17.7,
+   "anchorRate": 7.3,
+   "breadth": 0.903,
    "competitiveRatio": 29.2,
    "winRate": 41.4
   }
@@ -82,29 +82,29 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
  "stretchGap": {
   "inConference": 20.1,
-  "nonConference": 17.9,
-  "delta": -2.2,
+  "nonConference": 17.7,
+  "delta": -2.4,
   "nonConferenceShare": 58.2
  },
  "members": [
@@ -173,19 +173,19 @@
     "STRETCH": 74,
     "UP": 128,
     "EVEN": 6,
-    "DOWN": 57,
-    "ANCHOR": 81
+    "DOWN": 63,
+    "ANCHOR": 75
    },
    "bandPct": {
     "STRETCH": 21.4,
     "UP": 37,
     "EVEN": 1.7,
-    "DOWN": 16.5,
-    "ANCHOR": 23.4
+    "DOWN": 18.2,
+    "ANCHOR": 21.7
    },
    "stretchRate": 21.4,
-   "anchorRate": 23.4,
-   "breadth": 0.873,
+   "anchorRate": 21.7,
+   "breadth": 0.876,
    "competitiveRatio": 30.1,
    "winRate": 54.9
   },
@@ -359,22 +359,22 @@
    "lineupWTN": 26.35,
    "matches": 289,
    "bands": {
-    "STRETCH": 42,
-    "UP": 104,
+    "STRETCH": 36,
+    "UP": 110,
     "EVEN": 24,
     "DOWN": 102,
     "ANCHOR": 17
    },
    "bandPct": {
-    "STRETCH": 14.5,
-    "UP": 36,
+    "STRETCH": 12.5,
+    "UP": 38.1,
     "EVEN": 8.3,
     "DOWN": 35.3,
     "ANCHOR": 5.9
    },
-   "stretchRate": 14.5,
+   "stretchRate": 12.5,
    "anchorRate": 5.9,
-   "breadth": 0.863,
+   "breadth": 0.85,
    "competitiveRatio": 27.3,
    "winRate": 37.7
   },

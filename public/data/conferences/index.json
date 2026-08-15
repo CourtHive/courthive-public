@@ -1,47 +1,46 @@
 {
  "generatedFor": "courthive-public conference pages",
- "policy": "absolute",
+ "policy": "default",
  "deltaBands": [
   {
    "key": "ANCHOR",
-   "max": -4
+   "maxPct": -10.3
   },
   {
    "key": "DOWN",
-   "max": -0.5
+   "maxPct": -1.3
   },
   {
    "key": "EVEN",
-   "max": 0.5
+   "maxPct": 1.3
   },
   {
    "key": "UP",
-   "max": 4
+   "maxPct": 10.3
   },
   {
    "key": "STRETCH"
   }
  ],
- "threshold": 4,
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -54,9 +53,9 @@
    ],
    "programCount": 31,
    "matches": 12461,
-   "stretchRate": 0.7,
-   "anchorRate": 16.1,
-   "breadth": 0.837,
+   "stretchRate": 0.6,
+   "anchorRate": 15.8,
+   "breadth": 0.831,
    "competitiveRatio": 45.4,
    "nonConferenceShare": 42.4
   },
@@ -70,7 +69,7 @@
    "matches": 12327,
    "stretchRate": 1.9,
    "anchorRate": 15,
-   "breadth": 0.867,
+   "breadth": 0.868,
    "competitiveRatio": 44.1,
    "nonConferenceShare": 47.7
   },
@@ -82,9 +81,9 @@
    ],
    "programCount": 31,
    "matches": 11038,
-   "stretchRate": 1.3,
+   "stretchRate": 1.2,
    "anchorRate": 10.1,
-   "breadth": 0.827,
+   "breadth": 0.826,
    "competitiveRatio": 46.1,
    "nonConferenceShare": 51.4
   },
@@ -99,7 +98,7 @@
    "matches": 9367,
    "stretchRate": 9.3,
    "anchorRate": 9.4,
-   "breadth": 0.903,
+   "breadth": 0.906,
    "competitiveRatio": 40.3,
    "nonConferenceShare": 49.1
   },
@@ -112,8 +111,8 @@
    "programCount": 25,
    "matches": 8663,
    "stretchRate": 2,
-   "anchorRate": 12.8,
-   "breadth": 0.842,
+   "anchorRate": 12.6,
+   "breadth": 0.841,
    "competitiveRatio": 44.8,
    "nonConferenceShare": 56.4
   },
@@ -126,8 +125,8 @@
    "programCount": 24,
    "matches": 8033,
    "stretchRate": 3.5,
-   "anchorRate": 7.2,
-   "breadth": 0.839,
+   "anchorRate": 7.1,
+   "breadth": 0.841,
    "competitiveRatio": 47.5,
    "nonConferenceShare": 71.9
   },
@@ -154,9 +153,9 @@
    ],
    "programCount": 21,
    "matches": 7458,
-   "stretchRate": 8.9,
-   "anchorRate": 15.8,
-   "breadth": 0.922,
+   "stretchRate": 8.6,
+   "anchorRate": 15.6,
+   "breadth": 0.918,
    "competitiveRatio": 34.5,
    "nonConferenceShare": 54
   },
@@ -170,7 +169,7 @@
    "matches": 7321,
    "stretchRate": 9.4,
    "anchorRate": 14.1,
-   "breadth": 0.916,
+   "breadth": 0.918,
    "competitiveRatio": 42.4,
    "nonConferenceShare": 41.4
   },
@@ -183,7 +182,7 @@
    ],
    "programCount": 24,
    "matches": 7247,
-   "stretchRate": 11.2,
+   "stretchRate": 11.1,
    "anchorRate": 11.5,
    "breadth": 0.923,
    "competitiveRatio": 39.3,
@@ -197,9 +196,9 @@
    ],
    "programCount": 23,
    "matches": 7223,
-   "stretchRate": 5.8,
-   "anchorRate": 5.5,
-   "breadth": 0.841,
+   "stretchRate": 5.5,
+   "anchorRate": 5.4,
+   "breadth": 0.837,
    "competitiveRatio": 43.4,
    "nonConferenceShare": 72.4
   },
@@ -213,7 +212,7 @@
    "matches": 6856,
    "stretchRate": 5.3,
    "anchorRate": 5.8,
-   "breadth": 0.847,
+   "breadth": 0.848,
    "competitiveRatio": 44.1,
    "nonConferenceShare": 61.5
   },
@@ -283,8 +282,8 @@
    "programCount": 20,
    "matches": 6540,
    "stretchRate": 1.6,
-   "anchorRate": 4.5,
-   "breadth": 0.776,
+   "anchorRate": 4.4,
+   "breadth": 0.775,
    "competitiveRatio": 46.7,
    "nonConferenceShare": 59.6
   },
@@ -310,9 +309,9 @@
    ],
    "programCount": 19,
    "matches": 6402,
-   "stretchRate": 9.6,
-   "anchorRate": 12.9,
-   "breadth": 0.917,
+   "stretchRate": 9.5,
+   "anchorRate": 12.7,
+   "breadth": 0.915,
    "competitiveRatio": 34.7,
    "nonConferenceShare": 56.7
   },
@@ -324,9 +323,9 @@
    ],
    "programCount": 18,
    "matches": 6349,
-   "stretchRate": 8.3,
-   "anchorRate": 4.7,
-   "breadth": 0.864,
+   "stretchRate": 8.1,
+   "anchorRate": 4.6,
+   "breadth": 0.862,
    "competitiveRatio": 46.6,
    "nonConferenceShare": 66.4
   },
@@ -366,9 +365,9 @@
    ],
    "programCount": 18,
    "matches": 6223,
-   "stretchRate": 7.7,
-   "anchorRate": 6.7,
-   "breadth": 0.852,
+   "stretchRate": 7.5,
+   "anchorRate": 6.5,
+   "breadth": 0.846,
    "competitiveRatio": 42.5,
    "nonConferenceShare": 67.2
   },
@@ -380,9 +379,9 @@
    ],
    "programCount": 21,
    "matches": 6218,
-   "stretchRate": 10.8,
-   "anchorRate": 8.3,
-   "breadth": 0.905,
+   "stretchRate": 10.7,
+   "anchorRate": 8.2,
+   "breadth": 0.903,
    "competitiveRatio": 43,
    "nonConferenceShare": 53.9
   },
@@ -410,7 +409,7 @@
    "matches": 5976,
    "stretchRate": 8.2,
    "anchorRate": 4.4,
-   "breadth": 0.866,
+   "breadth": 0.865,
    "competitiveRatio": 46.8,
    "nonConferenceShare": 61.2
   },
@@ -423,8 +422,8 @@
    "programCount": 20,
    "matches": 5876,
    "stretchRate": 12.8,
-   "anchorRate": 16.1,
-   "breadth": 0.947,
+   "anchorRate": 16,
+   "breadth": 0.946,
    "competitiveRatio": 31.8,
    "nonConferenceShare": 47.2
   },
@@ -452,7 +451,7 @@
    "matches": 5841,
    "stretchRate": 7.7,
    "anchorRate": 12.5,
-   "breadth": 0.908,
+   "breadth": 0.913,
    "competitiveRatio": 42.3,
    "nonConferenceShare": 58.7
   },
@@ -465,8 +464,8 @@
    "programCount": 20,
    "matches": 5829,
    "stretchRate": 6.1,
-   "anchorRate": 7.4,
-   "breadth": 0.841,
+   "anchorRate": 7.3,
+   "breadth": 0.84,
    "competitiveRatio": 27.9,
    "nonConferenceShare": 43.9
   },
@@ -479,8 +478,8 @@
    "programCount": 20,
    "matches": 5821,
    "stretchRate": 15,
-   "anchorRate": 5.7,
-   "breadth": 0.87,
+   "anchorRate": 5.3,
+   "breadth": 0.868,
    "competitiveRatio": 27.9,
    "nonConferenceShare": 70.7
   },
@@ -521,8 +520,8 @@
    "programCount": 16,
    "matches": 5708,
    "stretchRate": 0.5,
-   "anchorRate": 13.6,
-   "breadth": 0.823,
+   "anchorRate": 12.9,
+   "breadth": 0.82,
    "competitiveRatio": 47.5,
    "nonConferenceShare": 61.5
   },
@@ -535,8 +534,8 @@
    "programCount": 16,
    "matches": 5600,
    "stretchRate": 4.1,
-   "anchorRate": 24.8,
-   "breadth": 0.893,
+   "anchorRate": 24.2,
+   "breadth": 0.892,
    "competitiveRatio": 38.7,
    "nonConferenceShare": 78
   },
@@ -550,7 +549,7 @@
    "matches": 5549,
    "stretchRate": 3.6,
    "anchorRate": 9.3,
-   "breadth": 0.868,
+   "breadth": 0.869,
    "competitiveRatio": 43.8,
    "nonConferenceShare": 84.6
   },
@@ -576,9 +575,9 @@
    ],
    "programCount": 17,
    "matches": 5431,
-   "stretchRate": 6.3,
+   "stretchRate": 6.2,
    "anchorRate": 5.9,
-   "breadth": 0.864,
+   "breadth": 0.863,
    "competitiveRatio": 46.5,
    "nonConferenceShare": 67.4
   },
@@ -591,8 +590,8 @@
    "programCount": 17,
    "matches": 5423,
    "stretchRate": 10.1,
-   "anchorRate": 8.8,
-   "breadth": 0.886,
+   "anchorRate": 8.7,
+   "breadth": 0.887,
    "competitiveRatio": 34.5,
    "nonConferenceShare": 56.4
   },
@@ -605,8 +604,8 @@
    "programCount": 17,
    "matches": 5369,
    "stretchRate": 6.8,
-   "anchorRate": 10,
-   "breadth": 0.898,
+   "anchorRate": 9.8,
+   "breadth": 0.896,
    "competitiveRatio": 36,
    "nonConferenceShare": 53.7
   },
@@ -662,7 +661,7 @@
    "matches": 5236,
    "stretchRate": 15.4,
    "anchorRate": 15.5,
-   "breadth": 0.966,
+   "breadth": 0.967,
    "competitiveRatio": 30.8,
    "nonConferenceShare": 53.1
   },
@@ -690,7 +689,7 @@
    "matches": 5105,
    "stretchRate": 16.6,
    "anchorRate": 18.7,
-   "breadth": 0.95,
+   "breadth": 0.955,
    "competitiveRatio": 31.2,
    "nonConferenceShare": 63.8
   },
@@ -718,8 +717,8 @@
    "programCount": 13,
    "matches": 5057,
    "stretchRate": 3.8,
-   "anchorRate": 4,
-   "breadth": 0.81,
+   "anchorRate": 3.8,
+   "breadth": 0.807,
    "competitiveRatio": 51.4,
    "nonConferenceShare": 57.5
   },
@@ -732,8 +731,8 @@
    "programCount": 14,
    "matches": 4974,
    "stretchRate": 11.8,
-   "anchorRate": 12.8,
-   "breadth": 0.925,
+   "anchorRate": 12.6,
+   "breadth": 0.926,
    "competitiveRatio": 28.3,
    "nonConferenceShare": 67.8
   },
@@ -761,8 +760,8 @@
    "programCount": 17,
    "matches": 4827,
    "stretchRate": 8.9,
-   "anchorRate": 7.6,
-   "breadth": 0.876,
+   "anchorRate": 7.5,
+   "breadth": 0.875,
    "competitiveRatio": 23,
    "nonConferenceShare": 46.5
   },
@@ -789,7 +788,7 @@
    ],
    "programCount": 16,
    "matches": 4755,
-   "stretchRate": 15.5,
+   "stretchRate": 15.4,
    "anchorRate": 6.6,
    "breadth": 0.88,
    "competitiveRatio": 27.1,
@@ -873,9 +872,9 @@
    ],
    "programCount": 15,
    "matches": 4464,
-   "stretchRate": 12.4,
-   "anchorRate": 9.6,
-   "breadth": 0.935,
+   "stretchRate": 12,
+   "anchorRate": 9.3,
+   "breadth": 0.93,
    "competitiveRatio": 29.5,
    "nonConferenceShare": 60
   },
@@ -888,8 +887,8 @@
    "programCount": 14,
    "matches": 4418,
    "stretchRate": 16.3,
-   "anchorRate": 9.1,
-   "breadth": 0.93,
+   "anchorRate": 8.6,
+   "breadth": 0.927,
    "competitiveRatio": 26.7,
    "nonConferenceShare": 64.1
   },
@@ -902,7 +901,7 @@
    "programCount": 14,
    "matches": 4364,
    "stretchRate": 15.4,
-   "anchorRate": 12,
+   "anchorRate": 11.9,
    "breadth": 0.927,
    "competitiveRatio": 34.4,
    "nonConferenceShare": 57.4
@@ -915,9 +914,9 @@
    ],
    "programCount": 15,
    "matches": 4331,
-   "stretchRate": 18.8,
-   "anchorRate": 12.8,
-   "breadth": 0.938,
+   "stretchRate": 18.7,
+   "anchorRate": 12.7,
+   "breadth": 0.937,
    "competitiveRatio": 25.7,
    "nonConferenceShare": 58.2
   },
@@ -945,7 +944,7 @@
    "matches": 4213,
    "stretchRate": 18.4,
    "anchorRate": 9.6,
-   "breadth": 0.936,
+   "breadth": 0.937,
    "competitiveRatio": 34.7,
    "nonConferenceShare": 66.9
   },
@@ -957,9 +956,9 @@
    ],
    "programCount": 15,
    "matches": 4177,
-   "stretchRate": 16.7,
+   "stretchRate": 16.3,
    "anchorRate": 15,
-   "breadth": 0.938,
+   "breadth": 0.937,
    "competitiveRatio": 30.6,
    "nonConferenceShare": 56.5
   },
@@ -1043,8 +1042,8 @@
    "programCount": 14,
    "matches": 3932,
    "stretchRate": 6.3,
-   "anchorRate": 11.8,
-   "breadth": 0.88,
+   "anchorRate": 11.5,
+   "breadth": 0.878,
    "competitiveRatio": 39.8,
    "nonConferenceShare": 62.8
   },
@@ -1072,7 +1071,7 @@
    "matches": 3723,
    "stretchRate": 16.9,
    "anchorRate": 7.4,
-   "breadth": 0.927,
+   "breadth": 0.928,
    "competitiveRatio": 47.6,
    "nonConferenceShare": 74.9
   },
@@ -1085,8 +1084,8 @@
    "programCount": 11,
    "matches": 3489,
    "stretchRate": 6.2,
-   "anchorRate": 10.9,
-   "breadth": 0.898,
+   "anchorRate": 10.8,
+   "breadth": 0.897,
    "competitiveRatio": 35.3,
    "nonConferenceShare": 79
   },
@@ -1112,9 +1111,9 @@
    ],
    "programCount": 16,
    "matches": 3470,
-   "stretchRate": 6.2,
+   "stretchRate": 6.1,
    "anchorRate": 3.8,
-   "breadth": 0.796,
+   "breadth": 0.795,
    "competitiveRatio": 25.3,
    "nonConferenceShare": 49
   },
@@ -1128,7 +1127,7 @@
    "matches": 3356,
    "stretchRate": 37,
    "anchorRate": 6.9,
-   "breadth": 0.862,
+   "breadth": 0.863,
    "competitiveRatio": 23.8,
    "nonConferenceShare": 66
   },
@@ -1141,8 +1140,8 @@
    "programCount": 12,
    "matches": 3325,
    "stretchRate": 15.5,
-   "anchorRate": 11,
-   "breadth": 0.896,
+   "anchorRate": 10.8,
+   "breadth": 0.895,
    "competitiveRatio": 28.7,
    "nonConferenceShare": 61.3
   },
@@ -1170,7 +1169,7 @@
    "matches": 3207,
    "stretchRate": 12.5,
    "anchorRate": 6.3,
-   "breadth": 0.892,
+   "breadth": 0.898,
    "competitiveRatio": 33.2,
    "nonConferenceShare": 39.8
   },
@@ -1184,9 +1183,9 @@
    ],
    "programCount": 17,
    "matches": 3195,
-   "stretchRate": 18.5,
+   "stretchRate": 18.3,
    "anchorRate": 6.6,
-   "breadth": 0.903,
+   "breadth": 0.902,
    "competitiveRatio": 25,
    "nonConferenceShare": 98
   },
@@ -1200,7 +1199,7 @@
    "matches": 3177,
    "stretchRate": 9.9,
    "anchorRate": 13.8,
-   "breadth": 0.943,
+   "breadth": 0.946,
    "competitiveRatio": 36,
    "nonConferenceShare": 78.7
   },
@@ -1214,7 +1213,7 @@
    "matches": 3165,
    "stretchRate": 3.4,
    "anchorRate": 6.2,
-   "breadth": 0.813,
+   "breadth": 0.818,
    "competitiveRatio": 46.8,
    "nonConferenceShare": 73.8
   },
@@ -1240,9 +1239,9 @@
    ],
    "programCount": 9,
    "matches": 3134,
-   "stretchRate": 4,
-   "anchorRate": 4.1,
-   "breadth": 0.83,
+   "stretchRate": 3.6,
+   "anchorRate": 3.9,
+   "breadth": 0.821,
    "competitiveRatio": 45.9,
    "nonConferenceShare": 66.1
   },
@@ -1268,9 +1267,9 @@
    ],
    "programCount": 9,
    "matches": 3072,
-   "stretchRate": 5.6,
-   "anchorRate": 9.7,
-   "breadth": 0.859,
+   "stretchRate": 4.6,
+   "anchorRate": 9.3,
+   "breadth": 0.844,
    "competitiveRatio": 40.4,
    "nonConferenceShare": 87.5
   },
@@ -1284,7 +1283,7 @@
    "matches": 3041,
    "stretchRate": 10.2,
    "anchorRate": 8.4,
-   "breadth": 0.917,
+   "breadth": 0.919,
    "competitiveRatio": 24.5,
    "nonConferenceShare": 48.9
   },
@@ -1297,8 +1296,8 @@
    "programCount": 14,
    "matches": 2969,
    "stretchRate": 9.6,
-   "anchorRate": 14.6,
-   "breadth": 0.933,
+   "anchorRate": 14.4,
+   "breadth": 0.932,
    "competitiveRatio": 28.5,
    "nonConferenceShare": 65.2
   },
@@ -1310,9 +1309,9 @@
    ],
    "programCount": 13,
    "matches": 2909,
-   "stretchRate": 21.6,
-   "anchorRate": 10.1,
-   "breadth": 0.942,
+   "stretchRate": 20.8,
+   "anchorRate": 9.5,
+   "breadth": 0.936,
    "competitiveRatio": 27.3,
    "nonConferenceShare": 63
   },
@@ -1352,9 +1351,9 @@
    ],
    "programCount": 10,
    "matches": 2546,
-   "stretchRate": 10.3,
+   "stretchRate": 9.9,
    "anchorRate": 4.1,
-   "breadth": 0.873,
+   "breadth": 0.87,
    "competitiveRatio": 24.7,
    "nonConferenceShare": 64.8
   },
@@ -1381,8 +1380,8 @@
    "programCount": 8,
    "matches": 2376,
    "stretchRate": 11.2,
-   "anchorRate": 16.1,
-   "breadth": 0.912,
+   "anchorRate": 14.7,
+   "breadth": 0.905,
    "competitiveRatio": 35.2,
    "nonConferenceShare": 67.8
   },
@@ -1410,7 +1409,7 @@
    "matches": 2141,
    "stretchRate": 15.8,
    "anchorRate": 13.8,
-   "breadth": 0.936,
+   "breadth": 0.943,
    "competitiveRatio": 15.4,
    "nonConferenceShare": 56.3
   },
@@ -1423,8 +1422,8 @@
    "programCount": 7,
    "matches": 2106,
    "stretchRate": 10.4,
-   "anchorRate": 8.9,
-   "breadth": 0.911,
+   "anchorRate": 8.3,
+   "breadth": 0.906,
    "competitiveRatio": 38.8,
    "nonConferenceShare": 69.9
   },
@@ -1436,9 +1435,9 @@
    ],
    "programCount": 12,
    "matches": 2080,
-   "stretchRate": 21.3,
+   "stretchRate": 20.9,
    "anchorRate": 9.2,
-   "breadth": 0.91,
+   "breadth": 0.909,
    "competitiveRatio": 16.1,
    "nonConferenceShare": 43.6
   },
@@ -1506,9 +1505,9 @@
    ],
    "programCount": 7,
    "matches": 1789,
-   "stretchRate": 10.2,
-   "anchorRate": 6.3,
-   "breadth": 0.888,
+   "stretchRate": 9.2,
+   "anchorRate": 5.3,
+   "breadth": 0.871,
    "competitiveRatio": 29.4,
    "nonConferenceShare": 88
   },
@@ -1521,8 +1520,8 @@
    "programCount": 10,
    "matches": 1721,
    "stretchRate": 18.4,
-   "anchorRate": 9.8,
-   "breadth": 0.894,
+   "anchorRate": 9.5,
+   "breadth": 0.891,
    "competitiveRatio": 30.5,
    "nonConferenceShare": 72.9
   },
@@ -1590,9 +1589,9 @@
    ],
    "programCount": 7,
    "matches": 1325,
-   "stretchRate": 31.5,
-   "anchorRate": 4.4,
-   "breadth": 0.867,
+   "stretchRate": 28.8,
+   "anchorRate": 1.7,
+   "breadth": 0.827,
    "competitiveRatio": 21.1,
    "nonConferenceShare": 74.6
   },
@@ -1648,7 +1647,7 @@
    "matches": 1077,
    "stretchRate": 8.6,
    "anchorRate": 11,
-   "breadth": 0.858,
+   "breadth": 0.861,
    "competitiveRatio": 40.1,
    "nonConferenceShare": 81.4
   },

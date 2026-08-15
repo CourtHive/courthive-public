@@ -16,20 +16,20 @@
    "bands": {
     "STRETCH": 774,
     "UP": 1314,
-    "EVEN": 476,
-    "DOWN": 1244,
+    "EVEN": 482,
+    "DOWN": 1238,
     "ANCHOR": 405
    },
    "bandPct": {
     "STRETCH": 18.4,
     "UP": 31.2,
-    "EVEN": 11.3,
-    "DOWN": 29.5,
+    "EVEN": 11.4,
+    "DOWN": 29.4,
     "ANCHOR": 9.6
    },
    "stretchRate": 18.4,
    "anchorRate": 9.6,
-   "breadth": 0.936,
+   "breadth": 0.937,
    "competitiveRatio": 34.7,
    "winRate": 48.4
   },
@@ -60,20 +60,20 @@
    "bands": {
     "STRETCH": 557,
     "UP": 921,
-    "EVEN": 300,
-    "DOWN": 851,
+    "EVEN": 306,
+    "DOWN": 845,
     "ANCHOR": 188
    },
    "bandPct": {
     "STRETCH": 19.8,
     "UP": 32.7,
-    "EVEN": 10.6,
-    "DOWN": 30.2,
+    "EVEN": 10.9,
+    "DOWN": 30,
     "ANCHOR": 6.7
    },
    "stretchRate": 19.8,
    "anchorRate": 6.7,
-   "breadth": 0.911,
+   "breadth": 0.913,
    "competitiveRatio": 34.8,
    "winRate": 47.6
   }
@@ -81,22 +81,22 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -333,20 +333,20 @@
    "bands": {
     "STRETCH": 30,
     "UP": 43,
-    "EVEN": 26,
-    "DOWN": 128,
+    "EVEN": 32,
+    "DOWN": 122,
     "ANCHOR": 56
    },
    "bandPct": {
     "STRETCH": 10.6,
     "UP": 15.2,
-    "EVEN": 9.2,
-    "DOWN": 45.2,
+    "EVEN": 11.3,
+    "DOWN": 43.1,
     "ANCHOR": 19.8
    },
    "stretchRate": 10.6,
    "anchorRate": 19.8,
-   "breadth": 0.884,
+   "breadth": 0.903,
    "competitiveRatio": 38.9,
    "winRate": 53
   },

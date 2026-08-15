@@ -16,15 +16,15 @@
    "bands": {
     "STRETCH": 373,
     "UP": 1934,
-    "EVEN": 1281,
-    "DOWN": 1852,
+    "EVEN": 1287,
+    "DOWN": 1846,
     "ANCHOR": 406
    },
    "bandPct": {
     "STRETCH": 6.4,
     "UP": 33.1,
-    "EVEN": 21.9,
-    "DOWN": 31.7,
+    "EVEN": 22,
+    "DOWN": 31.6,
     "ANCHOR": 6.9
    },
    "stretchRate": 6.4,
@@ -60,20 +60,20 @@
    "bands": {
     "STRETCH": 267,
     "UP": 1140,
-    "EVEN": 587,
-    "DOWN": 1058,
+    "EVEN": 593,
+    "DOWN": 1052,
     "ANCHOR": 300
    },
    "bandPct": {
     "STRETCH": 8,
     "UP": 34,
-    "EVEN": 17.5,
-    "DOWN": 31.6,
+    "EVEN": 17.7,
+    "DOWN": 31.4,
     "ANCHOR": 8.9
    },
    "stretchRate": 8,
    "anchorRate": 8.9,
-   "breadth": 0.903,
+   "breadth": 0.904,
    "competitiveRatio": 45.6,
    "winRate": 48.8
   }
@@ -81,22 +81,22 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -414,20 +414,20 @@
    "bands": {
     "STRETCH": 6,
     "UP": 92,
-    "EVEN": 25,
-    "DOWN": 148,
+    "EVEN": 31,
+    "DOWN": 142,
     "ANCHOR": 58
    },
    "bandPct": {
     "STRETCH": 1.8,
     "UP": 28,
-    "EVEN": 7.6,
-    "DOWN": 45,
+    "EVEN": 9.4,
+    "DOWN": 43.2,
     "ANCHOR": 17.6
    },
    "stretchRate": 1.8,
    "anchorRate": 17.6,
-   "breadth": 0.802,
+   "breadth": 0.821,
    "competitiveRatio": 46,
    "winRate": 58.1
   },
