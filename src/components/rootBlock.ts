@@ -1,7 +1,20 @@
 import 'src/pages/track/track-page.css';
 import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { CONFERENCE, CONFERENCES, HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import {
+  CONFERENCE,
+  CONFERENCES,
+  HIVEID_MAGIC,
+  HIVEID_ME,
+  PROGRAM,
+  PROGRAMS,
+  RANKINGS,
+  REGISTER,
+  SPLASH,
+  TOURNAMENT,
+  TOURNAMENTS,
+  TRACK,
+} from 'src/common/constants/routerConstants';
 import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
