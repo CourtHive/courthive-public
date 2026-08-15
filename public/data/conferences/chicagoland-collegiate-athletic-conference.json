@@ -31,7 +31,7 @@
    "stretchRate": 18.4,
    "anchorRate": 9.8,
    "breadth": 0.894,
-   "competitiveRatio": 30.9,
+   "competitiveRatio": 30.5,
    "winRate": 43.6
   },
   "inConference": {
@@ -53,7 +53,7 @@
    "stretchRate": 24.2,
    "anchorRate": 24.2,
    "breadth": 0.95,
-   "competitiveRatio": 15.5,
+   "competitiveRatio": 15.2,
    "winRate": 50
   },
   "nonConference": {
@@ -75,7 +75,7 @@
    "stretchRate": 16.3,
    "anchorRate": 4.5,
    "breadth": 0.829,
-   "competitiveRatio": 36.7,
+   "competitiveRatio": 36.2,
    "winRate": 41.3
   }
  },
@@ -84,21 +84,21 @@
   "bands": {
    "STRETCH": 51471,
    "UP": 174555,
-   "EVEN": 76349,
-   "DOWN": 176225,
-   "ANCHOR": 52814
+   "EVEN": 75766,
+   "DOWN": 176643,
+   "ANCHOR": 52979
   },
   "bandPct": {
    "STRETCH": 9.7,
    "UP": 32.8,
-   "EVEN": 14.4,
+   "EVEN": 14.3,
    "DOWN": 33.2,
-   "ANCHOR": 9.9
+   "ANCHOR": 10
   },
   "stretchRate": 9.7,
-  "anchorRate": 9.9,
+  "anchorRate": 10,
   "breadth": 0.911,
-  "competitiveRatio": 37.9,
+  "competitiveRatio": 36.9,
   "winRate": 50.2
  },
  "stretchGap": {
@@ -132,7 +132,7 @@
    "stretchRate": 21.1,
    "anchorRate": 8.3,
    "breadth": 0.866,
-   "competitiveRatio": 44.2,
+   "competitiveRatio": 44.6,
    "winRate": 43.2
   },
   {
@@ -186,7 +186,7 @@
    "stretchRate": 19.1,
    "anchorRate": 17.2,
    "breadth": 0.915,
-   "competitiveRatio": 30,
+   "competitiveRatio": 30.9,
    "winRate": 37.3
   },
   {
@@ -213,7 +213,7 @@
    "stretchRate": 0,
    "anchorRate": 28.4,
    "breadth": 0.678,
-   "competitiveRatio": 37.5,
+   "competitiveRatio": 34.1,
    "winRate": 69.2
   },
   {
@@ -240,7 +240,7 @@
    "stretchRate": 10.1,
    "anchorRate": 1,
    "breadth": 0.755,
-   "competitiveRatio": 41.8,
+   "competitiveRatio": 41.3,
    "winRate": 52.4
   },
   {
@@ -267,7 +267,7 @@
    "stretchRate": 5.6,
    "anchorRate": 0,
    "breadth": 0.698,
-   "competitiveRatio": 22.5,
+   "competitiveRatio": 23,
    "winRate": 33.7
   },
   {
@@ -294,7 +294,7 @@
    "stretchRate": 27.6,
    "anchorRate": 0,
    "breadth": 0.637,
-   "competitiveRatio": 18.6,
+   "competitiveRatio": 17.2,
    "winRate": 34.5
   },
   {
@@ -348,7 +348,7 @@
    "stretchRate": 19.1,
    "anchorRate": 0,
    "breadth": 0.73,
-   "competitiveRatio": 18,
+   "competitiveRatio": 15.7,
    "winRate": 36
   },
   {

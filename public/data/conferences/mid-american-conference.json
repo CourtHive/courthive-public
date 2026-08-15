@@ -1,81 +1,82 @@
 {
- "conference": "Mid American Conference",
+ "conference": "Mid-American Conference",
  "slug": "mid-american-conference",
  "divisions": [
   "DIV_I"
  ],
  "seasons": [
+  "2023",
   "2024",
   "2025",
   "2026"
  ],
- "programCount": 3,
+ "programCount": 13,
  "fingerprint": {
   "overall": {
-   "matches": 1227,
+   "matches": 5057,
    "bands": {
-    "STRETCH": 36,
-    "UP": 306,
-    "EVEN": 276,
-    "DOWN": 521,
-    "ANCHOR": 88
+    "STRETCH": 191,
+    "UP": 1442,
+    "EVEN": 1072,
+    "DOWN": 2149,
+    "ANCHOR": 203
    },
    "bandPct": {
-    "STRETCH": 2.9,
-    "UP": 24.9,
-    "EVEN": 22.5,
+    "STRETCH": 3.8,
+    "UP": 28.5,
+    "EVEN": 21.2,
     "DOWN": 42.5,
-    "ANCHOR": 7.2
+    "ANCHOR": 4
    },
-   "stretchRate": 2.9,
-   "anchorRate": 7.2,
-   "breadth": 0.831,
-   "competitiveRatio": 52.7,
-   "winRate": 54.4
+   "stretchRate": 3.8,
+   "anchorRate": 4,
+   "breadth": 0.81,
+   "competitiveRatio": 51.4,
+   "winRate": 53.3
   },
   "inConference": {
-   "matches": 36,
+   "matches": 2150,
    "bands": {
     "STRETCH": 0,
-    "UP": 18,
-    "EVEN": 0,
-    "DOWN": 18,
+    "UP": 721,
+    "EVEN": 708,
+    "DOWN": 721,
     "ANCHOR": 0
    },
    "bandPct": {
     "STRETCH": 0,
-    "UP": 50,
-    "EVEN": 0,
-    "DOWN": 50,
+    "UP": 33.5,
+    "EVEN": 32.9,
+    "DOWN": 33.5,
     "ANCHOR": 0
    },
    "stretchRate": 0,
    "anchorRate": 0,
-   "breadth": 0.431,
-   "competitiveRatio": 61.1,
+   "breadth": 0.683,
+   "competitiveRatio": 58.4,
    "winRate": 50
   },
   "nonConference": {
-   "matches": 1191,
+   "matches": 2907,
    "bands": {
-    "STRETCH": 36,
-    "UP": 288,
-    "EVEN": 276,
-    "DOWN": 503,
-    "ANCHOR": 88
+    "STRETCH": 191,
+    "UP": 721,
+    "EVEN": 364,
+    "DOWN": 1428,
+    "ANCHOR": 203
    },
    "bandPct": {
-    "STRETCH": 3,
-    "UP": 24.2,
-    "EVEN": 23.2,
-    "DOWN": 42.2,
-    "ANCHOR": 7.4
+    "STRETCH": 6.6,
+    "UP": 24.8,
+    "EVEN": 12.5,
+    "DOWN": 49.1,
+    "ANCHOR": 7
    },
-   "stretchRate": 3,
-   "anchorRate": 7.4,
-   "breadth": 0.835,
-   "competitiveRatio": 52.4,
-   "winRate": 54.6
+   "stretchRate": 6.6,
+   "anchorRate": 7,
+   "breadth": 0.82,
+   "competitiveRatio": 46.3,
+   "winRate": 55.8
   }
  },
  "baseline": {
@@ -83,30 +84,57 @@
   "bands": {
    "STRETCH": 51471,
    "UP": 174555,
-   "EVEN": 76349,
-   "DOWN": 176225,
-   "ANCHOR": 52814
+   "EVEN": 75766,
+   "DOWN": 176643,
+   "ANCHOR": 52979
   },
   "bandPct": {
    "STRETCH": 9.7,
    "UP": 32.8,
-   "EVEN": 14.4,
+   "EVEN": 14.3,
    "DOWN": 33.2,
-   "ANCHOR": 9.9
+   "ANCHOR": 10
   },
   "stretchRate": 9.7,
-  "anchorRate": 9.9,
+  "anchorRate": 10,
   "breadth": 0.911,
-  "competitiveRatio": 37.9,
+  "competitiveRatio": 36.9,
   "winRate": 50.2
  },
  "stretchGap": {
   "inConference": 0,
-  "nonConference": 3,
-  "delta": 3,
-  "nonConferenceShare": 97.1
+  "nonConference": 6.6,
+  "delta": 6.6,
+  "nonConferenceShare": 57.5
  },
  "members": [
+  {
+   "teamId": "BBD5A1C8-1ADD-41DC-9F5C-9D85AB1EE071",
+   "name": "Buffalo",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.86,
+   "matches": 468,
+   "bands": {
+    "STRETCH": 3,
+    "UP": 63,
+    "EVEN": 115,
+    "DOWN": 269,
+    "ANCHOR": 18
+   },
+   "bandPct": {
+    "STRETCH": 0.6,
+    "UP": 13.5,
+    "EVEN": 24.6,
+    "DOWN": 57.5,
+    "ANCHOR": 3.8
+   },
+   "stretchRate": 0.6,
+   "anchorRate": 3.8,
+   "breadth": 0.678,
+   "competitiveRatio": 46,
+   "winRate": 65.4
+  },
   {
    "teamId": "CDAB065A-302D-4A01-A46F-5345609F3DA9",
    "name": "NIU",
@@ -131,8 +159,35 @@
    "stretchRate": 4.1,
    "anchorRate": 2.5,
    "breadth": 0.742,
-   "competitiveRatio": 49.2,
+   "competitiveRatio": 49.4,
    "winRate": 59.8
+  },
+  {
+   "teamId": "A9C27CEE-81A3-4A9C-8696-9E4749B77D6F",
+   "name": "Western Michigan",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.27,
+   "matches": 428,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 58,
+    "EVEN": 95,
+    "DOWN": 225,
+    "ANCHOR": 20
+   },
+   "bandPct": {
+    "STRETCH": 7,
+    "UP": 13.6,
+    "EVEN": 22.2,
+    "DOWN": 52.6,
+    "ANCHOR": 4.7
+   },
+   "stretchRate": 7,
+   "anchorRate": 4.7,
+   "breadth": 0.791,
+   "competitiveRatio": 52.1,
+   "winRate": 57.7
   },
   {
    "teamId": "F3EE0A57-4F18-4FDD-B4EA-CA9154C36E3E",
@@ -158,7 +213,7 @@
    "stretchRate": 0,
    "anchorRate": 1.5,
    "breadth": 0.717,
-   "competitiveRatio": 58.2,
+   "competitiveRatio": 56.4,
    "winRate": 49.4
   },
   {
@@ -185,8 +240,224 @@
    "stretchRate": 4.6,
    "anchorRate": 18.1,
    "breadth": 0.892,
-   "competitiveRatio": 51,
+   "competitiveRatio": 49.7,
    "winRate": 53.6
+  },
+  {
+   "teamId": "F130F733-CC1E-447D-942F-79A294911A84",
+   "name": "Western Michigan",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 20.39,
+   "matches": 385,
+   "bands": {
+    "STRETCH": 12,
+    "UP": 143,
+    "EVEN": 53,
+    "DOWN": 171,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 3.1,
+    "UP": 37.1,
+    "EVEN": 13.8,
+    "DOWN": 44.4,
+    "ANCHOR": 1.6
+   },
+   "stretchRate": 3.1,
+   "anchorRate": 1.6,
+   "breadth": 0.73,
+   "competitiveRatio": 48.8,
+   "winRate": 52.7
+  },
+  {
+   "teamId": "FCD69B73-3301-4FB6-8849-9301C12659B4",
+   "name": "Toledo",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.81,
+   "matches": 377,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 77,
+    "EVEN": 119,
+    "DOWN": 175,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 20.4,
+    "EVEN": 31.6,
+    "DOWN": 46.4,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 0,
+   "breadth": 0.69,
+   "competitiveRatio": 55.2,
+   "winRate": 62.3
+  },
+  {
+   "teamId": "329F8010-4943-4F10-A356-7F8F65459F19",
+   "name": "Buffalo",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 12.78,
+   "matches": 373,
+   "bands": {
+    "STRETCH": 24,
+    "UP": 38,
+    "EVEN": 59,
+    "DOWN": 210,
+    "ANCHOR": 42
+   },
+   "bandPct": {
+    "STRETCH": 6.4,
+    "UP": 10.2,
+    "EVEN": 15.8,
+    "DOWN": 56.3,
+    "ANCHOR": 11.3
+   },
+   "stretchRate": 6.4,
+   "anchorRate": 11.3,
+   "breadth": 0.789,
+   "competitiveRatio": 50.9,
+   "winRate": 53.6
+  },
+  {
+   "teamId": "43F36F5B-2163-450E-878E-9971DA0DBF52",
+   "name": "Toledo",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 13.89,
+   "matches": 369,
+   "bands": {
+    "STRETCH": 44,
+    "UP": 96,
+    "EVEN": 63,
+    "DOWN": 154,
+    "ANCHOR": 12
+   },
+   "bandPct": {
+    "STRETCH": 11.9,
+    "UP": 26,
+    "EVEN": 17.1,
+    "DOWN": 41.7,
+    "ANCHOR": 3.3
+   },
+   "stretchRate": 11.9,
+   "anchorRate": 3.3,
+   "breadth": 0.859,
+   "competitiveRatio": 56.1,
+   "winRate": 48.2
+  },
+  {
+   "teamId": "458C9A0E-AB7B-44F9-947D-1D832A3C5F75",
+   "name": "Eastern Michigan",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.26,
+   "matches": 369,
+   "bands": {
+    "STRETCH": 6,
+    "UP": 199,
+    "EVEN": 79,
+    "DOWN": 85,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 1.6,
+    "UP": 53.9,
+    "EVEN": 21.4,
+    "DOWN": 23,
+    "ANCHOR": 0
+   },
+   "stretchRate": 1.6,
+   "anchorRate": 0,
+   "breadth": 0.664,
+   "competitiveRatio": 48,
+   "winRate": 49.3
+  },
+  {
+   "teamId": "76487A7A-DE11-448C-BED1-006F9B605564",
+   "name": "Ball State",
+   "gender": "M",
+   "division": "DIV_I",
+   "lineupWTN": 15.09,
+   "matches": 368,
+   "bands": {
+    "STRETCH": 30,
+    "UP": 210,
+    "EVEN": 84,
+    "DOWN": 33,
+    "ANCHOR": 11
+   },
+   "bandPct": {
+    "STRETCH": 8.2,
+    "UP": 57.1,
+    "EVEN": 22.8,
+    "DOWN": 9,
+    "ANCHOR": 3
+   },
+   "stretchRate": 8.2,
+   "anchorRate": 3,
+   "breadth": 0.735,
+   "competitiveRatio": 57.1,
+   "winRate": 50
+  },
+  {
+   "teamId": "6591809E-2984-42A7-B5CA-DF174141F4D9",
+   "name": "Bowling Green",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 21.1,
+   "matches": 354,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 179,
+    "EVEN": 70,
+    "DOWN": 99,
+    "ANCHOR": 6
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 50.6,
+    "EVEN": 19.8,
+    "DOWN": 28,
+    "ANCHOR": 1.7
+   },
+   "stretchRate": 0,
+   "anchorRate": 1.7,
+   "breadth": 0.678,
+   "competitiveRatio": 49.3,
+   "winRate": 39.5
+  },
+  {
+   "teamId": "08718B41-A5CD-4539-9462-F5780259C995",
+   "name": "Ball State",
+   "gender": "W",
+   "division": "DIV_I",
+   "lineupWTN": 19.42,
+   "matches": 339,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 73,
+    "EVEN": 59,
+    "DOWN": 207,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 21.5,
+    "EVEN": 17.4,
+    "DOWN": 61.1,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0.582,
+   "competitiveRatio": 51,
+   "winRate": 45.4
   }
  ]
 }
