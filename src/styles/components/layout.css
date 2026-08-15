@@ -68,32 +68,11 @@
   background: var(--chc-hover-bg);
 }
 
-/* ── Hero ──────────────────────────────────────────────────── */
-.hero {
-  display: block;
-}
-.hero-body {
-  padding: 1.5rem;
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-
-/* ── Columns ───────────────────────────────────────────────── */
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-}
-.column {
-  display: block;
-  flex: 1 1 0;
-  padding: 0.75rem;
-}
-.column.is-one-quarter {
-  flex: none;
-  width: 25%;
-}
+/* The Bulma `.hero-body` / `.columns` / `.column.is-one-quarter` vestiges that
+   used to live here were the tournament hero's only consumer, and their fixed
+   25% split with no breakpoint is what let banner artwork overflow its column
+   and paint over the title. The hero now owns its own grid — see
+   `pages/tournament/tournament-hero.css`. */
 
 /* ── Section ───────────────────────────────────────────────── */
 .section {

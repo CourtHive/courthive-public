@@ -1,4 +1,4 @@
-import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
+import { TOURNAMENT_HERO } from 'src/common/constants/elementConstants';
 import { displayTabContent, tabNames } from './helpers/tabDisplay';
 import { getTabContentId, getTabId } from './helpers/tabIds';
 import { t } from 'src/i18n/i18n';
@@ -6,25 +6,12 @@ import { t } from 'src/i18n/i18n';
 export const tournamentFramework = () => {
   const container = document.createElement('div');
   container.className = 'container';
+
+  // Stable mount point only. The identity band itself is data-driven and is
+  // built by `buildTournamentHero` once tournamentInfo resolves, because its
+  // layout depends on the artwork's aspect ratio.
   const hero = document.createElement('section');
-  hero.className = 'hero';
-  const heroBody = document.createElement('div');
-  heroBody.className = 'hero-body';
-  heroBody.id = 'tournament-hero';
-
-  const heroColumns = document.createElement('div');
-  heroColumns.className = 'columns';
-  const columnOne = document.createElement('div');
-  columnOne.className = 'column is-one-quarter has-text-centered';
-  columnOne.id = TOURNAMENT_LOGO;
-  heroColumns.appendChild(columnOne);
-  const columnTwo = document.createElement('div');
-  columnTwo.className = 'column has-text-centered';
-  columnTwo.id = TOURNAMENT_TITLE_BLOCK;
-  heroColumns.appendChild(columnTwo);
-
-  heroBody.appendChild(heroColumns);
-  hero.appendChild(heroBody);
+  hero.id = TOURNAMENT_HERO;
   container.appendChild(hero);
 
   const tabs = document.createElement('div');

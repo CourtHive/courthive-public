@@ -1,19 +1,20 @@
-import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
+import { TOURNAMENT_EVENTS, TOURNAMENT_HERO } from 'src/common/constants/elementConstants';
 import { getProviderBrandingByTournament } from 'src/services/api/tournamentsApi';
 import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
+import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { renderRegisterButton } from './tabs/infoTab/registrationButton';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
 import { applyProviderBranding } from 'src/services/providerBranding';
-import { renderVenues } from './tabs/infoTab/renderVenues';
-import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { renderNotes } from './tabs/infoTab/renderNotes';
+import { renderVenues } from './tabs/infoTab/renderVenues';
 import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
 import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
+import { buildTournamentHero } from './tournamentHero';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId } from './helpers/tabIds';
-import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
 
 export function isFullyUnpublished(tournamentInfo: any): boolean {
@@ -68,30 +69,13 @@ export async function renderTournament(
   context.participantsPublishConfig = tournamentInfo.publishState?.participants;
 
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
-  const imageUrl = tournamentImage?.identifier;
-  const isValidUrl =
-    imageUrl && (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('data:'));
   const isCourtSvgResource = tournamentImage?.resourceSubType === COURT_SVG_RESOURCE_SUB_TYPE;
-  const tl = document.getElementById(TOURNAMENT_LOGO);
-  if (isValidUrl) {
-    const alt = tournamentInfo.tournamentName || '';
-    tl.innerHTML = `<img src="${imageUrl}" alt="${alt}" style="max-height: 20em" />`;
-  } else {
-    removeAllChildNodes(tl);
-    const publishedCourtSvg = isCourtSvgResource ? createCourtSvg(tournamentImage?.identifier, 'court-fallback') : undefined;
-    const courtSvg = publishedCourtSvg ?? tennisCourt('court-fallback');
-    courtSvg.style.maxHeight = '16em';
-    courtSvg.style.padding = '1em';
-    courtSvg.style.opacity = '0.6';
-    tl.appendChild(courtSvg);
-  }
+  const fallbackArt = () =>
+    (isCourtSvgResource ? createCourtSvg(tournamentImage?.identifier, 'court-fallback') : undefined) ??
+    tennisCourt('court-fallback');
 
-  if (tournamentInfo.tournamentName) {
-    const el = document.getElementById(TOURNAMENT_TITLE_BLOCK);
-    const tournamentName = `<h1>${tournamentInfo.tournamentName}</h1>`;
-    const dates = `<h2>${dateString(tournamentInfo)}</h2>`;
-    el.innerHTML = `${tournamentName}${dates}`;
-  }
+  const heroMount = document.getElementById(TOURNAMENT_HERO);
+  heroMount?.replaceChildren(buildTournamentHero({ tournamentInfo, fallbackArt, t }));
 
   const info = document.getElementById(getTabContentId('Info'));
   removeAllChildNodes(info);
@@ -109,15 +93,11 @@ export async function renderTournament(
   }).then((btn) => {
     if (btn && profileBlock) profileBlock.appendChild(btn);
   });
-  if (tournamentInfo.notes) {
-    const notesBlock = document.createElement('div');
-    notesBlock.className = 'tournament-notes';
-    notesBlock.innerHTML = tournamentInfo.notes;
-    info.appendChild(notesBlock);
-  }
+  const notesBlock = renderNotes(tournamentInfo.notes);
+  if (notesBlock) info.appendChild(notesBlock);
   const venuesBlock = renderVenues(tournamentInfo.venues);
   if (venuesBlock) info.appendChild(venuesBlock);
-  const hasInfo = !!(profileBlock || tournamentInfo.notes || venuesBlock);
+  const hasInfo = !!(profileBlock || notesBlock || venuesBlock);
   if (hasInfo) displayTab('Info');
   else hideTab('Info');
 

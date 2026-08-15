@@ -10,6 +10,14 @@
     "players": "Participants",
     "stats": "Stats"
   },
+  "hero": {
+    "events_one": "{{count}} event",
+    "events_other": "{{count}} events",
+    "entries_one": "{{count}} entry",
+    "entries_other": "{{count}} entries",
+    "venues_one": "{{count}} venue",
+    "venues_other": "{{count}} venues"
+  },
   "players": {
     "name": "Name",
     "country": "Country",

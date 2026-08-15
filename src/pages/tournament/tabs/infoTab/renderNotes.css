@@ -1,0 +1,110 @@
+/**
+ * Prose block for provider-authored tournament notes.
+ *
+ * `.tournament-notes` was applied in render code but had no rule anywhere in
+ * the repo — the notes inherited body defaults and ran the full container
+ * width at ~150 characters per line. Inline colours are stripped upstream in
+ * `renderNotes.ts`, so everything here inherits --chc-* and reads in both
+ * themes.
+ */
+
+.tournament-notes {
+  max-width: 68ch;
+  margin: 0 0 2rem;
+  color: var(--chc-text-primary);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.tournament-notes > :first-child {
+  margin-top: 0;
+}
+
+.tournament-notes > :last-child {
+  margin-bottom: 0;
+}
+
+.tournament-notes p {
+  margin: 0 0 1rem;
+}
+
+.tournament-notes h1,
+.tournament-notes h2,
+.tournament-notes h3,
+.tournament-notes h4 {
+  margin: 1.75rem 0 0.5rem;
+  line-height: 1.25;
+  color: var(--chc-text-primary);
+}
+
+.tournament-notes h1 {
+  font-size: 1.5rem;
+}
+.tournament-notes h2 {
+  font-size: 1.25rem;
+}
+.tournament-notes h3,
+.tournament-notes h4 {
+  font-size: 1.075rem;
+}
+
+.tournament-notes ul,
+.tournament-notes ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+.tournament-notes li {
+  margin-bottom: 0.35rem;
+}
+
+.tournament-notes a {
+  color: var(--chc-text-link, var(--chc-border-focus));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tournament-notes a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.tournament-notes strong,
+.tournament-notes b {
+  font-weight: 650;
+  color: var(--chc-text-primary);
+}
+
+.tournament-notes hr {
+  height: 1px;
+  margin: 1.5rem 0;
+  border: none;
+  background: var(--chc-border-primary);
+}
+
+.tournament-notes blockquote {
+  margin: 0 0 1rem;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--chc-border-primary);
+  color: var(--chc-text-secondary, var(--chc-text-muted));
+}
+
+/* Provider markup routinely embeds oversized images and wide tables. */
+.tournament-notes img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.tournament-notes table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+@media screen and (max-width: 720px) {
+  .tournament-notes {
+    font-size: 0.9375rem;
+  }
+}
