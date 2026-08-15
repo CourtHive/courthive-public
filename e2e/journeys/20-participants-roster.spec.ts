@@ -15,6 +15,7 @@ import { sel, tabId } from '../helpers/selectors';
 
 const ROSTER = '.chp-roster';
 const ROSTER_NAME = '.chp-roster__name';
+const ALIGNED_CUP = 'Aligned Cup';
 
 /**
  * Reduce the fixture to a names-only roster, matching the live Battle of Boca
@@ -171,7 +172,7 @@ test.describe('participants — multi-column table', () => {
 test.describe('app shell — navbar alignment', () => {
   test('navbar items share a left edge with the hero title', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
-    const fixture = buildPublishedTournament({ tournamentName: 'Aligned Cup' });
+    const fixture = buildPublishedTournament({ tournamentName: ALIGNED_CUP });
     await installApiMocks(page, fixture);
     await gotoTournament(page, fixture);
 
@@ -207,7 +208,7 @@ test.describe('app shell — navbar alignment', () => {
 
   test('alignment holds on a narrow viewport', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    const fixture = buildPublishedTournament({ tournamentName: 'Aligned Cup' });
+    const fixture = buildPublishedTournament({ tournamentName: ALIGNED_CUP });
     await installApiMocks(page, fixture);
     await gotoTournament(page, fixture);
 
@@ -222,4 +223,33 @@ test.describe('app shell — navbar alignment', () => {
     });
     expect(Math.round(edges.nav)).toBe(Math.round(edges.hero));
   });
+
+  for (const viewport of [
+    { name: 'desktop', width: 1440, height: 900 },
+    { name: 'mobile', width: 390, height: 844 },
+  ]) {
+    test(`the tab strip starts on the same left edge as the hero (${viewport.name})`, async ({ page }) => {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      const fixture = buildPublishedTournament({ tournamentName: ALIGNED_CUP });
+      await installApiMocks(page, fixture);
+      await gotoTournament(page, fixture);
+
+      const firstTab = page.locator('.tabs li:visible a').first();
+      await expect(firstTab).toBeVisible();
+
+      const edges = await page.evaluate(() => {
+        const contentLeft = (element: HTMLElement) =>
+          element.getBoundingClientRect().left + parseFloat(getComputedStyle(element).paddingLeft || '0');
+        const hero = document.querySelector('.chp-hero') as HTMLElement;
+        const tab = [...document.querySelectorAll('.tabs li')].find(
+          (li) => (li as HTMLElement).offsetParent !== null,
+        ) as HTMLElement;
+        return { hero: contentLeft(hero), firstTab: tab.getBoundingClientRect().left };
+      });
+
+      // The tab's own left edge, not the strip's — a centred strip put the
+      // first tab at x=538 against a hero content edge of x=72.
+      expect(Math.round(edges.firstTab)).toBe(Math.round(edges.hero));
+    });
+  }
 });

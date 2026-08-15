@@ -153,9 +153,12 @@
   overflow-x: auto;
   white-space: nowrap;
 }
-.tabs.is-centered ul {
-  justify-content: center;
-}
+/* The `is-centered` modifier the tab strip used to carry is gone: a centred
+   strip was the only element on the entry page not sitting on the container
+   grid, once the navbar was aligned to it. Padding lives on the `ul` rather
+   than on `.tabs`, which is the `overflow-x: auto` scroll container where
+   trailing padding is unreliable — and the `ul`'s bottom border keeps spanning
+   the full width as the divider beneath the strip. */
 .tabs ul {
   align-items: center;
   border-bottom: 1px solid var(--chc-border-primary, #dbdbdb);
@@ -165,7 +168,16 @@
   justify-content: flex-start;
   list-style: none;
   margin: 0;
-  padding: 0;
+  /* Matches the hero's horizontal padding. */
+  padding: 0 1.5rem;
+}
+/* Must follow `.tabs ul` above, not sit with the other narrow-viewport rules
+   earlier in the file: at equal specificity the later declaration wins, and
+   the base rule would have overridden this one. */
+@media screen and (max-width: 720px) {
+  .tabs ul {
+    padding: 0 1rem;
+  }
 }
 .tabs li {
   display: block;

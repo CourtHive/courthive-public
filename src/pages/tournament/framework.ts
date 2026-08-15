@@ -31,7 +31,9 @@ export const tournamentFramework = () => {
     sections.appendChild(section);
   });
 
-  tabs.className = 'tabs is-centered';
+  // Left-aligned, not centred: the tabs share the container edge with the hero
+  // and the navbar. See the padding on `.tabs ul` in layout.css.
+  tabs.className = 'tabs';
   const ul = document.createElement('ul');
   tabNames.forEach((tabName) => {
     const tab = document.createElement('li');
