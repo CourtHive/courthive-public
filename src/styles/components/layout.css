@@ -4,15 +4,29 @@
  */
 
 /* ── Navbar ────────────────────────────────────────────────── */
+/* The bar is a full-bleed surface; `.navbar-inner` carries `.container` so the
+   items inside line up with the hero and tabs rather than hugging the window
+   edge. The bottom border gives the bleed an edge instead of leaving it
+   floating over the content. */
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  width: 100%;
+  z-index: 30;
+  border-bottom: 1px solid var(--chc-border-primary, #dbdbdb);
+  background-color: var(--chc-bg-primary, #ffffff);
+  color: var(--chc-text-primary, #363636);
+}
+.navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 3.25rem;
-  width: 100%;
-  z-index: 30;
-  background-color: var(--chc-bg-primary, #ffffff);
-  color: var(--chc-text-primary, #363636);
+  /* Matches the hero's horizontal padding, so a nav item and the tournament
+     title share a left edge. */
+  padding: 0 1.5rem;
 }
 .navbar-brand {
   display: flex;
@@ -102,6 +116,12 @@
 @media screen and (min-width: 1408px) {
   .container {
     max-width: 1344px;
+  }
+}
+/* Track the hero's narrow-viewport padding so the alignment holds on mobile. */
+@media screen and (max-width: 720px) {
+  .navbar-inner {
+    padding: 0 1rem;
   }
 }
 

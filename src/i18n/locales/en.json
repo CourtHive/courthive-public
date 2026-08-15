@@ -24,6 +24,11 @@
     "cityState": "City / State",
     "events": "Events",
     "rank": "Rank",
+    "gender": {
+      "female": "Women",
+      "male": "Men",
+      "unspecified": "Unspecified"
+    },
     "noParticipants": "No participants",
     "teamsHeading": "Teams",
     "viewProgram": "View {{team}} season",

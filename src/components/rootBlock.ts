@@ -79,8 +79,14 @@ export function rootBlock() {
   if (isAuthenticated()) connectHiveIDSocket();
 
   navBrand.appendChild(navItem);
-  nav.appendChild(navBrand);
-  nav.appendChild(navEnd);
+  // The bar surface spans the viewport; its items are constrained to the same
+  // container the hero and tabs use, so nav items and the tournament title
+  // share a left edge instead of the nav hugging the window.
+  const navInner = document.createElement('div');
+  navInner.className = 'container navbar-inner';
+  navInner.appendChild(navBrand);
+  navInner.appendChild(navEnd);
+  nav.appendChild(navInner);
   main.appendChild(nav);
 
   const splash = document.createElement('div');

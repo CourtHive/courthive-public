@@ -1,6 +1,7 @@
+import { participantSorter } from 'src/common/sorters/participantSorter';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { eventConstants, fixtures } from 'tods-competition-factory';
-import { participantSorter } from 'src/common/sorters/participantSorter';
+import { buildRosterGrid, groupByGender } from './rosterGrid';
 import { destroyTable } from 'src/components/destroyTable';
 import { renderParticipant } from 'courthive-components';
 import { t } from 'src/i18n/i18n';
@@ -10,7 +11,19 @@ const { SINGLES } = eventConstants;
 
 const ANCHOR_ID = 'playersTable';
 
-const PARTICIPANTS_COMPOSITION = { configuration: { genderColor: true }, theme: 'chc-theme-basiccard' };
+// `genderColor` is deliberately off. It tinted names pink/blue, encoding sex by
+// hue alone — unreadable to colourblind viewers and in high-contrast modes.
+// Gender is conveyed by grouping instead, in both the roster and the table.
+const PARTICIPANTS_COMPOSITION = { configuration: { genderColor: false }, theme: 'chc-theme-basiccard' };
+
+/**
+ * With a single published column there is nothing to tabulate — a data grid
+ * would render one narrow column of names, each with a bottom border stopping
+ * at the column edge. Hand those rosters to `buildRosterGrid` instead.
+ */
+export function shouldUseRosterGrid(columnCount: number): boolean {
+  return columnCount <= 1;
+}
 
 interface ColumnConfig {
   country?: boolean;
@@ -22,6 +35,7 @@ interface ColumnConfig {
 interface RowData {
   participant: any;
   name: string;
+  sex?: string;
   country: string;
   cityState: string;
   ratings: Record<string, any>;
@@ -76,6 +90,7 @@ export function createPlayersTable({
     return {
       participant: p,
       name: p.participantName || '',
+      sex: person.sex,
       country,
       cityState,
       ratings,
@@ -124,7 +139,8 @@ export function createPlayersTable({
   const hasCityState = rows.some((row) => row.cityState);
 
   // Name column is always shown — rendered via renderParticipant so the
-  // bracket's gender colours and styling carry over to the list view.
+  // bracket's participant styling carries over to the list view (its gender
+  // colouring does not; see PARTICIPANTS_COMPOSITION).
   // Returning outerHTML (instead of the live HTMLElement) sidesteps a
   // Tabulator caching wrinkle where the same DOM node can briefly appear
   // and then vanish across sort / virtual-scroll redraws.
@@ -212,10 +228,45 @@ export function createPlayersTable({
     });
   }
 
+  if (shouldUseRosterGrid(columns.length)) {
+    element.replaceChildren();
+    if (!rows.length) {
+      const empty = document.createElement('p');
+      empty.className = 'chp-roster__empty';
+      empty.textContent = t('players.noParticipants');
+      element.appendChild(empty);
+      return;
+    }
+    element.appendChild(buildRosterGrid({ entries: rows.map(({ name, sex }) => ({ name, sex })), t }));
+    return;
+  }
+
+  // Gender reads as a group header rather than a name colour, matching the
+  // roster. `groupByGender` returns a lone `ALL` section when splitting would
+  // not separate anything — in that case leave the table ungrouped rather than
+  // stacking every row under one meaningless header.
+  const sections = groupByGender(rows.map(({ name, sex }) => ({ name, sex })));
+  const groupByGenderInTable = sections.length > 1;
+
   new Tabulator(element, {
     height: window.innerHeight * 0.84,
     placeholder: t('players.noParticipants'),
+    // Let the Name column absorb the leftover width instead of sitting at its
+    // intrinsic size beside a band of empty space.
+    layout: 'fitColumns',
     data: rows,
     columns,
+    ...(groupByGenderInTable
+      ? {
+          groupBy: (data: RowData) => {
+            const sex = String(data.sex ?? '').toUpperCase();
+            return sex === 'MALE' || sex === 'FEMALE' ? sex : 'UNSPECIFIED';
+          },
+          groupHeader: (value: string, count: number) => {
+            const label = t(`players.gender.${String(value).toLowerCase()}`);
+            return `${label} <span class="chp-group-count">${count}</span>`;
+          },
+        }
+      : {}),
   });
 }
