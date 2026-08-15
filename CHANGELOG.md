@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.11.0](https://github.com/CourtHive/courthive-public/compare/v1.10.2...v1.11.0) (2026-08-15)
+
+
+### Features
+
+* **conferences:** conference competitive-fingerprint pages ([f1bd7ef](https://github.com/CourtHive/courthive-public/commit/f1bd7efc798803a9e751632248e1022694293183))
+* **program:** by-team program view — a college program's dual-match season ([ce0f1b6](https://github.com/CourtHive/courthive-public/commit/ce0f1b69f7c3419008e4b46079e19f647f82aebf))
+* **program:** program directory + team-card links into by-team seasons ([f831fa7](https://github.com/CourtHive/courthive-public/commit/f831fa7217198b781c27038099d3af4c40c93430))
+
+
+### Bug Fixes
+
+* **conferences:** regenerate ITA data — corrected CR model + merged MAC ([#478](https://github.com/CourtHive/courthive-public/issues/478)) ([405fd45](https://github.com/CourtHive/courthive-public/commit/405fd454329978ea68988f5347968dbee2afde71))
+* **conferences:** resolve data URLs against document.baseURI ([ca72d67](https://github.com/CourtHive/courthive-public/commit/ca72d67a187afb05d993206ae18d51766009b128))
+* **conferences:** use real theme tokens; theme the programs navbar button ([251bc3d](https://github.com/CourtHive/courthive-public/commit/251bc3d2c0921aaf70ab3476ddd5c514ebcd1e42))
+* **deps:** update @courthive/provider-config to 0.13.0 ([a6f2cf2](https://github.com/CourtHive/courthive-public/commit/a6f2cf2db10731d398656f08dfd4cb7625dcd075))
+* **deps:** update courthive-components to 3.13.1 ([5ea1045](https://github.com/CourtHive/courthive-public/commit/5ea1045acf7c0738764140736ca36e082634bfed))
+* **deps:** update courthive-components to 3.13.2 ([6c3a4ad](https://github.com/CourtHive/courthive-public/commit/6c3a4ad14d0bd20e7930a292386719e839cf51ac))
+* **deps:** update tods-competition-factory to 6.22.0 ([e2f4c5d](https://github.com/CourtHive/courthive-public/commit/e2f4c5d814318b0e002116df9f8d781db1ef5356))
+* **deps:** update tods-competition-factory to 6.22.1 ([462bc53](https://github.com/CourtHive/courthive-public/commit/462bc53e9038c87dd90d381d58e2af8878e7ff98))
+* **deps:** update tods-competition-factory to 6.23.0 ([636db12](https://github.com/CourtHive/courthive-public/commit/636db1259737d2ff77787b27dc2de09160701e0d))
+* **deps:** update tods-competition-factory to 6.24.0 ([04096a4](https://github.com/CourtHive/courthive-public/commit/04096a4771beca01dc14ab0d40e401a920968423))
+* **deps:** update tods-competition-factory to 6.25.0 ([34c2178](https://github.com/CourtHive/courthive-public/commit/34c21781edc2bbaa7eb1578815c173e37b60d4a8))
+* **participants:** roster grid for names-only fields, align navbar to content ([82e8b2a](https://github.com/CourtHive/courthive-public/commit/82e8b2aba4a31a6f407c2cbce15988153e3bcd82))
+* **tournament:** contain hero artwork and modernize the entry page ([67ac26a](https://github.com/CourtHive/courthive-public/commit/67ac26a0ec3e25e153f3eb24de08ee3729956b24))
+
 ## [1.10.2](https://github.com/CourtHive/courthive-public/compare/v1.10.1...v1.10.2) (2026-08-12)
 
 
