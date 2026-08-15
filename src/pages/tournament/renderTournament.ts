@@ -95,7 +95,7 @@ export async function renderTournament(
   });
   const notesBlock = renderNotes(tournamentInfo.notes);
   if (notesBlock) info.appendChild(notesBlock);
-  const venuesBlock = renderVenues(tournamentInfo.venues);
+  const venuesBlock = renderVenues(tournamentInfo.venues, tournamentInfo.eventInfo);
   if (venuesBlock) info.appendChild(venuesBlock);
   const hasInfo = !!(profileBlock || notesBlock || venuesBlock);
   if (hasInfo) displayTab('Info');
