@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.11.1](https://github.com/CourtHive/courthive-public/compare/v1.11.0...v1.11.1) (2026-08-15)
+
+
+### Bug Fixes
+
+* **conferences:** regenerate under the factory's shipped deltaBands policy ([#479](https://github.com/CourtHive/courthive-public/issues/479)) ([5f7edba](https://github.com/CourtHive/courthive-public/commit/5f7edbaf6df97fecde362fa2732325f1f93dc3c8))
+* **tournament:** left-align the tab strip with the page grid ([428cc0c](https://github.com/CourtHive/courthive-public/commit/428cc0c55b20678eee92c6c7d39ad2de18c082ea))
+* **venues:** let the court-SVG fallback fire, and size the sparse grid ([af7e76b](https://github.com/CourtHive/courthive-public/commit/af7e76bb98d7720c7ba61f73d620381c53774068))
+
 ## [1.11.0](https://github.com/CourtHive/courthive-public/compare/v1.10.2...v1.11.0) (2026-08-15)
 
 
