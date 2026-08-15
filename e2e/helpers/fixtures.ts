@@ -103,6 +103,12 @@ export function buildPublishedTournament(opts: BuildOptions = {}): PublicTournam
     startDate: scheduleDate,
     endDate: '2026-07-05',
     completeAllMatchUps,
+    // Deterministic participants and outcomes. Without this, two consecutive
+    // builds produce entirely different rosters — not merely cosmetic, because
+    // Tabulator orders its groups by the sorted data, so a spec asserting which
+    // group leads passes locally and fails intermittently in CI. Found while
+    // adding the participants roster specs; see the ecosystem determinism rule.
+    nonRandom: 1,
   });
   tournamentRecord.tournamentName = tournamentName;
 
