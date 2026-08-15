@@ -14,22 +14,22 @@
   "overall": {
    "matches": 11038,
    "bands": {
-    "STRETCH": 146,
-    "UP": 3203,
-    "EVEN": 2116,
-    "DOWN": 4460,
+    "STRETCH": 137,
+    "UP": 3212,
+    "EVEN": 2141,
+    "DOWN": 4435,
     "ANCHOR": 1113
    },
    "bandPct": {
-    "STRETCH": 1.3,
-    "UP": 29,
-    "EVEN": 19.2,
-    "DOWN": 40.4,
+    "STRETCH": 1.2,
+    "UP": 29.1,
+    "EVEN": 19.4,
+    "DOWN": 40.2,
     "ANCHOR": 10.1
    },
-   "stretchRate": 1.3,
+   "stretchRate": 1.2,
    "anchorRate": 10.1,
-   "breadth": 0.827,
+   "breadth": 0.826,
    "competitiveRatio": 46.1,
    "winRate": 57.2
   },
@@ -38,42 +38,42 @@
    "bands": {
     "STRETCH": 119,
     "UP": 2043,
-    "EVEN": 1031,
-    "DOWN": 2056,
+    "EVEN": 1044,
+    "DOWN": 2043,
     "ANCHOR": 119
    },
    "bandPct": {
     "STRETCH": 2.2,
     "UP": 38.1,
-    "EVEN": 19.2,
-    "DOWN": 38.3,
+    "EVEN": 19.4,
+    "DOWN": 38.1,
     "ANCHOR": 2.2
    },
    "stretchRate": 2.2,
    "anchorRate": 2.2,
-   "breadth": 0.759,
+   "breadth": 0.76,
    "competitiveRatio": 47.2,
    "winRate": 50
   },
   "nonConference": {
    "matches": 5670,
    "bands": {
-    "STRETCH": 27,
-    "UP": 1160,
-    "EVEN": 1085,
-    "DOWN": 2404,
+    "STRETCH": 18,
+    "UP": 1169,
+    "EVEN": 1097,
+    "DOWN": 2392,
     "ANCHOR": 994
    },
    "bandPct": {
-    "STRETCH": 0.5,
-    "UP": 20.5,
-    "EVEN": 19.1,
-    "DOWN": 42.4,
+    "STRETCH": 0.3,
+    "UP": 20.6,
+    "EVEN": 19.3,
+    "DOWN": 42.2,
     "ANCHOR": 17.5
    },
-   "stretchRate": 0.5,
+   "stretchRate": 0.3,
    "anchorRate": 17.5,
-   "breadth": 0.83,
+   "breadth": 0.827,
    "competitiveRatio": 45,
    "winRate": 64.1
   }
@@ -81,29 +81,29 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
  "stretchGap": {
   "inConference": 2.2,
-  "nonConference": 0.5,
-  "delta": -1.7,
+  "nonConference": 0.3,
+  "delta": -1.9,
   "nonConferenceShare": 51.4
  },
  "members": [
@@ -279,20 +279,20 @@
    "bands": {
     "STRETCH": 4,
     "UP": 143,
-    "EVEN": 74,
-    "DOWN": 133,
+    "EVEN": 82,
+    "DOWN": 125,
     "ANCHOR": 24
    },
    "bandPct": {
     "STRETCH": 1.1,
     "UP": 37.8,
-    "EVEN": 19.6,
-    "DOWN": 35.2,
+    "EVEN": 21.7,
+    "DOWN": 33.1,
     "ANCHOR": 6.3
    },
    "stretchRate": 1.1,
    "anchorRate": 6.3,
-   "breadth": 0.794,
+   "breadth": 0.8,
    "competitiveRatio": 46.2,
    "winRate": 52.6
   },
@@ -414,20 +414,20 @@
    "bands": {
     "STRETCH": 0,
     "UP": 57,
-    "EVEN": 97,
-    "DOWN": 172,
+    "EVEN": 101,
+    "DOWN": 168,
     "ANCHOR": 36
    },
    "bandPct": {
     "STRETCH": 0,
     "UP": 15.7,
-    "EVEN": 26.8,
-    "DOWN": 47.5,
+    "EVEN": 27.9,
+    "DOWN": 46.4,
     "ANCHOR": 9.9
    },
    "stretchRate": 0,
    "anchorRate": 9.9,
-   "breadth": 0.762,
+   "breadth": 0.766,
    "competitiveRatio": 42.3,
    "winRate": 59.9
   },
@@ -682,22 +682,22 @@
    "lineupWTN": 11.89,
    "matches": 341,
    "bands": {
-    "STRETCH": 54,
-    "UP": 184,
+    "STRETCH": 45,
+    "UP": 193,
     "EVEN": 32,
     "DOWN": 71,
     "ANCHOR": 0
    },
    "bandPct": {
-    "STRETCH": 15.8,
-    "UP": 54,
+    "STRETCH": 13.2,
+    "UP": 56.6,
     "EVEN": 9.4,
     "DOWN": 20.8,
     "ANCHOR": 0
    },
-   "stretchRate": 15.8,
+   "stretchRate": 13.2,
    "anchorRate": 0,
-   "breadth": 0.729,
+   "breadth": 0.707,
    "competitiveRatio": 54.5,
    "winRate": 49
   },
@@ -819,20 +819,20 @@
    "bands": {
     "STRETCH": 0,
     "UP": 62,
-    "EVEN": 94,
-    "DOWN": 116,
+    "EVEN": 107,
+    "DOWN": 103,
     "ANCHOR": 55
    },
    "bandPct": {
     "STRETCH": 0,
     "UP": 19,
-    "EVEN": 28.7,
-    "DOWN": 35.5,
+    "EVEN": 32.7,
+    "DOWN": 31.5,
     "ANCHOR": 16.8
    },
    "stretchRate": 0,
    "anchorRate": 16.8,
-   "breadth": 0.833,
+   "breadth": 0.835,
    "competitiveRatio": 41.6,
    "winRate": 48
   },

@@ -17,20 +17,20 @@
    "bands": {
     "STRETCH": 339,
     "UP": 749,
-    "EVEN": 203,
-    "DOWN": 554,
+    "EVEN": 231,
+    "DOWN": 526,
     "ANCHOR": 296
    },
    "bandPct": {
     "STRETCH": 15.8,
     "UP": 35,
-    "EVEN": 9.5,
-    "DOWN": 25.9,
+    "EVEN": 10.8,
+    "DOWN": 24.6,
     "ANCHOR": 13.8
    },
    "stretchRate": 15.8,
    "anchorRate": 13.8,
-   "breadth": 0.936,
+   "breadth": 0.943,
    "competitiveRatio": 15.4,
    "winRate": 44.2
   },
@@ -61,20 +61,20 @@
    "bands": {
     "STRETCH": 150,
     "UP": 497,
-    "EVEN": 149,
-    "DOWN": 302,
+    "EVEN": 177,
+    "DOWN": 274,
     "ANCHOR": 107
    },
    "bandPct": {
     "STRETCH": 12.4,
     "UP": 41.2,
-    "EVEN": 12.4,
-    "DOWN": 25.1,
+    "EVEN": 14.7,
+    "DOWN": 22.7,
     "ANCHOR": 8.9
    },
    "stretchRate": 12.4,
    "anchorRate": 8.9,
-   "breadth": 0.898,
+   "breadth": 0.906,
    "competitiveRatio": 19.1,
    "winRate": 39.7
   }
@@ -82,22 +82,22 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -253,20 +253,20 @@
    "bands": {
     "STRETCH": 0,
     "UP": 18,
-    "EVEN": 6,
-    "DOWN": 126,
+    "EVEN": 34,
+    "DOWN": 98,
     "ANCHOR": 41
    },
    "bandPct": {
     "STRETCH": 0,
     "UP": 9.4,
-    "EVEN": 3.1,
-    "DOWN": 66,
+    "EVEN": 17.8,
+    "DOWN": 51.3,
     "ANCHOR": 21.5
    },
    "stretchRate": 0,
    "anchorRate": 21.5,
-   "breadth": 0.582,
+   "breadth": 0.747,
    "competitiveRatio": 16.2,
    "winRate": 66.5
   },

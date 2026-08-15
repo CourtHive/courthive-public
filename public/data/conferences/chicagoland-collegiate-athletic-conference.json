@@ -18,19 +18,19 @@
     "STRETCH": 317,
     "UP": 645,
     "EVEN": 109,
-    "DOWN": 481,
-    "ANCHOR": 169
+    "DOWN": 487,
+    "ANCHOR": 163
    },
    "bandPct": {
     "STRETCH": 18.4,
     "UP": 37.5,
     "EVEN": 6.3,
-    "DOWN": 27.9,
-    "ANCHOR": 9.8
+    "DOWN": 28.3,
+    "ANCHOR": 9.5
    },
    "stretchRate": 18.4,
-   "anchorRate": 9.8,
-   "breadth": 0.894,
+   "anchorRate": 9.5,
+   "breadth": 0.891,
    "competitiveRatio": 30.5,
    "winRate": 43.6
   },
@@ -62,19 +62,19 @@
     "STRETCH": 204,
     "UP": 539,
     "EVEN": 81,
-    "DOWN": 375,
-    "ANCHOR": 56
+    "DOWN": 381,
+    "ANCHOR": 50
    },
    "bandPct": {
     "STRETCH": 16.3,
     "UP": 42.9,
     "EVEN": 6.5,
-    "DOWN": 29.9,
-    "ANCHOR": 4.5
+    "DOWN": 30.4,
+    "ANCHOR": 4
    },
    "stretchRate": 16.3,
-   "anchorRate": 4.5,
-   "breadth": 0.829,
+   "anchorRate": 4,
+   "breadth": 0.824,
    "competitiveRatio": 36.2,
    "winRate": 41.3
   }
@@ -82,22 +82,22 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -173,19 +173,19 @@
     "STRETCH": 40,
     "UP": 77,
     "EVEN": 11,
-    "DOWN": 45,
-    "ANCHOR": 36
+    "DOWN": 51,
+    "ANCHOR": 30
    },
    "bandPct": {
     "STRETCH": 19.1,
     "UP": 36.8,
     "EVEN": 5.3,
-    "DOWN": 21.5,
-    "ANCHOR": 17.2
+    "DOWN": 24.4,
+    "ANCHOR": 14.4
    },
    "stretchRate": 19.1,
-   "anchorRate": 17.2,
-   "breadth": 0.915,
+   "anchorRate": 14.4,
+   "breadth": 0.908,
    "competitiveRatio": 30.9,
    "winRate": 37.3
   },

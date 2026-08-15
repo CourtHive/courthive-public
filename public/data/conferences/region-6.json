@@ -17,20 +17,20 @@
    "bands": {
     "STRETCH": 93,
     "UP": 450,
-    "EVEN": 84,
-    "DOWN": 332,
+    "EVEN": 88,
+    "DOWN": 328,
     "ANCHOR": 118
    },
    "bandPct": {
     "STRETCH": 8.6,
     "UP": 41.8,
-    "EVEN": 7.8,
-    "DOWN": 30.8,
+    "EVEN": 8.2,
+    "DOWN": 30.5,
     "ANCHOR": 11
    },
    "stretchRate": 8.6,
    "anchorRate": 11,
-   "breadth": 0.858,
+   "breadth": 0.861,
    "competitiveRatio": 40.1,
    "winRate": 55.1
   },
@@ -61,20 +61,20 @@
    "bands": {
     "STRETCH": 77,
     "UP": 366,
-    "EVEN": 84,
-    "DOWN": 248,
+    "EVEN": 88,
+    "DOWN": 244,
     "ANCHOR": 102
    },
    "bandPct": {
     "STRETCH": 8.8,
     "UP": 41.7,
-    "EVEN": 9.6,
-    "DOWN": 28.3,
+    "EVEN": 10,
+    "DOWN": 27.8,
     "ANCHOR": 11.6
    },
    "stretchRate": 8.8,
    "anchorRate": 11.6,
-   "breadth": 0.876,
+   "breadth": 0.879,
    "competitiveRatio": 39,
    "winRate": 56.2
   }
@@ -82,22 +82,22 @@
  "baseline": {
   "matches": 531414,
   "bands": {
-   "STRETCH": 51471,
-   "UP": 174555,
-   "EVEN": 75766,
-   "DOWN": 176643,
-   "ANCHOR": 52979
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
   },
   "bandPct": {
-   "STRETCH": 9.7,
-   "UP": 32.8,
-   "EVEN": 14.3,
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
    "DOWN": 33.2,
-   "ANCHOR": 10
+   "ANCHOR": 9.9
   },
-  "stretchRate": 9.7,
-  "anchorRate": 10,
-  "breadth": 0.911,
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
   "competitiveRatio": 36.9,
   "winRate": 50.2
  },
@@ -226,20 +226,20 @@
    "bands": {
     "STRETCH": 65,
     "UP": 55,
-    "EVEN": 14,
-    "DOWN": 19,
+    "EVEN": 18,
+    "DOWN": 15,
     "ANCHOR": 0
    },
    "bandPct": {
     "STRETCH": 42.5,
     "UP": 35.9,
-    "EVEN": 9.2,
-    "DOWN": 12.4,
+    "EVEN": 11.8,
+    "DOWN": 9.8,
     "ANCHOR": 0
    },
    "stretchRate": 42.5,
    "anchorRate": 0,
-   "breadth": 0.751,
+   "breadth": 0.752,
    "competitiveRatio": 31.8,
    "winRate": 46.4
   },
