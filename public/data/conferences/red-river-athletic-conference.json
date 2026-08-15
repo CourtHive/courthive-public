@@ -18,20 +18,20 @@
     "STRETCH": 218,
     "UP": 950,
     "EVEN": 623,
-    "DOWN": 1322,
-    "ANCHOR": 376
+    "DOWN": 1316,
+    "ANCHOR": 382
    },
    "bandPct": {
     "STRETCH": 6.2,
     "UP": 27.2,
     "EVEN": 17.9,
-    "DOWN": 37.9,
-    "ANCHOR": 10.8
+    "DOWN": 37.7,
+    "ANCHOR": 10.9
    },
    "stretchRate": 6.2,
-   "anchorRate": 10.8,
-   "breadth": 0.897,
-   "competitiveRatio": 35.7,
+   "anchorRate": 10.9,
+   "breadth": 0.898,
+   "competitiveRatio": 35.3,
    "winRate": 56.2
   },
   "inConference": {
@@ -53,7 +53,7 @@
    "stretchRate": 3.1,
    "anchorRate": 3.1,
    "breadth": 0.793,
-   "competitiveRatio": 33.6,
+   "competitiveRatio": 33.3,
    "winRate": 50
   },
   "nonConference": {
@@ -62,20 +62,20 @@
     "STRETCH": 195,
     "UP": 681,
     "EVEN": 475,
-    "DOWN": 1053,
-    "ANCHOR": 353
+    "DOWN": 1047,
+    "ANCHOR": 359
    },
    "bandPct": {
     "STRETCH": 7.1,
     "UP": 24.7,
     "EVEN": 17.2,
-    "DOWN": 38.2,
-    "ANCHOR": 12.8
+    "DOWN": 38,
+    "ANCHOR": 13
    },
    "stretchRate": 7.1,
-   "anchorRate": 12.8,
-   "breadth": 0.911,
-   "competitiveRatio": 36.2,
+   "anchorRate": 13,
+   "breadth": 0.913,
+   "competitiveRatio": 35.9,
    "winRate": 57.8
   }
  },
@@ -84,21 +84,21 @@
   "bands": {
    "STRETCH": 51471,
    "UP": 174555,
-   "EVEN": 76349,
-   "DOWN": 176225,
-   "ANCHOR": 52814
+   "EVEN": 75766,
+   "DOWN": 176643,
+   "ANCHOR": 52979
   },
   "bandPct": {
    "STRETCH": 9.7,
    "UP": 32.8,
-   "EVEN": 14.4,
+   "EVEN": 14.3,
    "DOWN": 33.2,
-   "ANCHOR": 9.9
+   "ANCHOR": 10
   },
   "stretchRate": 9.7,
-  "anchorRate": 9.9,
+  "anchorRate": 10,
   "breadth": 0.911,
-  "competitiveRatio": 37.9,
+  "competitiveRatio": 36.9,
   "winRate": 50.2
  },
  "stretchGap": {
@@ -132,7 +132,7 @@
    "stretchRate": 0,
    "anchorRate": 16.1,
    "breadth": 0.711,
-   "competitiveRatio": 50.8,
+   "competitiveRatio": 51.1,
    "winRate": 58.2
   },
   {
@@ -159,7 +159,7 @@
    "stretchRate": 7.7,
    "anchorRate": 20.2,
    "breadth": 0.954,
-   "competitiveRatio": 37.2,
+   "competitiveRatio": 36.7,
    "winRate": 65.8
   },
   {
@@ -186,7 +186,7 @@
    "stretchRate": 18,
    "anchorRate": 3.3,
    "breadth": 0.899,
-   "competitiveRatio": 43.4,
+   "competitiveRatio": 41.5,
    "winRate": 43.4
   },
   {
@@ -213,7 +213,7 @@
    "stretchRate": 15,
    "anchorRate": 0,
    "breadth": 0.741,
-   "competitiveRatio": 28.9,
+   "competitiveRatio": 28.3,
    "winRate": 41.3
   },
   {
@@ -240,7 +240,7 @@
    "stretchRate": 0,
    "anchorRate": 1.7,
    "breadth": 0.705,
-   "competitiveRatio": 39.2,
+   "competitiveRatio": 38.3,
    "winRate": 61.4
   },
   {
@@ -267,7 +267,7 @@
    "stretchRate": 5,
    "anchorRate": 19.4,
    "breadth": 0.925,
-   "competitiveRatio": 38.8,
+   "competitiveRatio": 39.4,
    "winRate": 70.6
   },
   {
@@ -294,7 +294,7 @@
    "stretchRate": 0,
    "anchorRate": 19.2,
    "breadth": 0.818,
-   "competitiveRatio": 24.2,
+   "competitiveRatio": 23.9,
    "winRate": 62.5
   },
   {
@@ -321,7 +321,7 @@
    "stretchRate": 2.7,
    "anchorRate": 12.5,
    "breadth": 0.864,
-   "competitiveRatio": 26.6,
+   "competitiveRatio": 27.3,
    "winRate": 56.9
   },
   {
@@ -348,7 +348,7 @@
    "stretchRate": 3.2,
    "anchorRate": 15.9,
    "breadth": 0.887,
-   "competitiveRatio": 31.2,
+   "competitiveRatio": 30.7,
    "winRate": 48.8
   },
   {
@@ -362,20 +362,20 @@
     "STRETCH": 0,
     "UP": 51,
     "EVEN": 49,
-    "DOWN": 155,
-    "ANCHOR": 18
+    "DOWN": 149,
+    "ANCHOR": 24
    },
    "bandPct": {
     "STRETCH": 0,
     "UP": 18.7,
     "EVEN": 17.9,
-    "DOWN": 56.8,
-    "ANCHOR": 6.6
+    "DOWN": 54.6,
+    "ANCHOR": 8.8
    },
    "stretchRate": 0,
-   "anchorRate": 6.6,
-   "breadth": 0.697,
-   "competitiveRatio": 33.8,
+   "anchorRate": 8.8,
+   "breadth": 0.724,
+   "competitiveRatio": 33.5,
    "winRate": 64.1
   },
   {
@@ -402,7 +402,7 @@
    "stretchRate": 21.6,
    "anchorRate": 0,
    "breadth": 0.683,
-   "competitiveRatio": 29.5,
+   "competitiveRatio": 30.1,
    "winRate": 37.7
   }
  ]
