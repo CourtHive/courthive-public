@@ -1,4 +1,4 @@
-import { buildVenueCard, mapVenueToCardData, resolveCourtSport } from 'courthive-components';
+import { buildVenueCard, mapVenueToCardData, resolveCourtSport, sportFromMatchUpFormat } from 'courthive-components';
 import type { CourtSport } from 'courthive-components';
 import './renderVenues.css';
 
@@ -23,19 +23,41 @@ const DEFAULT_COURT_SPORT: CourtSport = 'tennis';
 /**
  * Resolve a sport for the court-SVG fallback.
  *
- * `resolveCourtSport` reads `competitionFormat.sport` or `matchUpFormat`, and
- * the public `eventInfo` projection carries neither today — so in practice this
- * falls back to tennis. That default matches the tournament hero, which already
- * renders `tennisCourt()` when a tournament publishes no artwork. It is an
- * assumption, not a fact: on a sport-agnostic platform a non-racquet event with
- * no format data will show a tennis court. Publishing `matchUpFormat` on
- * `eventInfo` would make this resolve properly.
+ * Two passes, so a **declared** format always beats a **surveyed** one:
+ *
+ * 1. `resolveCourtSport` — the event's own `competitionFormat.sport`, else its
+ *    own `matchUpFormat`.
+ * 2. `eventInfo.matchUpFormats` — every distinct code declared on the event,
+ *    its drawDefinitions, or their structures.
+ *
+ * The second pass must not outrank the first. `matchUpFormats` is a survey, not
+ * a resolution: the factory collects codes from wherever they sit without
+ * implying precedence, because the effective-format hierarchy runs
+ * `matchUp > structure > drawDefinition > event` — specificity flows downward.
+ * So a code found somewhere inside the event never overrides one the event
+ * declares for itself.
+ *
+ * In practice the survey is what fires. A live tournament declared no format on
+ * its event and `SET3-S:6/TB7` on its drawDefinition, which is a tennis code;
+ * a pickleball event carrying `@RALLY` resolves to pickleball instead.
+ *
+ * Tennis remains the last resort, matching the hero's `tennisCourt()` fallback.
  */
 export function resolveVenueSport(eventInfo?: any[]): CourtSport {
-  for (const event of eventInfo ?? []) {
+  const events = eventInfo ?? [];
+
+  for (const event of events) {
     const sport = resolveCourtSport(event);
     if (sport) return sport;
   }
+
+  for (const event of events) {
+    for (const matchUpFormat of event?.matchUpFormats ?? []) {
+      const sport = sportFromMatchUpFormat(matchUpFormat);
+      if (sport) return sport;
+    }
+  }
+
   return DEFAULT_COURT_SPORT;
 }
 

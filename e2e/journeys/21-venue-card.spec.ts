@@ -59,6 +59,44 @@ test.describe('venue card — image zone', () => {
   });
 });
 
+test.describe('venue card — sport derivation', () => {
+  /**
+   * `eventInfo.matchUpFormats` is the survey added by factory #4615: distinct
+   * codes from the event, its drawDefinitions, and their structures. Injected
+   * here in the shape the factory emits, so the consumer path is exercised
+   * before the factory publishes and the dep bumps.
+   */
+  function withMatchUpFormats(fixture: any, matchUpFormats: string[]) {
+    for (const event of fixture.tournamentInfo.tournamentInfo.eventInfo ?? []) {
+      event.matchUpFormat = undefined;
+      event.matchUpFormats = matchUpFormats;
+    }
+    return fixture;
+  }
+
+  test('a rally-scored code renders a pickleball court, not the tennis default', async ({ page }) => {
+    await gotoInfo(page, withMatchUpFormats(buildPublishedTournament(), ['SET3-S:11@RALLY']));
+
+    const svg = page.locator(`${VENUE_IMAGE} svg`);
+    await expect(svg).toHaveCount(1);
+    // createCourtSvg stamps `court--<sport>` on the rendered SVG.
+    await expect(svg).toHaveClass(/court--pickleball/);
+  });
+
+  test('a set-scored code renders a tennis court', async ({ page }) => {
+    await gotoInfo(page, withMatchUpFormats(buildPublishedTournament(), ['SET3-S:6/TB7']));
+
+    await expect(page.locator(`${VENUE_IMAGE} svg`)).toHaveClass(/court--tennis/);
+  });
+
+  test('falls back to tennis when no event publishes any format', async ({ page }) => {
+    // Pre-#4615 payload shape — the behaviour until the factory publishes.
+    await gotoInfo(page, withMatchUpFormats(buildPublishedTournament(), []));
+
+    await expect(page.locator(`${VENUE_IMAGE} svg`)).toHaveClass(/court--tennis/);
+  });
+});
+
 test.describe('venue card — grid', () => {
   test('a single venue renders as a card, not one narrow cell beside empty slots', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
