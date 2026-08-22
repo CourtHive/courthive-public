@@ -72,7 +72,7 @@
     "axios": "1.19.0",
     "courthive-components": "3.14.3",
     "d3-selection": "3.0.0",
-    "dayjs": "1.11.21",
+    "dayjs": "1.11.23",
     "hotkeys-js": "4.0.5",
     "i18next": "^26.0.0",
     "navigo": "8.11.1",
