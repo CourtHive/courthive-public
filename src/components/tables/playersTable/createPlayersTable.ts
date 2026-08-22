@@ -4,6 +4,7 @@ import { eventConstants, fixtures } from 'tods-competition-factory';
 import { buildRosterGrid, groupByGender } from './rosterGrid';
 import { destroyTable } from 'src/components/destroyTable';
 import { renderParticipant } from 'courthive-components';
+import { publicCompetitors } from './publicCompetitors';
 import { t } from 'src/i18n/i18n';
 
 const { ratingsParameters } = fixtures;
@@ -60,7 +61,7 @@ export function createPlayersTable({
   const element = document.getElementById(ANCHOR_ID);
   if (!element) return;
 
-  const individuals = participants.filter((p) => p.participantType === 'INDIVIDUAL');
+  const individuals = publicCompetitors(participants);
   individuals.sort(participantSorter);
 
   const rows: RowData[] = individuals.map((p) => {
