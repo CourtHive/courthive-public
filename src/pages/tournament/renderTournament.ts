@@ -68,6 +68,11 @@ export async function renderTournament(
   // Store participants publish config on context for use in createPlayersTable
   context.participantsPublishConfig = tournamentInfo.publishState?.participants;
 
+  // The tournament's own zone, for the schedule's "All times ..." label. Carried
+  // by `getTournamentInfo` whenever the TD has set one, and simply absent
+  // otherwise — the schedule then says nothing rather than guessing.
+  context.localTimeZone = tournamentInfo.localTimeZone;
+
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
   const isCourtSvgResource = tournamentImage?.resourceSubType === COURT_SVG_RESOURCE_SUB_TYPE;
   const fallbackArt = () =>

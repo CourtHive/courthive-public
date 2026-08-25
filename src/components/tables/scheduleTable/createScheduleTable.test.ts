@@ -12,7 +12,8 @@ vi.mock('courthive-components', () => ({
 
 import { __test__ } from './createScheduleTable';
 
-const { collectScheduleDates, courtsForDate, gridTemplate, extractParticipantIds, buildStripData } = __test__;
+const { collectScheduleDates, courtsForDate, gridTemplate, extractParticipantIds, buildStripData, venueZoneLabelText } =
+  __test__;
 
 const DATE_A = '2026-05-23';
 const DATE_B = '2026-05-24';
@@ -137,5 +138,30 @@ describe('buildStripData', () => {
     });
     // raw factory matchUp is carried as opaque payload for the cell renderer
     expect((cells[0] as any).payload.matchUpId).toBe('m1');
+  });
+});
+
+describe('venueZoneLabelText — what the clock on this page means', () => {
+  /**
+   * Times on the public schedule are bare venue wall clocks, rendered through
+   * untouched. They are already correct AT THE VENUE; nothing is converted and
+   * nothing should be. What was missing is that a public schedule is read from
+   * anywhere, so "09:00" carries no statement about which clock it is on.
+   */
+  it('names the tournament zone when one is set', () => {
+    expect(venueZoneLabelText('America/New_York')).toBe('All times America/New_York');
+  });
+
+  /**
+   * The load-bearing case. Most tournaments carry no zone, and an unlabelled
+   * schedule makes NO claim while a guessed label would make a false one — the
+   * viewer's own zone is precisely what these times are not in. TMX prompts the
+   * TD to set one; the public site must not answer on their behalf.
+   */
+  it('says nothing at all when the tournament has no zone — never guesses', () => {
+    expect(venueZoneLabelText(undefined)).toBeNull();
+    expect(venueZoneLabelText('')).toBeNull();
+    expect(venueZoneLabelText('   ')).toBeNull();
+    expect(venueZoneLabelText(null as any)).toBeNull();
   });
 });

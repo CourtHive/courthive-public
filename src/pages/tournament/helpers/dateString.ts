@@ -26,7 +26,7 @@ const monthNames = [
  * start/end dates are calendar days, not instants, so the timezone must never
  * enter the calculation: parse the components directly and format them as-is.
  */
-function parseCalendarDate(input?: string): CalendarDate | null {
+export function parseCalendarDate(input?: string): CalendarDate | null {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(input ?? ''));
   if (!match) return null;
   return { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
@@ -53,4 +53,18 @@ export function dateString({ startDate, endDate }: { startDate?: string; endDate
   } else {
     return `${numeric(start)} - ${numeric(end)}`;
   }
+}
+
+/**
+ * A single calendar day as "May 15, 2026" — the one-date sibling of
+ * `dateString`, and Date-free for exactly the same reason.
+ *
+ * Returns `null` when the input is not a calendar day, so callers can tell
+ * "this is a calendar day I formatted" from "this is something else" and route
+ * an instant elsewhere rather than silently mangling it.
+ */
+export function calendarDayString(input?: string): string | null {
+  const date = parseCalendarDate(input);
+  if (!date) return null;
+  return `${monthNames[date.month - 1]} ${date.day}, ${date.year}`;
 }

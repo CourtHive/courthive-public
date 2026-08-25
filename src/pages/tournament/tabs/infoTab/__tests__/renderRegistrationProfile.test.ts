@@ -8,6 +8,9 @@ const { formatDate, formatFee, T } = __test__;
 
 const echo = (key: string) => key;
 
+/** A mid-month calendar day: far enough from either boundary that only a real zone shift moves it. */
+const MID_MAY = '2026-05-15';
+
 describe('formatDate', () => {
   it('returns empty string when value is undefined', () => {
     expect(formatDate(undefined)).toBe('');
@@ -18,9 +21,46 @@ describe('formatDate', () => {
   });
 
   it('renders a date-only ISO string without a time component', () => {
-    const out = formatDate('2026-05-15');
+    const out = formatDate(MID_MAY);
     expect(out.length).toBeGreaterThan(0);
     expect(out).not.toMatch(/:\d{2}/);
+  });
+
+  /**
+   * The prod bug: `new Date("2026-05-15")` parses as UTC **midnight** and reads
+   * back in the viewer's zone, so everyone west of Greenwich saw May 14 — entry
+   * and withdrawal deadlines a day early, for this site's main audience.
+   *
+   * The two assertions above could not see it. They check the length and the
+   * absence of a colon, never WHICH DAY, and the suite runs `TZ=UTC` where the
+   * broken and fixed implementations are identical. Both had to change to make
+   * the bug expressible.
+   */
+  it('renders the exact calendar day — not the day before, west of UTC', () => {
+    expect(formatDate(MID_MAY)).toContain('15');
+    expect(formatDate(MID_MAY)).not.toContain('14');
+    expect(formatDate('2026-01-01')).toContain('2026');
+    // A year boundary is where the off-by-one is loudest: UTC midnight on Jan 1
+    // is Dec 31 of the PREVIOUS year in the Americas.
+    expect(formatDate('2026-01-01')).not.toContain('2025');
+  });
+
+  it('is timezone-independent for calendar days — never constructs a Date', () => {
+    // Same guard `dateString.test.ts` uses, and for the same reason: stubbing
+    // Date to throw fails a regression to any Date-based parse regardless of the
+    // test TZ, which a value assertion under `TZ=UTC` cannot do.
+    const OriginalDate = globalThis.Date;
+    try {
+      // @ts-expect-error — intentionally replacing Date for the duration of the test
+      globalThis.Date = class {
+        constructor() {
+          throw new Error('formatDate must not construct a Date for a calendar day');
+        }
+      };
+      expect(formatDate(MID_MAY)).toContain('15');
+    } finally {
+      globalThis.Date = OriginalDate;
+    }
   });
 
   it('includes a time component when the input has one', () => {

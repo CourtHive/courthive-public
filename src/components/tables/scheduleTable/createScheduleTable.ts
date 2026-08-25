@@ -1,7 +1,13 @@
-import { buildActiveStripPanel, buildScheduleGridCell, mapMatchUpToCellData, DEFAULT_SCHEDULE_CELL_CONFIG } from 'courthive-components';
+import {
+  buildActiveStripPanel,
+  buildScheduleGridCell,
+  mapMatchUpToCellData,
+  DEFAULT_SCHEDULE_CELL_CONFIG,
+} from 'courthive-components';
 import { scheduleGovernor, factoryConstants } from 'tods-competition-factory';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { removeAllChildNodes } from 'src/services/dom/transformers';
+import { context } from 'src/common/context';
 import dayjs from 'dayjs';
 
 // constants and types
@@ -46,11 +52,21 @@ export function createScheduleTable(params?: { data?: ScheduleData }) {
 
   const renderForDate = (scheduledDate: string) => {
     const courtsData = courtsForDate(data, scheduledDate);
-    const rows = scheduleGovernor.courtGridRows({ courtsData, courtPrefix: COURT_PREFIX, minRowsCount: MIN_ROWS_COUNT, scheduledDate }).rows ?? [];
+    const rows =
+      scheduleGovernor.courtGridRows({
+        courtsData,
+        courtPrefix: COURT_PREFIX,
+        minRowsCount: MIN_ROWS_COUNT,
+        scheduledDate,
+      }).rows ?? [];
     renderScheduleGrid({ gridEl, courtsData, rows });
   };
 
-  if (headerEl) headerEl.appendChild(buildDateSelector(scheduleDates, renderForDate));
+  if (headerEl) {
+    headerEl.appendChild(buildDateSelector(scheduleDates, renderForDate));
+    const venueZoneLabel = buildVenueZoneLabel(context.localTimeZone);
+    if (venueZoneLabel) headerEl.appendChild(venueZoneLabel);
+  }
   renderForDate(scheduleDates[0]);
 
   return { courtsCount: courtsForDate(data, scheduleDates[0]).length };
@@ -63,6 +79,39 @@ function collectScheduleDates(matchUps: any[]): string[] {
     if (scheduledDate && !dates.includes(scheduledDate)) dates.push(scheduledDate);
   }
   return dates.sort((a, b) => a.localeCompare(b));
+}
+
+/**
+ * "All times &lt;zone&gt;" — what the clock on this page means.
+ *
+ * Every time shown here is a bare venue wall clock: `scheduledTime` is stored as
+ * `HH:MM` with no zone and is rendered through untouched, so the digits are
+ * already correct **at the venue**. Nothing is converted, and nothing should be.
+ *
+ * What was missing is that a public schedule is read from anywhere. "09:00" is
+ * right for the spectator in the building and unreadable for the one deciding
+ * whether to stream it — the number carries no statement about which clock it is
+ * on. This says so once, at the top, rather than per row.
+ *
+ * **Returns null when the tournament has no zone set**, which is most of them.
+ * That is deliberate: an unlabelled schedule makes no claim, while a guessed
+ * label ("your zone, probably") would make a false one. TMX shows the TD a
+ * prompt to set it; the public site should not invent an answer on their behalf.
+ */
+function venueZoneLabelText(localTimeZone?: string): string | null {
+  if (typeof localTimeZone !== 'string' || !localTimeZone.trim()) return null;
+  return `All times ${localTimeZone}`;
+}
+
+function buildVenueZoneLabel(localTimeZone?: string): HTMLElement | null {
+  const text = venueZoneLabelText(localTimeZone);
+  if (!text) return null;
+
+  const label = document.createElement('div');
+  label.className = 'chp-schedule-zone';
+  label.dataset.zone = localTimeZone as string;
+  label.textContent = text;
+  return label;
 }
 
 function buildDateSelector(scheduleDates: string[], renderForDate: (date: string) => void): HTMLElement {
@@ -119,7 +168,15 @@ function gridTemplate(courtCount: number): { totalColumns: number; gridTemplateC
   return { totalColumns, gridTemplateColumns, minWidth };
 }
 
-function renderScheduleGrid({ gridEl, courtsData, rows }: { gridEl: HTMLElement; courtsData: any[]; rows: any[] }): void {
+function renderScheduleGrid({
+  gridEl,
+  courtsData,
+  rows,
+}: {
+  gridEl: HTMLElement;
+  courtsData: any[];
+  rows: any[];
+}): void {
   removeAllChildNodes(gridEl);
 
   const courtCount = courtsData.length;
@@ -265,4 +322,5 @@ export const __test__ = {
   gridTemplate,
   extractParticipantIds,
   buildStripData,
+  venueZoneLabelText,
 };
