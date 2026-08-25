@@ -1,3 +1,4 @@
+import { calendarDayString } from 'src/pages/tournament/helpers/dateString';
 import './renderRegistrationProfile.css';
 
 interface LogisticsOption {
@@ -81,12 +82,36 @@ const T = (t: Translate, key: string, fallback: string): string => {
   return result === key ? fallback : String(result);
 };
 
+/**
+ * A registration-profile date, rendered without moving it.
+ *
+ * These values arrive in two shapes and must not share a code path. The factory
+ * types them `Date | string` (`entriesClose`, `withdrawalDeadline`) and plain
+ * `string` (`drawCeremonyDate`), so both a calendar day and a full instant are
+ * possible on the same field.
+ *
+ *   - **A calendar day** ("2026-08-25") is not a moment; it has no zone. It is
+ *     formatted from its own digits, never through a `Date` — because
+ *     `new Date("2026-08-25")` parses as UTC **midnight** and reads back in the
+ *     viewer's zone, so everyone west of Greenwich saw the PREVIOUS day. That
+ *     put entry and withdrawal deadlines a day early for the whole of the
+ *     Americas, which is this site's main audience. Same bug the tournament
+ *     splash shipped and fixed in `e03eaf5`; the fix never reached this surface.
+ *   - **An instant** ("...T14:30", or with a `Z`) genuinely is a moment, and a
+ *     deadline is best read on the viewer's own clock — so that branch keeps
+ *     `toLocaleString()` deliberately.
+ *
+ * The two are told apart by shape, which is the only evidence available.
+ */
 function formatDate(value: string | undefined): string {
   if (!value) return '';
+
+  const calendarDay = calendarDayString(value);
+  if (calendarDay && !/T\d{2}:\d{2}/.test(value)) return calendarDay;
+
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
-  const hasTime = /T\d{2}:\d{2}/.test(value);
-  return hasTime ? d.toLocaleString() : d.toLocaleDateString();
+  return /T\d{2}:\d{2}/.test(value) ? d.toLocaleString() : d.toLocaleDateString();
 }
 
 function formatFee(fee: EntryFee): string {
@@ -166,12 +191,17 @@ function renderEntryInfo(p: RegistrationProfile, t: Translate): HTMLElement | nu
   const sec = section(T(t, 'registrationProfile.entry', 'Entry & Eligibility'));
   const grid = fieldsContainer();
 
-  if (p.entriesOpen) grid.appendChild(field(T(t, 'registrationProfile.entriesOpen', 'Entries open'), formatDate(p.entriesOpen)));
-  if (p.entriesClose) grid.appendChild(field(T(t, 'registrationProfile.entriesClose', 'Entries close'), formatDate(p.entriesClose)));
+  if (p.entriesOpen)
+    grid.appendChild(field(T(t, 'registrationProfile.entriesOpen', 'Entries open'), formatDate(p.entriesOpen)));
+  if (p.entriesClose)
+    grid.appendChild(field(T(t, 'registrationProfile.entriesClose', 'Entries close'), formatDate(p.entriesClose)));
   if (p.withdrawalDeadline)
-    grid.appendChild(field(T(t, 'registrationProfile.withdrawalDeadline', 'Withdrawal deadline'), formatDate(p.withdrawalDeadline)));
+    grid.appendChild(
+      field(T(t, 'registrationProfile.withdrawalDeadline', 'Withdrawal deadline'), formatDate(p.withdrawalDeadline)),
+    );
   if (p.entryMethod) grid.appendChild(field(T(t, 'registrationProfile.entryMethod', 'Entry method'), p.entryMethod));
-  if (p.entryUrl) grid.appendChild(field(T(t, 'registrationProfile.entryUrl', 'Entry URL'), linkValue(p.entryUrl, p.entryUrl)));
+  if (p.entryUrl)
+    grid.appendChild(field(T(t, 'registrationProfile.entryUrl', 'Entry URL'), linkValue(p.entryUrl, p.entryUrl)));
   sec.appendChild(grid);
 
   if (p.entryFees && p.entryFees.length) {
@@ -273,7 +303,9 @@ function renderCeremonies(p: RegistrationProfile, t: Translate): HTMLElement | n
   if (p.drawCeremonyDate)
     grid.appendChild(field(T(t, 'registrationProfile.drawCeremony', 'Draw ceremony'), formatDate(p.drawCeremonyDate)));
   if (p.awardsCeremonyDate)
-    grid.appendChild(field(T(t, 'registrationProfile.awardsCeremony', 'Awards ceremony'), formatDate(p.awardsCeremonyDate)));
+    grid.appendChild(
+      field(T(t, 'registrationProfile.awardsCeremony', 'Awards ceremony'), formatDate(p.awardsCeremonyDate)),
+    );
   if (grid.childNodes.length) sec.appendChild(grid);
 
   if (p.awardsDescription) {
@@ -423,10 +455,7 @@ function renderAdditional(p: RegistrationProfile, t: Translate): HTMLElement | n
   return sec;
 }
 
-export function renderRegistrationProfile(
-  profile: RegistrationProfile | undefined,
-  t: Translate,
-): HTMLElement | null {
+export function renderRegistrationProfile(profile: RegistrationProfile | undefined, t: Translate): HTMLElement | null {
   if (!profile) return null;
 
   const root = document.createElement('div');

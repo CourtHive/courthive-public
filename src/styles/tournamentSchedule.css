@@ -124,3 +124,17 @@
     height: calc(100dvh - 7rem);
   }
 }
+
+/*
+ * "All times <zone>" — the venue-clock statement above the court grid.
+ *
+ * Times on this page are bare venue wall clocks rendered untouched, so they are
+ * correct at the venue and mean nothing without knowing which venue clock they
+ * are on. Deliberately quiet: it is a caption for the grid, not a warning about
+ * it. Rendered only when the tournament carries a localTimeZone.
+ */
+.chp-schedule-zone {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 4px;
+}
