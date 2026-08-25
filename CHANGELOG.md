@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.12.0](https://github.com/CourtHive/courthive-public/compare/v1.11.1...v1.12.0) (2026-08-25)
+
+
+### Features
+
+* **venues:** derive court sport from the eventInfo matchUpFormats survey ([fd1496c](https://github.com/CourtHive/courthive-public/commit/fd1496ce0715db14f3fb28ddb474b371144a8034))
+
+
+### Bug Fixes
+
+* **deps:** update @courthive/provider-config to 0.15.0 ([1a13909](https://github.com/CourtHive/courthive-public/commit/1a139094d2bfb596d9158d5e3218a19ce61b5d66))
+* **deps:** update @courthive/provider-config to 0.16.0 ([c4434d4](https://github.com/CourtHive/courthive-public/commit/c4434d4fe2fafa51f2bad1b6490827051264f205))
+* **deps:** update @courthive/provider-config to 0.17.0 ([aecbd1d](https://github.com/CourtHive/courthive-public/commit/aecbd1deeffdf78388e1058db7ea9e86317ddab6))
+* **deps:** update @courthive/provider-config to 0.18.0 ([1182171](https://github.com/CourtHive/courthive-public/commit/11821711965ab86d0189ee727c53074327469bc8))
+* **deps:** update courthive-components to 3.14.0 ([9ed6e25](https://github.com/CourtHive/courthive-public/commit/9ed6e259d9f1d2abd0ab15824a43de06bc2e08e9))
+* **deps:** update courthive-components to 3.14.1 ([463f86c](https://github.com/CourtHive/courthive-public/commit/463f86c0ceed01ec13c6947601af58993ea00bb0))
+* **deps:** update courthive-components to 3.14.3 ([6ef400d](https://github.com/CourtHive/courthive-public/commit/6ef400d9fcfe0f612f59e1eb9fb380e75d7a14bb))
+* **deps:** update courthive-components to 3.15.0 ([de15c80](https://github.com/CourtHive/courthive-public/commit/de15c805786826bdffde27049e1763327f4ddc7c))
+* **deps:** update tods-competition-factory to 6.27.0 ([a5b3ed7](https://github.com/CourtHive/courthive-public/commit/a5b3ed762fed34765bc436832ddbb7993ffaf3b4))
+* **deps:** update tods-competition-factory to 6.28.0 ([29cad95](https://github.com/CourtHive/courthive-public/commit/29cad95e56236d848276e28d63c75699d130d320))
+* **deps:** update tods-competition-factory to 6.28.1 ([5179065](https://github.com/CourtHive/courthive-public/commit/5179065e334732ea5f02465ec1e4c35d8ddbd748))
+* **deps:** update tods-competition-factory to 6.29.0 ([d2ca782](https://github.com/CourtHive/courthive-public/commit/d2ca782f2da51fff09276725454915b3f9181d86))
+* **deps:** update tods-competition-factory to 6.29.1 ([7df7cc7](https://github.com/CourtHive/courthive-public/commit/7df7cc7ddd840319f3710ec590234238cf1ca85f))
+* **deps:** update tods-competition-factory to 6.30.0 ([b049e73](https://github.com/CourtHive/courthive-public/commit/b049e73f07ef1296ff5ef76bbfbc4c373ac5fea7))
+* **deps:** update tods-competition-factory to 6.31.0 and courthive-components to 3.15.1 ([#490](https://github.com/CourtHive/courthive-public/issues/490)) ([023a45a](https://github.com/CourtHive/courthive-public/commit/023a45a4550a8c9a30d7fb70cddef546335ca636))
+* **deps:** update tods-competition-factory to 6.32.0 ([9572d31](https://github.com/CourtHive/courthive-public/commit/9572d313da7461af1a5f94d23c20d48aec68b237))
+* **players:** keep personnel and groups out of the public Players tab ([#488](https://github.com/CourtHive/courthive-public/issues/488)) ([7f7d9af](https://github.com/CourtHive/courthive-public/commit/7f7d9afbd22d96981ebb569877d9e36e85592f4f))
+* **tournament:** stop shifting registration dates, and say which clock the schedule is on ([#491](https://github.com/CourtHive/courthive-public/issues/491)) ([69df9b8](https://github.com/CourtHive/courthive-public/commit/69df9b8409d28dd0fc568506c0098076936b5e4f))
+
 ## [1.11.1](https://github.com/CourtHive/courthive-public/compare/v1.11.0...v1.11.1) (2026-08-15)
 
 
