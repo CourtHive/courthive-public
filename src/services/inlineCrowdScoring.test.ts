@@ -1,20 +1,34 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // courthive-components touches `document` at module-import time when its CSS
 // side-effects load. courthive-public's vitest config has no DOM environment,
 // so we mock the package down to just the symbols inlineCrowdScoring imports.
+// Capture the handlers buildInlineCrowdManager passes in, so the persistence path can be driven.
+const managerHandlers: any = {};
 vi.mock('courthive-components', () => ({
-  InlineScoringManager: vi.fn(),
+  InlineScoringManager: vi.fn(function (this: any, handlers: any) {
+    Object.assign(managerHandlers, handlers);
+    this.get = () => undefined;
+    return this;
+  }),
   renderInlineMatchUp: vi.fn(),
 }));
 
 // crowdTracker calls indexedDB at runtime — mock it for these unit tests.
+const saveSession = vi.fn();
 vi.mock('src/services/crowdTracker', () => ({
-  saveSession: vi.fn(),
+  saveSession: (...a: any[]) => saveSession(...a),
   listActiveSessions: vi.fn(async () => []),
 }));
 
-import { markReadyMatchUpsInProgress, withInlineScoringConfig, __test__ } from './inlineCrowdScoring';
+import {
+  applyInlineScoringWrappers,
+  buildInlineCrowdManager,
+  markReadyMatchUpsInProgress,
+  registerMatchUps,
+  withInlineScoringConfig,
+  __test__,
+} from './inlineCrowdScoring';
 
 describe('withInlineScoringConfig', () => {
   it('merges inlineScoring config without mutating the input composition', () => {
@@ -110,5 +124,116 @@ describe('IRREGULAR_STATUSES', () => {
     expect(__test__.IRREGULAR_STATUSES.has('ABANDONED')).toBe(true);
     expect(__test__.IRREGULAR_STATUSES.has('IN_PROGRESS')).toBe(false);
     expect(__test__.IRREGULAR_STATUSES.has('COMPLETED')).toBe(false);
+  });
+});
+
+
+describe('base-matchUp lookup — the crowd-scoring persistence path', () => {
+  const MATCH_UP_ID = 'm-lazy';
+  const FORMAT = 'SET5-S:6/TB7-F:TB10';
+
+  /** Non-degenerate on purpose: a format that is NOT the fallback, and names that are not placeholders. */
+  const buildMatchUp = () => ({
+    matchUpId: MATCH_UP_ID,
+    matchUpFormat: FORMAT,
+    sides: [
+      { sideNumber: 1, participant: { participantName: 'Alfa' } },
+      { sideNumber: 2, participant: { participantName: 'Bravo' } },
+    ],
+  });
+
+  const build = (matchUps: any[]) =>
+    buildInlineCrowdManager({ tournamentId: 't1', savedSessions: new Map(), matchUps });
+
+  /** Drives onMatchComplete, which persists and flushes synchronously. */
+  const completeMatch = async () => {
+    managerHandlers.onMatchComplete({ matchUpId: MATCH_UP_ID });
+    await Promise.resolve();
+    await Promise.resolve();
+  };
+
+  beforeEach(() => {
+    saveSession.mockClear();
+    for (const k of Object.keys(managerHandlers)) delete managerHandlers[k];
+  });
+
+  it('persists the real format and side names when the matchUp is known', async () => {
+    build([buildMatchUp()]);
+    await completeMatch();
+
+    expect(saveSession).toHaveBeenCalledTimes(1);
+    const saved = saveSession.mock.calls[0][0];
+    expect(saved.matchUpFormat).toBe(FORMAT);
+    expect(saved.side1Name).toBe('Alfa');
+    expect(saved.side2Name).toBe('Bravo');
+  });
+
+  it('WARNS on a miss instead of silently persisting placeholders', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    build([]); // manager never saw this matchUp
+    await completeMatch();
+
+    // It still persists — losing the operator's score is worse than an imperfect record...
+    expect(saveSession).toHaveBeenCalledTimes(1);
+    const saved = saveSession.mock.calls[0][0];
+    expect(saved.matchUpFormat).toBe(__test__.FALLBACK_MATCHUP_FORMAT);
+    expect(saved.side1Name).toBe('Side 1');
+    // ...but it must not do so silently. These are plausible values, not blanks, so nothing
+    // downstream would ever flag them.
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(warn.mock.calls[0][0]).toContain(MATCH_UP_ID);
+    warn.mockRestore();
+  });
+
+  it('warns ONCE per matchUp — a miss recurs on every point and would bury its own signal', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    build([]);
+    await completeMatch();
+    await completeMatch();
+    await completeMatch();
+
+    expect(saveSession).toHaveBeenCalledTimes(3);
+    expect(warn).toHaveBeenCalledTimes(1);
+    warn.mockRestore();
+  });
+
+  it('registerMatchUps repairs a miss — the extension point progressive loading needs', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const manager = build([]);
+
+    registerMatchUps(manager, [buildMatchUp()]);
+    await completeMatch();
+
+    const saved = saveSession.mock.calls[0][0];
+    expect(saved.matchUpFormat).toBe(FORMAT);
+    expect(saved.side1Name).toBe('Alfa');
+    expect(saved.side2Name).toBe('Bravo');
+    expect(warn).not.toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it('applyInlineScoringWrappers registers what it renders — the invariant maintains itself', async () => {
+    // This is the production wiring. Registering at the point of use means a matchUp the visitor can
+    // score is in the lookup by construction, whatever fetched it — so progressive draw loading
+    // cannot reintroduce the miss by forgetting to register.
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const manager = build([]);
+
+    applyInlineScoringWrappers({
+      container: { querySelector: () => null } as any,
+      matchUps: [buildMatchUp()],
+      composition: {} as any,
+      manager,
+    });
+    await completeMatch();
+
+    expect(saveSession.mock.calls[0][0].matchUpFormat).toBe(FORMAT);
+    expect(saveSession.mock.calls[0][0].side1Name).toBe('Alfa');
+    expect(warn).not.toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it('registerMatchUps is a no-op on a manager it did not build', () => {
+    expect(() => registerMatchUps({} as any, [buildMatchUp()])).not.toThrow();
   });
 });
