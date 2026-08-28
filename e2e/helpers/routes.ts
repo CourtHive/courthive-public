@@ -45,6 +45,14 @@ export interface MockOptions {
   scheduleData?: unknown;
   /** Override the participants payload. Defaults to `eventData.participants`. */
   participants?: unknown[];
+  /**
+   * Opt into the `participantsVersion` handshake on `/factory/eventdata`.
+   *
+   * When set, the eventdata route mirrors competition-factory-server: it always stamps the response
+   * and omits `participants` on an exact match. Off by default, so every existing spec keeps the
+   * always-full payload it was written against.
+   */
+  participantsVersion?: string;
 }
 
 /**
@@ -84,9 +92,19 @@ export async function installApiMocks(page: Page, fixture: PublicTournamentFixtu
     if (handledPreflight(route)) return;
     // Resolve the requested event from the POST body so multi-event fixtures
     // return the right draw; fall back to the first event.
-    const requestedEventId = route.request().postDataJSON()?.eventId;
-    const payload = fixture.eventData[requestedEventId] ?? fixture.eventData[fixture.eventId];
-    void json(route, payload);
+    const body = route.request().postDataJSON();
+    const payload = fixture.eventData[body?.eventId] ?? fixture.eventData[fixture.eventId];
+    if (!opts.participantsVersion) {
+      void json(route, payload);
+      return;
+    }
+
+    // The stamp ALWAYS rides the response, exactly as the server's cached payload does — omission is
+    // a strip on the way out, never a different document. A fixture that only stamped the omitted
+    // case would let the client hold a version it was never given.
+    const stamped: Record<string, unknown> = { ...payload, participantsVersion: opts.participantsVersion };
+    if (body?.participantsVersion === opts.participantsVersion) delete stamped.participants;
+    void json(route, stamped);
   });
 
   await page.route(`${API}/factory/scheduledmatchUps`, (route) => {
