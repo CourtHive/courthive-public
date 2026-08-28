@@ -38,6 +38,16 @@ const ORIGINAL_SCORE_KEY = '__inlineOriginalScore';
  */
 const SCORED_IDS_KEY = '__scoredMatchUpIds';
 
+/**
+ * Attached alongside `SCORED_IDS_KEY` so a caller can extend the manager's base-matchUp lookup after
+ * construction. Same attach-and-accessor idiom, for the same reason: `InlineScoringManager` is a
+ * courthive-components type we do not own.
+ */
+const REGISTER_KEY = '__registerMatchUps';
+
+/** Persisted when the base matchUp cannot be resolved. Never silently — see `resolveBase`. */
+const FALLBACK_MATCHUP_FORMAT = 'SET3-S:6/TB7';
+
 function matchUpHasScore(matchUp: any): boolean {
   return Boolean(matchUp?.score?.sets?.length) || Boolean(matchUp?.winningSide);
 }
@@ -120,6 +130,24 @@ export function getScoredMatchUpIds(manager: InlineScoringManager): Set<string> 
 }
 
 /**
+ * Add matchUps to a manager's base lookup after it was built.
+ *
+ * The lookup is what supplies `matchUpFormat` and both side names when a session is persisted, and it
+ * is populated once at construction from whatever matchUps the caller had then. That is correct while
+ * one `getEventData` call returns every matchUp in the event — but it makes ANY change that renders a
+ * matchUp the manager has not seen a silent data-quality bug, because the persistence path falls back
+ * rather than failing (see `resolveBase`).
+ *
+ * Progressive/lazy loading of draws is the concrete case: call this as each draw's matchUps arrive.
+ * Idempotent, so re-registering the same matchUps is free.
+ *
+ * A no-op if the manager did not come from `buildInlineCrowdManager` — mirrors `getScoredMatchUpIds`.
+ */
+export function registerMatchUps(manager: InlineScoringManager, matchUps: any[]): void {
+  ((manager as any)[REGISTER_KEY] as ((m: any[]) => void) | undefined)?.(matchUps);
+}
+
+/**
  * Overlay each scored matchUp's engine state onto matchUp.score / winningSide
  * so the locally-entered score is visible in the bracket regardless of toggle
  * state. For matchUps that drop out of the scored set (Clear pressed), revert
@@ -167,9 +195,41 @@ export function buildInlineCrowdManager({
   matchUps,
 }: BuildManagerParams): InlineScoringManager {
   const baseLookup = new Map<string, any>();
-  for (const m of matchUps || []) {
-    if (m?.matchUpId) baseLookup.set(m.matchUpId, m);
-  }
+  const addToBaseLookup = (additional: any[]): void => {
+    for (const m of additional || []) {
+      if (m?.matchUpId) baseLookup.set(m.matchUpId, m);
+    }
+  };
+  addToBaseLookup(matchUps);
+
+  // Warn ONCE per matchUpId. A miss recurs on every point of a game, and a per-point warning would
+  // bury the signal it exists to raise.
+  const warnedMissingBase = new Set<string>();
+
+  /**
+   * The base matchUp behind a persisted session, or `undefined` with a warning.
+   *
+   * A miss is NOT harmless and must never pass silently: the caller then persists
+   * `FALLBACK_MATCHUP_FORMAT` — wrong for anything that is not a best-of-3 with a 7-point tiebreak —
+   * and `resolveSideName` yields `"Side 1"` / `"Side 2"`. Those are plausible-looking values, not
+   * blanks, which is exactly what makes them hard to notice in IndexedDB after the fact.
+   *
+   * We still persist. Losing the operator's score is worse than storing an imperfect record, so this
+   * degrades loudly rather than failing closed — but the fix is to `registerMatchUps` on load, not to
+   * accept the fallback.
+   */
+  const resolveBase = (matchUpId: string): any => {
+    const base = baseLookup.get(matchUpId);
+    if (!base && !warnedMissingBase.has(matchUpId)) {
+      warnedMissingBase.add(matchUpId);
+      console.warn(
+        `[inlineCrowdScoring] no base matchUp for ${matchUpId} — persisting with fallback ` +
+          `matchUpFormat "${FALLBACK_MATCHUP_FORMAT}" and placeholder side names. ` +
+          `Call registerMatchUps(manager, matchUps) when the draw containing it loads.`,
+      );
+    }
+    return base;
+  };
 
   // matchUpIds that have actual scoring data — pre-populated from saved
   // IndexedDB sessions that contain real score state, then kept in sync
@@ -201,8 +261,8 @@ export function buildInlineCrowdManager({
     if (matchUpHasScore(scoredMatchUp)) scoredMatchUpIds.add(matchUpId);
     else scoredMatchUpIds.delete(matchUpId);
     pendingPersist = async () => {
-      const base = baseLookup.get(matchUpId);
-      const matchUpFormat = scoredMatchUp?.matchUpFormat ?? base?.matchUpFormat ?? 'SET3-S:6/TB7';
+      const base = resolveBase(matchUpId);
+      const matchUpFormat = scoredMatchUp?.matchUpFormat ?? base?.matchUpFormat ?? FALLBACK_MATCHUP_FORMAT;
       const side1Name = resolveSideName(base, 1);
       const side2Name = resolveSideName(base, 2);
       try {
@@ -228,13 +288,13 @@ export function buildInlineCrowdManager({
   const manager = new InlineScoringManager({
     onScoreChange: ({ matchUpId, matchUp }) => schedulePersist(matchUpId, matchUp),
     onMatchComplete: ({ matchUpId }) => {
-      const base = baseLookup.get(matchUpId);
+      const base = resolveBase(matchUpId);
       const current = manager.get(matchUpId)?.engine?.getMatchUp?.(base) ?? base;
       schedulePersist(matchUpId, current);
       flushPersist();
     },
     onEndMatch: ({ matchUpId }) => {
-      const base = baseLookup.get(matchUpId);
+      const base = resolveBase(matchUpId);
       const current = manager.get(matchUpId)?.engine?.getMatchUp?.(base) ?? base;
       schedulePersist(matchUpId, current);
       flushPersist();
@@ -258,6 +318,7 @@ export function buildInlineCrowdManager({
   }
 
   (manager as any)[SCORED_IDS_KEY] = scoredMatchUpIds;
+  (manager as any)[REGISTER_KEY] = addToBaseLookup;
   return manager;
 }
 
@@ -275,6 +336,12 @@ export function applyInlineScoringWrappers({
   composition,
   initialRoundNumber = 1,
 }: ApplyWrappersParams): void {
+  // Register at the POINT OF USE, not at load time. Anything that gets an inline scoring wrapper is
+  // something the visitor can score, so this makes "every scorable matchUp is in the base lookup" an
+  // invariant the render path maintains itself — rather than a rule each caller has to remember when
+  // it fetches. Idempotent, and it is what keeps progressive draw loading safe by construction.
+  registerMatchUps(manager, matchUps);
+
   for (const m of matchUps || []) {
     const isInProgress = m?.matchUpStatus === 'IN_PROGRESS' && !m?.winningSide;
     const isIrregularEnding = IRREGULAR_STATUSES.has(m?.matchUpStatus);
@@ -340,6 +407,7 @@ function resolveSideName(matchUp: any, sideNumber: number): string {
  * Test seam — exposed for vitest only.
  */
 export const __test__ = {
+  FALLBACK_MATCHUP_FORMAT,
   IRREGULAR_STATUSES,
   PERSIST_DEBOUNCE_MS,
 };
