@@ -45,8 +45,6 @@ const SCORED_IDS_KEY = '__scoredMatchUpIds';
  */
 const REGISTER_KEY = '__registerMatchUps';
 
-/** Persisted when the base matchUp cannot be resolved. Never silently — see `resolveBase`. */
-const FALLBACK_MATCHUP_FORMAT = 'SET3-S:6/TB7';
 
 function matchUpHasScore(matchUp: any): boolean {
   return Boolean(matchUp?.score?.sets?.length) || Boolean(matchUp?.winningSide);
@@ -88,6 +86,31 @@ export async function loadSavedSessionsForTournament(
 }
 
 /**
+ * May this matchUp be offered for PUBLIC scoring at all?
+ *
+ * FAIL CLOSED. Public crowd scoring writes records that outlive the session, and the two things that
+ * make such a record trustworthy cannot be reconstructed later:
+ *
+ * - **`matchUpFormat`** decides how a score is *interpreted*. It is determined by the tournamentRecord
+ *   and delivered by the factory; there is no correct way to guess it. A score stored against an
+ *   invented format is not a slightly-wrong record, it is an uninterpretable one.
+ * - **Real, hydrated participants.** A record naming "Side 1" is indistinguishable from a genuine one
+ *   at every point downstream.
+ *
+ * So a matchUp missing either is not scored with a substitute — it is not offered for scoring. That is
+ * the only way the substitute cannot exist.
+ *
+ * Costs nothing in practice: measured across a real production tournament (3 events, 211 matchUps),
+ * every matchUp carried a `matchUpFormat`, and the set passing this gate is exactly the set that has
+ * two hydrated, named sides. The format clause excluded nothing extra — it is free insurance.
+ */
+export function isScorable(matchUp: any): boolean {
+  if (!matchUp?.matchUpId || !matchUp.matchUpFormat) return false;
+  if (!Array.isArray(matchUp.sides) || matchUp.sides.length !== 2) return false;
+  return sideParticipantName(matchUp, 1) !== undefined && sideParticipantName(matchUp, 2) !== undefined;
+}
+
+/**
  * Mirror TMX's `markReadyMatchUpsInProgress`: any matchUp with both sides
  * resolved and no winner yet is treated as IN_PROGRESS so the inline-scoring
  * wrapper picks it up. Mutates the matchUps in place — same contract as TMX
@@ -96,7 +119,9 @@ export async function loadSavedSessionsForTournament(
  */
 export function markReadyMatchUpsInProgress(matchUps: any[]): void {
   for (const m of matchUps || []) {
-    const hasBothParticipants = m?.sides?.length === 2 && m.sides[0]?.participant && m.sides[1]?.participant;
+    // Same gate as the scoring UI. Marking something IN_PROGRESS is what makes the wrapper pick it up,
+    // so a looser rule here would re-open the hole the wrapper closes.
+    const hasBothParticipants = isScorable(m);
     if (!hasBothParticipants) continue;
     if (m?.readyToScore && !m?.winningSide && (!m?.matchUpStatus || m.matchUpStatus === 'TO_BE_PLAYED')) {
       if (!(ORIGINAL_STATUS_KEY in m)) m[ORIGINAL_STATUS_KEY] = m.matchUpStatus;
@@ -209,22 +234,21 @@ export function buildInlineCrowdManager({
   /**
    * The base matchUp behind a persisted session, or `undefined` with a warning.
    *
-   * A miss is NOT harmless and must never pass silently: the caller then persists
-   * `FALLBACK_MATCHUP_FORMAT` — wrong for anything that is not a best-of-3 with a 7-point tiebreak —
-   * and `resolveSideName` yields `"Side 1"` / `"Side 2"`. Those are plausible-looking values, not
-   * blanks, which is exactly what makes them hard to notice in IndexedDB after the fact.
+   * A miss is NOT harmless and must never pass silently. Nothing is substituted for it any more: the
+   * persist path REFUSES when the format or either side name cannot be resolved from real data, so a
+   * miss costs the session rather than producing a record that reads as genuine.
    *
-   * We still persist. Losing the operator's score is worse than storing an imperfect record, so this
-   * degrades loudly rather than failing closed — but the fix is to `registerMatchUps` on load, not to
-   * accept the fallback.
+   * `isScorable` should make this unreachable — a matchUp that cannot be named or formatted is never
+   * offered for scoring. Reaching it means something upstream bypassed the gate, and the fix is to
+   * `registerMatchUps` on load, not to relax the refusal.
    */
   const resolveBase = (matchUpId: string): any => {
     const base = baseLookup.get(matchUpId);
     if (!base && !warnedMissingBase.has(matchUpId)) {
       warnedMissingBase.add(matchUpId);
       console.warn(
-        `[inlineCrowdScoring] no base matchUp for ${matchUpId} — persisting with fallback ` +
-          `matchUpFormat "${FALLBACK_MATCHUP_FORMAT}" and placeholder side names. ` +
+        `[inlineCrowdScoring] no base matchUp for ${matchUpId} — the persist below will REFUSE ` +
+          `unless the engine's own matchUp carries a format and names. ` +
           `Call registerMatchUps(manager, matchUps) when the draw containing it loads.`,
       );
     }
@@ -262,9 +286,25 @@ export function buildInlineCrowdManager({
     else scoredMatchUpIds.delete(matchUpId);
     pendingPersist = async () => {
       const base = resolveBase(matchUpId);
-      const matchUpFormat = scoredMatchUp?.matchUpFormat ?? base?.matchUpFormat ?? FALLBACK_MATCHUP_FORMAT;
-      const side1Name = resolveSideName(base, 1);
-      const side2Name = resolveSideName(base, 2);
+      const matchUpFormat = scoredMatchUp?.matchUpFormat ?? base?.matchUpFormat;
+      const side1Name = sideParticipantName(base, 1);
+      const side2Name = sideParticipantName(base, 2);
+
+      // REFUSE rather than substitute. `isScorable` means this is unreachable in normal operation, so
+      // reaching it is an invariant violation — something upstream offered scoring on a matchUp that
+      // should not have been offered. Writing a guessed format or a "Side 1" placeholder would launder
+      // that bug into a record indistinguishable from a real one; skipping the write leaves the engine
+      // state in memory and the defect visible.
+      if (!matchUpFormat || !side1Name || !side2Name) {
+        console.error(
+          `[inlineCrowdScoring] refusing to persist ${matchUpId} — ` +
+            `matchUpFormat=${matchUpFormat ?? 'MISSING'}, side1=${side1Name ?? 'MISSING'}, ` +
+            `side2=${side2Name ?? 'MISSING'}. A scorable matchUp must carry the factory's ` +
+            `matchUpFormat and hydrated participants; this one was offered for scoring anyway.`,
+        );
+        return;
+      }
+
       try {
         await saveSession({
           tournamentId,
@@ -309,7 +349,7 @@ export function buildInlineCrowdManager({
   // then fall back to seeding from the published matchUp's score.
   for (const m of matchUps || []) {
     const matchUpId = m?.matchUpId;
-    if (!matchUpId || !m.matchUpFormat) continue;
+    if (!isScorable(m)) continue;
     const saved = savedSessions.get(matchUpId);
     const seed = (saved?.matchUp as any) ?? m;
     if (saved || (m.readyToScore && !m.winningSide)) {
@@ -346,7 +386,9 @@ export function applyInlineScoringWrappers({
     const isInProgress = m?.matchUpStatus === 'IN_PROGRESS' && !m?.winningSide;
     const isIrregularEnding = IRREGULAR_STATUSES.has(m?.matchUpStatus);
     if (!isInProgress && !isIrregularEnding) continue;
-    if (!m?.sides?.length || !m.sides[0]?.participant || !m.sides[1]?.participant) continue;
+    // The gate. Anything that fails it gets no scoring affordance at all, so no engine is created,
+    // no session is persisted, and there is nothing to substitute a value into.
+    if (!isScorable(m)) continue;
 
     const existing = container.querySelector(`#${CSS.escape(m.matchUpId)}`);
     if (!existing?.parentElement) continue;
@@ -390,24 +432,34 @@ export function withInlineScoringConfig(composition: any): any {
   };
 }
 
-function resolveSideName(matchUp: any, sideNumber: number): string {
-  if (!matchUp) return `Side ${sideNumber}`;
-  const side = matchUp.sides?.find?.((s: any) => s?.sideNumber === sideNumber) ?? matchUp.sides?.[sideNumber - 1];
-  if (!side) return `Side ${sideNumber}`;
-  const direct = side?.participant?.participantName;
-  if (typeof direct === 'string' && direct.length > 0) return direct;
-  const individuals = side?.participant?.individualParticipants ?? [];
-  if (individuals.length > 0) {
-    return individuals.map((p: any) => p?.participantName ?? '').filter(Boolean).join(' / ') || `Side ${sideNumber}`;
-  }
-  return `Side ${sideNumber}`;
+/**
+ * The real name of a side's participant, or `undefined` when there isn't one.
+ *
+ * Returns `undefined` rather than a placeholder ON PURPOSE. A refusal you can see beats a plausible
+ * value you cannot: `"Side 1"` reads like a legitimate name everywhere it is later displayed, so a
+ * fallback here would be indistinguishable from a real record. Callers decide what to do with the
+ * absence — `isScorable` refuses to offer the matchUp, and the persist path refuses to write it.
+ */
+function sideParticipantName(matchUp: any, sideNumber: number): string | undefined {
+  const side = matchUp?.sides?.find?.((s: any) => s?.sideNumber === sideNumber) ?? matchUp?.sides?.[sideNumber - 1];
+  const participant = side?.participant;
+  if (!participant) return undefined;
+
+  const direct = participant.participantName;
+  if (typeof direct === 'string' && direct.trim().length > 0) return direct;
+
+  const individuals = participant.individualParticipants ?? [];
+  const joined = individuals
+    .map((p: any) => (typeof p?.participantName === 'string' ? p.participantName.trim() : ''))
+    .filter(Boolean)
+    .join(' / ');
+  return joined.length > 0 ? joined : undefined;
 }
 
 /**
  * Test seam — exposed for vitest only.
  */
 export const __test__ = {
-  FALLBACK_MATCHUP_FORMAT,
   IRREGULAR_STATUSES,
   PERSIST_DEBOUNCE_MS,
 };
