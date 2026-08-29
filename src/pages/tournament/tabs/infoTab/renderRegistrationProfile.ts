@@ -41,6 +41,9 @@ interface DocumentLink {
 interface EntryFee {
   amount: number;
   currencyCode: string;
+  /** whether `amount` is in the currency's smallest unit or whole units; absent = scale unknown */
+  unit?: 'MINOR' | 'MAJOR';
+  eventId?: string;
   category?: string;
   eventType?: string;
 }
@@ -114,11 +117,37 @@ function formatDate(value: string | undefined): string {
   return /T\d{2}:\d{2}/.test(value) ? d.toLocaleString() : d.toLocaleDateString();
 }
 
+/** Minor-unit exponents that are not 2. Everything else in practice is 2. */
+const MINOR_EXPONENT: Record<string, number> = {
+  JPY: 0,
+  KRW: 0,
+  VND: 0,
+  CLP: 0,
+  ISK: 0,
+  KWD: 3,
+  BHD: 3,
+  OMR: 3,
+  JOD: 3,
+  TND: 3,
+};
+
+/**
+ * Render a fee, or say it cannot be rendered.
+ *
+ * `Intl.NumberFormat(style:'currency')` formats its argument as WHOLE currency units, so a record
+ * carrying minor units used to render 100× high — a $60.00 entry displayed as "$6,000.00". At least
+ * one federation surface states entry fees in minor units and another states the same concept in
+ * major, and nothing in either payload distinguishes them, which is why `unit` is now carried
+ * explicitly and is not inferred from magnitude here.
+ */
 function formatFee(fee: EntryFee): string {
+  if (!fee.unit || !fee.currencyCode) return 'Fee on request';
+  const exponent = MINOR_EXPONENT[fee.currencyCode] ?? 2;
+  const value = fee.unit === 'MINOR' ? fee.amount / 10 ** exponent : fee.amount;
   try {
-    return new Intl.NumberFormat(undefined, { style: 'currency', currency: fee.currencyCode }).format(fee.amount);
+    return new Intl.NumberFormat(undefined, { style: 'currency', currency: fee.currencyCode }).format(value);
   } catch {
-    return `${fee.amount} ${fee.currencyCode}`;
+    return `${value} ${fee.currencyCode}`;
   }
 }
 
