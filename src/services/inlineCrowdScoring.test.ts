@@ -11,7 +11,9 @@ vi.mock('courthive-components', () => ({
     this.get = () => undefined;
     return this;
   }),
-  renderInlineMatchUp: vi.fn(),
+  // Returns a stub element rather than undefined: the real one returns `HTMLElement | null`, and the
+  // caller now skips a null. A mock returning undefined would make every wrap look like a refusal.
+  renderInlineMatchUp: vi.fn(() => ({ nodeType: 1 })),
 }));
 
 // crowdTracker calls indexedDB at runtime — mock it for these unit tests.
