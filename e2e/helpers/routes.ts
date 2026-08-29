@@ -53,6 +53,15 @@ export interface MockOptions {
    * always-full payload it was written against.
    */
   participantsVersion?: string;
+  /**
+   * Serve the DRAW-TIER shape: `/factory/eventdata` returns draw stubs (no `structures`) and
+   * `/factory/drawdata` serves each draw's structures.
+   *
+   * Off by default so every existing spec keeps the whole-event payload it was written against —
+   * which is also the shape an undeployed server still returns, so those specs double as the
+   * old-server regression coverage.
+   */
+  lazyDraws?: boolean;
 }
 
 /**
@@ -106,6 +115,30 @@ export async function installApiMocks(page: Page, fixture: PublicTournamentFixtu
     if (body?.participantsVersion === opts.participantsVersion) delete stamped.participants;
     void json(route, stamped);
   });
+
+  // Draw tier. Mirrors the factory: a STUB carries no `structures` key at all, and `drawGenerated`
+  // stands in for counting matchUps the client has not fetched.
+  if (opts.lazyDraws) {
+    await page.unroute(`${API}/factory/eventdata`);
+    await page.route(`${API}/factory/eventdata`, (route) => {
+      if (handledPreflight(route)) return;
+      const body = route.request().postDataJSON();
+      const payload = fixture.eventData[body?.eventId] ?? fixture.eventData[fixture.eventId];
+      const drawsData = (payload?.eventData?.drawsData ?? []).map((draw: any) => {
+        const { structures, ...stub } = draw;
+        return { ...stub, drawGenerated: (structures ?? []).length > 0 };
+      });
+      void json(route, { ...payload, eventData: { ...payload.eventData, drawsData } });
+    });
+
+    await page.route(`${API}/factory/drawdata`, (route) => {
+      if (handledPreflight(route)) return;
+      const { drawId } = route.request().postDataJSON() ?? {};
+      const draws = Object.values(fixture.eventData).flatMap((e: any) => e?.eventData?.drawsData ?? []);
+      const draw = draws.find((d: any) => d.drawId === drawId);
+      void json(route, { success: true, structures: draw?.structures ?? [] });
+    });
+  }
 
   await page.route(`${API}/factory/scheduledmatchUps`, (route) => {
     if (handledPreflight(route)) return;

@@ -31,7 +31,14 @@ export async function getEventData(params?: { tournamentId: string; eventId: str
   // Conditional spread, not `participantsVersion: heldVersion`. An explicitly-undefined key is
   // invisible to JSON.stringify but visible to Object.keys, and the request shape must not move for
   // a caller that holds nothing.
-  const request = { ...params, ...(heldVersion && { participantsVersion: heldVersion }) };
+  // Ask for draw STUBS. A server that does not understand `drawsProfile` ignores it and returns the
+  // full payload, which the caller detects by the presence of `structures` — so this is safe to send
+  // before the server side is deployed, and starts paying the moment it is.
+  const request = {
+    ...params,
+    ...(heldVersion && { participantsVersion: heldVersion }),
+    drawsProfile: 'STUBS',
+  };
 
   const response = await baseApi.post('/factory/eventdata', request);
 
@@ -48,6 +55,21 @@ export async function getEventData(params?: { tournamentId: string; eventId: str
   if (participants) payload.participants = participants;
 
   return response;
+}
+
+/**
+ * One draw's structures — the draw tier of the payload decomposition.
+ *
+ * `hydrateParticipants: false` leaves each side with its `participantId` and a small draw-scoped stub
+ * instead of a full inlined participant (321 bytes per side on a real draw). The caller rehydrates
+ * from the tournament participant set it already holds, which is the same information for far fewer
+ * bytes — and it is the reason fetching draws separately is a saving rather than a loss.
+ */
+export async function getDrawData(params: { tournamentId: string; drawId: string }) {
+  if (!params?.tournamentId) throw new Error(MISSING_TOURNAMENT_ID);
+  if (!params?.drawId) throw new Error('missing drawId');
+
+  return await baseApi.post('/factory/drawdata', { ...params, hydrateParticipants: false });
 }
 
 export async function getScheduledMatchUps(params?: {

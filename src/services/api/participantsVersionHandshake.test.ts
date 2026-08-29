@@ -69,10 +69,15 @@ describe('ADDITIVE — a caller holding no version behaves exactly as before', (
 
     // Whole-object equality, not a spot check. A "nothing else changed" claim needs a total
     // assertion — checking only that participantsVersion is absent would miss any other drift.
+    // `drawsProfile` is part of the expected shape now: the caller always asks for draw stubs, and a
+    // server that does not understand it returns the full payload, which the renderer detects by the
+    // presence of `structures`. Still additive with respect to the HANDSHAKE, which is what the
+    // assertion below pins.
     expect(post).toHaveBeenCalledWith('/factory/eventdata', {
       tournamentId: TOURNAMENT_ID,
-      eventId: EVENT_ID,
       hydrateParticipants: false,
+      drawsProfile: 'STUBS',
+      eventId: EVENT_ID,
     });
     expect(Object.keys(post.mock.calls[0][1])).not.toContain('participantsVersion');
   });
@@ -96,8 +101,9 @@ describe('the handshake — second request proves what it holds', () => {
 
     expect(post.mock.calls[1][1]).toEqual({
       tournamentId: TOURNAMENT_ID,
-      eventId: 'e-doubles',
       participantsVersion: VERSION,
+      drawsProfile: 'STUBS',
+      eventId: 'e-doubles',
     });
   });
 
