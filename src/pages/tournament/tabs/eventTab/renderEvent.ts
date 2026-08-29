@@ -17,7 +17,7 @@ import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
 import { drawsGovernor, tools } from 'tods-competition-factory';
-import { getEventData } from 'src/services/api/tournamentsApi';
+import { getDrawData, getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
@@ -202,35 +202,54 @@ export function renderEvent({
     const flightHasMatchUps = (flight) =>
       flight.structures?.some((structure) => structureMatchUps(structure).length > 0);
 
-    const flightsData = eventData?.drawsData.filter(flightHasMatchUps);
+    // A STUB carries no `structures` key at all (factory `buildDrawStub`); a full draw always does.
+    // That is the discriminator this whole path turns on — no server-version sniffing, no flag. A
+    // server that does not understand `drawsProfile` returns full draws and every flight is simply
+    // already loaded, which is exactly today's behaviour.
+    const isLoaded = (flight) => Array.isArray(flight?.structures);
+
+    // For a stub, the factory's own `drawGenerated` replaces counting matchUps we have not fetched.
+    // NOT equivalent: `drawGenerated` reflects the drawDefinition, while `flightHasMatchUps` reflects
+    // what survived publish-state filtering INSIDE getDrawData, which a stub never sees. So a published
+    // draw whose structures are all unpublished passes here and would render empty — `dropEmptyFlight`
+    // below removes it once loading proves it has nothing, rather than guessing up front.
+    const flightIsOfferable = (flight) => (isLoaded(flight) ? flightHasMatchUps(flight) : flight.drawGenerated);
+
+    const flightsData = (eventData?.drawsData || []).filter(flightIsOfferable);
 
     // Participant lookup — used for initial hydration and live update patching
     const mappedParticipants = new Map(participants.map((p) => [p.participantId, p]));
 
-    if (!hydrateParticipants) {
-      const hydrateSideParticipants = (matchUp) => {
-        for (const side of matchUp.sides || []) {
-          if (side.participantId) {
-            side.participant = mappedParticipants.get(side.participantId);
-            if (side.participant?.individualParticipantIds) {
-              side.participant.individualParticipants = side.participant.individualParticipantIds.map((id) =>
-                mappedParticipants.get(id),
-              );
-            }
+    const hydrateSideParticipants = (matchUp) => {
+      for (const side of matchUp.sides || []) {
+        if (side.participantId) {
+          const participant: any = mappedParticipants.get(side.participantId);
+          // MERGE rather than overwrite: an unhydrated side carries draw-scoped attributes
+          // (entryStage, entryStatus, luckyAdvancement) that the tournament participant record does
+          // not, and assigning over them silently discarded the difference.
+          if (participant) side.participant = { ...(side.participant ?? {}), ...participant };
+          if (side.participant?.individualParticipantIds) {
+            side.participant.individualParticipants = side.participant.individualParticipantIds.map((id) =>
+              mappedParticipants.get(id),
+            );
           }
         }
-      };
-
-      for (const flight of flightsData) {
-        for (const structure of flight.structures) {
-          Object.values(structure.roundMatchUps || {})
-            .flat()
-            .forEach((matchUp: any) => {
-              hydrateSideParticipants(matchUp);
-              matchUp.tieMatchUps?.forEach(hydrateSideParticipants);
-            });
-        }
       }
+    };
+
+    const hydrateStructures = (structures: any[]) => {
+      for (const structure of structures || []) {
+        Object.values(structure.roundMatchUps || {})
+          .flat()
+          .forEach((matchUp: any) => {
+            hydrateSideParticipants(matchUp);
+            matchUp.tieMatchUps?.forEach(hydrateSideParticipants);
+          });
+      }
+    };
+
+    if (!hydrateParticipants) {
+      for (const flight of flightsData) if (isLoaded(flight)) hydrateStructures(flight.structures);
     }
 
     // Track current flight/structure indices for re-render after patch
@@ -247,6 +266,61 @@ export function renderEvent({
     );
     const inlineManager = buildInlineCrowdManager({ tournamentId, savedSessions, matchUps: allMatchUps });
 
+    // Build drawPosition → participant map per structure from hydrated matchUps.
+    // Within a structure, drawPosition→participant is fixed at draw generation time.
+    //
+    // Declared here, and applied PER DRAW LOAD rather than once, because a lazily-loaded draw's
+    // structures do not exist when the event payload arrives — indexing only at that moment would
+    // leave every later draw without a map, and cross-structure advancement in patchEventMatchUps
+    // silently unable to rehydrate a side.
+    const dpParticipantMaps = new Map<string, Map<number, any>>(); // structureId → (drawPosition → participant)
+    const indexDrawPositions = (structures: any[]) => {
+      for (const structure of structures || []) {
+        const dpMap = new Map<number, any>();
+        for (const roundMatchUps of Object.values(structure.roundMatchUps || {})) {
+          for (const matchUp of roundMatchUps as any[]) {
+            for (const side of matchUp.sides || []) {
+              if (side.drawPosition && side.participant) {
+                dpMap.set(side.drawPosition, side.participant);
+              }
+            }
+          }
+        }
+        dpParticipantMaps.set(structure.structureId, dpMap);
+      }
+    };
+
+    // Load one draw's structures on demand and splice them into its stub IN PLACE, so everything
+    // downstream — renderFlight, the stats/rounds tables, dpParticipantMaps, patchEventMatchUps —
+    // keeps seeing exactly the shape it saw when the whole event arrived at once.
+    //
+    // Matchups from a lazily-loaded draw reach the inline scoring manager through
+    // `applyInlineScoringWrappers`, which registers what it renders (courthive-public #498). Nothing
+    // needs to register them here, and deliberately so: a rule the loader has to remember is a rule a
+    // future loader will forget.
+    const loading = new Map<string, Promise<void>>();
+    const loadFlight = (flight: any): Promise<void> => {
+      const existing = loading.get(flight.drawId);
+      if (existing) return existing;
+
+      const pending = getDrawData({ tournamentId, drawId: flight.drawId })
+        .then((response) => {
+          const structures = response?.data?.structures;
+          // Absent structures means the fetch failed or the draw is gone. Assign [] rather than
+          // leaving the key unset, or `isLoaded` stays false and every render retries forever.
+          flight.structures = Array.isArray(structures) ? structures : [];
+          hydrateStructures(flight.structures);
+          indexDrawPositions(flight.structures);
+        })
+        .catch((err) => {
+          console.warn('[renderEvent] draw load failed', flight.drawId, err);
+          flight.structures = [];
+        });
+
+      loading.set(flight.drawId, pending);
+      return pending;
+    };
+
     // Live-scoring toggle — opt-in. Default is OFF so the bracket renders
     // with the TD's published composition unchanged. Per-(tournament, event)
     // preference persists in localStorage.
@@ -259,6 +333,21 @@ export function renderEvent({
     };
 
     const renderFlight = (index) => {
+      const pendingFlight = flightsData[index];
+      if (!pendingFlight) return;
+
+      // SYNCHRONOUS whenever the flight is already loaded. patchEventMatchUps calls renderFlight and
+      // then restores scroll positions inside a requestAnimationFrame; making this unconditionally
+      // async would let the frame fire before the DOM was rebuilt and lose the scroll position on
+      // every live update.
+      if (!isLoaded(pendingFlight)) {
+        void loadFlight(pendingFlight).then(() => renderLoadedFlight(index));
+        return;
+      }
+      renderLoadedFlight(index);
+    };
+
+    const renderLoadedFlight = (index) => {
       currentFlightIndex = index;
       const flight = flightsData[index];
       if (!flight) return;
@@ -386,24 +475,8 @@ export function renderEvent({
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);
 
-    // Build drawPosition → participant map per structure from existing hydrated matchUps.
-    // Within a structure, drawPosition→participant is fixed at draw generation time.
-    const dpParticipantMaps = new Map<string, Map<number, any>>(); // structureId → (drawPosition → participant)
-    for (const flight of flightsData) {
-      for (const structure of flight.structures || []) {
-        const dpMap = new Map<number, any>();
-        for (const roundMatchUps of Object.values(structure.roundMatchUps || {})) {
-          for (const matchUp of roundMatchUps as any[]) {
-            for (const side of matchUp.sides || []) {
-              if (side.drawPosition && side.participant) {
-                dpMap.set(side.drawPosition, side.participant);
-              }
-            }
-          }
-        }
-        dpParticipantMaps.set(structure.structureId, dpMap);
-      }
-    }
+    // Index whatever is loaded now. Draws that arrive later index themselves as they load.
+    for (const flight of flightsData) if (isLoaded(flight)) indexDrawPositions(flight.structures);
 
     // Expose a callback that patches matchUps in-memory and re-renders the current structure.
     // This avoids re-fetching from the server (which may serve stale cached data).
