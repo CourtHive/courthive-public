@@ -69,17 +69,31 @@ describe('formatDate', () => {
   });
 });
 
+// `unit` states whether an amount is in the currency's smallest unit or whole units. Both fixtures
+// below now state it; without it the amount cannot be placed on a scale at all, which the third
+// test asserts.
 describe('formatFee', () => {
   it('formats a USD amount using Intl', () => {
-    const out = formatFee({ amount: 75, currencyCode: 'USD' });
+    const out = formatFee({ amount: 75, currencyCode: 'USD', unit: 'MAJOR' });
     expect(out).toContain('75');
     expect(out).toMatch(/\$|USD/);
   });
 
   it('falls back to plain string when currencyCode is invalid', () => {
-    const out = formatFee({ amount: 50, currencyCode: 'INVALID_CODE_XYZ' });
+    const out = formatFee({ amount: 50, currencyCode: 'INVALID_CODE_XYZ', unit: 'MAJOR' });
     expect(out).toContain('50');
     expect(out).toContain('INVALID_CODE_XYZ');
+  });
+
+  it('renders minor units at the right scale', () => {
+    // The 100x bug: 6000 minor units is $60.00, and used to render as "$6,000.00".
+    const out = formatFee({ amount: 6000, currencyCode: 'USD', unit: 'MINOR' });
+    expect(out).toContain('60');
+    expect(out).not.toContain('6,000');
+  });
+
+  it('declines to render a fee whose scale is unstated', () => {
+    expect(formatFee({ amount: 6000, currencyCode: 'USD' })).toBe('Fee on request');
   });
 });
 
