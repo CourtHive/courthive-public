@@ -405,6 +405,10 @@ export function applyInlineScoringWrappers({
       isFinalRound,
       moiety,
     });
+    // The library refuses a matchUp it cannot score correctly and returns null (courthive-components
+    // #540). courthive-public does NOT set strictNullChecks, so nothing here would catch that at
+    // compile time — the guard is the only thing standing between a refusal and replaceChild(null).
+    if (!inlineEl) continue;
     existing.parentElement.replaceChild(inlineEl, existing);
   }
 }
