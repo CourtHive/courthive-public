@@ -10,7 +10,7 @@
  * for signed-in users on top of these same callbacks.
  */
 import { saveSession, listActiveSessions, CrowdTrackerSession } from 'src/services/crowdTracker';
-import { InlineScoringManager, renderInlineMatchUp } from 'courthive-components';
+import { InlineScoringManager, renderInlineMatchUp, isScorable, sideParticipantName } from 'courthive-components';
 
 const IRREGULAR_STATUSES = new Set(['RETIRED', 'DEFAULTED', 'WALKOVER', 'SUSPENDED', 'CANCELLED', 'ABANDONED']);
 const PERSIST_DEBOUNCE_MS = 200;
@@ -85,30 +85,9 @@ export async function loadSavedSessionsForTournament(
   return byMatchUpId;
 }
 
-/**
- * May this matchUp be offered for PUBLIC scoring at all?
- *
- * FAIL CLOSED. Public crowd scoring writes records that outlive the session, and the two things that
- * make such a record trustworthy cannot be reconstructed later:
- *
- * - **`matchUpFormat`** decides how a score is *interpreted*. It is determined by the tournamentRecord
- *   and delivered by the factory; there is no correct way to guess it. A score stored against an
- *   invented format is not a slightly-wrong record, it is an uninterpretable one.
- * - **Real, hydrated participants.** A record naming "Side 1" is indistinguishable from a genuine one
- *   at every point downstream.
- *
- * So a matchUp missing either is not scored with a substitute — it is not offered for scoring. That is
- * the only way the substitute cannot exist.
- *
- * Costs nothing in practice: measured across a real production tournament (3 events, 211 matchUps),
- * every matchUp carried a `matchUpFormat`, and the set passing this gate is exactly the set that has
- * two hydrated, named sides. The format clause excluded nothing extra — it is free insurance.
- */
-export function isScorable(matchUp: any): boolean {
-  if (!matchUp?.matchUpId || !matchUp.matchUpFormat) return false;
-  if (!Array.isArray(matchUp.sides) || matchUp.sides.length !== 2) return false;
-  return sideParticipantName(matchUp, 1) !== undefined && sideParticipantName(matchUp, 2) !== undefined;
-}
+// isScorable and sideParticipantName now come from courthive-components (>=4.0.0), where the gate
+// sits beside renderInlineMatchUp — the single place a scoring affordance is minted. Keeping local
+// copies risked the two drifting while both existed.
 
 /**
  * Mirror TMX's `markReadyMatchUpsInProgress`: any matchUp with both sides
@@ -436,29 +415,6 @@ export function withInlineScoringConfig(composition: any): any {
   };
 }
 
-/**
- * The real name of a side's participant, or `undefined` when there isn't one.
- *
- * Returns `undefined` rather than a placeholder ON PURPOSE. A refusal you can see beats a plausible
- * value you cannot: `"Side 1"` reads like a legitimate name everywhere it is later displayed, so a
- * fallback here would be indistinguishable from a real record. Callers decide what to do with the
- * absence — `isScorable` refuses to offer the matchUp, and the persist path refuses to write it.
- */
-function sideParticipantName(matchUp: any, sideNumber: number): string | undefined {
-  const side = matchUp?.sides?.find?.((s: any) => s?.sideNumber === sideNumber) ?? matchUp?.sides?.[sideNumber - 1];
-  const participant = side?.participant;
-  if (!participant) return undefined;
-
-  const direct = participant.participantName;
-  if (typeof direct === 'string' && direct.trim().length > 0) return direct;
-
-  const individuals = participant.individualParticipants ?? [];
-  const joined = individuals
-    .map((p: any) => (typeof p?.participantName === 'string' ? p.participantName.trim() : ''))
-    .filter(Boolean)
-    .join(' / ');
-  return joined.length > 0 ? joined : undefined;
-}
 
 /**
  * Test seam — exposed for vitest only.
