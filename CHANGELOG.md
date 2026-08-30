@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.13.0](https://github.com/CourtHive/courthive-public/compare/v1.12.1...v1.13.0) (2026-08-30)
+
+
+### Features
+
+* **api:** adopt the participantsVersion handshake on getEventData ([#496](https://github.com/CourtHive/courthive-public/issues/496)) ([4664691](https://github.com/CourtHive/courthive-public/commit/46646919375609fa778d8decd0e7bcdda23c4fce))
+* **events:** load draws progressively, and rehydrate sides from the held participants ([#500](https://github.com/CourtHive/courthive-public/issues/500)) ([7dcabb7](https://github.com/CourtHive/courthive-public/commit/7dcabb7bce3b68bc095f3269bcac6195c495686d))
+
+
+### Bug Fixes
+
+* **deps:** update tods-competition-factory to 6.35.0 ([008767a](https://github.com/CourtHive/courthive-public/commit/008767af0d4ae3459ca50f54d72c945d30e33790))
+* **info-tab:** render entry fees at the stated scale ([#504](https://github.com/CourtHive/courthive-public/issues/504)) ([e36ea16](https://github.com/CourtHive/courthive-public/commit/e36ea16a53accf557d3ebec379572fce9beb9221))
+* **scoring:** refuse public scoring without the factory's matchUpFormat and real participants ([#499](https://github.com/CourtHive/courthive-public/issues/499)) ([b488988](https://github.com/CourtHive/courthive-public/commit/b4889888d4066fd93a8fc346a64fc832d5e637c8))
+* **scoring:** skip a matchUp the inline renderer refuses to score ([#502](https://github.com/CourtHive/courthive-public/issues/502)) ([7017764](https://github.com/CourtHive/courthive-public/commit/7017764a6f5aa7d1dcb5cd2aa3ef0dc0882e0e73))
+* **scoring:** surface a missing base matchUp instead of persisting placeholders ([#498](https://github.com/CourtHive/courthive-public/issues/498)) ([aa50d1a](https://github.com/CourtHive/courthive-public/commit/aa50d1a543ea34555d9ac6017d5a8dbd396d9214))
+
 ## [1.12.1](https://github.com/CourtHive/courthive-public/compare/v1.12.0...v1.12.1) (2026-08-27)
 
 
