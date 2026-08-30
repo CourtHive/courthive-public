@@ -5,6 +5,17 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 // so we mock the package down to just the symbols inlineCrowdScoring imports.
 // Capture the handlers buildInlineCrowdManager passes in, so the persistence path can be driven.
 const managerHandlers: any = {};
+// `isScorable` / `sideParticipantName` are STAND-INS mirroring the library's contract for the fixtures
+// below. The gate's own behaviour — every refusal case, the pair-name path, the format clause — is
+// tested in courthive-components, which owns it. Asserting it again here would only be testing this
+// mock. What these specs still own, and still cover, is courthive-public's WIRING: that it consults
+// the gate at each of the three places that can lead to a stored record.
+const stubSideName = (matchUp: any, sideNumber: number): string | undefined => {
+  const sides = matchUp?.sides;
+  const side = sides?.find?.((x: any) => x?.sideNumber === sideNumber) ?? sides?.[sideNumber - 1];
+  const name = side?.participant?.participantName;
+  return typeof name === 'string' && name.trim().length > 0 ? name : undefined;
+};
 vi.mock('courthive-components', () => ({
   InlineScoringManager: vi.fn(function (this: any, handlers: any) {
     Object.assign(managerHandlers, handlers);
@@ -14,6 +25,14 @@ vi.mock('courthive-components', () => ({
   // Returns a stub element rather than undefined: the real one returns `HTMLElement | null`, and the
   // caller now skips a null. A mock returning undefined would make every wrap look like a refusal.
   renderInlineMatchUp: vi.fn(() => ({ nodeType: 1 })),
+  sideParticipantName: (m: any, n: number) => stubSideName(m, n),
+  isScorable: (m: any) =>
+    !!m?.matchUpId &&
+    !!m?.matchUpFormat &&
+    Array.isArray(m?.sides) &&
+    m.sides.length === 2 &&
+    stubSideName(m, 1) !== undefined &&
+    stubSideName(m, 2) !== undefined,
 }));
 
 // crowdTracker calls indexedDB at runtime — mock it for these unit tests.
@@ -25,7 +44,6 @@ vi.mock('src/services/crowdTracker', () => ({
 
 import {
   applyInlineScoringWrappers,
-  isScorable,
   buildInlineCrowdManager,
   markReadyMatchUpsInProgress,
   registerMatchUps,
@@ -253,47 +271,6 @@ describe('base-matchUp lookup — the crowd-scoring persistence path', () => {
   });
 });
 
-
-describe('isScorable — the public-scoring gate', () => {
-  const named = (n: number, name: string) => ({ sideNumber: n, participant: { participantName: name } });
-  const base = () => ({
-    matchUpId: 'm1',
-    matchUpFormat: MATCHUP_FORMAT,
-    sides: [named(1, 'Alfa'), named(2, 'Bravo')],
-  });
-
-  it('admits a matchUp with a factory format and two named participants', () => {
-    expect(isScorable(base())).toBe(true);
-  });
-
-  it('REFUSES a matchUp with no matchUpFormat — a score against a guessed format is uninterpretable', () => {
-    const withoutFormat = { matchUpId: 'm1', sides: [named(1, 'Alfa'), named(2, 'Bravo')] };
-    expect(isScorable(withoutFormat)).toBe(false);
-    // Control: identical but WITH the format, so the refusal is attributable to the format alone.
-    expect(isScorable({ ...withoutFormat, matchUpFormat: MATCHUP_FORMAT })).toBe(true);
-  });
-
-  it('REFUSES unhydrated sides — a participantId alone cannot name anyone', () => {
-    expect(isScorable({ ...base(), sides: [{ sideNumber: 1, participantId: 'p1' }, { sideNumber: 2 }] })).toBe(false);
-  });
-
-  it('REFUSES a participant object with no usable name', () => {
-    expect(isScorable({ ...base(), sides: [named(1, '   '), named(2, 'Bravo')] })).toBe(false);
-  });
-
-  it('accepts a PAIR named only through its individuals', () => {
-    const pair = {
-      sideNumber: 1,
-      participant: { individualParticipants: [{ participantName: 'Alfa' }, { participantName: 'Charlie' }] },
-    };
-    expect(isScorable({ ...base(), sides: [pair, named(2, 'Bravo')] })).toBe(true);
-  });
-
-  it('REFUSES anything that is not exactly two sides', () => {
-    expect(isScorable({ ...base(), sides: [named(1, 'Alfa')] })).toBe(false);
-    expect(isScorable({ ...base(), sides: undefined })).toBe(false);
-  });
-});
 
 describe('the gate is applied where scoring is actually offered', () => {
   const scorable = {
