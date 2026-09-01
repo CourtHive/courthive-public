@@ -5,7 +5,8 @@
  * `/query/programs/:teamId/duals` — nginx strips the `/query/` prefix and proxies to
  * courthive-query (:3150), so the request rides Cloudflare TLS instead of the loopback port.
  * In local dev the query service runs on :3150 alongside CFS (:8383); hit it directly.
- * Override with `window.dev.queryBaseURL` (dev toolbox, same shape as `window.dev.baseURL`).
+ * Override with `window.dev.queryBaseURL` (same shape as `window.dev.baseURL` — set the
+ * object yourself before boot; there is no in-app unlock that creates it).
  *
  * The endpoint is PUBLIC (no auth): it is gated to publicly-visible matchUps inside the service,
  * and returns every dual a team competed in regardless of which provider OWNS the record — so an
