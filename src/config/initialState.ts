@@ -2,10 +2,8 @@ import { highlightTeam, removeTeamHighlight } from 'src/services/dom/teamHighlig
 import { eventManager } from 'src/services/dom/eventManager';
 import { setDisplay } from 'src/services/transistions';
 import { initTheme } from 'src/services/themeService';
-import { setDev } from 'src/services/setDev';
 import { setWindow } from './setWindow';
 import { version } from './version';
-import hotkeys from 'hotkeys-js';
 
 // Initialize i18n (side-effect import triggers i18next.init with bundled en)
 import i18next, { getStoredLanguage, hasStoredLanguage } from 'src/i18n/i18n';
@@ -22,8 +20,6 @@ import 'src/styles/mobileBracket.css';
 import 'src/styles/default.css';
 import 'src/styles/darkMode.css';
 import 'src/styles/tournaments.css';
-
-const keysPressed = [];
 
 export function setInitialState() {
   // Sync-load any cached non-en locale before the first render so t() calls
@@ -51,14 +47,6 @@ export function setInitialState() {
 
   initTheme();
   console.log(`%cversion: ${version}`, 'color: lightblue');
-  hotkeys('shift+1,shift+3,esc,/', (event, handler: any) => {
-    event.preventDefault();
-    const shifted = hotkeys.shift;
-    const value = shifted ? handler.key.split(handler.splitKey)[1] : handler.key;
-    if (value === '/') keysPressed.splice(0, keysPressed.length);
-    keysPressed.push(value);
-    if (keysPressed.join('') === 'esc13') setDev();
-  });
   setDisplay(SPLASH);
   setWindow();
 
