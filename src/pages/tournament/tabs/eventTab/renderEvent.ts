@@ -236,7 +236,6 @@ export function renderEvent({
   getEventData({ tournamentId, eventId, hydrateParticipants }).then(async (data) => {
     const eventData = data?.data?.eventData || data?.data;
     const participants = data?.data?.participants || [];
-    if (window?.['dev']) window['dev']['eventData'] = eventData;
     const savedSessions = await savedSessionsPromise;
     const structureMatchUps = (structure) => {
       return Object.values(structure.roundMatchUps || {}).flat();
