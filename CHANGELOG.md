@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.14.0](https://github.com/CourtHive/courthive-public/compare/v1.13.0...v1.14.0) (2026-09-01)
+
+
+### Features
+
+* **public:** carry five TMX affordances into the public viewer ([#511](https://github.com/CourtHive/courthive-public/issues/511)) ([659d0d3](https://github.com/CourtHive/courthive-public/commit/659d0d3934715e2fee0065d2d8a7b6a80cf67a50))
+
+
+### Bug Fixes
+
+* **deps:** update tods-competition-factory to 6.36.0 ([77a665f](https://github.com/CourtHive/courthive-public/commit/77a665f33914a7b0af82eadf13b25d90151b5270))
+
 ## [1.13.0](https://github.com/CourtHive/courthive-public/compare/v1.12.1...v1.13.0) (2026-08-30)
 
 
