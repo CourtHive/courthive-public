@@ -138,3 +138,46 @@
   opacity: 0.7;
   margin-top: 4px;
 }
+
+/* ── Clickable cells ───────────────────────────────────────────────── */
+/*
+ * Every populated cell opens the schedule popover (view in draw / score),
+ * so it has to look like something you can press. The pointer + hover lift
+ * is the whole affordance: without it the click is undiscoverable, which
+ * was the state before the popover existed.
+ */
+
+.chp-schedule-cell[data-matchup-id] {
+  cursor: pointer;
+}
+
+.chp-schedule-cell[data-matchup-id]:hover > .spl-grid-cell,
+.spl-active-strip .chp-schedule-cell-clickable:hover {
+  filter: brightness(1.04);
+  outline: 1px solid var(--chc-border-primary, #dbdbdb);
+  outline-offset: -1px;
+}
+
+/* ── Participant search on the schedule ────────────────────────────── */
+/*
+ * Non-matching cells are DIMMED, never removed: the grid is a spatial
+ * statement (Court 3, 10:00) and removing cells would slide every
+ * neighbour into a different place while the viewer is reading it.
+ */
+
+.chp-schedule-cell--dimmed,
+.spl-active-strip .chp-schedule-cell-clickable.chp-schedule-cell--dimmed {
+  opacity: 0.25;
+}
+
+.chp-schedule-cell--match {
+  outline: 2px solid var(--chc-status-info, #3273dc);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.chp-schedule-notice {
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--sp-muted, #888);
+}

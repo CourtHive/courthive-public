@@ -105,7 +105,10 @@
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .chp-round-nav__toggle:hover:not(.chp-round-nav__toggle--active) {
@@ -136,7 +139,9 @@
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .chp-round-nav__chip[aria-current='true'] {
@@ -151,9 +156,23 @@
 }
 
 @media (min-width: 769px) {
-  .chp-round-nav__chip {
+  .chp-round-nav__chip:not(.chp-round-nav__chip--selector) {
     display: none;
   }
+}
+
+/* ── Selector chips (all viewports) ────────────────────────────────── */
+/*
+ * Scroll chips are redundant on a desktop bracket that already lays out
+ * every round. SELECTOR chips are not: they choose the round the bracket
+ * STARTS at, which is how a 64-draw becomes readable without panning six
+ * columns — on a phone and on a laptop alike. Same visual treatment, so
+ * the two modes are not two different-looking controls.
+ */
+
+.chp-round-nav__chip--selector {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* ── Dropdown overflow guards (mobile) ─────────────────────────────── */
@@ -236,5 +255,49 @@
   .chp-mobile-bracket--stack .chc-link::before,
   .chp-mobile-bracket--stack .chc-link::after {
     display: none;
+  }
+}
+
+/* ── Participant search (Events header) ────────────────────────────── */
+/*
+ * `order` rather than DOM position: the flight / structure / display
+ * dropdowns are appended and removed on every structure change, so any
+ * fixed DOM slot for the search would move under it. Order pins it to the
+ * end of the row whatever is appended later, and `margin-left: auto`
+ * pushes it to the trailing edge.
+ */
+
+#tournament_events > .block > .chp-search {
+  order: 99;
+  margin-left: auto;
+}
+
+/* ── MatchUp focus pulse ───────────────────────────────────────────── */
+/*
+ * Applied by `matchUpFocus.ts` after a "view in draw" navigation from the
+ * schedule: the bracket scrolls to the match and it pulses so the viewer
+ * can find it in a wall of cards. Removed after 4s.
+ */
+
+.chp-matchup-highlight {
+  animation: chp-matchup-pulse 1.2s ease-in-out 3;
+  border-radius: 0.35rem;
+  outline: 2px solid var(--chc-status-info, #3273dc);
+  outline-offset: 2px;
+}
+
+@keyframes chp-matchup-pulse {
+  0%,
+  100% {
+    outline-color: var(--chc-status-info, #3273dc);
+  }
+  50% {
+    outline-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chp-matchup-highlight {
+    animation: none;
   }
 }

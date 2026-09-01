@@ -378,3 +378,55 @@
 .is-centered {
   justify-content: center;
 }
+
+/* ── Participant search box ────────────────────────────────────────── */
+/*
+ * Shared by the Events header (draw search) and the Schedule header.
+ * Sized to sit level with the `.button` dropdowns beside it; colours are
+ * `--chc-*` tokens so it reads correctly in both themes.
+ */
+
+.chp-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  border-radius: 999px;
+  background: var(--chc-bg-primary, #fff);
+}
+
+.chp-search__input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--chc-text-primary, #363636);
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.45rem 0.15rem;
+  min-width: 9rem;
+  max-width: 14rem;
+}
+
+.chp-search__input::placeholder {
+  color: var(--chc-text-secondary, #888);
+}
+
+/* The native clear affordance duplicates the button and cannot be themed. */
+.chp-search__input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.chp-search__clear {
+  border: none;
+  background: transparent;
+  color: var(--chc-text-secondary, #888);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 0.15rem;
+}
+
+.chp-search__clear:hover {
+  color: var(--chc-text-primary, #363636);
+}

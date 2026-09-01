@@ -1,4 +1,9 @@
-import { resolvePublishedComposition, renderContainer, renderStructure, InlineScoringManager } from 'courthive-components';
+import {
+  resolvePublishedComposition,
+  renderContainer,
+  renderStructure,
+  InlineScoringManager,
+} from 'courthive-components';
 import {
   applyInlineScoringWrappers,
   buildInlineCrowdManager,
@@ -9,14 +14,18 @@ import {
   unmarkReadyMatchUpsInProgress,
   withInlineScoringConfig,
 } from 'src/services/inlineCrowdScoring';
-import { installMobileBracketLayout } from 'src/services/mobileBracketLayout';
+import { buildRoundChips, isRoundSelectable, resolveInitialRoundNumber } from 'src/services/roundChips';
+import { installMobileBracketLayout, type RoundSelection } from 'src/services/mobileBracketLayout';
+import { filterRoundMatchUps, normalizeSearch } from 'src/common/filters/participantMatch';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
 import { openScoringLaunchMenu } from 'src/components/scoringLaunchMenu';
 import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { consumePendingMatchUpFocus } from 'src/services/matchUpFocus';
+import { searchInput } from 'src/components/controlBar/searchInput';
 import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
-import { drawsGovernor, tools } from 'tods-competition-factory';
+import { drawsGovernor, drawDefinitionConstants, tools } from 'tods-competition-factory';
 import { getDrawData, getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
 import { context } from 'src/common/context';
@@ -25,6 +34,8 @@ import { t } from 'src/i18n/i18n';
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
+
+const { CONTAINER } = drawDefinitionConstants;
 
 function getMatchUpFromPointer(matchUpsMap: Record<string, any>, props: any) {
   let el = props.pointerEvent?.target as HTMLElement;
@@ -50,6 +61,9 @@ function renderRoundsColumns({
   display,
   inlineManager,
   liveScoring,
+  initialRoundNumber,
+  searchActive,
+  roundSelection,
 }: {
   tournamentId: string;
   flightDisplay: HTMLElement;
@@ -60,6 +74,9 @@ function renderRoundsColumns({
   display: any;
   inlineManager?: InlineScoringManager;
   liveScoring?: { active: boolean; onChange: (next: boolean) => void };
+  initialRoundNumber?: number;
+  searchActive?: boolean;
+  roundSelection?: RoundSelection;
 }) {
   const matchUpsMap = Object.fromEntries(matchUps.map(toMatchUpEntry));
   const eventHandlers = {
@@ -81,6 +98,8 @@ function renderRoundsColumns({
 
   const structureContent = renderStructure({
     context: { drawId, structureId },
+    initialRoundNumber,
+    searchActive,
     eventHandlers,
     matchUps,
     composition,
@@ -111,11 +130,22 @@ function renderRoundsColumns({
     structureContent,
     matchUps,
     liveScoring,
+    roundSelection,
   });
+
+  // A matchUp arriving from the schedule's "view in draw" is scrolled to and
+  // pulsed here — once the structure it lives in is actually in the DOM. Left
+  // pending if this render is a different structure, so the render that does
+  // carry it can still consume it.
+  consumePendingMatchUpFocus(flightDisplay);
 }
 
 function toMatchUpEntry(m: any) {
   return [m.matchUpId, m];
+}
+
+function isNotBye(matchUp: any): boolean {
+  return matchUp?.matchUpStatus !== 'BYE';
 }
 
 function readLocalStorageFlag(key: string): boolean {
@@ -178,6 +208,18 @@ export function renderEvent({
   const removeFlightButton = () => document.getElementById('flightButton')?.remove();
   const removeStructureButton = () => document.getElementById('structureButton')?.remove();
   const removeRoundDisplayButton = () => document.getElementById('roundDisplayButton')?.remove();
+  const removeEventSearch = () => document.getElementById('eventSearch')?.remove();
+
+  // Participant search over the rendered structure. TMX filters the structure's
+  // roundMatchUps and tells `renderStructure` a search is active so the layout
+  // keeps its shape with fewer matchUps in it; the public viewer does the same.
+  // Held across flight/structure switches within one event — a spectator who
+  // typed a name is looking for that person in every draw of the event.
+  let participantFilter = '';
+  // Round selected by a chip, per structure. Cleared on a structure switch so a
+  // stale "SF" does not open an unrelated playoff collapsed.
+  let selectedRoundNumber: number | undefined;
+  let selectedRoundStructureId: string | undefined;
 
   // Store a refresh callback so live updates can re-fetch the current draw view.
   // Uses the params as passed — targetDrawId/targetStructureId are consumed on first render,
@@ -366,9 +408,31 @@ export function renderEvent({
         header.appendChild(elem);
 
         const structureId = structure.structureId;
-        const matchUps = Object.values(structure.roundMatchUps || {}).flat() as any[];
+        // Chips describe the WHOLE structure, so they are built before the
+        // search narrows it: a search that leaves one hit in the semifinals
+        // must not collapse the bracket to a single chip.
+        const allMatchUps = Object.values(structure.roundMatchUps || {}).flat() as any[];
+        const searchActive = !!normalizeSearch(participantFilter);
+        const matchUps = searchActive
+          ? (Object.values(filterRoundMatchUps(structure.roundMatchUps, participantFilter)).flat() as any[])
+          : allMatchUps;
         const isAdHoc = drawsGovernor.isAdHoc({ structure });
         if (isAdHoc) matchUps.sort(tools.matchUpScheduleSort);
+
+        if (selectedRoundStructureId !== structureId) {
+          selectedRoundStructureId = structureId;
+          selectedRoundNumber = undefined;
+        }
+        const chips = buildRoundChips(allMatchUps);
+        const isRoundRobin = structure?.structureType === CONTAINER;
+        const roundSelectable = isRoundSelectable({ chips, isRoundRobin, isAdHoc });
+        const initialRoundNumber = roundSelectable
+          ? resolveInitialRoundNumber({ chips, selectedRoundNumber, searchActive })
+          : 1;
+        const roundSelection: RoundSelection | undefined = roundSelectable
+          ? { chips, activeRoundNumber: initialRoundNumber, onSelect: selectRound }
+          : undefined;
+
         flightDisplay.innerHTML = flight.drawName;
         removeAllChildNodes(flightDisplay);
 
@@ -406,12 +470,29 @@ export function renderEvent({
             display,
             inlineManager: activeInlineManager,
             liveScoring,
+            initialRoundNumber,
+            searchActive,
+            roundSelection,
           });
         } else if (displayFormat === 'roundsStats') {
           createStatsTable({ drawId, structureId, eventData, participants });
+        } else if (searchActive) {
+          // The table builds its own rows from eventData when given no matchUps,
+          // which would ignore the search — hand it the filtered set instead,
+          // minus BYEs, which is what its internal path drops too.
+          createRoundsTable({ drawId, structureId, eventData, matchUps: matchUps.filter(isNotBye) });
         } else {
           createRoundsTable({ drawId, structureId, eventData });
         }
+      };
+
+      // Declared beside `renderSelectedStructure` rather than inside it: an
+      // arrow defined in there would sit five function levels deep, which the
+      // ecosystem's nesting rule refuses. Re-renders the structure currently on
+      // screen, so it stays correct across structure switches.
+      const selectRound = (roundNumber: number) => {
+        selectedRoundNumber = roundNumber;
+        renderSelectedStructure(currentStructureIndex);
       };
 
       const initialStructureIndex = targetStructureId
@@ -474,6 +555,22 @@ export function renderEvent({
     removeRoundDisplayButton();
     const elem = dropDownButton({ button: flightButton, stateChange: removeStructureButton });
     header.appendChild(elem);
+
+    // Participant search. Appended once per event render and never rebuilt by a
+    // flight / structure / round re-render, so typing keeps focus and the caret;
+    // CSS `order` pins it to the end of the header whatever is appended later.
+    removeEventSearch();
+    header.appendChild(
+      searchInput({
+        onChange: (value) => {
+          participantFilter = value;
+          renderFlight(currentFlightIndex);
+        },
+        placeholder: t('search.participants'),
+        value: participantFilter,
+        id: 'eventSearch',
+      }),
+    );
 
     // Index whatever is loaded now. Draws that arrive later index themselves as they load.
     for (const flight of flightsData) if (isLoaded(flight)) indexDrawPositions(flight.structures);
