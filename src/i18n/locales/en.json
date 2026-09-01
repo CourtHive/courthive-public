@@ -47,7 +47,9 @@
     "time": "Time",
     "event": "Event",
     "round": "Round",
-    "matchUp": "Match"
+    "matchUp": "Match",
+    "now": "Now",
+    "viewInDraw": "View in draw"
   },
   "display": {
     "label": "Display",
@@ -106,5 +108,9 @@
     "additional": "Additional Information",
     "dressCode": "Dress code",
     "contingencyPlan": "Weather contingency"
+  },
+  "search": {
+    "participants": "Search participants",
+    "noResults": "No matches for that name"
   }
 }

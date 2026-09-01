@@ -14,13 +14,27 @@ import { renderProgramPage } from 'src/pages/program/renderProgramPage';
 import { renderConferencesPage } from 'src/pages/conferences/renderConferencesPage';
 import { renderConferencePage } from 'src/pages/conference/renderConferencePage';
 import { renderProposalRegistration } from 'src/pages/register/renderProposalRegistration';
+import { buildTournamentPath, type TournamentPathParams } from 'src/router/tournamentPath';
 import { renderPartnerConfirm } from 'src/pages/register/renderPartnerConfirm';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { CONFERENCE, CONFERENCES, HIVEID_MAGIC, HIVEID_ME, PROGRAM, PROGRAMS, RANKINGS, REGISTER, SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import {
+  CONFERENCE,
+  CONFERENCES,
+  HIVEID_MAGIC,
+  HIVEID_ME,
+  PROGRAM,
+  PROGRAMS,
+  RANKINGS,
+  REGISTER,
+  SPLASH,
+  TOURNAMENT,
+  TOURNAMENTS,
+  TRACK,
+} from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -55,33 +69,20 @@ function navigateToTournament({
   getTournamentInfo({ tournamentId }).then((result) => renderTournament(result, { eventId, drawId, structureId, tab }));
 }
 
-export function updateRouteUrl({
-  tournamentId,
-  eventId,
-  drawId,
-  structureId,
-  tab,
-}: {
-  tournamentId: string;
-  eventId?: string;
-  drawId?: string;
-  structureId?: string;
-  tab?: string;
-}) {
-  let path = `/tournament/${tournamentId}`;
-  if (tab === 'Schedule') {
-    path += `/schedule`;
-  } else if (tab === 'Events') {
-    path += `/events`;
-  } else if (tab === 'Players') {
-    path += `/participants`;
-  } else {
-    if (eventId) path += `/event/${eventId}`;
-    if (drawId) path += `/draw/${drawId}`;
-    if (structureId) path += `/structure/${structureId}`;
-  }
+export function updateRouteUrl(params: TournamentPathParams) {
   // Use pushState directly to update URL without triggering any router handlers.
-  history.pushState(null, '', `#${path}`);
+  history.pushState(null, '', `#${buildTournamentPath(params)}`);
+}
+
+/**
+ * Resolve a tournament route through the router (a real navigation, unlike
+ * `updateRouteUrl`'s silent URL sync). Used by the schedule's "view in draw"
+ * action, which has to leave the Schedule tab and land on a specific structure.
+ */
+export function navigateToTournamentPath(params: TournamentPathParams): void {
+  const path = buildTournamentPath(params);
+  context.router?.navigate(path);
+  context.router?.resolve();
 }
 
 // Re-run the handler for the URL the user is currently on. Navigo's resolve()

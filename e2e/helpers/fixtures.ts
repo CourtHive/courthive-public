@@ -16,6 +16,21 @@ import { mocksEngine, tournamentEngine } from 'tods-competition-factory';
  */
 
 const DEFAULT_START_DATE = '2026-07-01';
+
+/** ISO day `days` after `dateString`, used to derive the fixture's end date. */
+function addDays(dateString: string, days: number): string {
+  const date = new Date(`${dateString}T00:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+/** Today as an ISO day, for fixtures that must land on the current date. */
+export function todayIsoDate(now: Date = new Date()): string {
+  const year = now.getFullYear();
+  const month = `${now.getMonth() + 1}`.padStart(2, '0');
+  const day = `${now.getDate()}`.padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
 const DEFAULT_EVENT_NAMES = ["Men's Singles"];
 
 export interface EventRef {
@@ -56,6 +71,13 @@ export interface BuildOptions {
   publishParticipants?: boolean;
   // Assign the first event's round-1 matchUps to courts/times (default true).
   scheduleFirstRound?: boolean;
+  /**
+   * Tournament start date, which is also the date the first round is scheduled
+   * on. Defaults to a fixed date in the past so specs are deterministic; pass
+   * today's date to exercise anything gated on "is this today" — the schedule's
+   * "Now" strip is the current case.
+   */
+  startDate?: string;
 }
 
 /**
@@ -75,7 +97,12 @@ function scheduleRoundOne(firstEventId: string, scheduleDate: string): void {
     // buckets by courtOrder).
     const courtOrder = Math.floor(i / courtCount) + 1;
     const scheduledTime = `${(8 + i).toString().padStart(2, '0')}:00`;
-    tournamentEngine.assignMatchUpCourt({ drawId: matchUp.drawId, matchUpId: matchUp.matchUpId, courtId, courtDayDate: scheduleDate });
+    tournamentEngine.assignMatchUpCourt({
+      drawId: matchUp.drawId,
+      matchUpId: matchUp.matchUpId,
+      courtId,
+      courtDayDate: scheduleDate,
+    });
     tournamentEngine.addMatchUpScheduleItems({
       schedule: { scheduledDate: scheduleDate, scheduledTime, courtId, courtOrder },
       matchUpId: matchUp.matchUpId,
@@ -95,13 +122,13 @@ export function buildPublishedTournament(opts: BuildOptions = {}): PublicTournam
   const completeAllMatchUps = opts.completeAllMatchUps ?? true;
   const publishParticipants = opts.publishParticipants ?? true;
   const scheduleFirstRound = opts.scheduleFirstRound ?? true;
-  const scheduleDate = DEFAULT_START_DATE;
+  const scheduleDate = opts.startDate ?? DEFAULT_START_DATE;
 
   const { tournamentRecord } = mocksEngine.generateTournamentRecord({
     drawProfiles: eventNames.map((eventName) => ({ drawSize, eventName })),
     venueProfiles: [{ courtsCount: 4, venueName: 'Center Club', startTime: '08:00', endTime: '20:00' }],
     startDate: scheduleDate,
-    endDate: '2026-07-05',
+    endDate: addDays(scheduleDate, 4),
     completeAllMatchUps,
     // Deterministic participants and outcomes. Without this, two consecutive
     // builds produce entirely different rosters — not merely cosmetic, because
@@ -126,7 +153,10 @@ export function buildPublishedTournament(opts: BuildOptions = {}): PublicTournam
   if (publishParticipants) tournamentEngine.publishParticipants({});
   tournamentEngine.publishOrderOfPlay({});
 
-  const tournamentInfo = tournamentEngine.getTournamentInfo({ usePublishState: true, withVenueData: true }).tournamentInfo;
+  const tournamentInfo = tournamentEngine.getTournamentInfo({
+    usePublishState: true,
+    withVenueData: true,
+  }).tournamentInfo;
 
   const eventData: Record<string, any> = {};
   for (const ref of eventRefs) {

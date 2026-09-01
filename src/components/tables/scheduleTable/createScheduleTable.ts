@@ -4,14 +4,18 @@ import {
   mapMatchUpToCellData,
   DEFAULT_SCHEDULE_CELL_CONFIG,
 } from 'courthive-components';
+import { computeScheduleSearch, shouldShowActiveStrip } from './scheduleGridState';
 import { scheduleGovernor, factoryConstants } from 'tods-competition-factory';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { searchInput } from 'src/components/controlBar/searchInput';
 import { removeAllChildNodes } from 'src/services/dom/transformers';
 import { context } from 'src/common/context';
+import { t } from 'src/i18n/i18n';
 import dayjs from 'dayjs';
 
 // constants and types
 import { MINIMUM_SCHEDULE_COLUMNS } from 'src/common/constants/baseConstants';
+import type { ScheduleSearchOutcome } from './scheduleGridState';
 
 const { SCHEDULE_STATE } = factoryConstants.scheduleConstants;
 
@@ -32,8 +36,13 @@ interface ScheduleData {
  * Read-only public schedule. Renders a schedule2-style CSS court grid (one
  * column per court, time-ordered rows) using the courthive-components
  * `buildScheduleGridCell`, with a live "Now" strip (`buildActiveStripPanel`)
- * pinned above it. Courts with no scheduled matchUps on the selected date are
- * hidden — only courts in active use appear.
+ * pinned above it *on today's date only*. Courts with no scheduled matchUps on
+ * the selected date are hidden — only courts in active use appear.
+ *
+ * Cells are clickable: the popover carries the matchUp into its draw (event →
+ * draw → structure) and offers the crowd-scoring launch, mirroring TMX's grid
+ * cell menu. A participant search dims the cells that do not match, keeping the
+ * court/time geometry intact.
  */
 export function createScheduleTable(params?: { data?: ScheduleData }) {
   const data = params?.data ?? {};
@@ -50,7 +59,12 @@ export function createScheduleTable(params?: { data?: ScheduleData }) {
     return { courtsCount: 0 };
   }
 
+  const tournamentId: string = context.tournamentId;
+  let currentDate = scheduleDates[0];
+  let search = '';
+
   const renderForDate = (scheduledDate: string) => {
+    currentDate = scheduledDate;
     const courtsData = courtsForDate(data, scheduledDate);
     const rows =
       scheduleGovernor.courtGridRows({
@@ -59,15 +73,33 @@ export function createScheduleTable(params?: { data?: ScheduleData }) {
         minRowsCount: MIN_ROWS_COUNT,
         scheduledDate,
       }).rows ?? [];
-    renderScheduleGrid({ gridEl, courtsData, rows });
+    const dateMatchUps = courtsData.flatMap((court) => court.matchUps ?? []);
+    renderScheduleGrid({
+      gridEl,
+      courtsData,
+      rows,
+      tournamentId,
+      showActiveStrip: shouldShowActiveStrip({ scheduledDate }),
+      searchOutcome: computeScheduleSearch({ matchUps: dateMatchUps, search }),
+    });
   };
 
   if (headerEl) {
     headerEl.appendChild(buildDateSelector(scheduleDates, renderForDate));
+    headerEl.appendChild(
+      searchInput({
+        onChange: (value) => {
+          search = value;
+          renderForDate(currentDate);
+        },
+        placeholder: t('search.participants'),
+        id: 'scheduleSearch',
+      }),
+    );
     const venueZoneLabel = buildVenueZoneLabel(context.localTimeZone);
     if (venueZoneLabel) headerEl.appendChild(venueZoneLabel);
   }
-  renderForDate(scheduleDates[0]);
+  renderForDate(currentDate);
 
   return { courtsCount: courtsForDate(data, scheduleDates[0]).length };
 }
@@ -172,10 +204,16 @@ function renderScheduleGrid({
   gridEl,
   courtsData,
   rows,
+  tournamentId,
+  showActiveStrip,
+  searchOutcome,
 }: {
   gridEl: HTMLElement;
   courtsData: any[];
   rows: any[];
+  tournamentId?: string;
+  showActiveStrip: boolean;
+  searchOutcome: ScheduleSearchOutcome;
 }): void {
   removeAllChildNodes(gridEl);
 
@@ -184,18 +222,32 @@ function renderScheduleGrid({
 
   const wrapper = document.createElement('div');
   wrapper.className = 'chp-schedule';
-  wrapper.style.setProperty('--chp-strip-offset', `${STRIP_CELL_HEIGHT_PX + 2}px`);
+  // The offset is what the grid's sticky column headers stick BELOW. With no
+  // strip there is nothing above them, so it has to go to zero or the headers
+  // float a strip-height away from the top.
+  wrapper.style.setProperty('--chp-strip-offset', showActiveStrip ? `${STRIP_CELL_HEIGHT_PX + 2}px` : '0px');
 
-  const strip = buildActiveStripPanel(
-    {},
-    {
-      cellHeight: `${STRIP_CELL_HEIGHT_PX}px`,
-      spacerLabel: 'Now',
-      renderCell: (matchUp) => buildGridCell(matchUp.payload),
-    },
-  );
-  strip.setData({ ...buildStripData(courtsData, rows), gridTemplateColumns, minWidth });
-  wrapper.appendChild(strip.element);
+  if (showActiveStrip) {
+    const strip = buildActiveStripPanel(
+      {},
+      {
+        cellHeight: `${STRIP_CELL_HEIGHT_PX}px`,
+        spacerLabel: t('schedule.now'),
+        // The strip's cell wrapper belongs to courthive-components, so unlike
+        // the grid below there is no wrapper of ours to carry the search state —
+        // it goes on the cell itself.
+        renderCell: (matchUp) => {
+          const payload = matchUp.payload as any;
+          const cell = buildGridCell(payload);
+          applySearchState(cell, payload?.matchUpId, searchOutcome);
+          return cell;
+        },
+      },
+    );
+    strip.setData({ ...buildStripData(courtsData, rows), gridTemplateColumns, minWidth });
+    wireCellMenu(strip.element, courtsData, tournamentId);
+    wrapper.appendChild(strip.element);
+  }
 
   const grid = document.createElement('div');
   grid.className = 'chp-schedule-grid';
@@ -203,10 +255,52 @@ function renderScheduleGrid({
   grid.style.minWidth = minWidth;
 
   appendHeaderRow(grid, courtsData, totalColumns - courtCount);
-  appendDataRows(grid, courtsData, rows, totalColumns - courtCount);
+  appendDataRows(grid, courtsData, rows, totalColumns - courtCount, searchOutcome);
+  wireCellMenu(grid, courtsData, tournamentId);
 
   wrapper.appendChild(grid);
   gridEl.appendChild(wrapper);
+
+  if (searchOutcome.active && searchOutcome.matchCount === 0) {
+    const notice = document.createElement('div');
+    notice.className = 'chp-schedule-notice';
+    notice.textContent = t('search.noResults');
+    gridEl.appendChild(notice);
+  }
+}
+
+/**
+ * One delegated listener per container rather than a handler per cell: the grid
+ * is rebuilt on every date change, search keystroke and live update, and
+ * per-cell listeners would have to be torn down with it.
+ *
+ * The matchUp is resolved from the cell's `data-matchup-id` against the date's
+ * own court data, so the popover always acts on the payload the cell was
+ * rendered from.
+ */
+function wireCellMenu(container: HTMLElement, courtsData: any[], tournamentId?: string): void {
+  if (!tournamentId) return;
+  const byId = new Map<string, any>();
+  for (const court of courtsData) {
+    for (const matchUp of court.matchUps ?? []) {
+      if (matchUp?.matchUpId) byId.set(matchUp.matchUpId, matchUp);
+    }
+  }
+
+  container.addEventListener('click', (event) => {
+    const cell = (event.target as HTMLElement | null)?.closest('[data-matchup-id]') as HTMLElement | null;
+    const matchUpId = cell?.dataset.matchupId;
+    const matchUp = matchUpId && byId.get(matchUpId);
+    if (!matchUp) return;
+    // Imported on first click, not at module load. The menu reaches the router
+    // and the scoring-launch API client, and pulling that graph in statically
+    // would drag every page renderer into the schedule module — which is both a
+    // larger first paint and (measurably) an import-time `location` read in the
+    // unit-test environment, where this module is loaded for its pure helpers.
+    void import('./scheduleCellMenu').then(({ openScheduleCellMenu }) =>
+      openScheduleCellMenu({ pointerEvent: event as MouseEvent, matchUp, tournamentId }),
+    );
+  });
 }
 
 function appendHeaderRow(grid: HTMLElement, courtsData: any[], emptyCount: number): void {
@@ -232,7 +326,13 @@ function emptyHeaderCell(): HTMLElement {
   return cell;
 }
 
-function appendDataRows(grid: HTMLElement, courtsData: any[], rows: any[], emptyCount: number): void {
+function appendDataRows(
+  grid: HTMLElement,
+  courtsData: any[],
+  rows: any[],
+  emptyCount: number,
+  searchOutcome: ScheduleSearchOutcome,
+): void {
   rows.forEach((row, rowIndex) => {
     const rowNumber = document.createElement('div');
     rowNumber.className = 'chp-schedule-rownum';
@@ -240,7 +340,7 @@ function appendDataRows(grid: HTMLElement, courtsData: any[], rows: any[], empty
     grid.appendChild(rowNumber);
 
     courtsData.forEach((_court, courtIndex) => {
-      grid.appendChild(courtCellElement(row?.[`${COURT_PREFIX}${courtIndex}`]));
+      grid.appendChild(courtCellElement(row?.[`${COURT_PREFIX}${courtIndex}`], searchOutcome));
     });
 
     for (let i = 0; i < emptyCount; i++) {
@@ -251,10 +351,12 @@ function appendDataRows(grid: HTMLElement, courtsData: any[], rows: any[], empty
   });
 }
 
-function courtCellElement(matchUp: any): HTMLElement {
+function courtCellElement(matchUp: any, searchOutcome: ScheduleSearchOutcome): HTMLElement {
   const cell = document.createElement('div');
   cell.className = 'chp-schedule-cell';
   if (matchUp?.matchUpId) {
+    cell.dataset.matchupId = matchUp.matchUpId;
+    applySearchState(cell, matchUp.matchUpId, searchOutcome);
     cell.appendChild(buildGridCell(matchUp));
   } else {
     cell.classList.add('chp-schedule-cell--empty');
@@ -262,10 +364,29 @@ function courtCellElement(matchUp: any): HTMLElement {
   return cell;
 }
 
+/**
+ * Mark a cell against the active search. Non-matching cells are dimmed rather
+ * than removed (see `computeScheduleSearch`); matching ones are outlined so a
+ * hit is findable in a wide grid without scanning every column.
+ */
+function applySearchState(element: HTMLElement, matchUpId: string, searchOutcome: ScheduleSearchOutcome): void {
+  if (!searchOutcome.active || !matchUpId) return;
+  if (searchOutcome.matchedIds.has(matchUpId)) element.classList.add('chp-schedule-cell--match');
+  else element.classList.add('chp-schedule-cell--dimmed');
+}
+
 /** Build the courthive-components `.spl-grid-cell`, surfacing the factory schedule state for status styling. */
 function buildGridCell(matchUp: any): HTMLElement {
   const withState = { ...matchUp, scheduleState: matchUp.schedule?.[SCHEDULE_STATE] };
-  return buildScheduleGridCell(mapMatchUpToCellData(withState), DEFAULT_SCHEDULE_CELL_CONFIG);
+  const cell = buildScheduleGridCell(mapMatchUpToCellData(withState), DEFAULT_SCHEDULE_CELL_CONFIG);
+  // Stamped here as well as on the grid wrapper: the "Now" strip renders this
+  // element directly into a component-owned cell we do not build, so this is
+  // the only hook the delegated click handler has there.
+  if (matchUp?.matchUpId) {
+    cell.dataset.matchupId = matchUp.matchUpId;
+    cell.classList.add('chp-schedule-cell-clickable');
+  }
+  return cell;
 }
 
 function buildStripData(courtsData: any[], rows: any[]) {

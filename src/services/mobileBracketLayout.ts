@@ -4,9 +4,19 @@
  * Renders a sticky bar above the published structure with two
  * responsibilities:
  *
- *  1. **Round chip nav** (mobile-only via CSS) — one chip per round.
- *     Click smooth-scrolls the matching round into view; an
- *     IntersectionObserver highlights the active chip.
+ *  1. **Round chips** — one chip per round, in one of two modes:
+ *
+ *     - **Selector mode** (`roundSelection` supplied — an elimination
+ *       structure with 3+ rounds). Chips are visible at every viewport
+ *       and pick the round the bracket STARTS at, exactly as TMX's
+ *       `initialRoundTabs` do. A 64-draw opens on the quarters instead
+ *       of asking a phone to pan across six columns.
+ *     - **Scroll mode** (no `roundSelection` — round robin, ad hoc, or
+ *       a two-round structure). Chips are mobile-only and smooth-scroll
+ *       the matching round into view, with an IntersectionObserver
+ *       highlighting the active one. Collapsing rounds would hide
+ *       results in these structures rather than noise, so they keep the
+ *       original behaviour.
  *  2. **Live-scoring toggle** (always visible) — opt-in switch the
  *     consumer wires to swap between the published TD composition
  *     and the inline-scoring overlay.
@@ -30,6 +40,7 @@ const SNAP_CLASS = 'chp-mobile-bracket--snap';
 const STACK_CLASS = 'chp-mobile-bracket--stack';
 const ARIA_CURRENT = 'aria-current';
 const TOGGLE_ACTIVE_CLASS = 'chp-round-nav__toggle--active';
+const SELECTOR_CHIP_CLASS = 'chp-round-nav__chip--selector';
 
 interface LiveScoringControl {
   active: boolean;
@@ -38,11 +49,19 @@ interface LiveScoringControl {
   hint?: string;
 }
 
+/** Selector-mode chips: which rounds exist, which is open, and how to change it. */
+export interface RoundSelection {
+  chips: { roundNumber: number; label: string }[];
+  activeRoundNumber: number;
+  onSelect(roundNumber: number): void;
+}
+
 interface InstallParams {
   flightDisplay: HTMLElement;
   structureContent: HTMLElement;
   matchUps: any[];
   liveScoring?: LiveScoringControl;
+  roundSelection?: RoundSelection;
 }
 
 export function installMobileBracketLayout({
@@ -50,6 +69,7 @@ export function installMobileBracketLayout({
   structureContent,
   matchUps,
   liveScoring,
+  roundSelection,
 }: InstallParams): () => void {
   if (typeof globalThis.matchMedia !== 'function') return () => undefined;
 
@@ -61,11 +81,17 @@ export function installMobileBracketLayout({
   const structure = locateStructure(structureContent);
   if (!structure) return () => undefined;
 
+  // Selector mode reads the round model the caller computed from the matchUps,
+  // NOT the rendered containers: with an initial round set, the containers for
+  // the earlier rounds do not exist, and chips built from the DOM would delete
+  // the very rounds the viewer needs to get back to.
   const roundContainers = collectRoundContainers(structure);
-  const rounds = buildRoundsModel(roundContainers);
+  const rounds = roundSelection
+    ? buildSelectorRoundsModel(roundSelection, roundContainers)
+    : buildRoundsModel(roundContainers);
   // Render the bar even when no rounds were found, so the live-scoring
   // toggle is always reachable. Chips only render when there are rounds.
-  const navContainer = buildNavBar({ rounds, structure, liveScoring });
+  const navContainer = buildNavBar({ rounds, structure, liveScoring, roundSelection });
 
   // Mount the nav as the first child of flightDisplay so it sits above
   // the structure visually. structureContent itself isn't a direct child
@@ -80,12 +106,17 @@ export function installMobileBracketLayout({
     if (mql.matches && rounds.length > 0) {
       structure.classList.add(isRoundRobin ? STACK_CLASS : SNAP_CLASS);
       observer?.disconnect();
-      observer = buildActiveRoundObserver({ structure, isRoundRobin, rounds });
+      // Selector mode owns `aria-current` — it marks the round the bracket was
+      // rendered from. Letting the scroll observer also write it would flip the
+      // highlight to whatever happens to be on screen and contradict what the
+      // bracket is actually showing.
+      observer = roundSelection ? undefined : buildActiveRoundObserver({ structure, isRoundRobin, rounds });
     } else {
       observer?.disconnect();
       observer = undefined;
-      // Clear any chip highlight when leaving mobile width
-      for (const r of rounds) r.chip.removeAttribute(ARIA_CURRENT);
+      // Clear any chip highlight when leaving mobile width (scroll mode only —
+      // the selector's highlight is state, not a scroll position).
+      if (!roundSelection) for (const r of rounds) r.chip.removeAttribute(ARIA_CURRENT);
     }
   };
 
@@ -116,9 +147,39 @@ function collectRoundContainers(structure: HTMLElement): HTMLElement[] {
 interface RoundModel {
   index: number;
   roundNumber: number;
-  container: HTMLElement;
+  container?: HTMLElement;
   label: string;
   chip: HTMLButtonElement;
+}
+
+function buildChipElement(label: string, index: number): HTMLButtonElement {
+  const chip = document.createElement('button');
+  chip.type = 'button';
+  chip.className = 'chp-round-nav__chip';
+  chip.textContent = label;
+  chip.dataset.roundIndex = String(index);
+  return chip;
+}
+
+/**
+ * Selector-mode model. The container lookup is best-effort — a round earlier
+ * than the active one is not rendered, and its chip does not need one because
+ * clicking it re-renders rather than scrolls.
+ */
+function buildSelectorRoundsModel(roundSelection: RoundSelection, containers: HTMLElement[]): RoundModel[] {
+  const byRoundNumber = new Map<number, HTMLElement>();
+  for (const container of containers) {
+    const roundNumber = Number(container.getAttribute('roundNumber'));
+    if (Number.isFinite(roundNumber)) byRoundNumber.set(roundNumber, container);
+  }
+
+  return roundSelection.chips.map(({ roundNumber, label }, index) => {
+    const chip = buildChipElement(label, index);
+    chip.classList.add(SELECTOR_CHIP_CLASS);
+    chip.dataset.roundNumber = String(roundNumber);
+    if (roundNumber === roundSelection.activeRoundNumber) chip.setAttribute(ARIA_CURRENT, 'true');
+    return { index, roundNumber, container: byRoundNumber.get(roundNumber), label, chip };
+  });
 }
 
 function buildRoundsModel(containers: HTMLElement[]): RoundModel[] {
@@ -126,12 +187,7 @@ function buildRoundsModel(containers: HTMLElement[]): RoundModel[] {
   return containers.map((container, index) => {
     const roundNumber = Number(container.getAttribute('roundNumber')) || index + 1;
     const label = resolveRoundLabel(container, index, total);
-    const chip = document.createElement('button');
-    chip.type = 'button';
-    chip.className = 'chp-round-nav__chip';
-    chip.textContent = label;
-    chip.dataset.roundIndex = String(index);
-    return { index, roundNumber, container, label, chip };
+    return { index, roundNumber, container, label, chip: buildChipElement(label, index) };
   });
 }
 
@@ -160,10 +216,12 @@ function buildNavBar({
   rounds,
   structure,
   liveScoring,
+  roundSelection,
 }: {
   rounds: RoundModel[];
   structure: HTMLElement;
   liveScoring?: LiveScoringControl;
+  roundSelection?: RoundSelection;
 }): HTMLElement {
   const nav = document.createElement('nav');
   nav.className = 'chp-round-nav';
@@ -171,7 +229,11 @@ function buildNavBar({
 
   for (const round of rounds) {
     round.chip.addEventListener('click', () => {
-      scrollRoundIntoView(round.container, structure);
+      if (roundSelection) {
+        roundSelection.onSelect(round.roundNumber);
+        return;
+      }
+      if (round.container) scrollRoundIntoView(round.container, structure);
     });
     nav.appendChild(round.chip);
   }
@@ -243,6 +305,7 @@ function buildActiveRoundObserver({
   );
 
   for (const r of rounds) {
+    if (!r.container) continue;
     r.container.dataset.roundIndex = String(r.index);
     observer.observe(r.container);
   }
