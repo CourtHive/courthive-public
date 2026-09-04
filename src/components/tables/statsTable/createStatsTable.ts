@@ -79,7 +79,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
         'order',
       ]),
       // responsiveLayoutCollapseStartOpen: false,
-      height: window.innerHeight * 0.85,
+      height: globalThis.innerHeight * 0.85,
       groupHeader: [(value) => value],
       placeholder: 'No participants',
       renderHorizontal: 'virtual',

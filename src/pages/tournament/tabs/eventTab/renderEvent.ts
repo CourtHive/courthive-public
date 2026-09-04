@@ -658,8 +658,8 @@ export function renderEvent({
         }
         el = el.parentElement;
       }
-      const winScrollX = window.scrollX;
-      const winScrollY = window.scrollY;
+      const winScrollX = globalThis.scrollX;
+      const winScrollY = globalThis.scrollY;
 
       renderFlight(currentFlightIndex);
 
@@ -669,7 +669,7 @@ export function renderEvent({
           el.scrollTop = top;
           el.scrollLeft = left;
         }
-        window.scrollTo(winScrollX, winScrollY);
+        globalThis.scrollTo(winScrollX, winScrollY);
       });
     };
 

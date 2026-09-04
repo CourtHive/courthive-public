@@ -1,14 +1,14 @@
 export function setWindow() {
   // to disable context menu on the page
   document.oncontextmenu = () => false;
-  window.addEventListener(
+  globalThis.addEventListener(
     'contextmenu',
     (e) => {
       e.preventDefault();
     },
     false,
   );
-  window.onunhandledrejection = (windowEvent) => {
+  globalThis.onunhandledrejection = (windowEvent) => {
     windowEvent.preventDefault();
     const reason = windowEvent.reason;
     const message = reason && (reason.stack || reason);
