@@ -63,8 +63,8 @@
     "openScorecard": "Open scorecard"
   },
   "verifyEmail": {
-    "verifying": "Verifying your email…",
-    "missingToken": "Missing verification token.",
+    "verifying": "Verifying…",
+    "missingToken": "This verification link is missing its token. Try clicking the link in your email again, or request a fresh one from the contact-email settings.",
     "verifiedRedirect": "Your email is verified. Taking you to My CourtHive…",
     "verifiedSignIn": "Your email is verified. You can now sign in.",
     "invalidOrExpired": "This verification link is invalid or has expired. Sign in to My CourtHive to request a new one."
