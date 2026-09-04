@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.1](https://github.com/CourtHive/courthive-public/compare/v1.14.0...v1.14.1) (2026-09-04)
+
+
+### Bug Fixes
+
+* **i18n:** align verifyEmail strings with the shared bundle ([#516](https://github.com/CourtHive/courthive-public/issues/516)) ([b55386f](https://github.com/CourtHive/courthive-public/commit/b55386f30061dcab0632b53f8eb2545dd3bd0ad8))
+
 ## [1.14.0](https://github.com/CourtHive/courthive-public/compare/v1.13.0...v1.14.0) (2026-09-01)
 
 
