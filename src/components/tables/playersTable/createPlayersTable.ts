@@ -250,7 +250,7 @@ export function createPlayersTable({
   const groupByGenderInTable = sections.length > 1;
 
   new Tabulator(element, {
-    height: window.innerHeight * 0.84,
+    height: globalThis.innerHeight * 0.84,
     placeholder: t('players.noParticipants'),
     // Let the Name column absorb the leftover width instead of sitting at its
     // intrinsic size beside a band of empty space.
