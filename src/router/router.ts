@@ -8,6 +8,7 @@ import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
 import { renderAvailability } from 'src/pages/me/renderAvailability';
 import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
+import { renderRankingListPage } from 'src/pages/rankings/renderRankingListPage';
 import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
 import { renderProgramsPage } from 'src/pages/programs/renderProgramsPage';
 import { renderProgramPage } from 'src/pages/program/renderProgramPage';
@@ -136,6 +137,21 @@ export function router() {
     setDisplay(RANKINGS);
     const container = document.getElementById(RANKINGS);
     if (container) renderRankingsLanding(container);
+  });
+
+  // REGISTERED BEFORE '/rankings/:providerAbbr' ON PURPOSE. Navigo matches in
+  // registration order, and a single-segment parameter route sitting above a
+  // literal one is the classic silent capture — '/rankings/list/<id>' would be
+  // read as provider 'list'. Specific first.
+  router.on('/rankings/list/:snapshotId', (match) => {
+    console.log('[router] matched: /rankings/list/:snapshotId', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    const snapshotId = match?.data?.snapshotId ?? '';
+    if (container) renderRankingListPage(container, snapshotId);
   });
 
   router.on('/rankings/:providerAbbr', (match) => {

@@ -10,6 +10,8 @@
 
 import { buildLadderChart, LadderChartDatum } from 'courthive-components';
 
+import { buildRankingHistorySection } from 'src/pages/rankings/renderRankingHistory';
+
 import bobocaRankings from './data/boboca-rankings.json';
 import 'src/styles/rankings.css';
 
@@ -263,10 +265,21 @@ function buildRow(e: RankingEntry): HTMLElement {
   detailCell.appendChild(buildDetailContent(e));
   detail.appendChild(detailCell);
 
+  // The ranking history is one request PER PLAYER, and every detail row on this
+  // page is BUILT UP FRONT — hidden, but constructed — so attaching it during
+  // buildDetailContent fired a fetch for all 655 players the moment the table
+  // rendered. It is appended on first expand instead, and only once.
+  let historyAttached = false;
+
   btn.addEventListener('click', () => {
     const open = detail.style.display !== 'none';
     detail.style.display = open ? 'none' : 'table-row';
     btn.textContent = `${e.tournaments.length} ${open ? '▾' : '▴'}`;
+
+    if (!open && !historyAttached) {
+      historyAttached = true;
+      detailCell.appendChild(buildRankingHistorySection(e.personId, e.name));
+    }
   });
 
   // Append the detail row AFTER the parent row is appended by the caller;
@@ -343,6 +356,10 @@ function buildDetailContent(e: RankingEntry): HTMLElement {
   }
   list.appendChild(body);
   wrap.appendChild(list);
+
+  // NOTE: the ranking history is deliberately NOT built here. This function
+  // runs for every row while the table is assembled, so anything that fetches
+  // belongs on the expand handler in buildRow — see the comment there.
   return wrap;
 }
 
