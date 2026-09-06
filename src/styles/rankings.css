@@ -259,3 +259,62 @@
   font-size: 13px;
   color: var(--sp-muted, #6b7280);
 }
+
+/* --- Ranking history (player expansion) + stored-list page ---------------- */
+
+.rk-history {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sp-border-subtle, #f3f4f6);
+}
+
+.rk-history-body {
+  font-size: 13px;
+  color: var(--sp-muted, #6b7280);
+}
+
+.rk-history-empty {
+  padding: 8px 0;
+  font-style: italic;
+  color: var(--sp-muted, #6b7280);
+}
+
+.rk-history-spark-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 12px;
+  color: var(--sp-text, #111);
+}
+
+/* currentColor throughout the SVG, so the line themes with the text. */
+.rk-history-spark {
+  overflow: visible;
+  flex: 0 0 auto;
+}
+
+.rk-history-spark-caption {
+  font-size: 12px;
+  color: var(--sp-muted, #6b7280);
+  font-variant-numeric: tabular-nums;
+}
+
+.rk-history-table td {
+  vertical-align: middle;
+}
+
+.rk-history-link {
+  color: var(--chc-link, var(--sp-link, #2563eb));
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rk-history-link:hover {
+  text-decoration: underline;
+}
+
+.rk-list-more {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 4px;
+}
