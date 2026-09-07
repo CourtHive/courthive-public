@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.15.0](https://github.com/CourtHive/courthive-public/compare/v1.14.1...v1.15.0) (2026-09-07)
+
+
+### Features
+
+* **rankings:** show a player's ranking history and link to each list ([#519](https://github.com/CourtHive/courthive-public/issues/519)) ([8ead81f](https://github.com/CourtHive/courthive-public/commit/8ead81f0a9f97017461dae4413d3e840cf8531ca))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 4.1.1 ([ae54daf](https://github.com/CourtHive/courthive-public/commit/ae54daf80c0713c6f575732115d2539424516d1e))
+* **deps:** update tods-competition-factory to 6.37.1 ([e3d662c](https://github.com/CourtHive/courthive-public/commit/e3d662ca9f0bbf5b3f7a2e187276135acca129e5))
+* **deps:** update tods-competition-factory to 6.37.2 ([0620939](https://github.com/CourtHive/courthive-public/commit/062093912a639016c7127c9a280eecc912109ba2))
+
 ## [1.14.1](https://github.com/CourtHive/courthive-public/compare/v1.14.0...v1.14.1) (2026-09-04)
 
 
