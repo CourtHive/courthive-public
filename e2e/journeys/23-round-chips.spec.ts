@@ -52,4 +52,41 @@ test.describe('structure round chips', () => {
     await expect(page.locator(`${sel.flightDisplay} .chc-round-container`)).toHaveCount(2);
     await expect(page.locator(SELECTOR_CHIP)).toHaveCount(0);
   });
+
+  /**
+   * Regression: connector-line length after scoping with a chip.
+   *
+   * `renderRound` divides `matchUp.roundFactor` by the selected round's factor
+   * IN PLACE, and `getLinkStyle` scales the connector height by that factor. Feed
+   * it the same matchUp objects twice and the division compounds — R16 -> QF -> SF
+   * left the semifinal connectors at half length, and going back to R16 left every
+   * round at an eighth, permanently. `renderSelectedStructure` therefore renders
+   * off a fresh deep copy of the structure's roundMatchUps on every render.
+   *
+   * The first rendered round always has roundFactor 1, so its connector height is
+   * the same number whichever chip is active — which is what this asserts.
+   */
+  test('connector lengths survive clicking through the chips', async ({ page }) => {
+    const fixture = buildPublishedTournament({ drawSize: 16, completeAllMatchUps: false });
+    await installApiMocks(page, fixture);
+    await gotoTournament(page, fixture, '/events');
+
+    const firstRoundLinkHeight = async () =>
+      page
+        .locator(`${sel.flightDisplay} .chc-round-container`)
+        .first()
+        .locator('.chc-link')
+        .first()
+        .evaluate((el) => (el as HTMLElement).style.getPropertyValue('--chc-link-m1-h'));
+
+    const baseline = await firstRoundLinkHeight();
+    expect(baseline).not.toBe('');
+
+    // R16 -> QF -> SF -> R16. Every hop re-renders; none may shrink the lines.
+    for (const chipIndex of [1, 2, 0]) {
+      await page.locator(SELECTOR_CHIP).nth(chipIndex).click();
+      await expect(page.locator(SELECTOR_CHIP).nth(chipIndex)).toHaveAttribute('aria-current', 'true');
+      expect(await firstRoundLinkHeight()).toBe(baseline);
+    }
+  });
 });
