@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/CourtHive/courthive-public/compare/v1.15.0...v1.15.1) (2026-09-13)
+
+
+### Bug Fixes
+
+* **draws:** take the connector fix from components and drop the local workaround ([#527](https://github.com/CourtHive/courthive-public/issues/527)) ([4881911](https://github.com/CourtHive/courthive-public/commit/4881911b6a67b5086ce5b6bdbeafea4191cd7c9d))
+
 ## [1.15.0](https://github.com/CourtHive/courthive-public/compare/v1.14.1...v1.15.0) (2026-09-07)
 
 
