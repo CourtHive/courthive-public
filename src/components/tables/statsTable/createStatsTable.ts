@@ -20,7 +20,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
 
   const groupNames = {};
 
-  const getParticipantResults = () => {
+  const getFilteredStructureResults = () => {
     const drawData = eventData?.drawsData?.find((data) => data.drawId === drawId);
     structure = drawData?.structures?.find((s) => s.structureId === structureId);
 
@@ -43,7 +43,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
     });
   };
 
-  const participantResults = getParticipantResults();
+  const participantResults = getFilteredStructureResults();
   const getTableData = () => {
     return participantResults
       ?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }))
@@ -51,7 +51,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
   };
 
   const updateTableData = () =>
-    getParticipantResults()?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }));
+    getFilteredStructureResults()?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }));
   const replaceTableData = (params) => {
     if (params?.participantFilter !== undefined) participantFilter = params.participantFilter;
     table.replaceData(updateTableData());
