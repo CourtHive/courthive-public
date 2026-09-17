@@ -8,9 +8,62 @@ export async function getTournamentInfo(params?: { tournamentId: string }) {
   return await baseApi.post('/factory/tournamentinfo', { ...params, withVenueData: true, usePublishState: true });
 }
 
-export async function getProviderCalendar({ providerAbbr }: { providerAbbr: string }) {
+export async function getProviderCalendar({
+  providerAbbr,
+  limit,
+  offset,
+}: {
+  providerAbbr: string;
+  limit?: number;
+  offset?: number;
+}) {
   if (!providerAbbr) throw new Error('missing provicerAbbr');
-  return await baseApi.post('/provider/calendar', { providerAbbr });
+  return await baseApi.post('/provider/calendar', { providerAbbr, limit, offset });
+}
+
+/** Rows per request. The server clamps to its own ceiling regardless. */
+const CALENDAR_PAGE_SIZE = 500;
+
+/** Stop here. 20 x 500 = 10,000, well past any real provider calendar. */
+const MAX_CALENDAR_PAGES = 20;
+
+/**
+ * Every page of a provider's public calendar, merged.
+ *
+ * `/provider/calendar` became PAGED in competition-factory-server #974, defaulting to 500
+ * entries. This call site asked for the calendar and rendered whatever came back, so the
+ * moment the server started capping, two real providers silently lost tournaments from the
+ * public listing — ALTA showed 500 of 967, HTS 500 of 533. The list looked complete; it was
+ * not, which is the worst shape a truncation can take.
+ *
+ * A server that predates paging returns no `paging` block; that response is taken as the
+ * whole list, so this stays safe against either side deploying first.
+ */
+export async function fetchProviderCalendar({ providerAbbr }: { providerAbbr: string }) {
+  const tournaments: any[] = [];
+  let provider: any;
+  let offset = 0;
+  let truncated = false;
+
+  for (let page = 0; page < MAX_CALENDAR_PAGES; page++) {
+    const response: any = await getProviderCalendar({ providerAbbr, limit: CALENDAR_PAGE_SIZE, offset });
+    const calendar = response?.data?.calendar;
+    if (!calendar) break;
+
+    provider ??= calendar.provider;
+    tournaments.push(...(calendar.tournaments ?? []));
+
+    const paging = response?.data?.paging;
+    if (!paging) break;
+    // `returned: 0` with `hasMore: true` would be a server bug; treat no progress as the end
+    // rather than spinning.
+    if (!paging.hasMore || !paging.returned) break;
+
+    offset += paging.returned;
+    if (page === MAX_CALENDAR_PAGES - 1) truncated = true;
+  }
+
+  return { provider, tournaments, truncated };
 }
 
 /**
