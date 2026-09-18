@@ -1,3 +1,4 @@
+import { seatUpdatedDrawPositions } from './seatUpdatedDrawPositions';
 import {
   resolvePublishedComposition,
   renderContainer,
@@ -598,37 +599,30 @@ export function renderEvent({
       }
 
       let patched = 0;
+      // A matchUp whose seating this payload cannot determine keeps the last authoritative sides,
+      // and we ask the server for the truth rather than render a guess. See `seatUpdatedDrawPositions`.
+      let unseatable = 0;
       for (const flight of flightsData) {
         for (const structure of flight.structures || []) {
           const dpMap = dpParticipantMaps.get(structure.structureId);
-          for (const roundMatchUps of Object.values(structure.roundMatchUps || {})) {
+          const rounds = structure.roundMatchUps || {};
+          for (const roundMatchUps of Object.values(rounds)) {
             for (const matchUp of roundMatchUps as any[]) {
               const update = updatedById.get(matchUp.matchUpId);
               if (update) {
                 if (update.score !== undefined) matchUp.score = update.score;
                 if (update.matchUpStatus !== undefined) matchUp.matchUpStatus = update.matchUpStatus;
                 if (update.winningSide !== undefined) matchUp.winningSide = update.winningSide;
-                // Re-hydrate sides from drawPositions using the position→participant map
                 if (update.drawPositions && dpMap) {
-                  matchUp.drawPositions = update.drawPositions;
-                  // Ensure sides array exists with correct length
-                  if (!matchUp.sides) matchUp.sides = [];
-                  for (let i = 0; i < update.drawPositions.length; i++) {
-                    const dp = update.drawPositions[i];
-                    if (!dp) continue;
-                    const sideNumber = i + 1;
-                    let side = matchUp.sides.find((s) => s.sideNumber === sideNumber);
-                    if (!side) {
-                      side = { sideNumber };
-                      matchUp.sides.push(side);
-                    }
-                    side.drawPosition = dp;
-                    const participant = dpMap.get(dp);
-                    if (participant) {
-                      side.participantId = participant.participantId;
-                      side.participant = participant;
-                    }
-                  }
+                  const roundNumber = matchUp.roundNumber;
+                  const { seated } = seatUpdatedDrawPositions({
+                    thisRoundMatchUpsCount: (rounds[roundNumber] as any[] | undefined)?.length,
+                    priorRoundMatchUps: rounds[roundNumber - 1] as any[] | undefined,
+                    participantByDrawPosition: dpMap,
+                    drawPositions: update.drawPositions,
+                    matchUp,
+                  });
+                  if (!seated) unseatable++;
                 }
                 patched++;
               }
@@ -671,6 +665,15 @@ export function renderEvent({
         }
         globalThis.scrollTo(winScrollX, winScrollY);
       });
+
+      if (unseatable) {
+        // The score and status above have landed and the local re-render has already run, so the
+        // view is correct-but-stale for these matchUps rather than blank. Now go get the seating we
+        // could not derive. Rare: 3 of 1,675 notices in the replay, every one the
+        // DOUBLE_ELIMINATION Main final, whose second side arrives over a WINNER link.
+        console.log(`[renderEvent] ${unseatable} matchUp(s) could not be seated from this update — refetching`);
+        context.refreshEventView?.();
+      }
     };
 
     renderFlight(initialFlightIndex);
