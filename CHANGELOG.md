@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.15.2](https://github.com/CourtHive/courthive-public/compare/v1.15.1...v1.15.2) (2026-09-22)
+
+
+### Bug Fixes
+
+* **events:** a live update seated an arriving participant on the wrong side ([#533](https://github.com/CourtHive/courthive-public/issues/533)) ([2016485](https://github.com/CourtHive/courthive-public/commit/20164858521f1fbeb3eefb027b6e8fbe2269570d))
+* **tournaments:** page the provider calendar, which silently lost 467 rows ([#531](https://github.com/CourtHive/courthive-public/issues/531)) ([d5656b5](https://github.com/CourtHive/courthive-public/commit/d5656b549ca85785f5647513c34b2f8124ad025f))
+* **tournament:** the publish gate reads the factory roll-up, not its own rule ([#536](https://github.com/CourtHive/courthive-public/issues/536)) ([38198fb](https://github.com/CourtHive/courthive-public/commit/38198fb975be70f410c145b0298b62b9a8ef2e75))
+
 ## [1.15.1](https://github.com/CourtHive/courthive-public/compare/v1.15.0...v1.15.1) (2026-09-13)
 
 
