@@ -17,13 +17,10 @@ import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId } from './helpers/tabIds';
 import { context } from 'src/common/context';
 
-export function isFullyUnpublished(tournamentInfo: any): boolean {
-  if (!tournamentInfo) return true;
-  const hasEvents = !!tournamentInfo.eventInfo?.length;
-  const hasSchedule = !!tournamentInfo.publishState?.orderOfPlay?.published;
-  const hasParticipants = !!tournamentInfo.publishState?.participants?.published;
-  return !hasEvents && !hasSchedule && !hasParticipants;
-}
+// Re-exported so existing importers (services/liveUpdates) keep their path; the rule itself lives in
+// publishVisibility.ts, where it can be read and tested without this module's DOM dependencies.
+import { isFullyUnpublished } from './publishVisibility';
+export { isFullyUnpublished };
 
 export async function renderTournament(
   result,
