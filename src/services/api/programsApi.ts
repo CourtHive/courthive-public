@@ -13,6 +13,8 @@
  * away dual (owned by the host) appears on the visiting program's page with no duplicate.
  */
 
+import { getQueryBaseUrl } from './queryBaseUrl';
+
 export interface ProgramDual {
   tournamentId: string;
   tournamentName: string;
@@ -28,11 +30,6 @@ export interface ProgramSummary {
   dualCount: number;
 }
 
-function getQueryBaseUrl(): string {
-  const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
-  const win = globalThis as any;
-  return win.dev?.queryBaseURL || (local ? 'http://localhost:3150' : '/query');
-}
 
 /** A program's published season, newest-dated first (ordering set by the service). */
 export async function fetchProgramDuals(teamId: string): Promise<ProgramDual[]> {
