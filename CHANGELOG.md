@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/CourtHive/courthive-public/compare/v1.15.2...v1.16.0) (2026-09-24)
+
+
+### Features
+
+* **tournaments:** the listing's search box searches the corpus, not the page it loaded ([#539](https://github.com/CourtHive/courthive-public/issues/539)) ([3962343](https://github.com/CourtHive/courthive-public/commit/3962343548716b130d35454ac5339bb7b73f6a7a))
+
 ## [1.15.2](https://github.com/CourtHive/courthive-public/compare/v1.15.1...v1.15.2) (2026-09-22)
 
 
