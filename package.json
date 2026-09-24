@@ -79,7 +79,7 @@
     "normalize-text": "2.6.0",
     "socket.io-client": "^4.8.3",
     "svelte": "^5.55.1",
-    "tabulator-tables": "6.5.2",
+    "tabulator-tables": "6.5.3",
     "tippy.js": "6.3.7",
     "tods-competition-factory": "7.1.1"
   }
