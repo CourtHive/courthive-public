@@ -16,7 +16,7 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['tsconfig.json'],
+        project: ['tsconfig.json', 'e2e/tsconfig.json'],
       },
       globals: {
         ...globals.browser,
@@ -40,7 +40,7 @@ export default [
       'no-nested-ternary': 'warn',
       'sonarjs/cognitive-complexity': 'off',
       'sonarjs/no-commented-code': 'off',
-      'sonarjs/no-nested-functions': 'off',
+      'sonarjs/no-nested-functions': ['error', { threshold: 4 }],
       'sonarjs/no-hardcoded-passwords': 'off',
       'sonarjs/regex-complexity': 'off',
       'sonarjs/todo-tag': 'off',

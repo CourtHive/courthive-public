@@ -6,8 +6,8 @@ Built with vanilla TypeScript (no framework). Deployed as a static web app to `c
 
 ## Prerequisites
 
-- Node.js >= 20
-- pnpm >= 8
+- Node.js >= 22
+- pnpm >= 11
 - A running [competition-factory-server](https://github.com/CourtHive/competition-factory-server) instance for live data
 
 ## Getting Started
@@ -25,7 +25,8 @@ pnpm start        # Vite dev server (opens browser)
 | `pnpm build`       | Production build (`tsc` + `vite build`) |
 | `pnpm preview`     | Preview production build locally        |
 | `pnpm check-types` | TypeScript type check (`tsc --noEmit`)  |
-| `pnpm lint`        | ESLint with auto-fix                    |
+| `pnpm lint`        | ESLint — non-mutating, fails on any warning |
+| `pnpm lint:fix`    | ESLint with auto-fix (rewrites source) |
 | `pnpm format`      | Prettier on `src/`                      |
 | `pnpm test`        | Vitest (UTC timezone)                   |
 
@@ -67,7 +68,7 @@ Connects to the competition-factory-server via Socket.IO, joining tournament-spe
 
 | Package                                                                      | Purpose                           |
 | ---------------------------------------------------------------------------- | --------------------------------- |
-| [tods-competition-factory](https://github.com/CourtHive/competition-factory) | Tournament data queries and types |
+| [tods-competition-factory](https://github.com/CourtHive/tods-competition-factory) | Tournament data queries and types |
 | [courthive-components](https://github.com/CourtHive/courthive-components)    | Shared UI components              |
 | [navigo](https://github.com/krasimir/navigo)                                 | Hash-based SPA router             |
 | [tabulator-tables](http://tabulator.info/)                                   | Data tables                       |

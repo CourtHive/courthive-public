@@ -1,6 +1,8 @@
 <script lang="ts">
   import { context } from 'src/common/context';
   import { TOURNAMENT } from 'src/common/constants/routerConstants';
+  import { createOnlineSearchController } from 'src/services/search/onlineSearchController';
+  import { searchHitToEntry, searchTournaments } from 'src/services/api/tournamentSearchApi';
 
   type TournamentEntry = {
     tournamentId: string;
@@ -14,9 +16,42 @@
     };
   };
 
-  let { tournaments = [] }: { tournaments: TournamentEntry[] } = $props();
+  let {
+    tournaments = [],
+    providerId,
+    truncated = false,
+  }: { tournaments: TournamentEntry[]; providerId?: string; truncated?: boolean } = $props();
 
   let searchTerm = $state('');
+
+  /**
+   * SERVER results, when a search is in flight or answered. The loaded array is only ever a page
+   * of the provider's calendar; filtering it and reporting the result as the answer is how this
+   * site served 500 of ALTA's 967 tournaments on 2026-09-17.
+   */
+  let serverEntries: TournamentEntry[] | undefined = $state(undefined);
+  let serverTotal = $state(0);
+  let searchFailed = $state(false);
+
+  const controller = providerId
+    ? createOnlineSearchController({
+        search: (query) => searchTournaments({ q: query, providerId }),
+        onResults: (result) => {
+          searchFailed = false;
+          serverTotal = result.total;
+          serverEntries = result.tournaments.map(searchHitToEntry);
+        },
+        onLocal: () => {
+          searchFailed = false;
+          serverEntries = undefined;
+        },
+        onError: () => {
+          // Say the search failed rather than rendering the loaded subset as if it were the answer.
+          searchFailed = true;
+          serverEntries = undefined;
+        },
+      })
+    : undefined;
 
   const sorted = $derived(
     [...tournaments].sort(
@@ -24,10 +59,14 @@
     ),
   );
 
+  // With server results on screen the query has ALREADY been applied, across the whole published
+  // corpus. Re-filtering locally would narrow the server's answer against a haystack that cannot
+  // see why each row matched.
   const filtered = $derived(
-    searchTerm
-      ? sorted.filter((e) => (e.searchText ?? e.tournament.tournamentName?.toLowerCase() ?? '').includes(searchTerm))
-      : sorted,
+    serverEntries ??
+      (searchTerm
+        ? sorted.filter((e) => (e.searchText ?? e.tournament.tournamentName?.toLowerCase() ?? '').includes(searchTerm))
+        : sorted),
   );
 
   function imageUrl(t: TournamentEntry['tournament']): string | undefined {
@@ -50,7 +89,10 @@
     type="search"
     autocomplete="off"
     placeholder="Search tournaments"
-    oninput={(e) => (searchTerm = (e.target as HTMLInputElement).value.toLowerCase())}
+    oninput={(e) => {
+      searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+      controller?.setQuery(searchTerm);
+    }}
   />
   {#if searchTerm}
     <span
@@ -59,15 +101,35 @@
       tabindex="0"
       onclick={() => {
         searchTerm = '';
+        controller?.setQuery('');
         const input = document.querySelector('.tournament-search__input') as HTMLInputElement;
         if (input) input.value = '';
       }}
-      onkeydown={(e) => e.key === 'Enter' && (searchTerm = '')}
+      onkeydown={(e) => {
+        if (e.key !== 'Enter') return;
+        searchTerm = '';
+        controller?.setQuery('');
+      }}
     >
       <i class="fa-solid fa-circle-xmark"></i>
     </span>
   {/if}
 </div>
+
+{#if searchFailed}
+  <div class="tournament-list__notice">
+    Tournament search is unavailable right now — showing only the tournaments already loaded.
+  </div>
+{:else if serverEntries}
+  <div class="tournament-list__notice">
+    {serverTotal}
+    {serverTotal === 1 ? 'tournament matches' : 'tournaments match'} across this organisation's published calendar.
+  </div>
+{:else if truncated}
+  <div class="tournament-list__notice">
+    Showing the first {tournaments.length} tournaments. Search to look through all of them.
+  </div>
+{/if}
 
 <div class="tournament-card-list">
   {#each filtered as entry (entry.tournamentId)}
@@ -107,6 +169,15 @@
 </div>
 
 <style>
+  .tournament-list__notice {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 0.75rem 0.5rem;
+    width: 100%;
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+
   .tournament-card-list {
     display: flex;
     flex-direction: column;

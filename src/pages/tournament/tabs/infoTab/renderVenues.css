@@ -1,0 +1,35 @@
+.tournament-venues {
+  margin-top: 1.5rem;
+}
+
+.tournament-venues__grid {
+  display: grid;
+  /* auto-fit rather than auto-fill: with one or two venues, auto-fill kept
+     generating empty tracks across the full width, leaving a single 246px card
+     beside four empty slots. */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* auto-fit collapses empty tracks, but it then stretches the surviving cards
+   across the whole row. Cap how wide a sparse grid gets so one venue reads as
+   a card rather than a full-width banner. */
+.tournament-venues__grid[data-count='1'] {
+  grid-template-columns: minmax(240px, 22rem);
+}
+
+.tournament-venues__grid[data-count='2'] {
+  grid-template-columns: repeat(2, minmax(240px, 22rem));
+}
+
+.tournament-venues .venue-website-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-top: 1px solid var(--chc-vc-border, rgba(0, 0, 0, 0.08));
+}
+
+.tournament-venues .venue-website-link:hover {
+  text-decoration: underline;
+}

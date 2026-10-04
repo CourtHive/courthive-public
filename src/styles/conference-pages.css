@@ -1,0 +1,200 @@
+/* Conference competitive-fingerprint pages. Uses --chc-* theme tokens; light + dark. */
+
+.chp-conf-root {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+  color: var(--chc-text-primary);
+}
+
+.chp-conf-header h1 {
+  margin: 0.2em 0 0.15em;
+  font-size: 1.55rem;
+  color: var(--chc-text-primary);
+}
+.chp-conf-sub {
+  margin: 0 0 1.1em;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--chc-text-muted);
+}
+.chp-conf-back {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--chc-text-link);
+}
+.chp-conf-back:hover { text-decoration: underline; }
+
+.chp-conf-message {
+  padding: 1.5rem 0.5rem;
+  color: var(--chc-text-muted);
+}
+
+.chp-conf-search {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid var(--chc-border-primary);
+  background: var(--chc-bg-elevated);
+  color: inherit;
+}
+
+/* ---------------------------------------------------------------- band bar */
+
+.chp-band-bar {
+  display: flex;
+  width: 100%;
+  height: 1.15rem;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--chc-bg-secondary);
+}
+.chp-band {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* hardest → easiest; diverging so the centre (EVEN) reads as neutral */
+.chp-band--stretch { background: #1f4f8b; }
+.chp-band--up      { background: #5b8fc9; }
+.chp-band--even    { background: #6d7a73; }
+.chp-band--down    { background: #d59b52; }
+.chp-band--anchor  { background: #a8531f; }
+
+.chp-band-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0.7rem 0 1.2rem;
+  font-size: 0.78rem;
+  color: var(--chc-text-muted);
+}
+.chp-band-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.chp-band-legend .chp-band {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------------------------- directory */
+
+.chp-conf-list { display: grid; gap: 0.6rem; }
+.chp-conf-card {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 8px;
+  background: var(--chc-bg-elevated);
+  text-decoration: none;
+  color: inherit;
+}
+.chp-conf-card:hover { border-color: var(--chc-border-focus); }
+.chp-conf-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+}
+.chp-conf-name { font-weight: 600; }
+.chp-conf-meta { font-size: 0.78rem; color: var(--chc-text-muted); }
+.chp-conf-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--chc-text-muted);
+}
+.chp-conf-n { margin-left: auto; }
+
+/* ---------------------------------------------------------------- detail */
+
+.chp-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0.2rem;
+}
+.chp-stat {
+  flex: 1 1 7rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 8px;
+  background: var(--chc-bg-elevated);
+}
+.chp-stat-value { display: block; font-size: 1.2rem; font-weight: 700; }
+.chp-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chc-text-muted);
+}
+
+.chp-conf-section { margin-top: 1.6rem; }
+.chp-conf-section h2 {
+  font-size: 1rem;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--chc-border-primary);
+}
+
+.chp-fp-row {
+  display: grid;
+  grid-template-columns: 11rem 1fr 4.5rem;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+.chp-fp-label { color: var(--chc-text-muted); }
+.chp-fp-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--chc-text-muted); }
+
+.chp-conf-gap p { font-size: 0.9rem; line-height: 1.55; margin: 0; }
+
+.chp-member-table { overflow-x: auto; }
+.chp-member-row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 1.6fr) minmax(8rem, 1.4fr) repeat(5, minmax(4.2rem, 0.6fr));
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0.2rem;
+  font-size: 0.82rem;
+  border-bottom: 1px solid var(--chc-border-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.chp-member-head {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--chc-text-muted);
+  border-bottom-width: 2px;
+}
+.chp-member-name { font-weight: 600; font-variant-numeric: normal; }
+
+.chp-conf-note {
+  margin-top: 1.4rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--chc-text-muted);
+}
+
+@media (max-width: 640px) {
+  .chp-fp-row { grid-template-columns: 7rem 1fr 3.5rem; font-size: 0.78rem; }
+  .chp-member-row { grid-template-columns: minmax(9rem, 1.4fr) minmax(6rem, 1fr) repeat(5, minmax(3.4rem, 0.5fr)); }
+}
+
+/* Band colours are fixed hex on purpose — they encode an ordinal scale, not theme chrome — but the
+   bar's empty track and the numerals must follow the theme. */
+.chp-band-bar { background: var(--chc-bg-secondary); }
+.chp-band { color: #fff; }

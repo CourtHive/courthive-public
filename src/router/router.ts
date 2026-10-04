@@ -2,13 +2,40 @@ import { createTournamentsTable } from 'src/pages/tournaments/createTournamentsT
 import { renderTournament } from 'src/pages/tournament/renderTournament';
 import { destroyCurrentShell, renderTrackPage } from 'src/pages/track/renderTrackPage';
 import { connectAndJoinRoom, leaveRoom } from 'src/services/liveUpdates';
+import { renderMagicLinkConsume } from 'src/pages/me/renderMagicLinkConsume';
+import { renderVerifyEmail } from 'src/pages/me/renderVerifyEmail';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
+import { renderMyCourtHive } from 'src/pages/me/renderMyCourtHive';
+import { renderAvailability } from 'src/pages/me/renderAvailability';
+import { renderRankingsLanding } from 'src/pages/rankings/renderRankingsLanding';
+import { renderRankingListPage } from 'src/pages/rankings/renderRankingListPage';
+import { renderRankingsPage } from 'src/pages/rankings/renderRankingsPage';
+import { renderProgramsPage } from 'src/pages/programs/renderProgramsPage';
+import { renderProgramPage } from 'src/pages/program/renderProgramPage';
+import { renderConferencesPage } from 'src/pages/conferences/renderConferencesPage';
+import { renderConferencePage } from 'src/pages/conference/renderConferencePage';
+import { renderProposalRegistration } from 'src/pages/register/renderProposalRegistration';
+import { buildTournamentPath, type TournamentPathParams } from 'src/router/tournamentPath';
+import { renderPartnerConfirm } from 'src/pages/register/renderPartnerConfirm';
 import { renderDefaultPage } from 'src/pages/courthive/default';
 import { setDisplay } from 'src/services/transistions';
 import Navigo from 'navigo';
 
 // constants
-import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import {
+  CONFERENCE,
+  CONFERENCES,
+  HIVEID_MAGIC,
+  HIVEID_ME,
+  PROGRAM,
+  PROGRAMS,
+  RANKINGS,
+  REGISTER,
+  SPLASH,
+  TOURNAMENT,
+  TOURNAMENTS,
+  TRACK,
+} from 'src/common/constants/routerConstants';
 import { context } from 'src/common/context';
 
 function navigateToTournament({
@@ -43,33 +70,33 @@ function navigateToTournament({
   getTournamentInfo({ tournamentId }).then((result) => renderTournament(result, { eventId, drawId, structureId, tab }));
 }
 
-export function updateRouteUrl({
-  tournamentId,
-  eventId,
-  drawId,
-  structureId,
-  tab,
-}: {
-  tournamentId: string;
-  eventId?: string;
-  drawId?: string;
-  structureId?: string;
-  tab?: string;
-}) {
-  let path = `/tournament/${tournamentId}`;
-  if (tab === 'Schedule') {
-    path += `/schedule`;
-  } else if (tab === 'Events') {
-    path += `/events`;
-  } else if (tab === 'Players') {
-    path += `/participants`;
-  } else {
-    if (eventId) path += `/event/${eventId}`;
-    if (drawId) path += `/draw/${drawId}`;
-    if (structureId) path += `/structure/${structureId}`;
-  }
+export function updateRouteUrl(params: TournamentPathParams) {
   // Use pushState directly to update URL without triggering any router handlers.
-  history.pushState(null, '', `#${path}`);
+  history.pushState(null, '', `#${buildTournamentPath(params)}`);
+}
+
+/**
+ * Resolve a tournament route through the router (a real navigation, unlike
+ * `updateRouteUrl`'s silent URL sync). Used by the schedule's "view in draw"
+ * action, which has to leave the Schedule tab and land on a specific structure.
+ */
+export function navigateToTournamentPath(params: TournamentPathParams): void {
+  const path = buildTournamentPath(params);
+  context.router?.navigate(path);
+  context.router?.resolve();
+}
+
+// Re-run the handler for the URL the user is currently on. Navigo's resolve()
+// no-ops when the location is unchanged (its internal "already" short-circuit
+// compares the last-resolved match), so we clear that match first to force a
+// re-run. Used after a HiveID sign-in so login-gated content (e.g. the
+// tournament registration CTA, which reads isAuthenticated() at render time)
+// re-renders in place instead of yanking the user away to their profile page.
+export function refreshCurrentRoute(): void {
+  const currentRouter = context.router;
+  if (!currentRouter) return;
+  currentRouter._setCurrent?.(null);
+  currentRouter.resolve();
 }
 
 export function router() {
@@ -98,6 +125,105 @@ export function router() {
     context.providerAbbr = providerAbbr;
     setDisplay(TOURNAMENTS);
     createTournamentsTable({ providerAbbr });
+  });
+
+  // Provider-agnostic landing — lists what's available so /services and
+  // other surfaces don't have to deep-link a specific provider abbreviation.
+  router.on('/rankings', () => {
+    console.log('[router] matched: /rankings (landing)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    if (container) renderRankingsLanding(container);
+  });
+
+  // REGISTERED BEFORE '/rankings/:providerAbbr' ON PURPOSE. Navigo matches in
+  // registration order, and a single-segment parameter route sitting above a
+  // literal one is the classic silent capture — '/rankings/list/<id>' would be
+  // read as provider 'list'. Specific first.
+  router.on('/rankings/list/:snapshotId', (match) => {
+    console.log('[router] matched: /rankings/list/:snapshotId', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    const snapshotId = match?.data?.snapshotId ?? '';
+    if (container) renderRankingListPage(container, snapshotId);
+  });
+
+  router.on('/rankings/:providerAbbr', (match) => {
+    console.log('[router] matched: /rankings/:providerAbbr', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    const providerAbbr = match?.data?.providerAbbr?.toUpperCase() ?? '';
+    context.providerAbbr = providerAbbr;
+    setDisplay(RANKINGS);
+    const container = document.getElementById(RANKINGS);
+    if (container) renderRankingsPage(container, providerAbbr);
+  });
+
+  router.on('/programs', () => {
+    console.log('[router] matched: /programs (directory)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(PROGRAMS);
+    const container = document.getElementById(PROGRAMS);
+    if (container) renderProgramsPage(container);
+  });
+
+  router.on('/program/:teamId', (match) => {
+    console.log('[router] matched: /program/:teamId', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(PROGRAM);
+    const container = document.getElementById(PROGRAM);
+    if (container) renderProgramPage(container, match?.data?.teamId ?? '');
+  });
+
+  router.on('/conferences', () => {
+    console.log('[router] matched: /conferences (directory)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(CONFERENCES);
+    const container = document.getElementById(CONFERENCES);
+    if (container) renderConferencesPage(container);
+  });
+
+  router.on('/conference/:slug', (match) => {
+    console.log('[router] matched: /conference/:slug', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(CONFERENCE);
+    const container = document.getElementById(CONFERENCE);
+    if (container) renderConferencePage(container, match?.data?.slug ?? '');
+  });
+
+  router.on('/register/partner/:token', (match) => {
+    console.log('[router] matched: /register/partner/:token', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(REGISTER);
+    const container = document.getElementById(REGISTER);
+    if (container) void renderPartnerConfirm(container, match?.data?.token ?? '');
+  });
+
+  router.on('/register/:tournamentId', (match) => {
+    console.log('[router] matched: /register/:tournamentId', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(REGISTER);
+    const container = document.getElementById(REGISTER);
+    if (container) renderProposalRegistration(container, match?.data?.tournamentId ?? '');
   });
 
   router.on('/tournament/:tournamentId/event/:eventId/draw/:drawId/structure/:structureId', (match) => {
@@ -150,6 +276,52 @@ export function router() {
     navigateToTournament({
       tournamentId: match?.data?.tournamentId,
     });
+  });
+
+  // Register the more specific availability route before /me so the exact-match
+  // /me handler never shadows it.
+  router.on('/me/availability/:providerAbbr', (match) => {
+    console.log('[router] matched: /me/availability/:providerAbbr', match?.data);
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_ME);
+    const container = document.getElementById(HIVEID_ME);
+    if (container) renderAvailability(container, match?.data?.providerAbbr ?? '');
+  });
+
+  router.on('/me', () => {
+    console.log('[router] matched: /me (HiveID profile)');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_ME);
+    const container = document.getElementById(HIVEID_ME);
+    if (container) renderMyCourtHive(container);
+  });
+
+  router.on('/hiveid/magic/:code', (match) => {
+    const code = match?.data?.code;
+    console.log('[router] matched: /hiveid/magic/:code');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_MAGIC);
+    const container = document.getElementById(HIVEID_MAGIC);
+    if (container) renderMagicLinkConsume(container, code ?? '');
+  });
+
+  // Email-verification landing — reuses the transient HIVEID_MAGIC container
+  // (both are short-lived landing pages, never shown simultaneously).
+  router.on('/verify-email/:token', (match) => {
+    const token = match?.data?.token;
+    console.log('[router] matched: /verify-email/:token');
+    back.style.display = 'none';
+    destroyCurrentShell();
+    leaveRoom();
+    setDisplay(HIVEID_MAGIC);
+    const container = document.getElementById(HIVEID_MAGIC);
+    if (container) renderVerifyEmail(container, token ?? '');
   });
 
   // Phase 2 — interactive tracking sandbox. Local-only, no server writes.

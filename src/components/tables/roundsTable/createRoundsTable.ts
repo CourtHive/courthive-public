@@ -63,7 +63,7 @@ export async function createRoundsTable(params) {
       groupHeader: [roundGroupingHeader, (value) => value],
       headerSortElement: headerSortElement(['complete', 'duration', 'score']),
       responsiveLayoutCollapseStartOpen: false,
-      height: window.innerHeight * 0.85,
+      height: globalThis.innerHeight * 0.85,
       /*
       groupStartOpen: [
         true, // use function to determine if all matchUps are completed, and if so, start closed

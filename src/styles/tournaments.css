@@ -162,3 +162,53 @@
     padding: 1rem;
   }
 }
+
+/* ── Participants tab ──────────────────────────────────────── */
+
+/* Hide the sort caret indicators — column header click still sorts but
+   the carets clutter the layout and the column titles are themselves
+   the obvious affordance. Mirrors TMX's table convention. */
+
+#playersTable .tabulator-col-sorter,
+#playersTable .tabulator-arrow {
+  display: none;
+}
+
+/* Give the rendered participant DOM (renderParticipant returns a flex tree)
+   enough vertical room — Tabulator's default cell padding clips it. */
+
+#playersTable .tabulator-cell {
+  padding: 0.4rem 0.6rem;
+}
+
+/* ── Participants tab — event chips ────────────────────────── */
+
+.chp-event-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.chp-event-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  background: var(--chc-bg-secondary, #f5f5f5);
+  color: var(--chc-text-primary, #363636);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.chp-event-chip[data-event-type='DOUBLES'] {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.chp-event-chip[data-event-type='TEAM'] {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.4);
+}

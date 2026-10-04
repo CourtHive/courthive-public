@@ -1,0 +1,137 @@
+{
+ "conference": "South Coast Conference",
+ "slug": "south-coast-conference",
+ "divisions": [
+  "JUCO"
+ ],
+ "seasons": [
+  "2025",
+  "2026"
+ ],
+ "programCount": 1,
+ "fingerprint": {
+  "overall": {
+   "matches": 110,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 75,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 26.4,
+    "UP": 68.2,
+    "EVEN": 5.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 26.4,
+   "anchorRate": 0,
+   "breadth": 0.479,
+   "competitiveRatio": 22.7,
+   "winRate": 17.3
+  },
+  "inConference": {
+   "matches": 0,
+   "bands": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 0,
+    "UP": 0,
+    "EVEN": 0,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 0,
+   "anchorRate": 0,
+   "breadth": 0,
+   "competitiveRatio": null,
+   "winRate": null
+  },
+  "nonConference": {
+   "matches": 110,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 75,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 26.4,
+    "UP": 68.2,
+    "EVEN": 5.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 26.4,
+   "anchorRate": 0,
+   "breadth": 0.479,
+   "competitiveRatio": 22.7,
+   "winRate": 17.3
+  }
+ },
+ "baseline": {
+  "matches": 531414,
+  "bands": {
+   "STRETCH": 51143,
+   "UP": 174868,
+   "EVEN": 76379,
+   "DOWN": 176550,
+   "ANCHOR": 52474
+  },
+  "bandPct": {
+   "STRETCH": 9.6,
+   "UP": 32.9,
+   "EVEN": 14.4,
+   "DOWN": 33.2,
+   "ANCHOR": 9.9
+  },
+  "stretchRate": 9.6,
+  "anchorRate": 9.9,
+  "breadth": 0.91,
+  "competitiveRatio": 36.9,
+  "winRate": 50.2
+ },
+ "stretchGap": {
+  "inConference": 0,
+  "nonConference": 26.4,
+  "delta": 26.4,
+  "nonConferenceShare": 100
+ },
+ "members": [
+  {
+   "teamId": "8AA14977-4048-4584-973A-C9023BC27540",
+   "name": "Rio Hondo",
+   "gender": "W",
+   "division": "JUCO",
+   "lineupWTN": 32.22,
+   "matches": 110,
+   "bands": {
+    "STRETCH": 29,
+    "UP": 75,
+    "EVEN": 6,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "bandPct": {
+    "STRETCH": 26.4,
+    "UP": 68.2,
+    "EVEN": 5.5,
+    "DOWN": 0,
+    "ANCHOR": 0
+   },
+   "stretchRate": 26.4,
+   "anchorRate": 0,
+   "breadth": 0.479,
+   "competitiveRatio": 22.7,
+   "winRate": 17.3
+  }
+ ]
+}

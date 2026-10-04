@@ -1,0 +1,209 @@
+/* /me availability grid. Colours come entirely from --chc-* theme tokens, so
+   light and dark are handled by the token definitions — no hardcoded fallbacks. */
+
+.chp-avail-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--chc-text-primary);
+}
+
+.chp-avail-header {
+  margin-bottom: 1rem;
+}
+
+.chp-avail-title {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.chp-avail-empty,
+.chp-avail-body {
+  color: var(--chc-text-secondary);
+}
+
+/* Legend ------------------------------------------------------------------ */
+.chp-avail-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.chp-avail-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.chp-avail-legend-swatch {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 3px;
+  border: 1px solid var(--chc-border-primary);
+  display: inline-block;
+}
+
+.chp-avail-legend-hint {
+  color: var(--chc-text-muted);
+  flex-basis: 100%;
+}
+
+/* State colours (shared by swatches and day cells) ------------------------ */
+[data-state='AVAILABLE'] {
+  background: var(--chc-status-success);
+}
+[data-state='IF_NEEDED'] {
+  background: var(--chc-status-warning);
+}
+[data-state='UNAVAILABLE'] {
+  background: var(--chc-status-error);
+}
+[data-state='NOT_SET'] {
+  background: var(--chc-bg-secondary);
+}
+
+/* Grid -------------------------------------------------------------------- */
+.chp-avail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.chp-avail-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+}
+
+.chp-avail-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: 3rem;
+  padding: 0.35rem 0.2rem;
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.chp-avail-day[data-state='NOT_SET'] {
+  color: var(--chc-text-muted);
+}
+.chp-avail-day[data-state='AVAILABLE'],
+.chp-avail-day[data-state='IF_NEEDED'],
+.chp-avail-day[data-state='UNAVAILABLE'] {
+  color: var(--chc-text-inverse);
+  border-color: transparent;
+}
+
+.chp-avail-day:focus-visible {
+  outline: 2px solid var(--chc-border-focus);
+  outline-offset: 1px;
+}
+
+.chp-avail-day-dow {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.chp-avail-day-num {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Status + messages ------------------------------------------------------- */
+.chp-avail-status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+}
+.chp-avail-status[data-kind='saved'] {
+  color: var(--chc-status-success);
+}
+.chp-avail-status[data-kind='error'],
+.chp-avail-message[data-kind='error'] {
+  color: var(--chc-status-error);
+}
+.chp-avail-status[data-kind='saving'] {
+  color: var(--chc-text-muted);
+}
+.chp-avail-message[data-kind='success'] {
+  color: var(--chc-status-success);
+}
+
+/* Consent ----------------------------------------------------------------- */
+.chp-avail-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 30rem;
+}
+
+.chp-avail-notice {
+  font-size: 0.9rem;
+  color: var(--chc-text-secondary);
+  margin: 0;
+}
+
+.chp-avail-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.chp-avail-guardian {
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 6px;
+  padding: 0.75rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.chp-avail-guardian.is-required {
+  display: flex;
+}
+.chp-avail-guardian legend {
+  font-size: 0.8rem;
+  color: var(--chc-text-muted);
+  padding: 0 0.35rem;
+}
+
+.chp-avail-input {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 6px;
+  background: var(--chc-bg-primary);
+  color: var(--chc-text-primary);
+  font: inherit;
+}
+.chp-avail-input:focus-visible {
+  outline: 2px solid var(--chc-border-focus);
+  outline-offset: 1px;
+}
+
+.chp-avail-button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--chc-border-primary);
+  border-radius: 6px;
+  background: var(--chc-bg-elevated);
+  color: var(--chc-text-primary);
+  cursor: pointer;
+  font: inherit;
+}
+.chp-avail-button:hover {
+  background: var(--chc-hover-bg);
+}
+.chp-avail-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

@@ -98,7 +98,7 @@ describe('liveBoltScores', () => {
 
       const result = getLiveScoresForTournament('tour-1');
       expect(result).toHaveLength(2);
-      expect(result.map((p) => p.matchUpId).sort()).toEqual(['tie-a', 'tie-c']);
+      expect(result.map((p) => p.matchUpId).sort((a, b) => a.localeCompare(b))).toEqual(['tie-a', 'tie-c']);
     });
   });
 

@@ -1,5 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "ignoreDeps": ["tods-competition-factory", "courthive-components"]
+  "extends": [
+    "config:recommended"
+  ],
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "behind-base-branch",
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "postUpdateOptions": [
+    "pnpmDedupe"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "pnpm 11.12.0 self-installer regression breaks pnpm/action-setup in CI (integrity/undefined crash). Skip only that version; other pnpm updates allowed.",
+      "matchPackageNames": ["pnpm"],
+      "allowedVersions": "!/^11\\.12\\.0$/"
+    },
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "groupName": "dev dependencies (non-major)",
+      "schedule": [
+        "before 6am on monday"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "tods-competition-factory"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Block TypeScript major bumps. TS7 ships the native (Go) compiler, whose JS API shim lacks getParsedCommandLineOfConfigFile — nest/tsc-based build toolchains crash on it. Re-enable deliberately once the toolchain supports TS7.",
+      "matchPackageNames": [
+        "typescript"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": false
+    }
+  ]
 }

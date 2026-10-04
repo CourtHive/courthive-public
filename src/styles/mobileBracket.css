@@ -1,0 +1,303 @@
+/*
+ * Bracket header bar + mobile bracket layout.
+ *
+ * The bar (.chp-round-nav) is visible at all viewports so the live-scoring
+ * toggle is always reachable. Round chips inside it are shown only on
+ * mobile (≤ 768px) — the desktop bracket already lays out all rounds, so
+ * chip-jump-nav is redundant there.
+ *
+ * Mobile (≤ 768px) also enables one of two structure layouts:
+ *
+ *   .chp-mobile-bracket--snap   — non-RR: per-round column snap, horizontal
+ *   .chp-mobile-bracket--stack  — RR: full-width card stack, vertical
+ *
+ * Both modes hide the in-bracket round headers since the chip nav above
+ * the structure carries the round label.
+ */
+
+/* ── Hide the [Score] placeholder on the published bracket ────────── */
+/*
+ * `renderSide.ts` injects a clickable "[Score]" placeholder for matchUps
+ * that are `readyToScore && !inlineScoring`. On TMX that's the TD's entry
+ * point to the scoring modal. On courthive-public there's no TD scoring,
+ * so the placeholder shouldn't appear. Hide it precisely:
+ * `.chc-score-wrapper--small` is shared between the placeholder AND the
+ * actual side-score wrapper, but the placeholder lacks `.sideScore`.
+ *
+ * In Track mode, `inlineScoring` is set on the composition so this
+ * branch in renderSide isn't taken — the placeholder is never rendered.
+ */
+
+#flightDisplay .chc-score-wrapper--small:not(.sideScore) {
+  display: none;
+}
+
+/* ── Inline scoring footer — hide Submit button ───────────────────── */
+/*
+ * In the anonymous local-only crowd-scoring context (Phase 2), every score
+ * event auto-saves to IndexedDB via the manager's onScoreChange callback,
+ * so the explicit "Submit" button is redundant and the label implies a
+ * destination ("submit to whom?") that doesn't exist yet. Hide it; reveal
+ * again when Phase 3 adds signed-in users + score-relay forwarding.
+ */
+
+.chc-inline-scoring-btn.chc-is-submit {
+  display: none;
+}
+
+/* ── Event-controls block (Event / Flight / Display dropdowns) ─────── */
+/*
+ * `dropDownButton.ts` bakes inline `margin-right: 1em` (left-aligned
+ * dropdowns) and `margin-left: 1em` (right-aligned dropdowns) onto each
+ * wrapper, which made the legacy non-flex layout space items. On narrow
+ * viewports the right-aligned Display dropdown wraps to a new row with a
+ * stranded 1em offset on the left — awkward. Switch this block to a
+ * proper flex+wrap layout with uniform gap and override the inline
+ * margins (the inline `style=""` requires `!important` to lose).
+ */
+
+#tournament_events > .block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#tournament_events > .block > .dropdown {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ── Bar (always visible) ──────────────────────────────────────────── */
+
+.chp-round-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  /* No differentiated bg: in light mode `--chc-bg-elevated` resolves to
+     the same colour as the surrounding page, so the bar already looked
+     uniform there; in dark mode it doesn't. Inheriting transparently
+     matches the light-mode look at both viewports. */
+  background: transparent;
+  border-bottom: 1px solid var(--chc-border-secondary, #ddd);
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Live-scoring toggle — pinned right with margin-left: auto so it stays
+   reachable even when chips overflow. */
+
+.chp-round-nav__toggle {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  background: var(--chc-bg-primary, #fff);
+  color: var(--chc-text-primary, #363636);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.chp-round-nav__toggle:hover:not(.chp-round-nav__toggle--active) {
+  background: var(--chc-hover-bg, #f5f5f5);
+}
+
+.chp-round-nav__toggle--active {
+  background: var(--chc-status-success, #2bb673);
+  border-color: var(--chc-status-success, #2bb673);
+  color: var(--chc-text-inverse, #fff);
+}
+
+.chp-round-nav__toggle--active::before {
+  content: '● ';
+  color: var(--chc-text-inverse, #fff);
+}
+
+/* ── Chip nav (mobile only) ────────────────────────────────────────── */
+
+.chp-round-nav__chip {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  background: var(--chc-bg-primary, #fff);
+  color: var(--chc-text-primary, #363636);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.chp-round-nav__chip[aria-current='true'] {
+  background: var(--chc-status-info, #3273dc);
+  border-color: var(--chc-status-info, #3273dc);
+  color: var(--chc-text-inverse, #fff);
+  font-weight: 600;
+}
+
+.chp-round-nav__chip:hover:not([aria-current='true']) {
+  background: var(--chc-hover-bg, #f5f5f5);
+}
+
+@media (min-width: 769px) {
+  .chp-round-nav__chip:not(.chp-round-nav__chip--selector) {
+    display: none;
+  }
+}
+
+/* ── Selector chips (all viewports) ────────────────────────────────── */
+/*
+ * Scroll chips are redundant on a desktop bracket that already lays out
+ * every round. SELECTOR chips are not: they choose the round the bracket
+ * STARTS at, which is how a 64-draw becomes readable without panning six
+ * columns — on a phone and on a laptop alike. Same visual treatment, so
+ * the two modes are not two different-looking controls.
+ */
+
+.chp-round-nav__chip--selector {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Dropdown overflow guards (mobile) ─────────────────────────────── */
+/*
+ * The round-display button (`align: RIGHT`) gets `.is-right`, which anchors
+ * its menu to the trigger's right edge. On narrow phones that pushes the
+ * menu past the viewport's left edge — items render off-screen. Drop the
+ * right-anchor on mobile and cap menu width to the viewport.
+ */
+
+@media (max-width: 768px) {
+  .dropdown.is-right .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+  .dropdown-menu {
+    max-width: calc(100vw - 1rem);
+  }
+}
+
+/* ── Mobile bracket layouts ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Snap mode (non-RR) */
+  .chp-mobile-bracket--snap.chc-structure {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .chp-mobile-bracket--snap.chc-structure > .chc-round-container {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* Each round sizes to its own content instead of stretching to match
+     R1's height. Without this override, later rounds (R2-R5) inherit
+     R1's tall column and `chc-round { justify-content: space-around }`
+     fans out their few matchUps across that height, leaving big empty
+     gaps between cards on a phone. With `align-items: flex-start` each
+     round is just as tall as it needs to be, so matchUps stack tightly. */
+  .chp-mobile-bracket--snap.chc-structure {
+    align-items: flex-start;
+  }
+
+  /* Stack mode (round-robin) */
+  .chp-mobile-bracket--stack.chc-structure {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .chp-mobile-bracket--stack.chc-structure > .chc-round-container {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* Shared: hide in-bracket round headers (chip nav above replaces them) */
+  .chp-mobile-bracket--snap .chc-round-header,
+  .chp-mobile-bracket--stack .chc-round-header,
+  .chp-mobile-bracket--snap .tmx-rh,
+  .chp-mobile-bracket--stack .tmx-rh {
+    display: none;
+  }
+
+  /* Shared: hide the connector lines between matchUps. In snap mode each
+     round occupies its own viewport-width column, so the leftward/rightward
+     `.chc-link` pseudo-elements dangle into empty space; in stack mode the
+     vertical card stack has no bracket geometry for them to trace. Either
+     way the connecting lines read as visual noise on a phone, so remove
+     them entirely (the pseudo-elements are absolutely positioned, so this
+     does not affect matchUp layout). */
+  .chp-mobile-bracket--snap .chc-link::before,
+  .chp-mobile-bracket--snap .chc-link::after,
+  .chp-mobile-bracket--stack .chc-link::before,
+  .chp-mobile-bracket--stack .chc-link::after {
+    display: none;
+  }
+}
+
+/* ── Participant search (Events header) ────────────────────────────── */
+/*
+ * `order` rather than DOM position: the flight / structure / display
+ * dropdowns are appended and removed on every structure change, so any
+ * fixed DOM slot for the search would move under it. Order pins it to the
+ * end of the row whatever is appended later, and `margin-left: auto`
+ * pushes it to the trailing edge.
+ */
+
+#tournament_events > .block > .chp-search {
+  order: 99;
+  margin-left: auto;
+}
+
+/* ── MatchUp focus pulse ───────────────────────────────────────────── */
+/*
+ * Applied by `matchUpFocus.ts` after a "view in draw" navigation from the
+ * schedule: the bracket scrolls to the match and it pulses so the viewer
+ * can find it in a wall of cards. Removed after 4s.
+ */
+
+.chp-matchup-highlight {
+  animation: chp-matchup-pulse 1.2s ease-in-out 3;
+  border-radius: 0.35rem;
+  outline: 2px solid var(--chc-status-info, #3273dc);
+  outline-offset: 2px;
+}
+
+@keyframes chp-matchup-pulse {
+  0%,
+  100% {
+    outline-color: var(--chc-status-info, #3273dc);
+  }
+  50% {
+    outline-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chp-matchup-highlight {
+    animation: none;
+  }
+}

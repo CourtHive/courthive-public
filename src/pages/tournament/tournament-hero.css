@@ -1,0 +1,182 @@
+/**
+ * Tournament entry-page identity band.
+ *
+ * Two layouts driven by the artwork's natural aspect ratio (see
+ * `pages/tournament/tournamentHero.ts`):
+ *
+ *   .chp-hero--banner  wide poster art across the top, quiet title bar beneath
+ *   .chp-hero--mark    contained logo mark beside a full-size title
+ *
+ * All colour comes from --chc-* tokens so both themes are covered.
+ */
+
+.chp-hero {
+  display: grid;
+  gap: 1.25rem 1.75rem;
+  align-items: center;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--chc-border-primary);
+}
+
+.chp-hero--mark {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.chp-hero--banner {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+  gap: 1rem;
+}
+
+/* ── Artwork ───────────────────────────────────────────────── */
+
+.chp-hero__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
+  transition: opacity 160ms ease-out;
+}
+
+/* Held invisible over a reserved box until the natural ratio is known, so the
+   layout resolves once instead of popping from mark size to banner size. */
+.chp-hero--measuring .chp-hero__art {
+  opacity: 0;
+  min-height: 6rem;
+}
+
+/* The unconditional guard: artwork can never exceed its column, whatever its
+   intrinsic dimensions. Its absence is what let banner art paint over the
+   title. */
+.chp-hero__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.chp-hero--mark .chp-hero__image {
+  max-width: min(100%, 11rem);
+  max-height: 6.5rem;
+  object-fit: contain;
+}
+
+.chp-hero--banner .chp-hero__art {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.chp-hero--banner .chp-hero__image {
+  /* `auto` on both axes so the box hugs the artwork. Forcing width:100% here
+     made the element 1296px wide while the 1.83:1 poster painted 586px of it,
+     leaving the border drawn around empty space. */
+  width: auto;
+  height: auto;
+  /* --chp-hero-art-width is the image's natural width, set from JS — a small
+     poster is never upscaled to fill a wide container. */
+  max-width: min(100%, var(--chp-hero-art-width, 100%));
+  /* A poster this shape cannot be both container-wide and short: at 1152px it
+     would stand 630px tall. Height leads, width follows the aspect. */
+  max-height: clamp(13rem, 38vh, 24rem);
+  border-radius: 12px;
+  border: 1px solid var(--chc-border-primary);
+}
+
+/* Court-SVG fallback for tournaments with no published artwork. */
+.chp-hero__art svg {
+  max-width: min(100%, 9rem);
+  max-height: 5.5rem;
+  opacity: 0.55;
+}
+
+/* ── Identity ──────────────────────────────────────────────── */
+
+.chp-hero__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.chp-hero__eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chc-text-muted);
+}
+
+.chp-hero__title {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--chc-text-primary);
+  /* Fluid rather than the fixed 51.2px that wrapped to three lines on a phone. */
+  font-size: clamp(1.6rem, 1.05rem + 2.2vw, 2.75rem);
+  overflow-wrap: break-word;
+}
+
+/* The banner artwork already states the name in display type — the heading
+   stays for document structure and screen readers, but stops competing. */
+.chp-hero--banner .chp-hero__title {
+  font-size: clamp(1.15rem, 0.95rem + 1vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.chp-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--chc-text-secondary, var(--chc-text-muted));
+}
+
+.chp-hero__meta li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chp-hero__meta li + li::before {
+  content: '·';
+  color: var(--chc-text-muted);
+}
+
+/* ── Narrow viewports ──────────────────────────────────────── */
+
+@media screen and (max-width: 720px) {
+  .chp-hero {
+    /* A 25%/75% split held at 390px was the other half of the overflow — below
+       this width both variants stack. */
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+    text-align: left;
+  }
+
+  .chp-hero--mark .chp-hero__art {
+    justify-content: flex-start;
+  }
+
+  .chp-hero--banner .chp-hero__image {
+    max-height: 14rem;
+  }
+
+  .chp-hero__meta {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chp-hero__art {
+    transition: none;
+  }
+}

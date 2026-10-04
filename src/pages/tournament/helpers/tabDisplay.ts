@@ -1,5 +1,6 @@
 import { createScheduleTable } from 'src/components/tables/scheduleTable/createScheduleTable';
 import { createPlayersTable } from 'src/components/tables/playersTable/createPlayersTable';
+import { createTeamsGrid } from 'src/components/teamsGrid/createTeamsGrid';
 import { getScheduledMatchUps, getParticipants } from 'src/services/api/tournamentsApi';
 import { getTabContentId, getTabId } from './tabIds';
 import { updateRouteUrl } from 'src/router/router';
@@ -22,8 +23,10 @@ function refreshSchedule() {
 
 function refreshPlayers() {
   getParticipants({ tournamentId: context.tournamentId }).then((result) => {
+    const participants = result?.data?.participants || [];
+    createTeamsGrid({ participants });
     createPlayersTable({
-      participants: result?.data?.participants || [],
+      participants,
       columnConfig: context.participantsPublishConfig?.columns,
     });
   });

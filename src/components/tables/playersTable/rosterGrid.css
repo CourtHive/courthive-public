@@ -1,0 +1,115 @@
+/**
+ * Participant roster — the presentation used when a tournament publishes only
+ * names. See `rosterGrid.ts` for why a data grid is the wrong component there.
+ *
+ * Multi-column flow (down-then-across) rather than CSS grid, so an
+ * alphabetical roster still reads A→Z as you scan a column. All colour comes
+ * from --chc-* tokens; both themes covered.
+ */
+
+.chp-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.chp-roster__section {
+  min-width: 0;
+}
+
+.chp-roster__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--chc-border-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chc-text-muted);
+}
+
+.chp-roster__count {
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--chc-text-muted);
+}
+
+.chp-roster__count::before {
+  content: '·';
+  margin-right: 0.6rem;
+}
+
+.chp-roster__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-width: 15rem;
+  column-gap: 2.5rem;
+}
+
+.chp-roster__name {
+  /* No border, no cell chrome — a name is not a table row. */
+  padding: 0.3rem 0;
+  font-size: 0.975rem;
+  line-height: 1.45;
+  color: var(--chc-text-primary);
+  /* Keep a name from being split across two columns mid-word. */
+  break-inside: avoid;
+  overflow-wrap: break-word;
+}
+
+.chp-roster__empty {
+  margin: 0;
+  padding: 2rem 0;
+  color: var(--chc-text-muted);
+}
+
+/* The table presentation carries the same gender grouping, so its Tabulator
+   group header is styled here alongside the roster's headings — scoped to
+   #playersTable because the stats and rounds tables also use `groupBy` and
+   must keep the stock Tabulator group styling. */
+#playersTable .tabulator-row.tabulator-group,
+#playersTable .tabulator-row.tabulator-group.tabulator-group-level-0 {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid var(--chc-border-primary);
+  padding: 0.6rem 0.5rem;
+  background: var(--chc-bg-secondary);
+  color: var(--chc-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#playersTable .tabulator-row.tabulator-group:hover {
+  background: var(--chc-bg-secondary);
+}
+
+/* Beats the stock `.tabulator-row.tabulator-group span { color: #d00 }`, which
+   rendered the count in red. */
+#playersTable .tabulator-row.tabulator-group span.chp-group-count {
+  margin-left: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--chc-text-muted);
+}
+
+@media screen and (max-width: 720px) {
+  .chp-roster {
+    gap: 1.5rem;
+  }
+
+  .chp-roster__list {
+    column-width: auto;
+    columns: 1;
+  }
+
+  .chp-roster__name {
+    font-size: 0.9375rem;
+  }
+}

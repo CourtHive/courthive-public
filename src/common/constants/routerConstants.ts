@@ -5,5 +5,13 @@ export const SPLASH = 'splash';
 export const EVENT = 'event';
 export const DRAW = 'draw';
 export const STRUCTURE = 'structure';
+export const HIVEID_ME = 'hiveid-me';
+export const HIVEID_MAGIC = 'hiveid-magic';
+export const RANKINGS = 'rankings';
+export const REGISTER = 'register';
+export const PROGRAM = 'program';
+export const PROGRAMS = 'programs';
+export const CONFERENCE = 'conference';
+export const CONFERENCES = 'conferences';
 
-export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH];
+export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM, PROGRAMS, CONFERENCE, CONFERENCES];

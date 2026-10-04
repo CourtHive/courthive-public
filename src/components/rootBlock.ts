@@ -1,9 +1,27 @@
 import 'src/pages/track/track-page.css';
+import { buildHiveIDLogin, cModal } from 'courthive-components';
 import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
-import { SPLASH, TOURNAMENT, TOURNAMENTS, TRACK } from 'src/common/constants/routerConstants';
+import {
+  CONFERENCE,
+  CONFERENCES,
+  HIVEID_MAGIC,
+  HIVEID_ME,
+  PROGRAM,
+  PROGRAMS,
+  RANKINGS,
+  REGISTER,
+  SPLASH,
+  TOURNAMENT,
+  TOURNAMENTS,
+  TRACK,
+} from 'src/common/constants/routerConstants';
+import { clearHiveIDSession, isAuthenticated, writeHiveIDSession } from 'src/services/hiveidSession';
+import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveidSocket';
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
+import { refreshCurrentRoute } from 'src/router/router';
 import { toggleTheme } from 'src/services/themeService';
+import { getCfsBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -27,6 +45,13 @@ export function rootBlock() {
   const navEnd = document.createElement('div');
   navEnd.className = 'navbar-end';
 
+  // Program directory — cross-provider browse/search of college programs (by-team seasons).
+  const programsLink = document.createElement('button');
+  programsLink.className = 'navbar-item programs-link';
+  programsLink.textContent = t('nav.programs');
+  programsLink.onclick = () => context.router.navigate('/programs');
+  navEnd.appendChild(programsLink);
+
   const themeToggle = document.createElement('button');
   themeToggle.className = 'navbar-item theme-toggle';
   themeToggle.title = t('theme.toggleDark');
@@ -48,17 +73,33 @@ export function rootBlock() {
   langButton.onclick = () => toggleLanguageDropdown(langButton);
   navEnd.appendChild(langButton);
 
-  const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(globalThis.location.hostname);
   const userButton = document.createElement('button');
   userButton.className = 'navbar-item user-login';
   userButton.title = t('Login');
   userButton.textContent = '\uD83D\uDC64';
-  userButton.style.display = isLocal ? '' : 'none';
+  userButton.onclick = () => {
+    // Signed in → a menu (My CourtHive + Sign out). Signed out → the login modal.
+    // Navigating straight to /me used to no-op when already on /me, and gave no way
+    // to sign out from the navbar.
+    if (isAuthenticated()) {
+      toggleUserMenu(userButton, navEnd);
+      return;
+    }
+    openLoginModal();
+  };
   navEnd.appendChild(userButton);
+  // Re-connect the HiveID socket on app boot if the session survived a reload.
+  if (isAuthenticated()) connectHiveIDSocket();
 
   navBrand.appendChild(navItem);
-  nav.appendChild(navBrand);
-  nav.appendChild(navEnd);
+  // The bar surface spans the viewport; its items are constrained to the same
+  // container the hero and tabs use, so nav items and the tournament title
+  // share a left edge instead of the nav hugging the window.
+  const navInner = document.createElement('div');
+  navInner.className = 'container navbar-inner';
+  navInner.appendChild(navBrand);
+  navInner.appendChild(navEnd);
+  nav.appendChild(navInner);
   main.appendChild(nav);
 
   const splash = document.createElement('div');
@@ -82,10 +123,137 @@ export function rootBlock() {
   track.style.display = 'none';
   track.id = TRACK;
 
+  const hiveidMe = document.createElement('div');
+  hiveidMe.style.display = 'none';
+  hiveidMe.id = HIVEID_ME;
+
+  const hiveidMagic = document.createElement('div');
+  hiveidMagic.style.display = 'none';
+  hiveidMagic.id = HIVEID_MAGIC;
+
+  const rankings = document.createElement('div');
+  rankings.style.display = 'none';
+  rankings.id = RANKINGS;
+
+  const register = document.createElement('div');
+  register.style.display = 'none';
+  register.id = REGISTER;
+
+  const program = document.createElement('div');
+  program.style.display = 'none';
+  program.id = PROGRAM;
+
+  const programs = document.createElement('div');
+  programs.style.display = 'none';
+  programs.id = PROGRAMS;
+
+  const conference = document.createElement('div');
+  conference.style.display = 'none';
+  conference.id = CONFERENCE;
+
+  const conferences = document.createElement('div');
+  conferences.style.display = 'none';
+  conferences.id = CONFERENCES;
+
   main.appendChild(tournaments);
   main.appendChild(tournament);
   main.appendChild(track);
   main.appendChild(splash);
+  main.appendChild(hiveidMe);
+  main.appendChild(hiveidMagic);
+  main.appendChild(rankings);
+  main.appendChild(register);
+  main.appendChild(program);
+  main.appendChild(conference);
+  main.appendChild(conferences);
+  main.appendChild(programs);
 
   return main;
+}
+
+function openLoginModal(): void {
+  const shell = buildHiveIDLogin({
+    cfsBaseUrl: getCfsBaseUrl(),
+    mode: 'login',
+    // Optional federation-id capture on signup: a person who quotes an existing
+    // trusted-provider id (e.g. their BOBOCA player id) is RESOLVED to their
+    // canonical person at signup. Provider list is the backfill's trusted-provider
+    // set; can later come from a providers endpoint.
+    federationIdCapture: {
+      providers: [
+        { value: 'BOBOCA', label: 'BOBOCA' },
+        { value: 'HTS', label: 'HTS' },
+        { value: 'CTS', label: 'CTS' },
+      ],
+      idLabel: 'Player ID',
+      note: 'Already have a player ID from your club or federation? Enter it to link your existing record.',
+    },
+  });
+  cModal.open({
+    title: 'Sign in to CourtHive',
+    content: (elem: HTMLElement) => {
+      elem.appendChild(shell.root);
+      return elem;
+    },
+    buttons: [{ label: 'Close' }],
+  });
+  shell.onAuthenticated((detail) => {
+    writeHiveIDSession(detail);
+    connectHiveIDSocket();
+    cModal.close();
+    // Stay on the view the user signed in from (a tournament, rankings, etc.)
+    // rather than routing to the profile page — people log in to register or
+    // track a matchUp, and being bounced to /me buries the view they were on.
+    // Re-resolving refreshes login-gated content (e.g. the registration CTA
+    // flips from "Sign in to register" to "Register") without navigating away.
+    // The profile page remains reachable via the navbar person icon.
+    refreshCurrentRoute();
+  });
+}
+
+// Signed-in navbar menu, anchored under the person icon. Toggles: a second click
+// (or an outside click) closes it. Offers navigation to /me and a real sign-out.
+function toggleUserMenu(anchor: HTMLElement, host: HTMLElement): void {
+  const open = host.querySelector('.chp-user-menu');
+  if (open) {
+    open.remove();
+    return;
+  }
+  const menu = document.createElement('div');
+  menu.className = 'chp-user-menu';
+
+  const goMe = document.createElement('button');
+  goMe.type = 'button';
+  goMe.className = 'chp-user-menu-item';
+  goMe.textContent = t('My CourtHive');
+  goMe.onclick = () => {
+    menu.remove();
+    context.router?.navigate('/me');
+  };
+
+  const signOut = document.createElement('button');
+  signOut.type = 'button';
+  signOut.className = 'chp-user-menu-item';
+  signOut.textContent = t('Sign out');
+  signOut.onclick = () => {
+    menu.remove();
+    clearHiveIDSession();
+    disconnectHiveIDSocket();
+    context.router?.navigate('/');
+  };
+
+  menu.append(goMe, signOut);
+  host.appendChild(menu);
+  registerOutsideClose(menu, anchor);
+}
+
+function registerOutsideClose(menu: HTMLElement, anchor: HTMLElement): void {
+  const onDocClick = (ev: MouseEvent) => {
+    const target = ev.target as Node;
+    if (menu.contains(target) || anchor.contains(target)) return;
+    menu.remove();
+    document.removeEventListener('click', onDocClick, true);
+  };
+  // Defer registration one tick so the click that opened the menu doesn't close it.
+  setTimeout(() => document.addEventListener('click', onDocClick, true), 0);
 }

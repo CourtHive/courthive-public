@@ -1,66 +1,107 @@
-import { TOURNAMENT_EVENTS, TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
-import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import { tennisCourt, createCourtSvg, COURT_SVG_RESOURCE_SUB_TYPE } from 'courthive-components';
+import { TOURNAMENT_EVENTS, TOURNAMENT_HERO } from 'src/common/constants/elementConstants';
+import { getProviderBrandingByTournament } from 'src/services/api/tournamentsApi';
+import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProfile';
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
+import { renderRegisterButton } from './tabs/infoTab/registrationButton';
+import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import { applyProviderBranding } from 'src/services/providerBranding';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
-import i18next, { hasStoredLanguage } from 'src/i18n/i18n';
+import { renderNotes } from './tabs/infoTab/renderNotes';
+import { renderVenues } from './tabs/infoTab/renderVenues';
+import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
+import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
+import { buildTournamentHero } from './tournamentHero';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { updateRouteUrl } from 'src/router/router';
-import { tennisCourt } from 'courthive-components';
 import { getTabContentId } from './helpers/tabIds';
-import { dateString } from './helpers/dateString';
 import { context } from 'src/common/context';
+
+// Re-exported so existing importers (services/liveUpdates) keep their path; the rule itself lives in
+// publishVisibility.ts, where it can be read and tested without this module's DOM dependencies.
+import { isFullyUnpublished } from './publishVisibility';
+export { isFullyUnpublished };
 
 export async function renderTournament(
   result,
   deepLink?: { eventId?: string; drawId?: string; structureId?: string; tab?: string },
 ) {
+  const tournamentInfo = result?.data?.tournamentInfo ?? {};
+
+  // Fire-and-forget: fetch the owning provider's branding and apply it
+  // as soon as it lands. Defaults stay in place if the lookup fails or
+  // the tournament has no provider mapping.
+  if (tournamentInfo.tournamentId) {
+    getProviderBrandingByTournament({ tournamentId: tournamentInfo.tournamentId })
+      .then((response) => applyProviderBranding(response?.data?.branding))
+      .catch(() => applyProviderBranding(undefined));
+  }
+
+  if (isFullyUnpublished(tournamentInfo)) {
+    const providerAbbr = context.providerAbbr;
+    context.router?.navigate(providerAbbr ? `/tournaments/${providerAbbr}` : '/');
+    return;
+  }
+
   const te = document.getElementById(TOURNAMENT_EVENTS);
   removeAllChildNodes(te);
 
-  const tournamentInfo = result?.data?.tournamentInfo ?? {};
-
-  // Apply tournament default language if user hasn't explicitly chosen one
+  // Apply tournament default language if user hasn't explicitly chosen one.
+  // Locale resources may not be loaded yet (only `en` is bundled), so make
+  // sure the bundle is in i18next before swapping the active language — the
+  // background ensureLocaleCurrent call here populates from cache or
+  // fetches from CFS as needed.
   const publishLanguage = tournamentInfo.publishState?.language;
-  if (publishLanguage && !hasStoredLanguage()) {
+  if (publishLanguage && !hasStoredLanguage() && publishLanguage !== i18next.language) {
+    try {
+      await ensureLocaleCurrent(publishLanguage);
+    } catch {
+      // Fetch failed — changeLanguage will fall back to English keys,
+      // which is the same behaviour as before this change.
+    }
     i18next.changeLanguage(publishLanguage);
   }
 
   // Store participants publish config on context for use in createPlayersTable
   context.participantsPublishConfig = tournamentInfo.publishState?.participants;
 
+  // The tournament's own zone, for the schedule's "All times ..." label. Carried
+  // by `getTournamentInfo` whenever the TD has set one, and simply absent
+  // otherwise — the schedule then says nothing rather than guessing.
+  context.localTimeZone = tournamentInfo.localTimeZone;
+
   const tournamentImage = tournamentInfo.onlineResources?.find((resource) => resource.name === 'tournamentImage');
-  const imageUrl = tournamentImage?.identifier;
-  const isValidUrl =
-    imageUrl && (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('data:'));
-  const tl = document.getElementById(TOURNAMENT_LOGO);
-  if (isValidUrl) {
-    const alt = tournamentInfo.tournamentName || '';
-    tl.innerHTML = `<img src="${imageUrl}" alt="${alt}" style="max-height: 20em" />`;
-  } else {
-    removeAllChildNodes(tl);
-    const courtSvg = tennisCourt('court-fallback');
-    courtSvg.style.maxHeight = '16em';
-    courtSvg.style.padding = '1em';
-    courtSvg.style.opacity = '0.6';
-    tl.appendChild(courtSvg);
-  }
+  const isCourtSvgResource = tournamentImage?.resourceSubType === COURT_SVG_RESOURCE_SUB_TYPE;
+  const fallbackArt = () =>
+    (isCourtSvgResource ? createCourtSvg(tournamentImage?.identifier, 'court-fallback') : undefined) ??
+    tennisCourt('court-fallback');
 
-  if (tournamentInfo.tournamentName) {
-    const el = document.getElementById(TOURNAMENT_TITLE_BLOCK);
-    const tournamentName = `<h1>${tournamentInfo.tournamentName}</h1>`;
-    const dates = `<h2>${dateString(tournamentInfo)}</h2>`;
-    el.innerHTML = `${tournamentName}${dates}`;
-  }
+  const heroMount = document.getElementById(TOURNAMENT_HERO);
+  heroMount?.replaceChildren(buildTournamentHero({ tournamentInfo, fallbackArt, t }));
 
-  const notes = document.getElementById(getTabContentId('Info'));
-  const hasNotes = !!tournamentInfo.notes;
-  if (hasNotes) {
-    notes.innerHTML = tournamentInfo.notes;
-    displayTab('Info');
-  } else {
-    removeAllChildNodes(notes);
-    hideTab('Info');
-  }
+  const info = document.getElementById(getTabContentId('Info'));
+  removeAllChildNodes(info);
+  const profileBlock = renderRegistrationProfile(tournamentInfo.registrationProfile, t);
+  if (profileBlock) info.appendChild(profileBlock);
+
+  // HiveID submit form (Phase 2-A.1). Async — appends when eligibility
+  // resolves. Returns null + no-op for tournaments without a published
+  // registrationProfile, or when the caller already has a registration.
+  void renderRegisterButton({
+    tournamentId: tournamentInfo.tournamentId,
+    provider: tournamentInfo.parentOrganisation?.organisationId,
+    registrationProfile: tournamentInfo.registrationProfile,
+    eventInfo: tournamentInfo.eventInfo,
+  }).then((btn) => {
+    if (btn && profileBlock) profileBlock.appendChild(btn);
+  });
+  const notesBlock = renderNotes(tournamentInfo.notes);
+  if (notesBlock) info.appendChild(notesBlock);
+  const venuesBlock = renderVenues(tournamentInfo.venues, tournamentInfo.eventInfo);
+  if (venuesBlock) info.appendChild(venuesBlock);
+  const hasInfo = !!(profileBlock || notesBlock || venuesBlock);
+  if (hasInfo) displayTab('Info');
+  else hideTab('Info');
 
   const hasEvents = !!tournamentInfo.eventInfo?.length;
   if (hasEvents) {
@@ -152,6 +193,14 @@ export async function renderTournament(
     playersHeader.className = 'block';
     players.appendChild(playersHeader);
 
+    const teamsGrid = document.createElement('div');
+    teamsGrid.id = 'teamsGrid';
+    // Hidden by default until `createTeamsGrid` confirms the tournament has
+    // any TEAM participants. Avoids a flash of empty whitespace on the
+    // INDIVIDUAL-only path that all current public tournaments are on.
+    teamsGrid.style.display = 'none';
+    players.appendChild(teamsGrid);
+
     const playersDisplay = document.createElement('div');
     playersDisplay.id = 'playersTable';
     players.appendChild(playersDisplay);
@@ -171,7 +220,7 @@ export async function renderTournament(
     targetTab = 'Events';
   } else if (deepLink?.eventId && hasEvents) {
     targetTab = 'Events';
-  } else if (hasNotes) {
+  } else if (hasInfo) {
     targetTab = 'Info';
   } else if (hasEvents) {
     targetTab = 'Events';

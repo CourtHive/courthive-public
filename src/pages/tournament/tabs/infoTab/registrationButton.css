@@ -1,0 +1,145 @@
+.chp-register-cta {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.chp-register-button {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background: var(--chc-border-focus, #0066cc);
+  color: var(--chc-text-inverse, #fff);
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+.chp-register-button:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.chp-register-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  background: color-mix(in srgb, currentColor 18%, transparent);
+  color: inherit;
+}
+
+.chp-register-hint {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+/* ── Modal ─────────────────────────────────────────────────────── */
+
+.chp-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+.chp-register-identity {
+  padding: 0.625rem 0.875rem;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+  border-radius: 0.375rem;
+}
+
+.chp-register-identity-name {
+  font-weight: 600;
+}
+
+.chp-register-identity-meta {
+  margin-top: 0.125rem;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+.chp-register-fieldset {
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  margin: 0;
+}
+
+.chp-register-fieldset legend {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0 0.375rem;
+  opacity: 0.85;
+}
+
+.chp-register-event-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.chp-register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chp-register-field label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chp-register-field input {
+  padding: 0.5rem 0.625rem;
+  font-size: 0.9375rem;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: inherit;
+}
+
+.chp-register-message {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.chp-register-message[data-kind='error'] {
+  background: color-mix(in srgb, var(--chc-status-error, #f14668) 14%, transparent);
+  color: var(--chc-status-error, #f14668);
+}
+
+.chp-register-message[data-kind='success'] {
+  background: color-mix(in srgb, var(--chc-status-success, #199f01) 14%, transparent);
+  color: var(--chc-status-success, #199f01);
+}
+
+.chp-register-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.chp-register-submit {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background: var(--chc-border-focus, #0066cc);
+  color: var(--chc-text-inverse, #fff);
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.chp-register-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

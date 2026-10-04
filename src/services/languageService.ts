@@ -1,14 +1,16 @@
 import i18next, { setStoredLanguage } from 'src/i18n/i18n';
+import { ensureLocaleCurrent, fetchManifest } from 'src/i18n/runtime-loader';
 
-export const SUPPORTED_LANGUAGES = [
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
-  { code: 'es', label: 'Español' },
-  { code: 'pt-BR', label: 'Português' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'ar', label: 'العربية' },
-  { code: 'zh-CN', label: '简体中文' },
-];
+/** Last-resort label when CFS is unreachable and a locale we don't know about
+ *  somehow lingers in i18next's loaded resources. */
+const FALLBACK_NATIVE_LABEL: Record<string, string> = {
+  en: 'English',
+};
+
+interface LanguageDropdownItem {
+  code: string;
+  label: string;
+}
 
 let activeDropdown: HTMLElement | null = null;
 let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
@@ -24,26 +26,65 @@ function closeDropdown() {
   }
 }
 
-export function toggleLanguageDropdown(anchor: HTMLElement): void {
+/** Build the dropdown items from the live CFS manifest. Falls back to whatever
+ *  i18next already has loaded so the picker isn't empty when CFS is offline. */
+async function buildLanguageList(): Promise<LanguageDropdownItem[]> {
+  // force:true — the picker is user-initiated, low-frequency, and the user
+  // expects to see whatever's currently available, not a 5-min stale cache.
+  const manifest = await fetchManifest({ force: true });
+  const seen = new Set<string>();
+  const out: LanguageDropdownItem[] = [];
+
+  for (const entry of manifest?.locales ?? []) {
+    if (seen.has(entry.code)) continue;
+    seen.add(entry.code);
+    // Prefer the speaker's own script ("Čeština", "العربية") so people can
+    // recognise their own language without translating mentally.
+    out.push({ code: entry.code, label: entry.nativeLabel || entry.label || entry.code });
+  }
+
+  for (const code of Object.keys(i18next.options?.resources || {})) {
+    if (seen.has(code)) continue;
+    seen.add(code);
+    out.push({ code, label: FALLBACK_NATIVE_LABEL[code] || code });
+  }
+
+  return out;
+}
+
+export async function toggleLanguageDropdown(anchor: HTMLElement): Promise<void> {
   if (activeDropdown) {
     closeDropdown();
     return;
   }
 
+  const items = await buildLanguageList();
+  if (!items.length) return;
+
   const dropdown = document.createElement('div');
   dropdown.className = 'language-dropdown';
 
-  for (const lang of SUPPORTED_LANGUAGES) {
+  for (const lang of items) {
     const item = document.createElement('button');
     item.className = 'language-dropdown-item';
     if (i18next.language === lang.code) item.classList.add('active');
     item.textContent = lang.label;
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', async (e) => {
       e.stopPropagation();
+      // Fetch + cache the new locale BEFORE reload so the next boot's
+      // sync-load (initialState.ts) finds it in localStorage and the
+      // first paint renders the right language. Without this prefetch,
+      // the first reload after picking a new language shows English
+      // fallbacks until ensureLocaleCurrent's background fetch lands.
       setStoredLanguage(lang.code);
-      i18next.changeLanguage(lang.code);
+      try {
+        await ensureLocaleCurrent(lang.code);
+      } catch {
+        // Fetch failure — proceed with reload anyway; boot path will
+        // retry the fetch. User gets English fallback meanwhile.
+      }
       closeDropdown();
-      window.location.reload();
+      globalThis.location.reload();
     });
     dropdown.appendChild(item);
   }
