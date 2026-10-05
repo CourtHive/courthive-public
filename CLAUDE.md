@@ -6,6 +6,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Before doing anything else, read `../Mentat/CLAUDE.md`, `../Mentat/TASKS.md`, `../Mentat/standards/coding-standards.md`, and every file in `../Mentat/in-flight/`. Mentat is the orchestration layer for the entire CourtHive ecosystem; its standards override per-repo conventions when they conflict. If you are about to start **building** (not just planning), you must claim a surface in `../Mentat/in-flight/` and run the air-traffic-control conflict check first. See the parent `../CLAUDE.md` "Mentat Orchestration" section for the full protocol.
 
+## Branching — cut from `dev`, not `master` (CA, 2026-10-04)
+
+`dev` is this repo's integration branch, as in the factory, courthive-components and TMX. **Branch from
+`origin/dev` and open PRs against `dev`.** `master` advances only at checkpoints, by merging `dev` into it
+by PR with a **merge commit, never a squash**. A checkpoint refreshes release-please's PR on `master`; it
+does not release. Merging that release PR is the separate, deliberate act that releases.
+
+After a release, `master` is merged back into `dev` so `dev` carries the version bump (CA, 2026-10-05).
+**`back-merge.yml` opens that PR** on `release: published` (`chore: merge master back into dev after
+<tag>`), with the `courthive-release-bot` App token so CI runs on it (a PR opened by `GITHUB_TOKEN` gets
+no workflow runs). **Merge it with a merge commit, never a squash**; it is not auto-merged. If a
+release's run was missed: `gh workflow run back-merge.yml -R CourtHive/courthive-public`. The release
+path takes the factory's light path (#5169(factory)): `.github/scripts/release-scope.sh` marks the
+release-please PR into `master`, or the back-merge PR into `dev`, light when its diff is only the version
+files (`package.json`'s `"version"` line, `CHANGELOG.md`, `.release-please-manifest.json`). The gates
+then skip but every job still reports; any other change gets the full run.
+
+`delete_branch_on_merge` is off so a checkpoint never deletes `dev`; prune merged feature branches
+yourself. Renovate targets `dev` (`baseBranches` in `renovate.json`). CI runs on every PR
+(`pull_request:` has no branch filter), so a PR into `dev` gets the full gate; a direct push to `dev`
+gets none, so land work by PR.
+
+Full rationale: `../Mentat/standards/coding-standards.md` § "Branch off `dev`, not `master`".
+
 ## Project Overview
 
 Public-facing web app for the CourtHive platform. Vanilla TypeScript — no framework — with a few Svelte components (scorecard). Consumes the **published** `courthive-components` and `@courthive/provider-config` packages plus `tods-competition-factory` for queries/types.
