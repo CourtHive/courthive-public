@@ -22,6 +22,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # release-scope.sh diffs the PR's merge commit against its first parent, the base tip.
+          fetch-depth: 2
+
+      # The release path's light path: a release-please PR into `master`, or the back-merge PR
+      # (`master` -> `dev`, opened by back-merge.yml), whose diff is the version files alone skips
+      # every step below the lockfile guard. Its tree was verified when it landed, and this job
+      # still reports, so `master`'s required check passes. Anything else gets the full run.
+      - name: Release-path scope
+        id: scope
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          HEAD_REF: ${{ github.head_ref }}
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: bash .github/scripts/release-scope.sh
+
       # A pnpm that does not match this repo's `packageManager` pin writes an `@pnpm/exe` block
       # into the lockfile; a pnpm that DOES match strips it out again. Committed, it makes every
       # correctly-provisioned checkout permanently dirty and drowns real work in `git status`. It was
@@ -49,12 +67,15 @@ jobs:
           exit $bad
 
       - uses: pnpm/action-setup@v6
+        if: steps.scope.outputs.light != 'true'
       - uses: actions/setup-node@v7
+        if: steps.scope.outputs.light != 'true'
         with:
           node-version-file: .node-version
           cache: pnpm
 
       - name: 'Strip link: overrides for CI'
+        if: steps.scope.outputs.light != 'true'
         run: |
           node -e "
           const fs = require('fs');
@@ -67,22 +88,45 @@ jobs:
           rm -f pnpm-lock.yaml
 
       - run: pnpm install
+        if: steps.scope.outputs.light != 'true'
       - run: pnpm lint
+        if: steps.scope.outputs.light != 'true'
       - run: pnpm check-types
+        if: steps.scope.outputs.light != 'true'
       - run: pnpm test --run
+        if: steps.scope.outputs.light != 'true'
 
   e2e:
     name: playwright e2e
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # release-scope.sh diffs the PR's merge commit against its first parent, the base tip.
+          fetch-depth: 2
+
+      # The release path's light path (see the verify job): a release-please PR into `master`, or
+      # the back-merge PR into `dev`, whose diff is the version files alone skips the e2e run.
+      - name: Release-path scope
+        id: scope
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          HEAD_REF: ${{ github.head_ref }}
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: bash .github/scripts/release-scope.sh
+
       - uses: pnpm/action-setup@v6
+        if: steps.scope.outputs.light != 'true'
       - uses: actions/setup-node@v7
+        if: steps.scope.outputs.light != 'true'
         with:
           node-version-file: .node-version
           cache: pnpm
 
       - name: 'Strip link: overrides for CI'
+        if: steps.scope.outputs.light != 'true'
         run: |
           node -e "
           const fs = require('fs');
@@ -95,15 +139,18 @@ jobs:
           rm -f pnpm-lock.yaml
 
       - run: pnpm install
+        if: steps.scope.outputs.light != 'true'
 
       # pnpm install does not fetch the browser binary — install it (with OS
       # deps) before the run. See MEMORY.md > feedback_test_storybook_needs_playwright_install.
       - name: Install Playwright Chromium
+        if: steps.scope.outputs.light != 'true'
         run: pnpm exec playwright install --with-deps chromium
 
       # CI=1 makes Playwright spawn + manage its own vite dev server
       # (reuseExistingServer is disabled under CI).
       - name: Run e2e
+        if: steps.scope.outputs.light != 'true'
         run: pnpm test:e2e
         env:
           CI: '1'

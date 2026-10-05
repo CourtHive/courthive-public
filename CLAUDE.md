@@ -13,11 +13,20 @@ Before doing anything else, read `../Mentat/CLAUDE.md`, `../Mentat/TASKS.md`, `.
 by PR with a **merge commit, never a squash**. A checkpoint refreshes release-please's PR on `master`; it
 does not release. Merging that release PR is the separate, deliberate act that releases.
 
-After a release PR merges, merge `master` back into `dev` (a PR from `master` into `dev`, merge commit) so
-`dev` carries the version bump. `delete_branch_on_merge` is off so a checkpoint never deletes `dev`; prune
-merged feature branches yourself. Renovate targets `dev` (`baseBranches` in `renovate.json`). CI runs on
-every PR (`pull_request:` has no branch filter), so a PR into `dev` gets the full gate; a direct push to
-`dev` gets none, so land work by PR.
+After a release, `master` is merged back into `dev` so `dev` carries the version bump (CA, 2026-10-05).
+**`back-merge.yml` opens that PR** on `release: published` (`chore: merge master back into dev after
+<tag>`), with the `courthive-release-bot` App token so CI runs on it (a PR opened by `GITHUB_TOKEN` gets
+no workflow runs). **Merge it with a merge commit, never a squash**; it is not auto-merged. If a
+release's run was missed: `gh workflow run back-merge.yml -R CourtHive/courthive-public`. The release
+path takes the factory's light path (#5169(factory)): `.github/scripts/release-scope.sh` marks the
+release-please PR into `master`, or the back-merge PR into `dev`, light when its diff is only the version
+files (`package.json`'s `"version"` line, `CHANGELOG.md`, `.release-please-manifest.json`). The gates
+then skip but every job still reports; any other change gets the full run.
+
+`delete_branch_on_merge` is off so a checkpoint never deletes `dev`; prune merged feature branches
+yourself. Renovate targets `dev` (`baseBranches` in `renovate.json`). CI runs on every PR
+(`pull_request:` has no branch filter), so a PR into `dev` gets the full gate; a direct push to `dev`
+gets none, so land work by PR.
 
 Full rationale: `../Mentat/standards/coding-standards.md` § "Branch off `dev`, not `master`".
 
