@@ -6,7 +6,7 @@ import { orderSorter } from 'src/common/sorters/orderSorter';
 
 import { CENTER } from 'src/common/constants/baseConstants';
 
-export function getStatsColumns({ isAdHoc }) {
+export function getStatsColumns({ isAdHoc, withDraws = false }) {
   return [
     {
       formatter: formatParticipant(({ event, cell, ...params }) =>
@@ -25,7 +25,7 @@ export function getStatsColumns({ isAdHoc }) {
     {
       headerHozAlign: CENTER,
       headerWordWrap: true,
-      title: 'Match W/L',
+      title: withDraws ? 'Match W/L/D' : 'Match W/L',
       hozAlign: CENTER,
       maxWidth: 80,
       field: 'result',

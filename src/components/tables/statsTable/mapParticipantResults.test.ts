@@ -102,4 +102,24 @@ describe('mapParticipantResults', () => {
     expect(result.matchUpsWon).toBe(2);
     expect(result.matchUpsLost).toBe(1);
   });
+
+  it('a table with a drawn result reads W/L/D; without one the factory W/L stands', () => {
+    const participantResult = { matchUpsWon: 1, matchUpsLost: 0, matchUpsDrawn: 1, result: '1/0' };
+    const withDraws = mapParticipantResults({
+      participantResult,
+      participantId: 'p1',
+      participantMap,
+      withDraws: true,
+    });
+    expect(withDraws.result).toBe('1/0/1');
+    const drawnOnly = mapParticipantResults({
+      participantResult: { matchUpsDrawn: 1, result: '0/0' },
+      participantId: 'p2',
+      participantMap,
+      withDraws: true,
+    });
+    expect(drawnOnly.result).toBe('0/0/1');
+    // control: no draws in the table
+    expect(mapParticipantResults({ participantResult, participantId: 'p1', participantMap }).result).toBe('1/0');
+  });
 });
