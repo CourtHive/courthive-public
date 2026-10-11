@@ -418,8 +418,14 @@ function buildMatchRow(row: MatchRow): HTMLElement {
 // Human-readable outcome for the competitor's own perspective. Decided matchUps
 // read "Won"/"Lost" (with the score when present); an undecided row falls back to
 // its status (e.g. TO_BE_PLAYED → "To be played"), never a bare number.
+export function __formatMatchOutcome(row: MatchRow): string {
+  return formatMatchOutcome(row);
+}
+
 function formatMatchOutcome(row: MatchRow): string {
   if (row.winningSide === null) {
+    // A completed tie (16-16 of SET1-S:P32) has no winner but has a result: show it.
+    if (row.matchUpStatus === 'COMPLETED') return row.scoreString ? `Tied ${row.scoreString}` : 'Tied';
     return row.matchUpStatus ? titleCaseStatus(row.matchUpStatus) : '';
   }
   const result = row.winningSide === row.sideNumber ? 'Won' : 'Lost';
@@ -900,7 +906,10 @@ function renderRegistrationsSection(): { section: HTMLElement; refresh: () => Pr
       // keyed per person+provider — aggregate across the person's providers.
       const providers = await fetchMyProviders();
       const perProvider = await Promise.all(providers.map((p) => fetchMyRegistrations(p).catch(() => [])));
-      const rows = perProvider.flat().map(toRow).filter((r) => r.tournamentId);
+      const rows = perProvider
+        .flat()
+        .map(toRow)
+        .filter((r) => r.tournamentId);
       if (!rows.length) {
         body.textContent = 'You have no tournament registrations yet.';
         return;

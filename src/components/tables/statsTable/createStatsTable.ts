@@ -44,21 +44,27 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
   };
 
   const participantResults = getFilteredStructureResults();
+  // Any drawn result in the table switches its match record to W/L/D for every row
+  const withDraws = (participantResults ?? []).some(
+    (participantInfo) => (participantInfo?.participantResult?.matchUpsDrawn ?? 0) > 0,
+  );
   const getTableData = () => {
     return participantResults
-      ?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }))
+      ?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap, withDraws }))
       .sort((a, b) => (isAdHoc ? orderSorter(a.pressureOrder, b.pressureOrder) : orderSorter(a.order, b.order)));
   };
 
   const updateTableData = () =>
-    getFilteredStructureResults()?.map((participantInfo) => mapParticipantResults({ ...participantInfo, participantMap }));
+    getFilteredStructureResults()?.map((participantInfo) =>
+      mapParticipantResults({ ...participantInfo, participantMap, withDraws }),
+    );
   const replaceTableData = (params) => {
     if (params?.participantFilter !== undefined) participantFilter = params.participantFilter;
     table.replaceData(updateTableData());
   };
 
   const data = getTableData();
-  const columns = getStatsColumns({ isAdHoc });
+  const columns = getStatsColumns({ isAdHoc, withDraws });
 
   const render = (data) => {
     destroyTable({ anchorId: 'flightDisplay' });
