@@ -45,7 +45,6 @@ const SCORED_IDS_KEY = '__scoredMatchUpIds';
  */
 const REGISTER_KEY = '__registerMatchUps';
 
-
 function matchUpHasScore(matchUp: any): boolean {
   return Boolean(matchUp?.score?.sets?.length) || Boolean(matchUp?.winningSide);
 }
@@ -74,9 +73,7 @@ interface ApplyWrappersParams {
  * Map keyed by matchUpId. The map is consumed by `buildInlineCrowdManager`
  * to pre-create engines mid-game so the user resumes where they left off.
  */
-export async function loadSavedSessionsForTournament(
-  tournamentId: string,
-): Promise<Map<string, CrowdTrackerSession>> {
+export async function loadSavedSessionsForTournament(tournamentId: string): Promise<Map<string, CrowdTrackerSession>> {
   const all = await listActiveSessions();
   const byMatchUpId = new Map<string, CrowdTrackerSession>();
   for (const session of all) {
@@ -160,11 +157,7 @@ export function registerMatchUps(manager: InlineScoringManager, matchUps: any[])
  * Mutation pattern mirrors `markReadyMatchUpsInProgress`: stashes original on
  * `__inlineOriginalScore` so the change is reversible across re-renders.
  */
-export function overlayLocalScores(
-  matchUps: any[],
-  manager: InlineScoringManager,
-  scoredIds: Set<string>,
-): void {
+export function overlayLocalScores(matchUps: any[], manager: InlineScoringManager, scoredIds: Set<string>): void {
   for (const m of matchUps || []) {
     const inScoredSet = m?.matchUpId && scoredIds.has(m.matchUpId);
     if (inScoredSet) {
@@ -331,7 +324,8 @@ export function buildInlineCrowdManager({
     if (!isScorable(m)) continue;
     const saved = savedSessions.get(matchUpId);
     const seed = (saved?.matchUp as any) ?? m;
-    if (saved || (m.readyToScore && !m.winningSide)) {
+    // A completed tie (COMPLETED, no winner) is finished: no live engine for it.
+    if (saved || (m.readyToScore && !m.winningSide && m.matchUpStatus !== 'COMPLETED')) {
       manager.getOrCreate(matchUpId, m.matchUpFormat, seed);
     }
   }
@@ -415,7 +409,6 @@ export function withInlineScoringConfig(composition: any): any {
   };
 }
 
-
 /**
  * Test seam — exposed for vitest only.
  */
@@ -424,8 +417,4 @@ export const __test__ = {
   PERSIST_DEBOUNCE_MS,
 };
 
-export type {
-  PrebuildParams,
-  BuildManagerParams,
-  ApplyWrappersParams,
-};
+export type { PrebuildParams, BuildManagerParams, ApplyWrappersParams };

@@ -1,7 +1,8 @@
-import { eventConstants } from 'tods-competition-factory';
+import { eventConstants, matchUpStatusConstants } from 'tods-competition-factory';
 import { normalizeDiacritics } from 'normalize-text';
 
 const { TEAM } = eventConstants;
+const { COMPLETED } = matchUpStatusConstants;
 
 export const mapRound = (matchUp) => {
   const {
@@ -44,9 +45,11 @@ export const mapRound = (matchUp) => {
     .filter(Boolean);
 
   const winningSide = (rest.winningSide === 1 && 'side1') || (rest.winningSide === 2 && 'side2') || undefined;
-  const complete = !!rest.winningSide;
+  // A combined-point total that allows a tie (SET1-S:P32) can end 16-16, COMPLETED with no winner (CA,
+  // 2026-10-11: ties are valid). It is complete, and its score is shown like any other result.
+  const complete = !!rest.winningSide || rest.matchUpStatus === COMPLETED;
 
-  const readyToScore = !!(rest.winningSide || rest.readyToScore);
+  const readyToScore = !!(rest.winningSide || rest.readyToScore || complete);
   const score = rest.score?.scoreStringSide1;
 
   const firstLast = sides
