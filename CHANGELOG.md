@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.16.1](https://github.com/CourtHive/courthive-public/compare/v1.16.0...v1.16.1) (2026-10-12)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 6.0.1 ([64db3cd](https://github.com/CourtHive/courthive-public/commit/64db3cd0053f3796bb3aabc39dec2433a5065efd))
+* **deps:** update courthive-components to 6.1.0 ([4ab5799](https://github.com/CourtHive/courthive-public/commit/4ab5799c94b5f06238fb3d762a46fd8b429adbe4))
+* **deps:** update courthive-components to 6.3.0 ([#556](https://github.com/CourtHive/courthive-public/issues/556)) ([8b884cc](https://github.com/CourtHive/courthive-public/commit/8b884ccf2e1a58a2aa281281acc05ca5e2e3060f))
+* **deps:** update courthive-components to 6.6.1 ([#562](https://github.com/CourtHive/courthive-public/issues/562)) ([d91e7c0](https://github.com/CourtHive/courthive-public/commit/d91e7c0bbbf10ec23d355867c0fcb5b3c35da80e))
+* **deps:** update tods-competition-factory to 7.1.1 ([daac92f](https://github.com/CourtHive/courthive-public/commit/daac92fbf1c8bec3896e2d63077f45204c4763bc))
+* **deps:** update tods-competition-factory to 7.10.0 ([#558](https://github.com/CourtHive/courthive-public/issues/558)) ([3b75caa](https://github.com/CourtHive/courthive-public/commit/3b75caaea4086f2d57d16e4262896fef61894e5e))
+* **deps:** update tods-competition-factory to 7.11.0 ([#560](https://github.com/CourtHive/courthive-public/issues/560)) ([5d68370](https://github.com/CourtHive/courthive-public/commit/5d68370ff3c8fe765ad5fcac1a7ef2395e0044a3))
+* **deps:** update tods-competition-factory to 7.12.0 ([#561](https://github.com/CourtHive/courthive-public/issues/561)) ([e60511a](https://github.com/CourtHive/courthive-public/commit/e60511af47a1bf281470ad052a5450b32cf99875))
+* **deps:** update tods-competition-factory to 7.2.0 ([e222e25](https://github.com/CourtHive/courthive-public/commit/e222e253257697728e969a05420b9b1fd9117a7c))
+* **deps:** update tods-competition-factory to 7.3.1 ([5b58ebf](https://github.com/CourtHive/courthive-public/commit/5b58ebfe3c5ae2ecc491cbcc5b645e2c0abce2d6))
+* **deps:** update tods-competition-factory to 7.4.0 ([ea2318c](https://github.com/CourtHive/courthive-public/commit/ea2318c4aeabab74462db3c0ae8b779cbe176378))
+* **deps:** update tods-competition-factory to 7.6.0 ([b68c742](https://github.com/CourtHive/courthive-public/commit/b68c742f56fdf3948f27190d3bbfc0e58ea95991))
+* **deps:** update tods-competition-factory to 7.7.0 ([#554](https://github.com/CourtHive/courthive-public/issues/554)) ([433d5c8](https://github.com/CourtHive/courthive-public/commit/433d5c8bf7d8447d55fe798b3e70b37645b887bf))
+* **deps:** update tods-competition-factory to 7.8.0 ([#555](https://github.com/CourtHive/courthive-public/issues/555)) ([b21f03a](https://github.com/CourtHive/courthive-public/commit/b21f03a086b2ce673672cb605347383ffe8f89ea))
+* **deps:** update tods-competition-factory to 7.9.0 ([#557](https://github.com/CourtHive/courthive-public/issues/557)) ([dd796fb](https://github.com/CourtHive/courthive-public/commit/dd796fbfb21eb608eff23cc675eb9061c45f8b29))
+* **viewer:** a completed points-total tie shows as finished, with its score ([#559](https://github.com/CourtHive/courthive-public/issues/559)) ([d524063](https://github.com/CourtHive/courthive-public/commit/d5240631722b4ce7fa087d9a720c5102fc661993))
+
+
+### Documentation
+
+* add AGENTS.md as a pointer to CLAUDE.md for agents that read it ([6717145](https://github.com/CourtHive/courthive-public/commit/67171451e6a2925e98541441572f6f2f7fb08939))
+
 ## [1.16.0](https://github.com/CourtHive/courthive-public/compare/v1.15.2...v1.16.0) (2026-09-24)
 
 
