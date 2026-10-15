@@ -17,17 +17,20 @@
 import { buildInteractiveScoringShell, cModal } from 'courthive-components';
 import type { InteractiveScoringShell, StateChangedDetail } from 'courthive-components';
 
-import type { CrowdRelayController, CrowdScoreSnapshot, SubmitParams } from 'src/services/crowdRelay';
-import { connectCrowdRelay, inferPointWinner } from 'src/services/crowdRelay';
-import { getDisplayName, readHiveIDSession } from 'src/services/hiveidSession';
+import type { CrowdRelayController, CrowdScoreSnapshot } from 'src/services/crowdRelay';
 import { getTournamentInfo } from 'src/services/api/tournamentsApi';
 import { saveSession, loadSession } from 'src/services/crowdTracker';
-import { getJwtTokenStorageKey } from 'src/config/localStorage';
+import { inferPointWinner } from 'src/services/crowdRelay';
+import type { CrowdScorer } from 'src/services/crowdShare';
+import {
+  connectCrowdShare,
+  generateId,
+  resolveClientId,
+  resolveShareToken,
+  toCrowdScoreSnapshot,
+} from 'src/services/crowdShare';
 
 const PERSIST_DEBOUNCE_MS = 200;
-const CROWD_RELAY_LOCAL_DEFAULT = 'http://localhost:8384';
-const RELAY_SOCKET_PATH_DEFAULT = '/socket.io/';
-const RELAY_SOCKET_PATH_PROXIED = '/relay/socket.io/';
 const ARIA_PRESSED = 'aria-pressed';
 const SHARE_LABEL_OFF = 'Sign in to share — OFF';
 
@@ -51,7 +54,7 @@ interface ShareSessionState {
   /** True once a `version-conflict` rejection has surfaced for this session. */
   outOfSync: boolean;
   /** Phase-5 scorer attribution threaded to score-relay on every submit. */
-  scorer?: NonNullable<SubmitParams['scorer']>;
+  scorer?: CrowdScorer;
 }
 
 let activeShare: ShareSessionState | undefined;
@@ -204,8 +207,7 @@ function buildPageChrome(tournamentId: string, matchUpId: string): TrackPageChro
   bannerIcon.textContent = '\u{1F4F1}';
   const bannerText = document.createElement('span');
   bannerText.className = 'track-page-banner-text';
-  bannerText.textContent =
-    'Local-only practice scoring — nothing is sent to the tournament or saved on any server.';
+  bannerText.textContent = 'Local-only practice scoring — nothing is sent to the tournament or saved on any server.';
   banner.append(bannerIcon, bannerText);
 
   // Sign-in-to-share toggle + status helper line
@@ -276,13 +278,9 @@ function wireShareToggle({ chrome, tournamentId, matchUpId, matchUpFormat }: Wir
       shareStatus.textContent = 'Sign in with HiveID or TMX first';
       return;
     }
-    const baseUrl = resolveCrowdRelayBaseUrl();
-    const socketPath = resolveCrowdRelaySocketPath();
     const session = startShareSession({
       token: resolved.token,
       scorer: resolved.scorer,
-      baseUrl,
-      socketPath,
       tournamentId,
       matchUpId,
       matchUpFormat,
@@ -300,18 +298,16 @@ function wireShareToggle({ chrome, tournamentId, matchUpId, matchUpFormat }: Wir
 
 interface StartShareSessionParams {
   token: string;
-  baseUrl: string;
-  socketPath: string;
   tournamentId: string;
   matchUpId: string;
   matchUpFormat: string;
   shareStatus: HTMLElement;
-  scorer?: NonNullable<SubmitParams['scorer']>;
+  scorer?: CrowdScorer;
 }
 
 function startShareSession(params: StartShareSessionParams): ShareSessionState {
-  const { token, baseUrl, socketPath, tournamentId, matchUpId, matchUpFormat, shareStatus, scorer } = params;
-  const controller = connectCrowdRelay({ token, baseUrl, socketPath });
+  const { token, tournamentId, matchUpId, matchUpFormat, shareStatus, scorer } = params;
+  const controller = connectCrowdShare(token);
   const sessionId = generateId('crowd-session');
   const clientId = resolveClientId();
   const state: ShareSessionState = {
@@ -379,140 +375,6 @@ function relayPointIfSharing(detail: StateChangedDetail): void {
   });
 }
 
-function toCrowdScoreSnapshot(matchUp: any): CrowdScoreSnapshot {
-  const rawSets: any[] = Array.isArray(matchUp?.score?.sets) ? matchUp.score.sets : [];
-  const sets = rawSets.length
-    ? rawSets.map((s: any) => ({
-        setNumber: s.setNumber,
-        side1Score: s.side1Score ?? 0,
-        side2Score: s.side2Score ?? 0,
-        side1TiebreakScore: s.side1TiebreakScore,
-        side2TiebreakScore: s.side2TiebreakScore,
-        winningSide: s.winningSide,
-      }))
-    : undefined;
-  // pointDisplay comes from the *raw* last set — the inline-scoring shell
-  // injects side*PointScore onto the active set (see engineToMatchUp.ts in
-  // courthive-components).
-  const rawLastSet: any = rawSets[rawSets.length - 1];
-  const pointDisplay: [string, string] | undefined =
-    rawLastSet && rawLastSet.side1PointScore !== undefined && rawLastSet.side2PointScore !== undefined
-      ? [String(rawLastSet.side1PointScore), String(rawLastSet.side2PointScore)]
-      : undefined;
-  return {
-    sets,
-    pointDisplay,
-    winningSide: matchUp?.winningSide,
-    scoreboard: matchUp?.score?.scoreStringSide1,
-  };
-}
-
-interface ResolvedScorerToken {
-  token: string;
-  audience: 'admin' | 'hiveid';
-  scorer?: NonNullable<SubmitParams['scorer']>;
-}
-
-/**
- * Resolves a token for the /crowd relay handshake plus an optional
- * scorer attribution block:
- *
- *   - admin tmxToken wins when present (back-compat: existing TMX users
- *     on the public app keep their share path)
- *   - falls back to a HiveID session — Phase 5 of the integration —
- *     and stamps `personId` + display name so the relay can attribute
- *     each point to a real human and later run quorum / reconciliation
- *
- *   - returns `undefined` when neither path has a token, which keeps
- *     the "Sign in to share" toggle disabled (anonymous local-only).
- */
-function resolveShareToken(): ResolvedScorerToken | undefined {
-  try {
-    const key = getJwtTokenStorageKey();
-    const value = globalThis.localStorage?.getItem(key);
-    if (typeof value === 'string' && value.length > 0) {
-      return { token: value, audience: 'admin' };
-    }
-  } catch (err) {
-    console.warn('[track] reading tmxToken failed', err);
-  }
-  const hiveid = readHiveIDSession();
-  if (hiveid?.token) {
-    return {
-      token: hiveid.token,
-      audience: 'hiveid',
-      scorer: {
-        personId: hiveid.personId,
-        displayName: getDisplayName(hiveid) || hiveid.personId || 'HiveID user',
-        audience: 'hiveid',
-      },
-    };
-  }
-  return undefined;
-}
-
-function resolveCrowdRelayBaseUrl(): string {
-  const fromEnv = import.meta.env?.VITE_SCORE_RELAY_URL;
-  if (typeof fromEnv === 'string' && fromEnv.length > 0) return fromEnv.replace(/\/$/, '');
-  const local =
-    globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
-  if (local) return CROWD_RELAY_LOCAL_DEFAULT;
-  // Production fallback — same origin as the rest of courthive.net infrastructure.
-  return 'https://courthive.net';
-}
-
-/**
- * Resolve the Socket.IO transport path for the `/crowd` connection, branch-for-
- * branch with `resolveCrowdRelayBaseUrl`. In production the relay is exposed by
- * nginx ONLY under `/relay/`, so the transport path must carry that prefix; a
- * default-path handshake to `https://courthive.net` lands on CFS and fails with
- * "Invalid namespace" (no `/crowd` namespace there). An explicit
- * `VITE_SCORE_RELAY_URL` points straight at a relay origin serving the default
- * path, and localhost dev runs the relay standalone on :8384.
- */
-function resolveCrowdRelaySocketPath(): string {
-  const fromEnv = import.meta.env?.VITE_SCORE_RELAY_URL;
-  if (typeof fromEnv === 'string' && fromEnv.length > 0) return RELAY_SOCKET_PATH_DEFAULT;
-  const local =
-    globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
-  if (local) return RELAY_SOCKET_PATH_DEFAULT;
-  return RELAY_SOCKET_PATH_PROXIED;
-}
-
-function resolveClientId(): string {
-  try {
-    const KEY = 'courthive-public:clientId';
-    const existing = globalThis.localStorage?.getItem(KEY);
-    if (existing) return existing;
-    const fresh = generateId('client');
-    globalThis.localStorage?.setItem(KEY, fresh);
-    return fresh;
-  } catch {
-    return generateId('client');
-  }
-}
-
-function generateId(prefix: string): string {
-  const cryptoObj: any = (globalThis as any).crypto;
-  if (cryptoObj && typeof cryptoObj.randomUUID === 'function') {
-    return `${prefix}-${cryptoObj.randomUUID()}`;
-  }
-  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
-}
-
-/**
- * Test seam — pure-logic helpers exposed for vitest only.
- */
-export const __test__ = {
-  resolveShareToken,
-  resolveCrowdRelayBaseUrl,
-  resolveCrowdRelaySocketPath,
-  toCrowdScoreSnapshot,
-  CROWD_RELAY_LOCAL_DEFAULT,
-  RELAY_SOCKET_PATH_DEFAULT,
-  RELAY_SOCKET_PATH_PROXIED,
-};
-
 interface ResolvedMatchUpMetadata {
   matchUpFormat?: string;
   side1Name?: string;
@@ -563,7 +425,10 @@ function resolveSideName(side: any): string {
   if (typeof direct === 'string' && direct.length > 0) return direct;
   const individuals: any[] = side?.participant?.individualParticipants ?? [];
   if (individuals.length > 0) {
-    return individuals.map((p) => p?.participantName ?? '').filter(Boolean).join(' / ');
+    return individuals
+      .map((p) => p?.participantName ?? '')
+      .filter(Boolean)
+      .join(' / ');
   }
   return '';
 }

@@ -84,7 +84,6 @@ describe('markReadyMatchUpsInProgress', () => {
     participant: { participantId, participantName: participantId },
   });
 
-
   it('marks ready, two-participant, not-yet-started matchUps as IN_PROGRESS', () => {
     const matchUp = {
       matchUpId: 'm1',
@@ -158,7 +157,6 @@ describe('IRREGULAR_STATUSES', () => {
     expect(__test__.IRREGULAR_STATUSES.has('COMPLETED')).toBe(false);
   });
 });
-
 
 describe('base-matchUp lookup — the crowd-scoring persistence path', () => {
   const MATCH_UP_ID = 'm-lazy';
@@ -271,7 +269,6 @@ describe('base-matchUp lookup — the crowd-scoring persistence path', () => {
   });
 });
 
-
 describe('the gate is applied where scoring is actually offered', () => {
   const scorable = {
     matchUpId: 'ok',
@@ -301,5 +298,47 @@ describe('the gate is applied where scoring is actually offered', () => {
     // Control: the same call DOES wrap a matchUp that passes, so the assertion above is not vacuous.
     applyInlineScoringWrappers({ container, matchUps: [scorable], composition: {} as any, manager });
     expect(replaceChild).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('crowd sharing — every scored change reaches the share hub', () => {
+  const MATCH_UP_ID = 'm-share';
+  const FORMAT = 'SET3-S:6/TB7';
+  const matchUp = {
+    matchUpId: MATCH_UP_ID,
+    matchUpFormat: FORMAT,
+    sides: [
+      { sideNumber: 1, participant: { participantName: 'Alfa' } },
+      { sideNumber: 2, participant: { participantName: 'Bravo' } },
+    ],
+  };
+
+  beforeEach(() => {
+    for (const k of Object.keys(managerHandlers)) delete managerHandlers[k];
+  });
+
+  it('relays onScoreChange and onSubmit with the base format, undebounced', () => {
+    const crowdShare = { relayScore: vi.fn(), sharingAs: vi.fn(), disconnect: vi.fn() };
+    buildInlineCrowdManager({ tournamentId: 't1', savedSessions: new Map(), matchUps: [matchUp], crowdShare });
+
+    const scored = { score: { sets: [{ setNumber: 1, side1Score: 1, side2Score: 0 }] } };
+    managerHandlers.onScoreChange({ matchUpId: MATCH_UP_ID, matchUp: scored });
+    managerHandlers.onScoreChange({ matchUpId: MATCH_UP_ID, matchUp: scored });
+    managerHandlers.onSubmit({ matchUpId: MATCH_UP_ID, matchUp: { ...scored, winningSide: 1 } });
+
+    expect(crowdShare.relayScore).toHaveBeenCalledTimes(3);
+    expect(crowdShare.relayScore.mock.calls[0][0]).toEqual({
+      matchUpId: MATCH_UP_ID,
+      matchUpFormat: FORMAT,
+      matchUp: scored,
+    });
+    expect(crowdShare.relayScore.mock.calls[2][0].matchUp.winningSide).toBe(1);
+  });
+
+  it('stays local-only without a hub', () => {
+    buildInlineCrowdManager({ tournamentId: 't1', savedSessions: new Map(), matchUps: [matchUp] });
+    expect(() =>
+      managerHandlers.onScoreChange({ matchUpId: MATCH_UP_ID, matchUp: { score: { sets: [] } } }),
+    ).not.toThrow();
   });
 });

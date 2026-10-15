@@ -6,11 +6,14 @@
  * onSubmit / onScoreChange callbacks at courthive-public's local IndexedDB
  * (`crowdTracker`) instead of the server mutation pipeline.
  *
- * Phase 2 spirit: anonymous + local-only. Phase 3 will add a relay write
- * for signed-in users on top of these same callbacks.
+ * Every scored change is persisted locally. When the caller passes a
+ * `crowdShare` hub, the same change is also relayed to score-relay's `/crowd`
+ * namespace — the hub sends only for a signed-in visitor, so a signed-out
+ * visitor stays local-only.
  */
 import { saveSession, listActiveSessions, CrowdTrackerSession } from 'src/services/crowdTracker';
 import { InlineScoringManager, renderInlineMatchUp, isScorable, sideParticipantName } from 'courthive-components';
+import type { CrowdShareHub } from 'src/services/crowdShare';
 
 const IRREGULAR_STATUSES = new Set(['RETIRED', 'DEFAULTED', 'WALKOVER', 'SUSPENDED', 'CANCELLED', 'ABANDONED']);
 const PERSIST_DEBOUNCE_MS = 200;
@@ -58,6 +61,8 @@ interface BuildManagerParams {
   tournamentId: string;
   savedSessions: Map<string, CrowdTrackerSession>;
   matchUps: any[];
+  /** Relays each scored change to the TD's crowd feed; omit for local-only scoring. */
+  crowdShare?: CrowdShareHub;
 }
 
 interface ApplyWrappersParams {
@@ -190,6 +195,7 @@ export function buildInlineCrowdManager({
   tournamentId,
   savedSessions,
   matchUps,
+  crowdShare,
 }: BuildManagerParams): InlineScoringManager {
   const baseLookup = new Map<string, any>();
   const addToBaseLookup = (additional: any[]): void => {
@@ -254,6 +260,13 @@ export function buildInlineCrowdManager({
   };
 
   const schedulePersist = (matchUpId: string, scoredMatchUp: any): void => {
+    // Relay immediately, not on the persist debounce: the hub diffs successive
+    // scores to attribute each change, so coalescing two changes would hide one.
+    crowdShare?.relayScore({
+      matchUpId,
+      matchUpFormat: scoredMatchUp?.matchUpFormat ?? baseLookup.get(matchUpId)?.matchUpFormat,
+      matchUp: scoredMatchUp,
+    });
     if (matchUpHasScore(scoredMatchUp)) scoredMatchUpIds.add(matchUpId);
     else scoredMatchUpIds.delete(matchUpId);
     pendingPersist = async () => {
