@@ -49,7 +49,7 @@
     "@vitest/ui": "5.0.3",
     "c8": "12.0.0",
     "cz-git": "1.14.0",
-    "dotenv": "17.4.2",
+    "dotenv": "18.0.7",
     "envfile": "7.1.0",
     "eslint": "10.12.0",
     "eslint-plugin-sonarjs": "4.2.2",
@@ -71,7 +71,7 @@
   "dependencies": {
     "@courthive/provider-config": "0.18.2",
     "axios": "1.20.0",
-    "courthive-components": "6.7.0",
+    "courthive-components": "6.8.1",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.23",
     "i18next": "^26.0.0",
@@ -79,8 +79,8 @@
     "normalize-text": "2.6.0",
     "socket.io-client": "^4.8.3",
     "svelte": "^5.55.1",
-    "tabulator-tables": "6.5.2",
+    "tabulator-tables": "6.6.1",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "7.14.0"
+    "tods-competition-factory": "7.14.1"
   }
 }
