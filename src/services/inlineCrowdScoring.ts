@@ -11,8 +11,8 @@
  * namespace — the hub sends only for a signed-in visitor, so a signed-out
  * visitor stays local-only.
  */
-import { saveSession, listActiveSessions, CrowdTrackerSession } from 'src/services/crowdTracker';
 import { InlineScoringManager, renderInlineMatchUp, isScorable, sideParticipantName } from 'courthive-components';
+import { saveSession, deleteSession, listActiveSessions, CrowdTrackerSession } from 'src/services/crowdTracker';
 import type { CrowdShareHub } from 'src/services/crowdShare';
 
 const IRREGULAR_STATUSES = new Set(['RETIRED', 'DEFAULTED', 'WALKOVER', 'SUSPENDED', 'CANCELLED', 'ABANDONED']);
@@ -50,6 +50,26 @@ const REGISTER_KEY = '__registerMatchUps';
 
 function matchUpHasScore(matchUp: any): boolean {
   return Boolean(matchUp?.score?.sets?.length) || Boolean(matchUp?.winningSide);
+}
+
+/** Statuses that end a matchUp officially; SUSPENDED is a pause, not an ending. */
+const OFFICIAL_ENDING_STATUSES = new Set([
+  'COMPLETED',
+  'RETIRED',
+  'DEFAULTED',
+  'WALKOVER',
+  'DOUBLE_WALKOVER',
+  'DOUBLE_DEFAULT',
+  'CANCELLED',
+  'ABANDONED',
+]);
+
+/**
+ * Whether the published matchUp carries the TD's official result. Local Track scoring is kept on the
+ * visitor's device only until this is true; after that the official result is what the bracket shows.
+ */
+export function hasOfficialResult(matchUp: any): boolean {
+  return Boolean(matchUp?.winningSide) || OFFICIAL_ENDING_STATUSES.has(matchUp?.matchUpStatus);
 }
 
 interface PrebuildParams {
@@ -163,6 +183,9 @@ export function registerMatchUps(manager: InlineScoringManager, matchUps: any[])
  * `__inlineOriginalScore` so the change is reversible across re-renders.
  */
 export function overlayLocalScores(matchUps: any[], manager: InlineScoringManager, scoredIds: Set<string>): void {
+  // Register first: that is what seeds a saved session's engine for a draw that loaded after the
+  // manager was built. Without it the overlay below finds no engine and shows the TD's score.
+  registerMatchUps(manager, matchUps);
   for (const m of matchUps || []) {
     const inScoredSet = m?.matchUpId && scoredIds.has(m.matchUpId);
     if (inScoredSet) {
@@ -198,12 +221,45 @@ export function buildInlineCrowdManager({
   crowdShare,
 }: BuildManagerParams): InlineScoringManager {
   const baseLookup = new Map<string, any>();
-  const addToBaseLookup = (additional: any[]): void => {
-    for (const m of additional || []) {
-      if (m?.matchUpId) baseLookup.set(m.matchUpId, m);
+  // matchUpIds already seeded, so a re-registration never re-seeds an engine the visitor is using.
+  const seededMatchUpIds = new Set<string>();
+
+  // Seed engines from saved sessions first (so users resume mid-game),
+  // then fall back to seeding from the published matchUp's score.
+  //
+  // Runs whenever a matchUp first becomes known, not only at construction: production serves draw
+  // STUBS and loads each draw's structures later, so at construction there are often no matchUps at
+  // all. Seeding only then left every lazily-loaded saved session without its engine, and a reload
+  // lost the visitor's local scoring.
+  const seed = (m: any): void => {
+    const matchUpId = m?.matchUpId;
+    if (seededMatchUpIds.has(matchUpId)) return;
+    const saved = savedSessions.get(matchUpId);
+    if (saved && hasOfficialResult(m)) {
+      seededMatchUpIds.add(matchUpId);
+      // The TD's result supersedes local tracking — drop the session rather than overlay it.
+      savedSessions.delete(matchUpId);
+      scoredMatchUpIds.delete(matchUpId);
+      deleteSession(tournamentId, matchUpId).catch(() => undefined);
+      return;
+    }
+    // Not marked as seeded: a matchUp that is not scorable YET (sides still unhydrated) gets another
+    // chance when it is registered again.
+    if (!isScorable(m)) return;
+    seededMatchUpIds.add(matchUpId);
+    // A completed tie (COMPLETED, no winner) is finished: no live engine for it.
+    if (saved || (m.readyToScore && !m.winningSide && m.matchUpStatus !== 'COMPLETED')) {
+      manager.getOrCreate(matchUpId, m.matchUpFormat, (saved?.matchUp as any) ?? m);
     }
   };
-  addToBaseLookup(matchUps);
+
+  const addToBaseLookup = (additional: any[]): void => {
+    for (const m of additional || []) {
+      if (!m?.matchUpId) continue;
+      baseLookup.set(m.matchUpId, m);
+      seed(m);
+    }
+  };
 
   // Warn ONCE per matchUpId. A miss recurs on every point of a game, and a per-point warning would
   // bury the signal it exists to raise.
@@ -330,18 +386,7 @@ export function buildInlineCrowdManager({
     },
   });
 
-  // Seed engines from saved sessions first (so users resume mid-game),
-  // then fall back to seeding from the published matchUp's score.
-  for (const m of matchUps || []) {
-    const matchUpId = m?.matchUpId;
-    if (!isScorable(m)) continue;
-    const saved = savedSessions.get(matchUpId);
-    const seed = (saved?.matchUp as any) ?? m;
-    // A completed tie (COMPLETED, no winner) is finished: no live engine for it.
-    if (saved || (m.readyToScore && !m.winningSide && m.matchUpStatus !== 'COMPLETED')) {
-      manager.getOrCreate(matchUpId, m.matchUpFormat, seed);
-    }
-  }
+  addToBaseLookup(matchUps);
 
   (manager as any)[SCORED_IDS_KEY] = scoredMatchUpIds;
   (manager as any)[REGISTER_KEY] = addToBaseLookup;
