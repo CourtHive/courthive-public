@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.17.0](https://github.com/CourtHive/courthive-public/compare/v1.16.2...v1.17.0) (2026-10-15)
+
+
+### Features
+
+* **crowd:** bracket Track shares signed-in scores with the TD's crowd feed ([#572](https://github.com/CourtHive/courthive-public/issues/572)) ([3d8559c](https://github.com/CourtHive/courthive-public/commit/3d8559cf9f691bf09c9410e85d5416332223235a))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 6.7.0 ([#571](https://github.com/CourtHive/courthive-public/issues/571)) ([dc5251e](https://github.com/CourtHive/courthive-public/commit/dc5251e2bac2580a8e05444d957e4fd19b16e29d))
+* **deps:** update tods-competition-factory to 7.14.0 ([#570](https://github.com/CourtHive/courthive-public/issues/570)) ([33778af](https://github.com/CourtHive/courthive-public/commit/33778af84e922b1d07a05d714f349eb86b44a8d7))
+
 ## [1.16.2](https://github.com/CourtHive/courthive-public/compare/v1.16.1...v1.16.2) (2026-10-13)
 
 
