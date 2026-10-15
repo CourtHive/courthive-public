@@ -1,45 +1,29 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-// courthive-components touches `document` at module-import time. Mock it so
-// this test can run in courthive-public's no-DOM vitest environment. The
-// helpers under test (resolveShareToken, resolveCrowdRelayBaseUrl, toCrowdScoreSnapshot)
-// are pure and don't reach into the shell, so a hollow mock is sufficient.
-vi.mock('courthive-components', () => ({
-  buildInteractiveScoringShell: vi.fn(),
-}));
-
-// crowdTracker calls indexedDB at module load — mock it out.
-vi.mock('src/services/crowdTracker', () => ({
-  saveSession: vi.fn(),
-  loadSession: vi.fn(),
-}));
-
-// crowdRelay imports socket.io-client which is fine at import time, but the
-// test file isn't exercising it here — connectCrowdRelay isn't invoked.
+// crowdRelay imports socket.io-client; the hub tests inject a fake controller
+// through `connect`, so the real client is never reached.
 vi.mock('socket.io-client', () => ({ io: vi.fn(), Socket: class {} }));
 
-// tournament info API mocked — not exercised here.
-vi.mock('src/services/api/tournamentsApi', () => ({
-  getTournamentInfo: vi.fn(),
-}));
-
-import { __test__ } from './renderTrackPage';
-
-const {
-  resolveShareToken,
+import {
+  __test__,
+  createCrowdShareHub,
   resolveCrowdRelayBaseUrl,
   resolveCrowdRelaySocketPath,
+  resolveShareToken,
   toCrowdScoreSnapshot,
-  CROWD_RELAY_LOCAL_DEFAULT,
-  RELAY_SOCKET_PATH_DEFAULT,
-  RELAY_SOCKET_PATH_PROXIED,
-} = __test__;
+  trackToggleCopy,
+} from './crowdShare';
+
+const { CROWD_RELAY_LOCAL_DEFAULT, RELAY_SOCKET_PATH_DEFAULT, RELAY_SOCKET_PATH_PROXIED, SESSION_ID_KEY_PREFIX } =
+  __test__;
 
 interface LocalStorageStub {
   store: Record<string, string>;
   getItem(key: string): string | null;
   setItem(key: string, value: string): void;
   removeItem(key: string): void;
+  readonly length: number;
+  key(index: number): string | null;
 }
 
 function installLocalStorage(initial: Record<string, string> = {}): LocalStorageStub {
@@ -53,6 +37,12 @@ function installLocalStorage(initial: Record<string, string> = {}): LocalStorage
     },
     removeItem(key: string) {
       delete this.store[key];
+    },
+    get length() {
+      return Object.keys(this.store).length;
+    },
+    key(index: number) {
+      return Object.keys(this.store)[index] ?? null;
     },
   };
   Object.defineProperty(globalThis, 'localStorage', {
@@ -285,5 +275,169 @@ describe('toCrowdScoreSnapshot', () => {
   it('zero-fills missing side scores rather than emitting undefined', () => {
     const matchUp: any = { score: { sets: [{ setNumber: 1 }] } };
     expect(toCrowdScoreSnapshot(matchUp).sets?.[0]).toMatchObject({ side1Score: 0, side2Score: 0 });
+  });
+});
+
+describe('trackToggleCopy', () => {
+  it('invites a signed-out visitor to sign in and never claims to share', () => {
+    const copy = trackToggleCopy({ active: true });
+    expect(copy.label).toBe('Track');
+    expect(copy.hint).toMatch(/Sign in with HiveID or TMX/);
+  });
+
+  it('names the HiveID scorer and marks the active toggle as sharing', () => {
+    const sharingAs = resolvedHiveID();
+    expect(trackToggleCopy({ active: true, sharingAs })).toEqual({
+      label: 'Track · Sharing',
+      hint: 'Scores you enter are shared with the tournament director as Jane Doe as an unofficial feed.',
+    });
+    expect(trackToggleCopy({ active: false, sharingAs }).label).toBe('Track');
+  });
+});
+
+function resolvedHiveID(): any {
+  return {
+    token: HIVEID_JWT,
+    audience: 'hiveid',
+    scorer: { personId: 'p-1', displayName: 'Jane Doe', audience: 'hiveid' },
+  };
+}
+
+const TOURNAMENT_ID = 't-1';
+const MATCHUP_ID = 'm-1';
+const FORMAT = 'SET3-S:6/TB7';
+
+function fakeController() {
+  const listeners: Record<string, (payload: any) => void> = {};
+  return {
+    submit: vi.fn(),
+    end: vi.fn(),
+    disconnect: vi.fn(),
+    isConnected: () => true,
+    on: vi.fn((event: string, listener: (payload: any) => void) => {
+      listeners[event] = listener;
+      return () => undefined;
+    }),
+    emit: (event: string, payload: any) => listeners[event]?.(payload),
+  };
+}
+
+function games(side1Score: number, side2Score: number): any {
+  return { matchUpFormat: FORMAT, score: { sets: [{ setNumber: 1, side1Score, side2Score }] } };
+}
+
+describe('createCrowdShareHub', () => {
+  it('sends nothing and opens no connection for a signed-out visitor', () => {
+    installLocalStorage();
+    const connect = vi.fn();
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    expect(connect).not.toHaveBeenCalled();
+    expect(hub.sharingAs()).toBeUndefined();
+  });
+
+  it('relays each scored change with the inferred winner, one session per matchUp', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const controller = fakeController();
+    const connect = vi.fn(() => controller as any);
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect });
+
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 1) });
+
+    expect(connect).toHaveBeenCalledTimes(1);
+    expect(connect).toHaveBeenCalledWith('admin-jwt');
+    const [first, second] = controller.submit.mock.calls.map(([params]) => params);
+    expect(first).toMatchObject({ matchUpId: MATCHUP_ID, tournamentId: TOURNAMENT_ID, formatHint: FORMAT });
+    expect(first.point.winner).toBe(1);
+    expect(second.point.winner).toBe(2);
+    expect(second.sessionId).toBe(first.sessionId);
+    expect(second.currentScore.sets[0]).toMatchObject({ side1Score: 1, side2Score: 1 });
+  });
+
+  it('skips a change with no detectable winner (an undo) instead of inventing a point', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const controller = fakeController();
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => controller as any });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(2, 0) });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    expect(controller.submit).toHaveBeenCalledTimes(1);
+  });
+
+  it('attributes a HiveID visitor as the scorer', () => {
+    installLocalStorage({
+      hiveidSession: JSON.stringify({ token: HIVEID_JWT, refreshToken: 'r', personId: 'p-1', cached: {} }),
+    });
+    const controller = fakeController();
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => controller as any });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    expect(controller.submit.mock.calls[0][0].scorer).toMatchObject({ personId: 'p-1', audience: 'hiveid' });
+  });
+
+  it('resumes the same relay session after a reload', () => {
+    const storage = installLocalStorage({ tmxToken: 'admin-jwt' });
+    const first = fakeController();
+    createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => first as any }).relayScore({
+      matchUpId: MATCHUP_ID,
+      matchUp: games(1, 0),
+    });
+    const sessionId = first.submit.mock.calls[0][0].sessionId;
+    expect(storage.store[`${SESSION_ID_KEY_PREFIX}${TOURNAMENT_ID}:${MATCHUP_ID}`]).toBe(sessionId);
+
+    const second = fakeController();
+    createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => second as any }).relayScore({
+      matchUpId: MATCHUP_ID,
+      matchUp: games(2, 0),
+    });
+    expect(second.submit.mock.calls[0][0].sessionId).toBe(sessionId);
+  });
+
+  it('opens a fresh session after the TD finalizes the old one', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const controller = fakeController();
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => controller as any });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    const finalized = controller.submit.mock.calls[0][0].sessionId;
+
+    controller.emit('rejected', { sessionId: finalized, reason: 'session-cancelled-by-td-finalize' });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(2, 0) });
+    expect(controller.submit.mock.calls[1][0].sessionId).not.toBe(finalized);
+  });
+
+  it('keeps the session through a version conflict (the relay resumes at its own version)', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const controller = fakeController();
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => controller as any });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    const sessionId = controller.submit.mock.calls[0][0].sessionId;
+
+    controller.emit('rejected', { sessionId, reason: 'version-conflict' });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(2, 0) });
+    expect(controller.submit.mock.calls[1][0].sessionId).toBe(sessionId);
+  });
+
+  it('disconnects on demand and reconnects on the next scored change', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const controllers = [fakeController(), fakeController()];
+    const connect = vi.fn(() => controllers[connect.mock.calls.length - 1] as any);
+    const hub = createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect });
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(1, 0) });
+    hub.disconnect();
+    expect(controllers[0].disconnect).toHaveBeenCalled();
+
+    hub.relayScore({ matchUpId: MATCHUP_ID, matchUp: games(2, 0) });
+    expect(connect).toHaveBeenCalledTimes(2);
+    expect(controllers[1].submit).toHaveBeenCalledTimes(1);
+  });
+
+  it('a new hub closes the previous hub so no socket outlives its render', () => {
+    installLocalStorage({ tmxToken: 'admin-jwt' });
+    const previous = fakeController();
+    createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: () => previous as any }).relayScore({
+      matchUpId: MATCHUP_ID,
+      matchUp: games(1, 0),
+    });
+    createCrowdShareHub({ tournamentId: TOURNAMENT_ID, connect: vi.fn() });
+    expect(previous.disconnect).toHaveBeenCalled();
   });
 });

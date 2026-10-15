@@ -20,6 +20,7 @@ import { installMobileBracketLayout, type RoundSelection } from 'src/services/mo
 import { filterRoundMatchUps, normalizeSearch } from 'src/common/filters/participantMatch';
 import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
 import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { createCrowdShareHub, trackToggleCopy } from 'src/services/crowdShare';
 import { openScoringLaunchMenu } from 'src/components/scoringLaunchMenu';
 import { openScorecard } from 'src/components/scorecard/openScorecard';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
@@ -74,7 +75,7 @@ function renderRoundsColumns({
   structureId: string;
   display: any;
   inlineManager?: InlineScoringManager;
-  liveScoring?: { active: boolean; onChange: (next: boolean) => void };
+  liveScoring?: { active: boolean; onChange: (next: boolean) => void; label?: string; hint?: string };
   initialRoundNumber?: number;
   searchActive?: boolean;
   roundSelection?: RoundSelection;
@@ -306,7 +307,10 @@ export function renderEvent({
     const allMatchUps: any[] = flightsData.flatMap((flight: any) =>
       (flight.structures || []).flatMap((s: any) => Object.values(s.roundMatchUps || {}).flat()),
     );
-    const inlineManager = buildInlineCrowdManager({ tournamentId, savedSessions, matchUps: allMatchUps });
+    // Signed-in visitors' scored changes are relayed to the TD's crowd feed through this hub; a
+    // signed-out visitor scores locally only. One hub per event-render, connected on first relay.
+    const crowdShare = createCrowdShareHub({ tournamentId });
+    const inlineManager = buildInlineCrowdManager({ tournamentId, savedSessions, matchUps: allMatchUps, crowdShare });
 
     // Build drawPosition → participant map per structure from hydrated matchUps.
     // Within a structure, drawPosition→participant is fixed at draw generation time.
@@ -370,6 +374,8 @@ export function renderEvent({
     let liveScoringActive = readLocalStorageFlag(liveScoringKey);
     const setLiveScoringActive = (next: boolean) => {
       liveScoringActive = next;
+      // Track OFF closes the relay connection; sessions stay active and resume when Track is back on.
+      if (!next) crowdShare.disconnect();
       writeLocalStorageFlag(liveScoringKey, next);
       renderFlight(currentFlightIndex);
     };
@@ -444,7 +450,11 @@ export function renderEvent({
         // is rendered unchanged.
         const composition = liveScoringActive ? withInlineScoringConfig(baseComposition) : baseComposition;
         const activeInlineManager = liveScoringActive ? inlineManager : undefined;
-        const liveScoring = { active: liveScoringActive, onChange: setLiveScoringActive };
+        const liveScoring = {
+          active: liveScoringActive,
+          onChange: setLiveScoringActive,
+          ...trackToggleCopy({ active: liveScoringActive, sharingAs: crowdShare.sharingAs() }),
+        };
 
         // Toggle OFF: revert the IN_PROGRESS mutation written by a prior
         // toggle-ON render, except for matchUps that were actually scored
