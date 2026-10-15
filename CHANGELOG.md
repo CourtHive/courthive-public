@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/CourtHive/courthive-public/compare/v1.17.0...v1.17.1) (2026-10-15)
+
+
+### Bug Fixes
+
+* **crowd:** local track scoring survives a reload when draws load lazily ([#576](https://github.com/CourtHive/courthive-public/issues/576)) ([609090d](https://github.com/CourtHive/courthive-public/commit/609090dfc88eb2e224f9917b6983697186235cfe))
+
 ## [1.17.0](https://github.com/CourtHive/courthive-public/compare/v1.16.2...v1.17.0) (2026-10-15)
 
 
