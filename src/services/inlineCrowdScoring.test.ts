@@ -5,6 +5,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 // so we mock the package down to just the symbols inlineCrowdScoring imports.
 // Capture the handlers buildInlineCrowdManager passes in, so the persistence path can be driven.
 const managerHandlers: any = {};
+// Every engine the manager is asked to create, as [matchUpId, matchUpFormat, seed].
+const getOrCreate = vi.fn();
 // `isScorable` / `sideParticipantName` are STAND-INS mirroring the library's contract for the fixtures
 // below. The gate's own behaviour — every refusal case, the pair-name path, the format clause — is
 // tested in courthive-components, which owns it. Asserting it again here would only be testing this
@@ -20,6 +22,7 @@ vi.mock('courthive-components', () => ({
   InlineScoringManager: vi.fn(function (this: any, handlers: any) {
     Object.assign(managerHandlers, handlers);
     this.get = () => undefined;
+    this.getOrCreate = getOrCreate;
     return this;
   }),
   // Returns a stub element rather than undefined: the real one returns `HTMLElement | null`, and the
@@ -37,8 +40,10 @@ vi.mock('courthive-components', () => ({
 
 // crowdTracker calls indexedDB at runtime — mock it for these unit tests.
 const saveSession = vi.fn();
+const deleteSession = vi.fn<(...args: any[]) => Promise<void>>(async () => undefined);
 vi.mock('src/services/crowdTracker', () => ({
   saveSession: (...a: any[]) => saveSession(...a),
+  deleteSession: (...a: any[]) => deleteSession(...a),
   listActiveSessions: vi.fn(async () => []),
 }));
 
@@ -46,6 +51,9 @@ import {
   applyInlineScoringWrappers,
   buildInlineCrowdManager,
   markReadyMatchUpsInProgress,
+  getScoredMatchUpIds,
+  overlayLocalScores,
+  hasOfficialResult,
   registerMatchUps,
   withInlineScoringConfig,
   __test__,
@@ -340,5 +348,84 @@ describe('crowd sharing — every scored change reaches the share hub', () => {
     expect(() =>
       managerHandlers.onScoreChange({ matchUpId: MATCH_UP_ID, matchUp: { score: { sets: [] } } }),
     ).not.toThrow();
+  });
+});
+
+describe('saved sessions resume after a reload — until the official result lands', () => {
+  const MATCH_UP_ID = 'm-saved';
+  const matchUp = (extra: any = {}) => ({
+    matchUpId: MATCH_UP_ID,
+    matchUpFormat: MATCHUP_FORMAT,
+    readyToScore: true,
+    sides: [
+      { sideNumber: 1, participant: { participantName: 'Alfa' } },
+      { sideNumber: 2, participant: { participantName: 'Bravo' } },
+    ],
+    ...extra,
+  });
+  const localScore = { score: { sets: [{ setNumber: 1, side1Games: 2, side2Games: 1 }] } };
+  const savedSessions = () =>
+    new Map<string, any>([[MATCH_UP_ID, { tournamentId: 't1', matchUpId: MATCH_UP_ID, matchUp: localScore }]]);
+
+  beforeEach(() => {
+    getOrCreate.mockClear();
+    deleteSession.mockClear();
+  });
+
+  it('seeds the saved engine for a matchUp known at construction', () => {
+    buildInlineCrowdManager({ tournamentId: 't1', savedSessions: savedSessions(), matchUps: [matchUp()] });
+    expect(getOrCreate).toHaveBeenCalledWith(MATCH_UP_ID, MATCHUP_FORMAT, localScore);
+  });
+
+  // Production serves draw STUBS: the manager is built before any matchUp exists, and the draw's
+  // matchUps arrive later. This is the reload that used to lose the visitor's scoring.
+  it('seeds the saved engine for a matchUp that arrives after construction (lazy draws)', () => {
+    const manager = buildInlineCrowdManager({ tournamentId: 't1', savedSessions: savedSessions(), matchUps: [] });
+    expect(getOrCreate).not.toHaveBeenCalled();
+
+    overlayLocalScores([matchUp()], manager, getScoredMatchUpIds(manager));
+    expect(getOrCreate).toHaveBeenCalledTimes(1);
+    expect(getOrCreate).toHaveBeenCalledWith(MATCH_UP_ID, MATCHUP_FORMAT, localScore);
+  });
+
+  it('seeds each matchUp once, so a re-render never resets an engine in use', () => {
+    const manager = buildInlineCrowdManager({ tournamentId: 't1', savedSessions: savedSessions(), matchUps: [] });
+    registerMatchUps(manager, [matchUp()]);
+    registerMatchUps(manager, [matchUp()]);
+    expect(getOrCreate).toHaveBeenCalledTimes(1);
+  });
+
+  it('drops the saved session once the official result is published', () => {
+    const manager = buildInlineCrowdManager({ tournamentId: 't1', savedSessions: savedSessions(), matchUps: [] });
+    expect(getScoredMatchUpIds(manager).has(MATCH_UP_ID)).toBe(true);
+
+    const official = matchUp({ winningSide: 2, matchUpStatus: 'COMPLETED' });
+    overlayLocalScores([official], manager, getScoredMatchUpIds(manager));
+
+    expect(getOrCreate).not.toHaveBeenCalled();
+    expect(deleteSession).toHaveBeenCalledWith('t1', MATCH_UP_ID);
+    expect(getScoredMatchUpIds(manager).has(MATCH_UP_ID)).toBe(false);
+    expect(official.winningSide).toBe(2);
+  });
+
+  it('keeps the saved session while the TD has published no result', () => {
+    buildInlineCrowdManager({
+      tournamentId: 't1',
+      savedSessions: savedSessions(),
+      matchUps: [matchUp({ matchUpStatus: 'IN_PROGRESS' })],
+    });
+    expect(deleteSession).not.toHaveBeenCalled();
+    expect(getOrCreate).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('hasOfficialResult', () => {
+  it('is true for a winner or an official ending, false for a pause or nothing', () => {
+    expect(hasOfficialResult({ winningSide: 1 })).toBe(true);
+    expect(hasOfficialResult({ matchUpStatus: 'COMPLETED' })).toBe(true);
+    expect(hasOfficialResult({ matchUpStatus: 'DOUBLE_WALKOVER' })).toBe(true);
+    expect(hasOfficialResult({ matchUpStatus: 'SUSPENDED' })).toBe(false);
+    expect(hasOfficialResult({ matchUpStatus: 'IN_PROGRESS' })).toBe(false);
+    expect(hasOfficialResult({ matchUpStatus: 'TO_BE_PLAYED' })).toBe(false);
   });
 });
