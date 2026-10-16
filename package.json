@@ -71,7 +71,7 @@
   "dependencies": {
     "@courthive/provider-config": "0.18.2",
     "axios": "1.20.0",
-    "courthive-components": "6.8.1",
+    "courthive-components": "6.9.0",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.23",
     "i18next": "^26.0.0",
@@ -81,6 +81,6 @@
     "svelte": "^5.55.1",
     "tabulator-tables": "6.6.1",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "7.14.1"
+    "tods-competition-factory": "7.15.0"
   }
 }
