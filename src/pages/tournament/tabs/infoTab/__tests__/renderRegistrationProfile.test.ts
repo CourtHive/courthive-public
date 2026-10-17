@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 vi.mock('../renderRegistrationProfile.css', () => ({}));
+vi.mock('../renderNotes.css', () => ({}));
 
 import { renderRegistrationProfile, __test__ } from '../renderRegistrationProfile';
 

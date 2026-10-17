@@ -13,6 +13,7 @@ import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
 import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
 import { buildTournamentHero } from './tournamentHero';
 import { LEFT } from 'src/common/constants/baseConstants';
+import { escapeHtml } from 'src/functions/escapeHtml';
 import { updateRouteUrl } from 'src/router/router';
 import { getTabContentId } from './helpers/tabIds';
 import { context } from 'src/common/context';
@@ -129,11 +130,11 @@ export async function renderTournament(
         renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
       },
       isActive: i === initialIndex,
-      label: eventName,
+      label: escapeHtml(eventName),
       close: true,
     }));
     const eventButton = {
-      label: tournamentInfo.eventInfo[initialIndex].eventName,
+      label: escapeHtml(tournamentInfo.eventInfo[initialIndex].eventName),
       options: eventOptions,
       id: 'eventButton',
       modifyLabel: true,

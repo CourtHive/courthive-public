@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import './renderNotes.css';
 
 /**
@@ -13,8 +14,8 @@ import './renderNotes.css';
  */
 const STRIPPED_PROPERTIES = ['color', 'background', 'background-color', 'background-image'];
 
-/** Elements that must never survive provider-authored markup. */
-const STRIPPED_ELEMENTS = 'script, style, iframe, object, embed, link, meta, base, form';
+/** Elements DOMPurify would otherwise keep that provider notes must not carry. */
+const FORBIDDEN_TAGS = ['style', 'form', 'input', 'button', 'textarea', 'select'];
 
 /**
  * Remove colour declarations from an inline `style` attribute value, leaving
@@ -36,26 +37,22 @@ export function stripColorDeclarations(styleText?: string): string {
 }
 
 /**
- * Make provider-authored HTML safe to inject and legible in both themes.
+ * Make provider-authored HTML safe to show and legible in both themes.
  *
- * Parsing happens inside a `<template>`, whose content belongs to an inert
- * document — scripts do not execute and images do not load while we clean it.
+ * DOMPurify does the security work: scripts, event handlers, `javascript:` URLs in any namespace
+ * (an SVG `<a>` included), and the parsing tricks behind mutation XSS. It returns a DOM fragment
+ * that callers append as-is; re-serialising to a string and parsing it again is what mutation XSS
+ * exploits. The readability rules below then run on its output: no inline colour, no legacy
+ * colour attributes, links open in a new tab.
  */
-export function sanitizeProviderNotes(html?: string): string {
-  if (!html) return '';
+export function sanitizeProviderNotes(html?: string): DocumentFragment {
+  const fragment = DOMPurify.sanitize(html ?? '', {
+    RETURN_DOM_FRAGMENT: true,
+    FORBID_TAGS: FORBIDDEN_TAGS,
+  });
 
-  const template = document.createElement('template');
-  template.innerHTML = html;
-
-  template.content.querySelectorAll(STRIPPED_ELEMENTS).forEach((element) => element.remove());
-
-  template.content.querySelectorAll('*').forEach((element) => {
-    for (const { name } of [...element.attributes]) {
-      // Inline event handlers, and `javascript:` in anything that navigates.
-      if (name.toLowerCase().startsWith('on')) element.removeAttribute(name);
-    }
-
-    const style = stripColorDeclarations(element.getAttribute('style'));
+  fragment.querySelectorAll('*').forEach((element) => {
+    const style = stripColorDeclarations(element.getAttribute('style') ?? undefined);
     if (style) element.setAttribute('style', style);
     else element.removeAttribute('style');
 
@@ -63,23 +60,21 @@ export function sanitizeProviderNotes(html?: string): string {
     element.removeAttribute('color');
     element.removeAttribute('bgcolor');
 
-    if (element.tagName === 'A') {
-      const href = element.getAttribute('href') ?? '';
-      if (/^\s*javascript:/i.test(href)) element.removeAttribute('href');
+    if (element.localName === 'a' && element.hasAttribute('href')) {
       element.setAttribute('target', '_blank');
       element.setAttribute('rel', 'noopener noreferrer');
     }
   });
 
-  return template.innerHTML;
+  return fragment;
 }
 
 export function renderNotes(notes?: string): HTMLElement | null {
   const sanitized = sanitizeProviderNotes(notes);
-  if (!sanitized.trim()) return null;
+  if (!sanitized.textContent?.trim() && !sanitized.querySelector('img, table, hr')) return null;
 
   const section = document.createElement('section');
   section.className = 'tournament-notes';
-  section.innerHTML = sanitized;
+  section.append(sanitized);
   return section;
 }

@@ -30,6 +30,7 @@ import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
 import { drawsGovernor, drawDefinitionConstants, tools } from 'tods-competition-factory';
 import { getDrawData, getEventData } from 'src/services/api/tournamentsApi';
 import { getRoundDisplayOptions } from './renderRoundOptions';
+import { escapeHtml } from 'src/functions/escapeHtml';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -185,7 +186,7 @@ function buildStructureOption({
       renderSelectedStructure(i);
     },
     isActive: i === initialStructureIndex,
-    label: structureName,
+    label: escapeHtml(structureName),
     close: true,
   });
 }
@@ -439,7 +440,7 @@ export function renderEvent({
           ? { chips, activeRoundNumber: initialRoundNumber, onSelect: selectRound }
           : undefined;
 
-        flightDisplay.innerHTML = flight.drawName;
+        flightDisplay.textContent = flight.drawName ?? '';
         removeAllChildNodes(flightDisplay);
 
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
@@ -517,7 +518,7 @@ export function renderEvent({
           buildStructureOption({ tournamentId, eventId, drawId, initialStructureIndex, renderSelectedStructure }),
         );
         const structureButton = {
-          label: flight.structures[initialStructureIndex].structureName,
+          label: escapeHtml(flight.structures[initialStructureIndex].structureName),
           options: structureOptions,
           id: 'structureButton',
           modifyLabel: true,
@@ -549,11 +550,11 @@ export function renderEvent({
         renderFlight(i);
       },
       isActive: i === initialFlightIndex,
-      label: drawName,
+      label: escapeHtml(drawName),
       close: true,
     }));
     const flightButton = {
-      label: flightsData?.[initialFlightIndex]?.drawName,
+      label: escapeHtml(flightsData?.[initialFlightIndex]?.drawName),
       options: flightOptions,
       modifyLabel: true,
       id: 'flightButton',

@@ -1,4 +1,5 @@
 import { calendarDayString } from 'src/pages/tournament/helpers/dateString';
+import { sanitizeProviderNotes } from './renderNotes';
 import './renderRegistrationProfile.css';
 
 interface LogisticsOption {
@@ -199,10 +200,11 @@ function fieldsContainer(): HTMLElement {
   return div;
 }
 
+/** Logistics notes are provider-authored rich text, sanitized exactly like the tournament notes. */
 function htmlNotes(html: string): HTMLElement {
   const div = document.createElement('div');
   div.className = CLASS_NOTES;
-  div.innerHTML = html;
+  div.append(sanitizeProviderNotes(html));
   return div;
 }
 
