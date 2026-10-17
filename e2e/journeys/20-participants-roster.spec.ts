@@ -60,7 +60,7 @@ test.describe('participants — names-only roster', () => {
     await expect(page.locator(ROSTER)).toBeVisible();
     // The data grid must be gone entirely, not merely restyled.
     await expect(page.locator(`${sel.playersTable} .tabulator-header`)).toHaveCount(0);
-    expect(await page.locator(ROSTER_NAME).count()).toBeGreaterThan(0);
+    await expect(page.locator(ROSTER_NAME).first()).toBeVisible();
   });
 
   test('names carry no underline and no cell border', async ({ page }) => {
@@ -115,7 +115,7 @@ test.describe('participants — names-only roster', () => {
     await expect(page.locator(ROSTER)).toBeVisible();
     // A lone "Women" heading over every name tells the reader nothing.
     await expect(page.locator('.chp-roster__heading')).toHaveCount(0);
-    expect(await page.locator(ROSTER_NAME).count()).toBeGreaterThan(0);
+    await expect(page.locator(ROSTER_NAME).first()).toBeVisible();
   });
 });
 
