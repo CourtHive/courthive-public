@@ -78,6 +78,8 @@ export interface BuildOptions {
    * "Now" strip is the current case.
    */
   startDate?: string;
+  // Edit the generated record before it is loaded and published (e.g. hostile names).
+  mutateRecord?: (tournamentRecord: any) => void;
 }
 
 /**
@@ -138,6 +140,7 @@ export function buildPublishedTournament(opts: BuildOptions = {}): PublicTournam
     nonRandom: 1,
   });
   tournamentRecord.tournamentName = tournamentName;
+  opts.mutateRecord?.(tournamentRecord);
 
   tournamentEngine.setState(tournamentRecord);
 

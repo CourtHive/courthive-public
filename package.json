@@ -74,6 +74,7 @@
     "courthive-components": "6.9.0",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.23",
+    "dompurify": "^3.4.16",
     "i18next": "^26.0.0",
     "navigo": "8.11.1",
     "normalize-text": "2.6.0",

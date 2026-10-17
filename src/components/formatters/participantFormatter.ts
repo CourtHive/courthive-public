@@ -87,7 +87,7 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
     elem.style.color = color;
   }
 
-  elem.innerHTML = (isObject(value) ? value.participantName : value) || '';
+  elem.textContent = (isObject(value) ? value.participantName : value) || '';
 
   return elem;
 };
