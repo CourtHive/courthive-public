@@ -65,6 +65,8 @@ export interface BuildOptions {
   // One event per name; defaults to a single "Men's Singles".
   eventNames?: string[];
   drawSize?: number;
+  // Draw type for every event (factory default when absent: single elimination).
+  drawType?: string;
   // Generate completed outcomes so draws render with scores (default true).
   completeAllMatchUps?: boolean;
   // Publish + expose the participant list, surfacing the Players tab (default true).
@@ -127,7 +129,7 @@ export function buildPublishedTournament(opts: BuildOptions = {}): PublicTournam
   const scheduleDate = opts.startDate ?? DEFAULT_START_DATE;
 
   const { tournamentRecord } = mocksEngine.generateTournamentRecord({
-    drawProfiles: eventNames.map((eventName) => ({ drawSize, eventName })),
+    drawProfiles: eventNames.map((eventName) => ({ drawSize, eventName, drawType: opts.drawType })),
     venueProfiles: [{ courtsCount: 4, venueName: 'Center Club', startTime: '08:00', endTime: '20:00' }],
     startDate: scheduleDate,
     endDate: addDays(scheduleDate, 4),
