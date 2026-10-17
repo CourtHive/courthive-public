@@ -32,14 +32,16 @@ test.describe('schedule participant search', () => {
     const grid = page.locator(sel.scheduleGrid);
     const populated = grid.locator('.chp-schedule-cell[data-matchup-id]');
     // Control: more than one populated cell, or "one matched, rest dimmed"
-    // would be true of a grid with a single match in it.
-    expect(await populated.count()).toBeGreaterThan(1);
+    // would be true of a grid with a single match in it. Polled, because the
+    // grid fills when the schedule request answers: a one-shot count raced it
+    // and read 0 whenever the cells had not landed yet.
+    await expect.poll(() => populated.count()).toBeGreaterThan(1);
     await expect(grid.locator(DIMMED)).toHaveCount(0);
 
     await page.locator('#scheduleSearch input').fill(scheduledParticipantName(fixture));
 
     await expect(grid.locator(MATCHED)).toHaveCount(1);
-    expect(await grid.locator(DIMMED).count()).toBeGreaterThan(0);
+    await expect.poll(() => grid.locator(DIMMED).count()).toBeGreaterThan(0);
 
     await page.locator('#scheduleSearch .chp-search__clear').click();
     await expect(grid.locator(DIMMED)).toHaveCount(0);
