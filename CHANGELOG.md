@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.3](https://github.com/CourtHive/courthive-public/compare/v1.17.2...v1.17.3) (2026-10-17)
+
+
+### Bug Fixes
+
+* **security:** render record data as text for spectators; sanitize notes with DOMPurify ([#590](https://github.com/CourtHive/courthive-public/issues/590)) ([3acabc6](https://github.com/CourtHive/courthive-public/commit/3acabc6f36151ac96b96e5a812f39454f19fcf2c))
+
 ## [1.17.2](https://github.com/CourtHive/courthive-public/compare/v1.17.1...v1.17.2) (2026-10-16)
 
 
