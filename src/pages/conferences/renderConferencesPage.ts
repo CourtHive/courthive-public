@@ -3,6 +3,7 @@
 
 import { ConferenceIndexEntry, fetchConferenceIndex } from 'src/services/api/conferencesApi';
 import { bandBar, message } from 'src/pages/conference/fingerprintView';
+import { escapeHtml } from 'src/functions/escapeHtml';
 import 'src/styles/conference-pages.css';
 
 export function renderConferencesPage(container: HTMLElement): void {
@@ -31,7 +32,7 @@ function renderDirectory(container: HTMLElement, rows: ConferenceIndexEntry[], t
     <h1>Conferences</h1>
     <p class="chp-conf-sub">Competitive exposure across published dual results — how often each conference's
     players face a meaningfully stronger opponent (stretch), an even one, or play down (anchor).
-    Threshold ±${threshold} WTN. Dual season only.</p>`;
+    Threshold ±${escapeHtml(threshold)} WTN. Dual season only.</p>`;
   root.appendChild(header);
 
   const search = document.createElement('input');
@@ -54,7 +55,7 @@ function renderDirectory(container: HTMLElement, rows: ConferenceIndexEntry[], t
     const top = document.createElement('div');
     top.className = 'chp-conf-card-top';
     top.innerHTML = `<span class="chp-conf-name">${escapeHtml(row.conference)}</span>
-      <span class="chp-conf-meta">${row.divisions.join(' · ')} · ${row.programCount} programs</span>`;
+      <span class="chp-conf-meta">${escapeHtml(row.divisions.join(' · '))} · ${escapeHtml(row.programCount)} programs</span>`;
     card.appendChild(top);
 
     card.appendChild(bandBar(row as any));
@@ -62,11 +63,11 @@ function renderDirectory(container: HTMLElement, rows: ConferenceIndexEntry[], t
     const stats = document.createElement('div');
     stats.className = 'chp-conf-stats';
     stats.innerHTML = `
-      <span><b>${row.stretchRate}%</b> stretch</span>
-      <span><b>${row.anchorRate}%</b> anchor</span>
-      <span><b>${row.breadth}</b> breadth</span>
-      <span><b>${row.competitiveRatio ?? '—'}%</b> competitive</span>
-      <span class="chp-conf-n">${row.matches.toLocaleString()} matches</span>`;
+      <span><b>${escapeHtml(row.stretchRate)}%</b> stretch</span>
+      <span><b>${escapeHtml(row.anchorRate)}%</b> anchor</span>
+      <span><b>${escapeHtml(row.breadth)}</b> breadth</span>
+      <span><b>${escapeHtml(row.competitiveRatio ?? '—')}%</b> competitive</span>
+      <span class="chp-conf-n">${escapeHtml(row.matches.toLocaleString())} matches</span>`;
     card.appendChild(stats);
     list.appendChild(card);
   }
@@ -79,10 +80,4 @@ function renderDirectory(container: HTMLElement, rows: ConferenceIndexEntry[], t
   });
 
   container.appendChild(root);
-}
-
-function escapeHtml(s: string): string {
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
 }

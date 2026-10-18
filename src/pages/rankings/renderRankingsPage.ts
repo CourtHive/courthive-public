@@ -350,7 +350,7 @@ function buildDetailContent(e: RankingEntry): HTMLElement {
       <td>${escape(t.name)}</td>
       <td>${escape(t.endDate)}</td>
       <td>${escape(rungLabel)}</td>
-      <td class="rk-col-pts">${t.points}</td>
+      <td class="rk-col-pts">${escape(t.points)}</td>
     `;
     body.appendChild(r);
   }
@@ -425,6 +425,6 @@ const HTML_ESCAPES: Record<string, string> = {
   "'": '&#39;',
 };
 
-function escape(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => HTML_ESCAPES[c] ?? c);
+function escape(s: unknown): string {
+  return String(s ?? '').replace(/[&<>"']/g, (c) => HTML_ESCAPES[c] ?? c);
 }
