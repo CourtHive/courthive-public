@@ -1,7 +1,7 @@
+import { roundGroupingHeader, textGroupingHeader } from './roundGroupingHeader';
 import { headerSortElement } from 'src/common/sorters/headerSortElement';
 import { drawDefinitionConstants } from 'tods-competition-factory';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
-import { roundGroupingHeader } from './roundGroupingHeader';
 import { destroyTable } from 'src/components/destroyTable';
 import { getRoundsColumns } from './getRoundsColumns';
 import { mapRound } from './mapRound';
@@ -60,7 +60,7 @@ export async function createRoundsTable(params) {
     const element = document.getElementById('flightDisplay');
 
     table = new Tabulator(element, {
-      groupHeader: [roundGroupingHeader, (value) => value],
+      groupHeader: [roundGroupingHeader, textGroupingHeader],
       headerSortElement: headerSortElement(['complete', 'duration', 'score']),
       responsiveLayoutCollapseStartOpen: false,
       height: globalThis.innerHeight * 0.85,
