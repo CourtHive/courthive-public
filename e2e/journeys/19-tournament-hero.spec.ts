@@ -106,7 +106,18 @@ test.describe('tournament hero — artwork containment', () => {
     await expect(page.locator(HERO_IMAGE)).toBeVisible();
     await expect(page.locator('.chp-hero')).toHaveClass(/chp-hero--banner/);
 
-    const mark = withArtwork(buildPublishedTournament({ tournamentName: 'Mark Cup' }), 300, 300);
+    // a seeded mocksEngine mints the same ids on every build, so the second tournament needs its own id or the visit
+    // below lands on the first one's page
+    const mark = withArtwork(
+      buildPublishedTournament({
+        tournamentName: 'Mark Cup',
+        mutateRecord: (record) => {
+          record.tournamentId = 'mark-cup';
+        },
+      }),
+      300,
+      300,
+    );
     await installApiMocks(page, mark);
     await gotoTournament(page, mark);
     await expect(page.locator(HERO_IMAGE)).toBeVisible();
