@@ -1,4 +1,5 @@
 import { calendarDayString } from 'src/pages/tournament/helpers/dateString';
+import { safeHttpUrl } from 'src/functions/safeHttpUrl';
 import { sanitizeProviderNotes } from './renderNotes';
 import './renderRegistrationProfile.css';
 
@@ -171,13 +172,14 @@ function field(label: string, value: string | HTMLElement): HTMLElement {
 }
 
 function linkValue(name: string, url?: string): HTMLElement {
-  if (!url) {
+  const href = safeHttpUrl(url);
+  if (!href) {
     const span = document.createElement('span');
     span.textContent = name;
     return span;
   }
   const a = document.createElement('a');
-  a.href = url;
+  a.href = href;
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
   a.textContent = name;
@@ -439,10 +441,11 @@ function renderSponsors(p: RegistrationProfile, t: Translate): HTMLElement | nul
   wrap.className = 'regprofile-sponsors';
 
   for (const sponsor of p.sponsors) {
-    const node = sponsor.websiteUrl ? document.createElement('a') : document.createElement('div');
+    const websiteHref = safeHttpUrl(sponsor.websiteUrl);
+    const node = websiteHref ? document.createElement('a') : document.createElement('div');
     node.className = 'regprofile-sponsor';
     if (node instanceof HTMLAnchorElement) {
-      node.href = sponsor.websiteUrl!;
+      node.href = websiteHref!;
       node.target = '_blank';
       node.rel = 'noopener noreferrer';
     }

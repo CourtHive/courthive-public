@@ -1,3 +1,4 @@
+import { textGroupingHeader } from 'src/components/tables/roundsTable/roundGroupingHeader';
 import { headerSortElement } from 'src/common/sorters/headerSortElement';
 import { mapParticipantResults } from './mapParticipantResults';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
@@ -86,7 +87,7 @@ export async function createStatsTable({ drawId, structureId, eventData, partici
       ]),
       // responsiveLayoutCollapseStartOpen: false,
       height: globalThis.innerHeight * 0.85,
-      groupHeader: [(value) => value],
+      groupHeader: [textGroupingHeader],
       placeholder: 'No participants',
       renderHorizontal: 'virtual',
       // responsiveLayout: 'collapse',

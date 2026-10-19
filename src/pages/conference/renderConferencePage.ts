@@ -7,6 +7,7 @@
 
 import { ConferenceDoc, ConferenceMember, Fingerprint, fetchConference } from 'src/services/api/conferencesApi';
 import { bandBar, bandLegend, message } from 'src/pages/conference/fingerprintView';
+import { escapeHtml } from 'src/functions/escapeHtml';
 import 'src/styles/conference-pages.css';
 
 export function renderConferencePage(container: HTMLElement, slug: string): void {
@@ -34,7 +35,13 @@ const num = (v: number | null | undefined, suffix = '') => (v === null || v === 
 function statBlock(label: string, value: string, hint?: string): HTMLElement {
   const el = document.createElement('div');
   el.className = 'chp-stat';
-  el.innerHTML = `<span class="chp-stat-value">${value}</span><span class="chp-stat-label">${label}</span>`;
+  const valueEl = document.createElement('span');
+  valueEl.className = 'chp-stat-value';
+  valueEl.textContent = value;
+  const labelEl = document.createElement('span');
+  labelEl.className = 'chp-stat-label';
+  labelEl.textContent = label;
+  el.append(valueEl, labelEl);
   if (hint) el.title = hint;
   return el;
 }
@@ -68,17 +75,25 @@ function render(container: HTMLElement, doc: ConferenceDoc): void {
   const header = document.createElement('div');
   header.className = 'chp-conf-header';
   header.innerHTML = `<h1>${escapeHtml(doc.conference)}</h1>
-    <p class="chp-conf-sub">${doc.divisions.join(' · ')} · ${doc.programCount} programs ·
-    seasons ${doc.seasons.join(', ')} · dual play only</p>`;
+    <p class="chp-conf-sub">${escapeHtml(doc.divisions.join(' · '))} · ${escapeHtml(doc.programCount)} programs ·
+    seasons ${escapeHtml(doc.seasons.join(', '))} · dual play only</p>`;
   root.appendChild(header);
 
   const o = doc.fingerprint.overall;
   const stats = document.createElement('div');
   stats.className = 'chp-stat-row';
-  stats.appendChild(statBlock('stretch', num(o.stretchRate, '%'), 'Share of matches against a meaningfully stronger opponent'));
-  stats.appendChild(statBlock('anchor', num(o.anchorRate, '%'), 'Share of matches against a meaningfully weaker opponent'));
-  stats.appendChild(statBlock('breadth', String(o.breadth), 'Spread across all five bands (0 = one band only, 1 = perfectly even)'));
-  stats.appendChild(statBlock('competitive', num(o.competitiveRatio, '%'), 'Share of matches that were genuine contests by scoreline'));
+  stats.appendChild(
+    statBlock('stretch', num(o.stretchRate, '%'), 'Share of matches against a meaningfully stronger opponent'),
+  );
+  stats.appendChild(
+    statBlock('anchor', num(o.anchorRate, '%'), 'Share of matches against a meaningfully weaker opponent'),
+  );
+  stats.appendChild(
+    statBlock('breadth', String(o.breadth), 'Spread across all five bands (0 = one band only, 1 = perfectly even)'),
+  );
+  stats.appendChild(
+    statBlock('competitive', num(o.competitiveRatio, '%'), 'Share of matches that were genuine contests by scoreline'),
+  );
   stats.appendChild(statBlock('matches', o.matches.toLocaleString(), 'Player-perspectives in published dual singles'));
   root.appendChild(stats);
 
@@ -88,9 +103,15 @@ function render(container: HTMLElement, doc: ConferenceDoc): void {
   fpSection.className = 'chp-conf-section';
   fpSection.innerHTML = '<h2>Competitive exposure</h2>';
   fpSection.appendChild(fingerprintRow('Overall', o));
-  fpSection.appendChild(fingerprintRow('In conference', doc.fingerprint.inConference, 'Matches against fellow members'));
-  fpSection.appendChild(fingerprintRow('Non-conference', doc.fingerprint.nonConference, 'Matches outside the conference'));
-  fpSection.appendChild(fingerprintRow('All college (baseline)', doc.baseline, 'Every published dual across all divisions'));
+  fpSection.appendChild(
+    fingerprintRow('In conference', doc.fingerprint.inConference, 'Matches against fellow members'),
+  );
+  fpSection.appendChild(
+    fingerprintRow('Non-conference', doc.fingerprint.nonConference, 'Matches outside the conference'),
+  );
+  fpSection.appendChild(
+    fingerprintRow('All college (baseline)', doc.baseline, 'Every published dual across all divisions'),
+  );
   root.appendChild(fpSection);
 
   // in- vs non-conference contrast, stated neutrally
@@ -101,9 +122,9 @@ function render(container: HTMLElement, doc: ConferenceDoc): void {
   if (g.delta > 0) contrast = '<b>more</b> outside the conference';
   else if (g.delta < 0) contrast = '<b>less</b> outside the conference';
   gap.innerHTML = `<h2>Where the stretch comes from</h2>
-    <p>Members face a meaningfully stronger opponent in <b>${g.inConference}%</b> of in-conference matches and
-    <b>${g.nonConference}%</b> of non-conference matches — ${contrast}.
-    Non-conference play is <b>${g.nonConferenceShare}%</b> of all matches.</p>`;
+    <p>Members face a meaningfully stronger opponent in <b>${escapeHtml(g.inConference)}%</b> of in-conference matches and
+    <b>${escapeHtml(g.nonConference)}%</b> of non-conference matches — ${contrast}.
+    Non-conference play is <b>${escapeHtml(g.nonConferenceShare)}%</b> of all matches.</p>`;
   root.appendChild(gap);
 
   // members
@@ -142,16 +163,16 @@ function memberRow(m: ConferenceMember): HTMLElement {
   const bar = document.createElement('span');
   bar.appendChild(bandBar(m));
   row.appendChild(bar);
-  for (const v of [num(m.stretchRate, '%'), num(m.anchorRate, '%'), String(m.breadth), num(m.competitiveRatio, '%'), m.matches.toLocaleString()]) {
+  for (const v of [
+    num(m.stretchRate, '%'),
+    num(m.anchorRate, '%'),
+    String(m.breadth),
+    num(m.competitiveRatio, '%'),
+    m.matches.toLocaleString(),
+  ]) {
     const cell = document.createElement('span');
     cell.textContent = v;
     row.appendChild(cell);
   }
   return row;
-}
-
-function escapeHtml(s: string): string {
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
 }

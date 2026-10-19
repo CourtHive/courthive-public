@@ -1,9 +1,9 @@
-import { tournamentEngine, drawDefinitionConstants } from 'tods-competition-factory';
+import { tournamentEngine } from 'tods-competition-factory';
+import { hasStatsView } from 'src/services/structureViews';
 import { isFunction } from 'src/functions/typeof';
 import { t } from 'src/i18n/i18n';
 
 import { RIGHT, ROUNDS_COLUMNS, ROUNDS_STATS, ROUNDS_TABLE } from 'src/common/constants/baseConstants';
-const { CONTAINER } = drawDefinitionConstants;
 
 type GetDisplayOptions = {
   existingView?: string;
@@ -14,7 +14,6 @@ type GetDisplayOptions = {
 export function getRoundDisplayOptions(params: GetDisplayOptions) {
   const { callback, structure, existingView } = params;
   const displayUpdate = (view) => existingView !== view && isFunction(callback) && callback({ refresh: true, view });
-  const isRoundRobin = structure?.structureType === CONTAINER;
   const isAdHoc = tournamentEngine.isAdHoc({ structure });
 
   const actionOptions = [];
@@ -33,7 +32,7 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
       close: true,
     });
 
-  if ((isAdHoc || isRoundRobin) && existingView !== ROUNDS_STATS)
+  if (hasStatsView(structure) && existingView !== ROUNDS_STATS)
     actionOptions.push({
       onClick: () => displayUpdate(ROUNDS_STATS),
       label: t('display.statistics'),

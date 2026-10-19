@@ -8,13 +8,13 @@ export function scoreFormatter(cell) {
   content.classList.add('scoreCell');
   if (data.score) {
     content.style.fontSize = 'smaller';
-    content.innerHTML = data.score;
+    content.textContent = data.score;
   } else if (isWalkover) {
-    content.innerHTML = 'WO';
+    content.textContent = 'WO';
   } else {
     content.style.fontSize = 'smaller';
     content.style.color = 'blue';
-    content.innerHTML = '--- --- ---';
+    content.textContent = '--- --- ---';
   }
 
   return content;

@@ -1,4 +1,23 @@
+import { buildRoundChips, isRoundSelectable, resolveInitialRoundNumber } from 'src/services/roundChips';
+import { installMobileBracketLayout, type RoundSelection } from 'src/services/mobileBracketLayout';
+import { filterRoundMatchUps, normalizeSearch } from 'src/common/filters/participantMatch';
+import { drawsGovernor, drawDefinitionConstants, tools } from 'tods-competition-factory';
+import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
+import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
+import { createCrowdShareHub, trackToggleCopy } from 'src/services/crowdShare';
+import { getDrawData, getEventData } from 'src/services/api/tournamentsApi';
+import { openScoringLaunchMenu } from 'src/components/scoringLaunchMenu';
+import { openScorecard } from 'src/components/scorecard/openScorecard';
+import { dropDownButton } from 'src/components/buttons/dropDownButton';
+import { consumePendingMatchUpFocus } from 'src/services/matchUpFocus';
 import { seatUpdatedDrawPositions } from './seatUpdatedDrawPositions';
+import { searchInput } from 'src/components/controlBar/searchInput';
+import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
+import { resolveStructureView } from 'src/services/structureViews';
+import { getRoundDisplayOptions } from './renderRoundOptions';
+import { escapeHtml } from 'src/functions/escapeHtml';
+import { context } from 'src/common/context';
+import { t } from 'src/i18n/i18n';
 import {
   resolvePublishedComposition,
   renderContainer,
@@ -15,24 +34,6 @@ import {
   unmarkReadyMatchUpsInProgress,
   withInlineScoringConfig,
 } from 'src/services/inlineCrowdScoring';
-import { buildRoundChips, isRoundSelectable, resolveInitialRoundNumber } from 'src/services/roundChips';
-import { installMobileBracketLayout, type RoundSelection } from 'src/services/mobileBracketLayout';
-import { filterRoundMatchUps, normalizeSearch } from 'src/common/filters/participantMatch';
-import { createRoundsTable } from 'src/components/tables/roundsTable/createRoundsTable';
-import { createStatsTable } from 'src/components/tables/statsTable/createStatsTable';
-import { createCrowdShareHub, trackToggleCopy } from 'src/services/crowdShare';
-import { openScoringLaunchMenu } from 'src/components/scoringLaunchMenu';
-import { openScorecard } from 'src/components/scorecard/openScorecard';
-import { dropDownButton } from 'src/components/buttons/dropDownButton';
-import { consumePendingMatchUpFocus } from 'src/services/matchUpFocus';
-import { searchInput } from 'src/components/controlBar/searchInput';
-import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
-import { drawsGovernor, drawDefinitionConstants, tools } from 'tods-competition-factory';
-import { getDrawData, getEventData } from 'src/services/api/tournamentsApi';
-import { getRoundDisplayOptions } from './renderRoundOptions';
-import { escapeHtml } from 'src/functions/escapeHtml';
-import { context } from 'src/common/context';
-import { t } from 'src/i18n/i18n';
 
 // constants
 import { LEFT } from 'src/common/constants/baseConstants';
@@ -470,7 +471,8 @@ export function renderEvent({
         // Track is toggled off. Idempotent across renders.
         overlayLocalScores(matchUps, inlineManager, scoredIds);
 
-        if (displayFormat === 'roundsColumns') {
+        const view = resolveStructureView({ displayFormat, structure });
+        if (view === 'roundsColumns') {
           renderRoundsColumns({
             tournamentId,
             flightDisplay,
@@ -485,7 +487,7 @@ export function renderEvent({
             searchActive,
             roundSelection,
           });
-        } else if (displayFormat === 'roundsStats') {
+        } else if (view === 'roundsStats') {
           createStatsTable({ drawId, structureId, eventData, participants });
         } else if (searchActive) {
           // The table builds its own rows from eventData when given no matchUps,

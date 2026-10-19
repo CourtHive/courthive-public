@@ -59,6 +59,31 @@ async function leaks(page: Page): Promise<string[]> {
   });
 }
 
+/**
+ * The table views are not the draw view: the rounds table writes each score with a cell formatter and
+ * groups rows under Tabulator group headers, and the statistics table groups participants by their
+ * round robin group. Tabulator writes a header callback's returned string as HTML, so a group or
+ * structure name there is a sink even though no file of ours assigns innerHTML for it.
+ */
+function hostileTables(record: any): void {
+  for (const event of record.events ?? []) {
+    for (const draw of event.drawDefinitions ?? []) {
+      for (const structure of draw.structures ?? []) {
+        for (const matchUp of structure.matchUps ?? []) hostileScore(matchUp);
+        (structure.structures ?? []).forEach((group: any, i: number) => {
+          const field = `groupName${i + 1}`;
+          group.structureName = `Group ${i + 1} ${payload(field)}`;
+          for (const matchUp of group.matchUps ?? []) hostileScore(matchUp);
+        });
+      }
+    }
+  }
+}
+
+function hostileScore(matchUp: any): void {
+  if (matchUp.score?.scoreStringSide1) matchUp.score.scoreStringSide1 = `6-0 ${payload('score')}`;
+}
+
 test.describe('Journey 29 — stored XSS: record data renders as text', () => {
   test('no view parses a record name as HTML or runs a notes handler', async ({ page }) => {
     const fixture = buildPublishedTournament({ mutateRecord: hostileRecord, drawSize: 8 });
@@ -68,6 +93,9 @@ test.describe('Journey 29 — stored XSS: record data renders as text', () => {
       entriesOpen: '2026-06-01',
       accommodation: { notes: richPayload('accommodationNotes') },
       transportation: { notes: richPayload('transportationNotes') },
+      // Structured links are not rich text: DOM assignment keeps the markup but not the scheme.
+      entryUrl: "javascript:globalThis.__xss=['entryUrl']",
+      sponsors: [{ name: 'Sponsor', websiteUrl: "javascript:globalThis.__xss=['sponsorUrl']" }],
     };
     await installApiMocks(page, fixture);
 
@@ -102,6 +130,47 @@ test.describe('Journey 29 — stored XSS: record data renders as text', () => {
           /^\s*javascript:/i.test(el.getAttribute('href') ?? el.getAttribute('xlink:href') ?? ''),
         ).length,
     );
-    expect(scriptLinks, 'javascript: links left in rendered notes').toBe(0);
+    expect(scriptLinks, 'javascript: links left in rendered notes or registration links').toBe(0);
+    await expect(page.locator('body')).toContainText('Sponsor');
+  });
+
+  test('the rounds table and grouped statistics show scores and group names as text', async ({ page }) => {
+    const fixture = buildPublishedTournament({
+      drawType: 'ROUND_ROBIN_WITH_PLAYOFF',
+      mutateRecord: hostileTables,
+      eventNames: ['Tables'],
+      drawSize: 16,
+    });
+    const [groups] = fixture.eventData[fixture.eventId].eventData.drawsData[0].structures;
+    expect(groups.structureType).toBe('CONTAINER');
+    await installApiMocks(page, fixture);
+    await gotoTournament(page, fixture, '/events');
+
+    const flight = page.locator('#flightDisplay');
+    const groupHeader = '.tabulator-group';
+    const pickView = async (label: string) => {
+      await page.locator('#roundDisplayButton button').click();
+      await page.locator('#roundDisplayButton .dropdown-item', { hasText: label }).click();
+    };
+
+    // Leaks are read first, so a parsed payload is reported by field rather than as a missing text guard.
+    await pickView('Table view');
+    await expect(flight.locator(groupHeader).first()).toBeVisible();
+    await expect(flight.locator('.scoreCell').first()).toBeVisible();
+    const tableLeaks = await leaks(page);
+    // Guard the guard: the hostile values must reach both sinks as literal text.
+    await expect.soft(flight.locator('.scoreCell', { hasText: 'class="xss-score"' }).first()).toBeVisible();
+    await expect.soft(flight.locator(groupHeader, { hasText: 'class="xss-groupName1"' }).first()).toBeAttached();
+
+    await pickView('Statistics');
+    await expect(page.getByRole('columnheader', { name: 'Match W/L' })).toBeVisible();
+    await expect(flight.locator(groupHeader).first()).toBeVisible();
+    const statsLeaks = await leaks(page);
+    await expect.soft(flight.locator(groupHeader, { hasText: 'class="xss-groupName2"' }).first()).toBeAttached();
+
+    expect({ table: tableLeaks, stats: statsLeaks }, 'table views that parsed record data as HTML').toEqual({
+      table: [],
+      stats: [],
+    });
   });
 });
