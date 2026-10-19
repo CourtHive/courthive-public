@@ -71,7 +71,7 @@
   "dependencies": {
     "@courthive/provider-config": "0.18.2",
     "axios": "1.20.0",
-    "courthive-components": "6.10.0",
+    "courthive-components": "6.10.1",
     "d3-selection": "3.0.0",
     "dayjs": "1.11.23",
     "dompurify": "^3.4.16",
