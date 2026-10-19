@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.17.4](https://github.com/CourtHive/courthive-public/compare/v1.17.3...v1.17.4) (2026-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 6.10.0 ([#600](https://github.com/CourtHive/courthive-public/issues/600)) ([182ff62](https://github.com/CourtHive/courthive-public/commit/182ff6281092953fe8eb50939c5198537b6b2fdf))
+* **deps:** update courthive-components to 6.10.1 ([#603](https://github.com/CourtHive/courthive-public/issues/603)) ([41899f6](https://github.com/CourtHive/courthive-public/commit/41899f642c72f5531e0ae8461e7b3982497c9cef))
+* **deps:** update tods-competition-factory to 7.16.0 ([#598](https://github.com/CourtHive/courthive-public/issues/598)) ([0588e4c](https://github.com/CourtHive/courthive-public/commit/0588e4cb783b5752e5e4028b6351d988a9b4a001))
+* **events:** statistics give way to the draw on a structure that has no tally ([#595](https://github.com/CourtHive/courthive-public/issues/595)) ([16fd256](https://github.com/CourtHive/courthive-public/commit/16fd2565c6f4d1f4fbd814fa6802b1d9d2ad2d14))
+* **security:** render table scores, group names and conference values as text ([#597](https://github.com/CourtHive/courthive-public/issues/597)) ([bd649eb](https://github.com/CourtHive/courthive-public/commit/bd649ebb17895df552c4cdffcdbabcd2e7e096cc))
+
 ## [1.17.3](https://github.com/CourtHive/courthive-public/compare/v1.17.2...v1.17.3) (2026-10-17)
 
 
