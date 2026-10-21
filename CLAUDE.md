@@ -23,8 +23,9 @@ release-please PR into `master`, or the back-merge PR into `dev`, light when its
 files (`package.json`'s `"version"` line, `CHANGELOG.md`, `.release-please-manifest.json`). The gates
 then skip but every job still reports; any other change gets the full run.
 
-`delete_branch_on_merge` is off so a checkpoint never deletes `dev`; prune merged feature branches
-yourself. Renovate targets `dev` (`baseBranches` in `renovate.json`). CI runs on every PR
+`dev` is protected (no deletion, no force-push) and `delete_branch_on_merge` is on (CA, 2026-10-21):
+merged feature branches delete themselves, and a checkpoint PR (head `dev`) cannot delete `dev`, because
+GitHub's auto-delete skips protected branches. Renovate targets `dev` (`baseBranches` in `renovate.json`). CI runs on every PR
 (`pull_request:` has no branch filter), so a PR into `dev` gets the full gate; a direct push to `dev`
 gets none, so land work by PR.
 
