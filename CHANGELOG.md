@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.17.5](https://github.com/CourtHive/courthive-public/compare/v1.17.4...v1.17.5) (2026-10-21)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 6.10.3 ([#609](https://github.com/CourtHive/courthive-public/issues/609)) ([c1bc91a](https://github.com/CourtHive/courthive-public/commit/c1bc91ad0c7205cc81dbcd3676281c1c5a96c481))
+* **deps:** update tods-competition-factory to 7.18.0 ([#608](https://github.com/CourtHive/courthive-public/issues/608)) ([9bf608d](https://github.com/CourtHive/courthive-public/commit/9bf608deaed3522ee2dbddf5ce9ba49e99742c52))
+
 ## [1.17.4](https://github.com/CourtHive/courthive-public/compare/v1.17.3...v1.17.4) (2026-10-19)
 
 
