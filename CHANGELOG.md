@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.17.6](https://github.com/CourtHive/courthive-public/compare/v1.17.5...v1.17.6) (2026-10-22)
+
+
+### Bug Fixes
+
+* **deps:** update tods-competition-factory to 7.19.0 ([#614](https://github.com/CourtHive/courthive-public/issues/614)) ([c1507aa](https://github.com/CourtHive/courthive-public/commit/c1507aa47679e8378a4ee93f7fe95298bc9a3aa9))
+
+
+### Documentation
+
+* dev is protected and merged branches auto-delete ([#613](https://github.com/CourtHive/courthive-public/issues/613)) ([8644585](https://github.com/CourtHive/courthive-public/commit/8644585015fc85aa9f5809e29fa4f4547f84e45f))
+
 ## [1.17.5](https://github.com/CourtHive/courthive-public/compare/v1.17.4...v1.17.5) (2026-10-21)
 
 
