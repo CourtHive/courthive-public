@@ -2,7 +2,7 @@
   "name": "ch-project-template",
   "packageManager": "pnpm@12.14.0",
   "private": true,
-  "version": "1.17.5",
+  "version": "1.17.6",
   "type": "module",
   "engines": {
     "node": ">=24",
