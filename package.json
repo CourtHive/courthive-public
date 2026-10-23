@@ -19,6 +19,7 @@
     "commitlint": "commitlint --edit",
     "config": "node config.mjs",
     "format": "prettier --write src",
+    "format:check": "prettier --check src",
     "lint": "eslint src e2e --cache --max-warnings 0",
     "lint:fix": "eslint src e2e --fix --cache",
     "lint:staged": "TZ=UTC lint-staged",
