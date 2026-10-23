@@ -49,11 +49,7 @@ export interface PersonResultEvent {
   occurredAt: string;
 }
 
-export type PersonUpdateEvent =
-  | PersonMergedEvent
-  | PersonRosterEvent
-  | PersonScheduleEvent
-  | PersonResultEvent;
+export type PersonUpdateEvent = PersonMergedEvent | PersonRosterEvent | PersonScheduleEvent | PersonResultEvent;
 
 type PersonUpdateListener = (event: PersonUpdateEvent) => void;
 

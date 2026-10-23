@@ -106,11 +106,21 @@ describe('declarationsApi', () => {
       (readHiveIDSession as any).mockReturnValue(SESSION);
       const fetchMock = vi.fn().mockResolvedValue(okJson({ declarationId: 'inv-1', status: 'INVITED' }));
       vi.stubGlobal('fetch', fetchMock);
-      const res = await createPartnerInvite('BOBOCA', { tournamentId: 't1', event: "Men's Doubles", eventId: 'e-md', inviteeEmail: 'p@x.com' });
+      const res = await createPartnerInvite('BOBOCA', {
+        tournamentId: 't1',
+        event: "Men's Doubles",
+        eventId: 'e-md',
+        inviteeEmail: 'p@x.com',
+      });
       const [url, opts] = fetchMock.mock.calls[0];
       expect(url).toContain('/partner-invites?provider=BOBOCA');
       expect(opts.method).toBe('POST');
-      expect(JSON.parse(opts.body)).toEqual({ tournamentId: 't1', event: "Men's Doubles", eventId: 'e-md', inviteeEmail: 'p@x.com' });
+      expect(JSON.parse(opts.body)).toEqual({
+        tournamentId: 't1',
+        event: "Men's Doubles",
+        eventId: 'e-md',
+        inviteeEmail: 'p@x.com',
+      });
       expect(res.declarationId).toBe('inv-1');
     });
 

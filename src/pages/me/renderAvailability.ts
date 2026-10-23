@@ -18,7 +18,13 @@ import {
   type ConsentRecord,
   type DayState,
 } from 'src/services/declarationsApi';
-import { buildAvailabilityPayload, buildSpan, cycleDayState, enumerateSpanDates, groupIntoWeeks } from './availabilityGrid';
+import {
+  buildAvailabilityPayload,
+  buildSpan,
+  cycleDayState,
+  enumerateSpanDates,
+  groupIntoWeeks,
+} from './availabilityGrid';
 import { readHiveIDSession } from 'src/services/hiveidSession';
 import { context } from 'src/common/context';
 
@@ -95,7 +101,12 @@ function consentSatisfied(consent: ConsentRecord | null): boolean {
 //  Consent gate
 // ---------------------------------------------------------------------------
 
-function renderConsentForm(body: HTMLElement, provider: string, birthDate: string | undefined, onGranted: () => void): void {
+function renderConsentForm(
+  body: HTMLElement,
+  provider: string,
+  birthDate: string | undefined,
+  onGranted: () => void,
+): void {
   body.replaceChildren();
   const form = document.createElement('form');
   form.className = 'chp-avail-consent';
@@ -150,7 +161,11 @@ function renderConsentForm(body: HTMLElement, provider: string, birthDate: strin
   body.appendChild(form);
 }
 
-function buildGuardianFields(): { wrap: HTMLElement; value: () => { name?: string; email?: string } | undefined; reveal: () => void } {
+function buildGuardianFields(): {
+  wrap: HTMLElement;
+  value: () => { name?: string; email?: string } | undefined;
+  reveal: () => void;
+} {
   const wrap = document.createElement('fieldset');
   wrap.className = 'chp-avail-guardian';
   const legend = document.createElement('legend');
@@ -225,7 +240,11 @@ async function persist(
   }
 }
 
-function buildWeekRow(week: string[], dayStates: Record<string, DayState | undefined>, onChange: () => void): HTMLElement {
+function buildWeekRow(
+  week: string[],
+  dayStates: Record<string, DayState | undefined>,
+  onChange: () => void,
+): HTMLElement {
   const row = document.createElement('div');
   row.className = 'chp-avail-week';
   for (const date of week) {
@@ -234,7 +253,11 @@ function buildWeekRow(week: string[], dayStates: Record<string, DayState | undef
   return row;
 }
 
-function buildDayCell(date: string, dayStates: Record<string, DayState | undefined>, onChange: () => void): HTMLElement {
+function buildDayCell(
+  date: string,
+  dayStates: Record<string, DayState | undefined>,
+  onChange: () => void,
+): HTMLElement {
   const cell = document.createElement('button');
   cell.type = 'button';
   cell.className = 'chp-avail-day';

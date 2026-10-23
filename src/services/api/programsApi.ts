@@ -30,7 +30,6 @@ export interface ProgramSummary {
   dualCount: number;
 }
 
-
 /** A program's published season, newest-dated first (ordering set by the service). */
 export async function fetchProgramDuals(teamId: string): Promise<ProgramDual[]> {
   const url = `${getQueryBaseUrl()}/programs/${encodeURIComponent(teamId)}/duals`;

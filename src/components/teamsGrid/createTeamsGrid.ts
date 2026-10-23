@@ -88,10 +88,7 @@ function makeCardNavigable(card: HTMLElement, teamId: string, teamName: string):
   });
 }
 
-function formatCountSegments(
-  team: GridParticipant,
-  index: Map<string, CountParticipant[]>,
-): string[] {
+function formatCountSegments(team: GridParticipant, index: Map<string, CountParticipant[]>): string[] {
   const { players, coaches, staff } = computeTeamCounts(team, index);
   const segments: string[] = [];
   if (players > 0) segments.push(t('players.teamCounts.players', { count: players }));

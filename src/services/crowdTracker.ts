@@ -60,10 +60,7 @@ function openDb(): Promise<IDBDatabase> {
   });
 }
 
-function runTransaction<T>(
-  mode: IDBTransactionMode,
-  callback: (store: IDBObjectStore) => IDBRequest<T>,
-): Promise<T> {
+function runTransaction<T>(mode: IDBTransactionMode, callback: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
   return openDb().then(
     (db) =>
       new Promise<T>((resolve, reject) => {
@@ -109,10 +106,7 @@ export async function saveSession(
   await runTransaction<IDBValidKey>('readwrite', (store) => store.put(session));
 }
 
-export async function loadSession(
-  tournamentId: string,
-  matchUpId: string,
-): Promise<CrowdTrackerSession | undefined> {
+export async function loadSession(tournamentId: string, matchUpId: string): Promise<CrowdTrackerSession | undefined> {
   const key = buildKey(tournamentId, matchUpId);
   try {
     const result = await runTransaction<CrowdTrackerSession | undefined>(
@@ -125,16 +119,10 @@ export async function loadSession(
   }
 }
 
-export async function deleteSession(
-  tournamentId: string,
-  matchUpId: string,
-): Promise<void> {
+export async function deleteSession(tournamentId: string, matchUpId: string): Promise<void> {
   const key = buildKey(tournamentId, matchUpId);
   try {
-    await runTransaction<undefined>(
-      'readwrite',
-      (store) => store.delete(key) as IDBRequest<undefined>,
-    );
+    await runTransaction<undefined>('readwrite', (store) => store.delete(key) as IDBRequest<undefined>);
   } catch {
     // no-op — deletion failure is non-fatal
   }
@@ -154,10 +142,7 @@ export async function listActiveSessions(): Promise<CrowdTrackerSession[]> {
 
 export async function clearAllSessions(): Promise<void> {
   try {
-    await runTransaction<undefined>(
-      'readwrite',
-      (store) => store.clear() as IDBRequest<undefined>,
-    );
+    await runTransaction<undefined>('readwrite', (store) => store.clear() as IDBRequest<undefined>);
   } catch {
     // no-op
   }

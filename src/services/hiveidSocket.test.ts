@@ -7,11 +7,7 @@
  * unsubscription stops further calls.
  */
 import { describe, expect, it } from 'vitest';
-import {
-  handlePersonUpdate,
-  onPersonUpdate,
-  type PersonUpdateEvent,
-} from './hiveidSocket';
+import { handlePersonUpdate, onPersonUpdate, type PersonUpdateEvent } from './hiveidSocket';
 
 describe('hiveidSocket personUpdate dispatcher', () => {
   it('fans an event out to every registered listener', () => {

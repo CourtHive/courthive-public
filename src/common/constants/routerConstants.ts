@@ -14,4 +14,17 @@ export const PROGRAMS = 'programs';
 export const CONFERENCE = 'conference';
 export const CONFERENCES = 'conferences';
 
-export const views = [TOURNAMENTS, TOURNAMENT, TRACK, SPLASH, HIVEID_ME, HIVEID_MAGIC, RANKINGS, REGISTER, PROGRAM, PROGRAMS, CONFERENCE, CONFERENCES];
+export const views = [
+  TOURNAMENTS,
+  TOURNAMENT,
+  TRACK,
+  SPLASH,
+  HIVEID_ME,
+  HIVEID_MAGIC,
+  RANKINGS,
+  REGISTER,
+  PROGRAM,
+  PROGRAMS,
+  CONFERENCE,
+  CONFERENCES,
+];

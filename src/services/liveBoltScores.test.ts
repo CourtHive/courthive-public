@@ -40,8 +40,18 @@ describe('liveBoltScores', () => {
     });
 
     it('replaces the previous payload for the same matchUpId', () => {
-      applyLiveScorePayload(buildPayload({ matchUpId: 'tie-1', side1: { teamName: 'A', playerName: 'A', setScores: [5], isServing: true } }));
-      applyLiveScorePayload(buildPayload({ matchUpId: 'tie-1', side1: { teamName: 'A', playerName: 'A', setScores: [5, 6], isServing: true } }));
+      applyLiveScorePayload(
+        buildPayload({
+          matchUpId: 'tie-1',
+          side1: { teamName: 'A', playerName: 'A', setScores: [5], isServing: true },
+        }),
+      );
+      applyLiveScorePayload(
+        buildPayload({
+          matchUpId: 'tie-1',
+          side1: { teamName: 'A', playerName: 'A', setScores: [5, 6], isServing: true },
+        }),
+      );
       expect(getLiveScore('tie-1')?.side1.setScores).toEqual([5, 6]);
     });
 

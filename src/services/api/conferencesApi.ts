@@ -89,6 +89,7 @@ export function fetchConferenceIndex(): Promise<ConferenceIndex> {
 }
 
 export function fetchConference(slug: string): Promise<ConferenceDoc> {
-  if (!docCache.has(slug)) docCache.set(slug, getJson<ConferenceDoc>(conferenceUrl(`${encodeURIComponent(slug)}.json`)));
+  if (!docCache.has(slug))
+    docCache.set(slug, getJson<ConferenceDoc>(conferenceUrl(`${encodeURIComponent(slug)}.json`)));
   return docCache.get(slug) as Promise<ConferenceDoc>;
 }

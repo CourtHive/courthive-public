@@ -58,8 +58,12 @@ describe('searchTournaments', () => {
 
   it('advances the offset by what the server actually returned', async () => {
     fetchMock
-      .mockResolvedValueOnce(response({ tournaments: hits(100, 'a'), paging: { total: 150, returned: 100, hasMore: true } }))
-      .mockResolvedValueOnce(response({ tournaments: hits(50, 'b'), paging: { total: 150, returned: 50, hasMore: false } }));
+      .mockResolvedValueOnce(
+        response({ tournaments: hits(100, 'a'), paging: { total: 150, returned: 100, hasMore: true } }),
+      )
+      .mockResolvedValueOnce(
+        response({ tournaments: hits(50, 'b'), paging: { total: 150, returned: 50, hasMore: false } }),
+      );
 
     await searchTournaments({ q: 'open' });
 

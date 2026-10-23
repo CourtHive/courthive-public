@@ -50,7 +50,14 @@ export function refreshActiveTab() {
 /** Patch matchUp data in-memory and re-render. Called by liveUpdates on matchUpUpdate. */
 export function patchMatchUps(matchUps: any[], positionAssignments?: any[]) {
   const tabName = context.tab;
-  console.log('[liveUpdates] patchMatchUps — tab:', tabName, 'matchUps:', matchUps.length, 'positionAssignments:', positionAssignments?.length ?? 0);
+  console.log(
+    '[liveUpdates] patchMatchUps — tab:',
+    tabName,
+    'matchUps:',
+    matchUps.length,
+    'positionAssignments:',
+    positionAssignments?.length ?? 0,
+  );
   if (tabName === 'Events' && context.patchEventMatchUps) {
     context.patchEventMatchUps(matchUps, positionAssignments);
   } else if (tabName === 'Schedule') {

@@ -52,7 +52,10 @@ function usesScorerToken(config: ScoringLaunchConfig): boolean {
  * URL; only the CFS-minted `aud: 'score'` token, which grants nothing but crowd
  * attribution at the relay.
  */
-async function resolveScorerToken(config: ScoringLaunchConfig, ctx: ScoringLaunchContextInput): Promise<string | undefined> {
+async function resolveScorerToken(
+  config: ScoringLaunchConfig,
+  ctx: ScoringLaunchContextInput,
+): Promise<string | undefined> {
   if (!usesScorerToken(config)) return undefined;
   if (!readHiveIDSession()?.token) return undefined;
   try {
