@@ -1,0 +1,5 @@
+# Formatting-only commits that `git blame` should skip.
+# git config blame.ignoreRevsFile .git-blame-ignore-revs  (GitHub's blame view reads this file on its own)
+
+# style: one-time prettier baseline (2026-10-23, #621)
+a5f049499f79568ad1f820d4d62cbd9759dd7c68
