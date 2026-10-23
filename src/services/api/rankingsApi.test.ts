@@ -48,9 +48,9 @@ describe('describeRankingList', () => {
   });
 
   it('carries an NTRP level through', () => {
-    expect(describeRankingList(snapshot({ bodyId: 'USTA', levelCode: '4.0', gender: 'FEMALE', ageCategoryCode: null }))).toBe(
-      'USTA · Female · 4.0',
-    );
+    expect(
+      describeRankingList(snapshot({ bodyId: 'USTA', levelCode: '4.0', gender: 'FEMALE', ageCategoryCode: null })),
+    ).toBe('USTA · Female · 4.0');
   });
 });
 

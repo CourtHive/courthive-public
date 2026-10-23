@@ -25,7 +25,9 @@
   text-decoration: none;
   color: var(--chc-text-link);
 }
-.chp-conf-back:hover { text-decoration: underline; }
+.chp-conf-back:hover {
+  text-decoration: underline;
+}
 
 .chp-conf-message {
   padding: 1.5rem 0.5rem;
@@ -64,11 +66,21 @@
   white-space: nowrap;
 }
 /* hardest → easiest; diverging so the centre (EVEN) reads as neutral */
-.chp-band--stretch { background: #1f4f8b; }
-.chp-band--up      { background: #5b8fc9; }
-.chp-band--even    { background: #6d7a73; }
-.chp-band--down    { background: #d59b52; }
-.chp-band--anchor  { background: #a8531f; }
+.chp-band--stretch {
+  background: #1f4f8b;
+}
+.chp-band--up {
+  background: #5b8fc9;
+}
+.chp-band--even {
+  background: #6d7a73;
+}
+.chp-band--down {
+  background: #d59b52;
+}
+.chp-band--anchor {
+  background: #a8531f;
+}
 
 .chp-band-legend {
   display: flex;
@@ -78,7 +90,11 @@
   font-size: 0.78rem;
   color: var(--chc-text-muted);
 }
-.chp-band-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.chp-band-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
 .chp-band-legend .chp-band {
   width: 0.85rem;
   height: 0.85rem;
@@ -87,7 +103,10 @@
 
 /* ---------------------------------------------------------------- directory */
 
-.chp-conf-list { display: grid; gap: 0.6rem; }
+.chp-conf-list {
+  display: grid;
+  gap: 0.6rem;
+}
 .chp-conf-card {
   display: block;
   padding: 0.7rem 0.85rem;
@@ -97,7 +116,9 @@
   text-decoration: none;
   color: inherit;
 }
-.chp-conf-card:hover { border-color: var(--chc-border-focus); }
+.chp-conf-card:hover {
+  border-color: var(--chc-border-focus);
+}
 .chp-conf-card-top {
   display: flex;
   justify-content: space-between;
@@ -105,8 +126,13 @@
   align-items: baseline;
   margin-bottom: 0.45rem;
 }
-.chp-conf-name { font-weight: 600; }
-.chp-conf-meta { font-size: 0.78rem; color: var(--chc-text-muted); }
+.chp-conf-name {
+  font-weight: 600;
+}
+.chp-conf-meta {
+  font-size: 0.78rem;
+  color: var(--chc-text-muted);
+}
 .chp-conf-stats {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +141,9 @@
   font-size: 0.78rem;
   color: var(--chc-text-muted);
 }
-.chp-conf-n { margin-left: auto; }
+.chp-conf-n {
+  margin-left: auto;
+}
 
 /* ---------------------------------------------------------------- detail */
 
@@ -132,7 +160,11 @@
   border-radius: 8px;
   background: var(--chc-bg-elevated);
 }
-.chp-stat-value { display: block; font-size: 1.2rem; font-weight: 700; }
+.chp-stat-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 .chp-stat-label {
   display: block;
   font-size: 0.72rem;
@@ -141,7 +173,9 @@
   color: var(--chc-text-muted);
 }
 
-.chp-conf-section { margin-top: 1.6rem; }
+.chp-conf-section {
+  margin-top: 1.6rem;
+}
 .chp-conf-section h2 {
   font-size: 1rem;
   margin: 0 0 0.6rem;
@@ -157,12 +191,24 @@
   margin-bottom: 0.4rem;
   font-size: 0.85rem;
 }
-.chp-fp-label { color: var(--chc-text-muted); }
-.chp-fp-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--chc-text-muted); }
+.chp-fp-label {
+  color: var(--chc-text-muted);
+}
+.chp-fp-n {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--chc-text-muted);
+}
 
-.chp-conf-gap p { font-size: 0.9rem; line-height: 1.55; margin: 0; }
+.chp-conf-gap p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
 
-.chp-member-table { overflow-x: auto; }
+.chp-member-table {
+  overflow-x: auto;
+}
 .chp-member-row {
   display: grid;
   grid-template-columns: minmax(11rem, 1.6fr) minmax(8rem, 1.4fr) repeat(5, minmax(4.2rem, 0.6fr));
@@ -180,7 +226,10 @@
   color: var(--chc-text-muted);
   border-bottom-width: 2px;
 }
-.chp-member-name { font-weight: 600; font-variant-numeric: normal; }
+.chp-member-name {
+  font-weight: 600;
+  font-variant-numeric: normal;
+}
 
 .chp-conf-note {
   margin-top: 1.4rem;
@@ -190,11 +239,20 @@
 }
 
 @media (max-width: 640px) {
-  .chp-fp-row { grid-template-columns: 7rem 1fr 3.5rem; font-size: 0.78rem; }
-  .chp-member-row { grid-template-columns: minmax(9rem, 1.4fr) minmax(6rem, 1fr) repeat(5, minmax(3.4rem, 0.5fr)); }
+  .chp-fp-row {
+    grid-template-columns: 7rem 1fr 3.5rem;
+    font-size: 0.78rem;
+  }
+  .chp-member-row {
+    grid-template-columns: minmax(9rem, 1.4fr) minmax(6rem, 1fr) repeat(5, minmax(3.4rem, 0.5fr));
+  }
 }
 
 /* Band colours are fixed hex on purpose — they encode an ordinal scale, not theme chrome — but the
    bar's empty track and the numerals must follow the theme. */
-.chp-band-bar { background: var(--chc-bg-secondary); }
-.chp-band { color: #fff; }
+.chp-band-bar {
+  background: var(--chc-bg-secondary);
+}
+.chp-band {
+  color: #fff;
+}

@@ -166,13 +166,13 @@ export async function fetchMyRegistrations(provider: string): Promise<Registrati
   return Array.isArray(body) ? (body as RegistrationSnapshot[]) : [];
 }
 
-export async function fetchMyRegistration(provider: string, tournamentId: string): Promise<RegistrationSnapshot | null> {
+export async function fetchMyRegistration(
+  provider: string,
+  tournamentId: string,
+): Promise<RegistrationSnapshot | null> {
   const headers = authHeaders();
   if (!headers) return null;
-  const res = await fetch(
-    registrationUrl(tournamentId, provider),
-    { headers },
-  );
+  const res = await fetch(registrationUrl(tournamentId, provider), { headers });
   if (res.status === 401) return null;
   if (!res.ok) throw new Error(`fetchMyRegistration failed: HTTP ${res.status}`);
   const body = await res.json().catch(() => null);
@@ -186,10 +186,11 @@ export async function submitRegistration(
 ): Promise<RegistrationSnapshot> {
   const headers = authHeaders();
   if (!headers) throw new Error(NOT_SIGNED_IN);
-  const res = await fetch(
-    registrationUrl(tournamentId, provider),
-    { method: 'PUT', headers, body: JSON.stringify(payload) },
-  );
+  const res = await fetch(registrationUrl(tournamentId, provider), {
+    method: 'PUT',
+    headers,
+    body: JSON.stringify(payload),
+  });
   if (!res.ok) throw new Error(await describeError(res));
   return (await res.json()) as RegistrationSnapshot;
 }
@@ -197,10 +198,7 @@ export async function submitRegistration(
 export async function withdrawRegistration(provider: string, tournamentId: string): Promise<void> {
   const headers = authHeaders();
   if (!headers) return;
-  const res = await fetch(
-    registrationUrl(tournamentId, provider),
-    { method: 'DELETE', headers },
-  );
+  const res = await fetch(registrationUrl(tournamentId, provider), { method: 'DELETE', headers });
   if (!res.ok && res.status !== 401) throw new Error(await describeError(res));
 }
 

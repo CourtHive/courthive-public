@@ -74,7 +74,9 @@ function buildSparkline(rows: PersonRankingRow[]): SVGSVGElement | null {
   const step = width / (points.length - 1);
 
   // Inverted: rank 1 is the BEST, so it belongs at the TOP of the sparkline.
-  const coords = points.map((rank, i) => `${(i * step).toFixed(1)},${(((rank - best) / span) * (height - 4) + 2).toFixed(1)}`);
+  const coords = points.map(
+    (rank, i) => `${(i * step).toFixed(1)},${(((rank - best) / span) * (height - 4) + 2).toFixed(1)}`,
+  );
 
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);

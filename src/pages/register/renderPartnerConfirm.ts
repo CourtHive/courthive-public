@@ -9,7 +9,12 @@
  * upsert is idempotent). Consent applies at submit (decision #5); a CONSENT_REQUIRED
  * response points the user at the full `/register` page to record it.
  */
-import { acceptPartnerInvite, fetchPartnerInvite, submitRegistration, type PartnerInviteView } from 'src/services/declarationsApi';
+import {
+  acceptPartnerInvite,
+  fetchPartnerInvite,
+  submitRegistration,
+  type PartnerInviteView,
+} from 'src/services/declarationsApi';
 import { isAuthenticated } from 'src/services/hiveidSession';
 import { context } from 'src/common/context';
 

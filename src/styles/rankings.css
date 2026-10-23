@@ -5,10 +5,16 @@
   margin: 0 auto;
   padding: 24px 16px 48px;
   color: var(--sp-text, #111);
-  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
-.rk-header { margin-bottom: 16px; }
+.rk-header {
+  margin-bottom: 16px;
+}
 
 .rk-title {
   font-size: 28px;
@@ -59,8 +65,12 @@
 }
 
 @media (max-width: 880px) {
-  .rk-tables { grid-template-columns: 1fr; }
-  .rk-meta-bar { grid-template-columns: repeat(2, 1fr); }
+  .rk-tables {
+    grid-template-columns: 1fr;
+  }
+  .rk-meta-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .rk-panel {
@@ -102,13 +112,34 @@
   vertical-align: middle;
 }
 
-.rk-row:hover { background: var(--sp-hover-bg, rgba(0,0,0,0.03)); }
+.rk-row:hover {
+  background: var(--sp-hover-bg, rgba(0, 0, 0, 0.03));
+}
 
-.rk-col-rank { width: 48px; text-align: right; font-variant-numeric: tabular-nums; color: var(--sp-muted, #6b7280); }
-.rk-col-name { font-weight: 600; }
-.rk-col-pts  { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
-.rk-col-res  { text-align: right; font-variant-numeric: tabular-nums; color: var(--sp-muted, #6b7280); width: 60px; }
-.rk-col-events { text-align: right; width: 80px; }
+.rk-col-rank {
+  width: 48px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--sp-muted, #6b7280);
+}
+.rk-col-name {
+  font-weight: 600;
+}
+.rk-col-pts {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.rk-col-res {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--sp-muted, #6b7280);
+  width: 60px;
+}
+.rk-col-events {
+  text-align: right;
+  width: 80px;
+}
 
 .rk-detail-toggle {
   background: transparent;
@@ -121,7 +152,7 @@
 }
 
 .rk-detail-toggle:hover {
-  background: var(--sp-hover-bg, rgba(0,0,0,0.05));
+  background: var(--sp-hover-bg, rgba(0, 0, 0, 0.05));
 }
 
 .rk-ladder-host {
@@ -173,7 +204,9 @@
   border-bottom: 1px solid var(--sp-border-subtle, #f3f4f6);
 }
 
-.rk-detail-table tbody tr:last-child td { border-bottom: none; }
+.rk-detail-table tbody tr:last-child td {
+  border-bottom: none;
+}
 
 .rk-empty {
   padding: 16px;
@@ -197,7 +230,9 @@
   margin-bottom: 6px;
 }
 
-.rk-footer-spaced { margin-top: 16px; }
+.rk-footer-spaced {
+  margin-top: 16px;
+}
 
 .rk-footer-text {
   line-height: 1.5;

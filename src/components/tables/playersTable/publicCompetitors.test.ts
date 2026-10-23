@@ -11,7 +11,12 @@ const competitor = { participantId: 'p1', participantType: 'INDIVIDUAL', partici
 const roleless = { participantId: 'p2', participantType: 'INDIVIDUAL' };
 const official = { participantId: 's1', participantType: 'INDIVIDUAL', participantRole: 'OFFICIAL' };
 const coach = { participantId: 's2', participantType: 'INDIVIDUAL', participantRole: 'COACH' };
-const group = { participantId: 'g1', participantType: 'GROUP', participantRole: 'COACH', participantName: 'Transport Van A' };
+const group = {
+  participantId: 'g1',
+  participantType: 'GROUP',
+  participantRole: 'COACH',
+  participantName: 'Transport Van A',
+};
 const pair = { participantId: 'd1', participantType: 'PAIR', participantRole: 'COMPETITOR' };
 
 describe('isPublicCompetitor', () => {

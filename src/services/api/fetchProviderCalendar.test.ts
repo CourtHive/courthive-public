@@ -23,8 +23,12 @@ describe('fetchProviderCalendar', () => {
 
   it('walks every page — the ALTA case, 967 across two requests', () => {
     post
-      .mockResolvedValueOnce(page({ tournaments: rows(500, 'a'), paging: { total: 967, returned: 500, hasMore: true } }))
-      .mockResolvedValueOnce(page({ tournaments: rows(467, 'b'), paging: { total: 967, returned: 467, hasMore: false } }));
+      .mockResolvedValueOnce(
+        page({ tournaments: rows(500, 'a'), paging: { total: 967, returned: 500, hasMore: true } }),
+      )
+      .mockResolvedValueOnce(
+        page({ tournaments: rows(467, 'b'), paging: { total: 967, returned: 467, hasMore: false } }),
+      );
 
     return fetchProviderCalendar({ providerAbbr: 'ALTA' }).then((result) => {
       expect(result.tournaments).toHaveLength(967);
@@ -39,7 +43,9 @@ describe('fetchProviderCalendar', () => {
   });
 
   it('stops after one request when the server says there is no more', async () => {
-    post.mockResolvedValueOnce(page({ tournaments: rows(12, 'a'), paging: { total: 12, returned: 12, hasMore: false } }));
+    post.mockResolvedValueOnce(
+      page({ tournaments: rows(12, 'a'), paging: { total: 12, returned: 12, hasMore: false } }),
+    );
 
     const result = await fetchProviderCalendar({ providerAbbr: 'FTK' });
 
@@ -58,7 +64,9 @@ describe('fetchProviderCalendar', () => {
   });
 
   it('reports truncation rather than presenting a partial list as complete', async () => {
-    post.mockResolvedValue(page({ tournaments: rows(500, 'a'), paging: { total: 99999, returned: 500, hasMore: true } }));
+    post.mockResolvedValue(
+      page({ tournaments: rows(500, 'a'), paging: { total: 99999, returned: 500, hasMore: true } }),
+    );
 
     const result = await fetchProviderCalendar({ providerAbbr: 'BIG' });
 

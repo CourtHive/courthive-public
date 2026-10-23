@@ -10,8 +10,7 @@
 import { readHiveIDSession } from './hiveidSession';
 
 export function getCfsBaseUrl(): string {
-  const local =
-    globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
+  const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
   // Reuse the dev-toolbox override that the rest of the public-side
   // services honor (window.dev.baseURL). Falls back to the production
   // CFS at courthive.net.
@@ -180,7 +179,10 @@ export async function consumeEmailVerification(token: string): Promise<{ success
   return (await res.json()) as { success: true; contactEmail: string };
 }
 
-export function fetchMyParticipations(): Promise<{ personId: string | null; participations: ParticipationRow[] } | null> {
+export function fetchMyParticipations(): Promise<{
+  personId: string | null;
+  participations: ParticipationRow[];
+} | null> {
   return authenticatedJson('/auth/hiveid/me/participations');
 }
 
@@ -188,12 +190,17 @@ export function fetchMyMatches(): Promise<{ personId: string | null; matches: Ma
   return authenticatedJson('/auth/hiveid/me/matches');
 }
 
-export function fetchClaimable(tournamentId: string): Promise<{ tournamentId: string; candidates: ClaimableCandidate[] } | null> {
+export function fetchClaimable(
+  tournamentId: string,
+): Promise<{ tournamentId: string; candidates: ClaimableCandidate[] } | null> {
   if (!tournamentId) return Promise.resolve({ tournamentId: '', candidates: [] });
   return authenticatedJson(`/auth/hiveid/me/claimable/${encodeURIComponent(tournamentId)}`);
 }
 
-export function claimParticipant(tournamentId: string, participantId: string): Promise<{ success: true; tournamentId: string; participantId: string; personId: string } | null> {
+export function claimParticipant(
+  tournamentId: string,
+  participantId: string,
+): Promise<{ success: true; tournamentId: string; participantId: string; personId: string } | null> {
   return authenticatedJson('/auth/hiveid/me/claim', {
     method: 'POST',
     body: JSON.stringify({ tournamentId, participantId }),
