@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.8](https://github.com/CourtHive/courthive-public/compare/v1.17.7...v1.17.8) (2026-10-23)
+
+
+### Bug Fixes
+
+* **deps:** update @courthive/provider-config to 0.19.0 ([#630](https://github.com/CourtHive/courthive-public/issues/630)) ([076a0d4](https://github.com/CourtHive/courthive-public/commit/076a0d43c26c72086d6db929c2f9c8b5c88e101c))
+
 ## [1.17.7](https://github.com/CourtHive/courthive-public/compare/v1.17.6...v1.17.7) (2026-10-23)
 
 
