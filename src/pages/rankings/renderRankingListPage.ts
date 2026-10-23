@@ -12,12 +12,7 @@
 // total in the header's `entryCount`, so this page walks it rather than asking
 // for the whole thing.
 
-import {
-  describeRankingList,
-  fetchSnapshot,
-  RankingEntry,
-  RankingSnapshot,
-} from 'src/services/api/rankingsApi';
+import { describeRankingList, fetchSnapshot, RankingEntry, RankingSnapshot } from 'src/services/api/rankingsApi';
 import 'src/styles/rankings.css';
 
 const PAGE_SIZE = 200;
@@ -63,7 +58,16 @@ export function renderRankingListPage(container: HTMLElement, snapshotId: string
       // as the body — so it is the size of the list, not the size of the page.
       const total = pagination.total || snapshot.entryCount;
       if (total > collected.length) {
-        panel.appendChild(buildMoreButton(snapshotId, table, collected, () => offset, (n) => (offset = n), total));
+        panel.appendChild(
+          buildMoreButton(
+            snapshotId,
+            table,
+            collected,
+            () => offset,
+            (n) => (offset = n),
+            total,
+          ),
+        );
       }
     })
     .catch(() => fail('That ranking list could not be found.'));

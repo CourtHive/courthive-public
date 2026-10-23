@@ -22,12 +22,7 @@
  */
 
 export type EligibilityOutcome =
-  | 'hidden'
-  | 'sign-in-required'
-  | 'not-yet-open'
-  | 'closed'
-  | 'already-registered'
-  | 'open';
+  'hidden' | 'sign-in-required' | 'not-yet-open' | 'closed' | 'already-registered' | 'open';
 
 export interface EligibilityInput {
   registrationProfile?: {

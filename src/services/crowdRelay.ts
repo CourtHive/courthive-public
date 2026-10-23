@@ -189,10 +189,7 @@ export function connectCrowdRelay(options: ConnectCrowdRelayOptions): CrowdRelay
  *
  * Returns `undefined` if no progress is detectable.
  */
-export function inferPointWinner(
-  prev: CrowdScoreSnapshot | undefined,
-  next: CrowdScoreSnapshot,
-): 1 | 2 | undefined {
+export function inferPointWinner(prev: CrowdScoreSnapshot | undefined, next: CrowdScoreSnapshot): 1 | 2 | undefined {
   const fromSetDelta = inferFromSetGames(prev, next);
   if (fromSetDelta) return fromSetDelta;
 
@@ -206,10 +203,7 @@ export function inferPointWinner(
   return inferFromPointDisplay(prev, next);
 }
 
-function inferFromSetGames(
-  prev: CrowdScoreSnapshot | undefined,
-  next: CrowdScoreSnapshot,
-): 1 | 2 | undefined {
+function inferFromSetGames(prev: CrowdScoreSnapshot | undefined, next: CrowdScoreSnapshot): 1 | 2 | undefined {
   const nextSets = next.sets ?? [];
   const prevSets = prev?.sets ?? [];
   for (let i = 0; i < nextSets.length; i += 1) {
@@ -223,10 +217,7 @@ function inferFromSetGames(
   return undefined;
 }
 
-function inferFromSetWinner(
-  prev: CrowdScoreSnapshot | undefined,
-  next: CrowdScoreSnapshot,
-): 1 | 2 | undefined {
+function inferFromSetWinner(prev: CrowdScoreSnapshot | undefined, next: CrowdScoreSnapshot): 1 | 2 | undefined {
   const nextSets = next.sets ?? [];
   const prevSets = prev?.sets ?? [];
   for (let i = 0; i < nextSets.length; i += 1) {
@@ -239,10 +230,7 @@ function inferFromSetWinner(
   return undefined;
 }
 
-function inferFromPointDisplay(
-  prev: CrowdScoreSnapshot | undefined,
-  next: CrowdScoreSnapshot,
-): 1 | 2 | undefined {
+function inferFromPointDisplay(prev: CrowdScoreSnapshot | undefined, next: CrowdScoreSnapshot): 1 | 2 | undefined {
   const cur = next.pointDisplay;
   const before = prev?.pointDisplay;
   if (!cur || !before) return undefined;
@@ -361,11 +349,7 @@ function addListener(
   };
 }
 
-function emit(
-  listeners: Map<CrowdRelayEvent, Set<Listener>>,
-  event: CrowdRelayEvent,
-  payload: any,
-): void {
+function emit(listeners: Map<CrowdRelayEvent, Set<Listener>>, event: CrowdRelayEvent, payload: any): void {
   const set = listeners.get(event);
   if (!set) return;
   for (const listener of set) {

@@ -19,6 +19,7 @@
     "commitlint": "commitlint --edit",
     "config": "node config.mjs",
     "format": "prettier --write src",
+    "format:check": "prettier --check src",
     "lint": "eslint src e2e --cache --max-warnings 0",
     "lint:fix": "eslint src e2e --fix --cache",
     "lint:staged": "TZ=UTC lint-staged",
@@ -69,7 +70,7 @@
     "yargs": "18.2.0"
   },
   "dependencies": {
-    "@courthive/provider-config": "0.18.2",
+    "@courthive/provider-config": "0.18.3",
     "axios": "1.20.0",
     "courthive-components": "6.10.3",
     "d3-selection": "3.0.0",
@@ -82,6 +83,6 @@
     "svelte": "^5.55.1",
     "tabulator-tables": "6.6.1",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "7.19.0"
+    "tods-competition-factory": "7.20.0"
   }
 }

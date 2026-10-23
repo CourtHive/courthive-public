@@ -59,7 +59,6 @@
   color: var(--chc-text-primary);
 }
 
-
 [data-theme='dark'] .tabulator .tabulator-tableholder .tabulator-table {
   color: var(--chc-text-primary);
 }

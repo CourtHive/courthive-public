@@ -1,11 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { computeTeamCounts, indexIndividualsByTeamName } from './teamsCountLogic';
 
-const individual = (
-  id: string,
-  teamName: string,
-  role?: string,
-): any => ({
+const individual = (id: string, teamName: string, role?: string): any => ({
   participantId: id,
   participantType: 'INDIVIDUAL',
   participantRole: role,
@@ -18,11 +14,7 @@ const individual = (
 
 describe('indexIndividualsByTeamName', () => {
   it('groups INDIVIDUAL participants by their teamAttributes teamName', () => {
-    const participants = [
-      individual('p1', 'Altitude'),
-      individual('p2', 'Altitude'),
-      individual('p3', 'Freeze'),
-    ];
+    const participants = [individual('p1', 'Altitude'), individual('p2', 'Altitude'), individual('p3', 'Freeze')];
     const index = indexIndividualsByTeamName(participants);
     expect(index.get('Altitude')).toHaveLength(2);
     expect(index.get('Freeze')).toHaveLength(1);
@@ -85,10 +77,7 @@ describe('computeTeamCounts', () => {
 
   it('treats missing / undefined participantRole as COMPETITOR', () => {
     const t = team('t1', 'Altitude', []);
-    const index = indexIndividualsByTeamName([
-      individual('p1', 'Altitude'),
-      individual('p2', 'Altitude', undefined),
-    ]);
+    const index = indexIndividualsByTeamName([individual('p1', 'Altitude'), individual('p2', 'Altitude', undefined)]);
     expect(computeTeamCounts(t, index)).toEqual({ players: 2, coaches: 0, staff: 0 });
   });
 

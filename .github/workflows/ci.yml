@@ -91,6 +91,15 @@ jobs:
         if: steps.scope.outputs.light != 'true'
       - run: pnpm lint
         if: steps.scope.outputs.light != 'true'
+
+      # Formatting gate. Nothing enforced prettier before this, so 34 files had drifted by
+      # 2026-10-23. The baseline was applied in one formatting-only commit (listed in
+      # .git-blame-ignore-revs); this keeps it from drifting again, --no-verify commits included.
+      #
+      # `pnpm format` fixes anything this flags.
+      - name: format:check
+        if: steps.scope.outputs.light != 'true'
+        run: pnpm format:check
       - run: pnpm check-types
         if: steps.scope.outputs.light != 'true'
       - run: pnpm test --run

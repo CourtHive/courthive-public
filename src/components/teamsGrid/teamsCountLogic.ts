@@ -13,9 +13,7 @@ export type CountParticipant = {
   person?: any;
 };
 
-export function indexIndividualsByTeamName(
-  participants: CountParticipant[],
-): Map<string, CountParticipant[]> {
+export function indexIndividualsByTeamName(participants: CountParticipant[]): Map<string, CountParticipant[]> {
   const index = new Map<string, CountParticipant[]>();
   for (const p of participants) {
     if (p.participantType !== 'INDIVIDUAL') continue;

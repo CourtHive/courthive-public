@@ -12,7 +12,9 @@ import {
   type HiveIDSessionStorage,
 } from './hiveidSession';
 
-function makeStorage(initial: Record<string, string> = {}): HiveIDSessionStorage & { dump: () => Record<string, string> } {
+function makeStorage(
+  initial: Record<string, string> = {},
+): HiveIDSessionStorage & { dump: () => Record<string, string> } {
   const store: Record<string, string> = { ...initial };
   return {
     getItem: (key) => (key in store ? store[key] : null),

@@ -22,7 +22,9 @@
 /* A team card that links to its program's by-team season. */
 .chp-team-card-link {
   cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .chp-team-card-link:hover {

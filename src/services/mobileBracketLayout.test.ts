@@ -15,10 +15,7 @@ function buildContainer(headerText?: string): any {
   // Minimal stand-in for an HTMLElement.querySelector. Returns the same
   // header object regardless of selector so the helper's lookup matches.
   return {
-    querySelector: () =>
-      headerText
-        ? { textContent: headerText }
-        : null,
+    querySelector: () => (headerText ? { textContent: headerText } : null),
   };
 }
 
