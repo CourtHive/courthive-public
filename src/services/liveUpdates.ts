@@ -9,7 +9,12 @@
  *
  * This is a read-only listener — the public viewer never sends mutations.
  */
-import { refreshActiveTab, patchMatchUps } from 'src/pages/tournament/helpers/tabDisplay';
+import {
+  refreshActiveTab,
+  patchMatchUps,
+  rerenderActiveTabForLiveScores,
+} from 'src/pages/tournament/helpers/tabDisplay';
+import { connectLiveRelay, disconnectLiveRelay, LIVE_RELAY_SCORE_EVENT } from 'src/services/liveRelayScores';
 import { isFullyUnpublished } from 'src/pages/tournament/renderTournament';
 import type { PublicLivePayload } from 'src/services/publicLiveTypes';
 import { applyLiveScorePayload } from 'src/services/liveBoltScores';
@@ -20,6 +25,29 @@ import { io, Socket } from 'socket.io-client';
 let socket: Socket | undefined;
 let currentRoom: string | undefined;
 
+// Relay live scores arrive per point, across every match on the page: re-render the visible tab at most once per
+// LIVE_RERENDER_MS so a busy tournament does not rebuild the bracket for every point of every match.
+const LIVE_RERENDER_MS = 250;
+let liveRerenderTimer: ReturnType<typeof setTimeout> | undefined;
+let liveRelayListening = false;
+
+function scheduleLiveRerender(): void {
+  if (liveRerenderTimer) return;
+  liveRerenderTimer = setTimeout(() => {
+    liveRerenderTimer = undefined;
+    rerenderActiveTabForLiveScores();
+  }, LIVE_RERENDER_MS);
+}
+
+/** The score-relay's `/live` feed rides the same tournament lifecycle as `/public`. */
+function joinLiveRelay(tournamentId: string): void {
+  if (!liveRelayListening && typeof globalThis.window !== 'undefined') {
+    globalThis.window.addEventListener(LIVE_RELAY_SCORE_EVENT, scheduleLiveRerender);
+    liveRelayListening = true;
+  }
+  connectLiveRelay(tournamentId);
+}
+
 function getServerUrl(): string {
   const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
   return window['dev']?.baseURL || (local ? 'http://localhost:8383' : 'https://courthive.net');
@@ -27,6 +55,7 @@ function getServerUrl(): string {
 
 export function connectAndJoinRoom(tournamentId: string): void {
   if (!tournamentId) return;
+  joinLiveRelay(tournamentId);
 
   // Already in this room
   if (currentRoom === tournamentId && socket?.connected) return;
@@ -118,6 +147,7 @@ export function leaveRoom(): void {
     socket.emit('leaveTournament', { tournamentId: currentRoom });
   }
   currentRoom = undefined;
+  disconnectLiveRelay();
 }
 
 export function disconnectSocket(): void {

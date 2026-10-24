@@ -9,6 +9,8 @@ import { scheduleGovernor, factoryConstants } from 'tods-competition-factory';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { searchInput } from 'src/components/controlBar/searchInput';
 import { removeAllChildNodes } from 'src/services/dom/transformers';
+import { getLiveRelayScore } from 'src/services/liveRelayScores';
+import { withLiveScore } from 'src/services/liveScoreDisplay';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 import dayjs from 'dayjs';
@@ -65,7 +67,7 @@ export function createScheduleTable(params?: { data?: ScheduleData }) {
 
   const renderForDate = (scheduledDate: string) => {
     currentDate = scheduledDate;
-    const courtsData = courtsForDate(data, scheduledDate);
+    const courtsData = withLiveScoresForToday(courtsForDate(data, scheduledDate), scheduledDate);
     const rows =
       scheduleGovernor.courtGridRows({
         courtsData,
@@ -100,6 +102,8 @@ export function createScheduleTable(params?: { data?: ScheduleData }) {
     if (venueZoneLabel) headerEl.appendChild(venueZoneLabel);
   }
   renderForDate(currentDate);
+  // Live relay scores re-render the current date from the data already held (see tabDisplay).
+  context.rerenderSchedule = () => renderForDate(currentDate);
 
   return { courtsCount: courtsForDate(data, scheduleDates[0]).length };
 }
@@ -166,6 +170,29 @@ function buildDateSelector(scheduleDates: string[], renderForDate: (date: string
 }
 
 /** Hydrate side participants and keep only courts with matchUps on the date (auto-hide empty courts). */
+/**
+ * Today's courts carry live scores — a tracker's, or a crowd session a TD promoted — as display copies, so the Now
+ * strip reads LIVE and the grid shows the score. Any other day is shown as published: a live score is about now.
+ */
+function withLiveScoresForToday(courtsData: any[], scheduledDate: string): any[] {
+  if (!shouldShowActiveStrip({ scheduledDate })) return courtsData;
+  return courtsData.map((court) => ({
+    ...court,
+    matchUps: (court.matchUps ?? []).map((matchUp: any) =>
+      withLiveScore(matchUp, getLiveRelayScore(matchUp?.matchUpId)),
+    ),
+  }));
+}
+
+/** LIVE beside a live score on a grid cell: the default cell layout shows the score but no status. */
+function addLiveTag(gridCell: HTMLElement): void {
+  const tag = document.createElement('span');
+  tag.className = 'chp-live-tag';
+  tag.textContent = t('schedule.live');
+  tag.title = t('schedule.liveTooltip');
+  (gridCell.querySelector('.spl-grid-cell__score') ?? gridCell).prepend(tag);
+}
+
 function courtsForDate(data: ScheduleData, scheduledDate: string): any[] {
   const mappedParticipants = data.mappedParticipants ?? {};
   const onDate = (matchUp: any) => matchUp.schedule?.scheduledDate === scheduledDate;
@@ -357,7 +384,10 @@ function courtCellElement(matchUp: any, searchOutcome: ScheduleSearchOutcome): H
   if (matchUp?.matchUpId) {
     cell.dataset.matchupId = matchUp.matchUpId;
     applySearchState(cell, matchUp.matchUpId, searchOutcome);
-    cell.appendChild(buildGridCell(matchUp));
+    // The Now strip needs no tag of ours: its own state pill already says LIVE.
+    const gridCell = buildGridCell(matchUp);
+    if (matchUp?.liveTracked) addLiveTag(gridCell);
+    cell.appendChild(gridCell);
   } else {
     cell.classList.add('chp-schedule-cell--empty');
   }

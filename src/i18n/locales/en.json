@@ -49,6 +49,8 @@
     "round": "Round",
     "matchUp": "Match",
     "now": "Now",
+    "live": "LIVE",
+    "liveTooltip": "Live score — unofficial until the result is entered",
     "viewInDraw": "View in draw"
   },
   "display": {

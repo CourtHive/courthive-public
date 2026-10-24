@@ -13,6 +13,7 @@ import { consumePendingMatchUpFocus } from 'src/services/matchUpFocus';
 import { seatUpdatedDrawPositions } from './seatUpdatedDrawPositions';
 import { searchInput } from 'src/components/controlBar/searchInput';
 import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
+import { withLiveRelayScores } from 'src/services/liveRelayScores';
 import { resolveStructureView } from 'src/services/structureViews';
 import { getRoundDisplayOptions } from './renderRoundOptions';
 import { escapeHtml } from 'src/functions/escapeHtml';
@@ -470,13 +471,16 @@ export function renderEvent({
         // the locally-entered score is visible in the bracket even when
         // Track is toggled off. Idempotent across renders.
         overlayLocalScores(matchUps, inlineManager, scoredIds);
+        // Live relay scores — a tracker's, or a crowd session a TD promoted — as display copies. Never over a score
+        // the visitor is keeping on this device: their own scoring is what they are watching.
+        const displayMatchUps = withLiveRelayScores(matchUps, scoredIds);
 
         const view = resolveStructureView({ displayFormat, structure });
         if (view === 'roundsColumns') {
           renderRoundsColumns({
             tournamentId,
             flightDisplay,
-            matchUps,
+            matchUps: displayMatchUps,
             composition,
             drawId,
             structureId,
@@ -506,6 +510,11 @@ export function renderEvent({
       const selectRound = (roundNumber: number) => {
         selectedRoundNumber = roundNumber;
         renderSelectedStructure(currentStructureIndex);
+      };
+      // Live relay scores re-render the structure on screen from the data already held (see tabDisplay) — but not
+      // while the visitor is scoring inline, which a rebuild would interrupt; their next render picks them up.
+      context.rerenderEventStructure = () => {
+        if (!liveScoringActive) renderSelectedStructure(currentStructureIndex);
       };
 
       const initialStructureIndex = targetStructureId
