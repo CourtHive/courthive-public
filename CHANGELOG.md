@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.18.0](https://github.com/CourtHive/courthive-public/compare/v1.17.8...v1.18.0) (2026-10-24)
+
+
+### Features
+
+* **live:** show score-relay live scores to spectators — bracket and today's schedule ([#638](https://github.com/CourtHive/courthive-public/issues/638)) ([1533966](https://github.com/CourtHive/courthive-public/commit/1533966fa9e55473817fca09a804e1c7661dff0f))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 6.12.1 ([#634](https://github.com/CourtHive/courthive-public/issues/634)) ([97c9bfa](https://github.com/CourtHive/courthive-public/commit/97c9bfa9fee7a9ebb0885870b1d09baea6a04308))
+* **deps:** update courthive-components to 6.13.0 ([#639](https://github.com/CourtHive/courthive-public/issues/639)) ([551e10e](https://github.com/CourtHive/courthive-public/commit/551e10ef5df4ad42570085d2d157928f3e0cd5ae))
+* **deps:** update tods-competition-factory to 7.21.0 ([#637](https://github.com/CourtHive/courthive-public/issues/637)) ([ff692c4](https://github.com/CourtHive/courthive-public/commit/ff692c430491208a85903aec80eee9b41fb59732))
+
 ## [1.17.8](https://github.com/CourtHive/courthive-public/compare/v1.17.7...v1.17.8) (2026-10-23)
 
 
