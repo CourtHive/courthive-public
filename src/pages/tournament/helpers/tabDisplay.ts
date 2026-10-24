@@ -47,6 +47,15 @@ export function refreshActiveTab() {
   }
 }
 
+/**
+ * Re-render the visible tab from data already in memory, so live relay scores (overlaid at render time) show.
+ * No fetch: a live score changes nothing the server holds. Called, batched, by liveUpdates.
+ */
+export function rerenderActiveTabForLiveScores() {
+  if (context.tab === 'Events') context.rerenderEventStructure?.();
+  else if (context.tab === 'Schedule') context.rerenderSchedule?.();
+}
+
 /** Patch matchUp data in-memory and re-render. Called by liveUpdates on matchUpUpdate. */
 export function patchMatchUps(matchUps: any[], positionAssignments?: any[]) {
   const tabName = context.tab;

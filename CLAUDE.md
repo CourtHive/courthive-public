@@ -111,6 +111,8 @@ Hash-based SPA routing via **Navigo** (`src/router/router.ts`). Route names/DOM 
 - `publicUpdate` — with `type: 'matchUpUpdate'` (patch matchUps in place), `type: 'publishChange'` (re-check publish state; navigate away on full unpublish, else refresh the active tab), or unknown (full re-fetch).
 - `liveScore` — a compact `PublicLivePayload` (see `publicLiveTypes.ts`) from the server's public-live projector, produced on every bolt-history upsert.
 
+**Live relay scores.** `src/services/liveRelayScores.ts` is a second, separate listener: the score-relay's **`/live`** namespace, where a tracker (epixodic, a provider's own app such as IONSport) streams each point, and where a crowd session goes once a TD promotes it. It rides the `/public` lifecycle (`connectAndJoinRoom` connects it, `leaveRoom` disconnects), subscribes with `subscribe:tournament` on every connect (the relay replays current scores), and reaches the relay through the `/crowd` client's resolvers (`/relay/socket.io/` in production). It stores the last sanitized score per matchUp and fires **`liveRelayScoreUpdated`** on `window`; `liveUpdates.ts` turns those into at most one re-render per 250 ms via `tabDisplay.rerenderActiveTabForLiveScores` — from data in memory, no fetch. `src/services/liveScoreDisplay.ts` (same rules as TMX's twin) overlays a live score as an `IN_PROGRESS` display COPY only while the matchUp has no official result, never setting a winner: in the bracket (`renderEvent`, never over the visitor's own local scoring, and not re-rendered while they are scoring inline) and on **today's** schedule (`createScheduleTable`: LIVE beside the score in the grid; the Now strip's own pill reads LIVE). Other days show nothing live.
+
 `src/services/liveBoltScores.ts` is the in-memory store for `liveScore` payloads (one entry per `matchUpId`). It re-broadcasts each payload as a **`liveBoltScoreUpdated`** DOM `CustomEvent` on `window` so views can subscribe without coupling to the socket.
 
 ### HiveID Identity, Registration & Claim
@@ -153,7 +155,7 @@ Public registration UI: the tournament Info tab shows a CTA (`registrationButton
 | `@courthive/provider-config` | Provider config types + scoring-launch resolution (`DEFAULT_SCORING_LAUNCH`, `resolveScoringLaunchUrl`) |
 | `navigo` | Hash-based SPA router |
 | `tabulator-tables` | Data grid/table component |
-| `socket.io-client` | Real-time server communication (`/public`, `/hiveid`, `/crowd`) |
+| `socket.io-client` | Real-time server communication (`/public`, `/hiveid`, `/crowd`) and the score-relay's `/live` |
 | `svelte` | Scorecard components |
 | `i18next` | Internationalization |
 

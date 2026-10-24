@@ -181,3 +181,19 @@
   text-align: center;
   color: var(--sp-muted, #888);
 }
+
+/* LIVE beside a live relay score on a grid cell (today only). The Now strip
+   carries its own LIVE pill, so strip cells never get this tag. */
+.chp-live-tag {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 0 3px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  color: var(--chc-status-success);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  vertical-align: middle;
+}
