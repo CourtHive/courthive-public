@@ -11,8 +11,8 @@
  * without coupling to the socket. Reaching the relay reuses the `/crowd` client's resolution (in production the
  * relay is only exposed under `/relay/`, so the transport path must carry that prefix).
  */
-import { resolveCrowdRelayBaseUrl, resolveCrowdRelaySocketPath } from './crowdShare';
 import { sanitizeLiveScore, withLiveScore, type LiveScore } from './liveScoreDisplay';
+import { resolveCrowdRelayBaseUrl, resolveCrowdRelaySocketPath } from './crowdShare';
 import { io, Socket } from 'socket.io-client';
 
 export const LIVE_RELAY_SCORE_EVENT = 'liveRelayScoreUpdated';
