@@ -1,19 +1,12 @@
-/* Brighten link + logo-glow tokens in dark mode for legibility against
-   dark backgrounds. Providers may override via ProviderBranding.themeTokens. */
+/* Brighten the logo-glow tokens in dark mode. Link colors come from the palette (courthive-components).
+   Providers may override via ProviderBranding.themeTokens. */
 [data-theme='dark'] {
-  --chc-text-link: #8c92ff;
-  --chc-text-link-hover: #a4a8ff;
   --chc-logo-glow: #8c92ffaa;
   --chc-logo-glow-alt: #6fa8e0aa;
 }
 
 [data-theme='dark'] .springboard {
   background-color: var(--chc-bg-secondary);
-}
-
-[data-theme='dark'] .courthive-logo path,
-[data-theme='dark'] .courthive-logo line {
-  stroke: #ffffff;
 }
 
 [data-theme='dark'] .main,
@@ -30,65 +23,12 @@
   background-color: var(--chc-panel-header-bg);
 }
 
-[data-theme='dark'] .navbar {
-  border-bottom-color: var(--chc-border-primary);
-  background-color: var(--chc-bg-primary);
-}
-
 [data-theme='dark'] .tableClass {
   background-color: var(--chc-bg-primary);
 }
 
 [data-theme='dark'] .subTable {
   background-color: var(--chc-bg-secondary);
-}
-
-[data-theme='dark'] body {
-  background-color: var(--chc-bg-primary);
-  color: var(--chc-text-primary);
-}
-
-/* Tabulator dark overrides */
-[data-theme='dark'] .tabulator .tabulator-header .tabulator-col {
-  background: var(--chc-bg-secondary);
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator-row .tabulator-cell {
-  background-color: var(--chc-bg-primary);
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator .tabulator-tableholder .tabulator-table {
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator .tabulator-header {
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator .tabulator-footer {
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator-row.tabulator-selectable:hover {
-  background-color: var(--chc-hover-bg);
-}
-
-[data-theme='dark'] .tabulator-row.tabulator-group {
-  color: var(--chc-text-primary);
-}
-
-[data-theme='dark'] .tabulator-row.tabulator-group.tabulator-group-level-0 {
-  background-color: var(--chc-bg-elevated);
-}
-
-[data-theme='dark'] .tabulator-row.tabulator-group.tabulator-group-level-1 {
-  background-color: var(--chc-bg-secondary);
-}
-
-[data-theme='dark'] .tabulator-popup-container {
-  background: var(--chc-bg-elevated);
 }
 
 [data-theme='dark'] .court_header {
@@ -103,7 +43,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Program directory button — same reset as the other navbar buttons. Without it the browser's
@@ -115,7 +55,7 @@
   cursor: pointer;
   padding: 0.5em 0.75em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Language toggle button */
@@ -126,7 +66,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* User login button */
@@ -137,7 +77,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Language dropdown */
@@ -147,9 +87,9 @@
   right: 0;
   z-index: 50;
   min-width: 140px;
-  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  border: 1px solid var(--chc-border-primary);
   border-radius: 4px;
-  background: var(--chc-dropdown-bg, #fff);
+  background: var(--chc-dropdown-bg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -160,17 +100,31 @@
   padding: 8px 14px;
   border: none;
   background: none;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   text-align: left;
   cursor: pointer;
   font-size: 0.9rem;
 }
 
 .language-dropdown-item:hover {
-  background: var(--chc-hover-bg, #f5f5f5);
+  background: var(--chc-hover-bg);
 }
 
 .language-dropdown-item.active {
   font-weight: 600;
-  color: var(--chc-status-info, #3273dc);
+  color: var(--chc-status-info);
+}
+
+/* Theme picker: the language dropdown's styles plus section headings */
+.theme-dropdown {
+  min-width: 180px;
+}
+
+.theme-dropdown-heading {
+  padding: 8px 14px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--chc-text-muted);
 }

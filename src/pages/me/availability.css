@@ -51,15 +51,16 @@
   flex-basis: 100%;
 }
 
-/* State colours (shared by swatches and day cells) ------------------------ */
+/* State colours, shared by the legend swatches and the day cells so the legend matches what it
+   labels. Day cells carry a label, so the fills are container fills; their on-* ink is below. -- */
 [data-state='AVAILABLE'] {
-  background: var(--chc-status-success);
+  background: var(--chc-container-success);
 }
 [data-state='IF_NEEDED'] {
-  background: var(--chc-status-warning);
+  background: var(--chc-container-warning);
 }
 [data-state='UNAVAILABLE'] {
-  background: var(--chc-status-error);
+  background: var(--chc-container-danger);
 }
 [data-state='NOT_SET'] {
   background: var(--chc-bg-secondary);
@@ -99,8 +100,16 @@
 .chp-avail-day[data-state='AVAILABLE'],
 .chp-avail-day[data-state='IF_NEEDED'],
 .chp-avail-day[data-state='UNAVAILABLE'] {
-  color: var(--chc-text-inverse);
   border-color: transparent;
+}
+.chp-avail-day[data-state='AVAILABLE'] {
+  color: var(--chc-on-success);
+}
+.chp-avail-day[data-state='IF_NEEDED'] {
+  color: var(--chc-on-warning);
+}
+.chp-avail-day[data-state='UNAVAILABLE'] {
+  color: var(--chc-on-danger);
 }
 
 .chp-avail-day:focus-visible {

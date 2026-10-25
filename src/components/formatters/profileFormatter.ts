@@ -7,9 +7,9 @@ export function profileFormatter(cell) {
   const content = document.createElement('span');
 
   const colorMap = {
-    COMPETITIVE: 'green',
-    DECISIVE: 'magenta',
-    ROUTINE: 'blue',
+    COMPETITIVE: 'var(--chc-status-success)',
+    DECISIVE: 'var(--chc-status-warning)',
+    ROUTINE: 'var(--chc-status-info)',
   };
 
   if (score) {

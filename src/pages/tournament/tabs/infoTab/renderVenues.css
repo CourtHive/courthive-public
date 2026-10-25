@@ -27,7 +27,7 @@
   padding: 0.5rem 0.75rem;
   font-size: 0.85rem;
   text-decoration: none;
-  border-top: 1px solid var(--chc-vc-border, rgba(0, 0, 0, 0.08));
+  border-top: 1px solid var(--chc-border-secondary);
 }
 
 .tournament-venues .venue-website-link:hover {

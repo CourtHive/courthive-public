@@ -13,7 +13,7 @@ export function scoreFormatter(cell) {
     content.textContent = 'WO';
   } else {
     content.style.fontSize = 'smaller';
-    content.style.color = 'blue';
+    content.style.color = 'var(--chc-text-muted)';
     content.textContent = '--- --- ---';
   }
 
