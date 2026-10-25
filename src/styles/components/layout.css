@@ -15,9 +15,10 @@
   min-height: 3.25rem;
   width: 100%;
   z-index: 30;
-  border-bottom: 1px solid var(--chc-border-primary, #dbdbdb);
-  background-color: var(--chc-bg-primary, #ffffff);
-  color: var(--chc-text-primary, #363636);
+  /* App chrome: the palette's chrome role (Courtside's navy band, Midnight's deep navy). */
+  border-bottom: 1px solid var(--chc-chrome-border);
+  background-color: var(--chc-chrome-bg);
+  color: var(--chc-chrome-text);
 }
 .navbar-inner {
   display: flex;

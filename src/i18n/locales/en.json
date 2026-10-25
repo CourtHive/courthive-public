@@ -85,7 +85,13 @@
     }
   },
   "theme": {
-    "toggleDark": "Toggle dark mode"
+    "select": "Theme",
+    "mode": "Mode",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "lightPalette": "Light mode theme",
+    "darkPalette": "Dark mode theme"
   },
   "language": {
     "select": "Select language"
