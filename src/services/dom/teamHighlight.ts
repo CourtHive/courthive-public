@@ -4,7 +4,7 @@ export function highlightTeam(element) {
   )) {
     const teamElement = team as HTMLElement;
     teamElement.style.fontWeight = 'bold';
-    teamElement.style.color = '#ed0c76';
+    teamElement.style.color = 'var(--chc-accent-text)';
   }
 }
 

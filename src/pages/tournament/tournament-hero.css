@@ -135,7 +135,7 @@
   padding: 0;
   list-style: none;
   font-size: 0.95rem;
-  color: var(--chc-text-secondary, var(--chc-text-muted));
+  color: var(--chc-text-secondary);
 }
 
 .chp-hero__meta li {

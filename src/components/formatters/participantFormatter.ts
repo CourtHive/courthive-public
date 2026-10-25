@@ -80,10 +80,10 @@ export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
 
   if (hasWinner) {
     const winningSide = def.field === data.winningSide;
-    elem.style.color = winningSide ? 'green' : 'red';
+    elem.style.color = winningSide ? 'var(--chc-status-success)' : 'var(--chc-status-error)';
   } else {
     const sex = value?.sex || data?.person?.sex;
-    const color = (sex === MALE && '#2E86C1') || (sex === FEMALE && '#AA336A') || '';
+    const color = (sex === MALE && 'var(--chc-gender-male)') || (sex === FEMALE && 'var(--chc-gender-female)') || '';
     elem.style.color = color;
   }
 

@@ -97,7 +97,7 @@ export function getRoundsColumns({ data }) {
       width: 140,
     },
     {
-      title: `<div class='fa-solid fa-check' style='color: green' />`,
+      title: `<div class='fa-solid fa-check' style='color: var(--chc-status-success)' />`,
       formatter: 'tickCross',
       field: 'complete',
       hozAlign: LEFT,
@@ -110,7 +110,7 @@ export function getRoundsColumns({ data }) {
       width: 150,
     },
     {
-      title: `<div class='fa-solid fa-clock' style='color: blue' />`,
+      title: `<div class='fa-solid fa-clock' style='color: var(--chc-accent-text)' />`,
       headerSort: false,
       field: 'duration',
       visible: false,
