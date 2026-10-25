@@ -1,8 +1,6 @@
-/* Brighten link + logo-glow tokens in dark mode for legibility against
-   dark backgrounds. Providers may override via ProviderBranding.themeTokens. */
+/* Brighten the logo-glow tokens in dark mode. Link colors come from the palette (courthive-components).
+   Providers may override via ProviderBranding.themeTokens. */
 [data-theme='dark'] {
-  --chc-text-link: #8c92ff;
-  --chc-text-link-hover: #a4a8ff;
   --chc-logo-glow: #8c92ffaa;
   --chc-logo-glow-alt: #6fa8e0aa;
 }
@@ -28,11 +26,6 @@
 
 [data-theme='dark'] .panelHeader {
   background-color: var(--chc-panel-header-bg);
-}
-
-[data-theme='dark'] .navbar {
-  border-bottom-color: var(--chc-border-primary);
-  background-color: var(--chc-bg-primary);
 }
 
 [data-theme='dark'] .tableClass {
@@ -103,7 +96,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Program directory button — same reset as the other navbar buttons. Without it the browser's
@@ -115,7 +108,7 @@
   cursor: pointer;
   padding: 0.5em 0.75em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Language toggle button */
@@ -126,7 +119,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* User login button */
@@ -137,7 +130,7 @@
   font-size: 1.2rem;
   padding: 0.5em;
   line-height: 1;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-chrome-text);
 }
 
 /* Language dropdown */
@@ -173,4 +166,18 @@
 .language-dropdown-item.active {
   font-weight: 600;
   color: var(--chc-status-info, #3273dc);
+}
+
+/* Theme picker: the language dropdown's styles plus section headings */
+.theme-dropdown {
+  min-width: 180px;
+}
+
+.theme-dropdown-heading {
+  padding: 8px 14px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--chc-text-muted);
 }

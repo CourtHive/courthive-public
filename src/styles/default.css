@@ -10,11 +10,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Hyperlink + logo-glow tokens — declared here so providers can
-     override via ProviderBranding.themeTokens. Dark-mode counterparts
-     live in darkMode.css. */
-  --chc-text-link: #646cff;
-  --chc-text-link-hover: #535bf2;
+  /* Logo-glow tokens — declared here so providers can override via
+     ProviderBranding.themeTokens; dark counterparts live in darkMode.css.
+     Hyperlink colors (--chc-text-link, -hover) come from the palette in
+     courthive-components, so they follow the user's light/dark theme. */
   --chc-logo-glow: #646cffaa;
   --chc-logo-glow-alt: #3178c6aa;
 }

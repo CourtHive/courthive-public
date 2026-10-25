@@ -20,7 +20,7 @@ import { connectHiveIDSocket, disconnectHiveIDSocket } from 'src/services/hiveid
 import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { refreshCurrentRoute } from 'src/router/router';
-import { toggleTheme } from 'src/services/themeService';
+import { toggleThemeDropdown } from 'src/services/themeService';
 import { getCfsBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
@@ -54,16 +54,14 @@ export function rootBlock() {
 
   const themeToggle = document.createElement('button');
   themeToggle.className = 'navbar-item theme-toggle';
-  themeToggle.title = t('theme.toggleDark');
+  themeToggle.title = t('theme.select');
   const updateIcon = () => {
     const isDark = document.documentElement.dataset.theme === 'dark';
     themeToggle.textContent = isDark ? '\u2600' : '\u263E';
   };
   updateIcon();
-  themeToggle.onclick = () => {
-    toggleTheme();
-    updateIcon();
-  };
+  // Opens the theme picker (mode + a palette per mode), alongside the language picker.
+  themeToggle.onclick = () => toggleThemeDropdown(themeToggle, updateIcon);
   navEnd.appendChild(themeToggle);
 
   const langButton = document.createElement('button');
