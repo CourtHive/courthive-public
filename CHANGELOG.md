@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.19.0](https://github.com/CourtHive/courthive-public/compare/v1.18.0...v1.19.0) (2026-10-25)
+
+
+### Features
+
+* **theme:** theme picker with a light and a dark palette; courtside and midnight by default ([#643](https://github.com/CourtHive/courthive-public/issues/643)) ([e3d0d49](https://github.com/CourtHive/courthive-public/commit/e3d0d4935461d39be6ca46a3a2c2d768dff1f852))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.0.0 ([#647](https://github.com/CourtHive/courthive-public/issues/647)) ([6a9e141](https://github.com/CourtHive/courthive-public/commit/6a9e141102da057a3c96eb06d177041c04f1b56f))
+* **deps:** update tods-competition-factory to 7.22.0 ([#645](https://github.com/CourtHive/courthive-public/issues/645)) ([acc115c](https://github.com/CourtHive/courthive-public/commit/acc115cbd2d8d7c8db656d4346c331ee572121ae))
+
 ## [1.18.0](https://github.com/CourtHive/courthive-public/compare/v1.17.8...v1.18.0) (2026-10-24)
 
 
