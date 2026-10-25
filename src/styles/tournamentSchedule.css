@@ -17,7 +17,7 @@
   flex-direction: column;
   height: 82vh;
   overflow: auto;
-  background: var(--sp-line, #e2e8f0);
+  background: var(--sp-line);
 }
 
 /* Active strip (from courthive-components) — pin to the top of the viewport. */
@@ -33,14 +33,14 @@
    grid cells show through it while scrolling horizontally — force it opaque to
    match the row-number column below it. */
 .chp-schedule .spl-active-strip-spacer {
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
   z-index: 2;
 }
 
 .chp-schedule-grid {
   display: grid;
   gap: 1px;
-  background: var(--sp-line, #e2e8f0);
+  background: var(--sp-line);
 }
 
 /* Top-left corner above the row-number column — sticks in both axes. */
@@ -49,7 +49,7 @@
   top: var(--chp-strip-offset, 0);
   left: 0;
   z-index: 4;
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
 }
 
 /* Court name headers — stick just below the strip. */
@@ -57,7 +57,7 @@
   position: sticky;
   top: var(--chp-strip-offset, 0);
   z-index: 2;
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
   padding: 6px 4px;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -65,11 +65,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--sp-text, #1e293b);
+  color: var(--sp-text);
 }
 
 .chp-schedule-court-header--empty {
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
 }
 
 /* Row-number column — sticks to the left edge. */
@@ -80,11 +80,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
   padding: 6px 4px;
   font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--sp-muted, #888);
+  color: var(--sp-muted);
 }
 
 /* Court cells — the inner courthive-components cell fills the slot, carrying
@@ -92,7 +92,7 @@
 .chp-schedule-cell {
   display: flex;
   min-height: 80px;
-  background: var(--sp-panel, #fff);
+  background: var(--sp-panel);
 }
 
 .chp-schedule-cell > .spl-grid-cell {
@@ -106,7 +106,7 @@
 .chp-schedule-placeholder {
   padding: 2rem;
   text-align: center;
-  color: var(--sp-muted, #888);
+  color: var(--sp-muted);
 }
 
 /* ── Mobile: no padding around the grid — use the full viewport width ── */
@@ -154,7 +154,7 @@
 .chp-schedule-cell[data-matchup-id]:hover > .spl-grid-cell,
 .spl-active-strip .chp-schedule-cell-clickable:hover {
   filter: brightness(1.04);
-  outline: 1px solid var(--chc-border-primary, #dbdbdb);
+  outline: 1px solid var(--chc-border-primary);
   outline-offset: -1px;
 }
 
@@ -171,7 +171,7 @@
 }
 
 .chp-schedule-cell--match {
-  outline: 2px solid var(--chc-status-info, #3273dc);
+  outline: 2px solid var(--chc-status-info);
   outline-offset: -2px;
   z-index: 1;
 }
@@ -179,7 +179,7 @@
 .chp-schedule-notice {
   padding: 0.75rem;
   text-align: center;
-  color: var(--sp-muted, #888);
+  color: var(--sp-muted);
 }
 
 /* LIVE beside a live relay score on a grid cell (today only). The Now strip

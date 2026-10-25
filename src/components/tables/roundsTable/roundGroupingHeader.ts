@@ -7,7 +7,10 @@ import { escapeHtml } from 'src/functions/escapeHtml';
 export function roundGroupingHeader(value, count) {
   const itemDisplay = count > 1 ? 'items' : 'item';
 
-  return escapeHtml(value) + `<span style='color:blue; margin-left:10px;'>(${count} ${itemDisplay})</span>`;
+  return (
+    escapeHtml(value) +
+    `<span style='color: var(--chc-accent-text); margin-left:10px;'>(${count} ${itemDisplay})</span>`
+  );
 }
 
 /** A group header that is only the shared value, escaped for Tabulator's innerHTML write. */

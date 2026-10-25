@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   padding: 0.5rem 0.75rem;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   cursor: pointer;
 }
 .provider-back {
@@ -64,7 +64,7 @@
   min-width: 12rem;
   display: flex;
   flex-direction: column;
-  background: var(--chc-bg-elevated, var(--chc-bg-primary));
+  background: var(--chc-bg-elevated);
   border: 1px solid var(--chc-border-primary);
   border-radius: 0.375rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
@@ -128,12 +128,12 @@
 
 /* ── Box ───────────────────────────────────────────────────── */
 .box {
-  background-color: var(--chc-bg-primary, #ffffff);
+  background-color: var(--chc-bg-primary);
   border-radius: 6px;
   box-shadow:
     0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.02);
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   display: block;
   padding: 1.25rem;
 }
@@ -162,7 +162,7 @@
    the full width as the divider beneath the strip. */
 .tabs ul {
   align-items: center;
-  border-bottom: 1px solid var(--chc-border-primary, #dbdbdb);
+  border-bottom: 1px solid var(--chc-border-primary);
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
@@ -186,7 +186,7 @@
 .tabs li a {
   align-items: center;
   border-bottom: 1px solid transparent;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   display: flex;
   justify-content: center;
   margin-bottom: -1px;
@@ -195,19 +195,19 @@
   cursor: pointer;
 }
 .tabs li a:hover {
-  border-bottom-color: var(--chc-text-primary, #363636);
-  color: var(--chc-text-primary, #363636);
+  border-bottom-color: var(--chc-text-primary);
+  color: var(--chc-text-primary);
 }
 .tabs li.is-active a {
-  border-bottom-color: var(--chc-border-focus, #4a90d9);
-  color: var(--chc-border-focus, #4a90d9);
+  border-bottom-color: var(--chc-border-focus);
+  color: var(--chc-border-focus);
 }
 
 /* ── Buttons ───────────────────────────────────────────────── */
 .button {
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  border: 1px solid var(--chc-border-primary);
   border-radius: 4px;
   box-shadow: none;
   display: inline-flex;
@@ -218,14 +218,14 @@
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
-  background-color: var(--chc-bg-primary, #ffffff);
-  color: var(--chc-text-primary, #363636);
+  background-color: var(--chc-bg-primary);
+  color: var(--chc-text-primary);
 }
 .button:hover {
-  border-color: var(--chc-text-secondary, #b5b5b5);
+  border-color: var(--chc-text-secondary);
 }
 .button:active {
-  border-color: var(--chc-text-secondary, #4a4a4a);
+  border-color: var(--chc-text-secondary);
 }
 
 /* ── Dropdowns ─────────────────────────────────────────────── */
@@ -254,7 +254,7 @@
   z-index: 20;
 }
 .dropdown-content {
-  background-color: var(--chc-bg-elevated, #ffffff);
+  background-color: var(--chc-bg-elevated);
   border-radius: 4px;
   box-shadow:
     0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
@@ -263,7 +263,7 @@
   padding-top: 0.5rem;
 }
 .dropdown-item {
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -273,11 +273,11 @@
 }
 .dropdown-item:hover,
 .dropdown-item.is-active {
-  background-color: var(--chc-bg-secondary, #f5f5f5);
-  color: var(--chc-border-focus, #4a90d9);
+  background-color: var(--chc-bg-secondary);
+  color: var(--chc-border-focus);
 }
 .dropdown-divider {
-  background-color: var(--chc-border-primary, #ededed);
+  background-color: var(--chc-border-primary);
   border: none;
   display: block;
   height: 1px;
@@ -300,7 +300,7 @@
 }
 .control.has-icons-left .icon.is-left,
 .control.has-icons-right .icon.is-right {
-  color: var(--chc-text-muted, #dbdbdb);
+  color: var(--chc-text-muted);
   height: 2.5em;
   pointer-events: none;
   position: absolute;
@@ -322,7 +322,7 @@
 .input {
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  border: 1px solid var(--chc-border-primary);
   border-radius: 4px;
   box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
   display: inline-flex;
@@ -333,19 +333,19 @@
   padding: 0.5em 0.75em;
   width: 100%;
   max-width: 100%;
-  background-color: var(--chc-bg-primary, #ffffff);
-  color: var(--chc-text-primary, #363636);
+  background-color: var(--chc-bg-primary);
+  color: var(--chc-text-primary);
 }
 .input:focus {
-  border-color: var(--chc-border-focus, #4a90d9);
-  box-shadow: 0 0 0 0.125em rgba(74, 144, 217, 0.25);
+  border-color: var(--chc-border-focus);
+  box-shadow: 0 0 0 0.125em color-mix(in srgb, var(--chc-border-focus) 25%, transparent);
   outline: none;
 }
 .input.is-success {
-  border-color: var(--chc-status-success, #48c78e);
+  border-color: var(--chc-status-success);
 }
 .input.is-danger {
-  border-color: var(--chc-status-error, #f14668);
+  border-color: var(--chc-status-error);
 }
 
 .icon {
@@ -366,7 +366,7 @@
   margin-top: 0.25rem;
 }
 .help.is-danger {
-  color: var(--chc-status-error, #f14668);
+  color: var(--chc-status-error);
 }
 
 /* ── Helpers ───────────────────────────────────────────────── */
@@ -374,7 +374,7 @@
   text-align: center !important;
 }
 .has-text-warning-dark {
-  color: #946c00 !important;
+  color: var(--chc-status-warning) !important;
 }
 .is-centered {
   justify-content: center;
@@ -392,16 +392,16 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 0.5rem;
-  border: 1px solid var(--chc-border-primary, #dbdbdb);
+  border: 1px solid var(--chc-border-primary);
   border-radius: 999px;
-  background: var(--chc-bg-primary, #fff);
+  background: var(--chc-bg-primary);
 }
 
 .chp-search__input {
   border: none;
   outline: none;
   background: transparent;
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
   font-size: 0.9rem;
   line-height: 1;
   padding: 0.45rem 0.15rem;
@@ -410,7 +410,7 @@
 }
 
 .chp-search__input::placeholder {
-  color: var(--chc-text-secondary, #888);
+  color: var(--chc-text-secondary);
 }
 
 /* The native clear affordance duplicates the button and cannot be themed. */
@@ -421,7 +421,7 @@
 .chp-search__clear {
   border: none;
   background: transparent;
-  color: var(--chc-text-secondary, #888);
+  color: var(--chc-text-secondary);
   cursor: pointer;
   font-size: 1.1rem;
   line-height: 1;
@@ -429,5 +429,5 @@
 }
 
 .chp-search__clear:hover {
-  color: var(--chc-text-primary, #363636);
+  color: var(--chc-text-primary);
 }

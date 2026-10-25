@@ -134,7 +134,7 @@ export function controlBar(params: ControlParams) {
           const clear = document.createElement('span');
           clear.className = 'icon is-small is-right font-medium';
           // NOTE: "pointer-events: all" necessary to capture the onclick event
-          clear.innerHTML = `<i class="fa-solid fa-circle-xmark" style="color: #dddada; pointer-events: all; cursor: pointer"></i>`;
+          clear.innerHTML = `<i class="fa-solid fa-circle-xmark" style="color: var(--chc-text-muted); pointer-events: all; cursor: pointer"></i>`;
           clear.onclick = (e) => {
             e.stopPropagation();
             input.value = '';

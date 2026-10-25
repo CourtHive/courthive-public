@@ -12,7 +12,7 @@ export function renderDefaultPage() {
   link.href = 'https://courthive.com';
   link.target = '_blank';
 
-  const logo = courtHiveLogoSVG({ color: '#000000', maxWidth: '300px' });
+  const logo = courtHiveLogoSVG({ maxWidth: '300px' });
   link.appendChild(logo);
   wrapper.appendChild(link);
 
