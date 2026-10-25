@@ -116,14 +116,14 @@
 }
 
 .chp-round-nav__toggle--active {
-  background: var(--chc-status-success);
-  border-color: var(--chc-status-success);
-  color: var(--chc-text-inverse);
+  background: var(--chc-container-success);
+  border-color: var(--chc-container-success);
+  color: var(--chc-on-success);
 }
 
 .chp-round-nav__toggle--active::before {
   content: '● ';
-  color: var(--chc-text-inverse);
+  color: var(--chc-on-success);
 }
 
 /* ── Chip nav (mobile only) ────────────────────────────────────────── */
@@ -145,9 +145,9 @@
 }
 
 .chp-round-nav__chip[aria-current='true'] {
-  background: var(--chc-status-info);
-  border-color: var(--chc-status-info);
-  color: var(--chc-text-inverse);
+  background: var(--chc-container-info);
+  border-color: var(--chc-container-info);
+  color: var(--chc-on-info);
   font-weight: 600;
 }
 
