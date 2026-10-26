@@ -56,37 +56,42 @@ test.describe('structure round chips', () => {
   /**
    * Regression: connector-line length after scoping with a chip.
    *
-   * `renderRound` divides `matchUp.roundFactor` by the selected round's factor
-   * IN PLACE, and `getLinkStyle` scales the connector height by that factor. Feed
-   * it the same matchUp objects twice and the division compounds — R16 -> QF -> SF
-   * left the semifinal connectors at half length, and going back to R16 left every
-   * round at an eighth, permanently. `renderSelectedStructure` therefore renders
-   * off a fresh deep copy of the structure's roundMatchUps on every render.
-   *
-   * The first rendered round always has roundFactor 1, so its connector height is
-   * the same number whichever chip is active — which is what this asserts.
+   * Connector heights used to come from `matchUp.roundFactor`, which `renderRound` divided IN PLACE: feed it the same
+   * matchUp objects twice and the division compounded — R16 -> QF -> SF left the semifinal connectors at half
+   * length, and going back to R16 left every round at an eighth. Since courthive-components 7.1.0 (#825) a
+   * connector is drawn as a percentage of its cell, with no JS height, so this measures what is DRAWN: after every
+   * hop, the first rendered round's first connector spans half its cell (its vertical runs from the card's divider
+   * to the pair's junction). A cell's own height may differ between views — a first round shows draw positions —
+   * so the line is checked against its cell, not against a pixel count from another view.
    */
   test('connector lengths survive clicking through the chips', async ({ page }) => {
     const fixture = buildPublishedTournament({ drawSize: 16, completeAllMatchUps: false });
     await installApiMocks(page, fixture);
     await gotoTournament(page, fixture, '/events');
 
-    const firstRoundLinkHeight = async () =>
+    // the vertical half of the connector out of the first cell, as a share of the cell's height
+    const firstRoundLinkShare = async () =>
       page
         .locator(`${sel.flightDisplay} .chc-round-container`)
         .first()
-        .locator('.chc-link')
+        .locator('.chc-cell.chc-link')
         .first()
-        .evaluate((el) => (el as HTMLElement).style.getPropertyValue('--chc-link-m1-h'));
+        .evaluate((el) => {
+          const line = Number.parseFloat(getComputedStyle(el, '::after').height);
+          return line / el.getBoundingClientRect().height;
+        });
+    const expectHalfItsCell = (share: number) => {
+      expect(share).toBeGreaterThan(0.45);
+      expect(share).toBeLessThan(0.56);
+    };
 
-    const baseline = await firstRoundLinkHeight();
-    expect(baseline).not.toBe('');
+    expectHalfItsCell(await firstRoundLinkShare());
 
     // R16 -> QF -> SF -> R16. Every hop re-renders; none may shrink the lines.
     for (const chipIndex of [1, 2, 0]) {
       await page.locator(SELECTOR_CHIP).nth(chipIndex).click();
       await expect(page.locator(SELECTOR_CHIP).nth(chipIndex)).toHaveAttribute('aria-current', 'true');
-      expect(await firstRoundLinkHeight()).toBe(baseline);
+      expectHalfItsCell(await firstRoundLinkShare());
     }
   });
 });
