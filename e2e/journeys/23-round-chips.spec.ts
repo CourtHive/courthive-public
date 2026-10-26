@@ -56,31 +56,28 @@ test.describe('structure round chips', () => {
   /**
    * Regression: connector-line length after scoping with a chip.
    *
-   * `renderRound` divides `matchUp.roundFactor` by the selected round's factor
-   * IN PLACE, and `getLinkStyle` scales the connector height by that factor. Feed
-   * it the same matchUp objects twice and the division compounds — R16 -> QF -> SF
-   * left the semifinal connectors at half length, and going back to R16 left every
-   * round at an eighth, permanently. `renderSelectedStructure` therefore renders
-   * off a fresh deep copy of the structure's roundMatchUps on every render.
-   *
-   * The first rendered round always has roundFactor 1, so its connector height is
-   * the same number whichever chip is active — which is what this asserts.
+   * Connector heights used to come from `matchUp.roundFactor`, which `renderRound` divided IN PLACE: feed it the same
+   * matchUp objects twice and the division compounded — R16 -> QF -> SF left the semifinal connectors at half
+   * length, and going back to R16 left every round at an eighth. Since courthive-components 7.1.0 (#825) a
+   * connector is drawn as a percentage of its cell, with no JS height, so this measures what is DRAWN: the first
+   * rendered round's first connector, in pixels, is non-zero and the same whichever chip is active.
    */
   test('connector lengths survive clicking through the chips', async ({ page }) => {
     const fixture = buildPublishedTournament({ drawSize: 16, completeAllMatchUps: false });
     await installApiMocks(page, fixture);
     await gotoTournament(page, fixture, '/events');
 
+    // the vertical half of the connector out of the first cell: its drawn height
     const firstRoundLinkHeight = async () =>
       page
         .locator(`${sel.flightDisplay} .chc-round-container`)
         .first()
         .locator('.chc-link')
         .first()
-        .evaluate((el) => (el as HTMLElement).style.getPropertyValue('--chc-link-m1-h'));
+        .evaluate((el) => Math.round(Number.parseFloat(getComputedStyle(el, '::after').height)));
 
     const baseline = await firstRoundLinkHeight();
-    expect(baseline).not.toBe('');
+    expect(baseline).toBeGreaterThan(0);
 
     // R16 -> QF -> SF -> R16. Every hop re-renders; none may shrink the lines.
     for (const chipIndex of [1, 2, 0]) {
