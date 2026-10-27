@@ -99,12 +99,17 @@
 /* A bracket with more rounds than the container fits widens its section past the container, centred, by what
    those rounds need (`--chp-bracket-rounds`, set by services/bracketWidth.ts), up to the viewport less a gutter.
    With no rounds recorded the width resolves to 100%: the section stays the container's width. The round pitch
-   is a column's unsqueezed width plus its gap; 3rem is the section's own side padding. Below 769px the mobile
-   bracket layouts own the width instead. */
+   is an estimate of a column's unsqueezed width plus its gap; what the bracket still overflows at that width is
+   measured and added to it (`--chp-bracket-overflow`). 3rem is the section's own side padding. Below 769px the mobile bracket
+   layouts own the width instead. */
 @media screen and (min-width: 769px) {
   .section.is-fluid {
     --chp-round-pitch: 17.25rem;
-    --chp-section-width: clamp(100%, var(--chp-bracket-rounds, 0) * var(--chp-round-pitch) + 3rem, 100vw - 2rem);
+    --chp-section-width: clamp(
+      100%,
+      max(100%, var(--chp-bracket-rounds, 0) * var(--chp-round-pitch) + 3rem) + var(--chp-bracket-overflow, 0px),
+      100vw - 2rem
+    );
     width: var(--chp-section-width);
     margin-inline: calc((100% - var(--chp-section-width)) / 2);
   }

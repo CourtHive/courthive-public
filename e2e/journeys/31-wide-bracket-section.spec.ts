@@ -33,6 +33,7 @@ const measure = (page: Page) =>
       tabs: { left: Math.round(tabs.left), right: Math.round(tabs.right) },
       bracketOverflow: bracket.scrollWidth - bracket.clientWidth,
       pageOverflow: doc.scrollWidth - doc.clientWidth,
+      viewport: doc.clientWidth,
     };
   }, tabContentId('Events'));
 
@@ -49,6 +50,20 @@ test.describe('wide bracket section', () => {
     expect(m.section.left).toBeLessThan(m.tabs.left);
     expect(m.section.right).toBeGreaterThan(m.tabs.right);
     expect(Math.abs(m.section.left + m.section.right - (m.tabs.left + m.tabs.right))).toBeLessThanOrEqual(2);
+    // fits, unless the section has reached its limit — the viewport less its 1rem gutters (CI's fonts set wider
+    // columns than a Mac's, so a 128-draw can still need more than 1920px there)
+    const atLimit = m.section.right - m.section.left >= m.viewport - 33;
+    expect(atLimit || m.bracketOverflow <= 0).toBe(true);
+    expect(m.pageOverflow).toBe(0);
+  });
+
+  test('a column wider than the estimate is measured and given its room', async ({ page }) => {
+    await openDraw(page, 64, 1920);
+    // halve the per-round estimate so the measured overflow has to make up the difference
+    await page.addStyleTag({ content: '.section.is-fluid { --chp-round-pitch: 8rem; }' });
+    await page.locator(SELECTOR_CHIP).filter({ hasText: 'R64' }).click();
+    const m = await measure(page);
+    expect(m.section.left).toBeLessThan(m.tabs.left);
     expect(m.bracketOverflow).toBeLessThanOrEqual(0);
     expect(m.pageOverflow).toBe(0);
   });
