@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.20.0](https://github.com/CourtHive/courthive-public/compare/v1.19.1...v1.20.0) (2026-10-27)
+
+
+### Features
+
+* **event:** a bracket with more rounds than the page fits gets the room it needs ([#660](https://github.com/CourtHive/courthive-public/issues/660)) ([c615697](https://github.com/CourtHive/courthive-public/commit/c6156971cf0715b83855565112d04bebc899f0cc))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.1.2 ([#659](https://github.com/CourtHive/courthive-public/issues/659)) ([f1b1d0b](https://github.com/CourtHive/courthive-public/commit/f1b1d0bfee60f681fb35d4038b61d53d24d191f0))
+
 ## [1.19.1](https://github.com/CourtHive/courthive-public/compare/v1.19.0...v1.19.1) (2026-10-26)
 
 
