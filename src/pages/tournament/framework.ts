@@ -25,7 +25,6 @@ export const tournamentFramework = () => {
     const section = document.createElement('section');
     section.className = 'section is-fluid is-centered';
     section.style.display = 'none';
-    section.style.width = '100%';
     section.id = getTabContentId(tabName);
     // section.innerHTML = `<h1>${tabName}</h1>`;
     sections.appendChild(section);
