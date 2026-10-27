@@ -16,6 +16,7 @@ import { prefetchScoringLaunch } from 'src/services/scoringLaunch';
 import { withLiveRelayScores } from 'src/services/liveRelayScores';
 import { resolveStructureView } from 'src/services/structureViews';
 import { getRoundDisplayOptions } from './renderRoundOptions';
+import { fitBracketWidth } from 'src/services/bracketWidth';
 import { escapeHtml } from 'src/functions/escapeHtml';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
@@ -501,6 +502,8 @@ export function renderEvent({
         } else {
           createRoundsTable({ drawId, structureId, eventData });
         }
+        // after every view, so a table (no round columns) puts the section back to the container width
+        fitBracketWidth(flightDisplay);
       };
 
       // Declared beside `renderSelectedStructure` rather than inside it: an
