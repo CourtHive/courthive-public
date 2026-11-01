@@ -149,6 +149,18 @@
   color: var(--chc-text-muted);
 }
 
+/* Events whose own dates narrow the tournament's, one per line. */
+.chp-hero__playing-days {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--chc-text-muted);
+}
+
 /* ── Narrow viewports ──────────────────────────────────────── */
 
 @media screen and (max-width: 720px) {
