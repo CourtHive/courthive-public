@@ -18,6 +18,11 @@
     "venues_one": "{{count}} venue",
     "venues_other": "{{count}} venues"
   },
+  "events": {
+    "plays": "Plays: {{days}}",
+    "playsNone": "No playing days",
+    "eventPlays": "{{eventName}}: {{days}}"
+  },
   "players": {
     "name": "Name",
     "country": "Country",

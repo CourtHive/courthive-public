@@ -1,4 +1,5 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
+import { heroPlayingDayItems } from './helpers/playingDays';
 import { dateString } from './helpers/dateString';
 import './tournament-hero.css';
 
@@ -70,7 +71,7 @@ export function heroMetaItems(tournamentInfo: any, t: TFunction): string[] {
   return items;
 }
 
-function buildIdentity(tournamentInfo: any, t: TFunction): HTMLElement {
+function buildIdentity(tournamentInfo: any, t: TFunction, locale?: string): HTMLElement {
   const identity = document.createElement('div');
   identity.className = 'chp-hero__identity';
 
@@ -101,6 +102,19 @@ function buildIdentity(tournamentInfo: any, t: TFunction): HTMLElement {
     identity.appendChild(meta);
   }
 
+  // Events whose own dates narrow the tournament's: one entry per event, with its playing days.
+  const playingDayItems = heroPlayingDayItems(tournamentInfo, t, locale);
+  if (playingDayItems.length) {
+    const playingDays = document.createElement('ul');
+    playingDays.className = 'chp-hero__playing-days';
+    for (const item of playingDayItems) {
+      const entry = document.createElement('li');
+      entry.textContent = item;
+      playingDays.appendChild(entry);
+    }
+    identity.appendChild(playingDays);
+  }
+
   return identity;
 }
 
@@ -118,10 +132,13 @@ function buildIdentity(tournamentInfo: any, t: TFunction): HTMLElement {
 export function buildTournamentHero({
   tournamentInfo,
   fallbackArt,
+  locale,
   t,
 }: {
   fallbackArt: () => SVGElement | HTMLElement;
   tournamentInfo: any;
+  /** The display language, for the playing days' weekday names. */
+  locale?: string;
   t: TFunction;
 }): HTMLElement {
   const hero = document.createElement('header');
@@ -131,7 +148,7 @@ export function buildTournamentHero({
   art.className = 'chp-hero__art';
   art.id = TOURNAMENT_LOGO;
 
-  const identity = buildIdentity(tournamentInfo, t);
+  const identity = buildIdentity(tournamentInfo, t, locale);
   identity.id = TOURNAMENT_TITLE_BLOCK;
 
   const reveal = () => hero.classList.remove('chp-hero--measuring');
