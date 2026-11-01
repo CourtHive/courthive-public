@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.21.0](https://github.com/CourtHive/courthive-public/compare/v1.20.2...v1.21.0) (2026-11-01)
+
+
+### Features
+
+* **tournament:** show each event's playing days ([#682](https://github.com/CourtHive/courthive-public/issues/682)) ([00ab689](https://github.com/CourtHive/courthive-public/commit/00ab689dc75f0135b99cd5940a5fa748884e487d))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.6.0 ([#681](https://github.com/CourtHive/courthive-public/issues/681)) ([18849bf](https://github.com/CourtHive/courthive-public/commit/18849bf9f2269aa3dc4e79fa5b7afe23024468ea))
+* **deps:** update courthive-components to 7.7.0 ([#683](https://github.com/CourtHive/courthive-public/issues/683)) ([22955f3](https://github.com/CourtHive/courthive-public/commit/22955f3c850540ce94d048de9423dd3381b7faa4))
+* **deps:** update courthive-components to 7.8.0 ([#684](https://github.com/CourtHive/courthive-public/issues/684)) ([52d4677](https://github.com/CourtHive/courthive-public/commit/52d467776d30d06751f69bfd255ba3fffb4ed4ff))
+* **deps:** update tods-competition-factory to 7.25.0 ([#678](https://github.com/CourtHive/courthive-public/issues/678)) ([11fd9d3](https://github.com/CourtHive/courthive-public/commit/11fd9d3c12480e7a3cba30b7e338270156382107))
+* **deps:** update tods-competition-factory to 7.26.0 ([#679](https://github.com/CourtHive/courthive-public/issues/679)) ([02ef10e](https://github.com/CourtHive/courthive-public/commit/02ef10eda6590a63e4d9b1df611c04afaa783ce2))
+* **deps:** update tods-competition-factory to 7.27.0 ([#680](https://github.com/CourtHive/courthive-public/issues/680)) ([def9c19](https://github.com/CourtHive/courthive-public/commit/def9c19a1003a1c3336b82acb5f845681dfc376b))
+
 ## [1.20.2](https://github.com/CourtHive/courthive-public/compare/v1.20.1...v1.20.2) (2026-10-29)
 
 
