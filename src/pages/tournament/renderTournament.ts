@@ -11,6 +11,7 @@ import { renderNotes } from './tabs/infoTab/renderNotes';
 import { renderVenues } from './tabs/infoTab/renderVenues';
 import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
 import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
+import { playingDaysText } from './helpers/playingDays';
 import { buildTournamentHero } from './tournamentHero';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { escapeHtml } from 'src/functions/escapeHtml';
@@ -78,7 +79,7 @@ export async function renderTournament(
     tennisCourt('court-fallback');
 
   const heroMount = document.getElementById(TOURNAMENT_HERO);
-  heroMount?.replaceChildren(buildTournamentHero({ tournamentInfo, fallbackArt, t }));
+  heroMount?.replaceChildren(buildTournamentHero({ tournamentInfo, fallbackArt, locale: i18next.language, t }));
 
   const info = document.getElementById(getTabContentId('Info'));
   removeAllChildNodes(info);
@@ -115,6 +116,16 @@ export async function renderTournament(
     const flightDisplay = document.createElement('div');
     flightDisplay.id = 'flightDisplay';
 
+    // "Plays: Fri 13 · Sun 15" for an event whose own dates narrow the tournament's; empty otherwise.
+    const playingDaysLine = document.createElement('p');
+    playingDaysLine.id = 'eventPlayingDays';
+    playingDaysLine.className = 'event-playing-days';
+    const showPlayingDays = (eventInfo: any) => {
+      const text = playingDaysText(eventInfo, t, i18next.language);
+      playingDaysLine.textContent = text ?? '';
+      playingDaysLine.hidden = !text;
+    };
+
     const targetEventId = deepLink?.eventId;
 
     const initialIndex = targetEventId
@@ -127,6 +138,7 @@ export async function renderTournament(
     const eventOptions = tournamentInfo.eventInfo.map(({ eventId, eventName }, i) => ({
       onClick: () => {
         updateRouteUrl({ tournamentId, eventId });
+        showPlayingDays(tournamentInfo.eventInfo[i]);
         renderEvent({ tournamentId, eventId, header, flightDisplay, displayFormat: 'roundsColumns' });
       },
       isActive: i === initialIndex,
@@ -149,7 +161,9 @@ export async function renderTournament(
     const eventId: string = tournamentInfo.eventInfo[initialIndex].eventId;
     header.className = 'block';
     header.appendChild(elem);
+    showPlayingDays(tournamentInfo.eventInfo[initialIndex]);
     et.appendChild(header);
+    et.appendChild(playingDaysLine);
     et.appendChild(flightDisplay);
     renderEvent({
       tournamentId,
