@@ -8,7 +8,7 @@ import { completeMagicLink } from 'courthive-components';
 
 import { writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket } from 'src/services/hiveidSocket';
-import { getCfsBaseUrl } from 'src/services/hiveidApi';
+import { getAuthBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
 
 export function renderMagicLinkConsume(container: HTMLElement, code: string): void {
@@ -28,7 +28,7 @@ export function renderMagicLinkConsume(container: HTMLElement, code: string): vo
     return;
   }
 
-  completeMagicLink(getCfsBaseUrl(), code)
+  completeMagicLink(getAuthBaseUrl(), code)
     .then((session) => {
       writeHiveIDSession(session);
       connectHiveIDSocket();
