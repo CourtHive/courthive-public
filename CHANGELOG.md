@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.22.0](https://github.com/CourtHive/courthive-public/compare/v1.21.0...v1.22.0) (2026-11-07)
+
+
+### Features
+
+* **hiveid:** send account calls to the identity provider's origin ([#693](https://github.com/CourtHive/courthive-public/issues/693)) ([ae0269a](https://github.com/CourtHive/courthive-public/commit/ae0269ad002eb810ecce56bb111b3d75c2dbb561))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.10.0 ([#695](https://github.com/CourtHive/courthive-public/issues/695)) ([b522b93](https://github.com/CourtHive/courthive-public/commit/b522b93a432959cb5b50f8abadfbb3b94fcb6945))
+* **deps:** update courthive-components to 7.11.0 ([#696](https://github.com/CourtHive/courthive-public/issues/696)) ([f475b05](https://github.com/CourtHive/courthive-public/commit/f475b058e74c09bd7cd68b19ff09a9759f93be7e))
+* **deps:** update courthive-components to 7.9.0 ([#691](https://github.com/CourtHive/courthive-public/issues/691)) ([9ee371f](https://github.com/CourtHive/courthive-public/commit/9ee371f6e1556b74e724d4ad935818225405ff75))
+* **deps:** update tods-competition-factory to 7.28.0 ([#690](https://github.com/CourtHive/courthive-public/issues/690)) ([4eab3d2](https://github.com/CourtHive/courthive-public/commit/4eab3d26a105b0604a68c88ca630d766fbf504f0))
+* **deps:** update tods-competition-factory to 7.29.0 ([291d823](https://github.com/CourtHive/courthive-public/commit/291d823fcc428e374eb2fd2d9ba626e4de417811))
+* **deps:** update tods-competition-factory to 7.30.0 ([#694](https://github.com/CourtHive/courthive-public/issues/694)) ([914c3ae](https://github.com/CourtHive/courthive-public/commit/914c3aee3330d753ee618b185820e90a86a6f5f2))
+* **deps:** update tods-competition-factory to 7.32.0 ([#699](https://github.com/CourtHive/courthive-public/issues/699)) ([888f477](https://github.com/CourtHive/courthive-public/commit/888f477b3bbe4da93bc8e34f9c3338e0cc3ab794))
+
 ## [1.21.0](https://github.com/CourtHive/courthive-public/compare/v1.20.2...v1.21.0) (2026-11-01)
 
 
