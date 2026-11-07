@@ -20,7 +20,7 @@ import { fetchProposalRegistration, type ProposalRegistrationView } from 'src/se
 import { readHiveIDSession, writeHiveIDSession } from 'src/services/hiveidSession';
 import { connectHiveIDSocket } from 'src/services/hiveidSocket';
 import { buildHiveIDLogin } from 'courthive-components';
-import { getCfsBaseUrl } from 'src/services/hiveidApi';
+import { getAuthBaseUrl } from 'src/services/hiveidApi';
 import {
   fetchMyRegistration,
   recordMyConsent,
@@ -236,7 +236,7 @@ function mountCreateAccountShell(
   message: HTMLElement,
 ): void {
   const shell = buildHiveIDLogin({
-    cfsBaseUrl: getCfsBaseUrl(),
+    cfsBaseUrl: getAuthBaseUrl(),
     mode: 'signup',
     provider,
     dobSexCapture: {

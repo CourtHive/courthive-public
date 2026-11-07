@@ -18,6 +18,22 @@ export function getCfsBaseUrl(): string {
   return win.dev?.baseURL || (local ? 'http://localhost:8383' : 'https://courthive.net');
 }
 
+/**
+ * The identity provider (courthive-hiveid) base URL: account calls — sign-up, sign-in links, `/me`, contact-email
+ * verification. Production routes `/auth/*` to it same-origin (courthive.net, behind nginx); locally it is its own
+ * port (:3140), so these cannot share CFS's base. `window.dev.authURL` overrides it the way `window.dev.baseURL`
+ * overrides CFS's.
+ *
+ * NOT for claim, claimable or scorer-token: those read tournament data and stay on CFS ({@link getCfsBaseUrl}).
+ */
+export function getAuthBaseUrl(): string {
+  const local = globalThis.location.host.includes('localhost') || globalThis.location.hostname === '127.0.0.1';
+  const win = globalThis as any;
+  return (
+    win.dev?.authURL || import.meta.env.VITE_AUTH_SERVER || (local ? 'http://localhost:3140' : 'https://courthive.net')
+  );
+}
+
 export interface HiveIDMeResponse {
   userId: string;
   email: string;
@@ -39,7 +55,7 @@ export interface HiveIDMeResponse {
 export async function fetchHiveIDMe(): Promise<HiveIDMeResponse | null> {
   const session = readHiveIDSession();
   if (!session?.token) return null;
-  const url = `${getCfsBaseUrl()}/auth/hiveid/me`;
+  const url = `${getAuthBaseUrl()}/auth/hiveid/me`;
   const res = await fetch(url, { headers: { Authorization: `Bearer ${session.token}` } });
   if (res.status === 401) return null;
   if (!res.ok) throw new Error(`fetchHiveIDMe failed: HTTP ${res.status}`);
@@ -64,7 +80,7 @@ export async function checkHiveIDSession(): Promise<{ status: SessionCheckStatus
   const session = readHiveIDSession();
   if (!session?.token) return { status: 'no-session' };
   try {
-    const res = await fetch(`${getCfsBaseUrl()}/auth/hiveid/me`, {
+    const res = await fetch(`${getAuthBaseUrl()}/auth/hiveid/me`, {
       headers: { Authorization: `Bearer ${session.token}` },
     });
     if (res.status === 401) return { status: 'expired' };
@@ -109,10 +125,10 @@ export interface ClaimableCandidate {
   alreadyLinkedTo: string | null;
 }
 
-async function authenticatedJson<T>(path: string, init?: RequestInit): Promise<T | null> {
+async function authenticatedJson<T>(path: string, init?: RequestInit, baseUrl = getCfsBaseUrl()): Promise<T | null> {
   const session = readHiveIDSession();
   if (!session?.token) return null;
-  const res = await fetch(`${getCfsBaseUrl()}${path}`, {
+  const res = await fetch(`${baseUrl}${path}`, {
     ...init,
     headers: {
       ...(init?.headers ?? {}),
@@ -138,7 +154,7 @@ export type ResendVerificationStatus = 'pending_verification' | 'already_verifie
 
 /** Authenticated — re-send the HiveID email-verification mail to the logged-in user. */
 export function resendHiveIDVerification(): Promise<{ success: boolean; status?: ResendVerificationStatus } | null> {
-  return authenticatedJson('/auth/hiveid/resend-verification', { method: 'POST' });
+  return authenticatedJson('/auth/hiveid/resend-verification', { method: 'POST' }, getAuthBaseUrl());
 }
 
 /**
@@ -149,19 +165,20 @@ export function resendHiveIDVerification(): Promise<{ success: boolean; status?:
 export function setMyContactEmail(
   contactEmail: string,
 ): Promise<{ success?: boolean; status?: string; contactEmail?: string; error?: string } | null> {
-  return authenticatedJson('/auth/hiveid/me/contact-email', {
-    method: 'POST',
-    body: JSON.stringify({ contactEmail }),
-  });
+  return authenticatedJson(
+    '/auth/hiveid/me/contact-email',
+    { method: 'POST', body: JSON.stringify({ contactEmail }) },
+    getAuthBaseUrl(),
+  );
 }
 
 /**
  * Public — exchange a single-use email-verification token (from the link in
- * the verification email) for a verified stamp. Shared @Public CFS endpoint;
+ * the verification email) for a verified stamp. Public identity-provider endpoint;
  * no session required, so the link works on any device/browser.
  */
 export async function consumeEmailVerification(token: string): Promise<{ success: true; contactEmail: string }> {
-  const res = await fetch(`${getCfsBaseUrl()}/auth/verify-email`, {
+  const res = await fetch(`${getAuthBaseUrl()}/auth/verify-email`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ token }),

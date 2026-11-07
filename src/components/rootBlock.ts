@@ -21,7 +21,7 @@ import { toggleLanguageDropdown } from 'src/services/languageService';
 import { tournamentFramework } from 'src/pages/tournament/framework';
 import { refreshCurrentRoute } from 'src/router/router';
 import { toggleThemeDropdown } from 'src/services/themeService';
-import { getCfsBaseUrl } from 'src/services/hiveidApi';
+import { getAuthBaseUrl } from 'src/services/hiveidApi';
 import { context } from 'src/common/context';
 import { t } from 'src/i18n/i18n';
 
@@ -171,7 +171,7 @@ export function rootBlock() {
 
 function openLoginModal(): void {
   const shell = buildHiveIDLogin({
-    cfsBaseUrl: getCfsBaseUrl(),
+    cfsBaseUrl: getAuthBaseUrl(),
     mode: 'login',
     // Optional federation-id capture on signup: a person who quotes an existing
     // trusted-provider id (e.g. their BOBOCA player id) is RESOLVED to their

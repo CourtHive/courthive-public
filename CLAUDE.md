@@ -117,7 +117,7 @@ Hash-based SPA routing via **Navigo** (`src/router/router.ts`). Route names/DOM 
 
 ### HiveID Identity, Registration & Claim
 
-Public-side identity is separate from the admin `tmxToken`. `src/services/hiveidSession.ts` stores the session under the `hiveidSession` localStorage key (shape emitted by `buildHiveIDLogin`'s `hiveid:authenticated` event). `src/services/hiveidApi.ts` is the CFS surface (base URL resolved like `liveUpdates`) and wraps the `/auth/hiveid/*` endpoints:
+Public-side identity is separate from the admin `tmxToken`. `src/services/hiveidSession.ts` stores the session under the `hiveidSession` localStorage key (shape emitted by `buildHiveIDLogin`'s `hiveid:authenticated` event). `src/services/hiveidApi.ts` wraps the `/auth/hiveid/*` endpoints. Account calls (`/me`, verification, contact email, and the sign-up / sign-in-link base handed to `buildHiveIDLogin`) go to the identity provider, courthive-hiveid (`getAuthBaseUrl`: `localhost:3140` locally, `VITE_AUTH_SERVER` or `window.dev.authURL` to override, courthive.net in production); claimable, claim and scorer-token read tournament data and go to CFS (`getCfsBaseUrl`):
 
 - `GET /auth/hiveid/me` — refresh cached canonical person fields (picks up merge-driven rewrites).
 - `POST /auth/hiveid/resend-verification`, `POST /auth/verify-email` — email verification (`renderVerifyEmail.ts`).

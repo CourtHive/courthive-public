@@ -74,6 +74,12 @@ export interface MockOptions {
  */
 const API = 'http://localhost:8383';
 
+/**
+ * The identity provider's origin (courthive-hiveid) in dev — `getAuthBaseUrl()` in `hiveidApi.ts`. Account calls
+ * (`/me`, verification, contact email, sign-up) go here; claim, claimable and participations stay on {@link API}.
+ */
+const AUTH = 'http://localhost:3140';
+
 /** Seeded canonical personId shared by the HiveID mocks and the session seed. */
 const PERSON_E2E = 'person-e2e';
 
@@ -147,7 +153,9 @@ export async function installApiMocks(page: Page, fixture: PublicTournamentFixtu
 
   await page.route(`${API}/factory/participants`, (route) => {
     if (handledPreflight(route)) return;
-    const body = opts.participants ? { success: true, participants: opts.participants } : (fixture.participants ?? { participants: [] });
+    const body = opts.participants
+      ? { success: true, participants: opts.participants }
+      : (fixture.participants ?? { participants: [] });
     void json(route, body);
   });
 
@@ -205,7 +213,7 @@ export interface HiveIDMeMockOptions {
  */
 export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions) {
   let lastContactEmail: string | null = null;
-  await page.route(`${API}/auth/hiveid/me`, (route) => {
+  await page.route(`${AUTH}/auth/hiveid/me`, (route) => {
     if (handledPreflight(route)) return;
     void json(route, opts.me);
   });
@@ -217,11 +225,11 @@ export async function installHiveIDMeMocks(page: Page, opts: HiveIDMeMockOptions
     if (handledPreflight(route)) return;
     void json(route, opts.registrations ?? []);
   });
-  await page.route(`${API}/auth/hiveid/resend-verification`, (route) => {
+  await page.route(`${AUTH}/auth/hiveid/resend-verification`, (route) => {
     if (handledPreflight(route)) return;
     void json(route, { success: true, status: opts.resendStatus ?? 'sent' });
   });
-  await page.route(`${API}/auth/hiveid/me/contact-email`, (route) => {
+  await page.route(`${AUTH}/auth/hiveid/me/contact-email`, (route) => {
     if (handledPreflight(route)) return;
     const body: any = route.request().postDataJSON() ?? {};
     lastContactEmail = body.contactEmail ?? null;
@@ -292,7 +300,13 @@ export async function installDeclarationsMocks(
       return;
     }
     const payload: any = route.request().postDataJSON() ?? {};
-    availability = { personId: PERSON_E2E, providerId: 'BOBOCA', status: 'CURRENT', payload, updatedAt: '2026-08-01T00:00:00.000Z' };
+    availability = {
+      personId: PERSON_E2E,
+      providerId: 'BOBOCA',
+      status: 'CURRENT',
+      payload,
+      updatedAt: '2026-08-01T00:00:00.000Z',
+    };
     void json(route, availability);
   });
 
@@ -386,7 +400,14 @@ export async function installPartnerInviteMocks(page: Page, invite: any): Promis
   await page.route(`${DECLARATIONS}/me/registrations/**`, (route) => {
     if (handledPreflight(route)) return;
     registration = route.request().postDataJSON() ?? {};
-    void json(route, { personId: PERSON_E2E, providerId: invite.providerId, tournamentId: invite.tournamentId, status: 'SUBMITTED', payload: registration, updatedAt: 't' });
+    void json(route, {
+      personId: PERSON_E2E,
+      providerId: invite.providerId,
+      tournamentId: invite.tournamentId,
+      status: 'SUBMITTED',
+      payload: registration,
+      updatedAt: 't',
+    });
   });
   return { savedRegistration: () => registration, accepted: () => accepted };
 }
@@ -397,7 +418,7 @@ export interface HiveIDSignupMockState {
 }
 
 /**
- * Mock CFS `POST /auth/hiveid/signup` (the inline create-account / mint-on-signup
+ * Mock hiveid `POST /auth/hiveid/signup` (the inline create-account / mint-on-signup
  * path). Captures the request body (so a test can assert DOB/sex/provider were
  * forwarded) and returns a `created` session whose `cached` reflects the submitted
  * fields — mirroring a fresh persons mint.
@@ -407,7 +428,7 @@ export async function installHiveIDSignupMock(
   opts: { personId?: string } = {},
 ): Promise<HiveIDSignupMockState> {
   let body: any = null;
-  await page.route(`${API}/auth/hiveid/signup`, (route) => {
+  await page.route(`${AUTH}/auth/hiveid/signup`, (route) => {
     if (handledPreflight(route)) return;
     body = route.request().postDataJSON() ?? {};
     void json(route, {
@@ -438,7 +459,7 @@ export interface VerifyEmailMockOptions {
 
 /** Mock POST /auth/verify-email for the verify-email landing page. */
 export async function installVerifyEmailMock(page: Page, opts: VerifyEmailMockOptions = {}) {
-  await page.route(`${API}/auth/verify-email`, (route) => {
+  await page.route(`${AUTH}/auth/verify-email`, (route) => {
     if (handledPreflight(route)) return;
     if (opts.ok === false) {
       void json(route, { message: opts.message ?? 'invalid token' }, opts.status ?? 400);
