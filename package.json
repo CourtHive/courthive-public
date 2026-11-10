@@ -1,6 +1,7 @@
 {
-  "name": "ch-project-template",
+  "name": "courthive-public",
   "packageManager": "pnpm@12.16.1",
+  "license": "MIT",
   "private": true,
   "version": "1.22.0",
   "type": "module",
