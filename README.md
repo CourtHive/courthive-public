@@ -6,7 +6,7 @@ Built with vanilla TypeScript (no framework). Deployed as a static web app to `c
 
 ## Prerequisites
 
-- Node.js >= 22
+- Node.js >= 24
 - pnpm >= 11
 - A running [competition-factory-server](https://github.com/CourtHive/competition-factory-server) instance for live data
 
@@ -76,4 +76,4 @@ Connects to the competition-factory-server via Socket.IO, joining tournament-spe
 
 ## License
 
-Private — not published to npm.
+MIT — see [LICENSE](LICENSE). The viewer is an application, not a library, so it is not published to npm.

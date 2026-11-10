@@ -21,7 +21,7 @@
   ],
   "packages": {
     ".": {
-      "package-name": "ch-project-template"
+      "package-name": "courthive-public"
     }
   }
 }

@@ -1,6 +1,7 @@
 {
-  "name": "ch-project-template",
+  "name": "courthive-public",
   "packageManager": "pnpm@12.16.1",
+  "license": "MIT",
   "private": true,
   "version": "1.22.0",
   "type": "module",
@@ -83,6 +84,6 @@
     "svelte": "^5.55.1",
     "tabulator-tables": "6.7.1",
     "tippy.js": "6.3.7",
-    "tods-competition-factory": "7.32.0"
+    "tods-competition-factory": "7.33.0"
   }
 }
