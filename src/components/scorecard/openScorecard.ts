@@ -10,7 +10,12 @@ export function openScorecard({ matchUp, display }: { matchUp: any; display?: an
   const composition = resolvePublishedComposition(display || {});
 
   const content = (elem: HTMLElement) => {
-    const scorecard = renderScorecard({ matchUp, composition });
+    const scorecard = renderScorecard({
+      matchUp,
+      composition,
+      teamBranding: true,
+      teamPresentation: matchUp.teamPresentation,
+    });
     elem.appendChild(scorecard);
   };
 
