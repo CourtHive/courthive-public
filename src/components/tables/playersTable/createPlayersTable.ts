@@ -5,7 +5,7 @@ import { buildRosterGrid, groupByGender } from './rosterGrid';
 import { destroyTable } from 'src/components/destroyTable';
 import { renderParticipant } from 'courthive-components';
 import { publicCompetitors } from './publicCompetitors';
-import { t } from 'src/i18n/i18n';
+import { t, translate } from 'src/i18n/i18n';
 
 const { ratingsParameters } = fixtures;
 const { SINGLES } = eventConstants;
@@ -238,7 +238,7 @@ export function createPlayersTable({
       element.appendChild(empty);
       return;
     }
-    element.appendChild(buildRosterGrid({ entries: rows.map(({ name, sex }) => ({ name, sex })), t }));
+    element.appendChild(buildRosterGrid({ entries: rows.map(({ name, sex }) => ({ name, sex })), t: translate }));
     return;
   }
 

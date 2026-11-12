@@ -1,9 +1,8 @@
 import { TOURNAMENT_LOGO, TOURNAMENT_TITLE_BLOCK } from 'src/common/constants/elementConstants';
 import { heroPlayingDayItems } from './helpers/playingDays';
 import { dateString } from './helpers/dateString';
+import type { Translate } from 'src/i18n/i18n';
 import './tournament-hero.css';
-
-type TFunction = (key: string, options?: Record<string, unknown>) => string;
 
 export type HeroVariant = 'banner' | 'mark';
 
@@ -52,7 +51,7 @@ export function shouldShowEyebrow(organisationName?: string, tournamentName?: st
  * both singles and doubles is two entries and calling the sum "players" would
  * overstate the field.
  */
-export function heroMetaItems(tournamentInfo: any, t: TFunction): string[] {
+export function heroMetaItems(tournamentInfo: any, t: Translate): string[] {
   const items: string[] = [];
 
   const dates = dateString(tournamentInfo ?? {});
@@ -71,7 +70,7 @@ export function heroMetaItems(tournamentInfo: any, t: TFunction): string[] {
   return items;
 }
 
-function buildIdentity(tournamentInfo: any, t: TFunction, locale?: string): HTMLElement {
+function buildIdentity(tournamentInfo: any, t: Translate, locale?: string): HTMLElement {
   const identity = document.createElement('div');
   identity.className = 'chp-hero__identity';
 
@@ -139,7 +138,7 @@ export function buildTournamentHero({
   tournamentInfo: any;
   /** The display language, for the playing days' weekday names. */
   locale?: string;
-  t: TFunction;
+  t: Translate;
 }): HTMLElement {
   const hero = document.createElement('header');
   hero.className = 'chp-hero chp-hero--mark';
