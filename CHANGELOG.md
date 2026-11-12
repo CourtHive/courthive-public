@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.23.0](https://github.com/CourtHive/courthive-public/compare/v1.22.1...v1.23.0) (2026-11-12)
+
+
+### Features
+
+* inherit team presentation in public scorecards ([#711](https://github.com/CourtHive/courthive-public/issues/711)) ([f4affb6](https://github.com/CourtHive/courthive-public/commit/f4affb624c56dc5547413c635ba21d3572251cca))
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.16.0 ([#714](https://github.com/CourtHive/courthive-public/issues/714)) ([d142d04](https://github.com/CourtHive/courthive-public/commit/d142d048070bb24a7b28a448888241753ec3aa2a))
+* **deps:** update tods-competition-factory to 7.36.0 ([#713](https://github.com/CourtHive/courthive-public/issues/713)) ([24deebb](https://github.com/CourtHive/courthive-public/commit/24deebbfff7a1b7e9b76d05781601570297d710a))
+* **deps:** update tods-competition-factory to 7.36.1 ([#715](https://github.com/CourtHive/courthive-public/issues/715)) ([36e76b9](https://github.com/CourtHive/courthive-public/commit/36e76b95c2f5c7f848a39ec3818627d8e2346309))
+
+
+### Documentation
+
+* bring the README up to date with what the viewer does ([#712](https://github.com/CourtHive/courthive-public/issues/712)) ([057a7a4](https://github.com/CourtHive/courthive-public/commit/057a7a418834c9f86c98d50fe8fa2ad662098952))
+
 ## [1.22.1](https://github.com/CourtHive/courthive-public/compare/v1.22.0...v1.22.1) (2026-11-10)
 
 
