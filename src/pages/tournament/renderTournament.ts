@@ -5,11 +5,11 @@ import { renderRegistrationProfile } from './tabs/infoTab/renderRegistrationProf
 import { displayTab, displayTabContent, hideTab } from './helpers/tabDisplay';
 import { renderRegisterButton } from './tabs/infoTab/registrationButton';
 import { removeAllChildNodes, renderEvent } from './tabs/eventTab/renderEvent';
+import i18next, { hasStoredLanguage, t, translate } from 'src/i18n/i18n';
 import { applyProviderBranding } from 'src/services/providerBranding';
 import { dropDownButton } from 'src/components/buttons/dropDownButton';
 import { renderNotes } from './tabs/infoTab/renderNotes';
 import { renderVenues } from './tabs/infoTab/renderVenues';
-import i18next, { hasStoredLanguage, t } from 'src/i18n/i18n';
 import { ensureLocaleCurrent } from 'src/i18n/runtime-loader';
 import { playingDaysText } from './helpers/playingDays';
 import { buildTournamentHero } from './tournamentHero';
@@ -79,7 +79,9 @@ export async function renderTournament(
     tennisCourt('court-fallback');
 
   const heroMount = document.getElementById(TOURNAMENT_HERO);
-  heroMount?.replaceChildren(buildTournamentHero({ tournamentInfo, fallbackArt, locale: i18next.language, t }));
+  heroMount?.replaceChildren(
+    buildTournamentHero({ tournamentInfo, fallbackArt, locale: i18next.language, t: translate }),
+  );
 
   const info = document.getElementById(getTabContentId('Info'));
   removeAllChildNodes(info);
@@ -121,7 +123,7 @@ export async function renderTournament(
     playingDaysLine.id = 'eventPlayingDays';
     playingDaysLine.className = 'event-playing-days';
     const showPlayingDays = (eventInfo: any) => {
-      const text = playingDaysText(eventInfo, t, i18next.language);
+      const text = playingDaysText(eventInfo, translate, i18next.language);
       playingDaysLine.textContent = text ?? '';
       playingDaysLine.hidden = !text;
     };

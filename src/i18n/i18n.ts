@@ -33,4 +33,12 @@ i18next.init({
 });
 
 export const t = i18next.t.bind(i18next);
+
+// A translator as a plain function, for pure helpers that take one injected rather than importing
+// i18next (their tests stay DOM-free). From i18next 27, `t` is typed as overloads whose options
+// argument is required, so `t` itself no longer fits `(key, options?) => string`; `translate`
+// branches rather than pass `undefined`.
+export type Translate = (key: string, options?: Record<string, unknown>) => string;
+export const translate: Translate = (key, options) => (options ? i18next.t(key, options) : i18next.t(key));
+
 export default i18next;

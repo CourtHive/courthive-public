@@ -1,6 +1,5 @@
 import { parseCalendarDate } from './dateString';
-
-type TFunction = (key: string, options?: Record<string, unknown>) => string;
+import type { Translate } from 'src/i18n/i18n';
 
 /**
  * An event's playing days, as the factory publishes them: `eventInfo.playingDates` is present only
@@ -43,7 +42,7 @@ export function formatPlayingDays(playingDates: string[], locale?: string): stri
  * The line shown for one event: "Plays: Fri 13 · Sun 15", "No playing days" when the event's dates
  * leave it none, or `undefined` when the event plays every tournament day.
  */
-export function playingDaysText(eventInfo: any, t: TFunction, locale?: string): string | undefined {
+export function playingDaysText(eventInfo: any, t: Translate, locale?: string): string | undefined {
   const playingDates = eventPlayingDates(eventInfo);
   if (!playingDates) return undefined;
   if (!playingDates.length) return t('events.playsNone');
@@ -54,7 +53,7 @@ export function playingDaysText(eventInfo: any, t: TFunction, locale?: string): 
  * The hero's per-event playing days: one "Event name: Fri 13 · Sun 15" entry for each event whose
  * days are narrower than the tournament's. Events playing every day add nothing.
  */
-export function heroPlayingDayItems(tournamentInfo: any, t: TFunction, locale?: string): string[] {
+export function heroPlayingDayItems(tournamentInfo: any, t: Translate, locale?: string): string[] {
   const items: string[] = [];
   for (const eventInfo of tournamentInfo?.eventInfo ?? []) {
     const playingDates = eventPlayingDates(eventInfo);
