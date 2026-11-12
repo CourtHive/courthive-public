@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.1](https://github.com/CourtHive/courthive-public/compare/v1.23.0...v1.23.1) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update @courthive/provider-config to 1.0.0 ([#720](https://github.com/CourtHive/courthive-public/issues/720)) ([64c4f08](https://github.com/CourtHive/courthive-public/commit/64c4f081c8f2ddc06db91eb876c33c91e7b8ed49))
+* **deps:** update i18next to v27 ([#719](https://github.com/CourtHive/courthive-public/issues/719)) ([ef414ee](https://github.com/CourtHive/courthive-public/commit/ef414eecfcd938016ef15a2222f1c6c3a5d91dcd))
+
 ## [1.23.0](https://github.com/CourtHive/courthive-public/compare/v1.22.1...v1.23.0) (2026-11-12)
 
 
