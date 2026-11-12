@@ -1,6 +1,5 @@
+import type { Translate } from 'src/i18n/i18n';
 import './rosterGrid.css';
-
-type TFunction = (key: string, options?: Record<string, unknown>) => string;
 
 export interface RosterEntry {
   name: string;
@@ -67,7 +66,7 @@ export function groupByGender(entries: RosterEntry[]): RosterSection[] {
  * column edge — which reads as an underline under each name, beside a wide
  * band of empty space. Names alone want a multi-column list.
  */
-export function buildRosterGrid({ entries, t }: { entries: RosterEntry[]; t: TFunction }): HTMLElement {
+export function buildRosterGrid({ entries, t }: { entries: RosterEntry[]; t: Translate }): HTMLElement {
   const roster = document.createElement('div');
   roster.className = 'chp-roster';
 
