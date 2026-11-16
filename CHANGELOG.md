@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.3](https://github.com/CourtHive/courthive-public/compare/v1.23.2...v1.23.3) (2026-11-16)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.16.3 ([#738](https://github.com/CourtHive/courthive-public/issues/738)) ([d11b6dc](https://github.com/CourtHive/courthive-public/commit/d11b6dcd5de16938192cec64bfc4998538c286c1))
+
 ## [1.23.2](https://github.com/CourtHive/courthive-public/compare/v1.23.1...v1.23.2) (2026-11-16)
 
 
