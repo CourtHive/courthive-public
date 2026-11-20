@@ -6,6 +6,7 @@ import { TOURNAMENTS_TABLE } from 'src/common/constants/elementConstants';
 
 export function createTournamentsTable({ providerAbbr }) {
   const target = document.getElementById(TOURNAMENTS_TABLE);
+  if (!target) return;
   const handleError = (error) => console.log('Network error', { error });
 
   if (providerAbbr) {

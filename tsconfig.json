@@ -23,7 +23,7 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Type checking */
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "declaration": false,

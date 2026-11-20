@@ -39,8 +39,8 @@ function publishedTournamentInfo(weekdays: any[]) {
 describe('event playing days (real engine payload)', () => {
   it('shows the playing days of a narrowed event and nothing for an event playing every day', () => {
     const tournamentInfo = publishedTournamentInfo(['FRI', 'SUN']);
-    const weekend = tournamentInfo.eventInfo.find((event: any) => event.eventName === WEEKEND);
-    const open = tournamentInfo.eventInfo.find((event: any) => event.eventName === OPEN);
+    const weekend = tournamentInfo?.eventInfo?.find((event: any) => event.eventName === WEEKEND);
+    const open = tournamentInfo?.eventInfo?.find((event: any) => event.eventName === OPEN);
 
     expect(eventPlayingDates(weekend)).toEqual(['2026-11-13', END_DATE]);
     expect(playingDaysText(weekend, t, EN)).toBe('Plays: Fri 13 · Sun 15');
