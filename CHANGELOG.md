@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.23.5](https://github.com/CourtHive/courthive-public/compare/v1.23.4...v1.23.5) (2026-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.18.0 ([#750](https://github.com/CourtHive/courthive-public/issues/750)) ([e7e2bd2](https://github.com/CourtHive/courthive-public/commit/e7e2bd20839593c4537ce6bab9d8f0d304b301df))
+* **deps:** update courthive-components to 7.19.0 ([#752](https://github.com/CourtHive/courthive-public/issues/752)) ([958a907](https://github.com/CourtHive/courthive-public/commit/958a9074cc48d1fca2050680af36ba464308da22))
+* **deps:** update courthive-components to 7.19.1 ([#753](https://github.com/CourtHive/courthive-public/issues/753)) ([c97eaf3](https://github.com/CourtHive/courthive-public/commit/c97eaf3ea840bf9775d0c9735e0f94900319056e))
+* **deps:** update courthive-components to 7.19.2 ([#754](https://github.com/CourtHive/courthive-public/issues/754)) ([037c724](https://github.com/CourtHive/courthive-public/commit/037c724f0321af41a322863b164c417940f2d195))
+* **deps:** update courthive-components to 7.20.0 ([#756](https://github.com/CourtHive/courthive-public/issues/756)) ([de6ce29](https://github.com/CourtHive/courthive-public/commit/de6ce29750518b11e2aeb706855aae7b47ce9c2a))
+* **deps:** update tods-competition-factory to 7.41.0 ([#751](https://github.com/CourtHive/courthive-public/issues/751)) ([822777e](https://github.com/CourtHive/courthive-public/commit/822777e2e98221ae714b190564590554928f41ac))
+* **deps:** update tods-competition-factory to 7.43.0 ([#755](https://github.com/CourtHive/courthive-public/issues/755)) ([45ad551](https://github.com/CourtHive/courthive-public/commit/45ad551dc90d04478e059e77b2ab72d5b23e76a1))
+
 ## [1.23.4](https://github.com/CourtHive/courthive-public/compare/v1.23.3...v1.23.4) (2026-11-17)
 
 
