@@ -45,22 +45,18 @@ function navigateToTournament({
   structureId,
   tab,
 }: {
-  tournamentId: string;
+  tournamentId?: string;
   eventId?: string;
   drawId?: string;
   structureId?: string;
   tab?: string;
 }) {
+  // every caller is a route with a :tournamentId segment, so Navigo always supplies it
+  if (!tournamentId) return;
   // Clean up any active track page shell before switching views
   destroyCurrentShell();
 
-  const back = document.getElementById('back');
-  if (context.providerAbbr) {
-    back.textContent = context.providerAbbr;
-    back.style.display = 'block';
-  } else {
-    back.style.display = 'none';
-  }
+  showBack(context.providerAbbr);
 
   context.tournamentId = tournamentId;
   delete context.tab;
@@ -68,6 +64,14 @@ function navigateToTournament({
   setDisplay(TOURNAMENT);
   connectAndJoinRoom(tournamentId);
   getTournamentInfo({ tournamentId }).then((result) => renderTournament(result, { eventId, drawId, structureId, tab }));
+}
+
+/** The header's back link (from rootBlock): shown with a label, or hidden when there is none. */
+function showBack(label?: string) {
+  const back = document.getElementById('back');
+  if (!back) return;
+  if (label) back.textContent = label;
+  back.style.display = label ? 'block' : 'none';
 }
 
 export function updateRouteUrl(params: TournamentPathParams) {
@@ -106,11 +110,9 @@ export function router() {
   // make accessible
   context.router = router;
 
-  const back = document.getElementById('back');
-
   router.on('/', () => {
     console.log('[router] matched: / (splash)');
-    back.style.display = 'none';
+    showBack();
     delete context.providerAbbr;
     destroyCurrentShell();
     leaveRoom();
@@ -119,7 +121,7 @@ export function router() {
   });
   router.on('/tournaments/:providerAbbr', (match) => {
     console.log('[router] matched: /tournaments/:providerAbbr', match?.data);
-    back.style.display = 'none';
+    showBack();
     leaveRoom();
     const providerAbbr = match?.data?.providerAbbr?.toUpperCase();
     context.providerAbbr = providerAbbr;
@@ -131,7 +133,7 @@ export function router() {
   // other surfaces don't have to deep-link a specific provider abbreviation.
   router.on('/rankings', () => {
     console.log('[router] matched: /rankings (landing)');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(RANKINGS);
@@ -145,7 +147,7 @@ export function router() {
   // read as provider 'list'. Specific first.
   router.on('/rankings/list/:snapshotId', (match) => {
     console.log('[router] matched: /rankings/list/:snapshotId', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(RANKINGS);
@@ -156,7 +158,7 @@ export function router() {
 
   router.on('/rankings/:providerAbbr', (match) => {
     console.log('[router] matched: /rankings/:providerAbbr', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     const providerAbbr = match?.data?.providerAbbr?.toUpperCase() ?? '';
@@ -168,7 +170,7 @@ export function router() {
 
   router.on('/programs', () => {
     console.log('[router] matched: /programs (directory)');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(PROGRAMS);
@@ -178,7 +180,7 @@ export function router() {
 
   router.on('/program/:teamId', (match) => {
     console.log('[router] matched: /program/:teamId', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(PROGRAM);
@@ -188,7 +190,7 @@ export function router() {
 
   router.on('/conferences', () => {
     console.log('[router] matched: /conferences (directory)');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(CONFERENCES);
@@ -198,7 +200,7 @@ export function router() {
 
   router.on('/conference/:slug', (match) => {
     console.log('[router] matched: /conference/:slug', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(CONFERENCE);
@@ -208,7 +210,7 @@ export function router() {
 
   router.on('/register/partner/:token', (match) => {
     console.log('[router] matched: /register/partner/:token', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(REGISTER);
@@ -218,7 +220,7 @@ export function router() {
 
   router.on('/register/:tournamentId', (match) => {
     console.log('[router] matched: /register/:tournamentId', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(REGISTER);
@@ -282,7 +284,7 @@ export function router() {
   // /me handler never shadows it.
   router.on('/me/availability/:providerAbbr', (match) => {
     console.log('[router] matched: /me/availability/:providerAbbr', match?.data);
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(HIVEID_ME);
@@ -292,7 +294,7 @@ export function router() {
 
   router.on('/me', () => {
     console.log('[router] matched: /me (HiveID profile)');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(HIVEID_ME);
@@ -303,7 +305,7 @@ export function router() {
   router.on('/hiveid/magic/:code', (match) => {
     const code = match?.data?.code;
     console.log('[router] matched: /hiveid/magic/:code');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(HIVEID_MAGIC);
@@ -316,7 +318,7 @@ export function router() {
   router.on('/verify-email/:token', (match) => {
     const token = match?.data?.token;
     console.log('[router] matched: /verify-email/:token');
-    back.style.display = 'none';
+    showBack();
     destroyCurrentShell();
     leaveRoom();
     setDisplay(HIVEID_MAGIC);
@@ -333,8 +335,7 @@ export function router() {
       return;
     }
     console.log('[router] matched: /track/:tournamentId/:matchUpId', match?.data);
-    back.style.display = 'block';
-    back.textContent = 'Back';
+    showBack('Back');
     leaveRoom();
     setDisplay(TRACK);
     const container = document.getElementById(TRACK);

@@ -166,7 +166,7 @@ Public registration UI: the tournament Info tab shows a CTA (`registrationButton
 - **Consumes published packages**: `courthive-components` and `@courthive/provider-config` come from the registry — changes there must be published and the dep bumped before they reach this repo
 - **Absolute imports**: tsconfig `paths` maps `src/*` → `./src/*`
 - **`noImplicitAny`**: false in tsconfig
-- **`strict`**: true in tsconfig (but `strictNullChecks: false`)
+- **`strict`**: true in tsconfig, `strictNullChecks` included (on since 2026-11-20: Svelte 5.59's `mount()` types assume it; off, every DOM mount failed to type-check)
 - **Imports**: Sort longest-first per ecosystem standards
 - **Theming**: colors driven from `--chc-*` / `--sp-*` tokens for both light and dark — no hardcoded light-mode fallbacks
 - **Lint discipline**: Zero warnings — fix all before deploy

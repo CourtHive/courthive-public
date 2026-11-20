@@ -16,7 +16,7 @@ export function getRoundDisplayOptions(params: GetDisplayOptions) {
   const displayUpdate = (view) => existingView !== view && isFunction(callback) && callback({ refresh: true, view });
   const isAdHoc = tournamentEngine.isAdHoc({ structure });
 
-  const actionOptions = [];
+  const actionOptions: { onClick: () => void; label: string; close: boolean }[] = [];
 
   existingView !== ROUNDS_COLUMNS &&
     actionOptions.push({
