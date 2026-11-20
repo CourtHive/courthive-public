@@ -1,4 +1,4 @@
-import { parseCalendarDate } from './dateString';
+import { parseCalendarDate, type CalendarDate } from './dateString';
 import type { Translate } from 'src/i18n/i18n';
 
 /**
@@ -19,7 +19,7 @@ export function eventPlayingDates(eventInfo: any): string[] | undefined {
  * so the viewer's time zone never moves a day (the off-by-one `parseCalendarDate` exists to avoid).
  */
 export function formatPlayingDays(playingDates: string[], locale?: string): string {
-  const days = playingDates.map(parseCalendarDate).filter(Boolean);
+  const days = playingDates.map(parseCalendarDate).filter((day): day is CalendarDate => !!day);
   if (!days.length) return '';
   const withMonth = new Set(days.map(({ year, month }) => `${year}-${month}`)).size > 1;
   const options: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'short', timeZone: 'UTC' };

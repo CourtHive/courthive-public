@@ -50,7 +50,9 @@ export function getLiveRelayScore(matchUpId: string | undefined): LiveScore | un
  */
 export function withLiveRelayScores<T extends { matchUpId?: string }>(matchUps: T[], keepOwn?: Set<string>): T[] {
   return matchUps.map((matchUp) =>
-    keepOwn?.has(matchUp.matchUpId) ? matchUp : withLiveScore(matchUp, getLiveRelayScore(matchUp.matchUpId)),
+    matchUp.matchUpId && keepOwn?.has(matchUp.matchUpId)
+      ? matchUp
+      : withLiveScore(matchUp, getLiveRelayScore(matchUp.matchUpId)),
   );
 }
 
