@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.23.6](https://github.com/CourtHive/courthive-public/compare/v1.23.5...v1.23.6) (2026-11-21)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.21.0 ([#760](https://github.com/CourtHive/courthive-public/issues/760)) ([cad38c4](https://github.com/CourtHive/courthive-public/commit/cad38c4fee1f89180c0d4933ad3c3a1fccb5e49b))
+* **deps:** update courthive-components to 7.21.1 ([#763](https://github.com/CourtHive/courthive-public/issues/763)) ([8e873db](https://github.com/CourtHive/courthive-public/commit/8e873db91ceffb2a4bfcc503c0bf1844c88e4ec8))
+* **deps:** update tods-competition-factory to 7.44.0 ([#762](https://github.com/CourtHive/courthive-public/issues/762)) ([83f6791](https://github.com/CourtHive/courthive-public/commit/83f67918e0ce97c218479c309c973eb2c699e7db))
+* **types:** turn strictNullChecks on, so Svelte 5.59's mount() types check ([#761](https://github.com/CourtHive/courthive-public/issues/761)) ([6c39363](https://github.com/CourtHive/courthive-public/commit/6c39363c72851899344e259b2de8f049580fe2b4))
+
 ## [1.23.5](https://github.com/CourtHive/courthive-public/compare/v1.23.4...v1.23.5) (2026-11-20)
 
 
