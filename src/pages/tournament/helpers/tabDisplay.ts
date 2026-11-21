@@ -2,7 +2,7 @@ import { createScheduleTable } from 'src/components/tables/scheduleTable/createS
 import { createPlayersTable } from 'src/components/tables/playersTable/createPlayersTable';
 import { createTeamsGrid } from 'src/components/teamsGrid/createTeamsGrid';
 import { getScheduledMatchUps, getParticipants } from 'src/services/api/tournamentsApi';
-import { getTabContentId, getTabId } from './tabIds';
+import { getTabContent, getTab } from './tabIds';
 import { updateRouteUrl } from 'src/router/router';
 import { context } from 'src/common/context';
 
@@ -93,7 +93,7 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
   }
   context.tab = tabName;
   tabNames.forEach((name) => {
-    const section = document.getElementById(getTabContentId(name));
+    const section = getTabContent(name);
     section.style.display = name === tabName ? 'block' : 'none';
   });
 
@@ -112,11 +112,11 @@ export function displayTabContent(tabName, options?: { updateUrl?: boolean }) {
 }
 
 export function displayTab(tabName) {
-  const tab = document.getElementById(getTabId(tabName));
+  const tab = getTab(tabName);
   tab.style.display = 'block';
 }
 
 export function hideTab(tabName) {
-  const tab = document.getElementById(getTabId(tabName));
+  const tab = getTab(tabName);
   tab.style.display = NONE;
 }

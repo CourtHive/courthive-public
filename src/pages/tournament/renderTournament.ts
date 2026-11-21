@@ -16,7 +16,7 @@ import { buildTournamentHero } from './tournamentHero';
 import { LEFT } from 'src/common/constants/baseConstants';
 import { escapeHtml } from 'src/functions/escapeHtml';
 import { updateRouteUrl } from 'src/router/router';
-import { getTabContentId } from './helpers/tabIds';
+import { getTabContent } from './helpers/tabIds';
 import { context } from 'src/common/context';
 
 // Re-exported so existing importers (services/liveUpdates) keep their path; the rule itself lives in
@@ -83,7 +83,7 @@ export async function renderTournament(
     buildTournamentHero({ tournamentInfo, fallbackArt, locale: i18next.language, t: translate }),
   );
 
-  const info = document.getElementById(getTabContentId('Info'));
+  const info = getTabContent('Info');
   removeAllChildNodes(info);
   const profileBlock = renderRegistrationProfile(tournamentInfo.registrationProfile, t);
   if (profileBlock) info.appendChild(profileBlock);
@@ -111,7 +111,7 @@ export async function renderTournament(
   if (hasEvents) {
     const tournamentId: string = tournamentInfo.tournamentId;
 
-    const et = document.getElementById(getTabContentId('Events'));
+    const et = getTabContent('Events');
     removeAllChildNodes(et);
 
     const header = document.createElement('div');
@@ -184,7 +184,7 @@ export async function renderTournament(
 
   const hasSchedule = !!tournamentInfo.publishState?.orderOfPlay?.published;
   if (hasSchedule) {
-    const schedule = document.getElementById(getTabContentId('Schedule'));
+    const schedule = getTabContent('Schedule');
 
     const scheduleHeader = document.createElement('div');
     scheduleHeader.style.width = '100%';
@@ -202,7 +202,7 @@ export async function renderTournament(
 
   const hasParticipants = !!tournamentInfo.publishState?.participants?.published;
   if (hasParticipants) {
-    const players = document.getElementById(getTabContentId('Players'));
+    const players = getTabContent('Players');
     removeAllChildNodes(players);
 
     const playersHeader = document.createElement('div');
@@ -228,7 +228,7 @@ export async function renderTournament(
   }
 
   // Determine target tab — priority: deep-link tab > deep-link event > info default > events fallback
-  let targetTab: string;
+  let targetTab: string | undefined;
   if (deepLink?.tab === 'Players' && hasParticipants) {
     targetTab = 'Players';
   } else if (deepLink?.tab === 'Schedule' && hasSchedule) {

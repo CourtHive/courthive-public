@@ -79,7 +79,7 @@ export function connectAndJoinRoom(tournamentId: string): void {
       // Re-join room after reconnect
       if (currentRoom) {
         console.log('[liveUpdates] joining room:', currentRoom);
-        socket.emit('joinTournament', { tournamentId: currentRoom });
+        socket?.emit('joinTournament', { tournamentId: currentRoom });
       }
     });
 

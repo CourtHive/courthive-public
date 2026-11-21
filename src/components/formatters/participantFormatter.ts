@@ -24,7 +24,7 @@ const scales = {
 
 export const formatParticipant = (onClick) => (cell, placeholder, layout?) => {
   const def = cell.getColumn().getDefinition();
-  const sideNumber = (def.field === 'side1' && 1) || (def.field === 'side2' && 2);
+  const sideNumber = ({ side1: 1, side2: 2 } as Record<string, number>)[def.field];
   const elem = document.createElement('div');
   const data = cell.getRow().getData();
   const hasWinner = data.winningSide;

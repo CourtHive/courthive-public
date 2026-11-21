@@ -46,7 +46,7 @@ const { CONTAINER } = drawDefinitionConstants;
 function getMatchUpFromPointer(matchUpsMap: Record<string, any>, props: any) {
   let el = props.pointerEvent?.target as HTMLElement;
   while (el && !el.classList?.contains('tmx-m')) el = el.parentElement as HTMLElement;
-  return matchUpsMap[el?.getAttribute('id')];
+  return el?.id ? matchUpsMap[el.id] : undefined;
 }
 
 function maybeOpenTeamScorecard(mu: any, display: any) {
@@ -448,7 +448,7 @@ export function renderEvent({
 
         const display = { ...eventData?.eventInfo?.display, ...flight?.display, ...structure?.display };
         const baseComposition = resolvePublishedComposition(display);
-        baseComposition.configuration.genderColor = true;
+        baseComposition.configuration = { ...baseComposition.configuration, genderColor: true };
         // Live scoring layered in only when the visitor opted in via the
         // toggle on the round nav bar. Default = TD's published composition
         // is rendered unchanged.

@@ -99,7 +99,8 @@ export async function toggleLanguageDropdown(anchor: HTMLElement): Promise<void>
     }
   };
   // Defer to avoid immediate trigger from the current click
+  // (read at fire time: a dropdown closed in between has cleared it, and nothing is registered)
   setTimeout(() => {
-    document.addEventListener('click', outsideClickHandler);
+    if (outsideClickHandler) document.addEventListener('click', outsideClickHandler);
   }, 0);
 }
