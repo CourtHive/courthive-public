@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.23.10](https://github.com/CourtHive/courthive-public/compare/v1.23.9...v1.23.10) (2026-11-26)
+
+
+### Bug Fixes
+
+* **deps:** update courthive-components to 7.23.0 ([#791](https://github.com/CourtHive/courthive-public/issues/791)) ([1519761](https://github.com/CourtHive/courthive-public/commit/1519761864d8a765bcc41e40413f745d16e9bdf4))
+* **deps:** update courthive-components to 7.24.0 ([#793](https://github.com/CourtHive/courthive-public/issues/793)) ([2099386](https://github.com/CourtHive/courthive-public/commit/2099386b362f091d8ede3e809d909adfb9ffbd3f))
+* **deps:** update tods-competition-factory to 7.49.0 ([#789](https://github.com/CourtHive/courthive-public/issues/789)) ([b198d64](https://github.com/CourtHive/courthive-public/commit/b198d6486d3c7e96d47b8254ba039e9da34a1d41))
+* **deps:** update tods-competition-factory to 7.50.0 ([#794](https://github.com/CourtHive/courthive-public/issues/794)) ([e72901d](https://github.com/CourtHive/courthive-public/commit/e72901d8df973c14a622ae729f5cb6318d16acd3))
+
+
+### Documentation
+
+* keep the agent guide self-contained and ignore CLAUDE.local.md ([#792](https://github.com/CourtHive/courthive-public/issues/792)) ([643d5f8](https://github.com/CourtHive/courthive-public/commit/643d5f8b1e0ddf94a8098f8505583f1d5c6de27a))
+
 ## [1.23.9](https://github.com/CourtHive/courthive-public/compare/v1.23.8...v1.23.9) (2026-11-23)
 
 
