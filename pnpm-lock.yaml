@@ -202,7 +202,7 @@ importers:
         version: 3.4.18
       i18next:
         specifier: ^27.0.0
-        version: 27.2.2(typescript@6.0.3)
+        version: 27.2.9(typescript@6.0.3)
       navigo:
         specifier: 8.11.1
         version: 8.11.1
@@ -1495,8 +1495,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  i18next@27.2.2:
-    resolution: {integrity: sha512-1/AJgz/bpE/YL6tqekQlZAzDhkmrUBbgU8+Xon/Lwv6c5WdYuyFZ9mb86OVfR2C2XujUDT7Rz23Ydaq4l981lA==}
+  i18next@27.2.9:
+    resolution: {integrity: sha512-GOWWofCGYPSPEzUKJnRLJSoHrSUDa/NzYWqAOJJDZUaM7faLPd9VABlbHDZ+jv8uadu/fq1wsHFfZP6+0tFPkg==}
     engines: {node: '>=22'}
     peerDependencies:
       typescript: 6.0.3
@@ -3472,7 +3472,7 @@ snapshots:
 
   husky@9.1.7: {}
 
-  i18next@27.2.2(typescript@6.0.3):
+  i18next@27.2.9(typescript@6.0.3):
     optionalDependencies:
       typescript: 6.0.3
 
