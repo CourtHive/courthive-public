@@ -2,6 +2,7 @@ import { drawDefinitionConstants, mocksEngine, tournamentEngine } from 'tods-com
 import { ROUNDS_COLUMNS, ROUNDS_STATS, ROUNDS_TABLE } from 'src/common/constants/baseConstants';
 import { hasStatsView, resolveStructureView } from './structureViews';
 import { describe, expect, it } from 'vitest';
+import { defined } from 'src/test/defined';
 
 const { AD_HOC, ROUND_ROBIN_WITH_PLAYOFF } = drawDefinitionConstants;
 
@@ -9,7 +10,10 @@ function structuresOf(drawProfile: any) {
   const {
     drawIds: [drawId],
   } = mocksEngine.generateTournamentRecord({ drawProfiles: [drawProfile], setState: true });
-  return tournamentEngine.getEvent({ drawId }).drawDefinition.structures;
+  return defined(
+    defined(tournamentEngine.getEvent({ drawId }).drawDefinition, 'drawDefinition').structures,
+    'structures',
+  );
 }
 
 describe('structure views', () => {
