@@ -1,6 +1,7 @@
 import { eventPlayingDates, formatPlayingDays, heroPlayingDayItems, playingDaysText } from './playingDays';
 import { mocksEngine, tournamentEngine } from 'tods-competition-factory';
 import { describe, expect, it } from 'vitest';
+import { defined } from 'src/test/defined';
 
 /** Stand-in for i18next `t`, interpolating the en.json strings this module uses. */
 const strings: Record<string, string> = {
@@ -29,10 +30,14 @@ function publishedTournamentInfo(weekdays: any[]) {
     ],
     setState: true,
   });
-  const weekend = tournamentRecord.events.find((event: any) => event.eventName === WEEKEND);
+  const weekend = defined(
+    defined(tournamentRecord.events, 'events').find((event: any) => event.eventName === WEEKEND),
+    WEEKEND,
+  );
   const result: any = tournamentEngine.setEventDates({ eventId: weekend.eventId, weekdays });
   expect(result.success).toBe(true);
-  for (const event of tournamentRecord.events) tournamentEngine.publishEvent({ eventId: event.eventId });
+  for (const event of defined(tournamentRecord.events, 'events'))
+    tournamentEngine.publishEvent({ eventId: event.eventId });
   return tournamentEngine.getTournamentInfo({ usePublishState: true, withVenueData: true }).tournamentInfo;
 }
 
@@ -57,7 +62,8 @@ describe('event playing days (real engine payload)', () => {
       eventProfiles: [{ eventName: OPEN, drawProfiles: [{ drawSize: 4 }] }],
       setState: true,
     });
-    for (const event of tournamentRecord.events) tournamentEngine.publishEvent({ eventId: event.eventId });
+    for (const event of defined(tournamentRecord.events, 'events'))
+      tournamentEngine.publishEvent({ eventId: event.eventId });
     const { tournamentInfo } = tournamentEngine.getTournamentInfo({ usePublishState: true });
     expect(heroPlayingDayItems(tournamentInfo, t, EN)).toEqual([]);
   });
